@@ -5,10 +5,62 @@
 <section id="ranking" class="hidden"><button class="back" id="back">← 地域選択</button><h2>豊田市 パン屋 TOP10</h2><div class="muted">暫定順位：地図系評価と口コミ母数による初期スコア。後に複数媒体・専門性を追加。</div><div id="list"></div></section>
 <section id="detail" class="hidden"><button class="back" id="back2">← TOP10</button><div class="card"><div class="muted" id="drank"></div><h2 id="dname"></h2><p id="daddr"></p><p><strong id="drating"></strong> <span class="muted" id="dreviews"></span></p><p class="muted">店舗情報は取得時点のデータです。営業前には最新情報をご確認ください。</p></div></section>
 </main><script>
-const shops=[{"name": "幸せのパン", "rating": 4.3, "reviews": 155, "address": "愛知県豊田市広久手町5丁目27-4", "type": "ベーカリー", "score": 89.9}, {"name": "まるきゅう", "rating": 4.3, "reviews": 65, "address": "愛知県豊田市西中山町稲場170-3", "type": "ベーカリー", "score": 87.6}, {"name": "ジャック洋菓子店", "rating": 3.9, "reviews": 332, "address": "愛知県豊田市十塚町3丁目3", "type": "ベーカリー", "score": 86.3}, {"name": "ペンギンベーカリー 豊田浄水店", "rating": 3.8, "reviews": 415, "address": "愛知県豊田市浄水町3丁目317-2", "type": "ベーカリー", "score": 86.0}, {"name": "カフェ＆ベーカリードルフ", "rating": 4.2, "reviews": 49, "address": "愛知県豊田市明和町3丁目9-5", "type": "ベーカリー", "score": 85.2}, {"name": "ハートブレッドアンティーク 豊田店", "rating": 3.8, "reviews": 335, "address": "愛知県豊田市上原町一丁田64-1", "type": "ベーカリー", "score": 84.4}, {"name": "ミカヅキ", "rating": 4.1, "reviews": 89, "address": "愛知県豊田市月見町2丁目9-2", "type": "ベーカリー", "score": 84.2}, {"name": "オリーヴァエテルナ", "rating": 4.1, "reviews": 63, "address": "愛知県豊田市栄町5丁目2-1", "type": "ベーカリー", "score": 83.6}, {"name": "ダーシェンカ 菜", "rating": 3.9, "reviews": 167, "address": "愛知県豊田市若草町2丁目6-1", "type": "ベーカリー", "score": 82.2}, {"name": "ベルナール 豊田元町店", "rating": 3.5, "reviews": 21, "address": "愛知県豊田市土橋町2丁目66", "type": "ベーカリー", "score": 70.5}];
+const GOOGLE_API_KEY = 'AIzaSyDZnYJmbY_3FDAF5fNXvDxSjNrQGyUNj7w';
+let shops = [];
+
+async function loadToyotaBakeries() {
+  const response = await fetch(
+    'https://places.googleapis.com/v1/places:searchText',
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Goog-Api-Key': GOOGLE_API_KEY,
+        'X-Goog-FieldMask':
+          'places.displayName,places.formattedAddress,places.rating,places.userRatingCount'
+      },
+      body: JSON.stringify({
+        textQuery: 'パン屋 愛知県豊田市',
+        pageSize: 20,
+        languageCode: 'ja'
+      })
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error('Google Places API エラー: ' + response.status);
+  }
+
+  const data = await response.json();
+
+  shops = (data.places || []).map(p => ({
+    name: p.displayName?.text || '名称不明',
+    rating: p.rating || 0,
+    reviews: p.userRatingCount || 0,
+    address: p.formattedAddress || '住所不明',
+    type: 'パン屋',
+    score: ((p.rating || 0) * 20)
+  }));
+
+  shops.sort((a, b) =>
+    b.score - a.score || b.reviews - a.reviews
+  );
+}
 const home=document.querySelector('#home'),ranking=document.querySelector('#ranking'),detail=document.querySelector('#detail'),list=document.querySelector('#list');
 function showRanking(){home.classList.add('hidden');detail.classList.add('hidden');ranking.classList.remove('hidden');list.innerHTML='';shops.forEach((s,i)=>{let b=document.createElement('button');b.className='card rank';b.style.width='100%';b.innerHTML=`<span class="badge">${i+1}位</span><span class="grow"><strong>${s.name}</strong><br><span class="muted">${s.address}</span></span><span class="rating">★${s.rating}</span>`;b.onclick=()=>showDetail(i);list.appendChild(b)})}
 function showDetail(i){let s=shops[i];ranking.classList.add('hidden');detail.classList.remove('hidden');drank.textContent=`豊田市 暫定${i+1}位 / Score ${s.score}`;dname.textContent=s.name;daddr.textContent=s.address;drating.textContent=`★ ${s.rating}`;dreviews.textContent=`口コミ ${s.reviews}件`;}
-toyota.onclick=showRanking;back.onclick=()=>{ranking.classList.add('hidden');home.classList.remove('hidden')};back2.onclick=showRanking;
+toyota.onclick=async()=>{
+  try{
+    toyota.disabled=true;
+    toyota.textContent='取得中…';
+    await loadToyotaBakeries();
+    showRanking();
+  }catch(e){
+    alert('パン屋情報の取得に失敗しました：'+e.message);
+  }finally{
+    toyota.disabled=false;
+    toyota.textContent='豊田市';
+  }
+};back.onclick=()=>{ranking.classList.add('hidden');home.classList.remove('hidden')};back2.onclick=showRanking;
 if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js');
 </script></body></html>
