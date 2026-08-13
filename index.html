@@ -34,7 +34,7 @@ async function loadToyotaBakeries() {
     reviews: p.userRatingCount || 0,
     address: p.formattedAddress || '住所不明',
     type: 'パン屋',
-    score: ((p.rating || 0) * 20) + Math.min(20, Math.log10((p.userRatingCount || 0) + 1) * 10)
+    score: ((p.rating || 0) * 20) + Math.min(30, Math.log10((p.userRatingCount || 0) + 1) * 12)
   }));
 
   shops.sort((a, b) =>
