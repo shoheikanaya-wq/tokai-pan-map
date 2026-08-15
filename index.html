@@ -39,7 +39,7 @@
   <button id="toyone">豊根村</button>
 </div></section>
 <div style="margin-top:18px">
-  <button id="nishimikawa" class="active">🏆 西三河 TOP10</button>
+  <button id="nishimikawa">🏆 西三河 TOP10</button>
   <button id="higashimikawa">🏆 東三河 TOP10</button>
   <button id="mikawa">🏆 三河 TOP10</button>
 </div>
@@ -213,6 +213,14 @@ toyone.onclick = () => selectCity(toyone, '豊根村');
     higashimikawa.textContent = '🏆 東三河 TOP10';
   }
 };
+  const areaButtons = [nishimikawa, higashimikawa, mikawa];
+
+areaButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    areaButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
 back.onclick=()=>{ranking.classList.add('hidden');home.classList.remove('hidden')};back2.onclick=showRanking;
 if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js');
 </script></body></html>
