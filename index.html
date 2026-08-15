@@ -213,22 +213,25 @@ toyone.onclick = () => selectCity(toyone, '豊根村');
     higashimikawa.textContent = '🏆 東三河 TOP10';
   }
 };
-  function setActiveButton(selectedButton) {
+  document.addEventListener('click', (e) => {
+  const btn = e.target.closest('button');
+
+  if (!btn) return;
+
+  const isSelectable =
+    btn.matches('.tabs button') ||
+    btn.matches('.cities button') ||
+    btn.id === 'nishimikawa' ||
+    btn.id === 'higashimikawa' ||
+    btn.id === 'mikawa';
+
+  if (!isSelectable) return;
+
   document.querySelectorAll(
     '.tabs button, .cities button, #nishimikawa, #higashimikawa, #mikawa'
-  ).forEach(btn => {
-    btn.classList.remove('active');
-  });
+  ).forEach(b => b.classList.remove('active'));
 
-  selectedButton.classList.add('active');
-}
-
-document.querySelectorAll(
-  '.tabs button, .cities button, #nishimikawa, #higashimikawa, #mikawa'
-).forEach(btn => {
-  btn.addEventListener('click', () => {
-    setActiveButton(btn);
-  });
+  btn.classList.add('active');
 });
 back.onclick=()=>{ranking.classList.add('hidden');home.classList.remove('hidden')};back2.onclick=showRanking;
 if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js');
