@@ -2,7 +2,7 @@
 :root{font-family:system-ui,-apple-system,sans-serif;color:#2d241d;background:#fffaf4}body{margin:0}header{position:sticky;top:0;background:#fffaf4eF;backdrop-filter:blur(8px);padding:16px;border-bottom:1px solid #eadfce}h1{font-size:20px;margin:0}.sub{font-size:12px;color:#776b61;margin-top:3px}main{padding:14px;max-width:720px;margin:auto}.tabs,.cities{display:flex;gap:8px;flex-wrap:wrap}button{font:inherit;border:1px solid #d7c7b4;background:white;border-radius:14px;padding:10px 14px}.active{background:#7a4b20;color:white}.card{background:white;border:1px solid #eadfce;border-radius:16px;padding:14px;margin:10px 0}.rank{display:flex;gap:12px;align-items:center}.badge{min-width:38px;text-align:center;font-weight:700}.grow{flex:1}.rating{font-weight:700}.muted{font-size:12px;color:#776b61}.hidden{display:none}.back{margin-bottom:8px}.notice{background:#f4eadf;border-radius:14px;padding:12px;font-size:13px;margin:12px 0}</style></head>
 <body><header><h1>🥐 東海パンMAP</h1><div class="sub">市町村から、おいしいパン屋を探す</div></header><main>
 <section id="home"><div class="tabs"><button class="active">愛知県</button><button disabled>岐阜県</button><button disabled>三重県</button></div><div class="notice">v1.0先行版：豊田市から運用開始。岐阜・三重と他市町村は順次追加します。</div><h2>西三河</h2><div class="cities"><button id="toyota">豊田市</button><button id="okazaki">岡崎市</button><button id="anjo">安城市</button><button id="kariya">刈谷市</button></div></section>
-<section id="ranking" class="hidden"><button class="back" id="back">← 地域選択</button><h2>豊田市 パン屋 TOP10</h2><div class="muted">暫定順位：地図系評価と口コミ母数による初期スコア。後に複数媒体・専門性を追加。</div><div id="list"></div></section>
+<section id="ranking" class="hidden"><button class="back" id="back">← 地域選択</button><h2 id="rankingTitle">豊田市 パン屋 TOP10</h2><div class="muted">暫定順位：地図系評価と口コミ母数による初期スコア。後に複数媒体・専門性を追加。</div><div id="list"></div></section>
 <section id="detail" class="hidden"><button class="back" id="back2">← TOP10</button><div class="card"><div class="muted" id="drank"></div><h2 id="dname"></h2><p id="daddr"></p><p><strong id="drating"></strong> <span class="muted" id="dreviews"></span></p><p class="muted">店舗情報は取得時点のデータです。営業前には最新情報をご確認ください。</p></div></section>
 </main><script>
 
@@ -46,6 +46,7 @@ function showRanking(){home.classList.add('hidden');detail.classList.add('hidden
 function showDetail(i){let s=shops[i];ranking.classList.add('hidden');detail.classList.remove('hidden');drank.textContent=`豊田市 暫定${i+1}位 / Score ${s.score}`;dname.textContent=s.name;daddr.textContent=s.address;drating.textContent=`★ ${s.rating}`;dreviews.textContent=`口コミ ${s.reviews}件`;}
   async function selectCity(button, city) {
   try {
+    rankingTitle.textContent = `${city} パン屋 TOP10`;
     button.disabled = true;
     button.textContent = '取得中…';
 
