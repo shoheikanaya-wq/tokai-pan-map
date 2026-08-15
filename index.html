@@ -172,6 +172,47 @@ toyone.onclick = () => selectCity(toyone, '豊根村');
     nishimikawa.textContent = '🏆 西三河 TOP10';
   }
 };
+  higashimikawa.onclick = async () => {
+  const cities = [
+    '豊橋市', '豊川市', '蒲郡市', '新城市',
+    '田原市', '設楽町', '東栄町', '豊根村'
+  ];
+
+  const allShops = [];
+
+  higashimikawa.disabled = true;
+  higashimikawa.textContent = '取得中...';
+
+  try {
+    for (const city of cities) {
+      await loadBakeries(city);
+      allShops.push(...shops);
+    }
+
+    const unique = new Map();
+
+    allShops.forEach(s => {
+      const key = s.name + '|' + s.address;
+      if (!unique.has(key)) unique.set(key, s);
+    });
+
+    shops = [...unique.values()];
+
+    shops.sort((a, b) =>
+      b.score - a.score || b.reviews - a.reviews
+    );
+
+    rankingTitle.textContent = '東三河 パン屋 TOP10';
+    showRanking();
+
+  } catch(e) {
+    alert('東三河ランキングの取得に失敗しました：' + e.message);
+
+  } finally {
+    higashimikawa.disabled = false;
+    higashimikawa.textContent = '🏆 東三河 TOP10';
+  }
+};
 back.onclick=()=>{ranking.classList.add('hidden');home.classList.remove('hidden')};back2.onclick=showRanking;
 if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js');
 </script></body></html>
