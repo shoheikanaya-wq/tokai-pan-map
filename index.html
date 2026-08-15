@@ -221,6 +221,14 @@ areaButtons.forEach(btn => {
     btn.classList.add('active');
   });
 });
+  const cityButtons = document.querySelectorAll('.cities button');
+
+cityButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    cityButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
 back.onclick=()=>{ranking.classList.add('hidden');home.classList.remove('hidden')};back2.onclick=showRanking;
 if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js');
 </script></body></html>
