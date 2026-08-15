@@ -213,24 +213,40 @@ toyone.onclick = () => selectCity(toyone, '豊根村');
     higashimikawa.textContent = '🏆 東三河 TOP10';
   }
 };
-  document.addEventListener('click', (e) => {
+ document.addEventListener('click', (e) => {
   const btn = e.target.closest('button');
-
   if (!btn) return;
 
-  const isSelectable =
-    btn.matches('.tabs button') ||
+  // 県ボタンを押した場合
+  if (btn.matches('.tabs button')) {
+    document.querySelectorAll('.tabs button')
+      .forEach(b => b.classList.remove('active'));
+
+    btn.classList.add('active');
+
+    // 県を変更したら下位階層の選択も解除
+    document.querySelectorAll(
+      '.cities button, #nishimikawa, #higashimikawa, #mikawa'
+    ).forEach(b => b.classList.remove('active'));
+
+    return;
+  }
+
+  // 市町村・地域TOP10を押した場合
+  const isChild =
     btn.matches('.cities button') ||
     btn.id === 'nishimikawa' ||
     btn.id === 'higashimikawa' ||
     btn.id === 'mikawa';
 
-  if (!isSelectable) return;
+  if (!isChild) return;
 
+  // 下位階層は全部いったん白に戻す
   document.querySelectorAll(
-    '.tabs button, .cities button, #nishimikawa, #higashimikawa, #mikawa'
+    '.cities button, #nishimikawa, #higashimikawa, #mikawa'
   ).forEach(b => b.classList.remove('active'));
 
+  // 最後に押したものだけ茶色
   btn.classList.add('active');
 });
 back.onclick=()=>{ranking.classList.add('hidden');home.classList.remove('hidden')};back2.onclick=showRanking;
