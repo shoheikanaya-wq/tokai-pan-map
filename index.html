@@ -257,7 +257,8 @@ toyone.onclick = () => selectCity(toyone, '豊根村');
     mikawa.disabled = false;
     mikawa.textContent = '🏆 三河 TOP10';
   }
-};t.addEventListener('click', (e) => {
+};
+  document.addEventListener('click', (e) => {
   const btn = e.target.closest('button');
   if (!btn) return;
 
