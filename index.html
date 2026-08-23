@@ -192,7 +192,7 @@
 </main><script>
 
 let shops = [];
-
+let currentCity = '';
 async function loadBakeries(city) {
   const response = await fetch(
    'https://tokai-pan-api-873562719766.asia-northeast1.run.app',
@@ -231,9 +231,11 @@ shops = shops.filter(s => !/洋菓子|ケーキ|スイーツ|パティスリー|
 }
 const home=document.querySelector('#home'),ranking=document.querySelector('#ranking'),detail=document.querySelector('#detail'),list=document.querySelector('#list');
 function showRanking(){home.classList.add('hidden');detail.classList.add('hidden');ranking.classList.remove('hidden');list.innerHTML='';shops.slice(0,10).forEach((s,i)=>{let b=document.createElement('button');b.className='card rank';b.style.width='100%';b.innerHTML=`<span class="badge">${i+1}位</span><span class="grow"><strong>${s.name}</strong><br><span class="muted">${s.address}</span></span><span class="rating">★${s.rating}<br><small>口コミ ${s.reviews}件</small></span>`;b.onclick=()=>showDetail(i);list.appendChild(b)})}
-function showDetail(i){let s=shops[i];ranking.classList.add('hidden');detail.classList.remove('hidden');drank.textContent=`豊田市 暫定${i+1}位 / Score ${s.score}`;dname.textContent=s.name;daddr.textContent=s.address;drating.textContent=`★ ${s.rating}`;dreviews.textContent=`口コミ ${s.reviews}件`;}
+function showDetail(i){let s=shops[i];ranking.classList.add('hidden');detail.classList.remove('hidden');
+                       drank.textContent=`${currentCity} 暫定${i+1}位 / Score ${s.score}`;;dname.textContent=s.name;daddr.textContent=s.address;drating.textContent=`★ ${s.rating}`;dreviews.textContent=`口コミ ${s.reviews}件`;}
   async function selectCity(button, city) {
-  try {
+currentCity = city;
+    try {
     rankingTitle.textContent = `${city} パン屋 TOP10`;
     button.disabled = true;
     button.textContent = '取得中…';
