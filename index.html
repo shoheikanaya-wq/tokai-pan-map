@@ -179,7 +179,41 @@
 </div>
 </section>
 <section id="ranking" class="hidden"><button class="back" id="back">← 地域選択</button><h2 id="rankingTitle">豊田市 パン屋 TOP10</h2><div class="muted">暫定順位：地図系評価と口コミ母数による初期スコア。後に複数媒体・専門性を追加。</div><div id="list"></div></section>
-<section id="detail" class="hidden"><button class="back" id="back2">← TOP10</button><div class="card"><div class="muted" id="drank"></div><h2 id="dname"></h2><p id="daddr"></p><p><strong id="drating"></strong> <span class="muted" id="dreviews"></span></p><p class="muted">店舗情報は取得時点のデータです。営業前には最新情報をご確認ください。</p></div></section>
+<section id="detail" class="hidden">
+  <button class="back" id="back2">← TOP10</button>
+
+  <div class="card">
+    <div class="muted" id="drank"></div>
+
+    <h2 id="dname"></h2>
+    <p id="daddr"></p>
+
+    <p>
+      <strong id="drating"></strong>
+      <span class="muted" id="dreviews"></span>
+    </p>
+
+    <div id="dopening"></div>
+
+    <p id="dphone"></p>
+
+    <p>
+      <a id="dwebsite" href="#" target="_blank" rel="noopener">
+        公式サイトを見る
+      </a>
+    </p>
+
+    <p>
+      <a id="dmaps" href="#" target="_blank" rel="noopener">
+        Googleマップで開く
+      </a>
+    </p>
+
+    <p class="muted">
+      店舗情報は取得時点のデータです。営業前には最新情報をご確認ください。
+    </p>
+  </div>
+</section>
   <footer class="app-footer">
   <div>東海パンMAP</div>
   <div>Personal Bakery Discovery Project</div>
@@ -255,6 +289,36 @@ function showDetail(i) {
   daddr.textContent = s.address;
   drating.textContent = `★${s.rating}`;
   dreviews.textContent = `口コミ ${s.reviews}件`;
+
+  // 営業時間
+  dopening.innerHTML = '';
+  if (s.openingHours && s.openingHours.length) {
+    dopening.innerHTML =
+      '<strong>営業時間</strong><br>' +
+      s.openingHours.join('<br>');
+  } else {
+    dopening.textContent = '営業時間：情報なし';
+  }
+
+  // 電話番号
+  dphone.textContent =
+    s.phone ? `☎ ${s.phone}` : '電話番号：情報なし';
+
+  // 公式サイト
+  if (s.website) {
+    dwebsite.href = s.website;
+    dwebsite.style.display = 'inline';
+  } else {
+    dwebsite.style.display = 'none';
+  }
+
+  // Googleマップ
+  if (s.googleMaps) {
+    dmaps.href = s.googleMaps;
+    dmaps.style.display = 'inline';
+  } else {
+    dmaps.style.display = 'none';
+  }
 }
   async function selectCity(button, city) {
 currentCity = city;
