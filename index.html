@@ -267,6 +267,7 @@ async function loadBakeries(city) {
   types: p.types || [],
 
   openingHours: p.regularOpeningHours?.weekdayDescriptions || [],
+    openNow: p.currentOpeningHours?.openNow ?? null,
   phone: p.nationalPhoneNumber || '',
   website: p.websiteUri || '',
   googleMaps: p.googleMapsUri || '',
@@ -301,14 +302,21 @@ function showDetail(i) {
   drating.textContent = `★${s.rating}`;
   dreviews.textContent = `口コミ ${s.reviews}件`;
 
-  // 営業時間
-  dopening.innerHTML = '';
+ // 営業時間
+if (s.openNow === true) {
+  dopening.innerHTML = '<strong>🟢 現在営業中</strong><br>';
+} else if (s.openNow === false) {
+  dopening.innerHTML = '<strong>🔴 営業時間外</strong><br>';
+} else {
+  dopening.innerHTML = '<strong>⚪ 営業状況不明</strong><br>';
+}
+
   if (s.openingHours && s.openingHours.length) {
-    dopening.innerHTML =
+    dopening.innerHTML +=
       '<strong>営業時間</strong><br>' +
       s.openingHours.join('<br>');
   } else {
-    dopening.textContent = '営業時間：情報なし';
+   dopening.innerHTML += '営業時間：情報なし';
   }
 
   // 電話番号
