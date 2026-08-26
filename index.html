@@ -312,7 +312,7 @@ shops = shops.filter(s => !/洋菓子|ケーキ|スイーツ|パティスリー|
 const home=document.querySelector('#home'),ranking=document.querySelector('#ranking'),detail=document.querySelector('#detail'),list=document.querySelector('#list');
   const areaVisual = document.querySelector('#areaVisual');
 function showRanking()
-  {showAreaVisual(currentCity);
+  {
 home.classList.add('hidden');detail.classList.add('hidden');ranking.classList.remove('hidden');list.innerHTML='';shops.slice(0,10).forEach((s,i)=>{let b=document.createElement('button');b.className='card rank';b.style.width='100%';b.innerHTML=`<span class="badge">${i+1}位</span><span class="grow"><strong>${s.name}</strong><br><span class="muted">${s.address}</span></span><span class="rating">★${s.rating}<br><small>口コミ ${s.reviews}件</small></span>`;b.onclick=()=>showDetail(i);list.appendChild(b)})}
 }
   function getAreaName(city) {
