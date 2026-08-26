@@ -295,15 +295,32 @@ shops = shops.filter(s => !/洋菓子|ケーキ|スイーツ|パティスリー|
 }
 const home=document.querySelector('#home'),ranking=document.querySelector('#ranking'),detail=document.querySelector('#detail'),list=document.querySelector('#list');
 function showRanking(){home.classList.add('hidden');detail.classList.add('hidden');ranking.classList.remove('hidden');list.innerHTML='';shops.slice(0,10).forEach((s,i)=>{let b=document.createElement('button');b.className='card rank';b.style.width='100%';b.innerHTML=`<span class="badge">${i+1}位</span><span class="grow"><strong>${s.name}</strong><br><span class="muted">${s.address}</span></span><span class="rating">★${s.rating}<br><small>口コミ ${s.reviews}件</small></span>`;b.onclick=()=>showDetail(i);list.appendChild(b)})}
+  function getAreaName(city) {
+  const nishiMikawa = [
+    '豊田市','岡崎市','安城市','刈谷市','西尾市',
+    '碧南市','知立市','高浜市','みよし市','幸田町'
+  ];
+
+  const higashiMikawa = [
+    '豊橋市','豊川市','蒲郡市','新城市',
+    '田原市','設楽町','東栄町','豊根村'
+  ];
+
+  if (nishiMikawa.includes(city)) return '西三河';
+  if (higashiMikawa.includes(city)) return '東三河';
+
+  return '';
+}
 function showDetail(i) {
   const s = shops[i];
 
   ranking.classList.add('hidden');
   detail.classList.remove('hidden');
 
-  drank.textContent =
-    `${currentCity} 暫定${i + 1}位 / Score ${Math.round(s.score)}`;
+const areaName = getAreaName(currentCity);
 
+drank.textContent =
+  `愛知県 ＞ ${areaName ? areaName + ' ＞ ' : ''}${currentCity} ＞ ${i + 1}位 / Score ${Math.round(s.score)}`;
   dname.textContent = s.name;
   daddr.textContent = s.address;
   drating.textContent = `★${s.rating}`;
