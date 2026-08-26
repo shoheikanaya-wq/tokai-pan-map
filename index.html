@@ -102,7 +102,7 @@
   }
 }
 </style></head>
-<body><header><h1>🥐 東海パンMAP</h1><div class="sub">市町村から、おいしいパン屋を探す</div></header><main>
+<body><header><h1 id="appTitle" style="cursor:pointer;">🥐 東海パンMAP</h1><div class="sub">市町村から、おいしいパン屋を探す</div></header><main>
 <section id="home">
  
   <img src="tokai-pan-home.png" class="home-visual" alt="東海パンMAP ホーム">
@@ -180,9 +180,16 @@
   <button id="aichi">🏆 愛知県 TOP10</button>
 </div>
 </section>
-<section id="ranking" class="hidden"><button class="back" id="back">← 地域選択</button><h2 id="rankingTitle">豊田市 パン屋 TOP10</h2><div class="muted">ランキングについて：評価点と口コミ件数をもとに、東海パンMAP独自の方法で順位を算出しています。</div><div id="list"></div></section>
+<section id="ranking" class="hidden">
+  <div class="nav-buttons">
+   <button class="back" id="back">← 戻る</button>
+    
+  </div><h2 id="rankingTitle">豊田市 パン屋 TOP10</h2><div class="muted">ランキングについて：評価点と口コミ件数をもとに、東海パンMAP独自の方法で順位を算出しています。</div><div id="list"></div></section>
 <section id="detail" class="hidden">
-  <button class="back" id="back2">← TOP10</button>
+  <div class="nav-buttons">
+<button class="back" id="back2">← 戻る</button>
+  
+</div>
 
   <div class="card">
     <div class="muted" id="drank"></div>
@@ -572,6 +579,19 @@ taketoyo.onclick = () => selectCity(taketoyo, '武豊町');
   // 最後に押したものだけ茶色
   btn.classList.add('active');
 });
-back.onclick=()=>{ranking.classList.add('hidden');home.classList.remove('hidden')};back2.onclick=showRanking;
+back.onclick = () => {
+  ranking.classList.add('hidden');
+  home.classList.remove('hidden');
+};
+
+back2.onclick = showRanking;
+
+appTitle.onclick = () => {
+  ranking.classList.add('hidden');
+  detail.classList.add('hidden');
+  home.classList.remove('hidden');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+};
 if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js');
 </script></body></html>
