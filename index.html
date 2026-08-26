@@ -101,6 +101,21 @@
     font-size:9px;
   }
 }
+  /* ===== Ver.1.4β 地域ビジュアル ===== */
+.area-visual{
+  width:100%;
+  max-width:900px;
+  margin:10px auto;
+  border-radius:14px;
+  overflow:hidden;
+}
+
+.area-visual img{
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:cover;
+}
 </style></head>
 <body><header><h1 id="appTitle" style="cursor:pointer;">🥐 東海パンMAP</h1><div class="sub">市町村から、おいしいパン屋を探す</div></header><main>
 <section id="home">
@@ -184,7 +199,7 @@
   <div class="nav-buttons">
    <button class="back" id="back">← 戻る</button>
     
-  </div><h2 id="rankingTitle">豊田市 パン屋 TOP10</h2><div class="muted">ランキングについて：評価点と口コミ件数をもとに、東海パンMAP独自の方法で順位を算出しています。</div><div id="list"></div></section>
+  </div><div class="area-visual" id="areaVisual"></div><h2 id="rankingTitle">豊田市 パン屋 TOP10</h2><div class="muted">ランキングについて：評価点と口コミ件数をもとに、東海パンMAP独自の方法で順位を算出しています。</div><div id="list"></div></section>
 <section id="detail" class="hidden">
   <div class="nav-buttons">
 <button class="back" id="back2">← 戻る</button>
@@ -295,7 +310,10 @@ shops = shops.filter(s => !/洋菓子|ケーキ|スイーツ|パティスリー|
   );
 }
 const home=document.querySelector('#home'),ranking=document.querySelector('#ranking'),detail=document.querySelector('#detail'),list=document.querySelector('#list');
-function showRanking(){home.classList.add('hidden');detail.classList.add('hidden');ranking.classList.remove('hidden');list.innerHTML='';shops.slice(0,10).forEach((s,i)=>{let b=document.createElement('button');b.className='card rank';b.style.width='100%';b.innerHTML=`<span class="badge">${i+1}位</span><span class="grow"><strong>${s.name}</strong><br><span class="muted">${s.address}</span></span><span class="rating">★${s.rating}<br><small>口コミ ${s.reviews}件</small></span>`;b.onclick=()=>showDetail(i);list.appendChild(b)})}
+  const areaVisual = document.querySelector('#areaVisual');
+function showRanking()
+  {showAreaVisual(currentCity);
+home.classList.add('hidden');detail.classList.add('hidden');ranking.classList.remove('hidden');list.innerHTML='';shops.slice(0,10).forEach((s,i)=>{let b=document.createElement('button');b.className='card rank';b.style.width='100%';b.innerHTML=`<span class="badge">${i+1}位</span><span class="grow"><strong>${s.name}</strong><br><span class="muted">${s.address}</span></span><span class="rating">★${s.rating}<br><small>口コミ ${s.reviews}件</small></span>`;b.onclick=()=>showDetail(i);list.appendChild(b)})}
 }
   function getAreaName(city) {
   const nagoya = [
@@ -333,6 +351,25 @@ function showRanking(){home.classList.add('hidden');detail.classList.add('hidden
   if (higashiMikawa.includes(city)) return '東三河';
 
   return '';
+}
+  function showAreaVisual(city) {
+  const area = getAreaName(city);
+
+  const images = {
+    '名古屋': 'nagoya.png',
+    '尾張': 'owari.png',
+    '知多': 'chita.png',
+    '西三河': 'nishimikawa.png',
+    '東三河': 'higashimikawa.png'
+  };
+
+  if (images[area]) {
+    areaVisual.innerHTML = `<img src="${images[area]}" alt="${area}">`;
+    areaVisual.style.display = 'block';
+  } else {
+    areaVisual.innerHTML = '';
+    areaVisual.style.display = 'none';
+  }
 }
   function showDetail(i) {
   const s = shops[i];
