@@ -295,7 +295,26 @@ shops = shops.filter(s => !/洋菓子|ケーキ|スイーツ|パティスリー|
 }
 const home=document.querySelector('#home'),ranking=document.querySelector('#ranking'),detail=document.querySelector('#detail'),list=document.querySelector('#list');
 function showRanking(){home.classList.add('hidden');detail.classList.add('hidden');ranking.classList.remove('hidden');list.innerHTML='';shops.slice(0,10).forEach((s,i)=>{let b=document.createElement('button');b.className='card rank';b.style.width='100%';b.innerHTML=`<span class="badge">${i+1}位</span><span class="grow"><strong>${s.name}</strong><br><span class="muted">${s.address}</span></span><span class="rating">★${s.rating}<br><small>口コミ ${s.reviews}件</small></span>`;b.onclick=()=>showDetail(i);list.appendChild(b)})}
+}
   function getAreaName(city) {
+  const nagoya = [
+    '名古屋市'
+  ];
+
+  const owari = [
+    '一宮市','瀬戸市','春日井市','犬山市','江南市',
+    '小牧市','稲沢市','尾張旭市','岩倉市','豊明市',
+    '日進市','清須市','北名古屋市','長久手市',
+    '東郷町','豊山町','大口町','扶桑町',
+    'あま市','大治町','蟹江町','飛島村',
+    '津島市','愛西市','弥富市'
+  ];
+
+  const chita = [
+    '半田市','常滑市','東海市','大府市','知多市',
+    '阿久比町','東浦町','南知多町','美浜町','武豊町'
+  ];
+
   const nishiMikawa = [
     '豊田市','岡崎市','安城市','刈谷市','西尾市',
     '碧南市','知立市','高浜市','みよし市','幸田町'
@@ -306,12 +325,15 @@ function showRanking(){home.classList.add('hidden');detail.classList.add('hidden
     '田原市','設楽町','東栄町','豊根村'
   ];
 
+  if (nagoya.includes(city)) return '名古屋';
+  if (owari.includes(city)) return '尾張';
+  if (chita.includes(city)) return '知多';
   if (nishiMikawa.includes(city)) return '西三河';
   if (higashiMikawa.includes(city)) return '東三河';
 
   return '';
 }
-function showDetail(i) {
+  function showDetail(i) {
   const s = shops[i];
 
   ranking.classList.add('hidden');
