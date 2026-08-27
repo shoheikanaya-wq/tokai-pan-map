@@ -38,7 +38,6 @@
   margin:0 auto;
 }
 
-.home-visual{
 /* ===== スマホ縦画面：ホーム ===== */
 @media (max-width:600px){
   #home{min-height:100dvh;box-sizing:border-box}
@@ -268,10 +267,30 @@ shops = shops.filter(s => !/洋菓子|ケーキ|スイーツ|パティスリー|
   );
 }
 const home=document.querySelector('#home'),ranking=document.querySelector('#ranking'),detail=document.querySelector('#detail'),list=document.querySelector('#list');
+const byId = id => document.getElementById(id);
+const appTitle=byId('appTitle'), rankingTitle=byId('rankingTitle');
+const back=byId('back'), back2=byId('back2');
+const dname=byId('dname'), daddr=byId('daddr'), drating=byId('drating'), dreviews=byId('dreviews'), dhours=byId('dhours'), dphone=byId('dphone'), dwebsite=byId('dwebsite'), dmaps=byId('dmaps'), drank=byId('drank');
+const toyota=byId('toyota'), okazaki=byId('okazaki'), anjo=byId('anjo'), kariya=byId('kariya'), nishio=byId('nishio'), hekinan=byId('hekinan'), chiryu=byId('chiryu'), takahama=byId('takahama'), miyoshi=byId('miyoshi'), kota=byId('kota');
+const toyohashi=byId('toyohashi'), toyokawa=byId('toyokawa'), gamagori=byId('gamagori'), shinshiro=byId('shinshiro'), tahara=byId('tahara'), shitara=byId('shitara'), toei=byId('toei'), toyone=byId('toyone');
+const nagoya=byId('nagoya'), ichinomiya=byId('ichinomiya'), seto=byId('seto'), kasugai=byId('kasugai'), inuyama=byId('inuyama'), konan=byId('konan'), komaki=byId('komaki'), inazawa=byId('inazawa'), owariasahi=byId('owariasahi'), iwakura=byId('iwakura'), toyoake=byId('toyoake'), nisshin=byId('nisshin'), kiyosu=byId('kiyosu'), kitanagoya=byId('kitanagoya'), nagakute=byId('nagakute'), togo=byId('togo'), toyoyama=byId('toyoyama'), oguchi=byId('oguchi'), fuso=byId('fuso'), ama=byId('ama'), ooharu=byId('ooharu'), kanie=byId('kanie'), tobishima=byId('tobishima'), tsushima=byId('tsushima'), aisai=byId('aisai'), yatomi=byId('yatomi');
+const handa=byId('handa'), tokoname=byId('tokoname'), tokai=byId('tokai'), obu=byId('obu'), chita=byId('chita'), agui=byId('agui'), higashiura=byId('higashiura'), minamichita=byId('minamichita'), mihama=byId('mihama'), taketoyo=byId('taketoyo');
+const nishimikawa=byId('nishimikawa'), higashimikawa=byId('higashimikawa'), mikawa=byId('mikawa');
   const areaVisual = document.querySelector('#areaVisual');
-function showRanking()
-  {
-home.classList.add('hidden');detail.classList.add('hidden');ranking.classList.remove('hidden');list.innerHTML='';shops.slice(0,10).forEach((s,i)=>{let b=document.createElement('button');b.className='card rank';b.style.width='100%';b.innerHTML=`<span class="badge">${i+1}位</span><span class="grow"><strong>${s.name}</strong><br><span class="muted">${s.address}</span></span><span class="rating">★${s.rating}<br><small>口コミ ${s.reviews}件</small></span>`;b.onclick=()=>showDetail(i);list.appendChild(b)})}
+function showRanking() {
+  showAreaVisual(currentCity);
+  home.classList.add('hidden');
+  detail.classList.add('hidden');
+  ranking.classList.remove('hidden');
+  list.innerHTML='';
+  shops.slice(0,10).forEach((s,i)=>{
+    let b=document.createElement('button');
+    b.className='card rank';
+    b.style.width='100%';
+    b.innerHTML=`<span class="badge">${i+1}位</span><span class="grow"><strong>${s.name}</strong><br><span class="muted">${s.address}</span></span><span class="rating">★${s.rating}<br><small>口コミ ${s.reviews}件</small></span>`;
+    b.onclick=()=>showDetail(i);
+    list.appendChild(b);
+  });
 }
   function getAreaName(city) {
   const nagoya = [
@@ -627,5 +646,5 @@ appTitle.onclick = () => {
   home.classList.remove('hidden');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };
-if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js');
+if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?rev=20260828-1');
 </script></body></html>
