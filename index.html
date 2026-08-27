@@ -152,6 +152,42 @@
   height:auto;
   object-fit:contain;
 }
+  /* スマホ最終調整 */
+@media (max-width:600px){
+
+  .area-visual{
+    margin:2px auto 3px;
+  }
+
+  .area-visual img{
+    width:100%;
+    height:auto;
+    max-height:15vh;
+    object-fit:contain;
+  }
+
+  #ranking .nav-buttons{
+    margin:0;
+    padding:0;
+  }
+
+  #ranking .back{
+    margin:0 0 2px 0;
+    padding:4px 9px;
+    font-size:11px;
+  }
+
+  #ranking h2{
+    margin:3px 0 2px;
+    font-size:16px;
+  }
+
+  #ranking .muted{
+    margin:0 0 4px;
+    font-size:9px;
+    line-height:1.15;
+  }
+}
 </style></head>
 <body><header><h1 id="appTitle" style="cursor:pointer;">🥐 東海パンMAP</h1><div class="sub">市町村から、おいしいパン屋を探す</div></header><main>
 <section id="home">
