@@ -52,11 +52,15 @@
 }
 
 /* ===== ランキング画面：地域画像 ===== */
+.ranking-hero{position:relative;width:100%;margin:2px auto 5px}
 .area-visual{width:100%;margin:2px auto 4px;border-radius:10px;overflow:hidden}
+.area-visual{width:100%;margin:0;border-radius:10px;overflow:hidden}
 .area-visual img{display:block;width:100%;height:auto;object-fit:contain}
 #ranking .nav-buttons{margin:0;padding:0;height:auto}
 #ranking .back{margin:0 0 3px 0;padding:5px 10px;font-size:12px}
-#ranking .back{margin:2px 0 4px 0;padding:7px 14px;font-size:14px;font-weight:600;border-radius:11px}
+#ranking .nav-buttons{position:absolute;left:12px;bottom:12px;margin:0;padding:0;height:auto;z-index:2}
+#ranking .back{margin:0;padding:10px 18px;min-height:44px;font-size:16px;font-weight:700;border:1px solid #b99b78;border-radius:13px;background:rgba(255,255,255,.94);box-shadow:0 2px 8px rgba(45,36,29,.22)}
+.ranking-hero.no-visual .nav-buttons{position:static;margin-bottom:4px}
 #ranking h2{margin:5px 0 3px}
 #ranking > .muted{margin:0 0 5px}
 
@@ -68,8 +72,10 @@
   main{padding:4px 6px}
   #ranking .nav-buttons{margin:0;padding:0}
   #ranking .back{margin:0 0 2px;padding:3px 8px;font-size:10px;border-radius:8px}
-  #ranking .back{margin:2px 0 3px;padding:6px 12px;font-size:12px;border-radius:10px}
   .area-visual{margin:0 auto 3px;border-radius:7px}
+  #ranking .nav-buttons{left:8px;bottom:8px;margin:0;padding:0}
+  #ranking .back{padding:9px 16px;min-height:42px;font-size:14px;border-radius:12px}
+  .area-visual{margin:0;border-radius:7px}
   .area-visual img{width:100%;height:auto;object-fit:contain}
   #ranking h2{font-size:15px;line-height:1.1;margin:3px 0 2px}
   #ranking > .muted{font-size:8px;line-height:1.1;margin:0 0 3px}
@@ -155,10 +161,15 @@
 </div>
 </section>
 <section id="ranking" class="hidden">
+  <div class="ranking-hero" id="rankingHero">
   <div class="area-visual" id="areaVisual"></div>
   <div class="nav-buttons">
    <button class="back" id="back">← 戻る</button>
      
+    <div class="area-visual" id="areaVisual"></div>
+    <div class="nav-buttons">
+      <button class="back" id="back">← 戻る</button>
+    </div>
   </div><h2 id="rankingTitle">豊田市 パン屋 TOP10</h2><div class="muted">ランキングについて：評価点と口コミ件数をもとに、東海パンMAP独自の方法で順位を算出しています。</div><div id="list"></div></section>
 <section id="detail" class="hidden">
   <div class="nav-buttons">
@@ -281,6 +292,7 @@ const nagoya=byId('nagoya'), ichinomiya=byId('ichinomiya'), seto=byId('seto'), k
 const handa=byId('handa'), tokoname=byId('tokoname'), tokai=byId('tokai'), obu=byId('obu'), chita=byId('chita'), agui=byId('agui'), higashiura=byId('higashiura'), minamichita=byId('minamichita'), mihama=byId('mihama'), taketoyo=byId('taketoyo');
 const nishimikawa=byId('nishimikawa'), higashimikawa=byId('higashimikawa'), mikawa=byId('mikawa'), aichi=byId('aichi');
   const areaVisual = document.querySelector('#areaVisual');
+  const rankingHero = document.querySelector('#rankingHero');
 function showRanking() {
   showAreaVisual(currentVisualKey || currentCity);
   home.classList.add('hidden');
@@ -355,9 +367,11 @@ function showRanking() {
   if (images[area]) {
     areaVisual.innerHTML = `<img src="${images[area]}" alt="${area}">`;
     areaVisual.style.display = 'block';
+    rankingHero.classList.remove('no-visual');
   } else {
     areaVisual.innerHTML = '';
     areaVisual.style.display = 'none';
+    rankingHero.classList.add('no-visual');
   }
 }
   function showDetail(i) {
