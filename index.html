@@ -613,8 +613,46 @@ higashiura.onclick = () => selectCity(higashiura, '東浦町');
 minamichita.onclick = () => selectCity(minamichita, '南知多町');
 mihama.onclick = () => selectCity(mihama, '美浜町');
 taketoyo.onclick = () => selectCity(taketoyo, '武豊町');
+  // ===== 広域TOP10完成結果キャッシュ =====
+  // 西三河・東三河は24時間、愛知県は7日間そのまま再表示。
+  const AREA_TOP10_TTL = 24 * 60 * 60 * 1000;
+  const AICHI_TOP10_TTL = 7 * 24 * 60 * 60 * 1000;
+
+  function top10CacheKey(area){ return `tokai-pan-top10:v1:${area}`; }
+
+  function getTop10Cache(area, ttl){
+    try{
+      const raw=localStorage.getItem(top10CacheKey(area));
+      if(!raw) return null;
+      const c=JSON.parse(raw);
+      if(!c || !Array.isArray(c.shops) || !c.savedAt) return null;
+      if(Date.now()-c.savedAt>ttl){
+        localStorage.removeItem(top10CacheKey(area));
+        return null;
+      }
+      return c;
+    }catch(e){ return null; }
+  }
+
+  function setTop10Cache(area, areaShops){
+    try{
+      localStorage.setItem(top10CacheKey(area), JSON.stringify({
+        savedAt: Date.now(),
+        shops: areaShops.slice(0,10)
+      }));
+    }catch(e){}
+  }
+
   nishimikawa.onclick = async () => {
   currentVisualKey = '西三河';
+  const cachedTop10 = getTop10Cache('西三河', AREA_TOP10_TTL);
+  if(cachedTop10){
+    shops=cachedTop10.shops;
+    currentCity='西三河';
+    rankingTitle.textContent='西三河 パン屋 TOP10';
+    showRanking();
+    return;
+  }
       const cities = [
     '豊田市','岡崎市','安城市','刈谷市','西尾市',
     '碧南市','知立市','高浜市','みよし市','幸田町'
@@ -644,6 +682,8 @@ taketoyo.onclick = () => selectCity(taketoyo, '武豊町');
       b.score - a.score || b.reviews - a.reviews
     );
 
+    setTop10Cache('西三河', shops);
+
     currentCity = '西三河';
     rankingTitle.textContent = '西三河 パン屋 TOP10';
     showRanking();
@@ -657,6 +697,14 @@ taketoyo.onclick = () => selectCity(taketoyo, '武豊町');
 };
   higashimikawa.onclick = async () => {
   currentVisualKey = '東三河';
+  const cachedTop10 = getTop10Cache('東三河', AREA_TOP10_TTL);
+  if(cachedTop10){
+    shops=cachedTop10.shops;
+    currentCity='東三河';
+    rankingTitle.textContent='東三河 パン屋 TOP10';
+    showRanking();
+    return;
+  }
   const cities = [
     '豊橋市', '豊川市', '蒲郡市', '新城市',
     '田原市', '設楽町', '東栄町', '豊根村'
@@ -686,6 +734,8 @@ taketoyo.onclick = () => selectCity(taketoyo, '武豊町');
       b.score - a.score || b.reviews - a.reviews
     );
 
+    setTop10Cache('東三河', shops);
+
     currentCity = '東三河';
     rankingTitle.textContent = '東三河 パン屋 TOP10';
     showRanking();
@@ -701,6 +751,14 @@ taketoyo.onclick = () => selectCity(taketoyo, '武豊町');
 
   aichi.onclick = async () => {
   currentVisualKey = '愛知県';
+  const cachedTop10 = getTop10Cache('愛知県', AICHI_TOP10_TTL);
+  if(cachedTop10){
+    shops=cachedTop10.shops;
+    currentCity='愛知県';
+    rankingTitle.textContent='愛知県 パン屋 TOP10';
+    showRanking();
+    return;
+  }
   const cities = [
     '名古屋市',
     '一宮市','瀬戸市','春日井市','犬山市','江南市','小牧市','稲沢市',
@@ -734,6 +792,8 @@ taketoyo.onclick = () => selectCity(taketoyo, '武豊町');
     shops.sort((a, b) =>
       b.score - a.score || b.reviews - a.reviews
     );
+
+    setTop10Cache('愛知県', shops);
 
     currentCity = '愛知県';
     rankingTitle.textContent = '愛知県 パン屋 TOP10';
@@ -795,7 +855,7 @@ appTitle.onclick = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js?rev=20260830-1').then(reg => {
+  navigator.serviceWorker.register('./sw.js?rev=20260830-2').then(reg => {
     reg.update();
   });
 }
