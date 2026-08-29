@@ -147,6 +147,13 @@
     line-height:1.1;
   }
 }
+
+.ranking-bottom-nav{display:flex;justify-content:flex-start;margin:12px 0 6px}
+.ranking-bottom-nav .back{padding:10px 18px;min-height:44px;font-size:16px;font-weight:700;border:1px solid #b99b78;border-radius:13px;background:rgba(255,255,255,.96);box-shadow:0 2px 8px rgba(45,36,29,.16)}
+@media (max-width:600px){
+  .ranking-bottom-nav{margin:8px 0 4px}
+  .ranking-bottom-nav .back{padding:9px 16px;min-height:42px;font-size:14px;border-radius:12px}
+}
 </style></head>
 <body><header><h1 id="appTitle" style="cursor:pointer;">🥐 東海パンMAP</h1><div class="sub">市町村から、おいしいパン屋を探す</div></header><main>
 <section id="home">
@@ -231,7 +238,11 @@
     <div class="nav-buttons">
       <button class="back" id="back">← 戻る</button>
     </div>
-  </div><h2 id="rankingTitle">豊田市 パン屋 TOP10</h2><div class="muted">ランキングについて：評価点と口コミ件数をもとに、東海パンMAP独自の方法で順位を算出しています。</div><div id="list"></div></section>
+  </div><h2 id="rankingTitle">豊田市 パン屋 TOP10</h2><div class="muted">ランキングについて：評価点と口コミ件数をもとに、東海パンMAP独自の方法で順位を算出しています。</div><div id="list"></div>
+  <div class="ranking-bottom-nav">
+    <button class="back" id="backBottom">← 戻る</button>
+  </div>
+</section>
 <section id="detail" class="hidden">
   <div class="nav-buttons">
 <button class="back" id="back2">← 戻る</button>
@@ -383,7 +394,7 @@ shops = shops.filter(s => !/洋菓子|ケーキ|スイーツ|パティスリー|
 const home=document.querySelector('#home'),ranking=document.querySelector('#ranking'),detail=document.querySelector('#detail'),list=document.querySelector('#list');
 const byId = id => document.getElementById(id);
 const appTitle=byId('appTitle'), rankingTitle=byId('rankingTitle');
-const back=byId('back'), back2=byId('back2');
+const back=byId('back'), backBottom=byId('backBottom'), back2=byId('back2');
 const dname=byId('dname'), daddr=byId('daddr'), drating=byId('drating'), dreviews=byId('dreviews'), dhours=byId('dhours'), dphone=byId('dphone'), dwebsite=byId('dwebsite'), dmaps=byId('dmaps'), drank=byId('drank');
 const toyota=byId('toyota'), okazaki=byId('okazaki'), anjo=byId('anjo'), kariya=byId('kariya'), nishio=byId('nishio'), hekinan=byId('hekinan'), chiryu=byId('chiryu'), takahama=byId('takahama'), miyoshi=byId('miyoshi'), kota=byId('kota');
 const toyohashi=byId('toyohashi'), toyokawa=byId('toyokawa'), gamagori=byId('gamagori'), shinshiro=byId('shinshiro'), tahara=byId('tahara'), shitara=byId('shitara'), toei=byId('toei'), toyone=byId('toyone');
@@ -931,10 +942,14 @@ taketoyo.onclick = () => selectCity(taketoyo, '武豊町');
   // 最後に押したものだけ茶色
   btn.classList.add('active');
 });
-back.onclick = () => {
+function returnHomeFromRanking() {
   ranking.classList.add('hidden');
   home.classList.remove('hidden');
-};
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+back.onclick = returnHomeFromRanking;
+backBottom.onclick = returnHomeFromRanking;
 
 back2.onclick = showRanking;
 
@@ -945,7 +960,7 @@ appTitle.onclick = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js?rev=20260830-4').then(reg => {
+  navigator.serviceWorker.register('./sw.js?rev=20260830-5').then(reg => {
     reg.update();
   });
 }
