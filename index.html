@@ -826,23 +826,24 @@ taketoyo.onclick = () => selectCity(taketoyo, '武豊町');
 
   aichi.onclick = async () => {
   currentVisualKey = '愛知県';
+
+  // 1) 端末に保存済みの完成TOP10（7日間）
   const cachedTop10 = getTop10Cache('愛知県', AICHI_TOP10_TTL);
   if(cachedTop10){
-    shops=cachedTop10.shops;
-    currentCity='愛知県';
-    rankingTitle.textContent='愛知県 パン屋 TOP10';
+    shops = cachedTop10.shops;
+    currentCity = '愛知県';
+    rankingTitle.textContent = '愛知県 パン屋 TOP10';
     showRanking();
     return;
   }
 
-  // 新規端末では、まずGitHub Pagesに同梱した愛知県TOP10を読む。
-  // これがあれば54市町村への連続APIアクセスは発生しない。
+  // 2) GitHub Pagesに同梱した共有TOP10
   const bundledAichi = await loadBundledTop10('aichi-top10.json');
   if(bundledAichi){
-    shops=bundledAichi.shops;
+    shops = bundledAichi.shops;
     setTop10Cache('愛知県', shops);
-    currentCity='愛知県';
-    rankingTitle.textContent='愛知県 パン屋 TOP10';
+    currentCity = '愛知県';
+    rankingTitle.textContent = '愛知県 パン屋 TOP10';
     showRanking();
     return;
   }
@@ -860,51 +861,31 @@ taketoyo.onclick = () => selectCity(taketoyo, '武豊町');
     '豊橋市','豊川市','蒲郡市','新城市','田原市','設楽町','東栄町','豊根村'
   ];
 
-  // 既に多くの市町村を見ている端末では、Google APIを54件再取得せず
-  // 手元の市町村キャッシュから愛知県TOP10を即時作成する。
+  // 3) 既に端末へ蓄積された市町村データから即時生成
   const localAichi = buildTop10FromMunicipalityCache(cities);
   if(localAichi.cachedCities >= 20 && localAichi.shops.length >= 10){
     shops = localAichi.shops;
     setTop10Cache('愛知県', shops);
     currentCity = '愛知県';
-    rankingTitle.textContent = `愛知県 パン屋 TOP10`;
+    rankingTitle.textContent = '愛知県 パン屋 TOP10';
     showRanking();
     return;
   }
 
-
-  const allShops = [];
-  aichi.disabled = true;
-  aichi.textContent = '取得中...';
-
-  try {
-    for (const city of cities) {
-      await loadBakeries(city);
-      allShops.push(...shops);
-    }
-
-    const unique = new Map();
-    allShops.forEach(s => {
-      const key = s.name + '|' + s.address;
-      if (!unique.has(key)) unique.set(key, s);
-    });
-
-    shops = [...unique.values()];
-    shops.sort((a, b) =>
-      b.score - a.score || b.reviews - a.reviews
-    );
-
-    setTop10Cache('愛知県', shops);
-
-    currentCity = '愛知県';
-    rankingTitle.textContent = '愛知県 パン屋 TOP10';
-    showRanking();
-  } catch(e) {
-    alert('愛知県ランキングの取得に失敗しました：' + e.message);
-  } finally {
-    aichi.disabled = false;
-    aichi.textContent = '🏆 愛知県 TOP10';
-  }
+  // 4) 大量APIアクセスは自動実行しない。
+  // 共有JSONがまだ無い新規端末では、軽い案内だけ表示する。
+  currentCity = '愛知県';
+  rankingTitle.textContent = '愛知県 パン屋 TOP10';
+  shops = [];
+  showRanking();
+  list.innerHTML = `
+    <div class="card">
+      <strong>愛知県TOP10を準備中です</strong>
+      <div class="muted" style="margin-top:6px;line-height:1.6">
+        APIの大量アクセスを避けるため、愛知県全域のランキングは共有データ方式で更新します。
+        市町村ランキングは通常どおり利用できます。
+      </div>
+    </div>`;
 };
   document.addEventListener('click', (e) => {
   const btn = e.target.closest('button');
@@ -960,7 +941,7 @@ appTitle.onclick = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js?rev=20260830-5').then(reg => {
+  navigator.serviceWorker.register('./sw.js?rev=20260830-6').then(reg => {
     reg.update();
   });
 }
