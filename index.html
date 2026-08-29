@@ -613,6 +613,22 @@ higashiura.onclick = () => selectCity(higashiura, '東浦町');
 minamichita.onclick = () => selectCity(minamichita, '南知多町');
 mihama.onclick = () => selectCity(mihama, '美浜町');
 taketoyo.onclick = () => selectCity(taketoyo, '武豊町');
+
+  // ===== 初回表示高速化：同梱スナップショット =====
+  // aichi-top10.json が存在すれば、新規端末でも愛知県TOP10をAPI大量取得せず表示する。
+  async function loadBundledTop10(fileName){
+    try{
+      const r = await fetch(`./${fileName}?rev=20260830-1`, {cache:'no-store'});
+      if(!r.ok) return null;
+      const data = await r.json();
+      if(!data || !Array.isArray(data.shops) || data.shops.length < 10) return null;
+      return data;
+    }catch(e){
+      console.warn('同梱TOP10読込失敗:', fileName, e);
+      return null;
+    }
+  }
+
   // ===== 広域TOP10完成結果キャッシュ =====
   // 西三河・東三河は24時間、愛知県は7日間そのまま再表示。
   const AREA_TOP10_TTL = 24 * 60 * 60 * 1000;
@@ -643,6 +659,32 @@ taketoyo.onclick = () => selectCity(taketoyo, '武豊町');
     }catch(e){}
   }
 
+  function buildTop10FromMunicipalityCache(cities){
+    const allShops = [];
+    let cachedCities = 0;
+
+    for(const city of cities){
+      const cityShops = readBakeryCache(city);
+      if(cityShops){
+        cachedCities++;
+        allShops.push(...cityShops);
+      }
+    }
+
+    const unique = new Map();
+    allShops.forEach(s => {
+      const key = s.name + '|' + s.address;
+      if(!unique.has(key)) unique.set(key, s);
+    });
+
+    const ranked = [...unique.values()].sort((a,b) =>
+      b.score - a.score || b.reviews - a.reviews
+    );
+
+    return { shops: ranked.slice(0,10), cachedCities };
+  }
+
+
   nishimikawa.onclick = async () => {
   currentVisualKey = '西三河';
   const cachedTop10 = getTop10Cache('西三河', AREA_TOP10_TTL);
@@ -657,6 +699,17 @@ taketoyo.onclick = () => selectCity(taketoyo, '武豊町');
     '豊田市','岡崎市','安城市','刈谷市','西尾市',
     '碧南市','知立市','高浜市','みよし市','幸田町'
   ];
+
+  const localArea = buildTop10FromMunicipalityCache(cities);
+  if(localArea.cachedCities === 10 && localArea.shops.length >= 10){
+    shops = localArea.shops;
+    setTop10Cache('西三河', shops);
+    currentCity = '西三河';
+    rankingTitle.textContent = '西三河 パン屋 TOP10';
+    showRanking();
+    return;
+  }
+
 
   const allShops = [];
 
@@ -710,6 +763,17 @@ taketoyo.onclick = () => selectCity(taketoyo, '武豊町');
     '田原市', '設楽町', '東栄町', '豊根村'
   ];
 
+  const localArea = buildTop10FromMunicipalityCache(cities);
+  if(localArea.cachedCities === 8 && localArea.shops.length >= 10){
+    shops = localArea.shops;
+    setTop10Cache('東三河', shops);
+    currentCity = '東三河';
+    rankingTitle.textContent = '東三河 パン屋 TOP10';
+    showRanking();
+    return;
+  }
+
+
   const allShops = [];
 
   higashimikawa.disabled = true;
@@ -759,6 +823,19 @@ taketoyo.onclick = () => selectCity(taketoyo, '武豊町');
     showRanking();
     return;
   }
+
+  // 新規端末では、まずGitHub Pagesに同梱した愛知県TOP10を読む。
+  // これがあれば54市町村への連続APIアクセスは発生しない。
+  const bundledAichi = await loadBundledTop10('aichi-top10.json');
+  if(bundledAichi){
+    shops=bundledAichi.shops;
+    setTop10Cache('愛知県', shops);
+    currentCity='愛知県';
+    rankingTitle.textContent='愛知県 パン屋 TOP10';
+    showRanking();
+    return;
+  }
+
   const cities = [
     '名古屋市',
     '一宮市','瀬戸市','春日井市','犬山市','江南市','小牧市','稲沢市',
@@ -771,6 +848,19 @@ taketoyo.onclick = () => selectCity(taketoyo, '武豊町');
     '高浜市','みよし市','幸田町',
     '豊橋市','豊川市','蒲郡市','新城市','田原市','設楽町','東栄町','豊根村'
   ];
+
+  // 既に多くの市町村を見ている端末では、Google APIを54件再取得せず
+  // 手元の市町村キャッシュから愛知県TOP10を即時作成する。
+  const localAichi = buildTop10FromMunicipalityCache(cities);
+  if(localAichi.cachedCities >= 20 && localAichi.shops.length >= 10){
+    shops = localAichi.shops;
+    setTop10Cache('愛知県', shops);
+    currentCity = '愛知県';
+    rankingTitle.textContent = `愛知県 パン屋 TOP10`;
+    showRanking();
+    return;
+  }
+
 
   const allShops = [];
   aichi.disabled = true;
@@ -855,7 +945,7 @@ appTitle.onclick = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js?rev=20260830-2').then(reg => {
+  navigator.serviceWorker.register('./sw.js?rev=20260830-4').then(reg => {
     reg.update();
   });
 }
