@@ -266,7 +266,7 @@
     </p>
 
     <p class="muted">
-      店舗情報は取得時点のデータです。営業前には最新情報をご確認ください。
+      は取得時点のデータです。営業前には最新情報をご確認ください。
     </p>
   </div>
 </section>
@@ -761,5 +761,9 @@ appTitle.onclick = () => {
   home.classList.remove('hidden');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };
-if('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?rev=20260828-1');
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./sw.js?rev=20260829-2').then(reg => {
+    reg.update();
+  });
+}
 </script></body></html>
