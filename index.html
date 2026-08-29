@@ -136,6 +136,7 @@
     margin-bottom:2px;
   }
   .shop-source{display:none}
+  .shop-points-empty{border-left:0;padding-left:0}
   .rank-card .rating{
     font-size:11px;
     line-height:1.2;
@@ -373,13 +374,14 @@ function showRanking() {
       : '<span aria-hidden="true">🥐</span>';
     const points = s.highlights.length
       ? s.highlights.map(v=>`<span>・${escapeHtml(v)}</span>`).join('<br>')
-      : '<span>タップで店舗詳細</span>';
+      : '';
     const catchphrase = s.catchphrase
       ? `<span class="shop-catch">${escapeHtml(s.catchphrase)}</span>`
-      : '<span class="shop-catch">店舗情報</span>';
+      : '';
     const attribution = s.photoAttribution
       ? `<span class="shop-source">写真: ${escapeHtml(s.photoAttribution)}</span>` : '';
-    b.innerHTML=`<span class="badge">${i+1}位</span><span class="shop-photo">${photo}</span><span class="shop-main"><strong class="shop-name">${escapeHtml(s.name)}</strong><span class="muted shop-address">${escapeHtml(s.address)}</span></span><span class="shop-points">${catchphrase}${points}${attribution}</span><span class="rating">★${s.rating}<br><small>口コミ ${s.reviews}件</small></span>`;
+    const distinctive = `${catchphrase}${points}${attribution}`;
+    b.innerHTML=`<span class="badge">${i+1}位</span><span class="shop-photo">${photo}</span><span class="shop-main"><strong class="shop-name">${escapeHtml(s.name)}</strong><span class="muted shop-address">${escapeHtml(s.address)}</span></span>${distinctive ? `<span class="shop-points">${distinctive}</span>` : '<span class="shop-points shop-points-empty"></span>'}<span class="rating">★${s.rating}<br><small>口コミ ${s.reviews}件</small></span>`;
     b.onclick=()=>showDetail(i);
     list.appendChild(b);
   });
