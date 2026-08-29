@@ -294,7 +294,39 @@
 let shops = [];
 let currentCity = '';
 let currentVisualKey = '';
+// ===== API節約：24時間ブラウザキャッシュ =====
+const BAKERY_CACHE_VERSION = 'v1';
+const BAKERY_CACHE_TTL = 24 * 60 * 60 * 1000;
+
+function bakeryCacheKey(city){ return `tokai-pan:${BAKERY_CACHE_VERSION}:${city}`; }
+
+function readBakeryCache(city){
+  try{
+    const raw=localStorage.getItem(bakeryCacheKey(city));
+    if(!raw) return null;
+    const c=JSON.parse(raw);
+    if(!c || !Array.isArray(c.shops) || !c.savedAt) return null;
+    if(Date.now()-c.savedAt>BAKERY_CACHE_TTL){
+      localStorage.removeItem(bakeryCacheKey(city));
+      return null;
+    }
+    return c.shops;
+  }catch(e){ console.warn('キャッシュ読込失敗',e); return null; }
+}
+
+function writeBakeryCache(city, cityShops){
+  try{
+    localStorage.setItem(bakeryCacheKey(city),JSON.stringify({savedAt:Date.now(),shops:cityShops}));
+  }catch(e){ console.warn('キャッシュ保存失敗',e); }
+}
+
 async function loadBakeries(city) {
+  const cached=readBakeryCache(city);
+  if(cached){
+    shops=cached;
+    console.log(`[東海パンMAP] ${city}: キャッシュ利用`);
+    return;
+  }
   const response = await fetch(
    'https://tokai-pan-api-873562719766.asia-northeast1.run.app',
     {
@@ -346,6 +378,7 @@ shops = shops.filter(s => !/洋菓子|ケーキ|スイーツ|パティスリー|
   shops.sort((a, b) =>
     b.score - a.score || b.reviews - a.reviews
   );
+  writeBakeryCache(city, shops);
 }
 const home=document.querySelector('#home'),ranking=document.querySelector('#ranking'),detail=document.querySelector('#detail'),list=document.querySelector('#list');
 const byId = id => document.getElementById(id);
@@ -762,7 +795,7 @@ appTitle.onclick = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js?rev=20260829-2').then(reg => {
+  navigator.serviceWorker.register('./sw.js?rev=20260830-1').then(reg => {
     reg.update();
   });
 }
