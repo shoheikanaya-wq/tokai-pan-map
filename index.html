@@ -52,8 +52,8 @@
 }
 
 /* ===== ランキング画面：地域画像 ===== */
-.area-visual{width:100%;margin:2px auto 5px;border-radius:10px;overflow:hidden}
-.area-visual img{display:block;width:100%;height:auto;max-height:120px;object-fit:contain}
+.area-visual{width:100%;margin:2px auto 4px;border-radius:10px;overflow:hidden}
+.area-visual img{display:block;width:100%;height:auto;object-fit:contain}
 #ranking .nav-buttons{margin:0;padding:0;height:auto}
 #ranking .back{margin:0 0 3px 0;padding:5px 10px;font-size:12px}
 #ranking h2{margin:5px 0 3px}
@@ -68,7 +68,7 @@
   #ranking .nav-buttons{margin:0;padding:0}
   #ranking .back{margin:0 0 2px;padding:3px 8px;font-size:10px;border-radius:8px}
   .area-visual{margin:0 auto 3px;border-radius:7px}
-  .area-visual img{width:100%;height:auto;max-height:10vh;object-fit:contain}
+  .area-visual img{width:100%;height:auto;object-fit:contain}
   #ranking h2{font-size:15px;line-height:1.1;margin:3px 0 2px}
   #ranking > .muted{font-size:8px;line-height:1.1;margin:0 0 3px}
   #ranking .card{margin:5px 0;padding:9px 7px}
@@ -153,10 +153,11 @@
 </div>
 </section>
 <section id="ranking" class="hidden">
+  <div class="area-visual" id="areaVisual"></div>
   <div class="nav-buttons">
    <button class="back" id="back">← 戻る</button>
-    
-  </div><div class="area-visual" id="areaVisual"></div><h2 id="rankingTitle">豊田市 パン屋 TOP10</h2><div class="muted">ランキングについて：評価点と口コミ件数をもとに、東海パンMAP独自の方法で順位を算出しています。</div><div id="list"></div></section>
+     
+  </div><h2 id="rankingTitle">豊田市 パン屋 TOP10</h2><div class="muted">ランキングについて：評価点と口コミ件数をもとに、東海パンMAP独自の方法で順位を算出しています。</div><div id="list"></div></section>
 <section id="detail" class="hidden">
   <div class="nav-buttons">
 <button class="back" id="back2">← 戻る</button>
@@ -218,6 +219,7 @@
 
 let shops = [];
 let currentCity = '';
+let currentVisualKey = '';
 async function loadBakeries(city) {
   const response = await fetch(
    'https://tokai-pan-api-873562719766.asia-northeast1.run.app',
@@ -275,10 +277,10 @@ const toyota=byId('toyota'), okazaki=byId('okazaki'), anjo=byId('anjo'), kariya=
 const toyohashi=byId('toyohashi'), toyokawa=byId('toyokawa'), gamagori=byId('gamagori'), shinshiro=byId('shinshiro'), tahara=byId('tahara'), shitara=byId('shitara'), toei=byId('toei'), toyone=byId('toyone');
 const nagoya=byId('nagoya'), ichinomiya=byId('ichinomiya'), seto=byId('seto'), kasugai=byId('kasugai'), inuyama=byId('inuyama'), konan=byId('konan'), komaki=byId('komaki'), inazawa=byId('inazawa'), owariasahi=byId('owariasahi'), iwakura=byId('iwakura'), toyoake=byId('toyoake'), nisshin=byId('nisshin'), kiyosu=byId('kiyosu'), kitanagoya=byId('kitanagoya'), nagakute=byId('nagakute'), togo=byId('togo'), toyoyama=byId('toyoyama'), oguchi=byId('oguchi'), fuso=byId('fuso'), ama=byId('ama'), ooharu=byId('ooharu'), kanie=byId('kanie'), tobishima=byId('tobishima'), tsushima=byId('tsushima'), aisai=byId('aisai'), yatomi=byId('yatomi');
 const handa=byId('handa'), tokoname=byId('tokoname'), tokai=byId('tokai'), obu=byId('obu'), chita=byId('chita'), agui=byId('agui'), higashiura=byId('higashiura'), minamichita=byId('minamichita'), mihama=byId('mihama'), taketoyo=byId('taketoyo');
-const nishimikawa=byId('nishimikawa'), higashimikawa=byId('higashimikawa'), mikawa=byId('mikawa');
+const nishimikawa=byId('nishimikawa'), higashimikawa=byId('higashimikawa'), mikawa=byId('mikawa'), aichi=byId('aichi');
   const areaVisual = document.querySelector('#areaVisual');
 function showRanking() {
-  showAreaVisual(currentCity);
+  showAreaVisual(currentVisualKey || currentCity);
   home.classList.add('hidden');
   detail.classList.add('hidden');
   ranking.classList.remove('hidden');
@@ -301,7 +303,10 @@ function showRanking() {
     '一宮市','瀬戸市','春日井市','犬山市','江南市',
     '小牧市','稲沢市','尾張旭市','岩倉市','豊明市',
     '日進市','清須市','北名古屋市','長久手市',
-    '東郷町','豊山町','大口町','扶桑町',
+    '東郷町','豊山町','大口町','扶桑町'
+  ];
+
+  const ama = [
     'あま市','大治町','蟹江町','飛島村',
     '津島市','愛西市','弥富市'
   ];
@@ -312,7 +317,7 @@ function showRanking() {
   ];
 
   const nishiMikawa = [
-    '豊田市','岡崎市','安城市','刈谷市','西尾市',
+    '岡崎市','安城市','刈谷市','西尾市',
     '碧南市','知立市','高浜市','みよし市','幸田町'
   ];
 
@@ -322,6 +327,8 @@ function showRanking() {
   ];
 
   if (nagoya.includes(city)) return '名古屋';
+  if (city === '豊田市') return '豊田';
+  if (ama.includes(city)) return '海部';
   if (owari.includes(city)) return '尾張';
   if (chita.includes(city)) return '知多';
   if (nishiMikawa.includes(city)) return '西三河';
@@ -330,15 +337,18 @@ function showRanking() {
   return '';
 }
   function showAreaVisual(city) {
-  const area = getAreaName(city);
-
   const images = {
-    '名古屋': 'nagoya.png',
-    '尾張': 'owari.png',
-    '知多': 'chita.png',
+    '愛知県': 'aichi-v2.png',
+    '尾張': 'owari-v2.png',
+    '海部': 'ama-v2.png',
+    '名古屋': 'nagoya-v2.png',
+    '知多': 'chita-v2.png',
+    '豊田': 'toyota-v2.png',
     '西三河': 'nishimikawa-v2.png',
-    '東三河': 'higashimikawa.png'
+    '東三河': 'higashimikawa-v2.png'
   };
+
+  const area = images[city] ? city : getAreaName(city);
 
   if (images[area]) {
     areaVisual.innerHTML = `<img src="${images[area]}" alt="${area}">`;
@@ -402,6 +412,7 @@ if (s.openNow === true) {
 }
   async function selectCity(button, city) {
 currentCity = city;
+currentVisualKey = '';
     try {
     rankingTitle.textContent = `${city} パン屋 TOP10`;
     button.disabled = true;
@@ -473,6 +484,7 @@ minamichita.onclick = () => selectCity(minamichita, '南知多町');
 mihama.onclick = () => selectCity(mihama, '美浜町');
 taketoyo.onclick = () => selectCity(taketoyo, '武豊町');
   nishimikawa.onclick = async () => {
+  currentVisualKey = '西三河';
       const cities = [
     '豊田市','岡崎市','安城市','刈谷市','西尾市',
     '碧南市','知立市','高浜市','みよし市','幸田町'
@@ -502,6 +514,7 @@ taketoyo.onclick = () => selectCity(taketoyo, '武豊町');
       b.score - a.score || b.reviews - a.reviews
     );
 
+    currentCity = '西三河';
     rankingTitle.textContent = '西三河 パン屋 TOP10';
     showRanking();
 
@@ -513,6 +526,7 @@ taketoyo.onclick = () => selectCity(taketoyo, '武豊町');
   }
 };
   higashimikawa.onclick = async () => {
+  currentVisualKey = '東三河';
   const cities = [
     '豊橋市', '豊川市', '蒲郡市', '新城市',
     '田原市', '設楽町', '東栄町', '豊根村'
@@ -542,6 +556,7 @@ taketoyo.onclick = () => selectCity(taketoyo, '武豊町');
       b.score - a.score || b.reviews - a.reviews
     );
 
+    currentCity = '東三河';
     rankingTitle.textContent = '東三河 パン屋 TOP10';
     showRanking();
 
@@ -553,8 +568,56 @@ taketoyo.onclick = () => selectCity(taketoyo, '武豊町');
     higashimikawa.textContent = '🏆 東三河 TOP10';
   }
 };
+
+  aichi.onclick = async () => {
+  currentVisualKey = '愛知県';
+  const cities = [
+    '名古屋市',
+    '一宮市','瀬戸市','春日井市','犬山市','江南市','小牧市','稲沢市',
+    '尾張旭市','岩倉市','豊明市','日進市','清須市','北名古屋市','長久手市',
+    '東郷町','豊山町','大口町','扶桑町',
+    'あま市','大治町','蟹江町','飛島村','津島市','愛西市','弥富市',
+    '半田市','常滑市','東海市','大府市','知多市','阿久比町','東浦町',
+    '南知多町','美浜町','武豊町',
+    '豊田市','岡崎市','安城市','刈谷市','西尾市','碧南市','知立市',
+    '高浜市','みよし市','幸田町',
+    '豊橋市','豊川市','蒲郡市','新城市','田原市','設楽町','東栄町','豊根村'
+  ];
+
+  const allShops = [];
+  aichi.disabled = true;
+  aichi.textContent = '取得中...';
+
+  try {
+    for (const city of cities) {
+      await loadBakeries(city);
+      allShops.push(...shops);
+    }
+
+    const unique = new Map();
+    allShops.forEach(s => {
+      const key = s.name + '|' + s.address;
+      if (!unique.has(key)) unique.set(key, s);
+    });
+
+    shops = [...unique.values()];
+    shops.sort((a, b) =>
+      b.score - a.score || b.reviews - a.reviews
+    );
+
+    currentCity = '愛知県';
+    rankingTitle.textContent = '愛知県 パン屋 TOP10';
+    showRanking();
+  } catch(e) {
+    alert('愛知県ランキングの取得に失敗しました：' + e.message);
+  } finally {
+    aichi.disabled = false;
+    aichi.textContent = '🏆 愛知県 TOP10';
+  }
+};
   
  mikawa.onclick = async () => {
+  currentVisualKey = '__none__';
   const cities = [
     '豊田市','岡崎市','安城市','刈谷市','西尾市',
     '碧南市','知立市','高浜市','みよし市','幸田町',
@@ -586,6 +649,7 @@ taketoyo.onclick = () => selectCity(taketoyo, '武豊町');
       b.score - a.score || b.reviews - a.reviews
     );
 
+    currentCity = '三河';
     rankingTitle.textContent = '三河 パン屋 TOP10';
     showRanking();
 
@@ -610,7 +674,7 @@ taketoyo.onclick = () => selectCity(taketoyo, '武豊町');
 
     // 県を変更したら下位階層の選択も解除
     document.querySelectorAll(
-      '.cities button, #nishimikawa, #higashimikawa, #mikawa'
+      '.cities button, #nishimikawa, #higashimikawa, #mikawa, #aichi'
     ).forEach(b => b.classList.remove('active'));
 
     return;
@@ -621,13 +685,14 @@ taketoyo.onclick = () => selectCity(taketoyo, '武豊町');
     btn.matches('.cities button') ||
     btn.id === 'nishimikawa' ||
     btn.id === 'higashimikawa' ||
-    btn.id === 'mikawa';
+    btn.id === 'mikawa' ||
+    btn.id === 'aichi';
 
   if (!isChild) return;
 
   // 下位階層は全部いったん白に戻す
   document.querySelectorAll(
-    '.cities button, #nishimikawa, #higashimikawa, #mikawa'
+    '.cities button, #nishimikawa, #higashimikawa, #mikawa, #aichi'
   ).forEach(b => b.classList.remove('active'));
 
   // 最後に押したものだけ茶色
