@@ -503,20 +503,33 @@ const nishimikawa=byId('nishimikawa'), higashimikawa=byId('higashimikawa'), aich
 
 // ===== TOP10 おすすめポイント（追加APIなし・事実ベース） =====
 function buildFactCatch(shop){
-  const rating=Number(shop.rating)||0;
-  const reviews=Number(shop.reviews)||0;
-  let catchphrase='';
-  if(rating>=4.6 && reviews>=100) catchphrase='高評価と多くの口コミを集める注目店';
-  else if(rating>=4.5 && reviews>=50) catchphrase='口コミ評価の高い注目ベーカリー';
-  else if(reviews>=300) catchphrase='口コミ数の多い人気ベーカリー';
-  else if(reviews>=100) catchphrase='多くの口コミが寄せられている一軒';
-  else if(rating>=4.4) catchphrase='高い評価を得ているベーカリー';
-  else if(rating>=4.2) catchphrase='安定した評価を集めるベーカリー';
-  else catchphrase='地域のパン屋をランキングからチェック';
+  // 中央欄は口コミ・評価ではなく「店へ行く理由」に限定する。
+  // 現時点で確実に取得済みの営業時間・公式サイト等だけを使用し、
+  // 商品名・駐車場など未取得情報は推測しない。
+  const hours=Array.isArray(shop.openingHours)?shop.openingHours:[];
+  const texts=hours.join(' ');
+  const openingTimes=[...texts.matchAll(/(\d{1,2}):([0-5]\d)/g)]
+    .map(m=>Number(m[1])*60+Number(m[2]))
+    .filter(Number.isFinite);
+  const earliest=openingTimes.length?Math.min(...openingTimes):null;
 
+  let catchphrase='';
   const highlights=[];
-  if(rating>0) highlights.push(`Google評価 ★${rating.toFixed(1)}`);
-  if(reviews>0) highlights.push(`口コミ ${reviews.toLocaleString('ja-JP')}件`);
+
+  if(earliest!==null && earliest<=7*60){
+    catchphrase='朝早くから立ち寄れるベーカリー';
+    highlights.push('朝パン候補');
+  }else if(earliest!==null && earliest<=8*60){
+    catchphrase='朝から楽しめるベーカリー';
+    highlights.push('朝8時までに営業開始');
+  }else if(shop.website){
+    catchphrase='公式サイトのあるベーカリー';
+    highlights.push('公式情報を確認可能');
+  }else{
+    catchphrase='パン屋巡りの候補に';
+  }
+
+  if(shop.openNow===true) highlights.unshift('現在営業中');
   return {catchphrase, highlights:highlights.slice(0,2)};
 }
 
@@ -1010,7 +1023,7 @@ clearRankingCache.onclick=()=>{
 };
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js?rev=20260830-15').then(reg => {
+  navigator.serviceWorker.register('./sw.js?rev=20260830-17').then(reg => {
     reg.update();
   });
 }
