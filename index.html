@@ -306,6 +306,17 @@ button,.back,.detail-action,.review-trigger{
 }
 .rank-card strong,.rank-card .shop-catch,.rank-card .rating{color:#2f271f !important}
 .rank-card .muted{color:#5b5046 !important}
+
+/* ===== 未対応県（岐阜・三重） =====
+   開発前の県は白背景で、現在利用できる愛知県と明確に区別する。 */
+.tabs button:disabled{
+  background:#ffffff !important;
+  border:1px solid #c9c3ba !important;
+  color:#6d6862 !important;
+  opacity:1 !important;
+  box-shadow:none !important;
+  cursor:not-allowed;
+}
 </style></head>
 <body><header><h1 id="appTitle" style="cursor:pointer;">🥐 東海パンMAP</h1><div class="sub">市町村から、おいしいパン屋を探す</div></header><main>
 <section id="home">
@@ -1234,7 +1245,7 @@ clearRankingCache.onclick=()=>{
 };
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js?rev=20260830-27').then(reg => {
+  navigator.serviceWorker.register('./sw.js?rev=20260830-28').then(reg => {
     reg.update();
   });
 }
