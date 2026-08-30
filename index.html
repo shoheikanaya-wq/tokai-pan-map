@@ -1,5 +1,5 @@
 <!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#7a4b20"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon-192.png"><title>東海パンMAP</title><style>
-:root{font-family:system-ui,-apple-system,sans-serif;color:#2d241d;background:#fffaf4}body{margin:0}header{position:sticky;top:0;background:#fffaf4eF;backdrop-filter:blur(8px);padding:16px;border-bottom:1px solid #eadfce}h1{font-size:20px;margin:0}.sub{font-size:12px;color:#776b61;margin-top:3px}main{padding:14px;max-width:720px;margin:auto}.tabs,.cities{display:flex;gap:8px;flex-wrap:wrap}button{font:inherit;border:1px solid #d7c7b4;background:white;border-radius:14px;padding:10px 14px}.active{background:#7a4b20;color:white}.card{background:white;border:1px solid #eadfce;border-radius:16px;padding:14px;margin:10px 0}.rank{display:flex;gap:12px;align-items:center}.badge{min-width:38px;text-align:center;font-weight:700}.grow{flex:1}.rating{font-weight:700}.muted{font-size:12px;color:#776b61}.hidden{display:none}.back{margin-bottom:8px}.notice{background:#f4eadf;border-radius:14px;padding:12px;font-size:13px;margin:12px 0}.app-footer{
+:root{font-family:system-ui,-apple-system,sans-serif;color:#2d241d;background:#fffaf4}body{margin:0;background:#f3efe6;color:#3f372f}header{position:sticky;top:0;background:#f7f0e4ef;backdrop-filter:blur(8px);padding:16px;border-bottom:1px solid #eadfce}h1{font-size:20px;margin:0}.sub{font-size:12px;color:#776b61;margin-top:3px}main{padding:14px;max-width:720px;margin:auto}.tabs,.cities{display:flex;gap:8px;flex-wrap:wrap}button{font:inherit;border:1px solid #d7c7b4;background:#fbf7ef;border-radius:14px;padding:10px 14px}.active{background:#7a4b20;color:white}.card{background:#fbf7ef;border:1px solid #eadfce;border-radius:16px;padding:14px;margin:10px 0}.rank{display:flex;gap:12px;align-items:center}.badge{min-width:38px;text-align:center;font-weight:700}.grow{flex:1}.rating{font-weight:700}.muted{font-size:12px;color:#776b61}.hidden{display:none}.back{margin-bottom:8px}.notice{background:#f4eadf;border-radius:14px;padding:12px;font-size:13px;margin:12px 0}.app-footer{
   margin-top:40px;
   padding:24px 16px;
   text-align:center;
@@ -166,7 +166,7 @@
 .dev-tools button{width:100%;min-height:44px;font-weight:800;border:1px solid #b99b78;border-radius:12px;background:#fff}
 
 .review-trigger{border:0;background:transparent;color:#7a5b3a;text-decoration:underline;padding:4px 6px;cursor:pointer;font:inherit}
-.review-panel{margin:10px 0;padding:10px;border:1px solid #eadfce;border-radius:10px;background:#fffdf8}
+.review-panel{margin:10px 0;padding:10px;border:1px solid #eadfce;border-radius:10px;background:#faf4e9}
 .review-panel-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px}
 .review-close{border:1px solid #d8c8b4;background:#fff;border-radius:8px;padding:5px 9px}
 .review-item{padding:9px 0;border-top:1px solid #eee2d3}
@@ -187,7 +187,7 @@
   color:#4f351f !important;
   letter-spacing:.02em;
 }
-.detail-info-block{margin:9px 0;padding:10px;border-radius:10px;background:#faf7f1}
+.detail-info-block{margin:9px 0;padding:10px;border-radius:10px;background:#f5eee2}
 #dphone{margin:0}
 </style></head>
 <body><header><h1 id="appTitle" style="cursor:pointer;">🥐 東海パンMAP</h1><div class="sub">市町村から、おいしいパン屋を探す</div></header><main>
@@ -533,28 +533,42 @@ const nishimikawa=byId('nishimikawa'), higashimikawa=byId('higashimikawa'), aich
 
 // ===== TOP10 おすすめポイント（追加APIなし・事実ベース） =====
 function buildFactCatch(shop){
-  // 中央欄は「その店へ行く理由」だけ。口コミ評価や公式サイト有無は売り文句にしない。
-  // 現時点では取得済みデータから確実に言える特徴だけ表示し、
-  // 根拠がない場合は無理にキャッチコピーを作らない。
+  // 「その店へ行く理由」。口コミ評価・口コミ件数・公式サイト有無は使わない。
+  // 現在取得済みの営業時間・営業状態・電話・ランキング位置などから
+  // 実用的な情報を必ず1つ以上表示する。
   const hours=Array.isArray(shop.openingHours)?shop.openingHours:[];
   const texts=hours.join(' ');
-  const openingTimes=[...texts.matchAll(/(\d{1,2}):([0-5]\d)/g)]
+  const times=[...texts.matchAll(/(\d{1,2}):([0-5]\d)/g)]
     .map(m=>Number(m[1])*60+Number(m[2]))
     .filter(Number.isFinite);
-  const earliest=openingTimes.length?Math.min(...openingTimes):null;
+  const earliest=times.length?Math.min(...times):null;
+  const latest=times.length?Math.max(...times):null;
 
   let catchphrase='';
   const highlights=[];
 
   if(earliest!==null && earliest<=7*60){
-    catchphrase='朝早くから立ち寄れるベーカリー';
-    highlights.push('朝パンにおすすめ');
+    catchphrase='朝早くから立ち寄れる店';
+    highlights.push('朝パン向き');
   }else if(earliest!==null && earliest<=8*60){
-    catchphrase='朝から楽しめるベーカリー';
-    highlights.push('朝8時までに営業開始');
+    catchphrase='朝から立ち寄りやすい店';
+    highlights.push('8時までに営業開始');
+  }else if(latest!==null && latest>=19*60){
+    catchphrase='夕方以降にも立ち寄りやすい店';
+    highlights.push('19時以降まで営業日あり');
+  }else if(hours.length>=6){
+    catchphrase='営業日を組み込みやすい店';
+    highlights.push('営業時間情報あり');
+  }else if(shop.phone){
+    catchphrase='来店前に店舗へ確認しやすい店';
+    highlights.push('電話情報あり');
+  }else{
+    catchphrase='この地域のTOP10選出店';
+    highlights.push('パン屋巡り候補');
   }
 
   if(shop.openNow===true) highlights.unshift('現在営業中');
+  else if(shop.openNow===false) highlights.unshift('現在営業時間外');
 
   return {catchphrase, highlights:highlights.slice(0,2)};
 }
@@ -1107,7 +1121,7 @@ clearRankingCache.onclick=()=>{
 };
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js?rev=20260830-21').then(reg => {
+  navigator.serviceWorker.register('./sw.js?rev=20260830-22').then(reg => {
     reg.update();
   });
 }
