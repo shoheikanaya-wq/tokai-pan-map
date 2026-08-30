@@ -161,6 +161,9 @@
   .detail-bottom-nav{margin:8px 0 4px}
   .detail-bottom-nav .back{padding:9px 16px;min-height:42px;font-size:14px;border-radius:12px}
 }
+
+.dev-tools{max-width:760px;margin:10px auto;padding:10px 12px;border:1px dashed #b99b78;border-radius:14px;background:rgba(255,255,255,.92)}
+.dev-tools button{width:100%;min-height:44px;font-weight:800;border:1px solid #b99b78;border-radius:12px;background:#fff}
 </style></head>
 <body><header><h1 id="appTitle" style="cursor:pointer;">🥐 東海パンMAP</h1><div class="sub">市町村から、おいしいパン屋を探す</div></header><main>
 <section id="home">
@@ -291,7 +294,7 @@
     <button class="back" id="backDetailBottom">← 戻る</button>
   </div>
 </section>
-  <footer class="app-footer">
+  <div id="devTools" class="dev-tools hidden"><button id="clearRankingCache">🔄 ランキングキャッシュ更新</button><div class="muted">開発用：次回ランキング表示時に最新データを取得</div></div><footer id="appFooter" class="app-footer">
 <div>東海パンMAP</div>
 <div>Ver.1.3 β</div>
   <div>Personal Bakery Discovery Project</div>
@@ -915,8 +918,25 @@ appTitle.onclick = () => {
   home.classList.remove('hidden');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };
+const devTools=byId('devTools'), clearRankingCache=byId('clearRankingCache'), appFooter=byId('appFooter');
+let devTapCount=0, devTapTimer;
+appFooter.addEventListener('click',()=>{
+  devTapCount++; clearTimeout(devTapTimer);
+  devTapTimer=setTimeout(()=>devTapCount=0,2500);
+  if(devTapCount>=5){devTools.classList.toggle('hidden');devTapCount=0;}
+});
+clearRankingCache.onclick=()=>{
+  const keys=[];
+  for(let i=0;i<localStorage.length;i++){
+    const k=localStorage.key(i);
+    if(k&&(k.startsWith('tokai-pan:')||k.startsWith('tokai-pan-top10:')||k.startsWith('tokai-pan-ranking:'))) keys.push(k);
+  }
+  keys.forEach(k=>localStorage.removeItem(k));
+  alert('ランキングキャッシュを削除しました。次回は最新データを取得します。');
+};
+
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js?rev=20260830-9').then(reg => {
+  navigator.serviceWorker.register('./sw.js?rev=20260830-10').then(reg => {
     reg.update();
   });
 }
