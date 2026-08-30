@@ -176,16 +176,15 @@
 .review-note{font-size:10px;line-height:1.35}
 
 .detail-rating-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:8px 0}
-.detail-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+.detail-actions{display:flex;gap:8px;flex-wrap:wrap;margin:9px 0}
 .detail-action{
-  display:flex !important;align-items:center;justify-content:center;gap:8px;
-  min-height:58px;padding:12px 10px;
-  border:2px solid #b88752;border-radius:14px;
-  background:#f1dfc5;
-  box-shadow:0 4px 0 #c9a477,0 6px 12px rgba(90,62,35,.16);
-  text-decoration:none !important;font-weight:900;font-size:17px;line-height:1.2;
+  display:flex !important;align-items:center;justify-content:center;gap:5px;
+  min-height:38px;padding:6px 9px;
+  border:1px solid #c9a477;border-radius:9px;
+  background:#f5eadb;
+  box-shadow:none;
+  text-decoration:none !important;font-weight:800;font-size:13px;line-height:1.15;
   color:#4f351f !important;
-  letter-spacing:.02em;
 }
 .detail-info-block{margin:9px 0;padding:10px;border-radius:10px;background:#f5eee2}
 #dphone{margin:0}
@@ -533,44 +532,12 @@ const nishimikawa=byId('nishimikawa'), higashimikawa=byId('higashimikawa'), aich
 
 // ===== TOP10 おすすめポイント（追加APIなし・事実ベース） =====
 function buildFactCatch(shop){
-  // 「その店へ行く理由」。口コミ評価・口コミ件数・公式サイト有無は使わない。
-  // 現在取得済みの営業時間・営業状態・電話・ランキング位置などから
-  // 実用的な情報を必ず1つ以上表示する。
-  const hours=Array.isArray(shop.openingHours)?shop.openingHours:[];
-  const texts=hours.join(' ');
-  const times=[...texts.matchAll(/(\d{1,2}):([0-5]\d)/g)]
-    .map(m=>Number(m[1])*60+Number(m[2]))
-    .filter(Number.isFinite);
-  const earliest=times.length?Math.min(...times):null;
-  const latest=times.length?Math.max(...times):null;
-
-  let catchphrase='';
-  const highlights=[];
-
-  if(earliest!==null && earliest<=7*60){
-    catchphrase='朝早くから立ち寄れる店';
-    highlights.push('朝パン向き');
-  }else if(earliest!==null && earliest<=8*60){
-    catchphrase='朝から立ち寄りやすい店';
-    highlights.push('8時までに営業開始');
-  }else if(latest!==null && latest>=19*60){
-    catchphrase='夕方以降にも立ち寄りやすい店';
-    highlights.push('19時以降まで営業日あり');
-  }else if(hours.length>=6){
-    catchphrase='営業日を組み込みやすい店';
-    highlights.push('営業時間情報あり');
-  }else if(shop.phone){
-    catchphrase='来店前に店舗へ確認しやすい店';
-    highlights.push('電話情報あり');
-  }else{
-    catchphrase='この地域のTOP10選出店';
-    highlights.push('パン屋巡り候補');
-  }
-
-  if(shop.openNow===true) highlights.unshift('現在営業中');
-  else if(shop.openNow===false) highlights.unshift('現在営業時間外');
-
-  return {catchphrase, highlights:highlights.slice(0,2)};
+  // TOP10中央欄は店舗固有の「売り」専用。
+  // 営業状態・営業時間・口コミ件数・評価・公式サイト有無の定型文は表示しない。
+  // 固有情報が取得できた場合だけ catchphrase / highlights を表示する。
+  const catchphrase = shop.catchphrase || '';
+  const highlights = Array.isArray(shop.highlights) ? shop.highlights.slice(0,2) : [];
+  return {catchphrase, highlights};
 }
 
 function showRanking() {
@@ -1121,7 +1088,7 @@ clearRankingCache.onclick=()=>{
 };
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js?rev=20260830-22').then(reg => {
+  navigator.serviceWorker.register('./sw.js?rev=20260830-23').then(reg => {
     reg.update();
   });
 }
