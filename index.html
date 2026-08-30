@@ -164,6 +164,16 @@
 
 .dev-tools{max-width:760px;margin:10px auto;padding:10px 12px;border:1px dashed #b99b78;border-radius:14px;background:rgba(255,255,255,.92)}
 .dev-tools button{width:100%;min-height:44px;font-weight:800;border:1px solid #b99b78;border-radius:12px;background:#fff}
+
+.review-trigger{border:0;background:transparent;color:#7a5b3a;text-decoration:underline;padding:4px 6px;cursor:pointer;font:inherit}
+.review-panel{margin:10px 0;padding:10px;border:1px solid #eadfce;border-radius:10px;background:#fffdf8}
+.review-panel-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px}
+.review-close{border:1px solid #d8c8b4;background:#fff;border-radius:8px;padding:5px 9px}
+.review-item{padding:9px 0;border-top:1px solid #eee2d3}
+.review-item:first-child{border-top:0}
+.review-meta{font-size:12px;font-weight:700;margin-bottom:4px}
+.review-text{font-size:13px;line-height:1.5;white-space:pre-wrap}
+.review-note{font-size:10px;line-height:1.35}
 </style></head>
 <body><header><h1 id="appTitle" style="cursor:pointer;">🥐 東海パンMAP</h1><div class="sub">市町村から、おいしいパン屋を探す</div></header><main>
 <section id="home">
@@ -267,8 +277,19 @@
 
     <p>
       <strong id="drating"></strong>
-      <span class="muted" id="dreviews"></span>
+      <button id="dreviews" type="button" class="review-trigger"></button>
     </p>
+
+    <div id="reviewPanel" class="review-panel hidden">
+      <div class="review-panel-head">
+        <strong>Google口コミ</strong>
+        <button id="closeReviews" type="button" class="review-close">閉じる</button>
+      </div>
+      <div id="reviewStatus" class="muted"></div>
+      <div id="reviewList"></div>
+      <p><a id="moreReviews" href="#" target="_blank" rel="noopener noreferrer">Google Mapsでもっと口コミを見る</a></p>
+      <div class="muted review-note">Googleから取得した口コミのうち、利用可能な数件を表示しています。</div>
+    </div>
 
     <div id="dopening"></div>
 
@@ -375,6 +396,7 @@ async function fetchWideBakeryCandidates(textQuery) {
   const data = await response.json();
 
   return (data.places || []).map(p => ({
+    placeId: p.id || '',
     name: p.displayName?.text || '名称不明',
     rating: p.rating || 0,
     reviews: p.userRatingCount || 0,
@@ -454,6 +476,7 @@ async function loadBakeries(city) {
   const data = await response.json();
 
   shops = (data.places || []).map(p => ({
+  placeId: p.id || '',
   name: p.displayName?.text || '名称不明',
   rating: p.rating || 0,
   reviews: p.userRatingCount || 0,
@@ -633,6 +656,68 @@ function escapeHtml(value) {
     rankingHero.classList.add('no-visual');
   }
 }
+
+const REVIEW_API='https://tokai-pan-api-873562719766.asia-northeast1.run.app';
+
+function reviewStars(v){
+  const n=Math.max(0,Math.min(5,Math.round(Number(v)||0)));
+  return '★'.repeat(n)+'☆'.repeat(5-n);
+}
+
+async function loadShopReviews(shop){
+  const panel=byId('reviewPanel');
+  const status=byId('reviewStatus');
+  const reviewList=byId('reviewList');
+  const more=byId('moreReviews');
+
+  panel.classList.remove('hidden');
+  reviewList.innerHTML='';
+  status.textContent='口コミを取得中…';
+  more.style.display='none';
+
+  if(!shop.placeId){
+    status.textContent='この店舗の口コミ情報を取得できません。';
+    if(shop.googleMaps){ more.href=shop.googleMaps; more.style.display='inline'; }
+    return;
+  }
+
+  try{
+    const r=await fetch(REVIEW_API+'?placeId='+encodeURIComponent(shop.placeId));
+    const data=await r.json();
+    if(!r.ok) throw new Error(data?.error || ('HTTP '+r.status));
+
+    const reviews=Array.isArray(data.reviews)?data.reviews:[];
+    status.textContent=reviews.length ? `${reviews.length}件を表示` : '表示できる口コミがありません。';
+
+    reviews.forEach(v=>{
+      const item=document.createElement('div');
+      item.className='review-item';
+      const meta=document.createElement('div');
+      meta.className='review-meta';
+      const who=v.authorName || 'Googleユーザー';
+      const when=v.relativePublishTimeDescription || '';
+      meta.textContent=`${reviewStars(v.rating)}  ${who}${when?' ・ '+when:''}`;
+
+      const body=document.createElement('div');
+      body.className='review-text';
+      body.textContent=v.text || '本文なし';
+
+      item.append(meta,body);
+      reviewList.appendChild(item);
+    });
+
+    const safeMaps=data.googleMapsUri || shop.googleMaps || '';
+    if(safeMaps){
+      more.href=safeMaps;
+      more.style.display='inline';
+    }
+  }catch(e){
+    console.error(e);
+    status.textContent='口コミを取得できませんでした。Google Mapsでご確認ください。';
+    if(shop.googleMaps){ more.href=shop.googleMaps; more.style.display='inline'; }
+  }
+}
+
   function showDetail(i) {
   const s = shops[i];
 
@@ -646,7 +731,13 @@ drank.textContent =
   dname.textContent = s.name;
   daddr.textContent = s.address;
   drating.textContent = `★${s.rating}`;
-  dreviews.textContent = `口コミ ${s.reviews}件`;
+  dreviews.textContent = `口コミ ${s.reviews}件 ▼`;
+  dreviews.onclick = () => loadShopReviews(s);
+  byId('reviewPanel').classList.add('hidden');
+  byId('reviewList').innerHTML='';
+  byId('reviewStatus').textContent='';
+  byId('moreReviews').style.display='none';
+  byId('closeReviews').onclick=()=>byId('reviewPanel').classList.add('hidden');
 
  // 営業時間
 if (s.openNow === true) {
@@ -1023,7 +1114,7 @@ clearRankingCache.onclick=()=>{
 };
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js?rev=20260830-17').then(reg => {
+  navigator.serviceWorker.register('./sw.js?rev=20260830-18').then(reg => {
     reg.update();
   });
 }
