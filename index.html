@@ -177,7 +177,15 @@
 
 .detail-rating-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:8px 0}
 .detail-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
-.detail-action{display:flex;align-items:center;justify-content:center;min-height:44px;border:1px solid #d9c7ae;border-radius:10px;background:#fffaf2;text-decoration:none;font-weight:700;color:#5d432d;padding:7px}
+.detail-action{
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  min-height:50px;padding:9px 10px;
+  border:1px solid #d7c0a2;border-radius:12px;
+  background:linear-gradient(180deg,#fffdf8 0%,#f4e7d4 100%);
+  box-shadow:0 2px 6px rgba(90,62,35,.10);
+  text-decoration:none;font-weight:800;font-size:15px;line-height:1.2;
+  color:#5d432d;
+}
 .detail-info-block{margin:9px 0;padding:10px;border-radius:10px;background:#faf7f1}
 #dphone{margin:0}
 </style></head>
@@ -1102,7 +1110,7 @@ clearRankingCache.onclick=()=>{
 };
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js?rev=20260830-19').then(reg => {
+  navigator.serviceWorker.register('./sw.js?rev=20260830-20').then(reg => {
     reg.update();
   });
 }
