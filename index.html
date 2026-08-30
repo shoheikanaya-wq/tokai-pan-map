@@ -500,6 +500,26 @@ const handa=byId('handa'), tokoname=byId('tokoname'), tokai=byId('tokai'), obu=b
 const nishimikawa=byId('nishimikawa'), higashimikawa=byId('higashimikawa'), aichi=byId('aichi');
   const areaVisual = document.querySelector('#areaVisual');
   const rankingHero = document.querySelector('#rankingHero');
+
+// ===== TOP10 おすすめポイント（追加APIなし・事実ベース） =====
+function buildFactCatch(shop){
+  const rating=Number(shop.rating)||0;
+  const reviews=Number(shop.reviews)||0;
+  let catchphrase='';
+  if(rating>=4.6 && reviews>=100) catchphrase='高評価と多くの口コミを集める注目店';
+  else if(rating>=4.5 && reviews>=50) catchphrase='口コミ評価の高い注目ベーカリー';
+  else if(reviews>=300) catchphrase='口コミ数の多い人気ベーカリー';
+  else if(reviews>=100) catchphrase='多くの口コミが寄せられている一軒';
+  else if(rating>=4.4) catchphrase='高い評価を得ているベーカリー';
+  else if(rating>=4.2) catchphrase='安定した評価を集めるベーカリー';
+  else catchphrase='地域のパン屋をランキングからチェック';
+
+  const highlights=[];
+  if(rating>0) highlights.push(`Google評価 ★${rating.toFixed(1)}`);
+  if(reviews>0) highlights.push(`口コミ ${reviews.toLocaleString('ja-JP')}件`);
+  return {catchphrase, highlights:highlights.slice(0,2)};
+}
+
 function showRanking() {
   showAreaVisual(currentVisualKey || currentCity);
   home.classList.add('hidden');
@@ -513,11 +533,15 @@ function showRanking() {
     const photo = s.photo
       ? `<img src="${escapeHtml(s.photo)}" alt="${escapeHtml(s.photoAlt)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade">`
       : '<span aria-hidden="true">🥐</span>';
-    const points = s.highlights.length
-      ? s.highlights.map(v=>`<span>・${escapeHtml(v)}</span>`).join('<br>')
+    const factCopy=buildFactCatch(s);
+    const displayHighlights=(Array.isArray(s.highlights)&&s.highlights.length)
+      ? s.highlights.slice(0,2) : factCopy.highlights;
+    const displayCatch=s.catchphrase || factCopy.catchphrase;
+    const points = displayHighlights.length
+      ? displayHighlights.map(v=>`<span>・${escapeHtml(v)}</span>`).join('<br>')
       : '';
-    const catchphrase = s.catchphrase
-      ? `<span class="shop-catch">${escapeHtml(s.catchphrase)}</span>`
+    const catchphrase = displayCatch
+      ? `<span class="shop-catch">${escapeHtml(displayCatch)}</span>`
       : '';
     const attribution = s.photoAttribution
       ? `<span class="shop-source">写真: ${escapeHtml(s.photoAttribution)}</span>` : '';
@@ -986,7 +1010,7 @@ clearRankingCache.onclick=()=>{
 };
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js?rev=20260830-14').then(reg => {
+  navigator.serviceWorker.register('./sw.js?rev=20260830-15').then(reg => {
     reg.update();
   });
 }
