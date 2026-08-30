@@ -274,6 +274,38 @@ button span,
   border:1px solid #87977f !important;
   text-decoration:none;
 }
+
+/* ===== Wheat / terracotta controls: eye-friendly + high contrast ===== */
+:root{
+  --page-bg:#f3efe6;
+  --rank-bg:#fff9ed;
+  --wheat:#ead3ad;
+  --wheat-border:#b98a55;
+  --ink:#332316;
+  --terra:#9b4f36;
+  --terra-dark:#7f3f2b;
+}
+body{background:var(--page-bg);color:#352d27}
+button,.back,.detail-action,.review-trigger{
+  background:var(--wheat) !important;
+  border-color:var(--wheat-border) !important;
+  color:var(--ink) !important;
+  font-weight:800;
+}
+.active{
+  background:var(--terra) !important;
+  border-color:var(--terra-dark) !important;
+  color:#fffaf2 !important;
+}
+.active *{color:#fffaf2 !important}
+.rank-card{
+  background:var(--rank-bg) !important;
+  border:1.5px solid #c79c64 !important;
+  color:#2f271f !important;
+  box-shadow:0 2px 7px rgba(86,59,32,.13);
+}
+.rank-card strong,.rank-card .shop-catch,.rank-card .rating{color:#2f271f !important}
+.rank-card .muted{color:#5b5046 !important}
 </style></head>
 <body><header><h1 id="appTitle" style="cursor:pointer;">🥐 東海パンMAP</h1><div class="sub">市町村から、おいしいパン屋を探す</div></header><main>
 <section id="home">
@@ -618,12 +650,38 @@ const nishimikawa=byId('nishimikawa'), higashimikawa=byId('higashimikawa'), aich
 
 // ===== TOP10 おすすめポイント（追加APIなし・事実ベース） =====
 function buildFactCatch(shop){
-  // TOP10中央欄は店舗固有の「売り」専用。
-  // 営業状態・営業時間・口コミ件数・評価・公式サイト有無の定型文は表示しない。
-  // 固有情報が取得できた場合だけ catchphrase / highlights を表示する。
-  const catchphrase = shop.catchphrase || '';
-  const highlights = Array.isArray(shop.highlights) ? shop.highlights.slice(0,2) : [];
-  return {catchphrase, highlights};
+  // TOP10中央は店舗固有特色専用。定型の営業時間・評価文は出さない。
+  const labels=Array.isArray(shop.featureLabels)?shop.featureLabels:[];
+  if(!labels.length) return {catchphrase:'特色を確認中…',highlights:[]};
+  return {
+    catchphrase: labels[0],
+    highlights: labels.slice(1,3)
+  };
+}
+
+async function loadShopFeatures(shop){
+  if(!shop?.placeId || shop.featuresLoaded) return false;
+  try{
+    const r=await fetch(REVIEW_API+'?placeId='+encodeURIComponent(shop.placeId)+'&features=1');
+    const data=await r.json();
+    if(!r.ok) throw new Error(data?.error || ('HTTP '+r.status));
+    shop.featureLabels=(Array.isArray(data.features)?data.features:[])
+      .map(v=>v?.label).filter(Boolean);
+    shop.featuresLoaded=true;
+    return true;
+  }catch(e){
+    console.error('features',e);
+    shop.featureLabels=[];
+    shop.featuresLoaded=true;
+    return false;
+  }
+}
+
+async function refreshVisibleFeatures(){
+  const targets=shops.slice(0,10).filter(s=>s.placeId && !s.featuresLoaded);
+  if(!targets.length) return;
+  await Promise.all(targets.map(loadShopFeatures));
+  showRanking();
 }
 
 function showRanking() {
@@ -777,6 +835,7 @@ async function loadShopReviews(shop){
     console.error(e);
     status.textContent='口コミを取得できませんでした。Google Mapsでご確認ください。';
   }
+  setTimeout(refreshVisibleFeatures,0);
 }
 
   function showDetail(i) {
@@ -1174,7 +1233,7 @@ clearRankingCache.onclick=()=>{
 };
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js?rev=20260830-25').then(reg => {
+  navigator.serviceWorker.register('./sw.js?rev=20260830-26').then(reg => {
     reg.update();
   });
 }
