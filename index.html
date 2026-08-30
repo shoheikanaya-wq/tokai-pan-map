@@ -345,6 +345,17 @@ function writeBakeryCache(city, cityShops){
 }
 
 
+
+// ===== 店舗写真 =====
+// Cloud Run側の ?photoName=... エンドポイントから写真を取得する。
+// photo resource nameは短命なので、クロワッサンはフォールバックとして残す。
+function placePhotoUrl(photoName){
+  if(!photoName) return '';
+  return 'https://tokai-pan-api-873562719766.asia-northeast1.run.app'
+    + '?photoName=' + encodeURIComponent(photoName)
+    + '&maxWidthPx=900';
+}
+
 // ===== 広域ランキング高速取得 =====
 // 愛知県全域を市町村ごとに54回検索せず、広域Text Searchを1回だけ実行する。
 async function fetchWideBakeryCandidates(textQuery) {
@@ -375,9 +386,10 @@ async function fetchWideBakeryCandidates(textQuery) {
     phone: p.nationalPhoneNumber || '',
     website: p.websiteUri || '',
     googleMaps: p.googleMapsUri || '',
-    photo: p.photoUrl || p.photoUri || '',
-    photoAlt: p.photoAlt || `${p.displayName?.text || 'パン屋'}の写真`,
-    photoAttribution: p.photoAttribution || p.photoAttributions?.[0]?.displayName || '',
+    photoName: p.photos?.[0]?.name || '',
+    photo: placePhotoUrl(p.photos?.[0]?.name || ''),
+    photoAlt: `${p.displayName?.text || 'パン屋'}の写真`,
+    photoAttribution: p.photos?.[0]?.authorAttributions?.[0]?.displayName || '',
     catchphrase: p.catchphrase || p.editorialSummary?.text || '',
     highlights: Array.isArray(p.highlights) ? p.highlights.slice(0, 2) : [],
     score: ((p.rating || 0) * 20) +
@@ -952,7 +964,7 @@ clearRankingCache.onclick=()=>{
 };
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js?rev=20260830-11').then(reg => {
+  navigator.serviceWorker.register('./sw.js?rev=20260830-12').then(reg => {
     reg.update();
   });
 }
