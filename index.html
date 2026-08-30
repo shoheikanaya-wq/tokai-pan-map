@@ -466,9 +466,10 @@ async function loadBakeries(city) {
   phone: p.nationalPhoneNumber || '',
   website: p.websiteUri || '',
   googleMaps: p.googleMapsUri || '',
-  photo: p.photoUrl || p.photoUri || '',
-  photoAlt: p.photoAlt || `${p.displayName?.text || 'パン屋'}の写真`,
-  photoAttribution: p.photoAttribution || p.photoAttributions?.[0]?.displayName || '',
+  photoName: p.photos?.[0]?.name || '',
+  photo: placePhotoUrl(p.photos?.[0]?.name || ''),
+  photoAlt: `${p.displayName?.text || 'パン屋'}の写真`,
+  photoAttribution: p.photos?.[0]?.authorAttributions?.[0]?.displayName || '',
   catchphrase: p.catchphrase || p.editorialSummary?.text || '',
   highlights: Array.isArray(p.highlights) ? p.highlights.slice(0, 2) : [],
 
@@ -964,7 +965,7 @@ clearRankingCache.onclick=()=>{
 };
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js?rev=20260830-12').then(reg => {
+  navigator.serviceWorker.register('./sw.js?rev=20260830-13').then(reg => {
     reg.update();
   });
 }
