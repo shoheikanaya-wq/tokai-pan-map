@@ -174,6 +174,12 @@
 .review-meta{font-size:12px;font-weight:700;margin-bottom:4px}
 .review-text{font-size:13px;line-height:1.5;white-space:pre-wrap}
 .review-note{font-size:10px;line-height:1.35}
+
+.detail-rating-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:8px 0}
+.detail-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+.detail-action{display:flex;align-items:center;justify-content:center;min-height:44px;border:1px solid #d9c7ae;border-radius:10px;background:#fffaf2;text-decoration:none;font-weight:700;color:#5d432d;padding:7px}
+.detail-info-block{margin:9px 0;padding:10px;border-radius:10px;background:#faf7f1}
+#dphone{margin:0}
 </style></head>
 <body><header><h1 id="appTitle" style="cursor:pointer;">🥐 東海パンMAP</h1><div class="sub">市町村から、おいしいパン屋を探す</div></header><main>
 <section id="home">
@@ -275,10 +281,10 @@
     <h2 id="dname"></h2>
     <p id="daddr"></p>
 
-    <p>
+    <div class="detail-rating-row">
       <strong id="drating"></strong>
       <button id="dreviews" type="button" class="review-trigger"></button>
-    </p>
+    </div>
 
     <div id="reviewPanel" class="review-panel hidden">
       <div class="review-panel-head">
@@ -287,25 +293,17 @@
       </div>
       <div id="reviewStatus" class="muted"></div>
       <div id="reviewList"></div>
-      <p><a id="moreReviews" href="#" target="_blank" rel="noopener noreferrer">Google Mapsでもっと口コミを見る</a></p>
+      
       <div class="muted review-note">Googleから取得した口コミのうち、利用可能な数件を表示しています。</div>
     </div>
 
-    <div id="dopening"></div>
+    <div class="detail-actions">
+      <a id="dmaps" class="detail-action" href="#" target="_blank" rel="noopener">📍 地図を開く</a>
+      <a id="dwebsite" class="detail-action" href="#" target="_blank" rel="noopener">🌐 公式サイト</a>
+    </div>
 
-    <p id="dphone"></p>
-
-    <p>
-      <a id="dwebsite" href="#" target="_blank" rel="noopener">
-        公式サイトを見る
-      </a>
-    </p>
-
-    <p>
-      <a id="dmaps" href="#" target="_blank" rel="noopener">
-        Googleマップで開く
-      </a>
-    </p>
+    <div class="detail-info-block"><div id="dopening"></div></div>
+    <div class="detail-info-block"><p id="dphone"></p></div>
 
     <p class="muted">
       は取得時点のデータです。営業前には最新情報をご確認ください。
@@ -668,16 +666,13 @@ async function loadShopReviews(shop){
   const panel=byId('reviewPanel');
   const status=byId('reviewStatus');
   const reviewList=byId('reviewList');
-  const more=byId('moreReviews');
 
   panel.classList.remove('hidden');
   reviewList.innerHTML='';
   status.textContent='口コミを取得中…';
-  more.style.display='none';
 
   if(!shop.placeId){
     status.textContent='この店舗の口コミ情報を取得できません。';
-    if(shop.googleMaps){ more.href=shop.googleMaps; more.style.display='inline'; }
     return;
   }
 
@@ -706,15 +701,9 @@ async function loadShopReviews(shop){
       reviewList.appendChild(item);
     });
 
-    const safeMaps=data.googleMapsUri || shop.googleMaps || '';
-    if(safeMaps){
-      more.href=safeMaps;
-      more.style.display='inline';
-    }
   }catch(e){
     console.error(e);
     status.textContent='口コミを取得できませんでした。Google Mapsでご確認ください。';
-    if(shop.googleMaps){ more.href=shop.googleMaps; more.style.display='inline'; }
   }
 }
 
@@ -736,7 +725,6 @@ drank.textContent =
   byId('reviewPanel').classList.add('hidden');
   byId('reviewList').innerHTML='';
   byId('reviewStatus').textContent='';
-  byId('moreReviews').style.display='none';
   byId('closeReviews').onclick=()=>byId('reviewPanel').classList.add('hidden');
 
  // 営業時間
@@ -1114,7 +1102,7 @@ clearRankingCache.onclick=()=>{
 };
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js?rev=20260830-18').then(reg => {
+  navigator.serviceWorker.register('./sw.js?rev=20260830-19').then(reg => {
     reg.update();
   });
 }
