@@ -949,23 +949,44 @@ appTitle.onclick = () => {
 };
 const devTools=byId('devTools'), clearRankingCache=byId('clearRankingCache'), appFooter=byId('appFooter');
 let devTapCount=0, devTapTimer;
+
+// 管理機能は誤操作防止のため、5回タップだけでは開かない。
+// PINは「本格認証」ではなく、テスト配布段階の誤操作防止用。
+const ADMIN_PIN = '7319';
+
 appFooter.addEventListener('click',()=>{
-  devTapCount++; clearTimeout(devTapTimer);
+  devTapCount++;
+  clearTimeout(devTapTimer);
   devTapTimer=setTimeout(()=>devTapCount=0,2500);
-  if(devTapCount>=5){devTools.classList.toggle('hidden');devTapCount=0;}
+
+  if(devTapCount>=5){
+    devTapCount=0;
+    const pin=prompt('管理者PINを入力してください');
+    if(pin===null) return;
+    if(pin!==ADMIN_PIN){
+      alert('管理者PINが違います。');
+      devTools.classList.add('hidden');
+      return;
+    }
+    devTools.classList.remove('hidden');
+  }
 });
+
 clearRankingCache.onclick=()=>{
+  if(!confirm('管理者用操作です。ランキングキャッシュを削除しますか？\n次回表示時にAPIから最新データを取得します。')) return;
+
   const keys=[];
   for(let i=0;i<localStorage.length;i++){
     const k=localStorage.key(i);
     if(k&&(k.startsWith('tokai-pan:')||k.startsWith('tokai-pan-top10:')||k.startsWith('tokai-pan-ranking:'))) keys.push(k);
   }
   keys.forEach(k=>localStorage.removeItem(k));
+  devTools.classList.add('hidden');
   alert('ランキングキャッシュを削除しました。次回は最新データを取得します。');
 };
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js?rev=20260830-13').then(reg => {
+  navigator.serviceWorker.register('./sw.js?rev=20260830-14').then(reg => {
     reg.update();
   });
 }
