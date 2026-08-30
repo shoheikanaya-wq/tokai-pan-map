@@ -188,6 +188,92 @@
 }
 .detail-info-block{margin:9px 0;padding:10px;border-radius:10px;background:#f5eee2}
 #dphone{margin:0}
+
+/* ===== Eye-friendly contrast system =====
+   Page = warm ivory, controls = muted sage, TOP10 cards = warm cream.
+   Contrast is intentionally clear without pure white / harsh saturation. */
+:root{
+  --page-bg:#f3efe6;
+  --surface:#fbf7ef;
+  --surface-rank:#fff9ed;
+  --control:#d9e2d3;
+  --control-border:#9eae98;
+  --control-text:#344333;
+  --control-active:#687b62;
+  --control-active-text:#ffffff;
+  --rank-border:#d8b987;
+  --rank-shadow:rgba(92,69,43,.12);
+}
+body{background:var(--page-bg);color:#3f372f}
+button{
+  background:var(--control);
+  border-color:var(--control-border);
+  color:var(--control-text);
+}
+button:hover{filter:brightness(.98)}
+.active{
+  background:var(--control-active) !important;
+  border-color:var(--control-active) !important;
+  color:var(--control-active-text) !important;
+}
+.back{
+  background:#dce4d6 !important;
+  border-color:#9eae98 !important;
+  color:#344333 !important;
+}
+.rank-card{
+  background:var(--surface-rank) !important;
+  border:1.5px solid var(--rank-border) !important;
+  box-shadow:0 2px 7px var(--rank-shadow);
+}
+.rank-card:active{transform:translateY(1px)}
+.detail-action{
+  background:#dbe4d5 !important;
+  border-color:#9aaa94 !important;
+  color:#344333 !important;
+}
+#clearRankingCache{
+  background:#eadcc9;
+  border-color:#c5a77f;
+  color:#59442e;
+}
+
+/* ===== Readability pass: stronger control/text contrast ===== */
+button,
+.back,
+.detail-action{
+  background:#e5eadf !important;
+  border-color:#87977f !important;
+  color:#182218 !important;
+  font-weight:800;
+}
+button .muted,
+button span,
+.rank-card .muted{
+  color:#51483f;
+}
+.active{
+  background:#53684f !important;
+  border-color:#465b43 !important;
+  color:#ffffff !important;
+}
+.active *{color:#ffffff !important}
+.rank-card{
+  background:#fff9ed !important;
+  border-color:#c7a36e !important;
+  color:#2d2924 !important;
+}
+.rank-card strong,
+.rank-card .shop-catch,
+.rank-card .rating{
+  color:#2d2924 !important;
+}
+.review-trigger{
+  background:#e5eadf !important;
+  color:#263426 !important;
+  border:1px solid #87977f !important;
+  text-decoration:none;
+}
 </style></head>
 <body><header><h1 id="appTitle" style="cursor:pointer;">🥐 東海パンMAP</h1><div class="sub">市町村から、おいしいパン屋を探す</div></header><main>
 <section id="home">
@@ -1088,7 +1174,7 @@ clearRankingCache.onclick=()=>{
 };
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js?rev=20260830-23').then(reg => {
+  navigator.serviceWorker.register('./sw.js?rev=20260830-25').then(reg => {
     reg.update();
   });
 }
