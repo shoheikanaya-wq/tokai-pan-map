@@ -178,13 +178,14 @@
 .detail-rating-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:8px 0}
 .detail-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
 .detail-action{
-  display:flex;align-items:center;justify-content:center;gap:6px;
-  min-height:50px;padding:9px 10px;
-  border:1px solid #d7c0a2;border-radius:12px;
-  background:linear-gradient(180deg,#fffdf8 0%,#f4e7d4 100%);
-  box-shadow:0 2px 6px rgba(90,62,35,.10);
-  text-decoration:none;font-weight:800;font-size:15px;line-height:1.2;
-  color:#5d432d;
+  display:flex !important;align-items:center;justify-content:center;gap:8px;
+  min-height:58px;padding:12px 10px;
+  border:2px solid #b88752;border-radius:14px;
+  background:#f1dfc5;
+  box-shadow:0 4px 0 #c9a477,0 6px 12px rgba(90,62,35,.16);
+  text-decoration:none !important;font-weight:900;font-size:17px;line-height:1.2;
+  color:#4f351f !important;
+  letter-spacing:.02em;
 }
 .detail-info-block{margin:9px 0;padding:10px;border-radius:10px;background:#faf7f1}
 #dphone{margin:0}
@@ -532,9 +533,9 @@ const nishimikawa=byId('nishimikawa'), higashimikawa=byId('higashimikawa'), aich
 
 // ===== TOP10 おすすめポイント（追加APIなし・事実ベース） =====
 function buildFactCatch(shop){
-  // 中央欄は口コミ・評価ではなく「店へ行く理由」に限定する。
-  // 現時点で確実に取得済みの営業時間・公式サイト等だけを使用し、
-  // 商品名・駐車場など未取得情報は推測しない。
+  // 中央欄は「その店へ行く理由」だけ。口コミ評価や公式サイト有無は売り文句にしない。
+  // 現時点では取得済みデータから確実に言える特徴だけ表示し、
+  // 根拠がない場合は無理にキャッチコピーを作らない。
   const hours=Array.isArray(shop.openingHours)?shop.openingHours:[];
   const texts=hours.join(' ');
   const openingTimes=[...texts.matchAll(/(\d{1,2}):([0-5]\d)/g)]
@@ -547,18 +548,14 @@ function buildFactCatch(shop){
 
   if(earliest!==null && earliest<=7*60){
     catchphrase='朝早くから立ち寄れるベーカリー';
-    highlights.push('朝パン候補');
+    highlights.push('朝パンにおすすめ');
   }else if(earliest!==null && earliest<=8*60){
     catchphrase='朝から楽しめるベーカリー';
     highlights.push('朝8時までに営業開始');
-  }else if(shop.website){
-    catchphrase='公式サイトのあるベーカリー';
-    highlights.push('公式情報を確認可能');
-  }else{
-    catchphrase='パン屋巡りの候補に';
   }
 
   if(shop.openNow===true) highlights.unshift('現在営業中');
+
   return {catchphrase, highlights:highlights.slice(0,2)};
 }
 
@@ -1110,7 +1107,7 @@ clearRankingCache.onclick=()=>{
 };
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js?rev=20260830-20').then(reg => {
+  navigator.serviceWorker.register('./sw.js?rev=20260830-21').then(reg => {
     reg.update();
   });
 }
