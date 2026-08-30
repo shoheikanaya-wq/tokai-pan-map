@@ -652,6 +652,7 @@ const nishimikawa=byId('nishimikawa'), higashimikawa=byId('higashimikawa'), aich
 function buildFactCatch(shop){
   // TOP10中央は店舗固有特色専用。定型の営業時間・評価文は出さない。
   const labels=Array.isArray(shop.featureLabels)?shop.featureLabels:[];
+  if(shop.featuresLoaded && !labels.length) return {catchphrase:'店舗固有情報を準備中',highlights:[]};
   if(!labels.length) return {catchphrase:'特色を確認中…',highlights:[]};
   return {
     catchphrase: labels[0],
@@ -783,6 +784,7 @@ function escapeHtml(value) {
     areaVisual.style.display = 'none';
     rankingHero.classList.add('no-visual');
   }
+  setTimeout(refreshVisibleFeatures,0);
 }
 
 const REVIEW_API='https://tokai-pan-api-873562719766.asia-northeast1.run.app';
@@ -835,7 +837,6 @@ async function loadShopReviews(shop){
     console.error(e);
     status.textContent='口コミを取得できませんでした。Google Mapsでご確認ください。';
   }
-  setTimeout(refreshVisibleFeatures,0);
 }
 
   function showDetail(i) {
@@ -1233,7 +1234,7 @@ clearRankingCache.onclick=()=>{
 };
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js?rev=20260830-26').then(reg => {
+  navigator.serviceWorker.register('./sw.js?rev=20260830-27').then(reg => {
     reg.update();
   });
 }
