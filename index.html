@@ -324,7 +324,7 @@ button,.back,.detail-action,.review-trigger{
   <img src="tokai-pan-home.png" class="home-visual" alt="東海パンMAP ホーム">
   
   <div class="tabs"><button class="active">愛知県</button><button disabled>岐阜県</button><button disabled>三重県</button></div><div class="notice">
-  <div>Ver.1.3 β</div>：愛知県内の市町村別パン屋ランキング・店舗詳細情報に対応。
+  <div>Ver.1.4</div>：愛知県の市町村別パン屋TOP10に対応。店舗写真・店舗ごとの特色・営業時間・口コミ・地図・公式サイトなどを確認できます。岐阜県・三重県は今後対応予定です。
 </div><h2>西三河</h2><div class="cities"><button id="toyota">豊田市</button><button id="okazaki">岡崎市</button><button id="anjo">安城市</button><button id="kariya">刈谷市</button><button id="nishio">西尾市</button>
 <button id="hekinan">碧南市</button>
 <button id="chiryu">知立市</button>
@@ -452,14 +452,14 @@ button,.back,.detail-action,.review-trigger{
 </section>
   <div id="devTools" class="dev-tools hidden"><button id="clearRankingCache">🔄 ランキングキャッシュ更新</button><div class="muted">開発用：次回ランキング表示時に最新データを取得</div></div><footer id="appFooter" class="app-footer">
 <div>東海パンMAP</div>
-<div>Ver.1.3 β</div>
+<div>Ver.1.4</div>
   <div>Personal Bakery Discovery Project</div>
   <div>Created & Managed by S.K.</div>
   <div>© 2026 S.K. All Rights Reserved.</div>
 
   <details class="version-history">
     <summary>更新履歴を見る</summary>
-    <div>Ver.1.3 β　店舗詳細・営業状況・地域表示・画面移動を改善</div>
+    <div>Ver.1.4　店舗詳細・営業状況・地域表示・画面移動を改善</div>
     <div>Ver.1.2 β　店舗詳細機能を追加</div>
     <div>Ver.1.1 β　市町村・地域ランキングを改善</div>
     <div>Ver.1.0 β　β版公開</div>
@@ -1245,7 +1245,7 @@ clearRankingCache.onclick=()=>{
 };
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js?rev=20260830-28').then(reg => {
+  navigator.serviceWorker.register('./sw.js?rev=20260830-29').then(reg => {
     reg.update();
   });
 }
