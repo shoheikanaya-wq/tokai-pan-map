@@ -388,15 +388,31 @@ async function fetchWideBakeryCandidates(textQuery) {
   .filter(s => s.address.includes('愛知県'));
 }
 
+function normalizeShopText(v=''){
+  return String(v).normalize('NFKC').toLowerCase().replace(/\s+/g,'').trim();
+}
+function isClearlyNonBakery(shop){
+  const name=normalizeShopText(shop.name);
+  const types=Array.isArray(shop.types)?shop.types:[];
+  if(types.includes('bakery')) return false;
+  return /寿司|焼肉|居酒屋|ラーメン|うどん|そば|薬局|ドラッグストア|コンビニ|ホテル|美容院|歯科|病院/.test(name);
+}
 function mergeAndRankShops(...groups) {
-  const unique = new Map();
-  groups.flat().forEach(s => {
-    const key = s.name + '|' + s.address;
-    if (!unique.has(key)) unique.set(key, s);
+  const unique=new Map();
+  groups.flat().forEach(s=>{
+    if(!s||!s.name||!s.address) return;
+    if(!String(s.address).includes('愛知県')) return;
+    if(isClearlyNonBakery(s)) return;
+    const key=normalizeShopText(s.name)+'|'+normalizeShopText(s.address);
+    const old=unique.get(key);
+    if(!old) unique.set(key,s);
+    else{
+      const oi=(old.phone?1:0)+(old.website?1:0)+(old.openingHours?.length?1:0);
+      const ni=(s.phone?1:0)+(s.website?1:0)+(s.openingHours?.length?1:0);
+      if(ni>oi) unique.set(key,s);
+    }
   });
-  return [...unique.values()].sort((a,b) =>
-    b.score - a.score || b.reviews - a.reviews
-  );
+  return [...unique.values()].sort((a,b)=>b.score-a.score||b.reviews-a.reviews);
 }
 
 async function loadBakeries(city) {
@@ -936,7 +952,7 @@ clearRankingCache.onclick=()=>{
 };
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js?rev=20260830-10').then(reg => {
+  navigator.serviceWorker.register('./sw.js?rev=20260830-11').then(reg => {
     reg.update();
   });
 }
