@@ -1,0 +1,46 @@
+name: Patch hours-aware route ordering
+
+on:
+  push:
+    paths:
+      - 'hours-aware-order-trigger.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prefer urgent closing stores earlier in route
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          helper=r'''function routeOrder(a,base){if(!a.length)return a;if(!ok(origin))return a;let left=[...a],out=[],cur=origin,[bh,bm]=base.split(':').map(Number),elapsed=0,speed=$('vehicle').value==='bike'?(location.pathname.includes('autumn')?28:32):(location.pathname.includes('autumn')?26:30);while(left.length){let best=0,bestScore=1e18,bestKm=0;left.forEach((p,i)=>{let q=pt(p),km=ok(q)?dist(cur,q):999,travel=ok(q)?Math.max(2,Math.round(km/speed*60)):999,close=todayClose(p),arr=(bh*60+bm+elapsed+travel)%1440,slack=close==null?9999:close-arr;let urgency=0;if(slack<0)urgency=5000;else if(slack<=30)urgency=-1200;else if(slack<=90)urgency=-650;else if(slack<=180)urgency=-250;let score=km*12+urgency;if(score<bestScore){bestScore=score;best=i;bestKm=km}});let p=left.splice(best,1)[0],q=pt(p);if(ok(q)){elapsed+=Math.max(2,Math.round(bestKm/speed*60));cur=q}out.push(p);elapsed+=location.pathname.includes('autumn')?15:Math.max(5,+($('stay')?.value||10))}return out}'''
+
+          for fn in ['panrush.html','autumn-rush.html']:
+              p=Path(fn); s=p.read_text(encoding='utf-8')
+              if 'function routeOrder(' not in s:
+                  s=s.replace('</script>',helper+'</script>',1)
+              if fn=='panrush.html':
+                  s=s.replace("a=order(a);let stay=", "a=routeOrder(a,departValue()||'06:00');let stay=",1)
+                  note="<div class=\"statusbox small\"><span class=\"warn\">ルート順：</span>距離だけでなく、閉店が近い店舗を前へ回す暫定最適化を使用しています。</div>"
+                  if '閉店が近い店舗を前へ回す暫定最適化' not in s:
+                      s=s.replace('<div class="meter"><div id="meterbar"></div></div>', '<div class="meter"><div id="meterbar"></div></div>'+note,1)
+              else:
+                  s=s.replace("a=order(a).slice(0,need);let elapsed=", "a=routeOrder(a,departValue()||'09:00').slice(0,need);let elapsed=",1)
+                  note="<div class=\"area-note\">ルート順は距離に加えて、閉店が近い店舗を優先する暫定最適化です。</div>"
+                  if '閉店が近い店舗を優先する暫定最適化' not in s:
+                      s=s.replace('<div id="summary" class="summary"></div>', '<div id="summary" class="summary"></div>'+note,1)
+              p.write_text(s,encoding='utf-8')
+          PY
+      - name: Commit update
+        run: |
+          git config user.name "tokai-pan-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add panrush.html autumn-rush.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Reorder Pan Rush routes using closing-time urgency"
+          git push
