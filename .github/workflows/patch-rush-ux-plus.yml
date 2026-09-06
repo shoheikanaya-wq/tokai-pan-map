@@ -1,0 +1,68 @@
+name: Patch Pan Rush UX Plus
+
+on:
+  push:
+    paths:
+      - 'rush-ux-plus-trigger.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply lightweight UX enhancements
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          css='''.ux-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin:9px 0 2px}.ux-step{padding:6px 4px;border-radius:999px;text-align:center;font-size:9px;font-weight:900;border:1px solid currentColor;opacity:.88}.countline{font-size:10px;font-weight:900;margin:7px 0;padding:6px 8px;border-radius:8px;background:rgba(128,128,128,.10)}button:disabled{opacity:.55;cursor:wait}'''
+
+          def common(path, kind):
+              p=Path(path); s=p.read_text(encoding='utf-8')
+              if '.ux-steps{' not in s:
+                  s=s.replace('</style>',css+'</style>',1)
+              row_marker='<div class="row" style="margin-top:9px">'
+              if 'class="ux-steps"' not in s and row_marker in s:
+                  # place after first action row, before status
+                  start=s.find(row_marker)
+                  end=s.find('</div>', start)+6
+                  steps='<div class="ux-steps"><div class="ux-step">1 条件を選ぶ</div><div class="ux-step">2 店を選ぶ</div><div class="ux-step">3 ルート作成</div></div>'
+                  s=s[:end]+steps+s[end:]
+              if 'id="selectedCount"' not in s:
+                  if kind=='autumn':
+                      s=s.replace('<strong>行きたい店を選ぶ</strong><div id="shops">','<strong>行きたい店を選ぶ</strong><div id="selectedCount" class="countline">選択 0店</div><div id="shops">',1)
+                  else:
+                      s=s.replace('<strong>挑戦店舗</strong><div id="challengeInfo" class="small"></div>','<strong>挑戦店舗</strong><div id="challengeInfo" class="small"></div><div id="selectedCount" class="countline">選択 0店</div>',1)
+              helper="""function refreshSelected(){let el=$('selectedCount');if(!el)return;let n=document.querySelectorAll('#shops input:checked').length;el.textContent='選択 '+n+'店';}document.addEventListener('change',e=>{if(e.target&&e.target.matches('#shops input'))refreshSelected()});"""
+              if 'function refreshSelected()' not in s:
+                  s=s.replace('</script>',helper+'</script>',1)
+              # refresh after shop rendering
+              if kind=='autumn':
+                  s=s.replace("$('pick').classList.remove('hidden');$('status').textContent=cfg.name+'の候補 '+shops.length+'店を取得しました。';","$('pick').classList.remove('hidden');refreshSelected();$('status').textContent=cfg.name+'の候補 '+shops.length+'店を取得しました。';",1)
+              else:
+                  s=s.replace("$('pick').classList.remove('hidden');$('status').innerHTML='<span class=\"good\">取得完了。</span> '+cfg.name+' 候補 '+shops.length+'店';","$('pick').classList.remove('hidden');refreshSelected();$('status').innerHTML='<span class=\"good\">取得完了。</span> '+cfg.name+' 候補 '+shops.length+'店';",1)
+                  s=s.replace("document.querySelectorAll('#shops input').forEach((x,i)=>x.checked=i<goal)","document.querySelectorAll('#shops input').forEach((x,i)=>x.checked=i<goal);refreshSelected()",1)
+                  s=s.replace("document.querySelectorAll('#shops input').forEach(x=>x.checked=false)","document.querySelectorAll('#shops input').forEach(x=>x.checked=false);refreshSelected()",1)
+              # remember last-used settings automatically
+              if kind=='autumn':
+                  persist="""const PREF='autumnRushPrefs';function savePrefs(){localStorage.setItem(PREF,JSON.stringify({area:$('area').value,course:$('course').value,vehicle:$('vehicle').value,h:$('departHour').value,m:$('departMinute').value}))}function loadPrefs(){try{let p=JSON.parse(localStorage.getItem(PREF)||'{}');if(p.area)$('area').value=p.area;if(p.course)$('course').value=p.course;if(p.vehicle)$('vehicle').value=p.vehicle;if(p.h)$('departHour').value=p.h;if(p.m)$('departMinute').value=p.m}catch(e){}}['area','course','vehicle','departHour','departMinute'].forEach(id=>$(id).addEventListener('change',savePrefs));loadPrefs();"""
+              else:
+                  persist="""const PREF='panRushPrefs';function savePrefs(){localStorage.setItem(PREF,JSON.stringify({challenge:$('challenge').value,vehicle:$('vehicle').value,stay:$('stay').value,h:$('departHour').value,m:$('departMinute').value}))}function loadPrefs(){try{let p=JSON.parse(localStorage.getItem(PREF)||'{}');if(p.challenge)$('challenge').value=p.challenge;if(p.vehicle)$('vehicle').value=p.vehicle;if(p.stay)$('stay').value=p.stay;if(p.h)$('departHour').value=p.h;if(p.m)$('departMinute').value=p.m}catch(e){}}['challenge','vehicle','stay','departHour','departMinute'].forEach(id=>$(id).addEventListener('change',savePrefs));loadPrefs();"""
+              if "const PREF='" not in s:
+                  s=s.replace('</script>',persist+'</script>',1)
+              p.write_text(s,encoding='utf-8')
+
+          common('autumn-rush.html','autumn')
+          common('panrush.html','main')
+          PY
+      - name: Commit UX improvements
+        run: |
+          git config user.name "tokai-pan-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add panrush.html autumn-rush.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Add lightweight guided UX and remember settings"
+          git push
