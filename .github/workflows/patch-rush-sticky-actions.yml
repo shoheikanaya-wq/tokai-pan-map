@@ -1,0 +1,63 @@
+name: Patch Pan Rush Sticky Actions
+
+on:
+  push:
+    paths:
+      - 'rush-sticky-trigger.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add mobile sticky actions and loading feedback
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          css='''\n/* ===== Lightweight travel/e-commerce style action UX ===== */\n.sticky-action{display:none}\n.loading-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:currentColor;animation:pulse 1s infinite alternate;margin-right:6px}\n@keyframes pulse{to{opacity:.25}}\n@media(max-width:600px){body{padding-bottom:70px}.sticky-action{position:fixed;left:8px;right:8px;bottom:8px;z-index:40;display:flex;align-items:center;gap:8px;padding:8px;background:rgba(255,250,244,.96);backdrop-filter:blur(10px);border:1px solid #c9a477;border-radius:14px;box-shadow:0 5px 20px rgba(40,25,10,.22)}.sticky-action .sticky-info{flex:1;min-width:0;font-size:10px;font-weight:900;line-height:1.25}.sticky-action button{width:auto;min-width:132px;min-height:44px;margin:0}.sticky-action.hidden{display:none!important}}\n'''
+
+          def patch(path, autumn=False):
+              p=Path(path); s=p.read_text(encoding='utf-8')
+              if 'Lightweight travel/e-commerce style action UX' not in s:
+                  s=s.replace('</style>',css+'</style>',1)
+              anchor='</main>'
+              sticky='''<div id="stickyAction" class="sticky-action hidden"><div class="sticky-info"><div id="stickyTitle">店舗を選択</div><div id="stickyCount">0店選択</div></div><button id="stickyPlan" class="primary">ルート作成</button></div>'''
+              if 'id="stickyAction"' not in s:
+                  s=s.replace(anchor,sticky+anchor,1)
+              helper="""function syncSticky(){let bar=$('stickyAction'),pick=$('pick'),res=$('result');if(!bar||!pick)return;let visible=!pick.classList.contains('hidden')&&(res?res.classList.contains('hidden'):true);bar.classList.toggle('hidden',!visible);let n=document.querySelectorAll('#shops input:checked').length;if($('stickyCount'))$('stickyCount').textContent=n+'店選択';}if($('stickyPlan'))$('stickyPlan').onclick=()=>$('plan').click();document.addEventListener('change',e=>{if(e.target&&e.target.matches('#shops input'))syncSticky()});"""
+              if 'function syncSticky()' not in s:
+                  s=s.replace('</script>',helper+'</script>',1)
+              # Hook after pick is shown and after result is shown
+              s=s.replace("$('pick').classList.remove('hidden');refreshSelected();", "$('pick').classList.remove('hidden');refreshSelected();syncSticky();",1)
+              s=s.replace("$('result').classList.remove('hidden');$('result').scrollIntoView({behavior:'smooth'})", "$('result').classList.remove('hidden');syncSticky();$('result').scrollIntoView({behavior:'smooth'})",1)
+              # Add loading feedback around data fetch button, resiliently
+              if "function setLoadState(" not in s:
+                  label='対象パン屋を探す' if autumn else '候補店を一括取得'
+                  fn=f"function setLoadState(on){{let b=$('load');if(!b)return;b.disabled=on;b.innerHTML=on?'<span class=\\\"loading-dot\\\"></span>取得中…':'{label}'}}"
+                  s=s.replace('</script>',fn+'</script>',1)
+                  # after onclick opening
+                  s=s.replace("$('load').onclick=async()=>{", "$('load').onclick=async()=>{setLoadState(true);",1)
+                  # append final unlock with setTimeout to cover all branches
+                  s=s.replace("</script>", "setTimeout(()=>setLoadState(false),0);</script>",1)
+                  # ensure state resets after successful candidate rendering more deterministically
+                  if autumn:
+                      s=s.replace("$('status').textContent=cfg.name+'の候補 '+shops.length+'店を取得しました。';", "$('status').textContent=cfg.name+'の候補 '+shops.length+'店を取得しました。';setLoadState(false);",1)
+                  else:
+                      s=s.replace("$('status').innerHTML='<span class=\"good\">取得完了。</span> '+cfg.name+' 候補 '+shops.length+'店';", "$('status').innerHTML='<span class=\"good\">取得完了。</span> '+cfg.name+' 候補 '+shops.length+'店';setLoadState(false);",1)
+              p.write_text(s,encoding='utf-8')
+
+          patch('autumn-rush.html',True)
+          patch('panrush.html',False)
+          PY
+      - name: Commit enhancement
+        run: |
+          git config user.name "tokai-pan-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add panrush.html autumn-rush.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Add mobile sticky route actions and loading feedback"
+          git push
