@@ -1,0 +1,47 @@
+name: Patch Pan Rush strategy simulation
+
+on:
+  push:
+    paths:
+      - 'panrush-strategy-trigger.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add 24h strategy simulator
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('panrush.html'); s=p.read_text(encoding='utf-8')
+
+          css='''.strategy{margin:9px 0;padding:10px;border-radius:11px;background:#17110d;border:1px solid #735239}.strategy h3{margin:0 0 7px;font-size:13px}.strategy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.strategy-card{padding:8px;border-radius:9px;background:#2b2119;border:1px solid #5d4432;text-align:center}.strategy-card b{display:block;font-size:17px;line-height:1.15}.strategy-card small{font-size:8px;color:#cbb49e}.strategy-tip{margin-top:7px;font-size:10px;line-height:1.5;color:#dfc5a8}@media(max-width:560px){.strategy-grid{grid-template-columns:1fr 1fr}.strategy-card:last-child{grid-column:1/-1}}'''
+          if '.strategy{' not in s:
+              s=s.replace('</style>',css+'</style>',1)
+
+          block='<div id="strategy" class="strategy"><h3>⚙ 攻略シミュレーション</h3><div id="strategyBody" class="small">ルート作成後に概算を表示します。</div></div>'
+          if 'id="strategy"' not in s:
+              s=s.replace('<div class="meter"><div id="meterbar"></div></div>', '<div class="meter"><div id="meterbar"></div></div>'+block,1)
+
+          helper=r'''function legKm(a,b){if(!ok(a)||!ok(b))return null;return dist(a,b)}function bestRemovalSaving(a,stay,speed){if(!ok(origin)||a.length<2)return null;let best=null;for(let i=0;i<a.length;i++){let prev=i===0?origin:pt(a[i-1]),cur=pt(a[i]),next=i===a.length-1?null:pt(a[i+1]);if(!ok(prev)||!ok(cur))continue;let before=legKm(prev,cur),after=0;if(next&&ok(next)){before+=legKm(cur,next);after=legKm(prev,next)}let km=Math.max(0,before-after),mins=Math.round(km/speed*60)+stay;if(!best||mins>best.mins)best={name:a[i].displayName?.text||'店舗',mins,km}}return best}function updateStrategy(a,elapsed,total,cfg,stay){let box=$('strategyBody');if(!box||!a.length)return;let remain=Math.max(0,1440-elapsed),avg=Math.max(1,elapsed/a.length),extra=Math.max(0,Math.floor(remain/avg)),goalGap=Math.max(0,cfg.goal-a.length),speed=$('vehicle').value==='bike'?32:30,cut=bestRemovalSaving(a,stay,speed),risk=a.reduce((n,p,i)=>{let r=arrivalRisk(p,departValue()||'06:00',Math.round(i*avg));return n+(r.cls==='risk-bad'||r.cls==='risk-warn'?1:0)},0);let pace=elapsed<=1440?'<span class="good">24時間内ペース</span>':'<span class="danger">24時間超過ペース</span>';let addText=remain>0?('概算であと '+extra+'店ぶんの時間余力'):'追加余力なし';let cutText=cut?('時短候補：'+esc(cut.name)+' を外すと約 '+cut.mins+'分短縮見込み'):'時短候補は現在地取得後に算出';box.innerHTML='<div class="strategy-grid"><div class="strategy-card"><small>現在</small><b>'+a.length+'店</b><small>'+pace+'</small></div><div class="strategy-card"><small>残り時間</small><b>'+Math.floor(remain/60)+'h '+(remain%60)+'m</b><small>'+addText+'</small></div><div class="strategy-card"><small>目標差</small><b>'+(goalGap?('あと'+goalGap):'達成')+'</b><small>閉店注意 '+risk+'店</small></div></div><div class="strategy-tip">'+cutText+'。すべて直線距離・平均ペースによる概算で、渋滞・休憩・駐車・売切れは未反映です。</div>'}'''
+          if 'function updateStrategy(' not in s:
+              s=s.replace('</script>',helper+'</script>',1)
+
+          marker="$('meterbar').style.width=Math.min(100,elapsed/1440*100)+'%';"
+          if 'updateStrategy(a,elapsed,total,cfg,stay);' not in s and marker in s:
+              s=s.replace(marker,marker+'updateStrategy(a,elapsed,total,cfg,stay);',1)
+
+          p.write_text(s,encoding='utf-8')
+          PY
+      - name: Commit update
+        run: |
+          git config user.name "tokai-pan-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add panrush.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Add 24-hour Pan Rush strategy simulator"
+          git push
