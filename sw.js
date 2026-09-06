@@ -1,7 +1,9 @@
-const CACHE_NAME = 'tokai-pan-v2';
+const CACHE_NAME = 'tokai-pan-v3';
 
 const FILES = [
   './',
+  './panrush.html',
+  './autumn-rush.html',
   './manifest.webmanifest',
   './icon-192.png',
   './icon-512.png'
