@@ -1,0 +1,49 @@
+name: Patch arrival vs closing risk
+
+on:
+  push:
+    paths:
+      - 'arrival-closing-trigger.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add arrival and closing-time risk hints
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          css='''.risk-ok{color:#4f8a54;font-weight:900}.risk-warn{color:#c98718;font-weight:900}.risk-bad{color:#c34d3e;font-weight:900}.risk-unknown{opacity:.72;font-weight:800}.risk-chip{display:inline-block;margin-left:5px;padding:2px 6px;border-radius:999px;border:1px solid currentColor;font-size:9px;line-height:1.2}'''
+
+          helper=r'''function parseMinutesText(t){if(!t)return null;let m=String(t).match(/(\d{1,2})[:：](\d{2})/);return m?(+m[1]*60 + +m[2]):null}function todayClose(p){let w=p.currentOpeningHours?.weekdayDescriptions||p.regularOpeningHours?.weekdayDescriptions||[];if(!w.length)return null;let d=new Date().getDay(),idx=(d+6)%7,line=w[idx]||'';if(/24\s*時間|24 hours/i.test(line))return 24*60;let parts=line.split(/[–—-]/);if(parts.length<2)return null;return parseMinutesText(parts[parts.length-1])}function arrivalRisk(p,base,elapsed){let c=todayClose(p);if(c==null)return{txt:'営業時間要確認',cls:'risk-unknown'};let [h,m]=base.split(':').map(Number),arr=(h*60+m+elapsed)%1440,delta=c-arr;if(delta<0)return{txt:'閉店後の可能性',cls:'risk-bad'};if(delta<=30)return{txt:'閉店まで30分以内',cls:'risk-warn'};return{txt:'営業内見込み',cls:'risk-ok'}}'''
+
+          def patch(path, autumn=False):
+              p=Path(path); s=p.read_text(encoding='utf-8')
+              if '.risk-ok{' not in s:
+                  s=s.replace('</style>',css+'</style>',1)
+              if 'function arrivalRisk(' not in s:
+                  s=s.replace('</script>',helper+'</script>',1)
+              old="html+='<div class=\"route\"><b>'+(i+1)+'. '+esc(p.displayName?.text)+'</b><div class=\"small\">'+esc(p._city)+' ／ 到着目安 '+tm(base,elapsed)+(km!=null?' ／ 約'+km.toFixed(1)+'km':'')+' ／ 滞在15分</div></div>';"
+              new="let rr=arrivalRisk(p,base,elapsed);html+='<div class=\"route\"><b>'+(i+1)+'. '+esc(p.displayName?.text)+'</b><div class=\"small\">'+esc(p._city)+' ／ 到着目安 '+tm(base,elapsed)+(km!=null?' ／ 約'+km.toFixed(1)+'km':'')+' ／ 滞在15分 <span class=\"risk-chip '+rr.cls+'\">'+rr.txt+'</span></div></div>';"
+              s=s.replace(old,new,1)
+              old2="html+='<div class=\"route\"><strong>'+(i+1)+'. '+esc(p.displayName?.text)+'</strong><div class=\"small\">'+esc(p._city)+' ／ <span class=\"time\">到着 '+tm(base,elapsed)+'</span>'+(km!=null?' ／ 約'+km.toFixed(1)+'km':'')+' ／ 滞在 '+stay+'分</div></div>';"
+              new2="let rr=arrivalRisk(p,base,elapsed);html+='<div class=\"route\"><strong>'+(i+1)+'. '+esc(p.displayName?.text)+'</strong><div class=\"small\">'+esc(p._city)+' ／ <span class=\"time\">到着 '+tm(base,elapsed)+'</span>'+(km!=null?' ／ 約'+km.toFixed(1)+'km':'')+' ／ 滞在 '+stay+'分 <span class=\"risk-chip '+rr.cls+'\">'+rr.txt+'</span></div></div>';"
+              s=s.replace(old2,new2,1)
+              p.write_text(s,encoding='utf-8')
+
+          patch('autumn-rush.html',True)
+          patch('panrush.html',False)
+          PY
+      - name: Commit update
+        run: |
+          git config user.name "tokai-pan-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add panrush.html autumn-rush.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Show arrival versus closing-time risk hints"
+          git push
