@@ -1,0 +1,67 @@
+name: Patch Pan Rush Opening Status
+
+on:
+  push:
+    paths:
+      - 'rush-opening-trigger.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add opening status priority and badges
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          CSS='''\n/* ===== Opening-status assist ===== */\n.quickcheck{display:flex;align-items:center;gap:7px;margin-top:8px;padding:7px 9px;border-radius:9px;background:rgba(128,128,128,.10);font-size:10px;font-weight:900}.quickcheck input{width:18px;height:18px;min-height:0;margin:0}.open-badge{display:inline-block;padding:2px 6px;border-radius:999px;font-size:8px;font-weight:1000;white-space:nowrap}.open-yes{background:#dcefd7;color:#285c2c;border:1px solid #8fbd8b}.open-no{background:#f3dddd;color:#7f2d2d;border:1px solid #d19b9b}.open-unknown{background:#eee8df;color:#76685b;border:1px solid #c9b9a8}\n'''
+
+          HELPERS="""function openState(p){let vals=[p?.currentOpeningHours?.openNow,p?.regularOpeningHours?.openNow,p?.openingHours?.openNow,p?.openNow];for(let v of vals){if(v===true||v===false)return v}return null}function openBadge(p){let v=openState(p);return v===true?'<span class=\\\"open-badge open-yes\\\">営業中</span>':v===false?'<span class=\\\"open-badge open-no\\\">営業時間外</span>':'<span class=\\\"open-badge open-unknown\\\">営業情報なし</span>'}function openRank(p){let v=openState(p);return v===true?2:v===null?1:0}\n"""
+
+          def patch(path, autumn=False):
+              p=Path(path); s=p.read_text(encoding='utf-8')
+              if 'Opening-status assist' not in s:
+                  s=s.replace('</style>',CSS+'</style>',1)
+              # Add the optional preference beneath the first control grid.
+              grid_end='</div><div class="row" style="margin-top:9px">'
+              if 'id="openFirst"' not in s and grid_end in s:
+                  s=s.replace(grid_end,'</div><label class="quickcheck"><input id="openFirst" type="checkbox" checked> 営業中の店舗を優先して候補表示</label><div class="row" style="margin-top:9px">',1)
+              if 'function openState(p)' not in s:
+                  s=s.replace("function score(p){",HELPERS+"function score(p){",1)
+              # Prioritize open shops when the API exposes an openNow field, otherwise preserve score ordering.
+              old=".sort((a,b)=>score(b)-score(a)||((b.userRatingCount||0)-(a.userRatingCount||0)))"
+              new=".sort((a,b)=>(($('openFirst')?.checked?openRank(b)-openRank(a):0)||score(b)-score(a)||((b.userRatingCount||0)-(a.userRatingCount||0))))"
+              s=s.replace(old,new)
+              # Candidate badges.
+              if autumn:
+                  s=s.replace("<span class=\"tag\">候補</span></label>'", "'+openBadge(p)+'<span class=\"tag\">候補</span></label>'",1)
+                  s=s.replace("esc(p._city)+' ／ 到着目安 '", "esc(p._city)+' ／ '+openBadge(p)+' ／ 到着目安 '",1)
+              else:
+                  s=s.replace("<span class=\"tag\">'+(i+1)+'</span></label>'", "'+openBadge(p)+'<span class=\"tag\">'+(i+1)+'</span></label>'",1)
+                  s=s.replace("esc(p._city)+' ／ <span class=\"time\">到着 '", "esc(p._city)+' ／ '+openBadge(p)+' ／ <span class=\"time\">到着 '",1)
+              # Remember the preference with the other settings, if preference persistence exists.
+              if autumn:
+                  s=s.replace("vehicle:$('vehicle').value,h:$('departHour').value,m:$('departMinute').value", "vehicle:$('vehicle').value,openFirst:$('openFirst').checked,h:$('departHour').value,m:$('departMinute').value",1)
+                  s=s.replace("if(p.vehicle)$('vehicle').value=p.vehicle;", "if(p.vehicle)$('vehicle').value=p.vehicle;if(typeof p.openFirst==='boolean')$('openFirst').checked=p.openFirst;",1)
+                  s=s.replace("['area','course','vehicle','departHour','departMinute']", "['area','course','vehicle','openFirst','departHour','departMinute']",1)
+              else:
+                  s=s.replace("stay:$('stay').value,h:$('departHour').value,m:$('departMinute').value", "stay:$('stay').value,openFirst:$('openFirst').checked,h:$('departHour').value,m:$('departMinute').value",1)
+                  s=s.replace("if(p.stay)$('stay').value=p.stay;", "if(p.stay)$('stay').value=p.stay;if(typeof p.openFirst==='boolean')$('openFirst').checked=p.openFirst;",1)
+                  s=s.replace("['challenge','vehicle','stay','departHour','departMinute']", "['challenge','vehicle','stay','openFirst','departHour','departMinute']",1)
+              p.write_text(s,encoding='utf-8')
+
+          patch('autumn-rush.html',True)
+          patch('panrush.html',False)
+          PY
+      - name: Commit opening-status UX
+        run: |
+          git config user.name "tokai-pan-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add panrush.html autumn-rush.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Prioritize open bakeries and show opening status badges"
+          git push
