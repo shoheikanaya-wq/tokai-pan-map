@@ -1,0 +1,42 @@
+name: Patch home with Pan Rush links
+
+on:
+  push:
+    paths:
+      - 'home-patch-trigger.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  patch-home:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch index.html safely
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+          marker = '<img src="tokai-pan-home.png" class="home-visual" alt="東海パンMAP ホーム">'
+          block = '''\n  <div class="rush-entry-grid" id="rushEntryGrid">\n    <a class="rush-entry rush-main" href="panrush.html?v=20260906-3">\n      <span class="rush-icon">⚡</span><span><strong>パンラッシュ</strong><small>愛知県全域・24時間耐久</small></span>\n    </a>\n    <a class="rush-entry rush-autumn" href="autumn-rush.html?v=20260906-3">\n      <span class="rush-icon">🍁</span><span><strong>秋のパンラッシュ</strong><small>三河限定・季節ライト版</small></span>\n    </a>\n  </div>'''
+          css = '''\n/* ===== Pan Rush home entry ===== */\n.rush-entry-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:7px 0 8px}\n.rush-entry{display:flex;align-items:center;gap:9px;min-height:58px;padding:9px 11px;border-radius:13px;text-decoration:none;font-weight:900;box-shadow:0 2px 5px rgba(80,50,25,.14)}\n.rush-entry strong{display:block;font-size:14px;line-height:1.15}\n.rush-entry small{display:block;margin-top:3px;font-size:9px;line-height:1.2;font-weight:700}\n.rush-icon{font-size:23px;flex:0 0 auto}\n.rush-main{background:#2b211a;color:#fff8ee;border:2px solid #a66a38}\n.rush-main small{color:#e5c7a8}\n.rush-autumn{background:#fffdf8;color:#b5232e;border:2px solid #b5232e;box-shadow:inset 0 -4px 0 #174c88,0 2px 5px rgba(80,50,25,.14)}\n.rush-autumn small{color:#174c88}\n@media(max-width:600px){.rush-entry-grid{gap:5px;margin:4px 0 5px}.rush-entry{min-height:48px;padding:6px 7px;border-radius:9px;gap:6px}.rush-entry strong{font-size:11px}.rush-entry small{font-size:7px;margin-top:2px}.rush-icon{font-size:18px}}\n'''
+          if 'id="rushEntryGrid"' not in s:
+              if marker not in s:
+                  raise SystemExit('home image marker not found')
+              s = s.replace(marker, marker + block, 1)
+          if '/* ===== Pan Rush home entry ===== */' not in s:
+              s = s.replace('</style>', css + '\n</style>', 1)
+          s = s.replace('<div>Ver.1.4</div>：愛知県の市町村別パン屋TOP10に対応。', '<div>Ver.1.5</div>：パンラッシュ／秋のパンラッシュを追加。愛知県の市町村別パン屋TOP10に対応。', 1)
+          s = s.replace('<div>Ver.1.4</div>', '<div>Ver.1.5</div>', 1)
+          p.write_text(s, encoding='utf-8')
+          PY
+      - name: Commit home update
+        run: |
+          git config user.name "tokai-pan-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Add Pan Rush and Autumn Pan Rush home buttons"
+          git push
