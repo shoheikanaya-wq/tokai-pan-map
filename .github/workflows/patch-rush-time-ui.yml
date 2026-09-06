@@ -1,0 +1,52 @@
+name: Patch Pan Rush time UI
+
+on:
+  push:
+    paths:
+      - 'rush-time-patch-trigger.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replace native time picker with app selects
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          def patch(path, default_time):
+              p=Path(path); s=p.read_text(encoding='utf-8')
+              s=s.replace('<label>出発時刻<input id="depart" type="time"></label>', '<label>出発時刻<div class="timepick"><select id="departHour"></select><span>時</span><select id="departMinute"></select><span>分</span></div></label>')
+              s=s.replace('<label>スタート時刻<input id="depart" type="time"></label>', '<label>スタート時刻<div class="timepick"><select id="departHour"></select><span>時</span><select id="departMinute"></select><span>分</span></div></label>')
+              css='.timepick{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto;gap:5px;align-items:center;margin-top:4px}.timepick select{margin-top:0;min-width:0}.timepick span{font-size:11px;font-weight:900;white-space:nowrap}'
+              if '.timepick{' not in s:
+                  s=s.replace('</style>',css+'</style>',1)
+              if "$('depart').value=" in s:
+                  import re
+                  s=re.sub(r"let (d|now)=new Date\(\);\1\.setMinutes\(\1\.getMinutes\(\)\+5\);\$\('depart'\)\.value=String\(\1\.getHours\(\)\)\.padStart\(2,'0'\)\+'\:'+String\(\1\.getMinutes\(\)\)\.padStart\(2,'0'\);", "let now=new Date();now.setMinutes(now.getMinutes()+5);function initDepart(){let h=$('departHour'),m=$('departMinute');h.innerHTML=Array.from({length:24},(_,i)=>'<option value=\\\"'+String(i).padStart(2,'0')+'\\\">'+String(i).padStart(2,'0')+'</option>').join('');m.innerHTML=Array.from({length:12},(_,i)=>{let v=String(i*5).padStart(2,'0');return '<option value=\\\"'+v+'\\\">'+v+'</option>'}).join('');h.value=String(now.getHours()).padStart(2,'0');m.value=String(Math.round(now.getMinutes()/5)*5%60).padStart(2,'0')}function departValue(){return $('departHour').value+':'+$('departMinute').value}initDepart();", s, count=1)
+              s=s.replace("$('depart').value||'09:00'", f"departValue()||'{default_time}'")
+              s=s.replace("$('depart').value||'06:00'", f"departValue()||'{default_time}'")
+              p.write_text(s,encoding='utf-8')
+
+          patch('autumn-rush.html','09:00')
+          patch('panrush.html','06:00')
+
+          sw=Path('sw.js')
+          if sw.exists():
+              t=sw.read_text(encoding='utf-8').replace("tokai-pan-v2","tokai-pan-v3")
+              if "'./panrush.html'" not in t:
+                  t=t.replace("'./',", "'./',\n  './panrush.html',\n  './autumn-rush.html',")
+              sw.write_text(t,encoding='utf-8')
+          PY
+      - name: Commit patch
+        run: |
+          git config user.name "tokai-pan-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add panrush.html autumn-rush.html sw.js
+          git diff --cached --quiet && exit 0
+          git commit -m "Use compact in-app departure time selectors"
+          git push
