@@ -1,0 +1,25 @@
+name: Patch main mobile navigation
+
+on:
+  push:
+    paths:
+      - 'main-nav-v113-trigger.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply Ver.1.13 navigation patch
+        run: python scripts/patch_main_nav_v113.py
+      - name: Commit update
+        run: |
+          git config user.name "tokai-pan-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html sw.js
+          git diff --cached --quiet && exit 0
+          git commit -m "Release Ver.1.13 mobile navigation history"
+          git push
