@@ -1,0 +1,19 @@
+name: Patch Tokai TOP10 and Kameyama fix
+on:
+  push:
+    paths: ['tokai-top10-v122-trigger.txt']
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python scripts/patch_tokai_top10_v122.py
+      - run: |
+          git config user.name "tokai-pan-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html sw.js
+          git diff --cached --quiet && exit 0
+          git commit -m "Release Ver.1.22 Tokai TOP10 and Kameyama fix"
+          git push
