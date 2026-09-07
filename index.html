@@ -352,9 +352,9 @@ button,.back,.detail-action,.review-trigger{
     </a>
   </div>
   
-  <div class="tabs"><button class="active">愛知県</button><button disabled>岐阜県</button><button disabled>三重県</button></div><div class="notice">
-  <div>Ver.1.15</div>：パンラッシュ／秋のパンラッシュを追加。愛知県の市町村別パン屋TOP10に対応。店舗写真・店舗ごとの特色・営業時間・口コミ・地図・公式サイトなどを確認できます。岐阜県・三重県は今後対応予定です。
-</div><h2>西三河</h2><div class="cities"><button id="toyota">豊田市</button><button id="okazaki">岡崎市</button><button id="anjo">安城市</button><button id="kariya">刈谷市</button><button id="nishio">西尾市</button>
+  <div class="tabs"><button id="tabAichi" class="active">愛知県</button><button id="tabGifu">岐阜県</button><button disabled>三重県</button></div><div class="notice">
+  <div>Ver.1.16</div>：パンラッシュ／秋のパンラッシュを追加。愛知県の市町村別パン屋TOP10に対応。店舗写真・店舗ごとの特色・営業時間・口コミ・地図・公式サイトなどを確認できます。岐阜県・三重県は今後対応予定です。
+</div><div id="aichiPanel"><h2>西三河</h2><div class="cities"><button id="toyota">豊田市</button><button id="okazaki">岡崎市</button><button id="anjo">安城市</button><button id="kariya">刈谷市</button><button id="nishio">西尾市</button>
 <button id="hekinan">碧南市</button>
 <button id="chiryu">知立市</button>
 <button id="takahama">高浜市</button>
@@ -423,6 +423,16 @@ button,.back,.detail-action,.review-trigger{
   <button id="higashimikawa">🏆 東三河 TOP10</button>
   <button id="aichi">🏆 愛知県 TOP10</button>
 </div>
+</div>
+<div id="gifuPanel" class="hidden">
+  <h2>岐阜・西濃</h2><div class="cities">
+    <button id="gifuCity">岐阜市</button><button id="ogaki">大垣市</button><button id="kakamigahara">各務原市</button>
+  </div>
+  <h2>東濃・中濃</h2><div class="cities">
+    <button id="tajimi">多治見市</button><button id="kani">可児市</button><button id="seki">関市</button>
+  </div>
+  <div class="notice">岐阜県は主要6市から順次拡大中です。市別TOP10は愛知県と同じランキング・店舗詳細方式で表示します。</div>
+</div>
 </section>
 <section id="ranking" class="hidden">
   <div class="ranking-hero" id="rankingHero">
@@ -481,7 +491,7 @@ button,.back,.detail-action,.review-trigger{
 </section>
   <div id="devTools" class="dev-tools hidden"><button id="clearRankingCache">🔄 ランキングキャッシュ更新</button><div class="muted">開発用：次回ランキング表示時に最新データを取得</div></div><footer id="appFooter" class="app-footer">
 <div>東海パンMAP</div>
-<div>Ver.1.15</div>
+<div>Ver.1.16</div>
   <div>Personal Bakery Discovery Project</div>
   <div>Created & Managed by S.K.</div>
   <div>© 2026 S.K. All Rights Reserved.</div>
@@ -503,6 +513,7 @@ button,.back,.detail-action,.review-trigger{
 let shops = [];
 let currentCity = '';
 let currentVisualKey = '';
+let currentPrefecture = '愛知県';
 // ===== API節約：24時間ブラウザキャッシュ =====
 const BAKERY_CACHE_VERSION = 'v1';
 const BAKERY_CACHE_TTL = 24 * 60 * 60 * 1000;
@@ -661,7 +672,7 @@ async function loadBakeries(city) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        textQuery: `パン屋 愛知県${city}`,
+        textQuery: `パン屋 ${currentPrefecture}${city}`,
       })
     }
   );
@@ -696,7 +707,7 @@ async function loadBakeries(city) {
   score: rankingScore(p.rating,p.userRatingCount)
 }));
 shops = shops.filter(isBakeryCandidate);
-  shops = shops.filter(s => municipalityMatches(s.address,city));
+  shops = shops.filter(s => String(s.address||'').includes(currentPrefecture) && municipalityMatches(s.address,city));
   shops.sort((a, b) =>
     b.score - a.score || b.reviews - a.reviews
   );
@@ -722,8 +733,8 @@ function showRankingView(){
 }
 function showDetailView(){
   home.classList.add('hidden');
-  showDetailView();
-  syncViewHistory('detail',{city:currentCity,index:i});
+  ranking.classList.add('hidden');
+  detail.classList.remove('hidden');
 }
 const home=document.querySelector('#home'),ranking=document.querySelector('#ranking'),detail=document.querySelector('#detail'),list=document.querySelector('#list');
 const byId = id => document.getElementById(id);
@@ -735,6 +746,8 @@ const toyohashi=byId('toyohashi'), toyokawa=byId('toyokawa'), gamagori=byId('gam
 const nagoya=byId('nagoya'), ichinomiya=byId('ichinomiya'), seto=byId('seto'), kasugai=byId('kasugai'), inuyama=byId('inuyama'), konan=byId('konan'), komaki=byId('komaki'), inazawa=byId('inazawa'), owariasahi=byId('owariasahi'), iwakura=byId('iwakura'), toyoake=byId('toyoake'), nisshin=byId('nisshin'), kiyosu=byId('kiyosu'), kitanagoya=byId('kitanagoya'), nagakute=byId('nagakute'), togo=byId('togo'), toyoyama=byId('toyoyama'), oguchi=byId('oguchi'), fuso=byId('fuso'), ama=byId('ama'), ooharu=byId('ooharu'), kanie=byId('kanie'), tobishima=byId('tobishima'), tsushima=byId('tsushima'), aisai=byId('aisai'), yatomi=byId('yatomi');
 const handa=byId('handa'), tokoname=byId('tokoname'), tokai=byId('tokai'), obu=byId('obu'), chita=byId('chita'), agui=byId('agui'), higashiura=byId('higashiura'), minamichita=byId('minamichita'), mihama=byId('mihama'), taketoyo=byId('taketoyo');
 const nishimikawa=byId('nishimikawa'), higashimikawa=byId('higashimikawa'), aichi=byId('aichi');
+const tabAichi=byId('tabAichi'), tabGifu=byId('tabGifu'), aichiPanel=byId('aichiPanel'), gifuPanel=byId('gifuPanel');
+const gifuCity=byId('gifuCity'), ogaki=byId('ogaki'), kakamigahara=byId('kakamigahara'), tajimi=byId('tajimi'), kani=byId('kani'), seki=byId('seki');
   const areaVisual = document.querySelector('#areaVisual');
   const rankingHero = document.querySelector('#rankingHero');
 
@@ -953,13 +966,13 @@ async function loadShopReviews(shop){
   function showDetail(i) {
   const s = shops[i];
 
-  ranking.classList.add('hidden');
-  detail.classList.remove('hidden');
+  showDetailView();
+  syncViewHistory('detail',{city:currentCity,index:i});
 
 const areaName = getAreaName(currentCity);
 
 drank.textContent =
-  `愛知県 ＞ ${areaName ? areaName + ' ＞ ' : ''}${currentCity} ＞ ${i + 1}位 / Score ${Math.round(s.score)}`;
+  `${currentPrefecture} ＞ ${areaName ? areaName + ' ＞ ' : ''}${currentCity} ＞ ${i + 1}位 / Score ${Math.round(s.score)}`;
   dname.textContent = s.name;
   daddr.textContent = s.address;
   drating.textContent = `★${s.rating}`;
@@ -1026,6 +1039,24 @@ currentVisualKey = '';
     button.textContent = city;
   }
 }
+
+function selectPrefecture(pref){
+  currentPrefecture=pref;
+  const isAichi=pref==='愛知県';
+  aichiPanel.classList.toggle('hidden',!isAichi);
+  gifuPanel.classList.toggle('hidden',isAichi);
+  tabAichi.classList.toggle('active',isAichi);
+  tabGifu.classList.toggle('active',!isAichi);
+}
+tabAichi.onclick=()=>selectPrefecture('愛知県');
+tabGifu.onclick=()=>selectPrefecture('岐阜県');
+
+gifuCity.onclick=()=>selectCity(gifuCity,'岐阜市');
+ogaki.onclick=()=>selectCity(ogaki,'大垣市');
+kakamigahara.onclick=()=>selectCity(kakamigahara,'各務原市');
+tajimi.onclick=()=>selectCity(tajimi,'多治見市');
+kani.onclick=()=>selectCity(kani,'可児市');
+seki.onclick=()=>selectCity(seki,'関市');
 
 toyota.onclick = () => selectCity(toyota, '豊田市');
 okazaki.onclick = () => selectCity(okazaki, '岡崎市');
