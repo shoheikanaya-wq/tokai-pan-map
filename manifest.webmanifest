@@ -1,8 +1,9 @@
 {
   "name": "東海パンMAP",
   "short_name": "パンMAP",
-  "id": "/",
+  "id": "./",
   "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#fffaf4",
   "theme_color": "#7a4b20",
