@@ -335,6 +335,9 @@ button,.back,.detail-action,.review-trigger{
 .detail-status.open{color:#246b35}.detail-status.closed{color:#9a3428}.detail-status.unknown{color:#6b6258}
 .detail-phone-link{display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:6px 10px;border:1px solid #b98a55;border-radius:9px;background:#ead3ad;color:#332316;text-decoration:none;font-weight:800}
 @media(max-width:600px){.detail-status{font-size:16px}.detail-phone-link{min-height:40px;font-size:13px}}
+
+.load-error{margin:10px 0;padding:12px;border:1px solid #c77d67;border-radius:12px;background:#fff4ef;color:#6d2f23;font-size:13px;line-height:1.45}
+.load-error button{margin-top:8px;min-height:40px}
 </style></head>
 <body><header><h1 id="appTitle" style="cursor:pointer;">🥐 東海パンMAP</h1><div class="sub">市町村から、おいしいパン屋を探す</div></header><main>
 <section id="home">
@@ -350,7 +353,7 @@ button,.back,.detail-action,.review-trigger{
   </div>
   
   <div class="tabs"><button class="active">愛知県</button><button disabled>岐阜県</button><button disabled>三重県</button></div><div class="notice">
-  <div>Ver.1.13</div>：パンラッシュ／秋のパンラッシュを追加。愛知県の市町村別パン屋TOP10に対応。店舗写真・店舗ごとの特色・営業時間・口コミ・地図・公式サイトなどを確認できます。岐阜県・三重県は今後対応予定です。
+  <div>Ver.1.14</div>：パンラッシュ／秋のパンラッシュを追加。愛知県の市町村別パン屋TOP10に対応。店舗写真・店舗ごとの特色・営業時間・口コミ・地図・公式サイトなどを確認できます。岐阜県・三重県は今後対応予定です。
 </div><h2>西三河</h2><div class="cities"><button id="toyota">豊田市</button><button id="okazaki">岡崎市</button><button id="anjo">安城市</button><button id="kariya">刈谷市</button><button id="nishio">西尾市</button>
 <button id="hekinan">碧南市</button>
 <button id="chiryu">知立市</button>
@@ -478,7 +481,7 @@ button,.back,.detail-action,.review-trigger{
 </section>
   <div id="devTools" class="dev-tools hidden"><button id="clearRankingCache">🔄 ランキングキャッシュ更新</button><div class="muted">開発用：次回ランキング表示時に最新データを取得</div></div><footer id="appFooter" class="app-footer">
 <div>東海パンMAP</div>
-<div>Ver.1.13</div>
+<div>Ver.1.14</div>
   <div>Personal Bakery Discovery Project</div>
   <div>Created & Managed by S.K.</div>
   <div>© 2026 S.K. All Rights Reserved.</div>
@@ -630,6 +633,19 @@ function mergeAndRankShops(...groups) {
   return [...unique.values()].sort((a,b)=>b.score-a.score||b.reviews-a.reviews);
 }
 
+function showLoadError(message,retry){
+  const box=document.createElement('div');
+  box.className='load-error';
+  const text=document.createElement('div');
+  text.textContent=message;
+  const btn=document.createElement('button');
+  btn.type='button';
+  btn.textContent='もう一度試す';
+  btn.onclick=()=>{ box.remove(); retry?.(); };
+  box.append(text,btn);
+  const host=!home.classList.contains('hidden')?home:(!ranking.classList.contains('hidden')?ranking:detail);
+  host.prepend(box);
+}
 async function loadBakeries(city) {
   const cached=readBakeryCache(city);
   if(cached){
@@ -996,7 +1012,7 @@ currentVisualKey = '';
     await loadBakeries(city);
     showRanking();
   } catch(e) {
-    alert('パン屋情報の取得に失敗しました：' + e.message);
+    showLoadError('パン屋情報の取得に失敗しました。通信状態を確認して再試行してください。',()=>button.click());
   } finally {
     button.disabled = false;
     button.textContent = city;
@@ -1146,7 +1162,7 @@ taketoyo.onclick = () => selectCity(taketoyo, '武豊町');
     setTop10Cache('西三河',shops);
     currentCity='西三河'; rankingTitle.textContent='西三河 パン屋 TOP10'; showRanking();
   } catch(e) {
-    alert('西三河ランキングの取得に失敗しました：'+e.message);
+    showLoadError('西三河ランキングを取得できませんでした。',()=>nishimikawa.click());
   } finally {
     nishimikawa.disabled=false; nishimikawa.textContent='🏆 西三河 TOP10';
   }
@@ -1167,7 +1183,7 @@ taketoyo.onclick = () => selectCity(taketoyo, '武豊町');
     setTop10Cache('東三河',shops);
     currentCity='東三河'; rankingTitle.textContent='東三河 パン屋 TOP10'; showRanking();
   } catch(e) {
-    alert('東三河ランキングの取得に失敗しました：'+e.message);
+    showLoadError('東三河ランキングを取得できませんでした。',()=>higashimikawa.click());
   } finally {
     higashimikawa.disabled=false; higashimikawa.textContent='🏆 東三河 TOP10';
   }
@@ -1224,7 +1240,7 @@ taketoyo.onclick = () => selectCity(taketoyo, '武豊町');
     rankingTitle.textContent = '愛知県 パン屋 TOP10';
     showRanking();
   } catch(e) {
-    alert('愛知県ランキングの取得に失敗しました：' + e.message);
+    showLoadError('愛知県ランキングを取得できませんでした。',()=>aichi.click());
   } finally {
     aichi.disabled = false;
     aichi.textContent = '🏆 愛知県 TOP10';
