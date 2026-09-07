@@ -1,0 +1,42 @@
+name: Deploy route API to Cloud Run
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.GCP_WIF_PROVIDER }}
+          service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+
+      - name: Set up gcloud
+        uses: google-github-actions/setup-gcloud@v2
+        with:
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+
+      - name: Deploy route API
+        run: |
+          gcloud run deploy tokai-pan-route-api \
+            --source route-api \
+            --region asia-northeast1 \
+            --project "${{ secrets.GCP_PROJECT_ID }}" \
+            --allow-unauthenticated \
+            --set-env-vars ALLOWED_ORIGIN=https://shoheikanaya-wq.github.io \
+            --set-secrets GOOGLE_MAPS_API_KEY=google-maps-api-key:latest
+
+      - name: Show service URL
+        run: |
+          gcloud run services describe tokai-pan-route-api \
+            --region asia-northeast1 \
+            --project "${{ secrets.GCP_PROJECT_ID }}" \
+            --format='value(status.url)'
