@@ -1,0 +1,25 @@
+name: Patch main TOP10 ranking confidence
+
+on:
+  push:
+    paths:
+      - 'main-top10-ranking-v110-trigger.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply Ver.1.10 ranking patch
+        run: python scripts/patch_main_top10_v110.py
+      - name: Commit update
+        run: |
+          git config user.name "tokai-pan-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html sw.js
+          git diff --cached --quiet && exit 0
+          git commit -m "Release Ver.1.10 confidence-aware TOP10 ranking"
+          git push
