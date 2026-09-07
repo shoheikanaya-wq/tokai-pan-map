@@ -1,0 +1,55 @@
+name: Patch Pan Rush feasibility summary
+
+on:
+  push:
+    paths:
+      - 'panrush-feasibility-trigger.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add feasibility counters and release Ver.1.7
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          p=Path('panrush.html')
+          s=p.read_text(encoding='utf-8')
+
+          s=s.replace("html='',bad=0,warnCount=0;","html='',bad=0,warnCount=0,waitTotal=0,unknownCount=0,feasibleCount=0;")
+          s=s.replace("if(risk.wait)elapsed+=risk.wait;if(risk.cls==='risk-bad')bad++;if(risk.cls==='risk-warn')warnCount++;", "if(risk.wait){elapsed+=risk.wait;waitTotal+=risk.wait}if(risk.cls==='risk-bad')bad++;if(risk.cls==='risk-warn')warnCount++;if(risk.cls==='risk-unknown')unknownCount++;if(risk.cls!=='risk-bad'&&elapsed+stay<=1440)feasibleCount++;")
+          s=s.replace("閉店後の可能性 '+bad+'店 ／ 閉店30分以内 '+warnCount+'店<br>", "24時間内立寄り可能 '+feasibleCount+'店 ／ 開店待ち合計 '+waitTotal+'分 ／ 営業時間不明 '+unknownCount+'店<br>営業枠なし '+bad+'店 ／ 閉店30分以内 '+warnCount+'店<br>")
+          s=s.replace('現在は直線距離ベースの概算。営業時間はGoogle Placesの構造化営業期間を優先し、取得できない場合は今日＋翌日の曜日表記を参照します。閉店中なら次の開店までの待ち時間を加算します。実道路、渋滞、休憩、売り切れ、臨時休業、駐車・入店待ちは未反映です。','現在は直線距離ベースの概算。営業時間はGoogle Placesの構造化営業期間を優先し、取得できない場合は今日＋翌日の曜日表記を参照します。閉店中なら次の開店までの待ち時間を加算し、24時間内立寄り可能店数・待ち時間合計・営業時間不明店数を集計します。実道路、渋滞、休憩、売り切れ、臨時休業、駐車・入店待ちは未反映です。')
+          p.write_text(s,encoding='utf-8')
+
+          idx=Path('index.html')
+          t=idx.read_text(encoding='utf-8')
+          t=t.replace('Ver.1.6','Ver.1.7')
+          old='Ver.1.7：パンラッシュの24時間計画を強化。今日＋翌日の営業時間を参照し、開店前は待ち時間を加算、24時間内に営業枠が見つからない店舗は除外候補として表示します。愛知県の市町村別パン屋TOP10、店舗写真・特色・営業時間・口コミ・地図・公式サイトにも対応。岐阜県・三重県は今後対応予定です。'
+          new='Ver.1.7：パンラッシュの実戦判定を強化。今日＋翌日の営業時間・開店待ちに加え、24時間内に立ち寄れる店舗数、開店待ち合計、営業時間不明店数、営業枠なし店舗を結果に表示します。Google Placesの構造化営業時間を優先し、取得できない場合は曜日表記へ自動切替。愛知県の市町村別パン屋TOP10にも対応。岐阜県・三重県は今後対応予定です。'
+          if old in t:
+              t=t.replace(old,new,1)
+          else:
+              t=re.sub(r'Ver\.1\.7：[^<]{20,700}',new,t,count=1)
+          t=re.sub(r'panrush\.html\?v=[0-9-]+','panrush.html?v=20260907-2',t)
+          idx.write_text(t,encoding='utf-8')
+
+          sw=Path('sw.js')
+          u=sw.read_text(encoding='utf-8')
+          u=re.sub(r"const CACHE_NAME = 'tokai-pan-v\d+';","const CACHE_NAME = 'tokai-pan-v6';",u,count=1)
+          sw.write_text(u,encoding='utf-8')
+          PY
+      - name: Commit update
+        run: |
+          git config user.name "tokai-pan-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add panrush.html index.html sw.js
+          git diff --cached --quiet && exit 0
+          git commit -m "Release Ver.1.7 Pan Rush feasibility summary"
+          git push
