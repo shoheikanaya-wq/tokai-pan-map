@@ -1,0 +1,25 @@
+name: Patch Pan Rush Aichi only
+
+on:
+  push:
+    paths:
+      - 'panrush-aichi-only-v124-trigger.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore Pan Rush to Aichi only
+        run: python scripts/patch_panrush_aichi_only_v124.py
+      - name: Commit update
+        run: |
+          git config user.name "tokai-pan-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html panrush.html sw.js
+          git diff --cached --quiet && exit 0
+          git commit -m "Release Ver.1.24 Pan Rush Aichi only"
+          git push
