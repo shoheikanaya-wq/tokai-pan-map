@@ -353,7 +353,7 @@ button,.back,.detail-action,.review-trigger{
   </div>
   
   <div class="tabs"><button id="tabAichi" class="active">愛知県</button><button id="tabGifu">岐阜県</button><button disabled>三重県</button></div><div class="notice">
-  <div>Ver.1.16</div>：パンラッシュ／秋のパンラッシュを追加。愛知県の市町村別パン屋TOP10に対応。店舗写真・店舗ごとの特色・営業時間・口コミ・地図・公式サイトなどを確認できます。岐阜県・三重県は今後対応予定です。
+  <div>Ver.1.17</div>：岐阜県対応を拡大。主要12市の市別パン屋TOP10と岐阜県TOP10に対応しました。愛知県と同じく店舗写真・店舗固有の特色・営業時間・口コミ・地図・公式サイトなどを確認できます。愛知の軽微改善とパンラッシュ保守は自動継続し、三重県は今後対応予定です。
 </div><div id="aichiPanel"><h2>西三河</h2><div class="cities"><button id="toyota">豊田市</button><button id="okazaki">岡崎市</button><button id="anjo">安城市</button><button id="kariya">刈谷市</button><button id="nishio">西尾市</button>
 <button id="hekinan">碧南市</button>
 <button id="chiryu">知立市</button>
@@ -426,12 +426,13 @@ button,.back,.detail-action,.review-trigger{
 </div>
 <div id="gifuPanel" class="hidden">
   <h2>岐阜・西濃</h2><div class="cities">
-    <button id="gifuCity">岐阜市</button><button id="ogaki">大垣市</button><button id="kakamigahara">各務原市</button>
+    <button id="gifuCity">岐阜市</button><button id="ogaki">大垣市</button><button id="kakamigahara">各務原市</button><button id="hashima">羽島市</button><button id="mizuho">瑞穂市</button>
   </div>
   <h2>東濃・中濃</h2><div class="cities">
-    <button id="tajimi">多治見市</button><button id="kani">可児市</button><button id="seki">関市</button>
+    <button id="tajimi">多治見市</button><button id="kani">可児市</button><button id="seki">関市</button><button id="minokamo">美濃加茂市</button><button id="toki">土岐市</button><button id="ena">恵那市</button><button id="nakatsugawa">中津川市</button>
   </div>
-  <div class="notice">岐阜県は主要6市から順次拡大中です。市別TOP10は愛知県と同じランキング・店舗詳細方式で表示します。</div>
+  <div style="margin-top:18px"><button id="gifuTop10">🏆 岐阜県 TOP10</button></div>
+  <div class="notice">岐阜県は主要12市へ拡大中です。市別TOP10と岐阜県TOP10を、愛知県と同じランキング・店舗詳細方式で表示します。</div>
 </div>
 </section>
 <section id="ranking" class="hidden">
@@ -491,7 +492,7 @@ button,.back,.detail-action,.review-trigger{
 </section>
   <div id="devTools" class="dev-tools hidden"><button id="clearRankingCache">🔄 ランキングキャッシュ更新</button><div class="muted">開発用：次回ランキング表示時に最新データを取得</div></div><footer id="appFooter" class="app-footer">
 <div>東海パンMAP</div>
-<div>Ver.1.16</div>
+<div>Ver.1.17</div>
   <div>Personal Bakery Discovery Project</div>
   <div>Created & Managed by S.K.</div>
   <div>© 2026 S.K. All Rights Reserved.</div>
@@ -747,7 +748,7 @@ const nagoya=byId('nagoya'), ichinomiya=byId('ichinomiya'), seto=byId('seto'), k
 const handa=byId('handa'), tokoname=byId('tokoname'), tokai=byId('tokai'), obu=byId('obu'), chita=byId('chita'), agui=byId('agui'), higashiura=byId('higashiura'), minamichita=byId('minamichita'), mihama=byId('mihama'), taketoyo=byId('taketoyo');
 const nishimikawa=byId('nishimikawa'), higashimikawa=byId('higashimikawa'), aichi=byId('aichi');
 const tabAichi=byId('tabAichi'), tabGifu=byId('tabGifu'), aichiPanel=byId('aichiPanel'), gifuPanel=byId('gifuPanel');
-const gifuCity=byId('gifuCity'), ogaki=byId('ogaki'), kakamigahara=byId('kakamigahara'), tajimi=byId('tajimi'), kani=byId('kani'), seki=byId('seki');
+const gifuCity=byId('gifuCity'), ogaki=byId('ogaki'), kakamigahara=byId('kakamigahara'), hashima=byId('hashima'), mizuho=byId('mizuho'), tajimi=byId('tajimi'), kani=byId('kani'), seki=byId('seki'), minokamo=byId('minokamo'), toki=byId('toki'), ena=byId('ena'), nakatsugawa=byId('nakatsugawa'), gifuTop10=byId('gifuTop10');
   const areaVisual = document.querySelector('#areaVisual');
   const rankingHero = document.querySelector('#rankingHero');
 
@@ -1057,6 +1058,12 @@ kakamigahara.onclick=()=>selectCity(kakamigahara,'各務原市');
 tajimi.onclick=()=>selectCity(tajimi,'多治見市');
 kani.onclick=()=>selectCity(kani,'可児市');
 seki.onclick=()=>selectCity(seki,'関市');
+hashima.onclick=()=>selectCity(hashima,'羽島市');
+mizuho.onclick=()=>selectCity(mizuho,'瑞穂市');
+minokamo.onclick=()=>selectCity(minokamo,'美濃加茂市');
+toki.onclick=()=>selectCity(toki,'土岐市');
+ena.onclick=()=>selectCity(ena,'恵那市');
+nakatsugawa.onclick=()=>selectCity(nakatsugawa,'中津川市');
 
 toyota.onclick = () => selectCity(toyota, '豊田市');
 okazaki.onclick = () => selectCity(okazaki, '岡崎市');
@@ -1186,6 +1193,7 @@ taketoyo.onclick = () => selectCity(taketoyo, '武豊町');
 
 
   nishimikawa.onclick = async () => {
+  currentPrefecture='愛知県';
   currentVisualKey = '西三河';
   const cachedTop10 = getTop10Cache('西三河', AREA_TOP10_TTL);
   if(cachedTop10){
@@ -1207,6 +1215,7 @@ taketoyo.onclick = () => selectCity(taketoyo, '武豊町');
   }
 };
   higashimikawa.onclick = async () => {
+  currentPrefecture='愛知県';
   currentVisualKey = '東三河';
   const cachedTop10 = getTop10Cache('東三河', AREA_TOP10_TTL);
   if(cachedTop10){
@@ -1228,7 +1237,38 @@ taketoyo.onclick = () => selectCity(taketoyo, '武豊町');
   }
 };
 
+  gifuTop10.onclick = async () => {
+  currentPrefecture='岐阜県';
+  currentVisualKey='岐阜県';
+  const cachedTop10=getTop10Cache('岐阜県',AICHI_TOP10_TTL);
+  if(cachedTop10){
+    shops=cachedTop10.shops;
+    currentCity='岐阜県';
+    rankingTitle.textContent='岐阜県 パン屋 TOP10';
+    showRanking();
+    return;
+  }
+  const cities=['岐阜市','大垣市','各務原市','羽島市','瑞穂市','多治見市','可児市','関市','美濃加茂市','土岐市','恵那市','中津川市'];
+  gifuTop10.disabled=true; gifuTop10.textContent='取得中...';
+  try{
+    const local=buildTop10FromMunicipalityCache(cities);
+    const wide=await fetchWideBakeryCandidates('パン屋 岐阜県');
+    shops=mergeAndRankShops(wide,local.shops)
+      .filter(s=>String(s.address||'').includes('岐阜県'))
+      .slice(0,10);
+    setTop10Cache('岐阜県',shops);
+    currentCity='岐阜県';
+    rankingTitle.textContent='岐阜県 パン屋 TOP10';
+    showRanking();
+  }catch(e){
+    showLoadError('岐阜県ランキングを取得できませんでした。',()=>gifuTop10.click());
+  }finally{
+    gifuTop10.disabled=false; gifuTop10.textContent='🏆 岐阜県 TOP10';
+  }
+};
+
   aichi.onclick = async () => {
+  currentPrefecture='愛知県';
   currentVisualKey = '愛知県';
 
   // 1) 7日間の完成キャッシュ
