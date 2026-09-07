@@ -2,6 +2,9 @@ name: Deploy route API to Cloud Run
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - 'route-api-deploy-trigger.txt'
 
 permissions:
   contents: read
