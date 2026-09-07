@@ -350,7 +350,7 @@ button,.back,.detail-action,.review-trigger{
   </div>
   
   <div class="tabs"><button class="active">愛知県</button><button disabled>岐阜県</button><button disabled>三重県</button></div><div class="notice">
-  <div>Ver.1.12</div>：パンラッシュ／秋のパンラッシュを追加。愛知県の市町村別パン屋TOP10に対応。店舗写真・店舗ごとの特色・営業時間・口コミ・地図・公式サイトなどを確認できます。岐阜県・三重県は今後対応予定です。
+  <div>Ver.1.13</div>：パンラッシュ／秋のパンラッシュを追加。愛知県の市町村別パン屋TOP10に対応。店舗写真・店舗ごとの特色・営業時間・口コミ・地図・公式サイトなどを確認できます。岐阜県・三重県は今後対応予定です。
 </div><h2>西三河</h2><div class="cities"><button id="toyota">豊田市</button><button id="okazaki">岡崎市</button><button id="anjo">安城市</button><button id="kariya">刈谷市</button><button id="nishio">西尾市</button>
 <button id="hekinan">碧南市</button>
 <button id="chiryu">知立市</button>
@@ -478,7 +478,7 @@ button,.back,.detail-action,.review-trigger{
 </section>
   <div id="devTools" class="dev-tools hidden"><button id="clearRankingCache">🔄 ランキングキャッシュ更新</button><div class="muted">開発用：次回ランキング表示時に最新データを取得</div></div><footer id="appFooter" class="app-footer">
 <div>東海パンMAP</div>
-<div>Ver.1.12</div>
+<div>Ver.1.13</div>
   <div>Personal Bakery Discovery Project</div>
   <div>Created & Managed by S.K.</div>
   <div>© 2026 S.K. All Rights Reserved.</div>
@@ -685,6 +685,29 @@ shops = shops.filter(isBakeryCandidate);
     b.score - a.score || b.reviews - a.reviews
   );
   writeBakeryCache(city, shops);
+}
+function syncViewHistory(view,extra={}){
+  const state={view,...extra};
+  if(history.state?.view===view){
+    history.replaceState(state,'');
+  }else{
+    history.pushState(state,'');
+  }
+}
+function showHomeView(){
+  ranking.classList.add('hidden');
+  detail.classList.add('hidden');
+  home.classList.remove('hidden');
+}
+function showRankingView(){
+  home.classList.add('hidden');
+  detail.classList.add('hidden');
+  ranking.classList.remove('hidden');
+}
+function showDetailView(){
+  home.classList.add('hidden');
+  showDetailView();
+  syncViewHistory('detail',{city:currentCity,index:i});
 }
 const home=document.querySelector('#home'),ranking=document.querySelector('#ranking'),detail=document.querySelector('#detail'),list=document.querySelector('#list');
 const byId = id => document.getElementById(id);
@@ -1249,11 +1272,11 @@ function returnHomeFromRanking() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-back.onclick = returnHomeFromRanking;
-backBottom.onclick = returnHomeFromRanking;
+back.onclick = () => history.back();
+backBottom.onclick = () => history.back();
 
-back2.onclick = showRanking;
-backDetailBottom.onclick = showRanking;
+back2.onclick = () => history.back();
+backDetailBottom.onclick = () => history.back();
 
 appTitle.onclick = () => {
   ranking.classList.add('hidden');
@@ -1304,4 +1327,13 @@ if ('serviceWorker' in navigator) {
     reg.update();
   });
 }
+
+window.addEventListener('popstate',e=>{
+  const view=e.state?.view||'home';
+  if(view==='detail') showDetailView();
+  else if(view==='ranking') showRankingView();
+  else showHomeView();
+});
+if(!history.state?.view) history.replaceState({view:'home'},'');
+
 </script></body></html>
