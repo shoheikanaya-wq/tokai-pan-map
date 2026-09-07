@@ -1,0 +1,25 @@
+name: Patch Gifu phase 3
+
+on:
+  push:
+    paths:
+      - 'gifu-phase3-v118-trigger.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply Ver.1.18 Gifu expansion
+        run: python scripts/patch_gifu_phase3_v118.py
+      - name: Commit update
+        run: |
+          git config user.name "tokai-pan-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html sw.js
+          git diff --cached --quiet && exit 0
+          git commit -m "Release Ver.1.18 Gifu 20-city expansion"
+          git push
