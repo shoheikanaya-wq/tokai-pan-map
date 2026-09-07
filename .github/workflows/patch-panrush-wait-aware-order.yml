@@ -1,0 +1,56 @@
+name: Patch Pan Rush wait-aware route ordering
+
+on:
+  push:
+    paths:
+      - 'panrush-wait-aware-trigger.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Include opening wait in route-order clock
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          p=Path('panrush.html')
+          s=p.read_text(encoding='utf-8')
+          old="let p=left.splice(best,1)[0],q=pt(p);if(ok(q)){elapsed+=Math.max(2,Math.round(bestKm/speed*60));cur=q}out.push(p);elapsed+=stay"
+          new="let p=left.splice(best,1)[0],q=pt(p),travel=0;if(ok(q)){travel=Math.max(2,Math.round(bestKm/speed*60));elapsed+=travel;cur=q}let chosen=visitWindow(p,base,elapsed);if(chosen.state==='wait')elapsed+=chosen.wait;out.push(p);elapsed+=stay"
+          if old not in s:
+              raise SystemExit('route-order clock block not found')
+          s=s.replace(old,new,1)
+          s=s.replace('距離だけでなく、今日＋翌日の営業枠と開店待ちを考慮して並べます。','距離だけでなく、今日＋翌日の営業枠と開店待ちを考慮し、待ち時間を後続店舗の到着時刻にも反映して並べます。')
+          p.write_text(s,encoding='utf-8')
+
+          idx=Path('index.html')
+          t=idx.read_text(encoding='utf-8')
+          t=t.replace('Ver.1.7','Ver.1.8')
+          old_notice='Ver.1.8：パンラッシュの実戦判定を強化。今日＋翌日の営業時間・開店待ちに加え、24時間内に立ち寄れる店舗数、開店待ち合計、営業時間不明店数、営業枠なし店舗を結果に表示します。Google Placesの構造化営業時間を優先し、取得できない場合は曜日表記へ自動切替。愛知県の市町村別パン屋TOP10にも対応。岐阜県・三重県は今後対応予定です。'
+          new_notice='Ver.1.8：パンラッシュのルート時刻計算を改善。開店待ち時間を後続店舗の到着予測にも反映し、24時間内立寄り可能店数・待ち時間合計・営業時間不明店数・営業枠なし店舗の判定精度を向上しました。Google Placesの構造化営業時間を優先し、取得できない場合は曜日表記へ自動切替。愛知県の市町村別パン屋TOP10にも対応。岐阜県・三重県は今後対応予定です。'
+          if old_notice in t:
+              t=t.replace(old_notice,new_notice,1)
+          else:
+              t=re.sub(r'Ver\.1\.8：[^<]{20,800}',new_notice,t,count=1)
+          t=re.sub(r'panrush\.html\?v=[0-9-]+','panrush.html?v=20260907-3',t)
+          idx.write_text(t,encoding='utf-8')
+
+          sw=Path('sw.js')
+          u=sw.read_text(encoding='utf-8')
+          u=re.sub(r"const CACHE_NAME = 'tokai-pan-v\d+';","const CACHE_NAME = 'tokai-pan-v7';",u,count=1)
+          sw.write_text(u,encoding='utf-8')
+          PY
+      - name: Commit update
+        run: |
+          git config user.name "tokai-pan-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add panrush.html index.html sw.js
+          git diff --cached --quiet && exit 0
+          git commit -m "Release Ver.1.8 wait-aware Pan Rush ordering"
+          git push
