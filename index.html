@@ -352,8 +352,8 @@ button,.back,.detail-action,.review-trigger{
     </a>
   </div>
   
-  <div class="tabs"><button id="tabAichi" class="active">愛知県</button><button id="tabGifu">岐阜県</button><button disabled>三重県</button></div><div class="notice">
-  <div>Ver.1.19</div>：岐阜県42市町村すべてに対応。市町村別パン屋TOP10と岐阜県TOP10を利用できます。愛知県と同じく店舗写真・店舗固有の特色・営業時間・口コミ・地図・公式サイトなどを確認できます。愛知の軽微改善とパンラッシュ保守は自動継続し、次は三重県対応へ進みます。
+  <div class="tabs"><button id="tabAichi" class="active">愛知県</button><button id="tabGifu">岐阜県</button><button id="tabMie">三重県</button></div><div class="notice">
+  <div>Ver.1.20</div>：三重県対応を開始。四日市・桑名・鈴鹿・津・松阪・伊勢など主要13市の市別パン屋TOP10と三重県TOP10を追加しました。愛知県・岐阜県と同じ店舗詳細方式に対応。岐阜県は42市町村すべてに対応済みです。
 </div><div id="aichiPanel"><h2>西三河</h2><div class="cities"><button id="toyota">豊田市</button><button id="okazaki">岡崎市</button><button id="anjo">安城市</button><button id="kariya">刈谷市</button><button id="nishio">西尾市</button>
 <button id="hekinan">碧南市</button>
 <button id="chiryu">知立市</button>
@@ -437,6 +437,13 @@ button,.back,.detail-action,.review-trigger{
   <div style="margin-top:18px"><button id="gifuTop10">🏆 岐阜県 TOP10</button></div>
   <div class="notice">岐阜県42市町村すべてに対応。市町村別TOP10と岐阜県TOP10を、愛知県と同じランキング・店舗詳細方式で表示します。</div>
 </div>
+<div id="miePanel" class="hidden">
+  <h2>北勢</h2><div class="cities"><button id="yokkaichi">四日市市</button><button id="kuwana">桑名市</button><button id="suzuka">鈴鹿市</button><button id="inabe">いなべ市</button></div>
+  <h2>中勢・伊賀</h2><div class="cities"><button id="tsu">津市</button><button id="matsusaka">松阪市</button><button id="iga">伊賀市</button><button id="nabari">名張市</button></div>
+  <h2>伊勢志摩・東紀州</h2><div class="cities"><button id="ise">伊勢市</button><button id="toba">鳥羽市</button><button id="shima">志摩市</button><button id="owase">尾鷲市</button><button id="kumano">熊野市</button></div>
+  <div style="margin-top:18px"><button id="mieTop10">🏆 三重県 TOP10</button></div>
+  <div class="notice">三重県対応を開始。主要13市の市別TOP10と三重県TOP10から順次拡大します。</div>
+</div>
 </section>
 <section id="ranking" class="hidden">
   <div class="ranking-hero" id="rankingHero">
@@ -495,7 +502,7 @@ button,.back,.detail-action,.review-trigger{
 </section>
   <div id="devTools" class="dev-tools hidden"><button id="clearRankingCache">🔄 ランキングキャッシュ更新</button><div class="muted">開発用：次回ランキング表示時に最新データを取得</div></div><footer id="appFooter" class="app-footer">
 <div>東海パンMAP</div>
-<div>Ver.1.19</div>
+<div>Ver.1.20</div>
   <div>Personal Bakery Discovery Project</div>
   <div>Created & Managed by S.K.</div>
   <div>© 2026 S.K. All Rights Reserved.</div>
@@ -750,8 +757,9 @@ const toyohashi=byId('toyohashi'), toyokawa=byId('toyokawa'), gamagori=byId('gam
 const nagoya=byId('nagoya'), ichinomiya=byId('ichinomiya'), seto=byId('seto'), kasugai=byId('kasugai'), inuyama=byId('inuyama'), konan=byId('konan'), komaki=byId('komaki'), inazawa=byId('inazawa'), owariasahi=byId('owariasahi'), iwakura=byId('iwakura'), toyoake=byId('toyoake'), nisshin=byId('nisshin'), kiyosu=byId('kiyosu'), kitanagoya=byId('kitanagoya'), nagakute=byId('nagakute'), togo=byId('togo'), toyoyama=byId('toyoyama'), oguchi=byId('oguchi'), fuso=byId('fuso'), ama=byId('ama'), ooharu=byId('ooharu'), kanie=byId('kanie'), tobishima=byId('tobishima'), tsushima=byId('tsushima'), aisai=byId('aisai'), yatomi=byId('yatomi');
 const handa=byId('handa'), tokoname=byId('tokoname'), tokai=byId('tokai'), obu=byId('obu'), chita=byId('chita'), agui=byId('agui'), higashiura=byId('higashiura'), minamichita=byId('minamichita'), mihama=byId('mihama'), taketoyo=byId('taketoyo');
 const nishimikawa=byId('nishimikawa'), higashimikawa=byId('higashimikawa'), aichi=byId('aichi');
-const tabAichi=byId('tabAichi'), tabGifu=byId('tabGifu'), aichiPanel=byId('aichiPanel'), gifuPanel=byId('gifuPanel');
+const tabAichi=byId('tabAichi'), tabGifu=byId('tabGifu'), tabMie=byId('tabMie'), aichiPanel=byId('aichiPanel'), gifuPanel=byId('gifuPanel'), miePanel=byId('miePanel');
 const gifuCity=byId('gifuCity'), ogaki=byId('ogaki'), kakamigahara=byId('kakamigahara'), hashima=byId('hashima'), mizuho=byId('mizuho'), ginan=byId('ginan'), kasamatsu=byId('kasamatsu'), yoro=byId('yoro'), tarui=byId('tarui'), sekigahara=byId('sekigahara'), godo=byId('godo'), wanouchi=byId('wanouchi'), anpachi=byId('anpachi'), ibigawa=byId('ibigawa'), onoGifu=byId('onoGifu'), ikedaGifu=byId('ikedaGifu'), kitagata=byId('kitagata'), tajimi=byId('tajimi'), kani=byId('kani'), seki=byId('seki'), mino=byId('mino'), gujo=byId('gujo'), minokamo=byId('minokamo'), toki=byId('toki'), mizunami=byId('mizunami'), ena=byId('ena'), nakatsugawa=byId('nakatsugawa'), sakahogi=byId('sakahogi'), tomika=byId('tomika'), kawabe=byId('kawabe'), hichiso=byId('hichiso'), yaotsu=byId('yaotsu'), shirakawaTown=byId('shirakawaTown'), higashishirakawa=byId('higashishirakawa'), mitake=byId('mitake'), yamagata=byId('yamagata'), motosu=byId('motosu'), kaizu=byId('kaizu'), gero=byId('gero'), takayama=byId('takayama'), hida=byId('hida'), shirakawaVillage=byId('shirakawaVillage'), gifuTop10=byId('gifuTop10');
+const yokkaichi=byId('yokkaichi'), kuwana=byId('kuwana'), suzuka=byId('suzuka'), inabe=byId('inabe'), tsu=byId('tsu'), matsusaka=byId('matsusaka'), iga=byId('iga'), nabari=byId('nabari'), ise=byId('ise'), toba=byId('toba'), shima=byId('shima'), owase=byId('owase'), kumano=byId('kumano'), mieTop10=byId('mieTop10');
   const areaVisual = document.querySelector('#areaVisual');
   const rankingHero = document.querySelector('#rankingHero');
 
@@ -1046,14 +1054,31 @@ currentVisualKey = '';
 
 function selectPrefecture(pref){
   currentPrefecture=pref;
-  const isAichi=pref==='愛知県';
+  const isAichi=pref==='愛知県', isGifu=pref==='岐阜県', isMie=pref==='三重県';
   aichiPanel.classList.toggle('hidden',!isAichi);
-  gifuPanel.classList.toggle('hidden',isAichi);
+  gifuPanel.classList.toggle('hidden',!isGifu);
+  miePanel.classList.toggle('hidden',!isMie);
   tabAichi.classList.toggle('active',isAichi);
-  tabGifu.classList.toggle('active',!isAichi);
+  tabGifu.classList.toggle('active',isGifu);
+  tabMie.classList.toggle('active',isMie);
 }
 tabAichi.onclick=()=>selectPrefecture('愛知県');
 tabGifu.onclick=()=>selectPrefecture('岐阜県');
+tabMie.onclick=()=>selectPrefecture('三重県');
+
+yokkaichi.onclick=()=>selectCity(yokkaichi,'四日市市');
+kuwana.onclick=()=>selectCity(kuwana,'桑名市');
+suzuka.onclick=()=>selectCity(suzuka,'鈴鹿市');
+inabe.onclick=()=>selectCity(inabe,'いなべ市');
+tsu.onclick=()=>selectCity(tsu,'津市');
+matsusaka.onclick=()=>selectCity(matsusaka,'松阪市');
+iga.onclick=()=>selectCity(iga,'伊賀市');
+nabari.onclick=()=>selectCity(nabari,'名張市');
+ise.onclick=()=>selectCity(ise,'伊勢市');
+toba.onclick=()=>selectCity(toba,'鳥羽市');
+shima.onclick=()=>selectCity(shima,'志摩市');
+owase.onclick=()=>selectCity(owase,'尾鷲市');
+kumano.onclick=()=>selectCity(kumano,'熊野市');
 
 gifuCity.onclick=()=>selectCity(gifuCity,'岐阜市');
 ogaki.onclick=()=>selectCity(ogaki,'大垣市');
@@ -1268,6 +1293,21 @@ taketoyo.onclick = () => selectCity(taketoyo, '武豊町');
   } finally {
     higashimikawa.disabled=false; higashimikawa.textContent='🏆 東三河 TOP10';
   }
+};
+
+  mieTop10.onclick = async () => {
+  currentPrefecture='三重県'; currentVisualKey='三重県';
+  const cachedTop10=getTop10Cache('三重県',AICHI_TOP10_TTL);
+  if(cachedTop10){shops=cachedTop10.shops;currentCity='三重県';rankingTitle.textContent='三重県 パン屋 TOP10';showRanking();return;}
+  const cities=['四日市市','桑名市','鈴鹿市','いなべ市','津市','松阪市','伊賀市','名張市','伊勢市','鳥羽市','志摩市','尾鷲市','熊野市'];
+  mieTop10.disabled=true; mieTop10.textContent='取得中...';
+  try{
+    const local=buildTop10FromMunicipalityCache(cities);
+    const wide=await fetchWideBakeryCandidates('パン屋 三重県');
+    shops=mergeAndRankShops(wide,local.shops).filter(s=>String(s.address||'').includes('三重県')).slice(0,10);
+    setTop10Cache('三重県',shops); currentCity='三重県'; rankingTitle.textContent='三重県 パン屋 TOP10'; showRanking();
+  }catch(e){showLoadError('三重県ランキングを取得できませんでした。',()=>mieTop10.click());}
+  finally{mieTop10.disabled=false;mieTop10.textContent='🏆 三重県 TOP10';}
 };
 
   gifuTop10.onclick = async () => {
