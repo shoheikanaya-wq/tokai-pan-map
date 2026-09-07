@@ -1,0 +1,38 @@
+name: Patch Pan Rush structured opening periods
+
+on:
+  push:
+    paths:
+      - 'panrush-structured-periods-trigger.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prefer structured opening periods
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('panrush.html')
+          s=p.read_text(encoding='utf-8')
+
+          old="function openingWindows24(p,base){let lines=dayLines(p);if(!lines.length)return[];let now=new Date(),today=(now.getDay()+6)%7,[bh,bm]=base.split(':').map(Number),start=bh*60+bm,out=[];for(let dd=0;dd<2;dd++){let idx=(today+dd)%7;for(let [a,b] of parseDayWindows(lines[idx]||'')){let oa=dd*1440+a-start,ob=dd*1440+b-start;if(ob<0)continue;out.push([oa,ob])}}return out.sort((x,y)=>x[0]-y[0])}"
+          new="function structuredPeriods(p){return p.currentOpeningHours?.periods||p.regularOpeningHours?.periods||[]}function periodMinute(x){if(!x)return null;let d=Number(x.day),h=Number(x.hour||0),m=Number(x.minute||0);return Number.isFinite(d)?d*1440+h*60+m:null}function openingWindows24(p,base){let now=new Date(),today=now.getDay(),[bh,bm]=base.split(':').map(Number),start=bh*60+bm,out=[],periods=structuredPeriods(p);if(periods.length){for(let q of periods){let a=periodMinute(q.open),b=periodMinute(q.close);if(a==null)continue;if(b==null)b=a+1440;if(b<=a)b+=7*1440;for(let k=-1;k<=2;k++){let aa=a+k*7*1440-today*1440-start,bb=b+k*7*1440-today*1440-start;if(bb<0||aa>1440)continue;out.push([aa,bb])}}if(out.length)return out.sort((x,y)=>x[0]-y[0])}let lines=dayLines(p);if(!lines.length)return[];let idxToday=(today+6)%7;for(let dd=0;dd<2;dd++){let idx=(idxToday+dd)%7;for(let [a,b] of parseDayWindows(lines[idx]||'')){let oa=dd*1440+a-start,ob=dd*1440+b-start;if(ob<0)continue;out.push([oa,ob])}}return out.sort((x,y)=>x[0]-y[0])}"
+          if old not in s:
+              raise SystemExit('openingWindows24 block not found')
+          s=s.replace(old,new,1)
+          s=s.replace('営業時間は今日＋翌日を参照し、閉店中なら次の開店までの待ち時間を加算します。','営業時間はGoogle Placesの構造化営業期間を優先し、取得できない場合は今日＋翌日の曜日表記を参照します。閉店中なら次の開店までの待ち時間を加算します。')
+          p.write_text(s,encoding='utf-8')
+          PY
+      - name: Commit update
+        run: |
+          git config user.name "tokai-pan-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add panrush.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Prefer structured opening periods in Pan Rush"
+          git push
