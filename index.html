@@ -353,7 +353,7 @@ button,.back,.detail-action,.review-trigger{
   </div>
   
   <div class="tabs"><button id="tabAichi" class="active">愛知県</button><button id="tabGifu">岐阜県</button><button id="tabMie">三重県</button></div><div class="notice">
-  <div>Ver.1.25</div>：スマホで岐阜県TOP10・三重県TOP10などランキング画面の「戻る」が反応しない問題を修正しました。ランキング表示時に履歴状態を保持し、戻る操作でホームへ復帰できるようにしています。パンラッシュは愛知県内限定です。
+  <div>Ver.1.26</div>：店舗詳細の電話番号は表示専用に変更しました。誤発信を防ぐため、電話番号タップによる発信や「電話する」リンクは使用しません。TOP10の戻る修正と、愛知県内限定パンラッシュ仕様も継続します。
 </div><div id="aichiPanel"><h2>西三河</h2><div class="cities"><button id="toyota">豊田市</button><button id="okazaki">岡崎市</button><button id="anjo">安城市</button><button id="kariya">刈谷市</button><button id="nishio">西尾市</button>
 <button id="hekinan">碧南市</button>
 <button id="chiryu">知立市</button>
@@ -503,7 +503,7 @@ button,.back,.detail-action,.review-trigger{
 </section>
   <div id="devTools" class="dev-tools hidden"><button id="clearRankingCache">🔄 ランキングキャッシュ更新</button><div class="muted">開発用：次回ランキング表示時に最新データを取得</div></div><footer id="appFooter" class="app-footer">
 <div>東海パンMAP</div>
-<div>Ver.1.25</div>
+<div>Ver.1.26</div>
   <div>Personal Bakery Discovery Project</div>
   <div>Created & Managed by S.K.</div>
   <div>© 2026 S.K. All Rights Reserved.</div>
@@ -1012,10 +1012,9 @@ if (s.openNow === true) {
     dopening.innerHTML += '<strong>営業時間</strong><br>情報なし';
   }
 
-  // 電話番号：スマホではワンタップ発信
+  // 電話番号：表示のみ。誤発信防止のため tel: リンクや発信ボタンは付けない。
   if(s.phone){
-    const tel=String(s.phone).replace(/[^0-9+]/g,'');
-    dphone.innerHTML=`<a class="detail-phone-link" href="tel:${tel}">☎ ${s.phone} に電話</a>`;
+    dphone.textContent=`電話番号：${s.phone}`;
   }else{
     dphone.textContent='電話番号：情報なし';
   }
