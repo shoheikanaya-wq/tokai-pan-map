@@ -1,0 +1,50 @@
+name: Release Ver.1.6 UI and cache
+
+on:
+  push:
+    paths:
+      - 'release-ver16-trigger.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update version notice and cache busting
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+
+          # Keep version display and any existing history labels in sync.
+          s=s.replace('Ver.1.5','Ver.1.6')
+
+          old_notice='Ver.1.6：パンラッシュ／秋のパンラッシュを追加。愛知県の市町村別パン屋TOP10に対応。店舗写真・店舗ごとの特色・営業時間・口コミ・地図・公式サイトなどを確認できます。岐阜県・三重県は今後対応予定です。'
+          new_notice='Ver.1.6：パンラッシュの24時間計画を強化。今日＋翌日の営業時間を参照し、開店前は待ち時間を加算、24時間内に営業枠が見つからない店舗は除外候補として表示します。愛知県の市町村別パン屋TOP10、店舗写真・特色・営業時間・口コミ・地図・公式サイトにも対応。岐阜県・三重県は今後対応予定です。'
+          if old_notice in s:
+              s=s.replace(old_notice,new_notice,1)
+          else:
+              s=re.sub(r'Ver\.1\.6：[^<]{20,500}',new_notice,s,count=1)
+
+          s=re.sub(r'panrush\.html\?v=[0-9-]+','panrush.html?v=20260907-1',s)
+          p.write_text(s,encoding='utf-8')
+
+          sw=Path('sw.js')
+          t=sw.read_text(encoding='utf-8')
+          t=re.sub(r"const CACHE_NAME = 'tokai-pan-v\d+';","const CACHE_NAME = 'tokai-pan-v5';",t,count=1)
+          sw.write_text(t,encoding='utf-8')
+          PY
+      - name: Commit release
+        run: |
+          git config user.name "tokai-pan-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html sw.js
+          git diff --cached --quiet && exit 0
+          git commit -m "Release Ver.1.6 Pan Rush opening-hours update"
+          git push
