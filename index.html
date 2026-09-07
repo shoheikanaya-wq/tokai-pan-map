@@ -345,7 +345,7 @@ button,.back,.detail-action,.review-trigger{
   </div>
   
   <div class="tabs"><button class="active">愛知県</button><button disabled>岐阜県</button><button disabled>三重県</button></div><div class="notice">
-  <div>Ver.1.10</div>：パンラッシュ／秋のパンラッシュを追加。愛知県の市町村別パン屋TOP10に対応。店舗写真・店舗ごとの特色・営業時間・口コミ・地図・公式サイトなどを確認できます。岐阜県・三重県は今後対応予定です。
+  <div>Ver.1.11</div>：パンラッシュ／秋のパンラッシュを追加。愛知県の市町村別パン屋TOP10に対応。店舗写真・店舗ごとの特色・営業時間・口コミ・地図・公式サイトなどを確認できます。岐阜県・三重県は今後対応予定です。
 </div><h2>西三河</h2><div class="cities"><button id="toyota">豊田市</button><button id="okazaki">岡崎市</button><button id="anjo">安城市</button><button id="kariya">刈谷市</button><button id="nishio">西尾市</button>
 <button id="hekinan">碧南市</button>
 <button id="chiryu">知立市</button>
@@ -473,7 +473,7 @@ button,.back,.detail-action,.review-trigger{
 </section>
   <div id="devTools" class="dev-tools hidden"><button id="clearRankingCache">🔄 ランキングキャッシュ更新</button><div class="muted">開発用：次回ランキング表示時に最新データを取得</div></div><footer id="appFooter" class="app-footer">
 <div>東海パンMAP</div>
-<div>Ver.1.10</div>
+<div>Ver.1.11</div>
   <div>Personal Bakery Discovery Project</div>
   <div>Created & Managed by S.K.</div>
   <div>© 2026 S.K. All Rights Reserved.</div>
@@ -572,8 +572,7 @@ async function fetchWideBakeryCandidates(textQuery) {
     highlights: Array.isArray(p.highlights) ? p.highlights.slice(0, 2) : [],
     score: rankingScore(p.rating,p.userRatingCount)
   }))
-  .filter(s => !/洋菓子|ケーキ|スイーツ|パティスリー|菓子店/.test(s.name))
-  .filter(s => s.types.includes('bakery'))
+  .filter(isBakeryCandidate)
   .filter(s => s.address.includes('愛知県'));
 }
 
@@ -585,6 +584,19 @@ function rankingScore(rating,reviews){
   const adjusted=(v/(v+priorWeight))*r+(priorWeight/(v+priorWeight))*prior;
   const volume=Math.min(22,Math.log10(v+1)*8);
   return adjusted*20+volume;
+}
+function municipalityMatches(address,city){
+  const a=String(address||'').replace(/\s+/g,'');
+  const c=String(city||'').replace(/\s+/g,'');
+  if(!a||!c) return false;
+  return a.includes(c);
+}
+function isBakeryCandidate(shop){
+  if(!shop?.types?.includes('bakery')) return false;
+  const name=String(shop.name||'');
+  if(/洋菓子|ケーキ|スイーツ|パティスリー|菓子店/.test(name)) return false;
+  if(/コンビニ|ローソン|ファミリーマート|セブン-?イレブン|ミニストップ|ドラッグ|薬局|スーパーマーケット|スーパーセンター/.test(name)) return false;
+  return true;
 }
 function normalizeShopText(v=''){
   return String(v).normalize('NFKC').toLowerCase().replace(/\s+/g,'').trim();
@@ -662,9 +674,8 @@ async function loadBakeries(city) {
 
   score: rankingScore(p.rating,p.userRatingCount)
 }));
-shops = shops.filter(s => !/洋菓子|ケーキ|スイーツ|パティスリー|菓子店/.test(s.name));
-  shops = shops.filter(s => s.types.includes('bakery'));
-  shops = shops.filter(s => s.address.includes(city));
+shops = shops.filter(isBakeryCandidate);
+  shops = shops.filter(s => municipalityMatches(s.address,city));
   shops.sort((a, b) =>
     b.score - a.score || b.reviews - a.reviews
   );
