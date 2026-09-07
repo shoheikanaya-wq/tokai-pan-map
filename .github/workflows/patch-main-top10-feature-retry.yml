@@ -1,0 +1,88 @@
+name: Patch main TOP10 feature loading stability
+
+on:
+  push:
+    paths:
+      - 'main-top10-feature-retry-trigger.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Stabilize TOP10 feature loading and release Ver.1.9
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+
+          start=s.index('async function loadShopFeatures(shop){')
+          mid=s.index('async function refreshVisibleFeatures(){', start)
+          end=s.index('function showRanking()', mid)
+
+          new_load="""async function loadShopFeatures(shop){
+  if(!shop?.placeId || shop.featuresLoaded) return false;
+  if(shop.featureRetryAt && Date.now()<shop.featureRetryAt) return false;
+  try{
+    const r=await fetch(REVIEW_API+'?placeId='+encodeURIComponent(shop.placeId)+'&features=1');
+    const data=await r.json();
+    if(!r.ok) throw new Error(data?.error || ('HTTP '+r.status));
+    shop.featureLabels=(Array.isArray(data.features)?data.features:[])
+      .map(v=>v?.label).filter(Boolean);
+    shop.featuresLoaded=true;
+    shop.featureLoadError=false;
+    shop.featureFailCount=0;
+    shop.featureRetryAt=0;
+    return true;
+  }catch(e){
+    console.error('features',e);
+    shop.featureLoadError=true;
+    shop.featureFailCount=(shop.featureFailCount||0)+1;
+    shop.featureRetryAt=Date.now()+Math.min(60000,5000*shop.featureFailCount);
+    return false;
+  }
+}
+"""
+          new_refresh="""async function refreshVisibleFeatures(){
+  const now=Date.now();
+  const targets=shops.slice(0,10).filter(s=>s.placeId && !s.featuresLoaded && (!s.featureRetryAt || now>=s.featureRetryAt));
+  if(!targets.length) return;
+  const queue=[...targets];
+  const worker=async()=>{
+    while(queue.length){
+      const shop=queue.shift();
+      if(shop) await loadShopFeatures(shop);
+    }
+  };
+  const workers=Array.from({length:Math.min(3,queue.length)},worker);
+  await Promise.all(workers);
+  showRanking();
+}
+
+"""
+          s=s[:start]+new_load+'\n'+new_refresh+s[end:]
+          s=s.replace("if(shop.featuresLoaded && !labels.length) return {catchphrase:'店舗固有情報を準備中',highlights:[]};", "if(shop.featureLoadError && !labels.length) return {catchphrase:'特色を再確認中…',highlights:[]};\n  if(shop.featuresLoaded && !labels.length) return {catchphrase:'店舗固有情報を準備中',highlights:[]};")
+          s=s.replace('Ver.1.8','Ver.1.9')
+          notice='Ver.1.9：TOP10の店舗固有特色取得を安定化。複数店舗への同時アクセスを抑え、通信失敗時は取得済み扱いにせず再取得できるよう改善しました。店舗写真・特色・営業時間・口コミ・地図・公式サイトに対応。岐阜県・三重県は今後対応予定です。'
+          s=re.sub(r'Ver\.1\.9：[^<]{20,900}',notice,s,count=1)
+          p.write_text(s,encoding='utf-8')
+
+          sw=Path('sw.js')
+          u=sw.read_text(encoding='utf-8')
+          u=re.sub(r"const CACHE_NAME = 'tokai-pan-v\d+';","const CACHE_NAME = 'tokai-pan-v8';",u,count=1)
+          sw.write_text(u,encoding='utf-8')
+          PY
+      - name: Commit update
+        run: |
+          git config user.name "tokai-pan-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html sw.js
+          git diff --cached --quiet && exit 0
+          git commit -m "Release Ver.1.9 stable TOP10 feature loading"
+          git push
