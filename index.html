@@ -353,7 +353,7 @@ button,.back,.detail-action,.review-trigger{
   </div>
   
   <div class="tabs"><button id="tabAichi" class="active">愛知県</button><button id="tabGifu">岐阜県</button><button id="tabMie">三重県</button></div><div class="notice">
-  <div>Ver.1.24</div>：パンラッシュは愛知県内限定仕様に戻し、西三河耐久・三河縦断・愛知横断の3コースで運用します。通常の東海パンMAP本体は愛知・岐阜・三重の三県対応を継続します。
+  <div>Ver.1.25</div>：スマホで岐阜県TOP10・三重県TOP10などランキング画面の「戻る」が反応しない問題を修正しました。ランキング表示時に履歴状態を保持し、戻る操作でホームへ復帰できるようにしています。パンラッシュは愛知県内限定です。
 </div><div id="aichiPanel"><h2>西三河</h2><div class="cities"><button id="toyota">豊田市</button><button id="okazaki">岡崎市</button><button id="anjo">安城市</button><button id="kariya">刈谷市</button><button id="nishio">西尾市</button>
 <button id="hekinan">碧南市</button>
 <button id="chiryu">知立市</button>
@@ -503,7 +503,7 @@ button,.back,.detail-action,.review-trigger{
 </section>
   <div id="devTools" class="dev-tools hidden"><button id="clearRankingCache">🔄 ランキングキャッシュ更新</button><div class="muted">開発用：次回ランキング表示時に最新データを取得</div></div><footer id="appFooter" class="app-footer">
 <div>東海パンMAP</div>
-<div>Ver.1.24</div>
+<div>Ver.1.25</div>
   <div>Personal Bakery Discovery Project</div>
   <div>Created & Managed by S.K.</div>
   <div>© 2026 S.K. All Rights Reserved.</div>
@@ -826,6 +826,7 @@ function showRanking() {
   home.classList.add('hidden');
   detail.classList.add('hidden');
   ranking.classList.remove('hidden');
+  syncViewHistory('ranking',{prefecture:currentPrefecture,city:currentCity,visualKey:currentVisualKey});
   list.innerHTML='';
   const usedFeatureLabels=new Set();
   shops.slice(0,10).forEach((s,i)=>{
