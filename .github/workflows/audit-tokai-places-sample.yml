@@ -1,0 +1,15 @@
+name: Audit Tokai Places sample
+
+on:
+  push:
+    paths:
+      - 'tokai-places-audit-trigger.txt'
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Audit representative municipalities
+        run: python scripts/audit_tokai_places_sample.py
