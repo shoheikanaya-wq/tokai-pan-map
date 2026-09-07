@@ -1,0 +1,25 @@
+name: Patch ranking back Ver.1.25
+
+on:
+  push:
+    paths:
+      - 'ranking-back-v125-trigger.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fix ranking back navigation
+        run: python scripts/patch_ranking_back_v125.py
+      - name: Commit update
+        run: |
+          git config user.name "tokai-pan-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html sw.js
+          git diff --cached --quiet && exit 0
+          git commit -m "Release Ver.1.25 fix ranking back navigation"
+          git push
