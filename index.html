@@ -345,7 +345,7 @@ button,.back,.detail-action,.review-trigger{
   </div>
   
   <div class="tabs"><button class="active">愛知県</button><button disabled>岐阜県</button><button disabled>三重県</button></div><div class="notice">
-  <div>Ver.1.8</div>：パンラッシュ／秋のパンラッシュを追加。愛知県の市町村別パン屋TOP10に対応。店舗写真・店舗ごとの特色・営業時間・口コミ・地図・公式サイトなどを確認できます。岐阜県・三重県は今後対応予定です。
+  <div>Ver.1.9</div>：パンラッシュ／秋のパンラッシュを追加。愛知県の市町村別パン屋TOP10に対応。店舗写真・店舗ごとの特色・営業時間・口コミ・地図・公式サイトなどを確認できます。岐阜県・三重県は今後対応予定です。
 </div><h2>西三河</h2><div class="cities"><button id="toyota">豊田市</button><button id="okazaki">岡崎市</button><button id="anjo">安城市</button><button id="kariya">刈谷市</button><button id="nishio">西尾市</button>
 <button id="hekinan">碧南市</button>
 <button id="chiryu">知立市</button>
@@ -473,7 +473,7 @@ button,.back,.detail-action,.review-trigger{
 </section>
   <div id="devTools" class="dev-tools hidden"><button id="clearRankingCache">🔄 ランキングキャッシュ更新</button><div class="muted">開発用：次回ランキング表示時に最新データを取得</div></div><footer id="appFooter" class="app-footer">
 <div>東海パンMAP</div>
-<div>Ver.1.8</div>
+<div>Ver.1.9</div>
   <div>Personal Bakery Discovery Project</div>
   <div>Created & Managed by S.K.</div>
   <div>© 2026 S.K. All Rights Reserved.</div>
@@ -684,6 +684,7 @@ const nishimikawa=byId('nishimikawa'), higashimikawa=byId('higashimikawa'), aich
 function buildFactCatch(shop){
   // TOP10中央は店舗固有特色専用。定型の営業時間・評価文は出さない。
   const labels=Array.isArray(shop.featureLabels)?shop.featureLabels:[];
+  if(shop.featureLoadError && !labels.length) return {catchphrase:'特色を再確認中…',highlights:[]};
   if(shop.featuresLoaded && !labels.length) return {catchphrase:'店舗固有情報を準備中',highlights:[]};
   if(!labels.length) return {catchphrase:'特色を確認中…',highlights:[]};
   return {
@@ -694,26 +695,38 @@ function buildFactCatch(shop){
 
 async function loadShopFeatures(shop){
   if(!shop?.placeId || shop.featuresLoaded) return false;
+  if(shop.featureRetryAt && Date.now()<shop.featureRetryAt) return false;
   try{
     const r=await fetch(REVIEW_API+'?placeId='+encodeURIComponent(shop.placeId)+'&features=1');
     const data=await r.json();
     if(!r.ok) throw new Error(data?.error || ('HTTP '+r.status));
-    shop.featureLabels=(Array.isArray(data.features)?data.features:[])
-      .map(v=>v?.label).filter(Boolean);
+    shop.featureLabels=(Array.isArray(data.features)?data.features:[]).map(v=>v?.label).filter(Boolean);
     shop.featuresLoaded=true;
+    shop.featureLoadError=false;
+    shop.featureFailCount=0;
+    shop.featureRetryAt=0;
     return true;
   }catch(e){
     console.error('features',e);
-    shop.featureLabels=[];
-    shop.featuresLoaded=true;
+    shop.featureLoadError=true;
+    shop.featureFailCount=(shop.featureFailCount||0)+1;
+    shop.featureRetryAt=Date.now()+Math.min(60000,5000*shop.featureFailCount);
     return false;
   }
 }
 
 async function refreshVisibleFeatures(){
-  const targets=shops.slice(0,10).filter(s=>s.placeId && !s.featuresLoaded);
+  const now=Date.now();
+  const targets=shops.slice(0,10).filter(s=>s.placeId && !s.featuresLoaded && (!s.featureRetryAt || now>=s.featureRetryAt));
   if(!targets.length) return;
-  await Promise.all(targets.map(loadShopFeatures));
+  const queue=[...targets];
+  const worker=async()=>{
+    while(queue.length){
+      const shop=queue.shift();
+      if(shop) await loadShopFeatures(shop);
+    }
+  };
+  await Promise.all(Array.from({length:Math.min(3,queue.length)},worker));
   showRanking();
 }
 

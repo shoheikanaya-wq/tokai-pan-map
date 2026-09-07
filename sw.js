@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tokai-pan-v7';
+const CACHE_NAME = 'tokai-pan-v8';
 
 const FILES = [
   './',
