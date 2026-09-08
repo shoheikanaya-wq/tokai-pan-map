@@ -1,0 +1,48 @@
+name: Pan Rush intuitive start UX
+
+on:
+  push:
+    paths:
+      - 'scripts/sync-rush-start-ux.py'
+      - '.github/workflows/rush-start-ux.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Patch Pan Rush start UX
+        run: python scripts/sync-rush-start-ux.py
+      - name: Static safety checks
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('panrush.html').read_text(encoding='utf-8')
+          a=Path('autumn-rush.html').read_text(encoding='utf-8')
+          sw=Path('sw.js').read_text(encoding='utf-8')
+          assert 'おまかせで始める' in p
+          assert '条件を決めて始める' in p
+          assert 'tokai-pan-home.png' in p and 'tokai-pan-home.png' in a
+          assert '西三河耐久' in p and '三河縦断' in p and '愛知横断' in p
+          assert 'href="tel:' not in (p+a).lower()
+          assert "'./panrush.html'" in sw and "'./autumn-rush.html'" in sw
+          print('Pan Rush start UX checks passed')
+          PY
+      - name: Commit UX update
+        run: |
+          if git diff --quiet; then
+            echo "No changes needed"
+            exit 0
+          fi
+          git config user.name "tokai-pan-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add panrush.html index.html sw.js
+          git commit -m "ui: make Pan Rush start intuitive"
+          git push
