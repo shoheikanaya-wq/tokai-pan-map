@@ -32,7 +32,8 @@ jobs:
           scripts = re.findall(r'<script[^>]*>(.*?)</script>', html, flags=re.S|re.I)
           if not scripts:
               raise SystemExit('No inline script found in panrush.html')
-          Path('/tmp/panrush-inline.js').write_text('\n'.join(scripts), encoding='utf-8')
+          js='\n'.join(scripts)
+          Path('/tmp/panrush-inline.js').write_text(js.replace(';',';\n'), encoding='utf-8')
           print('Extracted', len(scripts), 'script block(s)')
           PY
           node --check /tmp/panrush-inline.js
