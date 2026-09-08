@@ -32,11 +32,22 @@ jobs:
           scripts = re.findall(r'<script[^>]*>(.*?)</script>', html, flags=re.S|re.I)
           if not scripts:
               raise SystemExit('No inline script found in panrush.html')
-          js='\n'.join(scripts)
-          Path('/tmp/panrush-inline.js').write_text(js.replace(';',';\n'), encoding='utf-8')
-          print('Extracted', len(scripts), 'script block(s)')
+          Path('/tmp/panrush-inline.js').write_text('\n'.join(scripts), encoding='utf-8')
           PY
-          node --check /tmp/panrush-inline.js
+          npm install acorn@8 --no-save --silent
+          node - <<'JS'
+          const fs=require('fs');
+          const acorn=require('acorn');
+          const src=fs.readFileSync('/tmp/panrush-inline.js','utf8');
+          try {
+            acorn.parse(src,{ecmaVersion:'latest'});
+            console.log('Pan Rush JavaScript syntax OK');
+          } catch(e) {
+            console.error('SYNTAX_POS',e.pos,'LINE',e.loc?.line,'COL',e.loc?.column,e.message);
+            console.error(src.slice(Math.max(0,e.pos-260),Math.min(src.length,e.pos+260)));
+            process.exit(1);
+          }
+          JS
       - name: Static safety checks
         run: |
           python - <<'PY'
