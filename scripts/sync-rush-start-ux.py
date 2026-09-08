@@ -40,6 +40,13 @@ s = s.replace('>候補店を一括取得</button>', '>この条件で店を選�
 s = s.replace("'候補店を一括取得'", "'この条件で店を選ぶ'")
 s = s.replace('候補を取得すると、複数市町村から耐久用の店舗プールを作成します。', '条件を決めたら「この条件で店を選ぶ」を押してください。次に挑戦店舗を選びます。', 1)
 
+# Repair a syntax regression in visitWindow(): the function-closing brace was missing,
+# which prevented every Pan Rush button handler from being registered.
+broken = "return{wait:0,openAt:arrival,closeAt:null,state:'closed'}function arrivalRisk"
+fixed = "return{wait:0,openAt:arrival,closeAt:null,state:'closed'}}function arrivalRisk"
+if broken in s:
+    s = s.replace(broken, fixed, 1)
+
 JS = '''
 function startWithRecommended(){
   $('challenge').value='nishi';
@@ -81,8 +88,5 @@ if 'パンラッシュは「おまかせで始める」' not in idx_text:
     note = '<div class="notice">⚡ パンラッシュは「おまかせで始める」または条件指定から直感的に開始できます。</div>'
     pos = idx_text.find(marker)
     if pos >= 0:
-        end = idx_text.find('</div>', pos)
-        if end >= 0:
-            # insert before rush grid so it is visible near the entry without touching ranking/detail logic
-            idx_text = idx_text[:pos] + note + idx_text[pos:]
+        idx_text = idx_text[:pos] + note + idx_text[pos:]
 idx.write_text(idx_text, encoding='utf-8')
