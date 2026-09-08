@@ -18,8 +18,24 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.x'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
       - name: Patch Pan Rush start UX
         run: python scripts/sync-rush-start-ux.py
+      - name: JavaScript syntax check
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          html = Path('panrush.html').read_text(encoding='utf-8')
+          scripts = re.findall(r'<script[^>]*>(.*?)</script>', html, flags=re.S|re.I)
+          if not scripts:
+              raise SystemExit('No inline script found in panrush.html')
+          Path('/tmp/panrush-inline.js').write_text('\n'.join(scripts), encoding='utf-8')
+          print('Extracted', len(scripts), 'script block(s)')
+          PY
+          node --check /tmp/panrush-inline.js
       - name: Static safety checks
         run: |
           python - <<'PY'
