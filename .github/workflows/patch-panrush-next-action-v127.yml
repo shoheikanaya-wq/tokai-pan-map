@@ -1,0 +1,71 @@
+name: Patch Pan Rush next action v127
+
+on:
+  push:
+    paths:
+      - 'panrush-next-action-v127-trigger.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Make next Pan Rush action obvious
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          p=Path('panrush.html')
+          s=p.read_text(encoding='utf-8')
+          old='<section id="pick" class="panel hidden"><strong>挑戦店舗</strong><div id="challengeInfo" class="small"></div><div id="selectedCount" class="countline">選択 0店</div>'
+          new='<section id="pick" class="panel hidden"><strong>STEP 2｜このままルートを作る</strong><div id="challengeInfo" class="small"></div><div id="selectedCount" class="countline">選択 0店</div><button id="planTop" class="primary" style="margin-top:8px">🔥 このままルートを作る</button>'
+          if old in s and 'id="planTop"' not in s:
+              s=s.replace(old,new,1)
+          s=s.replace('>🔥 24時間パンラッシュ計画を作る</button>','>🔥 このままルートを作る</button>',1)
+          s=s.replace('<div id="stickyTitle">店舗を選択</div>','<div id="stickyTitle">次はルート作成</div>',1)
+          s=s.replace('<button id="stickyPlan" class="primary">ルート作成</button>','<button id="stickyPlan" class="primary">このままルートを作る</button>',1)
+          needle="$('status').innerHTML='<span class=\"good\">取得完了。</span> '+cfg.name+' 候補 '+shops.length+'店';setLoadState(false);"
+          if needle in s and "$('pick')?.scrollIntoView({behavior:'smooth',block:'start'});" not in s:
+              s=s.replace(needle,needle+"$('pick')?.scrollIntoView({behavior:'smooth',block:'start'});",1)
+          needle2="if($('stickyPlan'))$('stickyPlan').onclick=()=>$('plan').click();"
+          if needle2 in s and "if($('planTop'))" not in s:
+              s=s.replace(needle2,"if($('planTop'))$('planTop').onclick=()=>$('plan').click();"+needle2,1)
+          p.write_text(s,encoding='utf-8')
+          sw=Path('sw.js'); w=sw.read_text(encoding='utf-8')
+          m=re.search(r"tokai-pan-v(\d+)",w)
+          if m and int(m.group(1))<29:
+              w=w.replace(m.group(0),'tokai-pan-v29',1)
+          sw.write_text(w,encoding='utf-8')
+          PY
+      - name: JavaScript syntax check
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          html=Path('panrush.html').read_text(encoding='utf-8')
+          scripts=re.findall(r'<script(?:\s[^>]*)?>(.*?)</script>',html,flags=re.S|re.I)
+          Path('/tmp/panrush-inline.js').write_text('\n'.join(scripts),encoding='utf-8')
+          PY
+          node --check /tmp/panrush-inline.js
+      - name: Verify fixed constraints
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          s=Path('panrush.html').read_text(encoding='utf-8')
+          assert '愛知県内 24時間耐久チャレンジ' in s
+          assert 'id="planTop"' in s
+          assert 'このままルートを作る' in s
+          assert 'tel:' not in s.lower()
+          assert "const CACHE_NAME = 'tokai-pan-v29';" in Path('sw.js').read_text(encoding='utf-8')
+          PY
+      - name: Commit update
+        run: |
+          git config user.name "tokai-pan-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add panrush.html sw.js
+          git diff --cached --quiet && exit 0
+          git commit -m "ux: make Pan Rush next action obvious"
+          git push
