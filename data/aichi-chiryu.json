@@ -1,0 +1,161 @@
+{
+  "source": "static-free-recovery",
+  "updatedAt": "2026-09-19",
+  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。未取得項目は空欄または0。来店前に地図・公式情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "ChIJMcx1Dv-dBGARZTbjMrfDDZU",
+      "name": "Bakery OLi",
+      "rating": 4.3,
+      "reviews": 19,
+      "address": "愛知県知立市宝1-14-5",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "宝のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJb5Jc3lmcBGARiXDe63XD2K4",
+      "name": "エピール",
+      "rating": 4,
+      "reviews": 1,
+      "address": "愛知県知立市上重原町己ノ池53-1",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "上重原町のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJC-YCvRecBGAROlWvDvyb6nI",
+      "name": "パンのかおり 知立店",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県知立市広見1-90",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "07:00–19:00"
+      ],
+      "phone": "0566-93-3875",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "広見のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJV5VwUkecBGARpLIqwdqapgg",
+      "name": "ベルナール知立店",
+      "rating": 3,
+      "reviews": 4,
+      "address": "愛知県知立市南新地1-2-6",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "10:00–21:00"
+      ],
+      "phone": "0566-81-5351",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "南新地のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJHwXlEVacBGAREabm7FGFVkE",
+      "name": "Noripan",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県知立市上重原町曇り147-1",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "090-1788-5432",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "上重原町のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJ80CxTwKcBGARKwG7IYBvUUA",
+      "name": "メープルけやき",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県知立市八ツ田町泉45-1",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "0566-91-2860",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "ベーカリー＆カフェ",
+      "highlights": [
+        "福祉施設併設"
+      ]
+    },
+    {
+      "placeId": "ChIJlTJ_joidBGARC8Y0IDO-_Kk",
+      "name": "ベーカリー＆カフェたいいくぱん",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県知立市西町草刈10-5 福祉体育館内",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "10:00–17:00"
+      ],
+      "phone": "090-1782-2859",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "福祉体育館内のベーカリー＆カフェ",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJ5ZhnhBucBGARE5E2kKIxLGo",
+      "name": "サンエトワール ギャラリエアピタ知立店",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県知立市長篠町大山18-1 ギャラリエアピタ知立1F",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "09:00–21:00"
+      ],
+      "phone": "0566-83-8133",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "アピタ内のベーカリー",
+      "highlights": []
+    }
+  ]
+}
