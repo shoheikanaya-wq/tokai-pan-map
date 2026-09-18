@@ -1047,12 +1047,16 @@ currentVisualKey = '';
     button.disabled = true;
     button.textContent = '取得中…';
 
+    showRankingView();
+    ranking.innerHTML = '<div class="loading">パン屋情報を取得しています…</div>';
     const loadedShops=await loadBakeries(selectedPrefecture,city);
     if(currentPrefecture!==selectedPrefecture || currentCity!==city) return;
     shops=loadedShops;
     showRanking();
   } catch(e) {
-    showLoadError('パン屋情報の取得に失敗しました。通信状態を確認して再試行してください。',()=>button.click());
+    showRankingView();
+    ranking.innerHTML = '<div class="load-error"><strong>パン屋情報を取得できませんでした。</strong><br>API接続を確認して再試行してください。<br><button id="cityRetry">再試行</button></div>';
+    document.getElementById('cityRetry')?.addEventListener('click',()=>button.click());
   } finally {
     button.disabled = false;
     button.textContent = city;
