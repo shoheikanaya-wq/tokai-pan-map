@@ -1,0 +1,216 @@
+{
+  "source": "static-free-recovery",
+  "updatedAt": "2026-09-19",
+  "attribution": "無料復旧用スナップショット。公開情報を基に構成し、来店前に公式情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "",
+      "name": "ボンルーン",
+      "rating": 3.46,
+      "reviews": 94,
+      "address": "愛知県安城市篠目町池下183-1",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "月・水〜日 9:00–19:00",
+        "火 定休"
+      ],
+      "phone": "0566-95-3899",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "クロワッサンで知られるベーカリー",
+      "highlights": [
+        "新安城エリア"
+      ]
+    },
+    {
+      "placeId": "",
+      "name": "ル・パン・ド・ペコ",
+      "rating": 3.41,
+      "reviews": 72,
+      "address": "愛知県安城市法連町17-1 メゾンクボタ1F",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "10:30〜11:00頃開店・売切次第終了",
+        "月・火・水 定休"
+      ],
+      "phone": "0566-72-7623",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "法連町のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJ9wNNCZiZBGARL2yz2QOL1BU",
+      "name": "しあわせをはこぶパン",
+      "rating": 3.39,
+      "reviews": 127,
+      "address": "愛知県安城市百石町1-6-3",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "10:00–18:00",
+        "水 定休"
+      ],
+      "phone": "0566-71-5101",
+      "website": "https://shiapain.jp/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "国産小麦・無添加にこだわるベーカリー",
+      "highlights": [
+        "地元食材",
+        "無添加製法"
+      ]
+    },
+    {
+      "placeId": "ChIJmSGjapWZBGARexeBgPNW2vA",
+      "name": "パンのトラ 安城本店",
+      "rating": 3.36,
+      "reviews": 226,
+      "address": "愛知県安城市安城町東広畔5-3",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "7:00–19:00"
+      ],
+      "phone": "0566-91-2070",
+      "website": "https://pannotora.com/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "安城本店のスペイン窯ベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJheqKtdCZBGARN7bl4jiQHUo",
+      "name": "foyer boulanger",
+      "rating": 3.31,
+      "reviews": 47,
+      "address": "愛知県安城市古井町小仏9-2",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "火〜土 9:00–16:00"
+      ],
+      "phone": "0566-77-5515",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "古井町のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "",
+      "name": "デキタッテ工房",
+      "rating": 3.25,
+      "reviews": 35,
+      "address": "愛知県安城市赤松町梶1 デンパーク内",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "月・水〜日 9:30–17:00",
+        "火 定休"
+      ],
+      "phone": "0566-92-5512",
+      "website": "https://denpark.jp/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "デンパーク内のベーカリー",
+      "highlights": [
+        "公園内"
+      ]
+    },
+    {
+      "placeId": "ChIJK2F3BKWZBGARbnSMxUbDJyU",
+      "name": "Panino Anjo",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県安城市御幸本町18-10",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "月 7:00–18:00"
+      ],
+      "phone": "0566-72-4848",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "御幸本町のサンドイッチ＆ベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "",
+      "name": "おりひめandひこぼし",
+      "rating": 3.9,
+      "reviews": 48,
+      "address": "愛知県安城市末広町（詳細は地図で確認）",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "食パン系メニューのあるベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJo8BrdGOZBGARMhRM2QWLi6c",
+      "name": "Core Stage Anjo",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県安城市三河安城南町1-4-8 ラフーズコア1F",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "9:00–21:00"
+      ],
+      "phone": "0566-74-2111",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "三河安城エリアのベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJC27nqnqXBGARfbiNFKzGODg",
+      "name": "Grano Grano Anjo Minami",
+      "rating": 3.4,
+      "reviews": 23,
+      "address": "愛知県安城市桜井町城向2-60",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "9:00–22:00"
+      ],
+      "phone": "0566-99-6831",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "桜井町のベーカリー",
+      "highlights": []
+    }
+  ]
+}
