@@ -1,0 +1,167 @@
+{
+  "source": "static-free-recovery",
+  "updatedAt": "2026-09-19",
+  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。未取得項目は空欄または0。来店前に地図・公式情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "ChIJmREYCmhhA2ARkx2yVcqItV8",
+      "name": "Hyggely",
+      "rating": 4.6,
+      "reviews": 26,
+      "address": "愛知県みよし市三好丘緑2-10-4",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "水・土 11:00–17:00"
+      ],
+      "phone": "090-8323-9238",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "三好丘緑のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJv4LxCM1hA2ARu2jvUGJmfok",
+      "name": "たまご村 みよし店",
+      "rating": 4.1,
+      "reviews": 30,
+      "address": "愛知県みよし市打越町諸輪坂15-315",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "09:00–18:00"
+      ],
+      "phone": "0561-34-7419",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "卵・ベーカリー・カフェ",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJy1XxCM1hA2ARPTvk6dq5OJc",
+      "name": "はらぺこパン",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県みよし市打越町諸輪坂15-315",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "月・金・土・日 09:00–17:00"
+      ],
+      "phone": "0561-33-1626",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "打越町のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJRYm6qIthA2ARNvYHEC3YpgU",
+      "name": "こむぎ館",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県みよし市三好町蜂ヶ池1-38",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "水 09:00–18:30"
+      ],
+      "phone": "0561-32-3273",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "三好町のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJAxLZHV9gA2ARth0ZJorX3MA",
+      "name": "パリクロアッサン 三好店",
+      "rating": 3.5,
+      "reviews": 2,
+      "address": "愛知県みよし市ひばりヶ丘2-1-5",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "10:00–21:00"
+      ],
+      "phone": "0561-36-8807",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "ひばりヶ丘のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJuUsHdMZhA2ARhhSgWxdE4iY",
+      "name": "ベーカリー クグロフ",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県みよし市三好町東山90-2",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "10:00–17:00"
+      ],
+      "phone": "0561-34-4365",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "三好町のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJcaCUd75hA2ARqIqBi_N2GiI",
+      "name": "パン工場 イオン三好店",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県みよし市三好町青木91",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "09:00–21:30"
+      ],
+      "phone": "0561-33-3031",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "イオン三好店内のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJ5WsCh1phA2ARKzY_1qMJaSY",
+      "name": "ナビィのパン イオン三好店",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県みよし市三好町青木91",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "10:00–21:00"
+      ],
+      "phone": "0561-33-3567",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "イオン三好店内のベーカリー",
+      "highlights": []
+    }
+  ]
+}
