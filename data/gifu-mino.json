@@ -1,0 +1,21 @@
+{
+ "source":"static-free-verified",
+ "updatedAt":"2026-09-19",
+ "attribution":"美濃市観光協会の公開情報を基に確認。来店前に最新情報をご確認ください。",
+ "shops":[{
+  "placeId":"static-mino-kandaya",
+  "name":"ベーカリー 神田屋",
+  "rating":0,
+  "reviews":0,
+  "address":"岐阜県美濃市松栄町5丁目11",
+  "type":"パン屋",
+  "types":["bakery"],
+  "openingHours":["08:00–18:00","定休日 日・祝"],
+  "phone":"0575-35-0052",
+  "website":"https://minokanko.com/buy/category/%E9%A3%9F%E3%81%B9%E7%89%A9%E3%83%BB%E9%A3%B2%E6%96%99/p7521/",
+  "googleMaps":"",
+  "photo":"",
+  "catchphrase":"美濃市で愛される老舗のパン屋",
+  "highlights":["あんパン","デニッシュ食パン","フランスパン"]
+ }]
+}
