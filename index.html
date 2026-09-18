@@ -677,18 +677,19 @@ async function loadBakeries(prefecture,city) {
     console.log(`[東海パンMAP] ${city}: キャッシュ利用`);
     return cached;
   }
-  const response = await fetch(
-   'https://tokai-pan-api-873562719766.asia-northeast1.run.app',
-    {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        textQuery: `パン屋 ${prefecture}${city}`,
-      })
-    }
-  );
+  let response;
+  try {
+    response = await fetch(
+      'https://tokai-pan-api-873562719766.asia-northeast1.run.app',
+      {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({textQuery: `パン屋 ${prefecture}${city}`})
+      }
+    );
+  } catch (e) {
+    throw new Error('パン屋APIへ接続できません');
+  }
 
   if (!response.ok) {
     throw new Error('Google Places API エラー: ' + response.status);
