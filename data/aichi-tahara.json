@@ -1,0 +1,32 @@
+{
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "店舗情報は公開情報を基に確認。来店前に公式・地域商工情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "static-tahara-hanauta",
+      "name": "はなうたパン屋",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県田原市東赤石3丁目7 サンコート田原A",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "07:30–18:30",
+        "日曜定休"
+      ],
+      "phone": "0531-22-7123",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "田原市のベーカリー",
+      "highlights": [
+        "菓子パン",
+        "惣菜パン",
+        "食パン"
+      ]
+    }
+  ]
+}
