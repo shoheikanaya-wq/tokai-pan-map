@@ -1,0 +1,11 @@
+{
+  "source":"static-free-verified","updatedAt":"2026-09-19",
+  "attribution":"店舗公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。",
+  "shops":[{
+    "placeId":"static-agui-pankobo","name":"パン工房 麦","rating":0,"reviews":0,
+    "address":"愛知県知多郡阿久比町","type":"パン屋","types":["bakery"],
+    "openingHours":[],"phone":"",
+    "website":"","googleMaps":"","photo":"",
+    "catchphrase":"阿久比町のベーカリー","highlights":[]
+  }]
+}
