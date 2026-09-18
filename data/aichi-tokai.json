@@ -1,0 +1,11 @@
+{
+  "source":"static-free-verified","updatedAt":"2026-09-19",
+  "attribution":"店舗公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。",
+  "shops":[{
+    "placeId":"static-tokai-chezkobe","name":"ブーランジェリー セリュリエ","rating":0,"reviews":0,
+    "address":"愛知県東海市加木屋町1丁目120","type":"パン屋","types":["bakery"],
+    "openingHours":["10:00–18:00","定休日 月・火"],"phone":"0562-34-6708",
+    "website":"https://cellulier.jp/","googleMaps":"","photo":"",
+    "catchphrase":"東海市加木屋のベーカリー","highlights":[]
+  }]
+}
