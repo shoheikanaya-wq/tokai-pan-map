@@ -1,0 +1,55 @@
+{
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "店舗情報は公開情報を基に確認。来店前に公式情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "static-shinshiro-chat",
+      "name": "石窯パン工房ちゃっと",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県新城市中宇利字三社五所33-3",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "月・火・金、第1水曜定休"
+      ],
+      "phone": "0536-26-0383",
+      "website": "https://chatpan.net/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "国産小麦と自家製天然酵母の石窯パン",
+      "highlights": [
+        "手作り石窯",
+        "自家製天然酵母"
+      ]
+    },
+    {
+      "placeId": "static-shinshiro-raisin",
+      "name": "自然酵母パン Raisin（レザン）",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県新城市作手高里",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "11:00–17:00",
+        "営業日は公式カレンダー参照"
+      ],
+      "phone": "0536-29-0870",
+      "website": "https://raisin-tukude.com/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "作手高原の自然酵母パン",
+      "highlights": [
+        "自然酵母",
+        "国産小麦",
+        "薪石窯"
+      ]
+    }
+  ]
+}
