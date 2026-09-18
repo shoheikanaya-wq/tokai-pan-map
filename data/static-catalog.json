@@ -5,8 +5,8 @@
   "policy": "User-facing municipality pages never call Cloud Run or Overpass. Missing static data shows an immediate map-search fallback.",
   "totals": {
     "municipalities": 125,
-    "ready": 37,
-    "pending": 88
+    "ready": 40,
+    "pending": 85
   },
   "municipalities": [
     {
@@ -300,8 +300,8 @@
     {
       "prefecture": "愛知県",
       "city": "知多市",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/aichi-chita.json"
     },
     {
       "prefecture": "愛知県",
@@ -312,8 +312,8 @@
     {
       "prefecture": "愛知県",
       "city": "東浦町",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/aichi-higashiura.json"
     },
     {
       "prefecture": "愛知県",
@@ -330,8 +330,8 @@
     {
       "prefecture": "愛知県",
       "city": "武豊町",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/aichi-taketoyo.json"
     },
     {
       "prefecture": "岐阜県",
