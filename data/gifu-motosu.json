@@ -1,0 +1,11 @@
+{
+ "source":"static-free-verified","updatedAt":"2026-09-19",
+ "attribution":"店舗公式サイトの公開情報を基に確認。営業日は不定のため来店前に最新情報をご確認ください。",
+ "shops":[{
+  "placeId":"static-motosu-ibumaki","name":"ibumaki ベーカリー喫茶","rating":0,"reviews":0,
+  "address":"岐阜県本巣市金原376-1","type":"ベーカリー喫茶","types":["bakery","cafe"],
+  "openingHours":["営業日不定 12:00–16:00（L.O.15:00）"],"phone":"0581-32-5222",
+  "website":"https://www.ibumaki.com/ibumaki","googleMaps":"","photo":"",
+  "catchphrase":"米酵母パンと焼菓子のベーカリー喫茶","highlights":["米酵母パン"]
+ }]
+}
