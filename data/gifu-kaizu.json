@@ -1,0 +1,11 @@
+{
+ "source":"static-free-verified","updatedAt":"2026-09-19",
+ "attribution":"店舗公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。",
+ "shops":[{
+  "placeId":"static-kaizu-151a","name":"Bakery Cafe 151@","rating":0,"reviews":0,
+  "address":"岐阜県海津市海津町馬目403-3","type":"ベーカリーカフェ","types":["bakery","cafe"],
+  "openingHours":["ベーカリー 08:00–18:00","カフェ 08:00–15:00","定休日 火、第3・第4月"],"phone":"0584-53-0999",
+  "website":"https://www.bakerycafe-151a.com/","googleMaps":"","photo":"",
+  "catchphrase":"米粉や天然酵母を使うベーカリーカフェ","highlights":["冷やしクリームあんパン"]
+ }]
+}
