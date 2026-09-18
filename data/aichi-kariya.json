@@ -1,0 +1,202 @@
+{
+  "source": "static-free-recovery",
+  "updatedAt": "2026-09-19",
+  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。評価・口コミ数は取得できた公開情報を使用し、未取得項目は0または空欄。来店前に公式情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "ChIJt1ro6HScBGAR9kpnjNSAlEs",
+      "name": "BOULANGERIE Pan me",
+      "rating": 4.1,
+      "reviews": 265,
+      "address": "愛知県刈谷市板倉町3-6-1",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "水〜日 08:00–19:00",
+        "月・火 定休"
+      ],
+      "phone": "0566-24-3883",
+      "website": "https://www.kariya-guide.com/gourmet/000163.html",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "100種類以上の手作りパン",
+      "highlights": [
+        "地域密着",
+        "惣菜・スイーツ系も充実"
+      ]
+    },
+    {
+      "placeId": "ChIJc43x_c-cBGAROm0-1DwUHZU",
+      "name": "Rond point",
+      "rating": 4.2,
+      "reviews": 86,
+      "address": "愛知県刈谷市広小路6-91-1",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "水〜日 08:00–19:00"
+      ],
+      "phone": "0566-91-6025",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "広小路のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJnQumSQCdBGARykrY120Xbrc",
+      "name": "R Baker 刈谷ミササガパーク店",
+      "rating": 3.7,
+      "reviews": 92,
+      "address": "愛知県刈谷市半城土町掛貝 ミササガパーク",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "08:00–18:00"
+      ],
+      "phone": "0566-56-2847",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "ミササガパークのベーカリー",
+      "highlights": [
+        "イートイン",
+        "コーヒー"
+      ]
+    },
+    {
+      "placeId": "ChIJZ-UfNSKdBGARi9qVax8aEuU",
+      "name": "パンのかおり 刈谷店",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県刈谷市稲場町1-111",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "毎日 07:00–19:00"
+      ],
+      "phone": "0566-91-7500",
+      "website": "https://page.line.me/ndi4836r",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "石窯で焼き上げるパン",
+      "highlights": [
+        "イートイン",
+        "キッズスペース"
+      ]
+    },
+    {
+      "placeId": "ChIJjfgBGIqbBGAR9_n2jpf6N70",
+      "name": "BERNARD",
+      "rating": 3.6,
+      "reviews": 5,
+      "address": "愛知県刈谷市松栄町2丁目",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "09:00–21:00"
+      ],
+      "phone": "0566-23-4560",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "松栄町のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJj-NfIoWdBGARCbKNc8G5vog",
+      "name": "Hankyu Bakery & Cafe",
+      "rating": 3.2,
+      "reviews": 51,
+      "address": "愛知県刈谷市東境町京和1",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "10:00–21:00"
+      ],
+      "phone": "0566-35-4700",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "ベーカリー＆カフェ",
+      "highlights": [
+        "イートイン",
+        "コーヒー"
+      ]
+    },
+    {
+      "placeId": "ChIJ1bBbSu-cBGARyoTHQuDdDQM",
+      "name": "Hearth Brown",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県刈谷市南桜町2-56-1",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "0566-29-5236",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "南桜町のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJ31Rzd-ycBGARihGYHQoRV98",
+      "name": "Traiteur",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県刈谷市大手町5-55",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "木 09:00–17:00"
+      ],
+      "phone": "0566-21-3095",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "大手町のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJ1Ui73BydBGARe-X4q_TBokA",
+      "name": "Paris Bakery",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県刈谷市池田町2-226",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "火〜土 07:00–19:00",
+        "日・月 定休（祝日月曜は営業の場合あり）"
+      ],
+      "phone": "0566-23-8470",
+      "website": "https://www.paris-bakery.jp/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "100種類以上のパン",
+      "highlights": [
+        "食パン21種類",
+        "地域密着"
+      ]
+    }
+  ]
+}
