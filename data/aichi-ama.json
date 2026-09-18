@@ -1,0 +1,31 @@
+{
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "あま市観光協会の公開情報を基に確認。来店前に最新情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "static-ama-yotsuba",
+      "name": "ぱん屋 よつ葉",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県あま市下萱津蓮池1",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "12:00–17:00",
+        "定休日は店舗SNS参照"
+      ],
+      "phone": "",
+      "website": "https://ama-kankou.jp/page_eatbuy/%E3%81%B1%E3%82%93%E5%B1%8B-%E3%82%88%E3%81%A4%E8%91%89/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "国産小麦・天然酵母のパン屋",
+      "highlights": [
+        "自家製酵母",
+        "米粉菓子"
+      ]
+    }
+  ]
+}
