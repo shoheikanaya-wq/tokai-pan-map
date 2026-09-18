@@ -1,0 +1,11 @@
+{
+  "source":"static-free-verified","updatedAt":"2026-09-19",
+  "attribution":"美浜町公開資料および公開店舗情報を基に確認。来店前に最新情報をご確認ください。",
+  "shops":[{
+    "placeId":"static-mihama-azeria","name":"焼きたてパン あぜーりあ","rating":0,"reviews":0,
+    "address":"愛知県知多郡美浜町大字布土字和田80","type":"パン屋","types":["bakery"],
+    "openingHours":["10:00–16:30","定休日 土・日"],"phone":"0569-73-8765",
+    "website":"","googleMaps":"","photo":"",
+    "catchphrase":"セルプ・アゼーリアの焼きたてパン","highlights":[]
+  }]
+}
