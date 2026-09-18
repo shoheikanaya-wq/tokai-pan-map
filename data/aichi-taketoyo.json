@@ -1,0 +1,30 @@
+{
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "店舗公式サイト・武豊町観光協会の公開情報を基に確認。来店前に最新情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "static-taketoyo-studioble",
+      "name": "スタジオ・ブレ 武豊本店",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県知多郡武豊町字旭ヶ丘3-26",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "10:00–16:00",
+        "定休日 水・木"
+      ],
+      "phone": "0569-73-2850",
+      "website": "https://www.ble-pankaido.com/studiobleshop/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "無添加の自然派パン",
+      "highlights": [
+        "昭和51年創業"
+      ]
+    }
+  ]
+}
