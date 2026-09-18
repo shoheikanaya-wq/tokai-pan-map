@@ -352,7 +352,7 @@ button,.back,.detail-action,.review-trigger{
   </div>
   
   <div class="tabs"><button id="tabAichi" class="active">愛知県</button><button id="tabGifu">岐阜県</button><button id="tabMie">三重県</button></div><div class="notice">
-  <div>Ver.1.35</div>：無料公開データ取得に15秒タイムアウトと自動切替を追加しました。初回取得が詰まった場合は別の無料取得先へ切り替え、失敗時も待ち続けず明確に表示します。電話番号は表示専用、パンラッシュは愛知県内限定を継続します。
+  <div>Ver.1.36</div>：市町村取得全体に32秒の強制タイムアウトを追加しました。無料取得先や静的データの応答が止まっても、32秒で必ず待機画面を終了します。電話番号は表示専用、パンラッシュは愛知県内限定を継続します。
 </div><div id="aichiPanel"><h2>西三河</h2><div class="cities"><button id="toyota">豊田市</button><button id="okazaki">岡崎市</button><button id="anjo">安城市</button><button id="kariya">刈谷市</button><button id="nishio">西尾市</button>
 <button id="hekinan">碧南市</button>
 <button id="chiryu">知立市</button>
@@ -503,7 +503,7 @@ button,.back,.detail-action,.review-trigger{
 </section>
   <div id="devTools" class="dev-tools hidden"><button id="clearRankingCache">🔄 ランキングキャッシュ更新</button><div class="muted">開発用：次回ランキング表示時に最新データを取得</div></div><footer id="appFooter" class="app-footer">
 <div>東海パンMAP</div>
-<div>Ver.1.35</div>
+<div>Ver.1.36</div>
   <div>Personal Bakery Discovery Project</div>
   <div>Created & Managed by S.K.</div>
   <div>© 2026 S.K. All Rights Reserved.</div>
@@ -1183,8 +1183,19 @@ if (s.openNow === true) {
   dmaps.href = s.googleMaps || ('https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent((s.name||'') + ' ' + (s.address||'')));
   dmaps.style.display = 'inline-flex';
 }
+let cityLoadSeq=0;
+
+function hardTimeout(promise, ms, message){
+  let timer;
+  const timeout=new Promise((_,reject)=>{
+    timer=setTimeout(()=>reject(new Error(message)),ms);
+  });
+  return Promise.race([promise,timeout]).finally(()=>clearTimeout(timer));
+}
+
   async function selectCity(button, city) {
 const selectedPrefecture = currentPrefecture;
+const loadSeq=++cityLoadSeq;
 currentCity = city;
 currentVisualKey = '';
     try {
@@ -1193,18 +1204,28 @@ currentVisualKey = '';
     button.textContent = '取得中…';
 
     showRankingView();
-    list.innerHTML = '<div class="loading">パン屋情報を取得しています…<br><small>初回は最大30秒ほど。遅い場合は自動で別の無料取得先へ切り替えます。</small></div>';
-    const loadedShops=await loadBakeries(selectedPrefecture,city);
-    if(currentPrefecture!==selectedPrefecture || currentCity!==city) return;
+    list.innerHTML = '<div class="loading">パン屋情報を取得しています…<br><small>初回は最大32秒。32秒を超えたら自動で停止します。</small></div>';
+    const loadedShops=await hardTimeout(
+      loadBakeries(selectedPrefecture,city),
+      32000,
+      '市町村データ取得が32秒でタイムアウトしました'
+    );
+    if(loadSeq!==cityLoadSeq || currentPrefecture!==selectedPrefecture || currentCity!==city) return;
     shops=loadedShops;
     showRanking();
   } catch(e) {
+    if(loadSeq!==cityLoadSeq) return;
     showRankingView();
-    list.innerHTML = '<div class="load-error"><strong>パン屋情報を取得できませんでした。</strong><br>無料取得先を切り替えても取得できませんでした。少し時間を置いて再試行してください。<br><button id="cityRetry">再試行</button></div>';
+    const timeout=String(e?.message||'').includes('32秒');
+    list.innerHTML = timeout
+      ? '<div class="load-error"><strong>32秒で取得を停止しました。</strong><br>待ち続ける状態を防止しました。時間を置くか再試行してください。<br><button id="cityRetry">再試行</button></div>'
+      : '<div class="load-error"><strong>パン屋情報を取得できませんでした。</strong><br>無料取得先を切り替えても取得できませんでした。少し時間を置いて再試行してください。<br><button id="cityRetry">再試行</button></div>';
     document.getElementById('cityRetry')?.addEventListener('click',()=>button.click());
   } finally {
-    button.disabled = false;
-    button.textContent = city;
+    if(loadSeq===cityLoadSeq){
+      button.disabled = false;
+      button.textContent = city;
+    }
   }
 }
 
