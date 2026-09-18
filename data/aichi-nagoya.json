@@ -1,0 +1,31 @@
+{
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "店舗公式サイトの公開情報を基に確認。来店前に公式情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "static-nagoya-yakitatejapan",
+      "name": "焼きたてJaパン",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県名古屋市昭和区桜山町1-4 RSビル1a",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "10:00–17:00（売り切れ次第終了）",
+        "月・木曜定休"
+      ],
+      "phone": "",
+      "website": "https://yakitatejapan-nagoya.com/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "桜山町の焼きたてパン店",
+      "highlights": [
+        "食パン",
+        "季節限定パン"
+      ]
+    }
+  ]
+}
