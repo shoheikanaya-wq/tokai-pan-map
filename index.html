@@ -352,7 +352,7 @@ button,.back,.detail-action,.review-trigger{
   </div>
   
   <div class="tabs"><button id="tabAichi" class="active">愛知県</button><button id="tabGifu">岐阜県</button><button id="tabMie">三重県</button></div><div class="notice">
-  <div>Ver.1.29</div>：豊田市の無料復旧版で、地図・Web確認・戻る操作をCloud Runなしで利用できるようにしました。電話番号は表示専用、パンラッシュは愛知県内限定を継続します。
+  <div>Ver.1.30</div>：豊田市の無料復旧版で、地図・Web確認・戻る・口コミ確認をCloud Runなしで利用できるようにしました。電話番号は表示専用、パンラッシュは愛知県内限定を継続します。
 </div><div id="aichiPanel"><h2>西三河</h2><div class="cities"><button id="toyota">豊田市</button><button id="okazaki">岡崎市</button><button id="anjo">安城市</button><button id="kariya">刈谷市</button><button id="nishio">西尾市</button>
 <button id="hekinan">碧南市</button>
 <button id="chiryu">知立市</button>
@@ -503,7 +503,7 @@ button,.back,.detail-action,.review-trigger{
 </section>
   <div id="devTools" class="dev-tools hidden"><button id="clearRankingCache">🔄 ランキングキャッシュ更新</button><div class="muted">開発用：次回ランキング表示時に最新データを取得</div></div><footer id="appFooter" class="app-footer">
 <div>東海パンMAP</div>
-<div>Ver.1.29</div>
+<div>Ver.1.30</div>
   <div>Personal Bakery Discovery Project</div>
   <div>Created & Managed by S.K.</div>
   <div>© 2026 S.K. All Rights Reserved.</div>
@@ -680,12 +680,15 @@ async function loadBakeries(prefecture,city) {
   const staticFile = staticFiles[prefecture + '|' + city];
   if(staticFile){
     try{
-      const r = await fetch(staticFile + '?rev=20260918-free1', {cache:'no-store'});
+      const r = await fetch(staticFile + '?rev=20260919-free2', {cache:'no-store'});
       if(r.ok){
         const data = await r.json();
         if(Array.isArray(data.shops) && data.shops.length){
           const staticShops=data.shops.map(s=>({
             ...s,
+            dataSource:'static-free',
+            featuresLoaded:true,
+            featureLabels:Array.isArray(s.highlights)?s.highlights:[],
             openNow: s.openNow ?? null,
             photoName:'',
             photo:'',
@@ -1020,8 +1023,16 @@ drank.textContent =
   dname.textContent = s.name;
   daddr.textContent = s.address;
   drating.textContent = `★${s.rating}`;
-  dreviews.textContent = `口コミ ${s.reviews}件 ▼`;
-  dreviews.onclick = () => loadShopReviews(s);
+  if(s.dataSource==='static-free'){
+    dreviews.textContent = s.reviews ? `口コミ ${s.reviews}件・地図で確認` : '口コミは地図で確認';
+    dreviews.onclick = () => window.open(
+      s.googleMaps || ('https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent((s.name||'') + ' ' + (s.address||''))),
+      '_blank','noopener'
+    );
+  }else{
+    dreviews.textContent = `口コミ ${s.reviews}件 ▼`;
+    dreviews.onclick = () => loadShopReviews(s);
+  }
   byId('reviewPanel').classList.add('hidden');
   byId('reviewList').innerHTML='';
   byId('reviewStatus').textContent='';
