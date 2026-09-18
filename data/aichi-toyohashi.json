@@ -1,0 +1,23 @@
+{
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "店舗情報は公開情報を基に確認。来店前に公式情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "static-toyohashi-koendori",
+      "name": "パンとカフェ公園通り",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県豊橋市高師町字北原1-107",
+      "type": "パン屋",
+      "types": ["bakery"],
+      "openingHours": ["09:00–15:00", "月曜定休"],
+      "phone": "0532-35-6737",
+      "website": "https://tf-jigyoukai.org/works/cafe/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "手づくりパンと喫茶",
+      "highlights": ["パンは定番・季節品を常時約30種類"]
+    }
+  ]
+}
