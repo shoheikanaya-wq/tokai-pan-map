@@ -1,0 +1,5 @@
+{
+ "source":"static-free-verified","updatedAt":"2026-09-19",
+ "attribution":"羽島市公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。",
+ "shops":[{"placeId":"static-hashima-konnatokoro","name":"コンナトコロニベーカリー","rating":0,"reviews":0,"address":"岐阜県羽島市下中町市之枝2丁目327","type":"パン屋","types":["bakery"],"openingHours":[],"phone":"070-8939-6212","website":"https://www.city.hashima.lg.jp/2207.html","googleMaps":"","photo":"","catchphrase":"地元野菜を活用するベーカリー","highlights":["惣菜パン","サツマイモのグラタン・クリームパン"]},{"placeId":"static-hashima-mamorun","name":"Bread Wonder Factory まもるんパン","rating":0,"reviews":0,"address":"岐阜県羽島市舟橋町三丁目62番地","type":"ベーカリーカフェ","types":["bakery","cafe"],"openingHours":["08:00–16:00","定休日 火・水"],"phone":"058-322-2288","website":"https://www.mamorunpan.com/","googleMaps":"","photo":"","catchphrase":"焼きたてパンとパン缶のベーカリーカフェ","highlights":["まもるん食パン","パン缶"]}]
+}
