@@ -1,0 +1,8 @@
+{
+ "source":"static-free-verified","updatedAt":"2026-09-19",
+ "attribution":"店舗公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。",
+ "shops":[
+  {"placeId":"static-gifu-demain","name":"石窯パン工房 Demain","rating":0,"reviews":0,"address":"岐阜県岐阜市柳津町蓮池2丁目38","type":"パン屋","types":["bakery"],"openingHours":["08:30–18:00","定休日 火・水"],"phone":"058-387-8816","website":"https://www.bakerydemain.com/","googleMaps":"","photo":"","catchphrase":"スペイン製石窯で約120種類を焼くベーカリー","highlights":["石窯生食パン"]},
+  {"placeId":"static-gifu-dada","name":"ブーランジェリー・ダダ 岐阜本店","rating":0,"reviews":0,"address":"岐阜県岐阜市清本町7-60-103","type":"パン屋","types":["bakery"],"openingHours":["08:00–18:00","定休日 火・水"],"phone":"058-215-7845","website":"https://blg-dada.com/","googleMaps":"","photo":"","catchphrase":"良質な素材にこだわる岐阜市のベーカリー","highlights":[]}
+ ]
+}
