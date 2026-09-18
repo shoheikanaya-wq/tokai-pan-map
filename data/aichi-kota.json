@@ -1,0 +1,140 @@
+{
+  "source": "static-free-recovery",
+  "updatedAt": "2026-09-19",
+  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。未取得項目は空欄または0。来店前に地図・公式情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "ChIJEVjSUdK9BGARZ5DvdQyV6J0",
+      "name": "ヘルシーベーカリー 餡",
+      "rating": 4.5,
+      "reviews": 54,
+      "address": "愛知県額田郡幸田町坂崎迎山60-33",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "水〜金 08:00–18:00",
+        "土 08:00–14:00",
+        "日〜火 定休"
+      ],
+      "phone": "0564-62-5519",
+      "website": "https://r.goope.jp/dnsakahi/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "低糖質・減塩のパン",
+      "highlights": [
+        "油・卵・バター不使用",
+        "イートイン"
+      ]
+    },
+    {
+      "placeId": "ChIJ1yfT9Wi-BGARuE1Bs_TD_H0",
+      "name": "ダーシェンカ 幸田店",
+      "rating": 4.12,
+      "reviews": 97,
+      "address": "愛知県額田郡幸田町菱池桜塚174",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "水〜日 10:00–18:30",
+        "月・火 定休"
+      ],
+      "phone": "0564-63-3273",
+      "website": "http://ishigamapan.jp/top.html",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "自家製酵母と薪窯焼き",
+      "highlights": [
+        "天然酵母",
+        "薪窯"
+      ]
+    },
+    {
+      "placeId": "ChIJWxSOKvC-BGARoBStPGxb8f8",
+      "name": "Creme de Farine",
+      "rating": 3.9,
+      "reviews": 29,
+      "address": "愛知県額田郡幸田町大草北前田23",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "10:00–18:00"
+      ],
+      "phone": "0564-73-0308",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "大草のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJqzq-VF--BGARIZ51lXDV5QY",
+      "name": "ベルナール幸田店",
+      "rating": 3.5,
+      "reviews": 4,
+      "address": "愛知県額田郡幸田町大草山添63",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "09:00–20:00"
+      ],
+      "phone": "0564-63-5711",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "大草のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJPyyROfC_BGARV-nkd4GwQ7A",
+      "name": "パン処 アン UN",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県額田郡幸田町深溝山畑10-3",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "水〜土 10:00–17:00（売り切れ次第終了）"
+      ],
+      "phone": "0564-62-0688",
+      "website": "https://laviedureve.jp/casestudy/un/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "三ヶ根食パンとハード系",
+      "highlights": [
+        "約20種類",
+        "手ごね生地"
+      ]
+    },
+    {
+      "placeId": "ChIJHeufME6-BGARj-id0EabU8w",
+      "name": "ももちゃみBread",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県額田郡幸田町芦谷幸田36",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "0564-62-6255",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "自家製酵母のパン",
+      "highlights": [
+        "カンパーニュ",
+        "食パン"
+      ]
+    }
+  ]
+}
