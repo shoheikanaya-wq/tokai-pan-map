@@ -1,0 +1,30 @@
+{
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "店舗情報は公開情報を基に確認。来店前に公式情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "static-toyokawa-kanou",
+      "name": "ベークショップカノウ",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県豊川市中央通5-19",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "平日（月～金）焼きたてパン販売"
+      ],
+      "phone": "0533-86-3622",
+      "website": "https://www.bakeshop-kanou.com/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "豊川市役所前の焼きたてパン店",
+      "highlights": [
+        "菓子パン約60種類",
+        "食パン約15種類を日替わり"
+      ]
+    }
+  ]
+}
