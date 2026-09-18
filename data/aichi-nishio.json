@@ -1,0 +1,194 @@
+{
+  "source": "static-free-recovery",
+  "updatedAt": "2026-09-19",
+  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。評価・口コミ数は取得できた公開情報を使用し、未取得項目は0または空欄。来店前に公式情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "ChIJIVfdeY6XBGARB4UBTCaNU7I",
+      "name": "BAKERY MITROND",
+      "rating": 4.5,
+      "reviews": 73,
+      "address": "愛知県西尾市西浅井町郷内103-3",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "水〜日 11:00–18:00",
+        "月・火 定休"
+      ],
+      "phone": "0563-77-7633",
+      "website": "https://bakerymitrond.com/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "明太子フランスが看板",
+      "highlights": [
+        "惣菜パン",
+        "食パン"
+      ]
+    },
+    {
+      "placeId": "ChIJ90AYKxOUBGARc7DLEjg9wU4",
+      "name": "Kouziya",
+      "rating": 4.2,
+      "reviews": 122,
+      "address": "愛知県西尾市吉良町上横須賀宮前3",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "水〜日 07:00–18:00"
+      ],
+      "phone": "0563-35-0076",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "吉良町のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "12287510",
+      "name": "Happy Bakery TAKU TAKU",
+      "rating": 4,
+      "reviews": 1,
+      "address": "愛知県西尾市上町南荒子36-1",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "火〜日 07:00–19:00",
+        "月・火 定休（公式案内）"
+      ],
+      "phone": "0563-54-9220",
+      "website": "https://www.taku-taku.com/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "地産地消と抹茶シリーズ",
+      "highlights": [
+        "西尾抹茶",
+        "地域食材"
+      ]
+    },
+    {
+      "placeId": "ChIJLVa47qmRBGARYjQbhtFHxtQ",
+      "name": "Teradaya",
+      "rating": 3.9,
+      "reviews": 24,
+      "address": "愛知県西尾市楠村町山崎35-3",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "火〜金 10:00–19:00",
+        "土・日 10:00–18:00"
+      ],
+      "phone": "0563-75-3349",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "楠村町のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJfxbe7V-WBGARB870BCaYvls",
+      "name": "三和パン",
+      "rating": 3.8,
+      "reviews": 6,
+      "address": "愛知県西尾市米野町土井ノ内4-3",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "09:30〜18:00前後"
+      ],
+      "phone": "0563-52-1063",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "米野町のパン店",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJvaZwbw2RBGAR9m0RkSatL5E",
+      "name": "矢田平パン",
+      "rating": 3.8,
+      "reviews": 4,
+      "address": "愛知県西尾市上矢田町熊子15",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "月〜金 09:00–17:00"
+      ],
+      "phone": "0563-59-7140",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "上矢田町のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJzeCGk8qWBGARQAErpdRaNco",
+      "name": "Grano Grano Nishio",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県西尾市高畠町3-23-9",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "09:00–21:30"
+      ],
+      "phone": "0563-54-0137",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "高畠町のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJXxfm42GRBGAR-AnHmTZVeOU",
+      "name": "Barpool 西尾店",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県西尾市伊藤1-3-4",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "金 10:00–17:00"
+      ],
+      "phone": "0563-77-5427",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "伊藤のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJQek_SJmRBGARxsoI7J46ZJk",
+      "name": "Yachiyo",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県西尾市寺津町御屋敷21-2",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "0563-59-0883",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "寺津町のベーカリー",
+      "highlights": []
+    }
+  ]
+}
