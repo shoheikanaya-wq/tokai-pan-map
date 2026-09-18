@@ -1,0 +1,29 @@
+{
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "豊根村・奥三河の公開観光情報を基に確認。来店前に公式情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "static-toyone-minden",
+      "name": "ベッケライ ミンデン",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県北設楽郡豊根村上黒川字柿平22",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "営業日・営業時間は来店前に公開情報で確認"
+      ],
+      "phone": "",
+      "website": "https://www.okuminavi.jp/food/detail/125",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "森の中のドイツパン店",
+      "highlights": [
+        "ドイツパン"
+      ]
+    }
+  ]
+}
