@@ -1,29 +1,30 @@
 {
   "source": "static-free-verified",
   "updatedAt": "2026-09-19",
-  "attribution": "店舗公式サイト等の公開情報を基に確認。来店前に公式情報をご確認ください。",
+  "attribution": "店舗公式サイトの公開情報を基に確認。来店前に公式情報をご確認ください。",
   "shops": [
     {
-      "placeId": "static-kasugai-boulangeriebenkei",
-      "name": "Boulangerie BENKEI 春日井店",
+      "placeId": "static-kasugai-lecordon",
+      "name": "LE CORDON（ル・コルドン）",
       "rating": 0,
       "reviews": 0,
-      "address": "愛知県春日井市",
-      "type": "パン屋",
+      "address": "愛知県春日井市瑞穂通4-62 コーポエトワール1F",
+      "type": "パン屋・ベーカリーカフェ",
       "types": [
         "bakery"
       ],
       "openingHours": [
-        "営業時間・定休日は来店前に公式情報で確認"
+        "08:30–17:00",
+        "木曜定休"
       ],
       "phone": "",
-      "website": "https://boulangerie-benkei.com/",
+      "website": "https://www.le-cordon.com/",
       "googleMaps": "",
       "photo": "",
-      "catchphrase": "ベーカリーBENKEI",
+      "catchphrase": "春日井のベーカリーカフェ",
       "highlights": [
-        "パン",
-        "ベーカリー"
+        "ベーカリー",
+        "イートイン"
       ]
     }
   ]
