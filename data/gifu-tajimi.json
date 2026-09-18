@@ -1,0 +1,8 @@
+{
+  "source":"static-free-verified","updatedAt":"2026-09-19",
+  "attribution":"店舗公式サイト・岐阜県公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。",
+  "shops":[
+    {"placeId":"static-tajimi-artigiano","name":"ARTIGIANO オリベストリート店","rating":0,"reviews":0,"address":"岐阜県多治見市本町5-34-1 タイムビル1F","type":"パン屋","types":["bakery"],"openingHours":["定休日 毎月第3水曜日"],"phone":"","website":"https://www.fujipanstore.com/artigiano/","googleMaps":"","photo":"","catchphrase":"石窯で焼き上げるベーカリー","highlights":["石窯パン"]},
+    {"placeId":"static-tajimi-hachipan","name":"ハチパン","rating":0,"reviews":0,"address":"岐阜県多治見市太平町1-14-1","type":"パン屋","types":["bakery"],"openingHours":["09:30–18:30（売り切れ次第終了）","定休日 日・月"],"phone":"0572-24-3101","website":"https://www.pref.gifu.lg.jp/page/16464.html","googleMaps":"","photo":"","catchphrase":"子どもから大人まで楽しめるパン屋","highlights":[]}
+  ]
+}
