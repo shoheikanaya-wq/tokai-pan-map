@@ -1,0 +1,29 @@
+{
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "店舗公式サイトの公開情報を基に確認。来店前に公式情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "static-ichinomiya-murakami",
+      "name": "パン工房MuraKami",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県一宮市小赤見郷浦1",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "09:00–18:00（水～土）"
+      ],
+      "phone": "",
+      "website": "https://murapan-umauma.jimdofree.com/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "小さなパン工房",
+      "highlights": [
+        "少量ずつ丁寧に製造"
+      ]
+    }
+  ]
+}
