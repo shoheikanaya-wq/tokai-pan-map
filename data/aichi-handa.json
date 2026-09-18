@@ -1,0 +1,32 @@
+{
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "店舗公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "static-handa-aoi",
+      "name": "葵ベーカリー",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県半田市昭和町2-43-1",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "火–土 08:00–20:00",
+        "日 08:00–19:00",
+        "定休日 月"
+      ],
+      "phone": "0569-21-6164",
+      "website": "https://www.aoi-bakery.com/shop/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "地元密着のベーカリー",
+      "highlights": [
+        "高級食パン",
+        "ホテルブレッド"
+      ]
+    }
+  ]
+}
