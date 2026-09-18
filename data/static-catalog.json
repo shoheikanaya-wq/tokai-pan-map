@@ -5,8 +5,8 @@
   "policy": "User-facing municipality pages never call Cloud Run or Overpass. Missing static data shows an immediate map-search fallback.",
   "totals": {
     "municipalities": 125,
-    "ready": 50,
-    "pending": 75
+    "ready": 52,
+    "pending": 73
   },
   "municipalities": [
     {
@@ -354,14 +354,14 @@
     {
       "prefecture": "岐阜県",
       "city": "多治見市",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/gifu-tajimi.json"
     },
     {
       "prefecture": "岐阜県",
       "city": "可児市",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/gifu-kani.json"
     },
     {
       "prefecture": "岐阜県",
