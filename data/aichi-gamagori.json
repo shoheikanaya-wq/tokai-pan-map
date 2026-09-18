@@ -1,0 +1,32 @@
+{
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "店舗情報は公開情報を基に確認。来店前に公式情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "static-gamagori-melondamelon",
+      "name": "メロンだメロン",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県蒲郡市鹿島町浅井新田1-26 クラスポ蒲郡フードコート内",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "10:00–20:00",
+        "年中無休（年末年始を除く）"
+      ],
+      "phone": "090-2087-8880",
+      "website": "https://melondamelon.jp/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "蒲郡のメロンパン専門店",
+      "highlights": [
+        "メロンパン",
+        "クロワッサン",
+        "パイ"
+      ]
+    }
+  ]
+}
