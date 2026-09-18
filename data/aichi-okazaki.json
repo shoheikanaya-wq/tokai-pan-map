@@ -1,0 +1,204 @@
+{
+  "source": "static-free-recovery",
+  "updatedAt": "2026-09-19",
+  "attribution": "無料復旧用スナップショット。公開情報を基に構成し、来店前に公式情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "",
+      "name": "ラ・ヴィ・デュ・パン",
+      "rating": 3.51,
+      "reviews": 131,
+      "address": "愛知県岡崎市真伝町供養坊16-6",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "水〜日 10:00–18:00",
+        "月・火 定休"
+      ],
+      "phone": "0564-83-8029",
+      "website": "https://laviedureve.jp/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "真伝町の人気ベーカリー",
+      "highlights": [
+        "テイクアウト",
+        "駐車場あり"
+      ]
+    },
+    {
+      "placeId": "ChIJaRPFCnu9BGARtQkl7zuTe8U",
+      "name": "石窯パン工房 プース",
+      "rating": 3.5,
+      "reviews": 153,
+      "address": "愛知県岡崎市牧御堂町水洗50-2",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "木 10:00–17:00"
+      ],
+      "phone": "0564-59-4551",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "石窯パン工房",
+      "highlights": []
+    },
+    {
+      "placeId": "",
+      "name": "スペイン窯 パンのトラ NEOPASA岡崎店",
+      "rating": 3.42,
+      "reviews": 310,
+      "address": "愛知県岡崎市宮石町六ツ田10-4 NEOPASA岡崎サービスエリア内",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "6:00–20:00"
+      ],
+      "phone": "0564-64-3319",
+      "website": "https://pannotora.com/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "NEOPASA岡崎のベーカリー",
+      "highlights": [
+        "スペイン窯",
+        "サービスエリア内"
+      ]
+    },
+    {
+      "placeId": "ChIJZYFh8iW9BGARmCGbhqdvaZ0",
+      "name": "バプール",
+      "rating": 3.4,
+      "reviews": 84,
+      "address": "愛知県岡崎市六名本町9-21",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "水〜日 11:00–18:00"
+      ],
+      "phone": "0564-73-9328",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "六名のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "9666045",
+      "name": "Papa D' Nuku",
+      "rating": 3.39,
+      "reviews": 80,
+      "address": "愛知県岡崎市欠町金谷26-1",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "0564-23-2775",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "欠町のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJG293BgC9BGARsC0iNK3Zv4Y",
+      "name": "F to BREAD",
+      "rating": 3.39,
+      "reviews": 45,
+      "address": "愛知県岡崎市康生通東2-27-2",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "水 7:30–18:00"
+      ],
+      "phone": "080-5332-4918",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "康生通東のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "",
+      "name": "グランクレール",
+      "rating": 3.28,
+      "reviews": 67,
+      "address": "愛知県岡崎市（詳細は地図で確認）",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "岡崎市内のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "",
+      "name": "グランクレール 六ツ美",
+      "rating": 3.24,
+      "reviews": 41,
+      "address": "愛知県岡崎市（詳細は地図で確認）",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "六ツ美エリアのベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJM8S3YqK9BGARHDVf3aAi2hI",
+      "name": "ききょうや",
+      "rating": 3.2,
+      "reviews": 32,
+      "address": "愛知県岡崎市戸崎町沢田25",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "0564-53-2970",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "住宅街のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "",
+      "name": "パン リゴレ",
+      "rating": 3.19,
+      "reviews": 30,
+      "address": "愛知県岡崎市美合エリア（詳細は地図で確認）",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "美合エリアのベーカリー",
+      "highlights": []
+    }
+  ]
+}
