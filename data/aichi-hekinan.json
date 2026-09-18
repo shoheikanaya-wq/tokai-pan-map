@@ -1,0 +1,165 @@
+{
+  "source": "static-free-recovery",
+  "updatedAt": "2026-09-19",
+  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。未取得項目は空欄または0。来店前に地図・公式情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "ChIJVVXhvBuQBGARgmMMfAc8o_Y",
+      "name": "ベーカリー ドゥークー",
+      "rating": 4.1,
+      "reviews": 122,
+      "address": "愛知県碧南市源氏町1-15-10",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "月・木・金・土・日 07:00–18:00",
+        "火・水 定休"
+      ],
+      "phone": "0566-55-2121",
+      "website": "https://pan-dooku.com/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "本格フランスパンのベーカリー",
+      "highlights": [
+        "生地・焼成へのこだわり",
+        "ハード系"
+      ]
+    },
+    {
+      "placeId": "ChIJQ77GeACbBGAR8Cpritx43uw",
+      "name": "mon coeur",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県碧南市緑町5-45",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "08:00–18:00"
+      ],
+      "phone": "0566-55-1009",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "緑町のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJVVXZpmWQBGARAJZX8Wurh-s",
+      "name": "Solsol",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県碧南市三宅町1-82 サンレモン103",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "0566-87-1214",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "三宅町のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJsy-zRR2QBGARbsoYWPwEGUw",
+      "name": "Wappa dou",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県碧南市音羽町1-53",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "日 11:00–17:00"
+      ],
+      "phone": "0566-41-3098",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "音羽町のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJuSwqTbyaBGARYH7HIHfS9Cw",
+      "name": "Bakery",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県碧南市鶴見町2-135",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "土 10:30–15:00"
+      ],
+      "phone": "0566-42-0877",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "鶴見町のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "hekinan-farine",
+      "name": "ファリーヌ",
+      "rating": 3.25,
+      "reviews": 2,
+      "address": "愛知県碧南市栄町4-29",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "08:00–18:30"
+      ],
+      "phone": "",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "栄町のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "hekinan-monte",
+      "name": "モンテ碧南店",
+      "rating": 3.15,
+      "reviews": 2,
+      "address": "愛知県碧南市栄町3-1",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "栄町のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "hekinan-boulanger",
+      "name": "ブーランジェ碧南店",
+      "rating": 3.29,
+      "reviews": 1,
+      "address": "愛知県碧南市幸町7-65",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "幸町のベーカリー",
+      "highlights": []
+    }
+  ]
+}
