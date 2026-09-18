@@ -5,8 +5,8 @@
   "policy": "User-facing municipality pages never call Cloud Run or Overpass. Missing static data shows an immediate map-search fallback.",
   "totals": {
     "municipalities": 125,
-    "ready": 24,
-    "pending": 101
+    "ready": 31,
+    "pending": 94
   },
   "municipalities": [
     {
@@ -162,14 +162,14 @@
     {
       "prefecture": "愛知県",
       "city": "稲沢市",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/aichi-inazawa.json"
     },
     {
       "prefecture": "愛知県",
       "city": "尾張旭市",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/aichi-owariasahi.json"
     },
     {
       "prefecture": "愛知県",
@@ -180,32 +180,32 @@
     {
       "prefecture": "愛知県",
       "city": "豊明市",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/aichi-toyoake.json"
     },
     {
       "prefecture": "愛知県",
       "city": "日進市",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/aichi-nisshin.json"
     },
     {
       "prefecture": "愛知県",
       "city": "清須市",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/aichi-kiyosu.json"
     },
     {
       "prefecture": "愛知県",
       "city": "北名古屋市",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/aichi-kitanagoya.json"
     },
     {
       "prefecture": "愛知県",
       "city": "長久手市",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/aichi-nagakute.json"
     },
     {
       "prefecture": "愛知県",
