@@ -1,0 +1,30 @@
+{
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "公開店舗情報および公式SNS導線を基に確認。来店前に最新情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "static-fuso-nito",
+      "name": "パン屋 二兎",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県丹羽郡扶桑町高雄堂子19",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "10:00–（最新営業日は公式SNS参照）"
+      ],
+      "phone": "080-9720-2100",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "扶桑町高雄のベーカリー",
+      "highlights": [
+        "クロワッサン",
+        "食パン"
+      ]
+    }
+  ]
+}
