@@ -1,0 +1,11 @@
+{
+  "source":"static-free-verified","updatedAt":"2026-09-19",
+  "attribution":"愛知県公開資料・店舗公開情報を基に確認。来店前に最新情報をご確認ください。",
+  "shops":[{
+    "placeId":"static-yatomi-ewalu","name":"EWALU","rating":0,"reviews":0,
+    "address":"愛知県弥富市鯏浦町車東23-2","type":"パン屋","types":["bakery"],
+    "openingHours":[],"phone":"0567-97-3200",
+    "website":"https://ewalu8.theshop.jp/about","googleMaps":"","photo":"",
+    "catchphrase":"お米農家が営む完全グルテンフリー専門店","highlights":["米粉ベーグル","米粉パン"]
+  }]
+}
