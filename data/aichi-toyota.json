@@ -1,0 +1,197 @@
+{
+  "source": "static-free-recovery",
+  "updatedAt": "2026-09-18",
+  "attribution": "店舗情報は公開情報を基にした復旧用スナップショット。来店前に公式情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "ChIJ22dl6EagBGAROlRfruKCPZI",
+      "name": "ジャック",
+      "rating": 3.9,
+      "reviews": 328,
+      "address": "愛知県豊田市十塚町3-3",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "09:00–18:00"
+      ],
+      "phone": "0565-34-0616",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "豊田市のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJxXddO4xfA2ARO4Qc__g87lE",
+      "name": "ペンギンベーカリー 豊田浄水店",
+      "rating": 3.8,
+      "reviews": 396,
+      "address": "愛知県豊田市浄水町3-317-2",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "08:30–19:00"
+      ],
+      "phone": "0565-45-6087",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "浄水町のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJ61TViH5gA2ARIP25jDVoimQ",
+      "name": "サンクス",
+      "rating": 3.9,
+      "reviews": 98,
+      "address": "愛知県豊田市浄水町5-178-4",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "07:00–18:45"
+      ],
+      "phone": "0565-43-3353",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "ベーカリー＆カフェ",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJg7lDtPqgBGARZgyxOYO8nk0",
+      "name": "HORN",
+      "rating": 3.7,
+      "reviews": 6,
+      "address": "愛知県豊田市東山町1-5-1",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "10:00–20:00"
+      ],
+      "phone": "0565-88-8002",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "東山町のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJhxjKG5KfBGAR1ufOi71UYoA",
+      "name": "coripan",
+      "rating": 3.5,
+      "reviews": 20,
+      "address": "愛知県豊田市深田町1-86-3",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "090-2925-0621",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "深田町のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJIz1uBUagBGAR0pFggt_g700",
+      "name": "Contevole",
+      "rating": 3.2,
+      "reviews": 23,
+      "address": "愛知県豊田市広路町1-1",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "08:00–21:00"
+      ],
+      "phone": "0565-37-9222",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "広路町のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJZ5kLG_FfA2ARr0hYaoeMQQY",
+      "name": "Pico",
+      "rating": 4.8,
+      "reviews": 4,
+      "address": "愛知県豊田市井上町4-154",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "0565-45-1221",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "井上町のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJfdZhtN46rKERKChPRq5x0oU",
+      "name": "Mikazuki",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県豊田市月見町2-9-2",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "0565-42-7170",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "月見町のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJizXqtuGhBGARe58aP9Jpvj0",
+      "name": "純生食パン工房 HARE/PAN",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県豊田市元城町1-8",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "0565-41-8080",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "食パン専門店",
+      "highlights": []
+    },
+    {
+      "placeId": "ChIJB7nKugpfA2ARNr7BOZoe0Y4",
+      "name": "ミッチのパン工房 豊田店",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県豊田市四郷町天道1-33",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "080-5291-9112",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "四郷町のパン工房",
+      "highlights": []
+    }
+  ]
+}
