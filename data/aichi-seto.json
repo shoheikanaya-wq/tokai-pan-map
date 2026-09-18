@@ -1,0 +1,30 @@
+{
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "店舗公式サイト等の公開情報を基に確認。来店前に公式情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "static-seto-montana",
+      "name": "モンタナベーカリー",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県瀬戸市今林町205",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "営業時間・定休日は来店前に公式情報で確認"
+      ],
+      "phone": "",
+      "website": "https://montanabakery.jp/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "瀬戸市のベーカリー",
+      "highlights": [
+        "パン",
+        "ベーカリー"
+      ]
+    }
+  ]
+}
