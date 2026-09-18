@@ -1,0 +1,8 @@
+{
+ "source":"static-free-verified","updatedAt":"2026-09-19",
+ "attribution":"大垣観光協会・大垣市公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。",
+ "shops":[
+  {"placeId":"static-ogaki-tsukiakari","name":"BAKERY TSUKIAKARI","rating":0,"reviews":0,"address":"岐阜県大垣市築捨町3丁目89-1","type":"パン屋","types":["bakery"],"openingHours":["火–金 09:30–18:00","土 09:00–18:00","定休日 日・月・祝"],"phone":"0584-51-0698","website":"https://bakery-tsukiakari.jimdofree.com/","googleMaps":"","photo":"","catchphrase":"焼きたて・揚げたて・作りたてのベーカリー","highlights":["Gold塩バターロール"]},
+  {"placeId":"static-ogaki-montblanc","name":"大垣モンブラン","rating":0,"reviews":0,"address":"岐阜県大垣市藤江町7-25","type":"パン屋","types":["bakery"],"openingHours":["07:30–18:00","定休日 土"],"phone":"0584-78-3836","website":"https://www.ogakikanko.jp/kanko/sp/app/sdata.php?dataid=404","googleMaps":"","photo":"","catchphrase":"自社製造のパンと菓子を扱うベーカリー","highlights":[]}
+ ]
+}
