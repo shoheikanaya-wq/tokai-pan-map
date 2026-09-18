@@ -1,0 +1,52 @@
+{
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "店舗公式サイトおよび常滑市観光サイトの公開情報を基に確認。来店前に最新情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "static-tokoname-viennois",
+      "name": "パン工房ヴィエノワ",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県常滑市虹の丘3丁目103番地",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "08:00–18:00",
+        "定休日 月・火"
+      ],
+      "phone": "0569-84-1465",
+      "website": "https://www.viennois479.com/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "常滑市虹の丘のパン工房",
+      "highlights": [
+        "ハード系",
+        "食パン"
+      ]
+    },
+    {
+      "placeId": "static-tokoname-niwanopan",
+      "name": "にわのパン",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県常滑市大谷字芦狭間249-1",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "11:00–17:00",
+        "定休日 木"
+      ],
+      "phone": "0569-77-3971",
+      "website": "https://niwanopan.edisone.jp/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "たまご農家のベーカリー",
+      "highlights": []
+    }
+  ]
+}
