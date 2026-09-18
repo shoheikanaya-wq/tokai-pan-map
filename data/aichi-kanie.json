@@ -1,0 +1,51 @@
+{
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "店舗公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "static-kanie-omo",
+      "name": "思わずおもわず",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県海部郡蟹江町城4丁目414",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "10:00–18:00（売り切れ次第終了）",
+        "定休日 不定休"
+      ],
+      "phone": "050-8884-8368",
+      "website": "https://omo-omo.jp/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "素材にこだわる食パン店",
+      "highlights": [
+        "卵・マーガリン不使用"
+      ]
+    },
+    {
+      "placeId": "static-kanie-kawaitei",
+      "name": "ぱんや 川合亭",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県海部郡蟹江町蟹江新田下芝切183",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "09:00–16:00",
+        "定休日 土・日・祝"
+      ],
+      "phone": "0567-55-9160",
+      "website": "https://culvert-park.com/panya_kawaitei/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "国産小麦の焼きたてパン",
+      "highlights": []
+    }
+  ]
+}
