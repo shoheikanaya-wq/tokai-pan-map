@@ -1,0 +1,31 @@
+{
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "店舗公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "static-toyoyama-goenpan",
+      "name": "ごえんぱん",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県西春日井郡豊山町大字豊場字冨士93番1",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "11:00–16:00",
+        "定休日 土・日"
+      ],
+      "phone": "0568-55-9539",
+      "website": "https://goenpan.com/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "地粉と糀のぱんやさん",
+      "highlights": [
+        "国産小麦",
+        "米糀食パン"
+      ]
+    }
+  ]
+}
