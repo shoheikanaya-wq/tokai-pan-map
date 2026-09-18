@@ -1,0 +1,11 @@
+{
+  "source":"static-free-verified","updatedAt":"2026-09-19",
+  "attribution":"ペンギンベーカリー公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。",
+  "shops":[{
+    "placeId":"static-kani-penguin","name":"ペンギンベーカリー可児広見店","rating":0,"reviews":0,
+    "address":"岐阜県可児市広見5-28","type":"パン屋","types":["bakery"],
+    "openingHours":["10:00–19:00（パンがなくなり次第終了）"],"phone":"",
+    "website":"https://www.penguinbakery.com/news/202604031796/","googleMaps":"","photo":"",
+    "catchphrase":"北海道産小麦を使う焼きたてベーカリー","highlights":["2026年4月10日開店","とべない食パン"]
+  }]
+}
