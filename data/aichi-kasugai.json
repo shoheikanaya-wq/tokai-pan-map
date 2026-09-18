@@ -1,0 +1,30 @@
+{
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "店舗公式サイト等の公開情報を基に確認。来店前に公式情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "static-kasugai-boulangeriebenkei",
+      "name": "Boulangerie BENKEI 春日井店",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県春日井市",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "営業時間・定休日は来店前に公式情報で確認"
+      ],
+      "phone": "",
+      "website": "https://boulangerie-benkei.com/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "ベーカリーBENKEI",
+      "highlights": [
+        "パン",
+        "ベーカリー"
+      ]
+    }
+  ]
+}
