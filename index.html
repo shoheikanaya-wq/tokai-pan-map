@@ -352,7 +352,7 @@ button,.back,.detail-action,.review-trigger{
   </div>
   
   <div class="tabs"><button id="tabAichi" class="active">愛知県</button><button id="tabGifu">岐阜県</button><button id="tabMie">三重県</button></div><div class="notice">
-  <div>Ver.1.33</div>：無料復旧方式を西三河10市町へ拡張しました。豊田・岡崎・安城・刈谷・西尾に加え、碧南・知立・高浜・みよし・幸田もCloud Runなしで店舗一覧・詳細・地図/Web確認を利用できます。電話番号は表示専用、パンラッシュは愛知県内限定を継続します。
+  <div>Ver.1.34</div>：残り市町村へ無料公開地図データの自動フォールバックを追加しました。静的復旧データを優先し、未整備地域はOpenStreetMapから取得して30日キャッシュします。電話番号は表示専用、パンラッシュは愛知県内限定を継続します。
 </div><div id="aichiPanel"><h2>西三河</h2><div class="cities"><button id="toyota">豊田市</button><button id="okazaki">岡崎市</button><button id="anjo">安城市</button><button id="kariya">刈谷市</button><button id="nishio">西尾市</button>
 <button id="hekinan">碧南市</button>
 <button id="chiryu">知立市</button>
@@ -452,7 +452,7 @@ button,.back,.detail-action,.review-trigger{
     <div class="nav-buttons">
       <button class="back" id="back">← 戻る</button>
     </div>
-  </div><h2 id="rankingTitle">豊田市 パン屋 TOP10</h2><div class="muted">ランキングについて：評価点と口コミ件数をもとに、東海パンMAP独自の方法で順位を算出しています。</div><div id="list"></div>
+  </div><h2 id="rankingTitle">豊田市 パン屋 TOP10</h2><div class="muted" id="rankingNote">ランキングについて：評価点と口コミ件数をもとに、東海パンMAP独自の方法で順位を算出しています。</div><div id="list"></div>
   <div class="ranking-bottom-nav">
     <button class="back" id="backBottom">← 戻る</button>
   </div>
@@ -503,7 +503,7 @@ button,.back,.detail-action,.review-trigger{
 </section>
   <div id="devTools" class="dev-tools hidden"><button id="clearRankingCache">🔄 ランキングキャッシュ更新</button><div class="muted">開発用：次回ランキング表示時に最新データを取得</div></div><footer id="appFooter" class="app-footer">
 <div>東海パンMAP</div>
-<div>Ver.1.33</div>
+<div>Ver.1.34</div>
   <div>Personal Bakery Discovery Project</div>
   <div>Created & Managed by S.K.</div>
   <div>© 2026 S.K. All Rights Reserved.</div>
@@ -517,7 +517,8 @@ button,.back,.detail-action,.review-trigger{
   </details>
 
   <div class="footer-note">
-    パン屋巡り・地域探索を目的とした個人制作アプリ
+    パン屋巡り・地域探索を目的とした個人制作アプリ<br>
+    店舗データの一部 © OpenStreetMap contributors / ODbL
   </div>
 </footer>
 </main><script>
@@ -671,6 +672,124 @@ function showLoadError(message,retry){
   const host=!home.classList.contains('hidden')?home:(!ranking.classList.contains('hidden')?ranking:detail);
   host.prepend(box);
 }
+
+const OVERPASS_ENDPOINTS=[
+  'https://overpass-api.de/api/interpreter',
+  'https://overpass.private.coffee/api/interpreter'
+];
+const OSM_CACHE_VERSION='v1';
+const OSM_CACHE_TTL=30*24*60*60*1000;
+
+function osmCacheKey(prefecture,city){
+  return `tokai-pan-osm:${OSM_CACHE_VERSION}:${prefecture}:${city}`;
+}
+function readOsmCache(prefecture,city){
+  try{
+    const raw=localStorage.getItem(osmCacheKey(prefecture,city));
+    if(!raw) return null;
+    const c=JSON.parse(raw);
+    if(!c||!Array.isArray(c.shops)||!c.savedAt) return null;
+    if(Date.now()-c.savedAt>OSM_CACHE_TTL) return null;
+    return c.shops;
+  }catch(e){return null;}
+}
+function writeOsmCache(prefecture,city,cityShops){
+  try{
+    localStorage.setItem(osmCacheKey(prefecture,city),JSON.stringify({savedAt:Date.now(),shops:cityShops}));
+  }catch(e){}
+}
+function overpassEscape(v=''){
+  return String(v).replace(/\\/g,'\\\\').replace(/"/g,'\\"');
+}
+function osmAddress(t,prefecture,city){
+  const parts=[
+    t['addr:prefecture']||t['addr:province']||prefecture,
+    t['addr:city']||city,
+    t['addr:suburb']||t['addr:quarter']||t['addr:neighbourhood']||'',
+    t['addr:street']||'',
+    t['addr:housenumber']||''
+  ].filter(Boolean);
+  return [...new Set(parts)].join('');
+}
+function osmInfoScore(t){
+  return 50
+    +(t.website||t['contact:website']?8:0)
+    +(t.phone||t['contact:phone']?6:0)
+    +(t.opening_hours?6:0)
+    +(t.name||t['name:ja']?4:0);
+}
+async function fetchOpenStreetMapBakeries(prefecture,city){
+  const cached=readOsmCache(prefecture,city);
+  if(cached) return cached;
+
+  const p=overpassEscape(prefecture), m=overpassEscape(city);
+  const query=`[out:json][timeout:25];
+area["name"="${p}"]["boundary"="administrative"]["admin_level"="4"]->.pref;
+rel(area.pref)["name"="${m}"]["boundary"="administrative"]["admin_level"="7"];
+map_to_area->.muni;
+(
+  nwr["shop"="bakery"](area.muni);
+  nwr["craft"="bakery"](area.muni);
+);
+out center tags;`;
+
+  let lastError=null;
+  for(const endpoint of OVERPASS_ENDPOINTS){
+    try{
+      const r=await fetch(endpoint,{
+        method:'POST',
+        headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},
+        body:'data='+encodeURIComponent(query)
+      });
+      if(!r.ok) throw new Error('OpenStreetMap API '+r.status);
+      const data=await r.json();
+      const seen=new Map();
+      (data.elements||[]).forEach(el=>{
+        const t=el.tags||{};
+        const name=t['name:ja']||t.name||t.brand||'名称不明';
+        if(name==='名称不明') return;
+        const lat=el.lat??el.center?.lat, lon=el.lon??el.center?.lon;
+        const website=t.website||t['contact:website']||'';
+        const phone=t.phone||t['contact:phone']||'';
+        const address=osmAddress(t,prefecture,city);
+        const key=normalizeShopText(name)+'|'+normalizeShopText(address);
+        if(seen.has(key)) return;
+        seen.set(key,{
+          placeId:'osm-'+el.type+'-'+el.id,
+          name,
+          rating:null,
+          reviews:null,
+          address,
+          type:'パン屋',
+          types:['bakery'],
+          openingHours:t.opening_hours?[t.opening_hours]:[],
+          openNow:null,
+          phone,
+          website,
+          googleMaps:(lat!=null&&lon!=null)
+            ? 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(lat+','+lon)
+            : '',
+          photoName:'',
+          photo:'',
+          photoAlt:name+'の写真',
+          photoAttribution:'',
+          catchphrase:t.description||t['description:ja']||'',
+          highlights:[],
+          dataSource:'osm-free',
+          featuresLoaded:true,
+          featureLabels:[],
+          score:osmInfoScore(t)
+        });
+      });
+      const shops=[...seen.values()].sort((a,b)=>b.score-a.score||a.name.localeCompare(b.name,'ja')).slice(0,10);
+      if(!shops.length) throw new Error('公開地図データにパン屋登録がありません');
+      writeOsmCache(prefecture,city,shops);
+      return shops;
+    }catch(e){ lastError=e; }
+  }
+  throw lastError||new Error('無料公開データを取得できません');
+}
+
 async function loadBakeries(prefecture,city) {
   // 課金必須のCloud Runに依存しない無料復旧データを最優先。
   // 対応市町村を順次追加し、未対応地域のみ従来APIへフォールバックする。
@@ -716,57 +835,11 @@ async function loadBakeries(prefecture,city) {
     console.log(`[東海パンMAP] ${city}: キャッシュ利用`);
     return cached;
   }
-  let response;
-  try {
-    response = await fetch(
-      'https://tokai-pan-api-873562719766.asia-northeast1.run.app',
-      {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({textQuery: `パン屋 ${prefecture}${city}`})
-      }
-    );
-  } catch (e) {
-    throw new Error('パン屋APIへ接続できません');
-  }
-
-  if (!response.ok) {
-    throw new Error('Google Places API エラー: ' + response.status);
-  }
-
-  const data = await response.json();
-
-  let loadedShops = (data.places || []).map(p => ({
-  placeId: p.id || '',
-  name: p.displayName?.text || '名称不明',
-  rating: p.rating || 0,
-  reviews: p.userRatingCount || 0,
-  address: p.formattedAddress || '住所不明',
-  type: 'パン屋',
-  types: p.types || [],
-
-  openingHours: p.regularOpeningHours?.weekdayDescriptions || [],
-    openNow: p.currentOpeningHours?.openNow ?? null,
-  phone: p.nationalPhoneNumber || '',
-  website: p.websiteUri || '',
-  googleMaps: p.googleMapsUri || '',
-  photoName: p.photos?.[0]?.name || '',
-  photo: placePhotoUrl(p.photos?.[0]?.name || ''),
-  photoAlt: `${p.displayName?.text || 'パン屋'}の写真`,
-  photoAttribution: p.photos?.[0]?.authorAttributions?.[0]?.displayName || '',
-  catchphrase: p.catchphrase || p.editorialSummary?.text || '',
-  highlights: Array.isArray(p.highlights) ? p.highlights.slice(0, 2) : [],
-
-  score: rankingScore(p.rating,p.userRatingCount)
-}));
-loadedShops = loadedShops.filter(isBakeryCandidate);
-  loadedShops = loadedShops.filter(s => String(s.address||'').includes(prefecture) && municipalityMatches(s.address,city));
-  loadedShops.sort((a, b) =>
-    b.score - a.score || b.reviews - a.reviews
-  );
-  writeBakeryCache(prefecture,city, loadedShops);
-  return loadedShops;
+  // 静的スナップショット未整備の市町村は、OpenStreetMap/Overpassを無料フォールバックとして利用。
+  // 30日キャッシュで公開APIへのアクセスを最小化する。
+  return await fetchOpenStreetMapBakeries(prefecture,city);
 }
+
 function syncViewHistory(view,extra={}){
   const state={view,...extra};
   if(history.state?.view===view){
@@ -870,6 +943,13 @@ function showRanking() {
   ranking.classList.remove('hidden');
   syncViewHistory('ranking',{prefecture:currentPrefecture,city:currentCity,visualKey:currentVisualKey});
   list.innerHTML='';
+  const rankingNote=byId('rankingNote');
+  const usingOsm=shops.some(s=>s.dataSource==='osm-free');
+  if(rankingNote){
+    rankingNote.textContent=usingOsm
+      ? '無料公開地図データ（OpenStreetMap）から取得した店舗候補です。Googleの評価・口コミ順位ではなく、登録情報の充実度を参考に表示しています。'
+      : 'ランキングについて：評価点と口コミ件数をもとに、東海パンMAP独自の方法で順位を算出しています。';
+  }
   const usedFeatureLabels=new Set();
   shops.slice(0,10).forEach((s,i)=>{
     let b=document.createElement('button');
@@ -891,7 +971,7 @@ function showRanking() {
     const attribution = s.photoAttribution
       ? `<span class="shop-source">写真: ${escapeHtml(s.photoAttribution)}</span>` : '';
     const distinctive = `${catchphrase}${points}${attribution}`;
-    b.innerHTML=`<span class="badge">${i+1}位</span><span class="shop-photo">${photo}</span><span class="shop-main"><strong class="shop-name">${escapeHtml(s.name)}</strong><span class="muted shop-address">${escapeHtml(s.address)}</span></span>${distinctive ? `<span class="shop-points">${distinctive}</span>` : '<span class="shop-points shop-points-empty"></span>'}<span class="rating">★${s.rating}<br><small>口コミ ${s.reviews}件</small></span>`;
+    b.innerHTML=`<span class="badge">${i+1}位</span><span class="shop-photo">${photo}</span><span class="shop-main"><strong class="shop-name">${escapeHtml(s.name)}</strong><span class="muted shop-address">${escapeHtml(s.address)}</span></span>${distinctive ? `<span class="shop-points">${distinctive}</span>` : '<span class="shop-points shop-points-empty"></span>'}<span class="rating">${s.dataSource==='osm-free' ? '<small>公開地図データ</small>' : ('★'+s.rating+'<br><small>口コミ '+s.reviews+'件</small>')}</span>`;
     b.onclick=()=>showDetail(i);
     list.appendChild(b);
   });
@@ -1032,8 +1112,10 @@ drank.textContent =
   dname.textContent = s.name;
   daddr.textContent = s.address;
   drating.textContent = `★${s.rating}`;
-  if(s.dataSource==='static-free'){
-    dreviews.textContent = s.reviews ? `口コミ ${s.reviews}件・地図で確認` : '口コミは地図で確認';
+  if(s.dataSource==='static-free' || s.dataSource==='osm-free'){
+    dreviews.textContent = s.dataSource==='osm-free'
+      ? '口コミ・評価は地図で確認'
+      : (s.reviews ? `口コミ ${s.reviews}件・地図で確認` : '口コミは地図で確認');
     dreviews.onclick = () => window.open(
       s.googleMaps || ('https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent((s.name||'') + ' ' + (s.address||''))),
       '_blank','noopener'
