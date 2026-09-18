@@ -853,7 +853,7 @@ function showRanking() {
     b.className='card rank-card';
     b.style.width='100%';
     const photo = s.photo
-      ? `<img src="${escapeHtml(s.photo)}" alt="${escapeHtml(s.photoAlt)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade">`
+      ? `<img src="${escapeHtml(s.photo)}" alt="${escapeHtml(s.photoAlt)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span aria-hidden="true" style="display:none">🥐</span>`
       : '<span aria-hidden="true">🥐</span>';
     const factCopy=buildFactCatch(s,usedFeatureLabels);
     const displayHighlights=(Array.isArray(s.highlights)&&s.highlights.length)
