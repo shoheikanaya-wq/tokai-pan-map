@@ -1,0 +1,28 @@
+{
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "知多市観光協会および店舗公開情報を基に確認。来店前に最新情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "static-chita-kamopan",
+      "name": "かもぱん",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県知多市岡田字東島9",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "",
+      "website": "https://chita-kanko.com/gourmet/detail/130/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "岡田の古民家複合施設SoNに併設するベーカリー",
+      "highlights": [
+        "ハード系",
+        "食パン"
+      ]
+    }
+  ]
+}
