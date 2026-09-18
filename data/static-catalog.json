@@ -5,8 +5,8 @@
   "policy": "User-facing municipality pages never call Cloud Run or Overpass. Missing static data shows an immediate map-search fallback.",
   "totals": {
     "municipalities": 125,
-    "ready": 10,
-    "pending": 115
+    "ready": 11,
+    "pending": 114
   },
   "municipalities": [
     {
@@ -72,8 +72,8 @@
     {
       "prefecture": "愛知県",
       "city": "豊橋市",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/aichi-toyohashi.json"
     },
     {
       "prefecture": "愛知県",
