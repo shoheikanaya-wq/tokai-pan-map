@@ -1,0 +1,30 @@
+{
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "東栄町公式観光情報などの公開情報を基に確認。来店前に公式情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "static-toei-annoie",
+      "name": "手作りパンと焼き菓子の店 杏の家",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県北設楽郡東栄町本郷西万場6-2",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "10:30–16:00（売り切れ次第終了）",
+        "火・水・木曜定休"
+      ],
+      "phone": "",
+      "website": "https://www.toeinavi.jp/gourmet/detail/1289/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "自家製酵母のパンと焼き菓子",
+      "highlights": [
+        "自家製酵母"
+      ]
+    }
+  ]
+}
