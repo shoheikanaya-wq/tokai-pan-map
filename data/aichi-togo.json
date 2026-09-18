@@ -1,0 +1,28 @@
+{
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "店舗公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "static-togo-pantoniwa",
+      "name": "パンと庭",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県愛知郡東郷町春木野渕18-1 ハルキテラス内",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "09:00–18:00",
+        "定休日 月・木"
+      ],
+      "phone": "0561-56-1313",
+      "website": "https://pantoniwa.com/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "北海道産小麦100%・無添加生地のベーカリー＆カフェ",
+      "highlights": []
+    }
+  ]
+}
