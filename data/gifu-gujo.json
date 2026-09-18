@@ -1,0 +1,11 @@
+{
+ "source":"static-free-verified","updatedAt":"2026-09-19",
+ "attribution":"岐阜県観光公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。",
+ "shops":[{
+  "placeId":"static-gujo-atsu","name":"ブーランジェリー アツ","rating":0,"reviews":0,
+  "address":"岐阜県郡上市白鳥町向小駄良735-3","type":"パン屋","types":["bakery"],
+  "openingHours":["09:00–18:00","定休日 月（その他不定休あり）"],"phone":"0575-82-3678",
+  "website":"https://www.kankou-gifu.jp/pantabi-sekigujyo","googleMaps":"","photo":"",
+  "catchphrase":"ハード系やデニッシュなど30〜40種類を焼く本格ベーカリー","highlights":["クロワッサン","バゲット"]
+ }]
+}
