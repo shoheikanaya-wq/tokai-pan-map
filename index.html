@@ -352,7 +352,7 @@ button,.back,.detail-action,.review-trigger{
   </div>
   
   <div class="tabs"><button id="tabAichi" class="active">愛知県</button><button id="tabGifu">岐阜県</button><button id="tabMie">三重県</button></div><div class="notice">
-  <div>Ver.1.31</div>：無料復旧方式を岡崎市・安城市へ拡張しました。豊田市と同様にCloud Runなしで店舗一覧・詳細・地図/Web確認を利用できます。電話番号は表示専用、パンラッシュは愛知県内限定を継続します。
+  <div>Ver.1.32</div>：無料復旧方式を刈谷市・西尾市まで拡張しました。豊田・岡崎・安城と同様にCloud Runなしで店舗一覧・詳細・地図/Web確認を利用できます。電話番号は表示専用、パンラッシュは愛知県内限定を継続します。
 </div><div id="aichiPanel"><h2>西三河</h2><div class="cities"><button id="toyota">豊田市</button><button id="okazaki">岡崎市</button><button id="anjo">安城市</button><button id="kariya">刈谷市</button><button id="nishio">西尾市</button>
 <button id="hekinan">碧南市</button>
 <button id="chiryu">知立市</button>
@@ -503,7 +503,7 @@ button,.back,.detail-action,.review-trigger{
 </section>
   <div id="devTools" class="dev-tools hidden"><button id="clearRankingCache">🔄 ランキングキャッシュ更新</button><div class="muted">開発用：次回ランキング表示時に最新データを取得</div></div><footer id="appFooter" class="app-footer">
 <div>東海パンMAP</div>
-<div>Ver.1.31</div>
+<div>Ver.1.32</div>
   <div>Personal Bakery Discovery Project</div>
   <div>Created & Managed by S.K.</div>
   <div>© 2026 S.K. All Rights Reserved.</div>
@@ -677,7 +677,9 @@ async function loadBakeries(prefecture,city) {
   const staticFiles = {
     '愛知県|豊田市': './data/aichi-toyota.json',
     '愛知県|岡崎市': './data/aichi-okazaki.json',
-    '愛知県|安城市': './data/aichi-anjo.json'
+    '愛知県|安城市': './data/aichi-anjo.json',
+    '愛知県|刈谷市': './data/aichi-kariya.json',
+    '愛知県|西尾市': './data/aichi-nishio.json'
   };
   const staticFile = staticFiles[prefecture + '|' + city];
   if(staticFile){
