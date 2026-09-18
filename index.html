@@ -527,7 +527,7 @@ let currentCity = '';
 let currentVisualKey = '';
 let currentPrefecture = '愛知県';
 // ===== API節約：24時間ブラウザキャッシュ =====
-const BAKERY_CACHE_VERSION = 'v2';
+const BAKERY_CACHE_VERSION = 'v3';
 const BAKERY_CACHE_TTL = 24 * 60 * 60 * 1000;
 const BAKERY_STALE_TTL = 30 * 24 * 60 * 60 * 1000;
 
@@ -734,7 +734,10 @@ async function loadBakeries(prefecture,city) {
   score: rankingScore(p.rating,p.userRatingCount)
 }));
 loadedShops = loadedShops.filter(isBakeryCandidate);
-  loadedShops = loadedShops.filter(s => String(s.address||'').includes(prefecture) && municipalityMatches(s.address,city));
+  const exactMunicipality = loadedShops.filter(s => municipalityMatches(s.address,city));
+  const prefectureMatches = loadedShops.filter(s => String(s.address||'').includes(prefecture));
+  loadedShops = exactMunicipality.length ? exactMunicipality
+    : (prefectureMatches.length ? prefectureMatches : loadedShops);
   loadedShops.sort((a, b) =>
     b.score - a.score || b.reviews - a.reviews
   );
