@@ -5,8 +5,8 @@
   "policy": "User-facing municipality pages never call Cloud Run or Overpass. Missing static data shows an immediate map-search fallback.",
   "totals": {
     "municipalities": 125,
-    "ready": 31,
-    "pending": 94
+    "ready": 34,
+    "pending": 91
   },
   "municipalities": [
     {
@@ -210,8 +210,8 @@
     {
       "prefecture": "愛知県",
       "city": "東郷町",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/aichi-togo.json"
     },
     {
       "prefecture": "愛知県",
@@ -234,8 +234,8 @@
     {
       "prefecture": "愛知県",
       "city": "あま市",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/aichi-ama.json"
     },
     {
       "prefecture": "愛知県",
@@ -246,8 +246,8 @@
     {
       "prefecture": "愛知県",
       "city": "蟹江町",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/aichi-kanie.json"
     },
     {
       "prefecture": "愛知県",
