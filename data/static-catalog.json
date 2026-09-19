@@ -5,8 +5,8 @@
   "policy": "User-facing municipality pages never call Cloud Run or Overpass. Missing static data shows an immediate map-search fallback.",
   "totals": {
     "municipalities": 125,
-    "ready": 78,
-    "pending": 47
+    "ready": 83,
+    "pending": 42
   },
   "municipalities": [
     {
@@ -588,20 +588,20 @@
     {
       "prefecture": "三重県",
       "city": "四日市市",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/mie-yokkaichi.json"
     },
     {
       "prefecture": "三重県",
       "city": "桑名市",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/mie-kuwana.json"
     },
     {
       "prefecture": "三重県",
       "city": "鈴鹿市",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/mie-suzuka.json"
     },
     {
       "prefecture": "三重県",
@@ -612,14 +612,14 @@
     {
       "prefecture": "三重県",
       "city": "津市",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/mie-tsu.json"
     },
     {
       "prefecture": "三重県",
       "city": "松阪市",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/mie-matsusaka.json"
     },
     {
       "prefecture": "三重県",
