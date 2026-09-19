@@ -1,7 +1,7 @@
 {
   "source": "static-free-recovery",
   "updatedAt": "2026-09-19",
-  "attribution": "店舗情報は公開情報を基にした復旧用スナップショット。来店前に公式情報をご確認ください。 ジャックは店舗公式サイトで住所・営業時間・定休日を再確認。 ペンギンベーカリー豊田浄水店は公式店舗一覧で住所・電話・営業時間を再確認。",
+  "attribution": "店舗情報は公開情報を基にした復旧用スナップショット。来店前に公式情報をご確認ください。 ジャックは店舗公式サイトで住所・営業時間・定休日を再確認。 ペンギンベーカリー豊田浄水店は公式店舗一覧で住所・電話・営業時間を再確認。 HORNはフジパンストアー公式、Picoはメグリア井上店公式施設情報を確認。Google Maps導線は店名・住所検索URLで全店舗に付与。",
   "shops": [
     {
       "placeId": "ChIJ22dl6EagBGAROlRfruKCPZI",
@@ -59,7 +59,7 @@
       ],
       "phone": "0565-43-3353",
       "website": "",
-      "googleMaps": "",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%82%B5%E3%83%B3%E3%82%AF%E3%82%B9%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%B1%8A%E7%94%B0%E5%B8%82%E6%B5%84%E6%B0%B4%E7%94%BA5-178-4",
       "photo": "",
       "catchphrase": "ベーカリー＆カフェ",
       "highlights": []
@@ -78,8 +78,8 @@
         "10:00–20:00"
       ],
       "phone": "0565-88-8002",
-      "website": "",
-      "googleMaps": "",
+      "website": "https://www.fujipanstore.com/store/store001392/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=HORN%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%B1%8A%E7%94%B0%E5%B8%82%E6%9D%B1%E5%B1%B1%E7%94%BA1-5-1",
       "photo": "",
       "catchphrase": "東山町のベーカリー",
       "highlights": []
@@ -97,7 +97,7 @@
       "openingHours": [],
       "phone": "090-2925-0621",
       "website": "",
-      "googleMaps": "",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=coripan%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%B1%8A%E7%94%B0%E5%B8%82%E6%B7%B1%E7%94%B0%E7%94%BA1-86-3",
       "photo": "",
       "catchphrase": "深田町のベーカリー",
       "highlights": []
@@ -117,7 +117,7 @@
       ],
       "phone": "0565-37-9222",
       "website": "",
-      "googleMaps": "",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=Contevole%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%B1%8A%E7%94%B0%E5%B8%82%E5%BA%83%E8%B7%AF%E7%94%BA1-1",
       "photo": "",
       "catchphrase": "広路町のベーカリー",
       "highlights": []
@@ -134,8 +134,8 @@
       ],
       "openingHours": [],
       "phone": "0565-45-1221",
-      "website": "",
-      "googleMaps": "",
+      "website": "https://www.meglia-net.jp/store/inoue/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=Pico%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%B1%8A%E7%94%B0%E5%B8%82%E4%BA%95%E4%B8%8A%E7%94%BA4-154",
       "photo": "",
       "catchphrase": "井上町のベーカリー",
       "highlights": []
@@ -153,7 +153,7 @@
       "openingHours": [],
       "phone": "0565-42-7170",
       "website": "",
-      "googleMaps": "",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=Mikazuki%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%B1%8A%E7%94%B0%E5%B8%82%E6%9C%88%E8%A6%8B%E7%94%BA2-9-2",
       "photo": "",
       "catchphrase": "月見町のベーカリー",
       "highlights": []
@@ -171,7 +171,7 @@
       "openingHours": [],
       "phone": "0565-41-8080",
       "website": "",
-      "googleMaps": "",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E7%B4%94%E7%94%9F%E9%A3%9F%E3%83%91%E3%83%B3%E5%B7%A5%E6%88%BF%20HARE%2FPAN%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%B1%8A%E7%94%B0%E5%B8%82%E5%85%83%E5%9F%8E%E7%94%BA1-8",
       "photo": "",
       "catchphrase": "食パン専門店",
       "highlights": []
@@ -189,7 +189,7 @@
       "openingHours": [],
       "phone": "080-5291-9112",
       "website": "",
-      "googleMaps": "",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%9F%E3%83%83%E3%83%81%E3%81%AE%E3%83%91%E3%83%B3%E5%B7%A5%E6%88%BF%20%E8%B1%8A%E7%94%B0%E5%BA%97%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%B1%8A%E7%94%B0%E5%B8%82%E5%9B%9B%E9%83%B7%E7%94%BA%E5%A4%A9%E9%81%931-33",
       "photo": "",
       "catchphrase": "四郷町のパン工房",
       "highlights": []
