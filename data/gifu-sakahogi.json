@@ -1,0 +1,30 @@
+{
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "スーパーセンターオークワ坂祝店公式店舗情報を基に、ベーカリー取扱いを確認。",
+  "shops": [
+    {
+      "placeId": "static-sakahogi-okuwa-bakery",
+      "name": "スーパーセンターオークワ 坂祝店 ベーカリー",
+      "rating": 0,
+      "reviews": 0,
+      "address": "岐阜県加茂郡坂祝町黒岩1516-1",
+      "type": "ベーカリー",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "店舗 9:00–24:00",
+        "ベーカリー営業時間は店頭確認"
+      ],
+      "phone": "0574-24-5025",
+      "website": "https://www.okuwa.net/store/gifu/393.html",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "オークワ坂祝店のベーカリー売場",
+      "highlights": [
+        "店内ベーカリー"
+      ]
+    }
+  ]
+}
