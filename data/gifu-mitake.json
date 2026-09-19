@@ -1,0 +1,32 @@
+{
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "御嵩町観光協会公式サイト・公式グルメガイドの公開情報を基に確認。来店前に最新情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "static-mitake-azumaru",
+      "name": "天然酵母のパンとおやつのお店 あずまる",
+      "rating": 0,
+      "reviews": 0,
+      "address": "岐阜県可児郡御嵩町御嵩1529-1",
+      "type": "パン屋・カフェ",
+      "types": [
+        "bakery",
+        "cafe"
+      ],
+      "openingHours": [
+        "11:00–16:00",
+        "休 日・月・火・水・金"
+      ],
+      "phone": "",
+      "website": "https://mitake-kankou.jp/shop/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "御嵩宿の天然酵母パンとおやつの店",
+      "highlights": [
+        "天然酵母パン",
+        "カフェ利用可"
+      ]
+    }
+  ]
+}
