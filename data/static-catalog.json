@@ -5,8 +5,8 @@
   "policy": "User-facing municipality pages never call Cloud Run or Overpass. Missing static data shows an immediate map-search fallback.",
   "totals": {
     "municipalities": 125,
-    "ready": 107,
-    "pending": 18
+    "ready": 108,
+    "pending": 17
   },
   "municipalities": [
     {
@@ -540,8 +540,8 @@
     {
       "prefecture": "岐阜県",
       "city": "富加町",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/gifu-tomika.json"
     },
     {
       "prefecture": "岐阜県",
