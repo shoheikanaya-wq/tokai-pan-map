@@ -1,0 +1,28 @@
+{
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "白川町公式メディア「ヤゴーシラカワ」の公開情報を基に確認。来店前に最新情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "static-shirakawa-pan-imai",
+      "name": "パンショップイマイ",
+      "rating": 0,
+      "reviews": 0,
+      "address": "岐阜県加茂郡白川町",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "",
+      "website": "https://yeahgoshirakawa.com/article_special/738/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "白川口駅から徒歩圏の地域に親しまれるパンショップ",
+      "highlights": [
+        "手作りパン",
+        "地域密着"
+      ]
+    }
+  ]
+}
