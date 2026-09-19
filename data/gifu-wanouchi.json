@@ -1,0 +1,32 @@
+{
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "岐阜県観光公式サイトで、輪之内軽トラ朝市に惣菜パン・菓子パンの出店があることを確認。毎回出店とは限らないため開催・出店状況をご確認ください。",
+  "shops": [
+    {
+      "placeId": "static-wanouchi-keitoramarket",
+      "name": "輪之内軽トラ朝市",
+      "rating": 0,
+      "reviews": 0,
+      "address": "岐阜県安八郡輪之内町中郷新田",
+      "type": "パン販売（朝市）",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "毎月 第2・第4日曜 8:30–10:00",
+        "パン出店は毎回とは限りません"
+      ],
+      "phone": "0584-69-3126",
+      "website": "https://www.kankou-gifu.jp/spot/detail_5696.html",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "惣菜パン・菓子パンも並ぶ地域の軽トラ朝市",
+      "highlights": [
+        "惣菜パン",
+        "菓子パン",
+        "月2回開催"
+      ]
+    }
+  ]
+}
