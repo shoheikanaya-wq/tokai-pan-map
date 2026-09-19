@@ -5,8 +5,8 @@
   "policy": "User-facing municipality pages never call Cloud Run or Overpass. Missing static data shows an immediate map-search fallback.",
   "totals": {
     "municipalities": 125,
-    "ready": 90,
-    "pending": 35
+    "ready": 92,
+    "pending": 33
   },
   "municipalities": [
     {
@@ -702,14 +702,14 @@
     {
       "prefecture": "三重県",
       "city": "多気町",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/mie-taki.json"
     },
     {
       "prefecture": "三重県",
       "city": "明和町",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/mie-meiwa.json"
     },
     {
       "prefecture": "三重県",
