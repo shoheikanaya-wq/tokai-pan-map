@@ -18,11 +18,32 @@
       ],
       "phone": "",
       "website": "https://murapan-umauma.jimdofree.com/",
-      "googleMaps": "",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%91%E3%83%B3%E5%B7%A5%E6%88%BFMuraKami%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E4%B8%80%E5%AE%AE%E5%B8%82%E5%B0%8F%E8%B5%A4%E8%A6%8B%E9%83%B7%E6%B5%A61",
       "photo": "",
       "catchphrase": "小さなパン工房",
       "highlights": [
         "少量ずつ丁寧に製造"
+      ]
+    },
+    {
+      "placeId": "static-ichinomiya-sakura",
+      "name": "さくらベーカリー",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県一宮市萩原町中島2128",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "090-5608-3464",
+      "website": "https://sakurabake.jimdofree.com/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%81%95%E3%81%8F%E3%82%89%E3%83%99%E3%83%BC%E3%82%AB%E3%83%AA%E3%83%BC%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E4%B8%80%E5%AE%AE%E5%B8%82%E8%90%A9%E5%8E%9F%E7%94%BA%E4%B8%AD%E5%B3%B62128",
+      "photo": "",
+      "catchphrase": "田畑に囲まれた小さなパン工房",
+      "highlights": [
+        "工房販売",
+        "季節の農産物"
       ]
     }
   ]
