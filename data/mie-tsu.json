@@ -1,1 +1,55 @@
-{"source":"static-free-verified","updatedAt":"2026-09-19","attribution":"店舗公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。","shops":[{"placeId":"static-tsu-paindemain","name":"Pain de main","rating":0,"reviews":0,"address":"三重県津市栗真町屋町1415-1","type":"パン屋","types":["bakery"],"openingHours":["11:00–売り切れ次第終了","定休日 水・木・金"],"phone":"080-5103-7884","website":"https://paindemain.com/","googleMaps":"","photo":"","catchphrase":"天然酵母と三重素材を生かすハード系パン屋","highlights":["食パン","ハード系パン"]}]}
+{
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "店舗公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "static-tsu-paindemain",
+      "name": "Pain de main",
+      "rating": 0,
+      "reviews": 0,
+      "address": "三重県津市栗真町屋町1415-1",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "11:00–売り切れ次第終了",
+        "定休日 水・木・金"
+      ],
+      "phone": "080-5103-7884",
+      "website": "https://paindemain.com/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=Pain%20de%20main%20%E4%B8%89%E9%87%8D%E7%9C%8C%E6%B4%A5%E5%B8%82%E6%A0%97%E7%9C%9F%E7%94%BA%E5%B1%8B%E7%94%BA1415-1",
+      "photo": "",
+      "catchphrase": "天然酵母と三重素材を生かすハード系パン屋",
+      "highlights": [
+        "食パン",
+        "ハード系パン"
+      ]
+    },
+    {
+      "placeId": "static-tsu-513kencho",
+      "name": "513BAKERY 三重津県庁前店",
+      "rating": 0,
+      "reviews": 0,
+      "address": "三重県津市栄町2丁目393",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "07:30–19:00",
+        "定休日 日"
+      ],
+      "phone": "059-223-0513",
+      "website": "https://www.513bakery.jp/shop/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=513BAKERY%20%E4%B8%89%E9%87%8D%E6%B4%A5%E7%9C%8C%E5%BA%81%E5%89%8D%E5%BA%97%20%E4%B8%89%E9%87%8D%E7%9C%8C%E6%B4%A5%E5%B8%82%E6%A0%84%E7%94%BA2%E4%B8%81%E7%9B%AE393",
+      "photo": "",
+      "catchphrase": "石窯で焼く焼きたてパンとイートインを楽しめるベーカリー",
+      "highlights": [
+        "石窯パン",
+        "イートイン"
+      ]
+    }
+  ]
+}
