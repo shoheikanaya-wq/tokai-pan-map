@@ -1,7 +1,7 @@
 {
   "source": "static-free-recovery",
   "updatedAt": "2026-09-19",
-  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。未取得項目は空欄または0。来店前に地図・公式情報をご確認ください。",
+  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。未取得項目は空欄または0。来店前に地図・公式情報をご確認ください。 オークワ幸田店はチェーン公式店舗ページでベーカリー取扱いを現行確認。",
   "shops": [
     {
       "placeId": "ChIJEVjSUdK9BGARZ5DvdQyV6J0",
@@ -134,6 +134,29 @@
       "highlights": [
         "カンパーニュ",
         "食パン"
+      ]
+    },
+    {
+      "placeId": "static-kota-okuwa-bakery",
+      "name": "スーパーセンターオークワ 幸田店 ベーカリー",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県額田郡幸田町六栗蔵前126",
+      "type": "店内ベーカリー",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "店舗 09:00–21:00",
+        "ベーカリー個別営業時間は店頭確認"
+      ],
+      "phone": "0564-62-6110",
+      "website": "https://www.okuwa.net/store/aichi/561.html",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%82%B9%E3%83%BC%E3%83%91%E3%83%BC%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E3%82%AA%E3%83%BC%E3%82%AF%E3%83%AF%20%E5%B9%B8%E7%94%B0%E5%BA%97",
+      "photo": "",
+      "catchphrase": "オークワ公式でベーカリー取扱いを確認",
+      "highlights": [
+        "店内ベーカリー"
       ]
     }
   ]
