@@ -1,0 +1,30 @@
+{
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "岩倉市商工会公開資料を基に確認。来店前に最新情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "static-iwakura-yamakawa",
+      "name": "田舎の高級食パン やまかわ",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県岩倉市鈴井町新田51-5",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "10:00–18:00",
+        "定休日 月・火"
+      ],
+      "phone": "0587-65-3338",
+      "website": "https://iwakura.or.jp/wp2/wp-content/uploads/2022/03/iwaclap.pdf",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "岩倉市商工会掲載の食パン専門店",
+      "highlights": [
+        "食パン"
+      ]
+    }
+  ]
+}
