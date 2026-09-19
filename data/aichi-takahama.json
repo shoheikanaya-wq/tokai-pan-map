@@ -1,7 +1,7 @@
 {
   "source": "static-free-recovery",
   "updatedAt": "2026-09-19",
-  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。未取得項目は空欄または0。来店前に地図・公式情報をご確認ください。 ふるふるは高浜市公式、PanPalは店舗公式サイトで現行情報を再確認。 パン工房むぎまるはTぽーと公式、エスカフェは高浜市商工会公式で現行のパン製造・販売を確認。",
+  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。未取得項目は空欄または0。来店前に地図・公式情報をご確認ください。 ふるふるは高浜市公式、PanPalは店舗公式サイトで現行情報を再確認。 パン工房むぎまるはTぽーと公式、エスカフェは高浜市商工会公式で現行のパン製造・販売を確認。 おとうふ工房いしかわは高浜市観光協会・東海農政局でパン製造販売を確認。",
   "shops": [
     {
       "placeId": "ChIJw_H48SSbBGARama0JDViLHE",
@@ -139,6 +139,28 @@
         "自家製ベーグル",
         "パン予約",
         "テイクアウト"
+      ]
+    },
+    {
+      "placeId": "static-takahama-ishikawa",
+      "name": "おとうふ工房いしかわ",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県高浜市豊田町1-204-21",
+      "type": "パン製造・販売",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "0566-54-0330",
+      "website": "https://www.otoufu.co.jp/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%81%8A%E3%81%A8%E3%81%86%E3%81%B5%E5%B7%A5%E6%88%BF%E3%81%84%E3%81%97%E3%81%8B%E3%82%8F%20%E9%AB%98%E6%B5%9C%E5%B8%82%E8%B1%8A%E7%94%B0%E7%94%BA1-204-21",
+      "photo": "",
+      "catchphrase": "豆乳を使った焼きたてパンを製造",
+      "highlights": [
+        "豆乳パン",
+        "おからパン",
+        "豆腐ドーナッツ"
       ]
     }
   ]
