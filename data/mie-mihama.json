@@ -1,0 +1,31 @@
+{
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "御浜町地域プロモーション公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "static-mihama-guchokipan",
+      "name": "ぐうちょきぱん",
+      "rating": 0,
+      "reviews": 0,
+      "address": "三重県南牟婁郡御浜町下市木966",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "08:30–18:00",
+        "定休日 月"
+      ],
+      "phone": "05979-2-3691",
+      "website": "https://mihama-mie-townpromotion.jp/visit/5242/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "国道42号沿いの無添加パンの店",
+      "highlights": [
+        "無添加パン",
+        "惣菜パン"
+      ]
+    }
+  ]
+}
