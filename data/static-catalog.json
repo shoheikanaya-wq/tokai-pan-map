@@ -5,8 +5,8 @@
   "policy": "User-facing municipality pages never call Cloud Run or Overpass. Missing static data shows an immediate map-search fallback.",
   "totals": {
     "municipalities": 125,
-    "ready": 65,
-    "pending": 60
+    "ready": 67,
+    "pending": 58
   },
   "municipalities": [
     {
@@ -384,8 +384,8 @@
     {
       "prefecture": "岐阜県",
       "city": "美濃加茂市",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/gifu-minokamo.json"
     },
     {
       "prefecture": "岐阜県",
@@ -444,8 +444,8 @@
     {
       "prefecture": "岐阜県",
       "city": "高山市",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/gifu-takayama.json"
     },
     {
       "prefecture": "岐阜県",
