@@ -5,8 +5,8 @@
   "policy": "User-facing municipality pages never call Cloud Run or Overpass. Missing static data shows an immediate map-search fallback.",
   "totals": {
     "municipalities": 125,
-    "ready": 83,
-    "pending": 42
+    "ready": 86,
+    "pending": 39
   },
   "municipalities": [
     {
@@ -630,8 +630,8 @@
     {
       "prefecture": "三重県",
       "city": "伊賀市",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/mie-iga.json"
     },
     {
       "prefecture": "三重県",
@@ -642,8 +642,8 @@
     {
       "prefecture": "三重県",
       "city": "伊勢市",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/mie-ise.json"
     },
     {
       "prefecture": "三重県",
@@ -654,8 +654,8 @@
     {
       "prefecture": "三重県",
       "city": "志摩市",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/mie-shima.json"
     },
     {
       "prefecture": "三重県",
