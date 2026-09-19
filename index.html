@@ -811,7 +811,7 @@ out center tags;`;
 let staticCatalogPromise=null;
 async function loadStaticCatalog(){
   if(!staticCatalogPromise){
-    staticCatalogPromise=fetch('./data/static-catalog.json?rev=20260919-static1',{cache:'no-store'})
+    staticCatalogPromise=fetch('./data/static-catalog.json?rev=20260919-static2',{cache:'no-store'})
       .then(r=>r.ok?r.json():null)
       .catch(()=>null);
   }
@@ -1221,6 +1221,11 @@ currentVisualKey = '';
     if(loadSeq!==cityLoadSeq || currentPrefecture!==selectedPrefecture || currentCity!==city) return;
     shops=loadedShops;
     showRanking();
+    const catalog=await loadStaticCatalog();
+    const note=byId('rankingNote');
+    if(note && catalog?.updatedAt){
+      note.textContent='データ確認日：'+catalog.updatedAt+' ／ 営業前に店舗公式情報をご確認ください。';
+    }
   } catch(e) {
     if(loadSeq!==cityLoadSeq) return;
     showRankingView();
