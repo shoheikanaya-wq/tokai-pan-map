@@ -1,0 +1,33 @@
+{
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "つちのこ館公式サイトの公開情報を基に確認。パンは販売日限定のため来店前に最新情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "static-higashishirakawa-tsuchinoko",
+      "name": "つちのこ館",
+      "rating": 0,
+      "reviews": 0,
+      "address": "岐阜県加茂郡東白川村神土426番地1",
+      "type": "パン販売店",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "9:00–17:00",
+        "冬期 9:00–16:00",
+        "水曜定休",
+        "つちのこパンは販売日限定"
+      ],
+      "phone": "0574-78-3192",
+      "website": "https://tutinokoyakata.jimdofree.com/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "販売日限定の名物つちのこパン",
+      "highlights": [
+        "つちのこパン",
+        "販売日限定"
+      ]
+    }
+  ]
+}
