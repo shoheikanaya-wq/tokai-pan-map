@@ -1,5 +1,80 @@
 {
-  "source":"static-free-verified","updatedAt":"2026-09-19",
-  "attribution":"公開店舗情報を基に確認。来店前に最新情報をご確認ください。",
-  "shops":[{"placeId":"static-toyoake-pangapangaa","name":"ぱんがーぱんがー","rating":0,"reviews":0,"address":"愛知県豊明市阿野町長根22-2","type":"パン屋","types":["bakery"],"openingHours":["水 09:00–（売り切れ次第終了）"],"phone":"080-1588-1402","website":"","googleMaps":"","photo":"","catchphrase":"豊明市阿野町のベーカリー","highlights":[]}]
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-20",
+  "attribution": "店舗公式サイト等の公開情報を基に確認。来店前に最新情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "static-toyoake-pangapangaa",
+      "name": "ぱんがーぱんがー",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県豊明市阿野町長根22-2",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "水 09:00–（売り切れ次第終了）"
+      ],
+      "phone": "080-1588-1402",
+      "website": "",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%81%B1%E3%82%93%E3%81%8C%E3%83%BC%E3%81%B1%E3%82%93%E3%81%8C%E3%83%BC%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%B1%8A%E6%98%8E%E5%B8%82%E9%98%BF%E9%87%8E%E7%94%BA%E9%95%B7%E6%A0%B922-2",
+      "photo": "",
+      "catchphrase": "豊明市阿野町のベーカリー",
+      "highlights": []
+    },
+    {
+      "placeId": "static-toyoake-muginohana",
+      "name": "手づくりパン むぎの花",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県豊明市間米町純堀1821",
+      "type": "パン屋・カフェ",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "09:00–17:30",
+        "定休日 日・月"
+      ],
+      "phone": "0562-92-8822",
+      "website": "https://mugino-hana.com/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E6%89%8B%E3%81%A5%E3%81%8F%E3%82%8A%E3%83%91%E3%83%B3%20%E3%82%80%E3%81%8E%E3%81%AE%E8%8A%B1%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%B1%8A%E6%98%8E%E5%B8%82%E9%96%93%E7%B1%B3%E7%94%BA%E7%B4%94%E5%A0%801821",
+      "photo": "",
+      "catchphrase": "自家製酵母パンとカフェメニューを楽しめる手づくりパン店",
+      "highlights": [
+        "自家製酵母",
+        "モーニング",
+        "ランチ"
+      ]
+    },
+    {
+      "placeId": "static-toyoake-kinonaka",
+      "name": "石窯パン＆ギャラリーカフェ木のなか",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県豊明市栄町大根1番地1679",
+      "type": "パン屋・ギャラリーカフェ",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "月 休み",
+        "火 10:00–15:00",
+        "水–土 10:00–17:00",
+        "第1日 10:00–15:00",
+        "第3土 17:00–20:00"
+      ],
+      "phone": "0562-98-0068",
+      "website": "https://www.kodachi-gallerycafe.com/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E7%9F%B3%E7%AA%AF%E3%83%91%E3%83%B3%EF%BC%86%E3%82%AE%E3%83%A3%E3%83%A9%E3%83%AA%E3%83%BC%E3%82%AB%E3%83%95%E3%82%A7%E6%9C%A8%E3%81%AE%E3%81%AA%E3%81%8B%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%B1%8A%E6%98%8E%E5%B8%82%E6%A0%84%E7%94%BA%E5%A4%A7%E6%A0%B91%E7%95%AA%E5%9C%B01679",
+      "photo": "",
+      "catchphrase": "石窯パンとコーヒー、アートを楽しめるギャラリーカフェ",
+      "highlights": [
+        "石窯パン",
+        "カフェ",
+        "駐車場あり"
+      ]
+    }
+  ]
 }
