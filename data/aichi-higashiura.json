@@ -1,7 +1,7 @@
 {
   "source": "static-free-verified",
   "updatedAt": "2026-09-19",
-  "attribution": "店舗公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。",
+  "attribution": "店舗公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。 HEART BREAD ANTIQUE イオンモール東浦店はブランド公式・イオンモール公式で現行営業を確認。",
   "shops": [
     {
       "placeId": "static-higashiura-pankobo",
@@ -23,6 +23,31 @@
       "catchphrase": "イオン内のベーカリー",
       "highlights": [
         "喫茶スペースあり"
+      ]
+    },
+    {
+      "placeId": "static-higashiura-antique",
+      "name": "HEART BREAD ANTIQUE イオンモール東浦店",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県知多郡東浦町大字緒川字旭13-2 イオンモール東浦1F",
+      "type": "ベーカリー・カフェ",
+      "types": [
+        "bakery",
+        "cafe"
+      ],
+      "openingHours": [
+        "10:00–21:00"
+      ],
+      "phone": "0562-57-5560",
+      "website": "https://www.heart-bread.com/shops/1204/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=HEART%20BREAD%20ANTIQUE%20%E3%82%A4%E3%82%AA%E3%83%B3%E3%83%A2%E3%83%BC%E3%83%AB%E6%9D%B1%E6%B5%A6%E5%BA%97",
+      "photo": "",
+      "catchphrase": "マジカルチョコリングで知られるベーカリー",
+      "highlights": [
+        "マジカルチョコリング",
+        "チーズフランス",
+        "あん食パン"
       ]
     }
   ]
