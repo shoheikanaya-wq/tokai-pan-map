@@ -1,0 +1,31 @@
+{
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "スーパーマーケットバロー公式店舗情報を基に確認。",
+  "shops": [
+    {
+      "placeId": "static-yamagata-hokuoclub",
+      "name": "北欧倶楽部 バロー高富店",
+      "rating": 0,
+      "reviews": 0,
+      "address": "岐阜県山県市高富米野2310",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "月〜金 9:30–20:00",
+        "土・日 9:00–20:00"
+      ],
+      "phone": "0581-23-0120",
+      "website": "https://stores.valor.jp/detail/47/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "バロー高富店内のベーカリー",
+      "highlights": [
+        "北欧倶楽部",
+        "店内ベーカリー"
+      ]
+    }
+  ]
+}
