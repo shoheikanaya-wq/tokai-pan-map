@@ -1,0 +1,11 @@
+{
+ "source":"static-free-verified","updatedAt":"2026-09-19",
+ "attribution":"美濃加茂市観光協会の公開情報を基に確認。来店前に最新情報をご確認ください。",
+ "shops":[{
+  "placeId":"static-minokamo-wakao","name":"美濃加茂製パン処わかお","rating":0,"reviews":0,
+  "address":"岐阜県美濃加茂市加茂野町今泉184-3","type":"パン屋","types":["bakery"],
+  "openingHours":["10:00–15:30","定休日 火・水"],"phone":"0574-66-1710",
+  "website":"https://minokamo-kanko.jp/%E7%BE%8E%E6%BF%83%E5%8A%A0%E8%8C%82%E8%A3%BD%E3%83%91%E3%83%B3%E5%87%A6%E3%82%8F%E3%81%8B%E3%81%8A/","googleMaps":"","photo":"",
+  "catchphrase":"郡上の天然水で練り上げる製パン処","highlights":["高級食パン","クロワッサン","レーズンパン"]
+ }]
+}
