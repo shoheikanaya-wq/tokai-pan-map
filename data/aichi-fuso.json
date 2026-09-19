@@ -25,6 +25,73 @@
         "クロワッサン",
         "食パン"
       ]
+    },
+    {
+      "placeId": "static-fuso-pourvous",
+      "name": "Boulangerie Pour Vous",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県丹羽郡扶桑町柏森平塚353-3",
+      "type": "パン・洋菓子・カフェ",
+      "types": [
+        "bakery",
+        "cafe"
+      ],
+      "openingHours": [
+        "水・木・金・土 09:00–17:00",
+        "月・火・日曜定休"
+      ],
+      "phone": "0587-93-1109",
+      "website": "http://boulangerie-pourvous.com/index.html",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=Boulangerie%20Pour%20Vous%20%E6%89%B6%E6%A1%91%E7%94%BA%E6%9F%8F%E6%A3%AE%E5%B9%B3%E5%A1%9A353-3",
+      "photo": "",
+      "catchphrase": "扶桑町の人気ベーカリー本店",
+      "highlights": [
+        "クロワッサン",
+        "食パン",
+        "フランスパン",
+        "サンドイッチ"
+      ]
+    },
+    {
+      "placeId": "static-fuso-tanaka",
+      "name": "タナカノパンヤ",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県丹羽郡扶桑町柏森中切310",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "",
+      "website": "https://www.fuso-syakyo.com/cont2/15.html",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%82%BF%E3%83%8A%E3%82%AB%E3%83%8E%E3%83%91%E3%83%B3%E3%83%A4%20%E6%89%B6%E6%A1%91%E7%94%BA%E6%9F%8F%E6%A3%AE%E4%B8%AD%E5%88%87310",
+      "photo": "",
+      "catchphrase": "扶桑町内のベーカリー",
+      "highlights": [
+        "パン"
+      ]
+    },
+    {
+      "placeId": "static-fuso-tanpopo",
+      "name": "べーかりーたんぽぽ",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県丹羽郡扶桑町",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "",
+      "website": "https://www.fuso-syakyo.com/cont2/15.html",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%81%B9%E3%83%BC%E3%81%8B%E3%82%8A%E3%83%BC%E3%81%9F%E3%82%93%E3%81%BD%E3%81%BD%20%E6%89%B6%E6%A1%91%E7%94%BA",
+      "photo": "",
+      "catchphrase": "扶桑町内のベーカリー",
+      "highlights": [
+        "パン"
+      ]
     }
   ]
 }
