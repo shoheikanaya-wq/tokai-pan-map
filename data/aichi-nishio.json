@@ -1,7 +1,7 @@
 {
   "source": "static-free-recovery",
   "updatedAt": "2026-09-19",
-  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。評価・口コミ数は取得できた公開情報を使用し、未取得項目は0または空欄。来店前に公式情報をご確認ください。",
+  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。評価・口コミ数は取得できた公開情報を使用し、未取得項目は0または空欄。来店前に公式情報をご確認ください。 愛慶食品・あいけいcafeは西尾市公式ウェブサイトで住所・営業時間・定休日・揚げパン販売を確認。",
   "shops": [
     {
       "placeId": "ChIJIVfdeY6XBGARB4UBTCaNU7I",
@@ -189,6 +189,32 @@
       "photo": "",
       "catchphrase": "寺津町のベーカリー",
       "highlights": []
+    },
+    {
+      "placeId": "static-nishio-aikei-cafe",
+      "name": "愛慶食品・あいけいcafe",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県西尾市上町薬師前20-2",
+      "type": "カフェ・パン販売",
+      "types": [
+        "bakery",
+        "cafe"
+      ],
+      "openingHours": [
+        "09:30–16:00",
+        "日・木曜定休",
+        "揚げパン販売 14:00〜（テイクアウト）"
+      ],
+      "phone": "0563-56-2022",
+      "website": "https://www.city.nishio.aichi.jp/sportskanko/kanko/1001472/1006108/1006109/1011340.html",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E6%84%9B%E6%85%B6%E9%A3%9F%E5%93%81%20%E3%81%82%E3%81%84%E3%81%91%E3%81%84cafe%20%E8%A5%BF%E5%B0%BE%E5%B8%82%E4%B8%8A%E7%94%BA%E8%96%AC%E5%B8%AB%E5%89%8D20-2",
+      "photo": "",
+      "catchphrase": "西尾市公式掲載、午後2時から揚げパンを販売",
+      "highlights": [
+        "揚げパン",
+        "抹茶トースト"
+      ]
     }
   ]
 }
