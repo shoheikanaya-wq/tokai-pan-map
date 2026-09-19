@@ -5,8 +5,8 @@
   "policy": "User-facing municipality pages never call Cloud Run or Overpass. Missing static data shows an immediate map-search fallback.",
   "totals": {
     "municipalities": 125,
-    "ready": 67,
-    "pending": 58
+    "ready": 70,
+    "pending": 55
   },
   "municipalities": [
     {
@@ -438,8 +438,8 @@
     {
       "prefecture": "岐阜県",
       "city": "下呂市",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/gifu-gero.json"
     },
     {
       "prefecture": "岐阜県",
@@ -450,8 +450,8 @@
     {
       "prefecture": "岐阜県",
       "city": "飛騨市",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/gifu-hida.json"
     },
     {
       "prefecture": "岐阜県",
@@ -528,8 +528,8 @@
     {
       "prefecture": "岐阜県",
       "city": "瑞浪市",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/gifu-mizunami.json"
     },
     {
       "prefecture": "岐阜県",
