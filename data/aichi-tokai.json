@@ -1,7 +1,7 @@
 {
   "source": "static-free-verified",
   "updatedAt": "2026-09-20",
-  "attribution": "店舗公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。",
+  "attribution": "店舗公式アカウント・東海市/愛知県等の公開情報を基に確認。来店前に最新情報をご確認ください。",
   "shops": [
     {
       "placeId": "static-tokai-chezkobe",
@@ -23,6 +23,32 @@
       "photo": "",
       "catchphrase": "東海市加木屋のベーカリー",
       "highlights": []
+    },
+    {
+      "placeId": "static-tokai-harupan",
+      "name": "はるパン",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県東海市高横須賀町御亭55-1",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "火 10:00–17:00",
+        "水–土 10:00–18:00",
+        "定休日 月・日・祝"
+      ],
+      "phone": "090-1783-8680",
+      "website": "https://www.instagram.com/harupan0906/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%81%AF%E3%82%8B%E3%83%91%E3%83%B3%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E6%9D%B1%E6%B5%B7%E5%B8%82%E9%AB%98%E6%A8%AA%E9%A0%88%E8%B3%80%E7%94%BA%E5%BE%A1%E4%BA%AD55-1",
+      "photo": "",
+      "catchphrase": "食パン・カレーパン・菓子パンなどをそろえる小さなベーカリー",
+      "highlights": [
+        "食パン",
+        "カレーパン",
+        "駐車場あり"
+      ]
     }
   ]
 }
