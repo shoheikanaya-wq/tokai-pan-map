@@ -1,12 +1,57 @@
 {
-  "source":"static-free-verified",
-  "updatedAt":"2026-09-19",
-  "attribution":"店舗公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。",
-  "shops":[{
-    "placeId":"static-oharu-fanfan","name":"Bakery FAN FAN","rating":0,"reviews":0,
-    "address":"愛知県海部郡大治町大字花常字福島87-2","type":"パン屋","types":["bakery"],
-    "openingHours":["07:30–17:30","定休日 日・祝"],"phone":"052-442-0065",
-    "website":"https://www.fanfan0141.com/","googleMaps":"","photo":"",
-    "catchphrase":"イギリス食パンが看板の地元ベーカリー","highlights":["1977年創業"]
-  }]
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "店舗公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。 UZOU BREAD&COFFEEは店舗公式サイトで現行営業・住所・営業時間を確認。",
+  "shops": [
+    {
+      "placeId": "static-oharu-fanfan",
+      "name": "Bakery FAN FAN",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県海部郡大治町大字花常字福島87-2",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "07:30–17:30",
+        "定休日 日・祝"
+      ],
+      "phone": "052-442-0065",
+      "website": "https://www.fanfan0141.com/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "イギリス食パンが看板の地元ベーカリー",
+      "highlights": [
+        "1977年創業"
+      ]
+    },
+    {
+      "placeId": "static-oharu-uzou",
+      "name": "UZOU BREAD&COFFEE",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県海部郡大治町堀之内大堀202-1",
+      "type": "パン・コーヒー",
+      "types": [
+        "bakery",
+        "cafe"
+      ],
+      "openingHours": [
+        "10:00–19:00",
+        "月・火曜定休",
+        "売り切れ次第閉店"
+      ],
+      "phone": "052-462-6464",
+      "website": "https://uzou-bread-coffee.com/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=UZOU%20BREAD%26COFFEE%20%E5%A4%A7%E6%B2%BB%E7%94%BA%E5%A0%80%E4%B9%8B%E5%86%85%E5%A4%A7%E5%A0%80202-1",
+      "photo": "",
+      "catchphrase": "食パンとコーヒーの店",
+      "highlights": [
+        "食パン",
+        "ブリオッシュ",
+        "コーヒー"
+      ]
+    }
+  ]
 }
