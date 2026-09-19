@@ -1,7 +1,7 @@
 {
   "source": "static-free-verified",
   "updatedAt": "2026-09-19",
-  "attribution": "店舗情報は公開情報を基に確認。来店前に公式情報をご確認ください。",
+  "attribution": "店舗情報は公開情報を基に確認。来店前に公式情報をご確認ください。 豊橋観光コンベンション協会公式掲載のベーカリーを追加確認。",
   "shops": [
     {
       "placeId": "static-toyohashi-koendori",
@@ -10,14 +10,121 @@
       "reviews": 0,
       "address": "愛知県豊橋市高師町字北原1-107",
       "type": "パン屋",
-      "types": ["bakery"],
-      "openingHours": ["09:00–15:00", "月曜定休"],
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "09:00–15:00",
+        "月曜定休"
+      ],
       "phone": "0532-35-6737",
       "website": "https://tf-jigyoukai.org/works/cafe/",
-      "googleMaps": "",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%91%E3%83%B3%E3%81%A8%E3%82%AB%E3%83%95%E3%82%A7%E5%85%AC%E5%9C%92%E9%80%9A%E3%82%8A%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%B1%8A%E6%A9%8B%E5%B8%82%E9%AB%98%E5%B8%AB%E7%94%BA%E5%AD%97%E5%8C%97%E5%8E%9F1-107",
       "photo": "",
       "catchphrase": "手づくりパンと喫茶",
-      "highlights": ["パンは定番・季節品を常時約30種類"]
+      "highlights": [
+        "パンは定番・季節品を常時約30種類"
+      ]
+    },
+    {
+      "placeId": "static-toyohashi-peche",
+      "name": "Peche",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県豊橋市",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "",
+      "website": "https://www.honokuni.or.jp/toyohashi/spot/000142.html",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=Peche%20%E8%B1%8A%E6%A9%8B%E5%B8%82",
+      "photo": "",
+      "catchphrase": "豊橋観光コンベンション協会公式掲載のベーカリー",
+      "highlights": [
+        "パン"
+      ]
+    },
+    {
+      "placeId": "static-toyohashi--",
+      "name": "ショパン 三ノ輪本店",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県豊橋市三ノ輪町本興寺23-5",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "",
+      "website": "https://www.honokuni.or.jp/toyohashi/spot/000133.html",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%82%B7%E3%83%A7%E3%83%91%E3%83%B3%20%E4%B8%89%E3%83%8E%E8%BC%AA%E6%9C%AC%E5%BA%97%20%E8%B1%8A%E6%A9%8B%E5%B8%82",
+      "photo": "",
+      "catchphrase": "豊橋観光コンベンション協会公式掲載のベーカリー",
+      "highlights": [
+        "パン"
+      ]
+    },
+    {
+      "placeId": "static-toyohashi--",
+      "name": "ラ・ムワソン",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県豊橋市",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "",
+      "website": "https://www.honokuni.or.jp/toyohashi/spot/000135.html",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%A9%E3%83%BB%E3%83%A0%E3%83%AF%E3%82%BD%E3%83%B3%20%E8%B1%8A%E6%A9%8B%E5%B8%82",
+      "photo": "",
+      "catchphrase": "豊橋観光コンベンション協会公式掲載のベーカリー",
+      "highlights": [
+        "パン"
+      ]
+    },
+    {
+      "placeId": "static-toyohashi--",
+      "name": "コンティキ",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県豊橋市",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "",
+      "website": "https://www.honokuni.or.jp/toyohashi/spot/000137.html",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%82%B3%E3%83%B3%E3%83%86%E3%82%A3%E3%82%AD%20%E8%B1%8A%E6%A9%8B%E5%B8%82",
+      "photo": "",
+      "catchphrase": "豊橋観光コンベンション協会公式掲載のベーカリー",
+      "highlights": [
+        "パン"
+      ]
+    },
+    {
+      "placeId": "static-toyohashi--",
+      "name": "アンプレシオン",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県豊橋市",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "",
+      "website": "https://www.honokuni.or.jp/toyohashi/spot/000140.html",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%82%A2%E3%83%B3%E3%83%97%E3%83%AC%E3%82%B7%E3%82%AA%E3%83%B3%20%E8%B1%8A%E6%A9%8B%E5%B8%82",
+      "photo": "",
+      "catchphrase": "豊橋観光コンベンション協会公式掲載のベーカリー",
+      "highlights": [
+        "パン"
+      ]
     }
   ]
 }
