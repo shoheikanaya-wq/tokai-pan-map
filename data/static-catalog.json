@@ -5,8 +5,8 @@
   "policy": "User-facing municipality pages never call Cloud Run or Overpass. Missing static data shows an immediate map-search fallback.",
   "totals": {
     "municipalities": 125,
-    "ready": 103,
-    "pending": 22
+    "ready": 104,
+    "pending": 21
   },
   "municipalities": [
     {
@@ -174,8 +174,8 @@
     {
       "prefecture": "愛知県",
       "city": "岩倉市",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/aichi-iwakura.json"
     },
     {
       "prefecture": "愛知県",
