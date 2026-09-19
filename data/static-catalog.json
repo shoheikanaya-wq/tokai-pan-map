@@ -5,8 +5,8 @@
   "policy": "User-facing municipality pages never call Cloud Run or Overpass. Missing static data shows an immediate map-search fallback.",
   "totals": {
     "municipalities": 125,
-    "ready": 86,
-    "pending": 39
+    "ready": 90,
+    "pending": 35
   },
   "municipalities": [
     {
@@ -606,8 +606,8 @@
     {
       "prefecture": "三重県",
       "city": "いなべ市",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/mie-inabe.json"
     },
     {
       "prefecture": "三重県",
@@ -624,8 +624,8 @@
     {
       "prefecture": "三重県",
       "city": "亀山市",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/mie-kameyama.json"
     },
     {
       "prefecture": "三重県",
@@ -648,8 +648,8 @@
     {
       "prefecture": "三重県",
       "city": "鳥羽市",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/mie-toba.json"
     },
     {
       "prefecture": "三重県",
@@ -666,8 +666,8 @@
     {
       "prefecture": "三重県",
       "city": "熊野市",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/mie-kumano.json"
     },
     {
       "prefecture": "三重県",
