@@ -1,0 +1,43 @@
+{
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "尾鷲市公式の2026年度商品券参加店一覧を基に現行店舗を確認。住所等の未確認情報は記載していません。",
+  "shops": [
+    {
+      "placeId": "static-owase-hashimoto",
+      "name": "はしもとパン屋",
+      "rating": 0,
+      "reviews": 0,
+      "address": "三重県尾鷲市",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "",
+      "website": "https://www.city.owase.lg.jp/cmsfiles/contents/0000023/23740/2026HP.pdf",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "尾鷲市公式の2026年度参加店一覧に掲載されるパン店",
+      "highlights": []
+    },
+    {
+      "placeId": "static-owase-peterpan",
+      "name": "ピーターパン",
+      "rating": 0,
+      "reviews": 0,
+      "address": "三重県尾鷲市",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "",
+      "website": "https://www.city.owase.lg.jp/cmsfiles/contents/0000023/23740/2026HP.pdf",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "尾鷲市公式の2026年度参加店一覧に掲載されるパン店",
+      "highlights": []
+    }
+  ]
+}
