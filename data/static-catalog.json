@@ -5,8 +5,8 @@
   "policy": "User-facing municipality pages never call Cloud Run or Overpass. Missing static data shows an immediate map-search fallback.",
   "totals": {
     "municipalities": 125,
-    "ready": 70,
-    "pending": 55
+    "ready": 78,
+    "pending": 47
   },
   "municipalities": [
     {
@@ -456,8 +456,8 @@
     {
       "prefecture": "岐阜県",
       "city": "岐南町",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/gifu-ginan.json"
     },
     {
       "prefecture": "岐阜県",
@@ -468,14 +468,14 @@
     {
       "prefecture": "岐阜県",
       "city": "養老町",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/gifu-yoro.json"
     },
     {
       "prefecture": "岐阜県",
       "city": "垂井町",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/gifu-tarui.json"
     },
     {
       "prefecture": "岐阜県",
@@ -504,26 +504,26 @@
     {
       "prefecture": "岐阜県",
       "city": "揖斐川町",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/gifu-ibigawa.json"
     },
     {
       "prefecture": "岐阜県",
       "city": "大野町",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/gifu-ono.json"
     },
     {
       "prefecture": "岐阜県",
       "city": "池田町",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/gifu-ikeda.json"
     },
     {
       "prefecture": "岐阜県",
       "city": "北方町",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/gifu-kitagata.json"
     },
     {
       "prefecture": "岐阜県",
@@ -546,8 +546,8 @@
     {
       "prefecture": "岐阜県",
       "city": "川辺町",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/gifu-kawabe.json"
     },
     {
       "prefecture": "岐阜県",
