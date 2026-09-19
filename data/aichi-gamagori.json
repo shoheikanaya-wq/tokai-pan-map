@@ -1,7 +1,7 @@
 {
   "source": "static-free-verified",
   "updatedAt": "2026-09-19",
-  "attribution": "店舗情報は公開情報を基に確認。来店前に公式情報をご確認ください。",
+  "attribution": "店舗情報は公開情報を基に確認。来店前に公式情報をご確認ください。 Gama Cafe & Bakery・ベーカリーショパン蒲郡店・パンとお菓子トレフルは蒲郡市観光協会の現行掲載でパン提供を確認。",
   "shops": [
     {
       "placeId": "static-gamagori-melondamelon",
@@ -26,6 +26,74 @@
         "メロンパン",
         "クロワッサン",
         "パイ"
+      ]
+    },
+    {
+      "placeId": "static-gamagori-gamacafe",
+      "name": "Gama Cafe ＆ Bakery",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県蒲郡市港町18-23 蒲郡商工会議所1F",
+      "type": "カフェ＆ベーカリー",
+      "types": [
+        "bakery",
+        "cafe"
+      ],
+      "openingHours": [
+        "11:00–17:00（L.O.16:00）",
+        "定休日なし"
+      ],
+      "phone": "0533-65-7101",
+      "website": "https://gamacafe.com/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=Gama%20Cafe%20Bakery%20%E8%92%B2%E9%83%A1%E5%B8%82%E6%B8%AF%E7%94%BA18-23",
+      "photo": "",
+      "catchphrase": "海を眺めながら素材にこだわったパンを楽しめる",
+      "highlights": [
+        "ベーカリー",
+        "カフェ",
+        "ランチ"
+      ]
+    },
+    {
+      "placeId": "static-gamagori-chopin",
+      "name": "ベーカリーショパン 蒲郡店",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県蒲郡市",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "",
+      "website": "https://www.gamagori.jp/archives/shun/konsyesyuzai",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%99%E3%83%BC%E3%82%AB%E3%83%AA%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%91%E3%83%B3%20%E8%92%B2%E9%83%A1%E5%BA%97",
+      "photo": "",
+      "catchphrase": "蒲郡市観光協会の蒲郡みかん祭り参加ベーカリー",
+      "highlights": [
+        "菓子パン",
+        "蒲郡みかん"
+      ]
+    },
+    {
+      "placeId": "static-gamagori-trefle",
+      "name": "パンとお菓子 トレフル",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県蒲郡市",
+      "type": "パン・菓子",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "",
+      "website": "https://www.gamagori.jp/shobumeshi2025",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%91%E3%83%B3%E3%81%A8%E3%81%8A%E8%8F%93%E5%AD%90%20%E3%83%88%E3%83%AC%E3%83%95%E3%83%AB%20%E8%92%B2%E9%83%A1%E5%B8%82",
+      "photo": "",
+      "catchphrase": "蒲郡市公式事業掲載のパンとお菓子の店",
+      "highlights": [
+        "クロワッサン",
+        "菓子"
       ]
     }
   ]
