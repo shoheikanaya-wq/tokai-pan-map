@@ -1,7 +1,7 @@
 {
   "source": "static-free-verified",
   "updatedAt": "2026-09-19",
-  "attribution": "東栄町公式観光情報などの公開情報を基に確認。来店前に公式情報をご確認ください。",
+  "attribution": "東栄町公式観光情報などの公開情報を基に確認。来店前に公式情報をご確認ください。 ピッコロパン屋・Pole Poleは東栄町観光公式「東栄町のじかん」で現行店舗情報を確認。",
   "shops": [
     {
       "placeId": "static-toei-annoie",
@@ -24,6 +24,55 @@
       "catchphrase": "自家製酵母のパンと焼き菓子",
       "highlights": [
         "自家製酵母"
+      ]
+    },
+    {
+      "placeId": "static-toei-piccolo",
+      "name": "ピッコロパン屋",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県北設楽郡東栄町大字下田字三ツ石66",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "金曜 10:00–16:00",
+        "土曜 10:00–13:00"
+      ],
+      "phone": "080-3471-8623",
+      "website": "https://www.toeinavi.jp/gourmet/detail/1008/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%94%E3%83%83%E3%82%B3%E3%83%AD%E3%83%91%E3%83%B3%E5%B1%8B%20%E6%9D%B1%E6%A0%84%E7%94%BA",
+      "photo": "",
+      "catchphrase": "金・土だけ営業する小さな手作りパン屋",
+      "highlights": [
+        "手作りパン"
+      ]
+    },
+    {
+      "placeId": "static-toei-polepole",
+      "name": "自家製天然酵母パン Pole Pole",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県北設楽郡東栄町中設楽的場24-4",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "10:00–18:00（売り切れ次第終了）",
+        "月・水・金・日曜定休"
+      ],
+      "phone": "0536-76-1823",
+      "website": "https://www.toeinavi.jp/gourmet/detail/1300/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E8%87%AA%E5%AE%B6%E8%A3%BD%E5%A4%A9%E7%84%B6%E9%85%B5%E6%AF%8D%E3%83%91%E3%83%B3%20Pole%20Pole%20%E6%9D%B1%E6%A0%84%E7%94%BA",
+      "photo": "",
+      "catchphrase": "国産小麦と自家製酵母の手作りパン",
+      "highlights": [
+        "天然酵母",
+        "バケット",
+        "食パン",
+        "惣菜パン"
       ]
     }
   ]
