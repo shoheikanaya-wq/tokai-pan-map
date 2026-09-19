@@ -1,0 +1,10 @@
+{
+ "source":"static-free-verified","updatedAt":"2026-09-19",
+ "attribution":"飛騨高山観光公式サイト・店舗公式サイトの2026年公開情報を基に確認。来店前に最新情報をご確認ください。",
+ "shops":[
+  {"placeId":"static-takayama-trainbleu","name":"TRAIN BLEU（トラン・ブルー）","rating":0,"reviews":0,"address":"岐阜県高山市西之一色町1丁目73-5","type":"パン屋","types":["bakery"],"openingHours":["09:30–16:30（売り切れ次第終了）","定休日 水・その他不定休"],"phone":"0577-33-3989","website":"https://www.hidatakayama.or.jp/special/detail_45.html","googleMaps":"","photo":"","catchphrase":"高山を代表するブーランジェリー","highlights":["デニッシュ","バゲット"]},
+  {"placeId":"static-takayama-panove","name":"Panove","rating":0,"reviews":0,"address":"岐阜県高山市岡本町2-140-4","type":"パン屋","types":["bakery"],"openingHours":["10:00–18:00","定休日 日・不定休"],"phone":"0577-77-9450","website":"https://panove.jp/","googleMaps":"","photo":"","catchphrase":"パンとサンドイッチのブーランジェリー","highlights":["ハード系","サンドイッチ"]},
+  {"placeId":"static-takayama-haiji","name":"焼きたてパン ハイジ","rating":0,"reviews":0,"address":"岐阜県高山市下二之町77","type":"パン屋","types":["bakery"],"openingHours":["10:00–16:30（売り切れ次第終了）","定休日 木・金"],"phone":"0577-37-1121","website":"https://bakery-haiji.com/","googleMaps":"","photo":"","catchphrase":"古い町並近くの街のパン屋","highlights":["焼きたてパン","サンドイッチ"]},
+  {"placeId":"static-takayama-daruma","name":"ダルマベーカリー","rating":0,"reviews":0,"address":"岐阜県高山市赤保木町1000","type":"パン屋","types":["bakery"],"openingHours":["07:00–13:00","定休日 月・火"],"phone":"0577-70-1222","website":"https://www.hidatakayama.or.jp/eat/detail_5176.html","googleMaps":"","photo":"","catchphrase":"約90種類を揃えるベーカリー","highlights":["ハード系","イートイン"]}
+ ]
+}
