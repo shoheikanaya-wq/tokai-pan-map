@@ -1,0 +1,48 @@
+{
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "三重県観光連盟・三重県公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "static-kihoku-burejan",
+      "name": "パン工房 ブレ・ジャン",
+      "rating": 0,
+      "reviews": 0,
+      "address": "三重県北牟婁郡紀北町東長島3525",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "09:30–18:30",
+        "定休日 日・月"
+      ],
+      "phone": "0597-47-1338",
+      "website": "https://www.kankomie.or.jp/spot/23238",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "紀伊長島駅近くのパン工房",
+      "highlights": []
+    },
+    {
+      "placeId": "static-kihoku-tamagonosato",
+      "name": "みなぐち養鶏 卵の郷工房",
+      "rating": 0,
+      "reviews": 0,
+      "address": "三重県北牟婁郡紀北町紀伊長島区島原3003-1",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "0597-47-4394",
+      "website": "https://www.healthy.pref.mie.lg.jp/shop/%E3%81%BF%E3%81%AA%E3%81%90%E3%81%A1%E9%A4%8A%E9%B6%8F%E3%80%80%E5%8D%B5%E3%81%AE%E9%83%B7%E5%B7%A5%E6%88%BF/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "たまご屋さんが営むパン屋",
+      "highlights": [
+        "約90〜100種類"
+      ]
+    }
+  ]
+}
