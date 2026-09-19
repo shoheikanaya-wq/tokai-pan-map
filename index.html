@@ -1147,10 +1147,10 @@ drank.textContent =
   drating.textContent = `★${s.rating}`;
   if(s.dataSource==='static-free' || s.dataSource==='osm-free'){
     dreviews.textContent = s.dataSource==='osm-free'
-      ? '口コミ・評価は地図で確認'
-      : (s.reviews ? `口コミ ${s.reviews}件・地図で確認` : '口コミは地図で確認');
+      ? '口コミ・評価を見る'
+      : (s.reviews ? `口コミ ${s.reviews}件を見る` : '口コミを見る');
     dreviews.onclick = () => window.open(
-      s.googleMaps || ('https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent((s.name||'') + ' ' + (s.address||''))),
+      'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent((s.name||'') + ' ' + (s.address||'')),
       '_blank','noopener'
     );
   }else{
