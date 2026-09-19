@@ -1,6 +1,6 @@
 {
   "source": "static-free-verified",
-  "updatedAt": "2026-09-19",
+  "updatedAt": "2026-09-20",
   "attribution": "知多市観光協会および店舗公開情報を基に確認。来店前に最新情報をご確認ください。",
   "shops": [
     {
@@ -8,20 +8,51 @@
       "name": "かもぱん",
       "rating": 0,
       "reviews": 0,
-      "address": "愛知県知多市岡田字東島9",
+      "address": "愛知県知多市岡田東島9（SoN内）",
       "type": "パン屋",
       "types": [
         "bakery"
       ],
-      "openingHours": [],
+      "openingHours": [
+        "10:00–17:00（なくなり次第終了）",
+        "定休日 月・火"
+      ],
       "phone": "",
-      "website": "https://chita-kanko.com/gourmet/detail/130/",
-      "googleMaps": "",
+      "website": "https://chita-kanko.com/gourmet/detail/153/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%81%8B%E3%82%82%E3%81%B1%E3%82%93%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E7%9F%A5%E5%A4%9A%E5%B8%82%E5%B2%A1%E7%94%B0%E6%9D%B1%E5%B3%B69",
       "photo": "",
-      "catchphrase": "岡田の古民家複合施設SoNに併設するベーカリー",
+      "catchphrase": "長時間発酵のハード系パンや食パンが並ぶ小さなベーカリー",
       "highlights": [
         "ハード系",
-        "食パン"
+        "食パン",
+        "クロワッサン"
+      ]
+    },
+    {
+      "placeId": "static-chita-konomachi",
+      "name": "KonoMachi Cafe 佐布里緑と花のふれあい公園",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県知多市佐布里台3丁目101番地",
+      "type": "パン・カフェ",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "09:00–16:00",
+        "モーニング 09:00–11:00",
+        "ランチ 11:00–15:00",
+        "定休日 月（祝日の場合は翌平日）"
+      ],
+      "phone": "0562-54-2911",
+      "website": "https://chita-kanko.com/gourmet/detail/84/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=KonoMachi%20Cafe%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E7%9F%A5%E5%A4%9A%E5%B8%82%E4%BD%90%E5%B8%83%E9%87%8C%E5%8F%B03%E4%B8%81%E7%9B%AE101%E7%95%AA%E5%9C%B0",
+      "photo": "",
+      "catchphrase": "焼きたてパンとコーヒーを公園の景色と一緒に楽しめるカフェ",
+      "highlights": [
+        "焼きたてパン",
+        "モーニング",
+        "駐車場あり"
       ]
     }
   ]
