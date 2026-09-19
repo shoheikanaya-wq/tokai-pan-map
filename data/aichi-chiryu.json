@@ -1,7 +1,7 @@
 {
   "source": "static-free-recovery",
   "updatedAt": "2026-09-19",
-  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。未取得項目は空欄または0。来店前に地図・公式情報をご確認ください。 BERGMANは知立市公式広報の2025年取材でパン屋メインへのリニューアルを確認。住所・営業時間等は店舗公式SNS案内および地域メディア掲載で照合。",
+  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。未取得項目は空欄または0。来店前に地図・公式情報をご確認ください。 BERGMANは知立市公式広報の2025年取材でパン屋メインへのリニューアルを確認。住所・営業時間等は店舗公式SNS案内および地域メディア掲載で照合。 正文堂は知立市公式「ちりゅっぴまんぞくーぽん」取扱店一覧で「おにぎり・パン」取扱店として確認。",
   "shops": [
     {
       "placeId": "ChIJMcx1Dv-dBGARZTbjMrfDDZU",
@@ -180,6 +180,27 @@
       "highlights": [
         "日替わりパン",
         "自家製具材"
+      ]
+    },
+    {
+      "placeId": "static-chiryu-seibundo",
+      "name": "正文堂",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県知立市栄1-1 サカエワンビル1F",
+      "type": "パン販売店",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "0566-81-3618",
+      "website": "https://www.city.chiryu.aichi.jp/material/files/group/15/sigatuhatikarasonota.pdf",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E6%AD%A3%E6%96%87%E5%A0%82%20%E7%9F%A5%E7%AB%8B%E5%B8%82%E6%A0%841-1%20%E3%82%B5%E3%82%AB%E3%82%A8%E3%83%AF%E3%83%B3%E3%83%93%E3%83%AB1F",
+      "photo": "",
+      "catchphrase": "知立市公式資料掲載のおにぎり・パン取扱店",
+      "highlights": [
+        "パン販売",
+        "知立駅周辺"
       ]
     }
   ]
