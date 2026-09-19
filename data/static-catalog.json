@@ -6,7 +6,8 @@
   "totals": {
     "municipalities": 125,
     "ready": 119,
-    "pending": 6
+    "pending": 0,
+    "reviewed": 6
   },
   "municipalities": [
     {
@@ -252,8 +253,10 @@
     {
       "prefecture": "愛知県",
       "city": "飛島村",
-      "status": "pending",
-      "file": null
+      "status": "reviewed",
+      "file": null,
+      "reviewedAt": "2026-09-19",
+      "note": "調査済み：現時点で常設ベーカリーを公式情報から確認できず"
     },
     {
       "prefecture": "愛知県",
@@ -318,8 +321,10 @@
     {
       "prefecture": "愛知県",
       "city": "南知多町",
-      "status": "pending",
-      "file": null
+      "status": "reviewed",
+      "file": null,
+      "reviewedAt": "2026-09-19",
+      "note": "調査済み：候補店はあるが現営業を裏付ける一次情報が不足"
     },
     {
       "prefecture": "愛知県",
@@ -462,8 +467,10 @@
     {
       "prefecture": "岐阜県",
       "city": "笠松町",
-      "status": "pending",
-      "file": null
+      "status": "reviewed",
+      "file": null,
+      "reviewedAt": "2026-09-19",
+      "note": "調査済み：確認済み店舗は移転のため休業中。再開後に再確認"
     },
     {
       "prefecture": "岐阜県",
@@ -552,8 +559,10 @@
     {
       "prefecture": "岐阜県",
       "city": "七宗町",
-      "status": "pending",
-      "file": null
+      "status": "reviewed",
+      "file": null,
+      "reviewedAt": "2026-09-19",
+      "note": "調査済み：現時点で常設ベーカリーを公式情報から確認できず"
     },
     {
       "prefecture": "岐阜県",
@@ -582,8 +591,10 @@
     {
       "prefecture": "岐阜県",
       "city": "白川村",
-      "status": "pending",
-      "file": null
+      "status": "reviewed",
+      "file": null,
+      "reviewedAt": "2026-09-19",
+      "note": "調査済み：現時点で常設ベーカリーを確認できず"
     },
     {
       "prefecture": "三重県",
@@ -672,8 +683,10 @@
     {
       "prefecture": "三重県",
       "city": "木曽岬町",
-      "status": "pending",
-      "file": null
+      "status": "reviewed",
+      "file": null,
+      "reviewedAt": "2026-09-19",
+      "note": "調査済み：現時点で常設ベーカリーを公式情報から確認できず"
     },
     {
       "prefecture": "三重県",
