@@ -835,6 +835,13 @@ async function loadBakeries(prefecture,city) {
   const catalog=await loadStaticCatalog();
   const entry=catalog?.municipalities?.find(v=>v.prefecture===prefecture&&v.city===city);
 
+  if(entry?.status==='reviewed'){
+    const err=new Error('STATIC_REVIEWED');
+    err.code='STATIC_REVIEWED';
+    err.reviewNote=entry.note||'調査済み：現在掲載できる常設パン店を確認できていません';
+    throw err;
+  }
+
   if(entry?.status==='ready' && entry.file){
     const r=await fetch('./'+entry.file+'?rev=20260919-static1',{cache:'no-store'});
     if(!r.ok) throw new Error('静的データを読み込めません');
@@ -1229,7 +1236,12 @@ currentVisualKey = '';
   } catch(e) {
     if(loadSeq!==cityLoadSeq) return;
     showRankingView();
-    if(e?.code==='STATIC_PENDING' || String(e?.message||'').includes('STATIC_PENDING')){
+    if(e?.code==='STATIC_REVIEWED'){
+      rankingTitle.textContent=`${city} パン屋情報`;
+      const note=byId('rankingNote');
+      if(note) note.textContent=e.reviewNote||'調査済み：現在掲載できる常設パン店を確認できていません';
+      list.innerHTML='<div class="load-error"><strong>この地域は調査済みです。</strong><br>現在、掲載条件を満たす常設パン店を確認できていません。<br>新店・営業再開を確認後に更新します。</div>';
+    }else if(e?.code==='STATIC_PENDING' || String(e?.message||'').includes('STATIC_PENDING')){
       showPendingMunicipality(selectedPrefecture,city);
     }else{
       list.innerHTML = '<div class="load-error"><strong>静的データを読み込めませんでした。</strong><br>再読み込みしても直らない場合は、この地域を整備対象として扱います。<br><button id="cityRetry">再試行</button></div>';
