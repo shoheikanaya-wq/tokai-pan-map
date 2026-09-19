@@ -5,8 +5,8 @@
   "policy": "User-facing municipality pages never call Cloud Run or Overpass. Missing static data shows an immediate map-search fallback.",
   "totals": {
     "municipalities": 125,
-    "ready": 100,
-    "pending": 25
+    "ready": 102,
+    "pending": 23
   },
   "municipalities": [
     {
@@ -660,8 +660,8 @@
     {
       "prefecture": "三重県",
       "city": "尾鷲市",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/mie-owase.json"
     },
     {
       "prefecture": "三重県",
@@ -690,8 +690,8 @@
     {
       "prefecture": "三重県",
       "city": "朝日町",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/mie-asahi.json"
     },
     {
       "prefecture": "三重県",
