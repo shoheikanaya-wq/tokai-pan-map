@@ -1,0 +1,30 @@
+{
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "朝日町公式広報の公開情報を基に確認。所在地は公式公表範囲のみ記載。来店前に最新情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "static-asahi-tsukitokazaguruma",
+      "name": "手作りベーグル製作所 月と風車",
+      "rating": 0,
+      "reviews": 0,
+      "address": "三重県三重郡朝日町 白梅の丘東",
+      "type": "ベーグル店",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "営業日 火・日"
+      ],
+      "phone": "",
+      "website": "https://www2.town.asahi.mie.jp/www/contents/1764228236932/simple/P09.pdf",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "国産小麦と天然酵母で丁寧に焼く手作りベーグル",
+      "highlights": [
+        "栗のベーグル",
+        "朝日町特産品認定"
+      ]
+    }
+  ]
+}
