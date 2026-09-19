@@ -1,0 +1,31 @@
+{
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "スーパーサンシ公式情報で、みえ川越インター店の手作りベーカリー部門を確認。",
+  "shops": [
+    {
+      "placeId": "static-kawagoe-sanshi-bakery",
+      "name": "スーパーサンシ みえ川越インター店 ベーカリー",
+      "rating": 0,
+      "reviews": 0,
+      "address": "三重県三重郡川越町大字北福崎153",
+      "type": "ベーカリー",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "店舗 9:00–21:00",
+        "ベーカリー営業時間は店頭確認"
+      ],
+      "phone": "059-361-3434",
+      "website": "https://supersanshi.com/shopindex/shoplist/shop-kawagoe/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "店内で手作りパンを製造・販売するベーカリー部門",
+      "highlights": [
+        "手作りパン",
+        "店内製造"
+      ]
+    }
+  ]
+}
