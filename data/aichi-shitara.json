@@ -1,11 +1,51 @@
 {
-  "source":"static-free-verified","updatedAt":"2026-09-19",
-  "attribution":"設楽町観光協会公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。",
-  "shops":[{
-    "placeId":"static-shitara-bagelsan","name":"ベーグルSan。（ベーグルさん）","rating":0,"reviews":0,
-    "address":"愛知県北設楽郡設楽町清崎字小野23番地","type":"パン屋","types":["bakery"],
-    "openingHours":["金・土 11:00–16:00"],"phone":"",
-    "website":"https://www.kankoshitara.jp/eat/detail/173/","googleMaps":"","photo":"",
-    "catchphrase":"自家製酵母で焼く山里のベーグル屋","highlights":["レーズン酵母","プレーンベーグル"]
-  }]
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "設楽町観光協会公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。 ペンション グリーンメッセージは設楽町観光協会公式で自家製パン提供を確認。",
+  "shops": [
+    {
+      "placeId": "static-shitara-bagelsan",
+      "name": "ベーグルSan。（ベーグルさん）",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県北設楽郡設楽町清崎字小野23番地",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "金・土 11:00–16:00"
+      ],
+      "phone": "",
+      "website": "https://www.kankoshitara.jp/eat/detail/173/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "自家製酵母で焼く山里のベーグル屋",
+      "highlights": [
+        "レーズン酵母",
+        "プレーンベーグル"
+      ]
+    },
+    {
+      "placeId": "static-shitara-greenmessage",
+      "name": "ペンション グリーンメッセージ",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県北設楽郡設楽町",
+      "type": "宿泊施設・自家製パン",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "",
+      "website": "https://www.kankoshitara.jp/eat/search/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%9A%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%B3%20%E3%82%B0%E3%83%AA%E3%83%BC%E3%83%B3%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%20%E8%A8%AD%E6%A5%BD%E7%94%BA",
+      "photo": "",
+      "catchphrase": "設楽町観光公式掲載、自家製パンを提供",
+      "highlights": [
+        "自家製パン",
+        "ペンション"
+      ]
+    }
+  ]
 }
