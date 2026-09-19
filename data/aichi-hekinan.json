@@ -1,7 +1,7 @@
 {
   "source": "static-free-recovery",
   "updatedAt": "2026-09-19",
-  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。未取得項目は空欄または0。来店前に地図・公式情報をご確認ください。",
+  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。未取得項目は空欄または0。来店前に地図・公式情報をご確認ください。 グリーンオニオン・珈味香流は碧南市観光協会公式の店舗情報および「碧南と#パンまみれ」でパン商品の現行掲載を確認。",
   "shops": [
     {
       "placeId": "ChIJVVXhvBuQBGARgmMMfAc8o_Y",
@@ -160,6 +160,58 @@
       "photo": "",
       "catchphrase": "幸町のベーカリー",
       "highlights": []
+    },
+    {
+      "placeId": "static-hekinan-green-onion",
+      "name": "グリーンオニオン",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県碧南市沢渡町57-1",
+      "type": "カフェ・手づくりサンド",
+      "types": [
+        "bakery",
+        "cafe"
+      ],
+      "openingHours": [
+        "07:00–15:00",
+        "月曜・第1第3火曜定休"
+      ],
+      "phone": "0566-57-1048",
+      "website": "https://hekinan-kanko.jp/gourmet/detail/245/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%82%B0%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%AA%E3%83%8B%E3%82%AA%E3%83%B3%20%E7%A2%A7%E5%8D%97%E5%B8%82%E6%B2%A2%E6%B8%A1%E7%94%BA57-1",
+      "photo": "",
+      "catchphrase": "毎朝手づくり、約20種類のサンド",
+      "highlights": [
+        "南蛮サンド",
+        "だし巻きサンド",
+        "クリームサンド"
+      ]
+    },
+    {
+      "placeId": "static-hekinan-komikaru",
+      "name": "珈味香流",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県碧南市向陽町2-14",
+      "type": "喫茶・サンド",
+      "types": [
+        "bakery",
+        "cafe"
+      ],
+      "openingHours": [
+        "08:00–18:00（L.O.17:30）",
+        "月曜・第2第4火曜定休"
+      ],
+      "phone": "0566-46-8028",
+      "website": "https://www.hekinan-kanko.jp/gourmet/detail/211/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E7%8F%88%E5%91%B3%E9%A6%99%E6%B5%81%20%E7%A2%A7%E5%8D%97%E5%B8%82%E5%90%91%E9%99%BD%E7%94%BA2-14",
+      "photo": "",
+      "catchphrase": "碧南パンまみれ公式対象店",
+      "highlights": [
+        "玉子サンド",
+        "フレンチトースト",
+        "フルーツサンド"
+      ]
     }
   ]
 }
