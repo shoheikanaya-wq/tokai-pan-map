@@ -1,7 +1,7 @@
 {
   "source": "static-free-verified",
   "updatedAt": "2026-09-19",
-  "attribution": "店舗公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。",
+  "attribution": "店舗公式サイト・公式アカウントの公開情報を基に確認。来店前に最新情報をご確認ください。",
   "shops": [
     {
       "placeId": "static-handa-aoi",
@@ -20,12 +20,80 @@
       ],
       "phone": "0569-21-6164",
       "website": "https://www.aoi-bakery.com/shop/",
-      "googleMaps": "",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E8%91%B5%E3%83%99%E3%83%BC%E3%82%AB%E3%83%AA%E3%83%BC%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%8D%8A%E7%94%B0%E5%B8%82%E6%98%AD%E5%92%8C%E7%94%BA2-43-1",
       "photo": "",
       "catchphrase": "地元密着のベーカリー",
       "highlights": [
         "高級食パン",
         "ホテルブレッド"
+      ]
+    },
+    {
+      "placeId": "static-handa-pannotora",
+      "name": "パンのトラ 半田店",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県半田市岩滑西町2-121-2",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "07:00–19:00"
+      ],
+      "phone": "0569-89-2000",
+      "website": "https://pannotora.com/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%91%E3%83%B3%E3%81%AE%E3%83%88%E3%83%A9%20%E5%8D%8A%E7%94%B0%E5%BA%97%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%8D%8A%E7%94%B0%E5%B8%82%E5%B2%A9%E6%BB%91%E8%A5%BF%E7%94%BA2-121-2",
+      "photo": "",
+      "catchphrase": "焼きたてパンを幅広くそろえる大型ベーカリー",
+      "highlights": [
+        "食パン",
+        "約120種類"
+      ]
+    },
+    {
+      "placeId": "static-handa-tsukushido",
+      "name": "つくし堂",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県半田市乙川源内林町3-19-4",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "",
+      "website": "https://tsukushi-dou.com/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%81%A4%E3%81%8F%E3%81%97%E5%A0%82%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%8D%8A%E7%94%B0%E5%B8%82%E4%B9%99%E5%B7%9D%E6%BA%90%E5%86%85%E6%9E%97%E7%94%BA3-19-4",
+      "photo": "",
+      "catchphrase": "自家製の生地・あん・クリームにこだわるパン屋",
+      "highlights": [
+        "自家製",
+        "菓子パン"
+      ]
+    },
+    {
+      "placeId": "static-handa-studioble",
+      "name": "スタジオ・ブレ 半田店",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県半田市星崎町2-51",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "09:00–16:00",
+        "定休日 水・木"
+      ],
+      "phone": "0569-23-3546",
+      "website": "https://www.ble-pankaido.com/studiobleshop/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%82%B9%E3%82%BF%E3%82%B8%E3%82%AA%E3%83%BB%E3%83%96%E3%83%AC%20%E5%8D%8A%E7%94%B0%E5%BA%97%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%8D%8A%E7%94%B0%E5%B8%82%E6%98%9F%E5%B4%8E%E7%94%BA2-51",
+      "photo": "",
+      "catchphrase": "無添加の自然派パンを扱うベーカリー",
+      "highlights": [
+        "自然派パン",
+        "駐車場あり"
       ]
     }
   ]
