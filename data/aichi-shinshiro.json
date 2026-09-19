@@ -1,7 +1,7 @@
 {
   "source": "static-free-verified",
   "updatedAt": "2026-09-19",
-  "attribution": "店舗情報は公開情報を基に確認。来店前に公式情報をご確認ください。 パンヤモギは奥三河観光協議会公式の2026年朝活Cafe情報で所在地・開催営業を確認。",
+  "attribution": "店舗情報は公開情報を基に確認。来店前に公式情報をご確認ください。 パンヤモギは奥三河観光協議会公式の2026年朝活Cafe情報で所在地・開催営業を確認。 もっくるベーカリーは愛知県公式情報および道の駅公式で存在を確認。",
   "shops": [
     {
       "placeId": "static-shinshiro-chat",
@@ -74,6 +74,27 @@
         "朝活Cafe",
         "作手",
         "パン"
+      ]
+    },
+    {
+      "placeId": "static-shinshiro-mokkuru",
+      "name": "もっくるベーカリー",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県新城市八束穂字五反田329-7 道の駅もっくる新城",
+      "type": "ベーカリー",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "",
+      "website": "https://mokkulu.jp/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%82%82%E3%81%A3%E3%81%8F%E3%82%8B%E3%83%99%E3%83%BC%E3%82%AB%E3%83%AA%E3%83%BC%20%E6%96%B0%E5%9F%8E%E5%B8%82%E5%85%AB%E6%9D%9F%E7%A9%82%E5%AD%97%E4%BA%94%E5%8F%8D%E7%94%B0329-7",
+      "photo": "",
+      "catchphrase": "道の駅もっくる新城のベーカリー",
+      "highlights": [
+        "メロンパン",
+        "道の駅"
       ]
     }
   ]
