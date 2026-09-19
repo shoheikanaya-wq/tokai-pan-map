@@ -1,7 +1,7 @@
 {
   "source": "static-free-recovery",
-  "updatedAt": "2026-09-18",
-  "attribution": "店舗情報は公開情報を基にした復旧用スナップショット。来店前に公式情報をご確認ください。",
+  "updatedAt": "2026-09-19",
+  "attribution": "店舗情報は公開情報を基にした復旧用スナップショット。来店前に公式情報をご確認ください。 ジャックは店舗公式サイトで住所・営業時間・定休日を再確認。",
   "shops": [
     {
       "placeId": "ChIJ22dl6EagBGAROlRfruKCPZI",
@@ -14,11 +14,12 @@
         "bakery"
       ],
       "openingHours": [
-        "09:00–18:00"
+        "09:00–18:00",
+        "木曜定休"
       ],
       "phone": "0565-34-0616",
-      "website": "",
-      "googleMaps": "",
+      "website": "https://bakery-jack.com/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%82%B8%E3%83%A3%E3%83%83%E3%82%AF%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%B1%8A%E7%94%B0%E5%B8%82%E5%8D%81%E5%A1%9A%E7%94%BA3-3",
       "photo": "",
       "catchphrase": "豊田市のベーカリー",
       "highlights": []
