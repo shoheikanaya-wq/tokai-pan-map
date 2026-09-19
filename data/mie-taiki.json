@@ -1,0 +1,28 @@
+{
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "大紀町観光協会およびNPO大紀町日本一のふるさと村公式情報を基に確認。来店前に最新情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "static-taiki-furusatomura",
+      "name": "NPO 大紀町日本一のふるさと村",
+      "rating": 0,
+      "reviews": 0,
+      "address": "三重県度会郡大紀町金輪974-2",
+      "type": "パン工房・体験施設",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "0598-87-1500",
+      "website": "https://taiki-bm.wixsite.com/furusatomura",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "かまど炊きごはんを生地に練り込んだ手づくりパン",
+      "highlights": [
+        "かまど炊きごはんパン",
+        "手づくり"
+      ]
+    }
+  ]
+}
