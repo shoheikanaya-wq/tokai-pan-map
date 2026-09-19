@@ -1,5 +1,141 @@
 {
-  "source":"static-free-verified","updatedAt":"2026-09-19",
-  "attribution":"東海農政局の公開情報を基に確認。来店前に最新情報をご確認ください。",
-  "shops":[{"placeId":"static-nagakute-agrin","name":"あぐりん村 パン工房","rating":0,"reviews":0,"address":"愛知県長久手市前熊下田134","type":"パン屋","types":["bakery"],"openingHours":[],"phone":"0561-64-2831","website":"https://www.maff.go.jp/tokai/seisan/shinko/komeko/map/aichi.html","googleMaps":"","photo":"","catchphrase":"米粉パンを扱うパン工房","highlights":["米粉食パン","米粉ロール","米粉カレーパン","米粉あんパン"]}]
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-20",
+  "attribution": "東海農政局・愛知県/長久手観光関連情報・店舗公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "static-nagakute-agrin",
+      "name": "あぐりん村 パン工房",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県長久手市前熊下田134",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "0561-64-2831",
+      "website": "https://www.maff.go.jp/tokai/seisan/shinko/komeko/map/aichi.html",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%81%82%E3%81%90%E3%82%8A%E3%82%93%E6%9D%91%20%E3%83%91%E3%83%B3%E5%B7%A5%E6%88%BF%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E9%95%B7%E4%B9%85%E6%89%8B%E5%B8%82%E5%89%8D%E7%86%8A%E4%B8%8B%E7%94%B0134",
+      "photo": "",
+      "catchphrase": "米粉パンを扱うパン工房",
+      "highlights": [
+        "米粉食パン",
+        "米粉ロール",
+        "米粉カレーパン",
+        "米粉あんパン"
+      ]
+    },
+    {
+      "placeId": "static-nagakute-nicori",
+      "name": "nicori factory（ニコリファクトリー）",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県長久手市岩作城の内53 長久手グリーンセンター内",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "0561-63-1210",
+      "website": "https://www.maff.go.jp/tokai/seisan/shinko/komeko/map/aichi.html",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=nicori%20factory%20%E9%95%B7%E4%B9%85%E6%89%8B%E5%B8%82%E5%B2%A9%E4%BD%9C%E5%9F%8E%E3%81%AE%E5%86%8553",
+      "photo": "",
+      "catchphrase": "長久手グリーンセンター内のパン工房",
+      "highlights": [
+        "米粉パン"
+      ]
+    },
+    {
+      "placeId": "static-nagakute-tsukinoniji",
+      "name": "ツキノニジ",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県長久手市根の神202 パークアベニュー1F",
+      "type": "ベーグル・パン",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "0561-63-7888",
+      "website": "https://www.maff.go.jp/tokai/seisan/shinko/komeko/map/aichi.html",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%84%E3%82%AD%E3%83%8E%E3%83%8B%E3%82%B8%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E9%95%B7%E4%B9%85%E6%89%8B%E5%B8%82%E6%A0%B9%E3%81%AE%E7%A5%9E202",
+      "photo": "",
+      "catchphrase": "米粉ベーグルなどを扱う長久手のベーカリー",
+      "highlights": [
+        "米粉ベーグル"
+      ]
+    },
+    {
+      "placeId": "static-nagakute-pandafuru",
+      "name": "パンダフル工房",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県長久手市横道1904",
+      "type": "米粉パン工房",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "090-1271-3809",
+      "website": "https://www.maff.go.jp/tokai/seisan/shinko/komeko/map/aichi.html",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%91%E3%83%B3%E3%83%80%E3%83%95%E3%83%AB%E5%B7%A5%E6%88%BF%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E9%95%B7%E4%B9%85%E6%89%8B%E5%B8%82%E6%A8%AA%E9%81%931904",
+      "photo": "",
+      "catchphrase": "特定原材料7品目不使用の米粉パンを手がける工房",
+      "highlights": [
+        "米粉パン",
+        "アレルギー配慮"
+      ]
+    },
+    {
+      "placeId": "static-nagakute-borapan",
+      "name": "ぼらぱん",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県長久手市草掛51-2",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "09:00–18:00",
+        "定休日 月・火"
+      ],
+      "phone": "0561-79-8155",
+      "website": "https://r.goope.jp/borapan/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%81%BC%E3%82%89%E3%81%B1%E3%82%93%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E9%95%B7%E4%B9%85%E6%89%8B%E5%B8%82%E8%8D%89%E6%8E%9B51-2",
+      "photo": "",
+      "catchphrase": "厳選素材で体にやさしいパンを焼くベーカリー",
+      "highlights": [
+        "ドイツパン",
+        "ライ麦パン",
+        "駐車場あり"
+      ]
+    },
+    {
+      "placeId": "static-nagakute-hinata",
+      "name": "ひなた",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県長久手市平地74-2",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "10:00–16:00（売り切れ次第終了）",
+        "木曜は当面15:00閉店",
+        "定休日 月・火（祝日営業・振替休業あり）"
+      ],
+      "phone": "0561-42-7437",
+      "website": "https://www.hinata-nagakute.com/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%81%B2%E3%81%AA%E3%81%9F%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E9%95%B7%E4%B9%85%E6%89%8B%E5%B8%82%E5%B9%B3%E5%9C%B074-2",
+      "photo": "",
+      "catchphrase": "旬の野菜を使った惣菜パンが特徴のベーカリー",
+      "highlights": [
+        "惣菜パン",
+        "駐車場あり"
+      ]
+    }
+  ]
 }
