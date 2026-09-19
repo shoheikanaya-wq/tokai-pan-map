@@ -5,8 +5,8 @@
   "policy": "User-facing municipality pages never call Cloud Run or Overpass. Missing static data shows an immediate map-search fallback.",
   "totals": {
     "municipalities": 125,
-    "ready": 104,
-    "pending": 21
+    "ready": 106,
+    "pending": 19
   },
   "municipalities": [
     {
@@ -480,8 +480,8 @@
     {
       "prefecture": "岐阜県",
       "city": "関ケ原町",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/gifu-sekigahara.json"
     },
     {
       "prefecture": "岐阜県",
@@ -558,8 +558,8 @@
     {
       "prefecture": "岐阜県",
       "city": "八百津町",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/gifu-yaotsu.json"
     },
     {
       "prefecture": "岐阜県",
