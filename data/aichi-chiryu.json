@@ -1,7 +1,7 @@
 {
   "source": "static-free-recovery",
   "updatedAt": "2026-09-19",
-  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。未取得項目は空欄または0。来店前に地図・公式情報をご確認ください。",
+  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。未取得項目は空欄または0。来店前に地図・公式情報をご確認ください。 BERGMANは知立市公式広報の2025年取材でパン屋メインへのリニューアルを確認。住所・営業時間等は店舗公式SNS案内および地域メディア掲載で照合。",
   "shops": [
     {
       "placeId": "ChIJMcx1Dv-dBGARZTbjMrfDDZU",
@@ -156,6 +156,31 @@
       "photo": "",
       "catchphrase": "アピタ内のベーカリー",
       "highlights": []
+    },
+    {
+      "placeId": "static-chiryu-bergman",
+      "name": "BERGMAN（バーグマン）",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県知立市新池3-56",
+      "type": "パン・カフェ",
+      "types": [
+        "bakery",
+        "cafe"
+      ],
+      "openingHours": [
+        "09:00–18:00（パンがなくなり次第閉店）",
+        "月・火曜定休"
+      ],
+      "phone": "0566-82-6351",
+      "website": "https://www.instagram.com/bergman_bakery_restaurant/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=BERGMAN%20%E7%9F%A5%E7%AB%8B%E5%B8%82%E6%96%B0%E6%B1%A03-56",
+      "photo": "",
+      "catchphrase": "レストランからパン屋メインへリニューアル",
+      "highlights": [
+        "日替わりパン",
+        "自家製具材"
+      ]
     }
   ]
 }
