@@ -1214,7 +1214,7 @@ const loadSeq=++cityLoadSeq;
 currentCity = city;
 currentVisualKey = '';
     try {
-    rankingTitle.textContent = `${city} パン屋 TOP10`;
+    rankingTitle.textContent = `${city} パン屋 ${shops.length >= 10 ? 'TOP10' : '全'+shops.length+'店'}`;
     button.disabled = true;
     button.textContent = '取得中…';
 
