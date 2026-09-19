@@ -1,7 +1,7 @@
 {
   "source": "static-free-recovery",
   "updatedAt": "2026-09-19",
-  "attribution": "店舗情報は公開情報を基にした復旧用スナップショット。来店前に公式情報をご確認ください。 ジャックは店舗公式サイトで住所・営業時間・定休日を再確認。",
+  "attribution": "店舗情報は公開情報を基にした復旧用スナップショット。来店前に公式情報をご確認ください。 ジャックは店舗公式サイトで住所・営業時間・定休日を再確認。 ペンギンベーカリー豊田浄水店は公式店舗一覧で住所・電話・営業時間を再確認。",
   "shops": [
     {
       "placeId": "ChIJ22dl6EagBGAROlRfruKCPZI",
@@ -29,7 +29,7 @@
       "name": "ペンギンベーカリー 豊田浄水店",
       "rating": 3.8,
       "reviews": 396,
-      "address": "愛知県豊田市浄水町3-317-2",
+      "address": "愛知県豊田市浄水町伊保原317-2",
       "type": "パン屋",
       "types": [
         "bakery"
@@ -38,8 +38,8 @@
         "08:30–19:00"
       ],
       "phone": "0565-45-6087",
-      "website": "",
-      "googleMaps": "",
+      "website": "https://www.penguinbakery.com/shop/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%9A%E3%83%B3%E3%82%AE%E3%83%B3%E3%83%99%E3%83%BC%E3%82%AB%E3%83%AA%E3%83%BC%20%E8%B1%8A%E7%94%B0%E6%B5%84%E6%B0%B4%E5%BA%97%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%B1%8A%E7%94%B0%E5%B8%82%E6%B5%84%E6%B0%B4%E7%94%BA%E4%BC%8A%E4%BF%9D%E5%8E%9F317-2",
       "photo": "",
       "catchphrase": "浄水町のベーカリー",
       "highlights": []
