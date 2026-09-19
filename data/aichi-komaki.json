@@ -1,11 +1,11 @@
 {
   "source": "static-free-verified",
-  "updatedAt": "2026-09-19",
-  "attribution": "本間製パン公式サイトの公開情報を基に確認。来店前に公式情報をご確認ください。",
+  "updatedAt": "2026-09-20",
+  "attribution": "小牧市観光協会・本間製パン公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。",
   "shops": [
     {
       "placeId": "static-komaki-avance",
-      "name": "アヴァンセ 小牧本店",
+      "name": "パン工房 アヴァンセ 小牧本店",
       "rating": 0,
       "reviews": 0,
       "address": "愛知県小牧市下小針中島1-1",
@@ -16,14 +16,15 @@
       "openingHours": [
         "営業時間・定休日は来店前に公式情報で確認"
       ],
-      "phone": "",
-      "website": "https://honma-bread.com/",
-      "googleMaps": "",
+      "phone": "0568-77-1273",
+      "website": "https://www.honma-bread.com/shop.html",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%91%E3%83%B3%E5%B7%A5%E6%88%BF%20%E3%82%A2%E3%83%B4%E3%82%A1%E3%83%B3%E3%82%BB%20%E5%B0%8F%E7%89%A7%E6%9C%AC%E5%BA%97%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%B0%8F%E7%89%A7%E5%B8%82%E4%B8%8B%E5%B0%8F%E9%87%9D%E4%B8%AD%E5%B3%B61-1",
       "photo": "",
-      "catchphrase": "本間製パンのベーカリーショップ",
+      "catchphrase": "本間製パン直営、焼きたてパンとイートインを楽しめるベーカリー",
       "highlights": [
         "食パン",
-        "焼きたてパン"
+        "焼きたてパン",
+        "イートイン"
       ]
     }
   ]
