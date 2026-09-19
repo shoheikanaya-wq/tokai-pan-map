@@ -1,0 +1,32 @@
+{
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "スーパーマーケットバロー公式店舗情報を基に確認。",
+  "shops": [
+    {
+      "placeId": "static-godo-hokuoclub",
+      "name": "北欧倶楽部 バロー神戸店",
+      "rating": 0,
+      "reviews": 0,
+      "address": "岐阜県安八郡神戸町大字神戸字西浦1753-10",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "月・水〜金 10:00–20:00",
+        "土・日 9:30–20:00",
+        "火曜定休（祝日は営業の場合あり）"
+      ],
+      "phone": "0584-28-1311",
+      "website": "https://stores.valor.jp/detail/84/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "バロー神戸店内のベーカリー",
+      "highlights": [
+        "北欧倶楽部",
+        "店内ベーカリー"
+      ]
+    }
+  ]
+}
