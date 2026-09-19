@@ -1,7 +1,7 @@
 {
   "source": "static-free-verified",
   "updatedAt": "2026-09-20",
-  "attribution": "東海農政局の公開情報を基に確認。来店前に最新情報をご確認ください。",
+  "attribution": "東海農政局・清須市商工会・清須市公開資料・店舗公開情報等を基に確認。来店前に最新情報をご確認ください。",
   "shops": [
     {
       "placeId": "static-kiyosu-otakomematsu",
@@ -23,6 +23,78 @@
         "お米食パン",
         "あんパン",
         "クリームパン"
+      ]
+    },
+    {
+      "placeId": "static-kiyosu-bonpana",
+      "name": "石窯パン工房 ボンパナ 清須店",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県清須市春日西須ヶ畑112-1",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "052-409-0860",
+      "website": "https://page.line.me/166zsdej",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E7%9F%B3%E7%AA%AF%E3%83%91%E3%83%B3%E5%B7%A5%E6%88%BF%20%E3%83%9C%E3%83%B3%E3%83%91%E3%83%8A%20%E6%B8%85%E9%A0%88%E5%BA%97%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E6%B8%85%E9%A0%88%E5%B8%82%E6%98%A5%E6%97%A5%E8%A5%BF%E9%A0%88%E3%83%B6%E7%95%91112-1",
+      "photo": "",
+      "catchphrase": "石窯で焼き上げるパンとイートインを楽しめるベーカリー",
+      "highlights": [
+        "石窯パン",
+        "イートイン",
+        "駐車場あり"
+      ]
+    },
+    {
+      "placeId": "static-kiyosu-paindecouet",
+      "name": "Pain de Couet（パン ド クエット）",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県清須市新清洲1-4-1",
+      "type": "パン屋・カフェ",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "月・水–土 11:00–19:00",
+        "日・祝 11:00–18:00",
+        "定休日 火"
+      ],
+      "phone": "052-409-5677",
+      "website": "https://www.instagram.com/pain_de_couet/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=Pain%20de%20Couet%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E6%B8%85%E9%A0%88%E5%B8%82%E6%96%B0%E6%B8%85%E6%B4%B21-4-1",
+      "photo": "",
+      "catchphrase": "フランス人職人の技術を生かしたバゲットやクロワッサンが人気のパン工房",
+      "highlights": [
+        "バゲット",
+        "クロワッサン",
+        "カフェ"
+      ]
+    },
+    {
+      "placeId": "static-kiyosu-pannohoppe",
+      "name": "ぱんのほっぺ",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県清須市西枇杷島町城並3-12-27",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "水・金 11:00–17:00",
+        "営業日は変動する場合あり"
+      ],
+      "phone": "090-6083-0452",
+      "website": "",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%81%B1%E3%82%93%E3%81%AE%E3%81%BB%E3%81%A3%E3%81%BA%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E6%B8%85%E9%A0%88%E5%B8%82%E8%A5%BF%E6%9E%87%E6%9D%B7%E5%B3%B6%E7%94%BA%E5%9F%8E%E4%B8%A63-12-27",
+      "photo": "",
+      "catchphrase": "トレーラーハウスを活用した小さなベーカリー",
+      "highlights": [
+        "焼きたてパン",
+        "駐車場あり"
       ]
     }
   ]
