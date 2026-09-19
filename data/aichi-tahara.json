@@ -1,7 +1,7 @@
 {
   "source": "static-free-verified",
   "updatedAt": "2026-09-19",
-  "attribution": "店舗情報は公開情報を基に確認。来店前に公式・地域商工情報をご確認ください。",
+  "attribution": "店舗情報は公開情報を基に確認。来店前に公式・地域商工情報をご確認ください。 bread factory okamoto・焼きたてパン Choeikenは渥美半島観光ビューロー公式で現行店舗情報を確認。",
   "shops": [
     {
       "placeId": "static-tahara-hanauta",
@@ -26,6 +26,54 @@
         "菓子パン",
         "惣菜パン",
         "食パン"
+      ]
+    },
+    {
+      "placeId": "static-tahara-okamoto",
+      "name": "bread factory okamoto",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県田原市田原町南晩田10-11",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "10:00–19:00",
+        "日曜定休（不定休あり）"
+      ],
+      "phone": "0531-22-4515",
+      "website": "https://www.taharakankou.gr.jp/spot/spot.php?spot_id=575",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=bread%20factory%20okamoto%20%E7%94%B0%E5%8E%9F%E5%B8%82%E7%94%B0%E5%8E%9F%E7%94%BA%E5%8D%97%E6%99%A9%E7%94%B010-11",
+      "photo": "",
+      "catchphrase": "パンとベーグル、地元素材の焼菓子",
+      "highlights": [
+        "ベーグル",
+        "食パン",
+        "焼菓子"
+      ]
+    },
+    {
+      "placeId": "static-tahara-choeiken",
+      "name": "焼きたてパン Choeiken",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県田原市東赤石5-74",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "09:00–16:00"
+      ],
+      "phone": "0531-23-7488",
+      "website": "https://www.taharakankou.gr.jp/spot/spot.php?spot_id=415",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E7%84%BC%E3%81%8D%E3%81%9F%E3%81%A6%E3%83%91%E3%83%B3%20Choeiken%20%E7%94%B0%E5%8E%9F%E5%B8%82%E6%9D%B1%E8%B5%A4%E7%9F%B35-74",
+      "photo": "",
+      "catchphrase": "田原の焼きたてパンとスイーツ",
+      "highlights": [
+        "メロンパン",
+        "焼きたてパン"
       ]
     }
   ]
