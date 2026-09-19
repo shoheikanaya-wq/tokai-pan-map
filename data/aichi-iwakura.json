@@ -25,6 +25,32 @@
       "highlights": [
         "食パン"
       ]
+    },
+    {
+      "placeId": "static-iwakura-oyone",
+      "name": "およねカフェ Bread & butter",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県岩倉市下本町下市場111",
+      "type": "カフェ・パン工場併設",
+      "types": [
+        "bakery",
+        "cafe"
+      ],
+      "openingHours": [
+        "08:30–17:00（L.O.16:30）",
+        "木曜定休"
+      ],
+      "phone": "0587-37-4433",
+      "website": "https://lsr10.iwakura-kanko.com/10-2/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%81%8A%E3%82%88%E3%81%AD%E3%82%AB%E3%83%95%E3%82%A7%20Bread%20%26%20butter%20%E5%B2%A9%E5%80%89%E5%B8%82%E4%B8%8B%E6%9C%AC%E7%94%BA%E4%B8%8B%E5%B8%82%E5%A0%B4111",
+      "photo": "",
+      "catchphrase": "パン工場併設、焼きたてパンを楽しめるカフェ",
+      "highlights": [
+        "焼きたて食パン",
+        "サンドイッチ",
+        "モーニング"
+      ]
     }
   ]
 }
