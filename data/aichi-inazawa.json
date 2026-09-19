@@ -1,5 +1,56 @@
 {
-  "source":"static-free-verified","updatedAt":"2026-09-19",
-  "attribution":"店舗公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。",
-  "shops":[{"placeId":"static-inazawa-yutaka","name":"ゆたかベーカリー","rating":0,"reviews":0,"address":"愛知県稲沢市下津下町東4丁目24番2","type":"パン屋","types":["bakery"],"openingHours":["10:00–19:00（売り切れ次第終了）"],"phone":"0587-22-1180","website":"https://yutakabakery.jimdofree.com/","googleMaps":"","photo":"","catchphrase":"稲沢市のベーカリー","highlights":[]}]
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "店舗公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "static-inazawa-yutaka",
+      "name": "ゆたかベーカリー",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県稲沢市下津下町東4丁目24番2",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "10:00–19:00（売り切れ次第終了）",
+        "定休日 日・月"
+      ],
+      "phone": "0587-22-1180",
+      "website": "https://yutakabakery.jimdofree.com/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%82%86%E3%81%9F%E3%81%8B%E3%83%99%E3%83%BC%E3%82%AB%E3%83%AA%E3%83%BC%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E7%A8%B2%E6%B2%A2%E5%B8%82%E4%B8%8B%E6%B4%A5%E4%B8%8B%E7%94%BA%E6%9D%B14%E4%B8%81%E7%9B%AE24%E7%95%AA2",
+      "photo": "",
+      "catchphrase": "低温熟成の生地が特徴の手作りパン屋",
+      "highlights": [
+        "低温熟成",
+        "駐車場あり"
+      ]
+    },
+    {
+      "placeId": "static-inazawa-mimosa",
+      "name": "BOULANGERIE Mimosa",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県稲沢市駅前2-24-24",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "平日 08:00–19:00",
+        "土日祝 08:00–18:00",
+        "定休日 月"
+      ],
+      "phone": "050-8884-2166",
+      "website": "https://www.fontana-corporation.com/service/boulangerie-mimosa/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=BOULANGERIE%20Mimosa%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E7%A8%B2%E6%B2%A2%E5%B8%82%E9%A7%85%E5%89%8D2-24-24",
+      "photo": "",
+      "catchphrase": "クロワッサンを中心に多彩なパンをそろえるベーカリー",
+      "highlights": [
+        "クロワッサン",
+        "100種類以上"
+      ]
+    }
+  ]
 }
