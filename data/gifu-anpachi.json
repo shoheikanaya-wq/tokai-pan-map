@@ -1,0 +1,31 @@
+{
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "店舗公式SNSへの導線および複数の現行店舗情報で営業実態を確認。営業時間は変更される場合があるため来店前に公式情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "static-anpachi-honwaka",
+      "name": "ほんわかパン屋さん",
+      "rating": 0,
+      "reviews": 0,
+      "address": "岐阜県安八郡安八町東結1010-1 東ハイツ1階 貸店舗3号",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "月・金・土・日 10:00–16:00",
+        "火・水・木 定休"
+      ],
+      "phone": "",
+      "website": "https://www.instagram.com/honwaka_panyasan/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "安八町東結の手づくりパン屋",
+      "highlights": [
+        "手づくりパン",
+        "2024年オープン"
+      ]
+    }
+  ]
+}
