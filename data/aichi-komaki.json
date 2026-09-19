@@ -1,7 +1,7 @@
 {
   "source": "static-free-verified",
   "updatedAt": "2026-09-20",
-  "attribution": "小牧市観光協会・本間製パン公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。",
+  "attribution": "店舗公式サイト・小牧市関連公開情報を基に確認。来店前に最新情報をご確認ください。",
   "shops": [
     {
       "placeId": "static-komaki-avance",
@@ -26,6 +26,73 @@
         "焼きたてパン",
         "イートイン"
       ]
+    },
+    {
+      "placeId": "static-komaki-penguin",
+      "name": "ペンギンベーカリー 小牧口店",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県小牧市大字北外山字桜井765-1",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "08:30–19:00"
+      ],
+      "phone": "0568-72-6087",
+      "website": "https://www.penguinbakery.com/shop/shop_category/tokai/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%9A%E3%83%B3%E3%82%AE%E3%83%B3%E3%83%99%E3%83%BC%E3%82%AB%E3%83%AA%E3%83%BC%20%E5%B0%8F%E7%89%A7%E5%8F%A3%E5%BA%97%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%B0%8F%E7%89%A7%E5%B8%82%E5%A4%A7%E5%AD%97%E5%8C%97%E5%A4%96%E5%B1%B1%E5%AD%97%E6%A1%9C%E4%BA%95765-1",
+      "photo": "",
+      "catchphrase": "北海道産小麦を使った焼きたてパンをそろえるベーカリー",
+      "highlights": [
+        "北海道産小麦",
+        "焼きたてパン"
+      ]
+    },
+    {
+      "placeId": "static-komaki-painbell",
+      "name": "パンベル",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県小牧市城山3丁目3",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "平日・土 07:00–19:00",
+        "日・祝 07:00–18:00",
+        "定休日 火"
+      ],
+      "phone": "0568-78-7033",
+      "website": "https://painbell.gozaru.jp/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%91%E3%83%B3%E3%83%99%E3%83%AB%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%B0%8F%E7%89%A7%E5%B8%82%E5%9F%8E%E5%B1%B13%E4%B8%81%E7%9B%AE3",
+      "photo": "",
+      "catchphrase": "天然酵母と国産小麦に力を入れる地域密着ベーカリー",
+      "highlights": [
+        "天然酵母",
+        "国産小麦",
+        "モーニング"
+      ]
+    },
+    {
+      "placeId": "static-komaki-prema",
+      "name": "パン屋 プレマ",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県小牧市小牧4丁目175",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "0568-71-9678",
+      "website": "http://prema.hannnari.com/index.html",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%91%E3%83%B3%E5%B1%8B%20%E3%83%97%E3%83%AC%E3%83%9E%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%B0%8F%E7%89%A7%E5%B8%82%E5%B0%8F%E7%89%A74%E4%B8%81%E7%9B%AE175",
+      "photo": "",
+      "catchphrase": "小牧中心部のベーカリー",
+      "highlights": []
     }
   ]
 }
