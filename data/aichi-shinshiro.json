@@ -1,7 +1,7 @@
 {
   "source": "static-free-verified",
   "updatedAt": "2026-09-19",
-  "attribution": "店舗情報は公開情報を基に確認。来店前に公式情報をご確認ください。",
+  "attribution": "店舗情報は公開情報を基に確認。来店前に公式情報をご確認ください。 パンヤモギは奥三河観光協議会公式の2026年朝活Cafe情報で所在地・開催営業を確認。",
   "shops": [
     {
       "placeId": "static-shinshiro-chat",
@@ -49,6 +49,31 @@
         "自然酵母",
         "国産小麦",
         "薪石窯"
+      ]
+    },
+    {
+      "placeId": "static-shinshiro-panyamogi",
+      "name": "パンヤモギ",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県新城市作手保永エマツ7-3",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "朝活Cafe：2026/6/27〜11/29 第4土・日 06:10–09:00",
+        "通常営業は店舗SNSで確認"
+      ],
+      "phone": "",
+      "website": "https://www.okuminavi.jp/event/detail/1358/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%91%E3%83%B3%E3%83%A4%E3%83%A2%E3%82%AE%20%E6%96%B0%E5%9F%8E%E5%B8%82%E4%BD%9C%E6%89%8B%E4%BF%9D%E6%B0%B8%E3%82%A8%E3%83%9E%E3%83%847-3",
+      "photo": "",
+      "catchphrase": "作手の朝は、パンの香りと一緒に",
+      "highlights": [
+        "朝活Cafe",
+        "作手",
+        "パン"
       ]
     }
   ]
