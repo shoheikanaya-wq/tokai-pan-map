@@ -1,7 +1,7 @@
 {
   "source": "static-free-verified",
   "updatedAt": "2026-09-19",
-  "attribution": "店舗公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。",
+  "attribution": "店舗公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。 Aratamaは愛西市観光協会の地元飲食店出店情報および店舗情報でパン製造販売を確認。",
   "shops": [
     {
       "placeId": "static-aisai-cafememe",
@@ -25,6 +25,34 @@
       "catchphrase": "コーヒーと自家製パンのカフェ",
       "highlights": [
         "Home made Bread"
+      ]
+    },
+    {
+      "placeId": "static-aisai-aratama",
+      "name": "Bakery & Sandwich Cafe Aratama",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県愛西市北一色町昭和268-2",
+      "type": "ベーカリー＆サンドイッチカフェ",
+      "types": [
+        "bakery",
+        "cafe"
+      ],
+      "openingHours": [
+        "ベーカリー 08:30–18:00",
+        "日曜定休",
+        "第2・第4月曜は14:00まで"
+      ],
+      "phone": "0567-26-5188",
+      "website": "http://cafearatama.web.fc2.com/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=Bakery%20Sandwich%20Cafe%20Aratama%20%E6%84%9B%E8%A5%BF%E5%B8%82%E5%8C%97%E4%B8%80%E8%89%B2%E7%94%BA%E6%98%AD%E5%92%8C268-2",
+      "photo": "",
+      "catchphrase": "地元食材を使ったパンとサンドイッチのベーカリーカフェ",
+      "highlights": [
+        "アラタ丸パン",
+        "ベーグル",
+        "調理パン",
+        "サンドイッチ"
       ]
     }
   ]
