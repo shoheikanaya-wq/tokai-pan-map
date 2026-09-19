@@ -5,8 +5,8 @@
   "policy": "User-facing municipality pages never call Cloud Run or Overpass. Missing static data shows an immediate map-search fallback.",
   "totals": {
     "municipalities": 125,
-    "ready": 118,
-    "pending": 7
+    "ready": 119,
+    "pending": 6
   },
   "municipalities": [
     {
@@ -492,8 +492,8 @@
     {
       "prefecture": "岐阜県",
       "city": "輪之内町",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/gifu-wanouchi.json"
     },
     {
       "prefecture": "岐阜県",
