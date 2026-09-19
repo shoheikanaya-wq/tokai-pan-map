@@ -1,0 +1,50 @@
+{
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "店舗公式サイトの2026年公開情報を基に確認。来店前に最新情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "static-nabari-siamiel",
+      "name": "Siamiel",
+      "rating": 0,
+      "reviews": 0,
+      "address": "三重県名張市富貴ヶ丘4番町2724-54",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "",
+      "website": "https://siamiel.com/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "はちみつ酵母と国産小麦のパン工房",
+      "highlights": [
+        "ハニーフロマージュ",
+        "ミルクロール"
+      ]
+    },
+    {
+      "placeId": "static-nabari-penguin",
+      "name": "ペンギンベーカリー 名張桔梗が丘店",
+      "rating": 0,
+      "reviews": 0,
+      "address": "三重県名張市蔵持町原出1366-3",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "10:00–19:00（パンがなくなり次第終了）"
+      ],
+      "phone": "",
+      "website": "https://www.penguinbakery.com/news/202508211580/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "北海道産小麦を使う焼きたてベーカリー",
+      "highlights": [
+        "とべない食パン"
+      ]
+    }
+  ]
+}
