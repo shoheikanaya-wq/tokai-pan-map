@@ -1,0 +1,30 @@
+{
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "南伊勢町観光協会の公開情報を基に、パン販売を確認。来店前に最新情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "static-minamiise-aozora",
+      "name": "あおぞらまーと南島",
+      "rating": 0,
+      "reviews": 0,
+      "address": "三重県度会郡南伊勢町道方1309-2",
+      "type": "パン販売店",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "10:00–18:00"
+      ],
+      "phone": "0596-72-2014",
+      "website": "https://www.minami-ise.jp/shop_40.html",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "地場野菜や総菜とともにパンも扱う地域の販売店",
+      "highlights": [
+        "パン販売",
+        "地域産品"
+      ]
+    }
+  ]
+}
