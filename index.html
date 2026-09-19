@@ -822,10 +822,10 @@ function showPendingMunicipality(prefecture,city){
   const mapUrl='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent('パン屋 '+prefecture+city);
   rankingTitle.textContent=`${city} パン屋一覧`;
   const note=byId('rankingNote');
-  if(note) note.textContent='この地域は静的データ整備中です。待ち続けず、地図検索からパン屋を確認できます。';
+  if(note) note.textContent='この地域では現在、常設パン店の静的データを確認できていません。地図検索でも最新状況を確認できます。';
   list.innerHTML=`
     <div class="load-error">
-      <strong>この地域は静的データを準備中です。</strong><br>
+      <strong>この地域では現在、確認済みの常設パン店データがありません。</strong><br>
       外部APIには接続せず、待機画面も出しません。<br>
       <a class="detail-action" href="${mapUrl}" target="_blank" rel="noopener" style="margin-top:10px;display:inline-flex">📍 Google Mapsでパン屋を探す</a>
     </div>`;
