@@ -1,7 +1,7 @@
 {
   "source": "static-free-recovery",
   "updatedAt": "2026-09-19",
-  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。未取得項目は空欄または0。来店前に地図・公式情報をご確認ください。",
+  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。未取得項目は空欄または0。来店前に地図・公式情報をご確認ください。 パンとお惣菜 Pur.は公式LINEで2026年9月営業日・住所・パン商品を確認。",
   "shops": [
     {
       "placeId": "ChIJmREYCmhhA2ARkx2yVcqItV8",
@@ -162,6 +162,32 @@
       "photo": "",
       "catchphrase": "イオン三好店内のベーカリー",
       "highlights": []
+    },
+    {
+      "placeId": "static-miyoshi-pur",
+      "name": "パンとお惣菜 Pur.",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県みよし市三好丘4-1-15",
+      "type": "パン・惣菜",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "火・水・金 11:00–17:30",
+        "土 11:00–16:00",
+        "日・月・木 定休（臨時変更あり）"
+      ],
+      "phone": "",
+      "website": "https://page.line.me/796jopmi",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%91%E3%83%B3%E3%81%A8%E3%81%8A%E6%83%A3%E8%8F%9C%20Pur.%20%E3%81%BF%E3%82%88%E3%81%97%E5%B8%82%E4%B8%89%E5%A5%BD%E4%B8%984-1-15",
+      "photo": "",
+      "catchphrase": "ハードパンから惣菜パンまで日替わりで提供",
+      "highlights": [
+        "フリュイエノア",
+        "惣菜パン",
+        "キューブパン"
+      ]
     }
   ]
 }
