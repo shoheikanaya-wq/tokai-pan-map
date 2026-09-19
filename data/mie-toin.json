@@ -1,0 +1,31 @@
+{
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "東員町公式サイトの2026年公開情報を基に確認。来店前に最新情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "static-toin-nine",
+      "name": "NINE BAKERY",
+      "rating": 0,
+      "reviews": 0,
+      "address": "三重県員弁郡東員町笹尾西2-31-8",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "10:00–18:00（売り切れ次第終了）",
+        "定休日 日・月"
+      ],
+      "phone": "0594-82-5484",
+      "website": "https://www.town.toin.lg.jp/join_toin/shop/4628.html",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "天然酵母と国産小麦にこだわる町のベーカリー",
+      "highlights": [
+        "大豆のミルクハース",
+        "食物繊維食パン"
+      ]
+    }
+  ]
+}
