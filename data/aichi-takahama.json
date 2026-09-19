@@ -1,7 +1,7 @@
 {
   "source": "static-free-recovery",
   "updatedAt": "2026-09-19",
-  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。未取得項目は空欄または0。来店前に地図・公式情報をご確認ください。 ふるふるは高浜市公式、PanPalは店舗公式サイトで現行情報を再確認。",
+  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。未取得項目は空欄または0。来店前に地図・公式情報をご確認ください。 ふるふるは高浜市公式、PanPalは店舗公式サイトで現行情報を再確認。 パン工房むぎまるはTぽーと公式、エスカフェは高浜市商工会公式で現行のパン製造・販売を確認。",
   "shops": [
     {
       "placeId": "ChIJw_H48SSbBGARama0JDViLHE",
@@ -90,6 +90,55 @@
       "highlights": [
         "ラスク",
         "ベーカリー"
+      ]
+    },
+    {
+      "placeId": "static-takahama-mugimaru",
+      "name": "パン工房むぎまる",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県高浜市神明町8-20-1 Tぽーと1F",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "10:00–19:00",
+        "水曜定休"
+      ],
+      "phone": "0566-52-7414",
+      "website": "https://www.t-port.info/mugimaru/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%91%E3%83%B3%E5%B7%A5%E6%88%BF%E3%82%80%E3%81%8E%E3%81%BE%E3%82%8B%20%E9%AB%98%E6%B5%9C%E5%B8%82",
+      "photo": "",
+      "catchphrase": "オールスクラッチ製法、常時約90種類",
+      "highlights": [
+        "食パン",
+        "菓子パン",
+        "総菜パン",
+        "バケット"
+      ]
+    },
+    {
+      "placeId": "static-takahama-escafe",
+      "name": "エスカフェ",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県高浜市湯山町3-6-18",
+      "type": "カフェ・ベーグル",
+      "types": [
+        "bakery",
+        "cafe"
+      ],
+      "openingHours": [],
+      "phone": "0566-87-8670",
+      "website": "https://www.instagram.com/escafegram/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%82%A8%E3%82%B9%E3%82%AB%E3%83%95%E3%82%A7%20%E9%AB%98%E6%B5%9C%E5%B8%82%E6%B9%AF%E5%B1%B1%E7%94%BA3-6-18",
+      "photo": "",
+      "catchphrase": "高浜市商工会掲載、自家製ベーグルが買えるカフェ",
+      "highlights": [
+        "自家製ベーグル",
+        "パン予約",
+        "テイクアウト"
       ]
     }
   ]
