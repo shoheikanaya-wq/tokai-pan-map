@@ -1,7 +1,7 @@
 {
   "source": "static-free-verified",
   "updatedAt": "2026-09-19",
-  "attribution": "店舗公式サイトの公開情報を基に確認。来店前に公式情報をご確認ください。",
+  "attribution": "店舗公式サイト・公式アカウントの公開情報を基に確認。来店前に最新情報をご確認ください。",
   "shops": [
     {
       "placeId": "static-kasugai-lecordon",
@@ -17,13 +17,86 @@
         "08:30–17:00",
         "木曜定休"
       ],
-      "phone": "",
+      "phone": "0568-37-4722",
       "website": "https://www.le-cordon.com/",
-      "googleMaps": "",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=LE%20CORDON%20%E3%83%AB%E3%83%BB%E3%82%B3%E3%83%AB%E3%83%89%E3%83%B3%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E6%98%A5%E6%97%A5%E4%BA%95%E5%B8%82%E7%91%9E%E7%A9%82%E9%80%9A4-62",
       "photo": "",
-      "catchphrase": "春日井のベーカリーカフェ",
+      "catchphrase": "国産小麦の焼き立てパンを楽しめるベーカリーカフェ",
       "highlights": [
-        "ベーカリー",
+        "国産小麦",
+        "イートイン",
+        "モーニング"
+      ]
+    },
+    {
+      "placeId": "static-kasugai-pannotora",
+      "name": "パンのトラ 春日井店",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県春日井市如意申町4-7-3",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "07:00–19:00"
+      ],
+      "phone": "0568-27-7883",
+      "website": "https://pannotora.com/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%91%E3%83%B3%E3%81%AE%E3%83%88%E3%83%A9%20%E6%98%A5%E6%97%A5%E4%BA%95%E5%BA%97%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E6%98%A5%E6%97%A5%E4%BA%95%E5%B8%82%E5%A6%82%E6%84%8F%E7%94%B3%E7%94%BA4-7-3",
+      "photo": "",
+      "catchphrase": "スペイン窯で焼く食パンと多彩なパンをそろえるベーカリー",
+      "highlights": [
+        "食パン",
+        "約120種類",
+        "駐車場あり"
+      ]
+    },
+    {
+      "placeId": "static-kasugai-champdor",
+      "name": "Boulangerie Champdor（シャンドール）",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県春日井市高蔵寺町北1-93",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "08:00–18:00",
+        "定休日 日・月・火"
+      ],
+      "phone": "",
+      "website": "https://www.boulangerie-champdor.com/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=Boulangerie%20Champdor%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E6%98%A5%E6%97%A5%E4%BA%95%E5%B8%82%E9%AB%98%E8%94%B5%E5%AF%BA%E7%94%BA%E5%8C%971-93",
+      "photo": "",
+      "catchphrase": "高蔵寺で長く親しまれる手作りパンの店",
+      "highlights": [
+        "手作りパン",
+        "駐車場あり"
+      ]
+    },
+    {
+      "placeId": "static-kasugai-flave",
+      "name": "BREAD＆CAFE Flave（フラベ）",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県春日井市高山町2-33-1",
+      "type": "パン屋・ベーカリーカフェ",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "07:00–18:00"
+      ],
+      "phone": "0568-70-5716",
+      "website": "https://www.flave.jp/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=BREAD%20CAFE%20Flave%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E6%98%A5%E6%97%A5%E4%BA%95%E5%B8%82%E9%AB%98%E5%B1%B1%E7%94%BA2-33-1",
+      "photo": "",
+      "catchphrase": "食パン・ベーグル・生ドーナツなどを楽しめるベーカリーカフェ",
+      "highlights": [
+        "ベーグル",
+        "食パン",
         "イートイン"
       ]
     }
