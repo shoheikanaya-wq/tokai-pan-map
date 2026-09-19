@@ -1,0 +1,31 @@
+{
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-19",
+  "attribution": "スーパーマーケットバロー公式店舗情報で北欧倶楽部（ベーカリー）を確認。営業時間はバロー富加店の現行公式情報。来店前に最新情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "static-tomika-hokuoclub-valor",
+      "name": "北欧倶楽部 バロー富加店",
+      "rating": 0,
+      "reviews": 0,
+      "address": "岐阜県加茂郡富加町羽生2180",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "月〜金 10:00–20:00",
+        "土・日 9:30–20:00"
+      ],
+      "phone": "0574-55-1255",
+      "website": "https://stores.valor.jp/detail/164/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "バロー富加店内のベーカリーコーナー",
+      "highlights": [
+        "北欧倶楽部",
+        "店内ベーカリー"
+      ]
+    }
+  ]
+}
