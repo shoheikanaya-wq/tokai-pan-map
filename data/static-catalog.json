@@ -5,8 +5,8 @@
   "policy": "User-facing municipality pages never call Cloud Run or Overpass. Missing static data shows an immediate map-search fallback.",
   "totals": {
     "municipalities": 125,
-    "ready": 92,
-    "pending": 33
+    "ready": 96,
+    "pending": 29
   },
   "municipalities": [
     {
@@ -714,20 +714,20 @@
     {
       "prefecture": "三重県",
       "city": "大台町",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/mie-odai.json"
     },
     {
       "prefecture": "三重県",
       "city": "玉城町",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/mie-tamaki.json"
     },
     {
       "prefecture": "三重県",
       "city": "度会町",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/mie-watarai.json"
     },
     {
       "prefecture": "三重県",
@@ -756,8 +756,8 @@
     {
       "prefecture": "三重県",
       "city": "紀宝町",
-      "status": "pending",
-      "file": null
+      "status": "ready",
+      "file": "data/mie-kiho.json"
     }
   ]
 }
