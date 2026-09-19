@@ -1,7 +1,7 @@
 {
   "source": "static-free-verified",
-  "updatedAt": "2026-09-19",
-  "attribution": "店舗公式サイトの公開情報を基に確認。来店前に公式情報をご確認ください。",
+  "updatedAt": "2026-09-20",
+  "attribution": "店舗公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。",
   "shops": [
     {
       "placeId": "static-konan-pan-no-ie",
@@ -19,11 +19,86 @@
       ],
       "phone": "",
       "website": "https://pannoie-konan.com/",
-      "googleMaps": "",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%91%E3%83%B3%E3%81%AE%E5%AE%B6%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E6%B1%9F%E5%8D%97%E5%B8%82%E6%B1%9F%E6%A3%AE%E7%94%BA%E6%9D%B1191-1",
       "photo": "",
       "catchphrase": "江南市のベーカリー",
       "highlights": [
         "焼きたてパン"
+      ]
+    },
+    {
+      "placeId": "static-konan-kawai",
+      "name": "Bakery Kawai",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県江南市古知野町福寿107-1",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "平日 09:00–18:00",
+        "土・祝 09:00–17:00",
+        "定休日 日・月"
+      ],
+      "phone": "0587-50-0288",
+      "website": "https://bakery-kawai.com/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=Bakery%20Kawai%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E6%B1%9F%E5%8D%97%E5%B8%82%E5%8F%A4%E7%9F%A5%E9%87%8E%E7%94%BA%E7%A6%8F%E5%AF%BF107-1",
+      "photo": "",
+      "catchphrase": "江南駅近くのベーカリー",
+      "highlights": [
+        "駐車場あり",
+        "焼きたてパン"
+      ]
+    },
+    {
+      "placeId": "static-konan-cocokara",
+      "name": "ここカラ・パンCafe",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県江南市高屋町八幡10番地1",
+      "type": "パン屋・カフェ",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "08:30–17:00",
+        "イートイン 08:30–16:00",
+        "定休日 月・木（祝日の場合は翌日休あり）"
+      ],
+      "phone": "0587-81-6020",
+      "website": "https://cocokara-pancafe.com/top/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%81%93%E3%81%93%E3%82%AB%E3%83%A9%E3%83%BB%E3%83%91%E3%83%B3Cafe%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E6%B1%9F%E5%8D%97%E5%B8%82%E9%AB%98%E5%B1%8B%E7%94%BA%E5%85%AB%E5%B9%A110%E7%95%AA%E5%9C%B01",
+      "photo": "",
+      "catchphrase": "健康や栄養にも配慮したパンとカフェの店",
+      "highlights": [
+        "モーニング",
+        "ランチ",
+        "イートイン"
+      ]
+    },
+    {
+      "placeId": "static-konan-honma",
+      "name": "本間製パン 江南直売店",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県江南市村久野町鈴道231",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "09:00–17:00",
+        "年中無休（年末年始を除く）"
+      ],
+      "phone": "0587-51-2220",
+      "website": "https://www.honma-bread.com/shop.html/1000",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E6%9C%AC%E9%96%93%E8%A3%BD%E3%83%91%E3%83%B3%20%E6%B1%9F%E5%8D%97%E7%9B%B4%E5%A3%B2%E5%BA%97%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E6%B1%9F%E5%8D%97%E5%B8%82%E6%9D%91%E4%B9%85%E9%87%8E%E7%94%BA%E9%88%B4%E9%81%93231",
+      "photo": "",
+      "catchphrase": "本間製パン直営のベーカリー直売店",
+      "highlights": [
+        "直売店",
+        "駐車場あり"
       ]
     }
   ]
