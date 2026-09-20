@@ -1,7 +1,7 @@
 {
   "source": "static-free-recovery",
-  "updatedAt": "2026-09-19",
-  "attribution": "店舗情報は公開情報を基にした復旧用スナップショット。来店前に公式情報をご確認ください。 ジャックは店舗公式サイトで住所・営業時間・定休日を再確認。 ペンギンベーカリー豊田浄水店は公式店舗一覧で住所・電話・営業時間を再確認。 HORNはフジパンストアー公式、Picoはメグリア井上店公式施設情報を確認。Google Maps導線は店名・住所検索URLで全店舗に付与。 実店舗写真は権利・利用条件を確認できたものだけをphoto/photoAttribution/photoSource/photoLicenseへ登録し、旧tokai-pan-apiには依存しない。",
+  "updatedAt": "2026-09-20",
+  "attribution": "店舗情報は公開情報を基にした復旧用スナップショット。来店前に公式情報をご確認ください。 ジャックは店舗公式サイトで住所・営業時間・定休日を再確認。 ペンギンベーカリー豊田浄水店は公式店舗一覧で住所・電話・営業時間を再確認。 HORNはフジパンストアー公式、Picoはメグリア井上店公式施設情報を確認。Google Maps導線は店名・住所検索URLで全店舗に付与。 実店舗写真は権利・利用条件を確認できたものだけをphoto/photoAttribution/photoSource/photoLicenseへ登録し、旧tokai-pan-apiには依存しない。 サンクス洋菓子店は2026-09-20に公開情報で店名・住所・営業時間を再確認。",
   "shops": [
     {
       "placeId": "ChIJ22dl6EagBGAROlRfruKCPZI",
@@ -52,22 +52,23 @@
     },
     {
       "placeId": "ChIJ61TViH5gA2ARIP25jDVoimQ",
-      "name": "サンクス",
+      "name": "サンクス洋菓子店",
       "rating": 3.9,
       "reviews": 98,
-      "address": "愛知県豊田市浄水町5-178-4",
+      "address": "愛知県豊田市浄水町伊保原178-4",
       "type": "パン屋",
       "types": [
         "bakery"
       ],
       "openingHours": [
-        "07:00–18:45"
+        "07:00–18:45",
+        "水曜定休"
       ],
       "phone": "0565-43-3353",
       "website": "",
-      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%82%B5%E3%83%B3%E3%82%AF%E3%82%B9%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%B1%8A%E7%94%B0%E5%B8%82%E6%B5%84%E6%B0%B4%E7%94%BA5-178-4",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%82%B5%E3%83%B3%E3%82%AF%E3%82%B9%E6%B4%8B%E8%8F%93%E5%AD%90%E5%BA%97%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%B1%8A%E7%94%B0%E5%B8%82%E6%B5%84%E6%B0%B4%E7%94%BA%E4%BC%8A%E4%BF%9D%E5%8E%9F178-4",
       "photo": "",
-      "catchphrase": "ベーカリー＆カフェ",
+      "catchphrase": "パン・ケーキ・喫茶を楽しめる老舗洋菓子店",
       "highlights": [],
       "photoAttribution": "",
       "photoSource": "",
