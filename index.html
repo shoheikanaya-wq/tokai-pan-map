@@ -421,7 +421,7 @@ button,.back,.detail-action,.review-trigger{
   </div>
   
   <div class="tabs"><button id="tabAichi" class="active">愛知県</button><button id="tabGifu">岐阜県</button><button id="tabMie">三重県</button></div><div class="notice">
-  <div><strong>Ver.1.63</strong>　愛知県のパン屋情報を拡充中・TOP10写真表示を改善</div>現在は、愛知県内のパン屋をできるだけ多く掲載できるよう、地域ごとに店舗情報を確認・追加している段階です。特に店舗数が少なく表示されている地域を優先して見直しています。名古屋市は16区すべてを調査中です。あわせて、店舗写真を見て選べるカード表示や、スマホ縦画面でも見やすい画面への改善を進めています。今後も確認できた店舗・実店舗写真・営業時間などを順次追加します。実店舗写真が未取得のカードには、同じ画像が並ばないよう複数のAI生成イメージを店舗ごとに分け、AI生成であることを明記します。
+  <div><strong>Ver.1.64</strong>　愛知県のパン屋情報を拡充中・TOP10写真表示を改善</div>現在は、愛知県内のパン屋をできるだけ多く掲載できるよう、地域ごとに店舗情報を確認・追加している段階です。特に店舗数が少なく表示されている地域を優先して見直しています。名古屋市は16区すべてを調査中です。あわせて、店舗写真を見て選べるカード表示や、スマホ縦画面でも見やすい画面への改善を進めています。今後も確認できた店舗・実店舗写真・営業時間などを順次追加します。実店舗写真が未取得のカードには、同じ画像が並ばないよう複数のAI生成イメージを店舗ごとに分け、AI生成であることを明記します。
 </div><div id="aichiPanel"><h2>西三河</h2><div class="cities"><button id="toyota">豊田市</button><button id="okazaki">岡崎市</button><button id="anjo">安城市</button><button id="kariya">刈谷市</button><button id="nishio">西尾市</button>
 <button id="hekinan">碧南市</button>
 <button id="chiryu">知立市</button>
@@ -538,8 +538,6 @@ button,.back,.detail-action,.review-trigger{
     <div class="detail-title-row"><h2 id="dname"></h2><strong id="drating"></strong></div>
     <p id="daddr"></p>
 
-    <button id="dreviews" type="button" class="hidden" aria-hidden="true"></button>
-    <div id="reviewPanel" class="hidden"><button id="closeReviews" type="button" class="hidden"></button><div id="reviewStatus"></div><div id="reviewList"></div></div>
     <div id="dfeatures" class="detail-info-block hidden"></div>
     <div id="drecommend" class="detail-info-block hidden"></div>
     <div id="dproduct" class="detail-info-block hidden"></div>
@@ -561,7 +559,7 @@ button,.back,.detail-action,.review-trigger{
 </section>
   <div id="devTools" class="dev-tools hidden"><button id="clearRankingCache">🔄 ランキングキャッシュ更新</button><div class="muted">開発用：次回ランキング表示時に最新データを取得</div></div><footer id="appFooter" class="app-footer">
 <div>東海パンMAP</div>
-<div>Ver.1.63</div>
+<div>Ver.1.64</div>
   <div>Personal Bakery Discovery Project</div>
   <div>Created & Managed by S.K.</div>
   <div>© 2026 S.K. All Rights Reserved.</div>
@@ -958,7 +956,7 @@ const home=document.querySelector('#home'),ranking=document.querySelector('#rank
 const byId = id => document.getElementById(id);
 const appTitle=byId('appTitle'), rankingTitle=byId('rankingTitle');
 const back=byId('back'), backBottom=byId('backBottom'), back2=byId('back2'), backDetailBottom=byId('backDetailBottom');
-const dname=byId('dname'), daddr=byId('daddr'), drating=byId('drating'), dreviews=byId('dreviews'), dhours=byId('dhours'), dphone=byId('dphone'), dwebsite=byId('dwebsite'), dmaps=byId('dmaps'), drank=byId('drank'), dfeatures=byId('dfeatures'), dspecial=byId('dspecial'), drecommend=byId('drecommend'), dclosed=byId('dclosed'), dproduct=byId('dproduct');
+const dname=byId('dname'), daddr=byId('daddr'), drating=byId('drating'), dhours=byId('dhours'), dphone=byId('dphone'), dwebsite=byId('dwebsite'), dmaps=byId('dmaps'), drank=byId('drank'), dfeatures=byId('dfeatures'), dspecial=byId('dspecial'), drecommend=byId('drecommend'), dclosed=byId('dclosed'), dproduct=byId('dproduct');
 const toyota=byId('toyota'), okazaki=byId('okazaki'), anjo=byId('anjo'), kariya=byId('kariya'), nishio=byId('nishio'), hekinan=byId('hekinan'), chiryu=byId('chiryu'), takahama=byId('takahama'), miyoshi=byId('miyoshi'), kota=byId('kota');
 const toyohashi=byId('toyohashi'), toyokawa=byId('toyokawa'), gamagori=byId('gamagori'), shinshiro=byId('shinshiro'), tahara=byId('tahara'), shitara=byId('shitara'), toei=byId('toei'), toyone=byId('toyone');
 const nagoya=byId('nagoya'), ichinomiya=byId('ichinomiya'), seto=byId('seto'), kasugai=byId('kasugai'), inuyama=byId('inuyama'), konan=byId('konan'), komaki=byId('komaki'), inazawa=byId('inazawa'), owariasahi=byId('owariasahi'), iwakura=byId('iwakura'), toyoake=byId('toyoake'), nisshin=byId('nisshin'), kiyosu=byId('kiyosu'), kitanagoya=byId('kitanagoya'), nagakute=byId('nagakute'), togo=byId('togo'), toyoyama=byId('toyoyama'), oguchi=byId('oguchi'), fuso=byId('fuso'), ama=byId('ama'), ooharu=byId('ooharu'), kanie=byId('kanie'), tobishima=byId('tobishima'), tsushima=byId('tsushima'), aisai=byId('aisai'), yatomi=byId('yatomi');
@@ -1257,20 +1255,6 @@ drank.textContent =
     dspecial.classList.add('hidden');
     dspecial.innerHTML='';
   }
-  if(s.dataSource==='osm-free' || !s.placeId || String(s.placeId).startsWith('static-')){
-    dreviews.textContent = s.reviews ? `口コミ ${s.reviews}件を見る` : '口コミ・評価を見る';
-    dreviews.onclick = () => window.open(
-      s.googleMaps || ('https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent((s.name||'') + ' ' + (s.address||''))),
-      '_blank','noopener'
-    );
-  }else{
-    dreviews.textContent = `口コミ ${s.reviews}件 ▼`;
-    dreviews.onclick = () => loadShopReviews(s);
-  }
-  byId('reviewPanel').classList.add('hidden');
-  byId('reviewList').innerHTML='';
-  byId('reviewStatus').textContent='';
-  byId('closeReviews').onclick=()=>byId('reviewPanel').classList.add('hidden');
 
  // 営業時間
 if (s.openNow === true) {
@@ -1317,10 +1301,6 @@ if (s.openNow === true) {
   dmaps.href = s.googleMaps || ('https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent((s.name||'') + ' ' + (s.address||'')));
   dmaps.style.display = 'inline-flex';
 
-  // 実Place IDがある店舗は詳細を開いた時点で口コミ数件を表示する。
-  if(s.placeId && !String(s.placeId).startsWith('static-') && s.dataSource!=='osm-free'){
-    loadShopReviews(s);
-  }
 }
 let cityLoadSeq=0;
 
