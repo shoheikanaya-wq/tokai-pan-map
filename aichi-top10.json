@@ -22,7 +22,9 @@
       "highlights": [
         "クロワッサンもファンの多い一品",
         "鶴舞駅から徒歩圏"
-      ]
+      ],
+      "representativeProduct": "クロワッサン",
+      "representativeLabel": "人気商品のひとつ"
     },
     {
       "placeId": "static-nagoya-terreaterre",
@@ -43,7 +45,9 @@
       "highlights": [
         "パンを買うだけでなくカフェ利用も可能",
         "高岳駅から徒歩約5分"
-      ]
+      ],
+      "representativeProduct": "テーラ・テール",
+      "representativeLabel": "店名を冠した看板商品"
     },
     {
       "placeId": "static-nagoya-kokoro-jr",
@@ -110,7 +114,9 @@
       "highlights": [
         "パンに加えてベーグル・サンドイッチも展開",
         "上前津駅から徒歩圏"
-      ]
+      ],
+      "representativeProduct": "クリームパン",
+      "representativeLabel": "人気No.1として紹介される定番"
     },
     {
       "placeId": "static-nagoya-papipan",
@@ -223,7 +229,9 @@
       "highlights": [
         "パン・ベーグル・洋菓子を展開",
         "公式ブログで季節パンや最新パンリストを発信"
-      ]
+      ],
+      "representativeProduct": "レーズン食パン",
+      "representativeLabel": "口コミで支持される定番"
     }
   ]
 }
