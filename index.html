@@ -188,6 +188,8 @@
 }
 .detail-info-block{margin:9px 0;padding:10px;border-radius:10px;background:#f5eee2}
 #dphone{margin:0}
+.detail-feature-list{margin-top:6px;font-size:14px;line-height:1.45}
+#dspecial{font-size:14px;line-height:1.45}
 
 /* ===== Eye-friendly contrast system =====
    Page = warm ivory, controls = muted sage, TOP10 cards = warm cream.
@@ -410,7 +412,7 @@ button,.back,.detail-action,.review-trigger{
   </div>
   
   <div class="tabs"><button id="tabAichi" class="active">愛知県</button><button id="tabGifu">岐阜県</button><button id="tabMie">三重県</button></div><div class="notice">
-  <div><strong>Ver.1.53</strong>　愛知県のパン屋情報を拡充中・TOP10写真表示を改善</div>現在は、愛知県内のパン屋をできるだけ多く掲載できるよう、地域ごとに店舗情報を確認・追加している段階です。特に店舗数が少なく表示されている地域を優先して見直しています。名古屋市は16区すべてを調査中です。あわせて、店舗写真を見て選べるカード表示や、スマホ縦画面でも見やすい画面への改善を進めています。今後も確認できた店舗・実店舗写真・営業時間などを順次追加します。実店舗写真が未取得のカードには、同じ画像が並ばないよう複数のAI生成イメージを店舗ごとに分け、AI生成であることを明記します。
+  <div><strong>Ver.1.54</strong>　愛知県のパン屋情報を拡充中・TOP10写真表示を改善</div>現在は、愛知県内のパン屋をできるだけ多く掲載できるよう、地域ごとに店舗情報を確認・追加している段階です。特に店舗数が少なく表示されている地域を優先して見直しています。名古屋市は16区すべてを調査中です。あわせて、店舗写真を見て選べるカード表示や、スマホ縦画面でも見やすい画面への改善を進めています。今後も確認できた店舗・実店舗写真・営業時間などを順次追加します。実店舗写真が未取得のカードには、同じ画像が並ばないよう複数のAI生成イメージを店舗ごとに分け、AI生成であることを明記します。
 </div><div id="aichiPanel"><h2>西三河</h2><div class="cities"><button id="toyota">豊田市</button><button id="okazaki">岡崎市</button><button id="anjo">安城市</button><button id="kariya">刈谷市</button><button id="nishio">西尾市</button>
 <button id="hekinan">碧南市</button>
 <button id="chiryu">知立市</button>
@@ -531,6 +533,7 @@ button,.back,.detail-action,.review-trigger{
       <strong id="drating"></strong>
       <button id="dreviews" type="button" class="review-trigger"></button>
     </div>
+    <div id="dfeatures" class="detail-info-block hidden"></div>
 
     <div id="reviewPanel" class="review-panel hidden">
       <div class="review-panel-head">
@@ -549,11 +552,10 @@ button,.back,.detail-action,.review-trigger{
     </div>
 
     <div class="detail-info-block"><div id="dopening"></div></div>
+    <div id="dspecial" class="detail-info-block hidden"></div>
     <div class="detail-info-block"><p id="dphone"></p></div>
 
-    <p class="muted">
-      は取得時点のデータです。営業前には最新情報をご確認ください。
-    </p>
+    <p class="muted">営業時間・定休日・特別営業などは変更される場合があります。来店前に公式情報またはGoogle Mapsでも最新情報をご確認ください。</p>
   </div>
   <div class="detail-bottom-nav">
     <button class="back" id="backDetailBottom">← 戻る</button>
@@ -561,7 +563,7 @@ button,.back,.detail-action,.review-trigger{
 </section>
   <div id="devTools" class="dev-tools hidden"><button id="clearRankingCache">🔄 ランキングキャッシュ更新</button><div class="muted">開発用：次回ランキング表示時に最新データを取得</div></div><footer id="appFooter" class="app-footer">
 <div>東海パンMAP</div>
-<div>Ver.1.43</div>
+<div>Ver.1.54</div>
   <div>Personal Bakery Discovery Project</div>
   <div>Created & Managed by S.K.</div>
   <div>© 2026 S.K. All Rights Reserved.</div>
@@ -958,7 +960,7 @@ const home=document.querySelector('#home'),ranking=document.querySelector('#rank
 const byId = id => document.getElementById(id);
 const appTitle=byId('appTitle'), rankingTitle=byId('rankingTitle');
 const back=byId('back'), backBottom=byId('backBottom'), back2=byId('back2'), backDetailBottom=byId('backDetailBottom');
-const dname=byId('dname'), daddr=byId('daddr'), drating=byId('drating'), dreviews=byId('dreviews'), dhours=byId('dhours'), dphone=byId('dphone'), dwebsite=byId('dwebsite'), dmaps=byId('dmaps'), drank=byId('drank');
+const dname=byId('dname'), daddr=byId('daddr'), drating=byId('drating'), dreviews=byId('dreviews'), dhours=byId('dhours'), dphone=byId('dphone'), dwebsite=byId('dwebsite'), dmaps=byId('dmaps'), drank=byId('drank'), dfeatures=byId('dfeatures'), dspecial=byId('dspecial');
 const toyota=byId('toyota'), okazaki=byId('okazaki'), anjo=byId('anjo'), kariya=byId('kariya'), nishio=byId('nishio'), hekinan=byId('hekinan'), chiryu=byId('chiryu'), takahama=byId('takahama'), miyoshi=byId('miyoshi'), kota=byId('kota');
 const toyohashi=byId('toyohashi'), toyokawa=byId('toyokawa'), gamagori=byId('gamagori'), shinshiro=byId('shinshiro'), tahara=byId('tahara'), shitara=byId('shitara'), toei=byId('toei'), toyone=byId('toyone');
 const nagoya=byId('nagoya'), ichinomiya=byId('ichinomiya'), seto=byId('seto'), kasugai=byId('kasugai'), inuyama=byId('inuyama'), konan=byId('konan'), komaki=byId('komaki'), inazawa=byId('inazawa'), owariasahi=byId('owariasahi'), iwakura=byId('iwakura'), toyoake=byId('toyoake'), nisshin=byId('nisshin'), kiyosu=byId('kiyosu'), kitanagoya=byId('kitanagoya'), nagakute=byId('nagakute'), togo=byId('togo'), toyoyama=byId('toyoyama'), oguchi=byId('oguchi'), fuso=byId('fuso'), ama=byId('ama'), ooharu=byId('ooharu'), kanie=byId('kanie'), tobishima=byId('tobishima'), tsushima=byId('tsushima'), aisai=byId('aisai'), yatomi=byId('yatomi');
@@ -1072,17 +1074,7 @@ function showRanking() {
       : (hasSymbolVisual ? '<span class="shop-source">店舗を象徴する紹介ビジュアル</span>' : '');
     const distinctive = `${catchphrase}${points}${attribution}`;
     b.innerHTML=`${photo}<span class="shop-main"><span class="shop-title-row"><strong class="badge">${i+1}位</strong><strong class="shop-name">${escapeHtml(s.name)}</strong></span><span class="muted shop-address">${escapeHtml(s.address)}</span></span>${distinctive ? `<span class="shop-points">${distinctive}</span>` : ''}<span class="rating">${s.dataSource==='osm-free' ? '<small>公開地図データ</small>' : ('★'+s.rating+'<br><small>口コミ '+s.reviews+'件</small>')}</span>`;
-    b.onclick=()=>{
-      // 固定TOP10は最新口コミへ最短で到達できるようGoogle Mapsを直接開く。
-      // 通常ランキングは従来どおりアプリ内詳細画面を使う。
-      const isFixedTop10=String(s.placeId||'').startsWith('static-') && shops.length>=10;
-      if(isFixedTop10){
-        const mapsUrl=s.googleMaps || ('https://www.google.com/maps/search/?api=1&query='+encodeURIComponent((s.name||'')+' '+(s.address||'')));
-        window.open(mapsUrl,'_blank','noopener');
-      }else{
-        showDetail(i);
-      }
-    };
+    b.onclick=()=>showDetail(i);
     list.appendChild(b);
   });
 }
@@ -1221,13 +1213,29 @@ drank.textContent =
   `${currentPrefecture} ＞ ${areaName ? areaName + ' ＞ ' : ''}${currentCity} ＞ ${i + 1}位 / Score ${Math.round(s.score)}`;
   dname.textContent = s.name;
   daddr.textContent = s.address;
-  drating.textContent = `★${s.rating}`;
-  if(s.dataSource==='static-free' || s.dataSource==='osm-free'){
-    dreviews.textContent = s.dataSource==='osm-free'
-      ? '口コミ・評価を見る'
-      : (s.reviews ? `口コミ ${s.reviews}件を見る` : '口コミを見る');
+  drating.textContent = s.rating ? `★${s.rating}` : '評価は地図で確認';
+
+  const detailPoints=[s.catchphrase,...(Array.isArray(s.highlights)?s.highlights:[])].filter(Boolean);
+  if(detailPoints.length){
+    dfeatures.classList.remove('hidden');
+    dfeatures.innerHTML='<strong>🥐 この店のポイント</strong><div class="detail-feature-list">'+detailPoints.map(v=>'<div>・'+escapeHtml(v)+'</div>').join('')+'</div>';
+  }else{
+    dfeatures.classList.add('hidden');
+    dfeatures.innerHTML='';
+  }
+
+  const specialInfo=[s.specialHours,s.specialNotice,s.holidayNotice,s.temporaryClosure].filter(Boolean);
+  if(specialInfo.length){
+    dspecial.classList.remove('hidden');
+    dspecial.innerHTML='<strong>📅 特別営業・お知らせ</strong><div>'+specialInfo.map(v=>escapeHtml(v)).join('<br>')+'</div>';
+  }else{
+    dspecial.classList.add('hidden');
+    dspecial.innerHTML='';
+  }
+  if(s.dataSource==='osm-free' || !s.placeId || String(s.placeId).startsWith('static-')){
+    dreviews.textContent = s.reviews ? `口コミ ${s.reviews}件を見る` : '口コミ・評価を見る';
     dreviews.onclick = () => window.open(
-      'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent((s.name||'') + ' ' + (s.address||'')),
+      s.googleMaps || ('https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent((s.name||'') + ' ' + (s.address||''))),
       '_blank','noopener'
     );
   }else{
