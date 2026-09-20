@@ -97,7 +97,9 @@
       "phone": "052-808-7539",
       "website": "",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%81%B1%E3%81%B4%E3%83%BB%E3%81%B1%E3%82%93",
-      "photo": ""
+      "photo": "",
+      "representativeProduct": "バゲット・トラディショナル",
+      "representativeLabel": "公式掲載商品"
     },
     {
       "placeId": "static-nagoya-baguette-rabbit",
@@ -113,7 +115,9 @@
       "phone": "052-779-0006",
       "website": "https://baguette-rabbit.com/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=baguette%20rabbit%20%E7%A4%BE%E5%8F%A3%E6%9C%AC%E5%BA%97",
-      "photo": ""
+      "photo": "",
+      "representativeProduct": "ブール",
+      "representativeLabel": "看板商品"
     },
     {
       "placeId": "static-nagoya-poufrecante",
@@ -145,7 +149,9 @@
       "phone": "0567-96-6646",
       "website": "",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%9D%E3%83%B3%E3%83%AC%E3%83%B4%E3%82%A7%E3%83%83%E3%82%AF",
-      "photo": ""
+      "photo": "",
+      "representativeProduct": "バゲット／明太バゲット",
+      "representativeLabel": "一番人気"
     },
     {
       "placeId": "static-nagoya-tetraconta",
