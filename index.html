@@ -402,7 +402,7 @@ button,.back,.detail-action,.review-trigger{
   </div>
   
   <div class="tabs"><button id="tabAichi" class="active">愛知県</button><button id="tabGifu">岐阜県</button><button id="tabMie">三重県</button></div><div class="notice">
-  <div><strong>Ver.1.49</strong>　愛知県のパン屋情報を拡充中・TOP10写真表示を改善</div>現在は、愛知県内のパン屋をできるだけ多く掲載できるよう、地域ごとに店舗情報を確認・追加している段階です。特に店舗数が少なく表示されている地域を優先して見直しています。名古屋市は16区すべてを調査中です。あわせて、店舗写真を見て選べるカード表示や、スマホ縦画面でも見やすい画面への改善を進めています。今後も確認できた店舗・実店舗写真・営業時間などを順次追加します。実店舗写真が未取得のカードには、同じ画像が並ばないよう複数のAI生成イメージを店舗ごとに分け、AI生成であることを明記します。
+  <div><strong>Ver.1.50</strong>　愛知県のパン屋情報を拡充中・TOP10写真表示を改善</div>現在は、愛知県内のパン屋をできるだけ多く掲載できるよう、地域ごとに店舗情報を確認・追加している段階です。特に店舗数が少なく表示されている地域を優先して見直しています。名古屋市は16区すべてを調査中です。あわせて、店舗写真を見て選べるカード表示や、スマホ縦画面でも見やすい画面への改善を進めています。今後も確認できた店舗・実店舗写真・営業時間などを順次追加します。実店舗写真が未取得のカードには、同じ画像が並ばないよう複数のAI生成イメージを店舗ごとに分け、AI生成であることを明記します。
 </div><div id="aichiPanel"><h2>西三河</h2><div class="cities"><button id="toyota">豊田市</button><button id="okazaki">岡崎市</button><button id="anjo">安城市</button><button id="kariya">刈谷市</button><button id="nishio">西尾市</button>
 <button id="hekinan">碧南市</button>
 <button id="chiryu">知立市</button>
@@ -1064,7 +1064,17 @@ function showRanking() {
       : (hasSymbolVisual ? '<span class="shop-source">店舗を象徴する紹介ビジュアル</span>' : '');
     const distinctive = `${catchphrase}${points}${attribution}`;
     b.innerHTML=`<span class="badge">${i+1}位</span>${photo}<span class="shop-main"><strong class="shop-name">${escapeHtml(s.name)}</strong><span class="muted shop-address">${escapeHtml(s.address)}</span></span>${distinctive ? `<span class="shop-points">${distinctive}</span>` : '<span class="shop-points shop-points-empty"></span>'}<span class="rating">${s.dataSource==='osm-free' ? '<small>公開地図データ</small>' : ('★'+s.rating+'<br><small>口コミ '+s.reviews+'件</small>')}</span>`;
-    b.onclick=()=>showDetail(i);
+    b.onclick=()=>{
+      // 固定TOP10は最新口コミへ最短で到達できるようGoogle Mapsを直接開く。
+      // 通常ランキングは従来どおりアプリ内詳細画面を使う。
+      const isFixedTop10=String(s.placeId||'').startsWith('static-') && shops.length>=10;
+      if(isFixedTop10){
+        const mapsUrl=s.googleMaps || ('https://www.google.com/maps/search/?api=1&query='+encodeURIComponent((s.name||'')+' '+(s.address||'')));
+        window.open(mapsUrl,'_blank','noopener');
+      }else{
+        showDetail(i);
+      }
+    };
     list.appendChild(b);
   });
 }
