@@ -64,7 +64,9 @@
       "highlights": [
         "昔ながらのあんぱんから惣菜パンまで展開",
         "あん食パン・ホイップあんぱんなどもラインナップ"
-      ]
+      ],
+      "representativeProduct": "ホイップあんぱん",
+      "representativeLabel": "人気メニュー"
     },
     {
       "placeId": "static-nagoya-le-supreme",
@@ -85,7 +87,9 @@
       "highlights": [
         "食べログ パン EAST 百名店2026選出",
         "朝8時から営業"
-      ]
+      ],
+      "representativeProduct": "合鴨サンド",
+      "representativeLabel": "人気メニュー"
     },
     {
       "placeId": "static-nagoya-osu-bakery",
@@ -173,7 +177,9 @@
       "highlights": [
         "食べログ パン EAST 百名店2026選出",
         "テイクアウト商品の予約にも対応"
-      ]
+      ],
+      "representativeProduct": "クローネ",
+      "representativeLabel": "口コミで多く挙がるパン"
     },
     {
       "placeId": "static-kanie-pont-leveque",
