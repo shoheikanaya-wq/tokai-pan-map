@@ -349,6 +349,17 @@ button,.back,.detail-action,.review-trigger{
 #list .shop-visual-mark{font-size:42px;line-height:1}
 #list .shop-visual strong{font-size:clamp(16px,2.4vw,25px);line-height:1.15;max-width:95%}
 #list .shop-visual small{font-size:12px;letter-spacing:.08em;color:#765536}
+#list .shop-visual-rank{font-size:10px;font-weight:800;letter-spacing:.12em;opacity:.7}
+#list .visual-1{background:linear-gradient(145deg,#fff3d6,#e9bd72)}
+#list .visual-2{background:linear-gradient(145deg,#f8efe4,#d8b28b)}
+#list .visual-3{background:linear-gradient(145deg,#fff8dc,#e4c985)}
+#list .visual-4{background:linear-gradient(145deg,#f4eee4,#ccb08a)}
+#list .visual-5{background:linear-gradient(145deg,#fff1df,#e3aa78)}
+#list .visual-6{background:linear-gradient(145deg,#f8f0dc,#d5bd7d)}
+#list .visual-7{background:linear-gradient(145deg,#fff5e7,#d9a96f)}
+#list .visual-8{background:linear-gradient(145deg,#f4ead8,#cfa775)}
+#list .visual-9{background:linear-gradient(145deg,#fff4d8,#ddb86d)}
+#list .visual-10{background:linear-gradient(145deg,#f7ecdf,#cda37c)}
 
 #list .shop-main{padding:10px 12px 4px}
 #list .shop-name{font-size:16px;line-height:1.3;margin:0 0 5px}
@@ -386,7 +397,7 @@ button,.back,.detail-action,.review-trigger{
   </div>
   
   <div class="tabs"><button id="tabAichi" class="active">愛知県</button><button id="tabGifu">岐阜県</button><button id="tabMie">三重県</button></div><div class="notice">
-  <div><strong>Ver.1.45</strong>　愛知県のパン屋情報を拡充中・TOP10写真表示を改善</div>現在は、愛知県内のパン屋をできるだけ多く掲載できるよう、地域ごとに店舗情報を確認・追加している段階です。特に店舗数が少なく表示されている地域を優先して見直しています。名古屋市は16区すべてを調査中です。あわせて、店舗写真を見て選べるカード表示や、スマホ縦画面でも見やすい画面への改善を進めています。今後も確認できた店舗・実店舗写真・営業時間などを順次追加します。実店舗写真が未取得のカードには、同じ画像が並ばないよう複数のAI生成イメージを店舗ごとに分け、AI生成であることを明記します。
+  <div><strong>Ver.1.46</strong>　愛知県のパン屋情報を拡充中・TOP10写真表示を改善</div>現在は、愛知県内のパン屋をできるだけ多く掲載できるよう、地域ごとに店舗情報を確認・追加している段階です。特に店舗数が少なく表示されている地域を優先して見直しています。名古屋市は16区すべてを調査中です。あわせて、店舗写真を見て選べるカード表示や、スマホ縦画面でも見やすい画面への改善を進めています。今後も確認できた店舗・実店舗写真・営業時間などを順次追加します。実店舗写真が未取得のカードには、同じ画像が並ばないよう複数のAI生成イメージを店舗ごとに分け、AI生成であることを明記します。
 </div><div id="aichiPanel"><h2>西三河</h2><div class="cities"><button id="toyota">豊田市</button><button id="okazaki">岡崎市</button><button id="anjo">安城市</button><button id="kariya">刈谷市</button><button id="nishio">西尾市</button>
 <button id="hekinan">碧南市</button>
 <button id="chiryu">知立市</button>
@@ -1028,11 +1039,13 @@ function showRanking() {
     const addressText=String(s.address||'');
     const areaMatch=addressText.match(/(?:愛知県)?([^市郡]+市|名古屋市[^区]*区|[^郡]+郡[^町村]*[町村])/);
     const areaLabel=areaMatch ? areaMatch[1] : (currentCity||currentPrefecture||'東海');
-    const breadMark=['🥐','🥖','🍞','🥯','🥨'][i%5];
+    const breadMarks=['🥐','🥖','🍞','🥯','🥨','🥪','🥐','🥖','🍞','🥯'];
+    const breadMark=breadMarks[i%breadMarks.length];
+    const visualClass='shop-visual visual-'+((i%10)+1);
     const photoAlt=hasRealPhoto ? (s.photoAlt || (s.name+' 店舗写真')) : (s.name+' 店舗紹介ビジュアル');
     const photo = hasRealPhoto
       ? `<img src="${escapeHtml(s.photo)}" alt="${escapeHtml(photoAlt)}" loading="lazy" referrerpolicy="no-referrer-when-downgrade">`
-      : `<span class="shop-visual" role="img" aria-label="${escapeHtml(photoAlt)}"><span class="shop-visual-mark">${breadMark}</span><strong>${escapeHtml(s.name)}</strong><small>${escapeHtml(areaLabel)} · BAKERY</small></span>`;
+      : `<span class="${visualClass}" role="img" aria-label="${escapeHtml(photoAlt)}"><span class="shop-visual-rank">AICHI TOP10 · ${i+1}</span><span class="shop-visual-mark">${breadMark}</span><strong>${escapeHtml(s.name)}</strong><small>${escapeHtml(areaLabel)} · BAKERY</small></span>`;
     const factCopy=buildFactCatch(s,usedFeatureLabels);
     const displayHighlights=(Array.isArray(s.highlights)&&s.highlights.length)
       ? s.highlights.slice(0,2) : factCopy.highlights;
