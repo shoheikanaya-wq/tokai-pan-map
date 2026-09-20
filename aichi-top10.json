@@ -17,7 +17,12 @@
       "phone": "052-263-3371",
       "website": "https://www.instagram.com/suripu_3/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=SURIPU%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E4%B8%AD%E5%8C%BA%E5%8D%83%E4%BB%A3%E7%94%B02-16-20",
-      "photo": ""
+      "photo": "",
+      "catchphrase": "鶴舞で支持を集める人気ベーカリー",
+      "highlights": [
+        "クロワッサンもファンの多い一品",
+        "鶴舞駅から徒歩圏"
+      ]
     },
     {
       "placeId": "static-nagoya-terreaterre",
@@ -33,7 +38,12 @@
       "phone": "052-930-5445",
       "website": "https://www.terreaterre.jp/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%86%E3%83%BC%E3%83%A9%E3%83%BB%E3%83%86%E3%83%BC%E3%83%AB%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E6%9D%B1%E5%8C%BA%E6%B3%893-28-3",
-      "photo": ""
+      "photo": "",
+      "catchphrase": "高岳のベーカリー＆カフェ",
+      "highlights": [
+        "パンを買うだけでなくカフェ利用も可能",
+        "高岳駅から徒歩約5分"
+      ]
     },
     {
       "placeId": "static-nagoya-kokoro-jr",
@@ -49,7 +59,12 @@
       "phone": "052-565-0980",
       "website": "",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%81%93%E3%81%93%E3%82%8D%E3%81%AB%E3%81%82%E3%81%BE%E3%81%84%E3%81%82%E3%82%93%E3%81%B1%E3%82%93%E3%82%84%20JR%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%BA%97",
-      "photo": ""
+      "photo": "",
+      "catchphrase": "名古屋駅で楽しむ、あんぱん専門色の強い店",
+      "highlights": [
+        "昔ながらのあんぱんから惣菜パンまで展開",
+        "あん食パン・ホイップあんぱんなどもラインナップ"
+      ]
     },
     {
       "placeId": "static-nagoya-le-supreme",
@@ -65,7 +80,12 @@
       "phone": "",
       "website": "https://lesupreme.jp/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=Le%20Supreme.%20%E6%A0%84%E7%94%9F%E6%9C%AC%E5%BA%97",
-      "photo": ""
+      "photo": "",
+      "catchphrase": "栄生駅すぐ、パン・サンドイッチ・ケーキまで揃う店",
+      "highlights": [
+        "食べログ パン EAST 百名店2026選出",
+        "朝8時から営業"
+      ]
     },
     {
       "placeId": "static-nagoya-osu-bakery",
@@ -81,7 +101,12 @@
       "phone": "052-262-0075",
       "website": "",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E9%A0%88%E3%83%99%E3%83%BC%E3%82%AB%E3%83%AA%E3%83%BC",
-      "photo": ""
+      "photo": "",
+      "catchphrase": "大須で立ち寄りやすい街のベーカリー",
+      "highlights": [
+        "パンに加えてベーグル・サンドイッチも展開",
+        "上前津駅から徒歩圏"
+      ]
     },
     {
       "placeId": "static-nagoya-papipan",
@@ -99,7 +124,12 @@
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%81%B1%E3%81%B4%E3%83%BB%E3%81%B1%E3%82%93",
       "photo": "",
       "representativeProduct": "バゲット・トラディショナル",
-      "representativeLabel": "公式掲載商品"
+      "representativeLabel": "公式掲載商品",
+      "catchphrase": "フランス伝統製法と御影石床オーブンが持ち味",
+      "highlights": [
+        "バゲットは仕込みから焼き上げまで16時間",
+        "低温長時間発酵で粉本来の風味を引き出す"
+      ]
     },
     {
       "placeId": "static-nagoya-baguette-rabbit",
@@ -117,7 +147,12 @@
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=baguette%20rabbit%20%E7%A4%BE%E5%8F%A3%E6%9C%AC%E5%BA%97",
       "photo": "",
       "representativeProduct": "ブール",
-      "representativeLabel": "看板商品"
+      "representativeLabel": "看板商品",
+      "catchphrase": "高加水パンと自家製粉が看板のブーランジェリー",
+      "highlights": [
+        "看板商品「ブール」は加水率90%以上のもちもち食感",
+        "店内の石臼で挽いた小麦を使うパンも展開"
+      ]
     },
     {
       "placeId": "static-nagoya-poufrecante",
@@ -133,7 +168,12 @@
       "phone": "052-858-2577",
       "website": "",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%97%E3%83%BC%E3%83%95%E3%83%AC%E3%82%AB%E3%83%B3%E3%83%86",
-      "photo": ""
+      "photo": "",
+      "catchphrase": "瑞穂で長く支持されるパン＆サンドイッチの店",
+      "highlights": [
+        "食べログ パン EAST 百名店2026選出",
+        "テイクアウト商品の予約にも対応"
+      ]
     },
     {
       "placeId": "static-kanie-pont-leveque",
@@ -151,7 +191,12 @@
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%9D%E3%83%B3%E3%83%AC%E3%83%B4%E3%82%A7%E3%83%83%E3%82%AF",
       "photo": "",
       "representativeProduct": "バゲット／明太バゲット",
-      "representativeLabel": "一番人気"
+      "representativeLabel": "一番人気",
+      "catchphrase": "パンだけでなくカフェ・料理も楽しめる蟹江の店",
+      "highlights": [
+        "パン・カフェに加えて鍋料理も扱う個性的な構成",
+        "食べログ パン EAST 百名店2026選出"
+      ]
     },
     {
       "placeId": "static-nagoya-tetraconta",
@@ -167,7 +212,12 @@
       "phone": "052-937-7555",
       "website": "",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%86%E3%83%88%E3%83%A9%20%E3%82%B3%E3%83%B3%E3%82%BF",
-      "photo": ""
+      "photo": "",
+      "catchphrase": "白壁の小さなベーカリー、季節商品もこまめに登場",
+      "highlights": [
+        "パン・ベーグル・洋菓子を展開",
+        "公式ブログで季節パンや最新パンリストを発信"
+      ]
     }
   ]
 }
