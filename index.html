@@ -402,7 +402,7 @@ button,.back,.detail-action,.review-trigger{
   </div>
   
   <div class="tabs"><button id="tabAichi" class="active">愛知県</button><button id="tabGifu">岐阜県</button><button id="tabMie">三重県</button></div><div class="notice">
-  <div><strong>Ver.1.48</strong>　愛知県のパン屋情報を拡充中・TOP10写真表示を改善</div>現在は、愛知県内のパン屋をできるだけ多く掲載できるよう、地域ごとに店舗情報を確認・追加している段階です。特に店舗数が少なく表示されている地域を優先して見直しています。名古屋市は16区すべてを調査中です。あわせて、店舗写真を見て選べるカード表示や、スマホ縦画面でも見やすい画面への改善を進めています。今後も確認できた店舗・実店舗写真・営業時間などを順次追加します。実店舗写真が未取得のカードには、同じ画像が並ばないよう複数のAI生成イメージを店舗ごとに分け、AI生成であることを明記します。
+  <div><strong>Ver.1.49</strong>　愛知県のパン屋情報を拡充中・TOP10写真表示を改善</div>現在は、愛知県内のパン屋をできるだけ多く掲載できるよう、地域ごとに店舗情報を確認・追加している段階です。特に店舗数が少なく表示されている地域を優先して見直しています。名古屋市は16区すべてを調査中です。あわせて、店舗写真を見て選べるカード表示や、スマホ縦画面でも見やすい画面への改善を進めています。今後も確認できた店舗・実店舗写真・営業時間などを順次追加します。実店舗写真が未取得のカードには、同じ画像が並ばないよう複数のAI生成イメージを店舗ごとに分け、AI生成であることを明記します。
 </div><div id="aichiPanel"><h2>西三河</h2><div class="cities"><button id="toyota">豊田市</button><button id="okazaki">岡崎市</button><button id="anjo">安城市</button><button id="kariya">刈谷市</button><button id="nishio">西尾市</button>
 <button id="hekinan">碧南市</button>
 <button id="chiryu">知立市</button>
@@ -970,9 +970,9 @@ function buildFactCatch(shop,usedLabels){
   // TOP10中央は店舗固有特色専用。定型の営業時間・評価文は出さない。
   const labels=(Array.isArray(shop.featureLabels)?shop.featureLabels:[])
     .map(normalizeFeatureLabel).filter(Boolean);
-  if(shop.featureLoadError && !labels.length) return {catchphrase:'特色を再確認中…',highlights:[]};
+  if(shop.featureLoadError && !labels.length) return {catchphrase:'',highlights:[]};
   if(shop.featuresLoaded && !labels.length) return {catchphrase:'店舗固有情報を準備中',highlights:[]};
-  if(!labels.length) return {catchphrase:'特色を確認中…',highlights:[]};
+  if(!labels.length) return {catchphrase:'',highlights:[]};
   const used=usedLabels||new Set();
   const chosen=labels.find(v=>!used.has(v))||labels[0];
   used.add(chosen);
