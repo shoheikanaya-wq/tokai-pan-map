@@ -341,7 +341,8 @@ button,.back,.detail-action,.review-trigger{
 /* ===== 写真タップ型ランキングカード（外観写真対応） ===== */
 #list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 #list .rank-card{position:relative;display:grid;grid-template-columns:1fr;gap:0;align-content:start;overflow:hidden;padding:0!important;margin:0!important;min-height:0;border-radius:16px;background:#fff;text-align:left}
-#list .rank-card .badge{position:absolute;z-index:2;top:9px;left:9px;padding:5px 9px;border-radius:999px;background:rgba(255,255,255,.94);box-shadow:0 2px 8px rgba(0,0,0,.16);font-size:14px;font-weight:800}
+#list .rank-card .badge{position:static;display:inline-block;flex:0 0 auto;padding:3px 7px;border-radius:999px;background:#f3e6cf;box-shadow:none;font-size:14px;font-weight:900;line-height:1.2}
+#list .shop-title-row{display:flex;align-items:baseline;gap:7px;margin:0 0 3px}
 #list .shop-photo{width:100%;height:auto;aspect-ratio:16/10;border-radius:0;background:linear-gradient(135deg,#eee9e2,#ddd4c9);font-size:0;color:#756b61}
 #list .shop-photo img{width:100%;height:100%;object-fit:cover}
 #list .shop-photo .photo-pending{width:100%;height:100%;display:grid;place-items:center;text-align:center;font-size:12px;font-weight:700;line-height:1.4;color:#756b61;background:linear-gradient(135deg,#f3f0ec,#e4ddd5)}
@@ -352,7 +353,7 @@ button,.back,.detail-action,.review-trigger{
 #list .shop-visual-rank{font-size:10px;font-weight:800;letter-spacing:.12em;opacity:.7}
 #list .shop-visual-product{font-size:11px;font-weight:700;line-height:1.25;padding:4px 8px;border-radius:999px;background:rgba(255,255,255,.58);max-width:94%}
 #list .rank-card.no-visual{display:block;min-height:0;padding:10px!important}
-#list .rank-card.no-visual .badge{position:static;display:inline-block;margin:0 0 4px;padding:3px 7px;font-size:13px;box-shadow:none}
+#list .rank-card.no-visual .badge{margin:0;padding:3px 7px;font-size:13px}
 #list .rank-card.no-visual .shop-main{padding:0}
 #list .rank-card.no-visual .shop-points{margin:5px 0 0;padding:5px 0 0}
 #list .rank-card.no-visual .rating{padding:5px 0 0}
@@ -377,7 +378,7 @@ button,.back,.detail-action,.review-trigger{
 @media(max-width:600px){
   #list{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
   #list .rank-card{border-radius:11px}
-  #list .rank-card .badge{top:6px;left:6px;padding:4px 6px;font-size:10px}
+  #list .rank-card .badge{padding:3px 6px;font-size:12px}
   #list .shop-photo{width:100%;height:auto;aspect-ratio:4/3;border-radius:0}
   #list .shop-photo .photo-pending{font-size:9px}
   #list .shop-main{padding:7px 8px 2px}
@@ -388,7 +389,7 @@ button,.back,.detail-action,.review-trigger{
   #list .rank-card .rating{padding:4px 8px 7px;text-align:left;font-size:14px;line-height:1.1}
   #list .rank-card .rating small{font-size:9px}
   #list .rank-card.no-visual{padding:8px!important}
-  #list .rank-card.no-visual .badge{font-size:11px;margin-bottom:3px}
+  #list .rank-card.no-visual .badge{font-size:12px;margin:0}
   #list .rank-card.no-visual .shop-main{padding:0}
   #list .rank-card.no-visual .shop-points{margin:4px 0 0;padding-top:4px}
   #list .rank-card.no-visual .rating{padding:4px 0 0}
@@ -409,7 +410,7 @@ button,.back,.detail-action,.review-trigger{
   </div>
   
   <div class="tabs"><button id="tabAichi" class="active">愛知県</button><button id="tabGifu">岐阜県</button><button id="tabMie">三重県</button></div><div class="notice">
-  <div><strong>Ver.1.51</strong>　愛知県のパン屋情報を拡充中・TOP10写真表示を改善</div>現在は、愛知県内のパン屋をできるだけ多く掲載できるよう、地域ごとに店舗情報を確認・追加している段階です。特に店舗数が少なく表示されている地域を優先して見直しています。名古屋市は16区すべてを調査中です。あわせて、店舗写真を見て選べるカード表示や、スマホ縦画面でも見やすい画面への改善を進めています。今後も確認できた店舗・実店舗写真・営業時間などを順次追加します。実店舗写真が未取得のカードには、同じ画像が並ばないよう複数のAI生成イメージを店舗ごとに分け、AI生成であることを明記します。
+  <div><strong>Ver.1.52</strong>　愛知県のパン屋情報を拡充中・TOP10写真表示を改善</div>現在は、愛知県内のパン屋をできるだけ多く掲載できるよう、地域ごとに店舗情報を確認・追加している段階です。特に店舗数が少なく表示されている地域を優先して見直しています。名古屋市は16区すべてを調査中です。あわせて、店舗写真を見て選べるカード表示や、スマホ縦画面でも見やすい画面への改善を進めています。今後も確認できた店舗・実店舗写真・営業時間などを順次追加します。実店舗写真が未取得のカードには、同じ画像が並ばないよう複数のAI生成イメージを店舗ごとに分け、AI生成であることを明記します。
 </div><div id="aichiPanel"><h2>西三河</h2><div class="cities"><button id="toyota">豊田市</button><button id="okazaki">岡崎市</button><button id="anjo">安城市</button><button id="kariya">刈谷市</button><button id="nishio">西尾市</button>
 <button id="hekinan">碧南市</button>
 <button id="chiryu">知立市</button>
@@ -1070,7 +1071,7 @@ function showRanking() {
       ? (s.photoAttribution ? `<span class="shop-source">写真: ${escapeHtml(s.photoAttribution)}</span>` : '')
       : (hasSymbolVisual ? '<span class="shop-source">店舗を象徴する紹介ビジュアル</span>' : '');
     const distinctive = `${catchphrase}${points}${attribution}`;
-    b.innerHTML=`<span class="badge">${i+1}位</span>${photo}<span class="shop-main"><strong class="shop-name">${escapeHtml(s.name)}</strong><span class="muted shop-address">${escapeHtml(s.address)}</span></span>${distinctive ? `<span class="shop-points">${distinctive}</span>` : ''}<span class="rating">${s.dataSource==='osm-free' ? '<small>公開地図データ</small>' : ('★'+s.rating+'<br><small>口コミ '+s.reviews+'件</small>')}</span>`;
+    b.innerHTML=`${photo}<span class="shop-main"><span class="shop-title-row"><strong class="badge">${i+1}位</strong><strong class="shop-name">${escapeHtml(s.name)}</strong></span><span class="muted shop-address">${escapeHtml(s.address)}</span></span>${distinctive ? `<span class="shop-points">${distinctive}</span>` : ''}<span class="rating">${s.dataSource==='osm-free' ? '<small>公開地図データ</small>' : ('★'+s.rating+'<br><small>口コミ '+s.reviews+'件</small>')}</span>`;
     b.onclick=()=>{
       // 固定TOP10は最新口コミへ最短で到達できるようGoogle Mapsを直接開く。
       // 通常ランキングは従来どおりアプリ内詳細画面を使う。
