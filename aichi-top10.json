@@ -1,0 +1,167 @@
+{
+  "source": "tabelog-aichi-ranking-2026-09-01",
+  "updatedAt": "2026-09-20",
+  "attribution": "愛知県パン人気ランキング（2026-09-01更新）を基準に固定。店舗情報は公開情報で照合。",
+  "shops": [
+    {
+      "placeId": "static-nagoya-suripu",
+      "name": "SURIPU",
+      "rating": 3.73,
+      "reviews": 1320,
+      "address": "愛知県名古屋市中区千代田2-16-20",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "052-263-3371",
+      "website": "https://www.instagram.com/suripu_3/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=SURIPU%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E4%B8%AD%E5%8C%BA%E5%8D%83%E4%BB%A3%E7%94%B02-16-20",
+      "photo": ""
+    },
+    {
+      "placeId": "static-nagoya-terreaterre",
+      "name": "テーラ・テール",
+      "rating": 3.72,
+      "reviews": 1290,
+      "address": "愛知県名古屋市東区泉3-28-3",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "052-930-5445",
+      "website": "https://www.terreaterre.jp/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%86%E3%83%BC%E3%83%A9%E3%83%BB%E3%83%86%E3%83%BC%E3%83%AB%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E6%9D%B1%E5%8C%BA%E6%B3%893-28-3",
+      "photo": ""
+    },
+    {
+      "placeId": "static-nagoya-kokoro-jr",
+      "name": "こころにあまいあんぱんや JR名古屋店",
+      "rating": 3.68,
+      "reviews": 1255,
+      "address": "愛知県名古屋市中村区名駅1-1-4 名古屋駅構内",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "052-565-0980",
+      "website": "",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%81%93%E3%81%93%E3%82%8D%E3%81%AB%E3%81%82%E3%81%BE%E3%81%84%E3%81%82%E3%82%93%E3%81%B1%E3%82%93%E3%82%84%20JR%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%BA%97",
+      "photo": ""
+    },
+    {
+      "placeId": "static-nagoya-le-supreme",
+      "name": "Le Supreme. 栄生本店",
+      "rating": 3.68,
+      "reviews": 730,
+      "address": "愛知県名古屋市中村区栄生町7-8",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "",
+      "website": "https://lesupreme.jp/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=Le%20Supreme.%20%E6%A0%84%E7%94%9F%E6%9C%AC%E5%BA%97",
+      "photo": ""
+    },
+    {
+      "placeId": "static-nagoya-osu-bakery",
+      "name": "大須ベーカリー",
+      "rating": 3.65,
+      "reviews": 691,
+      "address": "愛知県名古屋市中区大須3-27-18",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "052-262-0075",
+      "website": "",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E9%A0%88%E3%83%99%E3%83%BC%E3%82%AB%E3%83%AA%E3%83%BC",
+      "photo": ""
+    },
+    {
+      "placeId": "static-nagoya-papipan",
+      "name": "ブランジェリー ぱぴ・ぱん",
+      "rating": 3.65,
+      "reviews": 493,
+      "address": "愛知県名古屋市天白区植田3-1209-1 サンテラスタカギ1F",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "052-808-7539",
+      "website": "",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%81%B1%E3%81%B4%E3%83%BB%E3%81%B1%E3%82%93",
+      "photo": ""
+    },
+    {
+      "placeId": "static-nagoya-baguette-rabbit",
+      "name": "baguette rabbit 社口本店",
+      "rating": 3.65,
+      "reviews": 479,
+      "address": "愛知県名古屋市名東区社口1-916",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "052-779-0006",
+      "website": "https://baguette-rabbit.com/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=baguette%20rabbit%20%E7%A4%BE%E5%8F%A3%E6%9C%AC%E5%BA%97",
+      "photo": ""
+    },
+    {
+      "placeId": "static-nagoya-poufrecante",
+      "name": "プーフレカンテ",
+      "rating": 3.65,
+      "reviews": 450,
+      "address": "愛知県名古屋市瑞穂区豊岡通1-25",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "052-858-2577",
+      "website": "",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%97%E3%83%BC%E3%83%95%E3%83%AC%E3%82%AB%E3%83%B3%E3%83%86",
+      "photo": ""
+    },
+    {
+      "placeId": "static-kanie-pont-leveque",
+      "name": "ポンレヴェック",
+      "rating": 3.63,
+      "reviews": 561,
+      "address": "愛知県海部郡蟹江町学戸2-38",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "0567-96-6646",
+      "website": "",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%9D%E3%83%B3%E3%83%AC%E3%83%B4%E3%82%A7%E3%83%83%E3%82%AF",
+      "photo": ""
+    },
+    {
+      "placeId": "static-nagoya-tetraconta",
+      "name": "テトラ コンタ",
+      "rating": 3.62,
+      "reviews": 287,
+      "address": "愛知県名古屋市東区白壁3-24-58 日興コーポラス202",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "052-937-7555",
+      "website": "",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%86%E3%83%88%E3%83%A9%20%E3%82%B3%E3%83%B3%E3%82%BF",
+      "photo": ""
+    }
+  ]
+}
