@@ -17,15 +17,17 @@
         "10:00–17:00（売り切れ次第終了）",
         "月・木曜定休"
       ],
-      "phone": "",
+      "phone": "052-851-7580",
       "website": "https://yakitatejapan-nagoya.com/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E7%84%BC%E3%81%8D%E3%81%9F%E3%81%A6Ja%E3%83%91%E3%83%B3%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E6%98%AD%E5%92%8C%E5%8C%BA%E6%A1%9C%E5%B1%B1%E7%94%BA1-4%20RS%E3%83%93%E3%83%AB1a",
       "photo": "",
-      "catchphrase": "桜山町の焼きたてパン店",
+      "catchphrase": "桜山の焼きたてパン店。食パンや季節限定パンを展開",
       "highlights": [
         "食パン",
-        "季節限定パン"
-      ]
+        "季節限定パン",
+        "焼きたて"
+      ],
+      "representativeProduct": "食パン"
     },
     {
       "placeId": "static-nagoya-suripu",
@@ -37,15 +39,21 @@
       "types": [
         "bakery"
       ],
-      "openingHours": [],
-      "phone": "",
+      "openingHours": [
+        "08:00–19:00",
+        "定休日 月・火"
+      ],
+      "phone": "052-263-3371",
       "website": "https://www.instagram.com/suripu_3/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=SURIPU%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E4%B8%AD%E5%8C%BA%E5%8D%83%E4%BB%A3%E7%94%B02-16-20",
       "photo": "",
-      "catchphrase": "名古屋市中区のベーカリー",
+      "catchphrase": "鶴舞エリアでハード系から惣菜パンまで幅広く揃える人気ベーカリー",
       "highlights": [
-        "店舗公式情報で確認"
-      ]
+        "ハード系",
+        "惣菜パン",
+        "菓子パン"
+      ],
+      "representativeProduct": "ハード系パン"
     },
     {
       "placeId": "static-nagoya-terreaterre",
@@ -57,15 +65,21 @@
       "types": [
         "bakery"
       ],
-      "openingHours": [],
-      "phone": "",
+      "openingHours": [
+        "10:00–18:00",
+        "定休日 火・水"
+      ],
+      "phone": "052-930-5445",
       "website": "https://www.terreaterre.jp/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%86%E3%83%BC%E3%83%A9%E3%83%BB%E3%83%86%E3%83%BC%E3%83%AB%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E6%9D%B1%E5%8C%BA%E6%B3%893-28-3",
       "photo": "",
-      "catchphrase": "名古屋市東区のベーカリー",
+      "catchphrase": "泉のベーカリー＆カフェ。素材と食感を生かした個性的なパン",
       "highlights": [
-        "店舗公式情報で確認"
-      ]
+        "国産小麦",
+        "カフェ併設",
+        "個性豊かなパン"
+      ],
+      "representativeProduct": "サリュー"
     },
     {
       "placeId": "static-nagoya-baguette-rabbit",
@@ -77,15 +91,21 @@
       "types": [
         "bakery"
       ],
-      "openingHours": [],
-      "phone": "",
+      "openingHours": [
+        "09:00–19:00",
+        "定休日 火"
+      ],
+      "phone": "052-779-0006",
       "website": "https://baguette-rabbit.com/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=baguette%20rabbit%20%E7%A4%BE%E5%8F%A3%E6%9C%AC%E5%BA%97%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E5%90%8D%E6%9D%B1%E5%8C%BA%E7%A4%BE%E5%8F%A31-916",
       "photo": "",
-      "catchphrase": "名古屋市名東区のベーカリー",
+      "catchphrase": "石臼挽き小麦を生かしたハード系が特徴の社口本店",
       "highlights": [
-        "店舗公式情報で確認"
-      ]
+        "ハード系",
+        "石臼挽き小麦",
+        "ブール"
+      ],
+      "representativeProduct": "ブール"
     },
     {
       "placeId": "static-nagoya-pannotora-yagoto",
@@ -97,15 +117,20 @@
       "types": [
         "bakery"
       ],
-      "openingHours": [],
-      "phone": "",
+      "openingHours": [
+        "07:00–19:00"
+      ],
+      "phone": "052-746-0220",
       "website": "https://pannotora.com/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%91%E3%83%B3%E3%81%AE%E3%83%88%E3%83%A9%20%E5%85%AB%E4%BA%8B%E5%BA%97%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E6%98%AD%E5%92%8C%E5%8C%BA%E5%BA%83%E8%B7%AF%E7%94%BA%E6%A2%85%E5%9C%928-1",
       "photo": "",
-      "catchphrase": "名古屋市昭和区のベーカリー",
+      "catchphrase": "焼きたてを次々提供する八事の大型ベーカリー",
       "highlights": [
-        "店舗公式情報で確認"
-      ]
+        "食パン",
+        "焼きたて",
+        "朝7時営業"
+      ],
+      "representativeProduct": "食パン"
     },
     {
       "placeId": "static-nagoya-le-supreme-sako",
@@ -117,15 +142,21 @@
       "types": [
         "bakery"
       ],
-      "openingHours": [],
-      "phone": "",
+      "openingHours": [
+        "08:00–19:00",
+        "定休日 月（祝日の場合は営業の場合あり）"
+      ],
+      "phone": "052-471-3667",
       "website": "https://lesupreme.jp/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=Le%20Supreme.%20%E6%A0%84%E7%94%9F%E6%9C%AC%E5%BA%97%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E4%B8%AD%E6%9D%91%E5%8C%BA%E6%A0%84%E7%94%9F%E7%94%BA7-8",
       "photo": "",
-      "catchphrase": "名古屋市中村区のベーカリー",
+      "catchphrase": "栄生駅近く、フランス系を軸に幅広いパンを揃えるベーカリー",
       "highlights": [
-        "店舗公式情報で確認"
-      ]
+        "クロワッサン",
+        "ハード系",
+        "惣菜パン"
+      ],
+      "representativeProduct": "クロワッサン"
     },
     {
       "placeId": "static-nagoya-kako-bucyo",
@@ -137,15 +168,20 @@
       "types": [
         "bakery"
       ],
-      "openingHours": [],
-      "phone": "",
+      "openingHours": [
+        "07:15–17:00"
+      ],
+      "phone": "052-582-3780",
       "website": "https://kako-coffee.com/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=KAKO%20BUCYO%20COFFEE%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E4%B8%AD%E6%9D%91%E5%8C%BA%E5%90%8D%E9%A7%85%E5%8D%971-10-9",
       "photo": "",
-      "catchphrase": "名古屋市中村区のベーカリー",
+      "catchphrase": "名古屋名物の小倉トーストと自家焙煎コーヒーを楽しめる喫茶店",
       "highlights": [
-        "店舗公式情報で確認"
-      ]
+        "小倉トースト",
+        "自家焙煎コーヒー",
+        "モーニング"
+      ],
+      "representativeProduct": "小倉トースト"
     },
     {
       "placeId": "static-nagoya-tsubame-amagasaka",
@@ -157,15 +193,20 @@
       "types": [
         "bakery"
       ],
-      "openingHours": [],
-      "phone": "",
+      "openingHours": [
+        "08:00–19:00"
+      ],
+      "phone": "052-938-6116",
       "website": "https://tsubamepan.jp/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%81%A4%E3%81%B0%E3%82%81%E3%83%91%E3%83%B3%EF%BC%86Milk%20%E5%B0%BC%E3%82%B1%E5%9D%82%E6%9C%AC%E5%BA%97%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E5%8C%97%E5%8C%BA%E5%A4%A7%E6%9D%891-18-21",
       "photo": "",
-      "catchphrase": "名古屋市北区のベーカリー",
+      "catchphrase": "天然酵母の食パンを中心に楽しめる、つばめパンの本店",
       "highlights": [
-        "店舗公式情報で確認"
-      ]
+        "天然酵母食パン",
+        "小倉トースト",
+        "カフェ"
+      ],
+      "representativeProduct": "天然酵母の食パン"
     },
     {
       "placeId": "static-nagoya-tsubame-kaminokura",
@@ -177,15 +218,20 @@
       "types": [
         "bakery"
       ],
-      "openingHours": [],
-      "phone": "",
+      "openingHours": [
+        "08:00–19:00"
+      ],
+      "phone": "052-875-8788",
       "website": "https://tsubamepan.jp/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E5%A4%A9%E7%84%B6%E9%85%B5%E6%AF%8D%E3%81%AE%E9%A3%9F%E3%83%91%E3%83%B3%E5%B0%82%E9%96%80%E5%BA%97%20%E3%81%A4%E3%81%B0%E3%82%81%E3%83%91%E3%83%B3%EF%BC%86Milk%20%E7%A5%9E%E3%81%AE%E5%80%89%E5%BA%97%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E7%B7%91%E5%8C%BA%E7%A5%9E%E3%81%AE%E5%80%894-183",
       "photo": "",
-      "catchphrase": "名古屋市緑区のベーカリー",
+      "catchphrase": "天然酵母食パンとカフェメニューを楽しめる神の倉店",
       "highlights": [
-        "店舗公式情報で確認"
-      ]
+        "天然酵母食パン",
+        "トースト",
+        "カフェ"
+      ],
+      "representativeProduct": "天然酵母の食パン"
     },
     {
       "placeId": "static-nagoya-pannoie",
@@ -197,15 +243,19 @@
       "types": [
         "bakery"
       ],
-      "openingHours": [],
+      "openingHours": [
+        "営業時間・定休日は公式SNSで確認"
+      ],
       "phone": "",
       "website": "https://www.instagram.com/pannoie_nagoya/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%96%E3%83%BC%E3%83%A9%E3%83%B3%E3%82%B8%E3%82%A7%E3%83%AA%E3%83%BC%E3%81%B1%E3%82%93%E3%81%AE%E3%81%84%E3%81%88%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E5%A4%A9%E7%99%BD%E5%8C%BA",
       "photo": "",
-      "catchphrase": "名古屋市天白区のベーカリー",
+      "catchphrase": "天白区の地域密着型ブーランジェリー",
       "highlights": [
-        "店舗公式情報で確認"
-      ]
+        "地域密着",
+        "焼きたてパン"
+      ],
+      "representativeProduct": "パン各種"
     }
   ]
 }
