@@ -1,6 +1,6 @@
 {
   "source": "static-free-verified",
-  "updatedAt": "2026-09-19",
+  "updatedAt": "2026-09-21",
   "attribution": "津島商工会議所の公開情報を基に確認。来店前に最新情報をご確認ください。",
   "shops": [
     {
@@ -22,8 +22,11 @@
       "photo": "",
       "catchphrase": "毎日手作りのベーグル専門店",
       "highlights": [
-        "約25種類以上"
-      ]
+        "ベーグル専門店",
+        "約25種類以上",
+        "手作り"
+      ],
+      "representativeProduct": "ベーグル各種"
     }
   ]
 }
