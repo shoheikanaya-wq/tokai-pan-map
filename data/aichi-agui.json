@@ -1,11 +1,59 @@
 {
-  "source":"static-free-verified","updatedAt":"2026-09-19",
-  "attribution":"店舗公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。",
-  "shops":[{
-    "placeId":"static-agui-pankobo","name":"パン工房 麦","rating":0,"reviews":0,
-    "address":"愛知県知多郡阿久比町","type":"パン屋","types":["bakery"],
-    "openingHours":[],"phone":"",
-    "website":"","googleMaps":"","photo":"",
-    "catchphrase":"阿久比町のベーカリー","highlights":[]
-  }]
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-21",
+  "attribution": "店舗公式・地域公開情報等を基に確認。営業日は変動するため来店前に最新情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "static-agui-utapan",
+      "name": "うたパン工房",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県知多郡阿久比町矢高五反田28-1",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "日曜 09:00–15:00",
+        "月〜土 定休"
+      ],
+      "phone": "",
+      "website": "https://www.instagram.com/utapan_1023/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "日曜だけ開く阿久比町の小さなパン工房",
+      "highlights": [
+        "日曜限定",
+        "惣菜パン",
+        "バゲット",
+        "駐車場あり"
+      ],
+      "representativeProduct": "バゲット"
+    },
+    {
+      "placeId": "static-agui-ayumado",
+      "name": "野菜パン工房 あゆま堂",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県知多郡阿久比町草木柏原21-1",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "予約販売主体・営業日は公式情報で確認"
+      ],
+      "phone": "",
+      "website": "https://ayumadou.online/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "野菜の水分を生かした生地が特徴の予約販売主体のパン工房",
+      "highlights": [
+        "野菜パン",
+        "予約販売主体",
+        "駐車場あり"
+      ],
+      "representativeProduct": "季節の野菜パン"
+    }
+  ]
 }
