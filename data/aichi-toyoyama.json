@@ -1,6 +1,6 @@
 {
   "source": "static-free-verified",
-  "updatedAt": "2026-09-19",
+  "updatedAt": "2026-09-21",
   "attribution": "店舗公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。",
   "shops": [
     {
@@ -24,8 +24,11 @@
       "catchphrase": "地粉と糀のぱんやさん",
       "highlights": [
         "国産小麦",
+        "地粉",
+        "糀",
         "米糀食パン"
-      ]
+      ],
+      "representativeProduct": "米糀食パン"
     }
   ]
 }
