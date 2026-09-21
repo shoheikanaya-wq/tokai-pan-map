@@ -1,6 +1,6 @@
 {
   "source": "static-free-verified",
-  "updatedAt": "2026-09-19",
+  "updatedAt": "2026-09-21",
   "attribution": "店舗公式サイト等の公開情報を基に確認。来店前に公式情報をご確認ください。",
   "shops": [
     {
@@ -14,17 +14,72 @@
         "bakery"
       ],
       "openingHours": [
-        "営業時間・定休日は来店前に公式情報で確認"
+        "火〜土 09:00–19:30",
+        "定休日 月・日"
       ],
-      "phone": "",
+      "phone": "0561-83-4494",
       "website": "https://montanabakery.jp/",
       "googleMaps": "",
       "photo": "",
-      "catchphrase": "瀬戸市のベーカリー",
+      "catchphrase": "パンと欧風料理を楽しめるベーカリーカフェ",
       "highlights": [
-        "パン",
-        "ベーカリー"
-      ]
+        "ベーカリーカフェ",
+        "テイクアウト",
+        "駐車場あり"
+      ],
+      "representativeProduct": "パン各種"
+    },
+    {
+      "placeId": "static-seto-anopan",
+      "name": "anopan",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県瀬戸市平町1丁目15番地",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "10:00開店・完売次第閉店",
+        "不定休（公式のお休みカレンダー参照）"
+      ],
+      "phone": "0561-82-7767",
+      "website": "https://anopan.net/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "2人で営む瀬戸市の小さなパン屋",
+      "highlights": [
+        "小さなベーカリー",
+        "テイクアウト",
+        "駐車場あり"
+      ],
+      "representativeProduct": "あんバタ"
+    },
+    {
+      "placeId": "static-seto-calme",
+      "name": "Calme（カルム）",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県瀬戸市本郷町285",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "10:30〜売り切れまで",
+        "定休日 火・水（臨時休業あり）"
+      ],
+      "phone": "0561-48-3805",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "薪窯と自然酵母の手づくりパン",
+      "highlights": [
+        "自然酵母",
+        "薪窯焼き",
+        "駐車場あり"
+      ],
+      "representativeProduct": "レーズンパン"
     }
   ]
 }
