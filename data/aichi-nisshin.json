@@ -46,6 +46,88 @@
         "テイクアウト"
       ],
       "representativeProduct": "クロワッサン"
+    },
+    {
+      "placeId": "static-nisshin-risobagel",
+      "name": "RisoBagel",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県日進市岩崎台1-1808 ファミール愛和S",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "08:00–18:00",
+        "定休日 月"
+      ],
+      "phone": "0561-67-2170",
+      "website": "https://risobread.thebase.in/about",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "豊田から日進へ移転した、素材と自家製天然酵母にこだわるベーグル店",
+      "highlights": [
+        "ベーグル",
+        "自家製天然酵母",
+        "地域食材"
+      ],
+      "representativeProduct": "ベーグル"
+    },
+    {
+      "placeId": "static-nisshin-365stand",
+      "name": "BAKER'S&SWEETS THE SAN ROKU GO STAND",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県日進市竹の山1-2009",
+      "type": "パン屋・カフェ",
+      "types": [
+        "bakery",
+        "cafe"
+      ],
+      "openingHours": [
+        "09:00–20:00",
+        "不定休"
+      ],
+      "phone": "0561-73-5665",
+      "website": "https://365stand.com/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "焼き立てパンとコーヒーを2階カフェでも楽しめるベーカリー",
+      "highlights": [
+        "ハード系",
+        "食パン",
+        "スイーツ系",
+        "カフェ"
+      ],
+      "representativeProduct": "焼き立てパン各種"
+    },
+    {
+      "placeId": "static-nisshin-ayumi",
+      "name": "カフェ&ベーカリー あゆみ",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県日進市蟹甲町中島18",
+      "type": "パン屋・カフェ",
+      "types": [
+        "bakery",
+        "cafe"
+      ],
+      "openingHours": [
+        "10:00–15:30",
+        "定休日 水・土・日・祝"
+      ],
+      "phone": "0561-75-5515",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "焼きたて食パンが自慢の日進市図書館西側のベーカリーカフェ",
+      "highlights": [
+        "食パン",
+        "サンドイッチ",
+        "焼き菓子",
+        "イートイン"
+      ],
+      "representativeProduct": "焼きたて食パン"
     }
   ]
 }
