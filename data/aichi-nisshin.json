@@ -1,8 +1,51 @@
 {
-  "source":"static-free-verified","updatedAt":"2026-09-19",
-  "attribution":"店舗公式サイトおよび日進市公開資料を基に確認。来店前に最新情報をご確認ください。",
-  "shops":[
-    {"placeId":"static-nisshin-uchuujin","name":"もしかして宇宙人","rating":0,"reviews":0,"address":"愛知県日進市栄3丁目","type":"パン屋","types":["bakery"],"openingHours":[],"phone":"","website":"https://uchuujin-pan.com/","googleMaps":"","photo":"","catchphrase":"高級食パン専門店","highlights":[]},
-    {"placeId":"static-nisshin-iwasakidai","name":"BREAD IWASAKIDAI","rating":0,"reviews":0,"address":"愛知県日進市岩崎台四丁目412 IWASAKIDAI 1F","type":"パン屋","types":["bakery"],"openingHours":[],"phone":"","website":"","googleMaps":"","photo":"","catchphrase":"岩崎台のベーカリー","highlights":[]}
+  "source": "static-free-verified",
+  "updatedAt": "2026-09-21",
+  "attribution": "店舗公式サイトおよび日進市公開資料を基に確認。来店前に最新情報をご確認ください。",
+  "shops": [
+    {
+      "placeId": "static-nisshin-uchuujin",
+      "name": "もしかして宇宙人",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県日進市栄3丁目",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [],
+      "phone": "",
+      "website": "https://uchuujin-pan.com/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "高級食パン専門店",
+      "highlights": []
+    },
+    {
+      "placeId": "static-nisshin-iwasakidai",
+      "name": "BREAD IWASAKIDAI",
+      "rating": 4.27,
+      "reviews": 49,
+      "address": "愛知県日進市岩崎台4丁目412 ATTE岩崎台 1F",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "10:00–17:00（営業日は公式情報で確認）"
+      ],
+      "phone": "050-8883-4448",
+      "website": "https://b-iwasakidai.take-eats.jp/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "クロワッサンからハード系・惣菜パンまで揃う岩崎台のベーカリー",
+      "highlights": [
+        "クロワッサン",
+        "ハード系",
+        "惣菜パン",
+        "テイクアウト"
+      ],
+      "representativeProduct": "クロワッサン"
+    }
   ]
 }
