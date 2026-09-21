@@ -1,6 +1,6 @@
 {
   "source": "static-free-verified",
-  "updatedAt": "2026-09-19",
+  "updatedAt": "2026-09-21",
   "attribution": "店舗公式サイト・武豊町観光協会の公開情報を基に確認。来店前に最新情報をご確認ください。",
   "shops": [
     {
@@ -21,10 +21,14 @@
       "website": "https://www.ble-pankaido.com/studiobleshop/",
       "googleMaps": "",
       "photo": "",
-      "catchphrase": "無添加の自然派パン",
+      "catchphrase": "無添加にこだわり、体にやさしいパンを焼く武豊本店",
       "highlights": [
-        "昭和51年創業"
-      ]
+        "無添加パン",
+        "自然派",
+        "食パン",
+        "菓子パン"
+      ],
+      "representativeProduct": "無添加食パン"
     }
   ]
 }
