@@ -1,30 +1,89 @@
 {
   "source": "static-free-verified",
-  "updatedAt": "2026-09-19",
+  "updatedAt": "2026-09-21",
   "attribution": "店舗公式サイト等の公開情報を基に確認。来店前に公式情報をご確認ください。",
   "shops": [
     {
-      "placeId": "static-inuyama-boulangeriepourvous",
-      "name": "Boulangerie Pour Vous",
+      "placeId": "static-inuyama-pourvous-station",
+      "name": "Boulangerie Pour Vous 犬山店",
       "rating": 0,
       "reviews": 0,
-      "address": "愛知県犬山市羽黒新田郷東11-2",
+      "address": "愛知県犬山市犬山富士見町14 名鉄犬山駅2F",
       "type": "パン屋",
       "types": [
         "bakery"
       ],
       "openingHours": [
-        "営業時間・定休日は来店前に公式情報で確認"
+        "水・木・金 07:00–19:00",
+        "土・祝 09:00–18:00",
+        "定休日 日・月・火"
       ],
-      "phone": "",
+      "phone": "0568-68-6866",
       "website": "https://www.boulangerie-pourvous.com/",
       "googleMaps": "",
       "photo": "",
-      "catchphrase": "犬山市羽黒のベーカリー",
+      "catchphrase": "犬山駅構内、北海道産小麦100％のパンと焼き菓子",
       "highlights": [
-        "パン",
-        "ベーカリー"
-      ]
+        "北海道産小麦100％",
+        "クロワッサン",
+        "サンドイッチ",
+        "駅構内"
+      ],
+      "representativeProduct": "発酵バターのクロワッサン"
+    },
+    {
+      "placeId": "static-inuyama-raika",
+      "name": "ベーカリーカフェ 来果",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県犬山市",
+      "type": "パン屋・カフェ",
+      "types": [
+        "bakery",
+        "cafe"
+      ],
+      "openingHours": [
+        "営業時間・営業日は公式情報で確認"
+      ],
+      "phone": "",
+      "website": "https://bakery-raika.jimdofree.com/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "焼きたてパンをイートインでも楽しめるベーカリーカフェ",
+      "highlights": [
+        "イートイン",
+        "ランチ",
+        "予約販売",
+        "アニマル食パン"
+      ],
+      "representativeProduct": "くまのこパン"
+    },
+    {
+      "placeId": "static-inuyama-breadespresso",
+      "name": "パンとエスプレッソと犬山城",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県犬山市大字犬山字東古券57番地",
+      "type": "パン屋・カフェ",
+      "types": [
+        "bakery",
+        "cafe"
+      ],
+      "openingHours": [
+        "営業時間・定休日は公式SNSで確認"
+      ],
+      "phone": "0568-48-1339",
+      "website": "https://bread-espresso.jp/shop/bread-espresso-and-inuyamacstl.html",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "犬山城下町でパンとコーヒーを楽しめるベーカリーカフェ",
+      "highlights": [
+        "城下町",
+        "ベーカリー",
+        "エスプレッソ",
+        "カフェ"
+      ],
+      "representativeProduct": "パン各種"
     }
   ]
 }
