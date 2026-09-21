@@ -1,6 +1,6 @@
 {
   "source": "static-free-verified",
-  "updatedAt": "2026-09-19",
+  "updatedAt": "2026-09-21",
   "attribution": "店舗情報は公開情報を基に確認。来店前に公式情報をご確認ください。",
   "shops": [
     {
@@ -14,17 +14,125 @@
         "bakery"
       ],
       "openingHours": [
-        "平日（月～金）焼きたてパン販売"
+        "平日（月〜金）焼きたてパン販売"
       ],
       "phone": "0533-86-3622",
       "website": "https://www.bakeshop-kanou.com/",
       "googleMaps": "",
       "photo": "",
-      "catchphrase": "豊川市役所前の焼きたてパン店",
+      "catchphrase": "市役所前で約60種類の菓子パンと15種類の食パンを日替わり販売",
       "highlights": [
-        "菓子パン約60種類",
-        "食パン約15種類を日替わり"
-      ]
+        "焼きたてパン",
+        "サンドイッチ",
+        "パン配達"
+      ],
+      "representativeProduct": "北海道産メロンのパン"
+    },
+    {
+      "placeId": "static-toyokawa-yamato",
+      "name": "ヤマトパン",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県豊川市古宿町市道43",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "10:00–18:30",
+        "休日 金・土・日・祝日"
+      ],
+      "phone": "0533-86-2147",
+      "website": "https://yamatopan.co.jp/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "創業以来の手づくりを貫く豊川の老舗パンメーカー",
+      "highlights": [
+        "全商品手づくり",
+        "天然酵母",
+        "直売"
+      ],
+      "representativeProduct": "無添加食パン"
+    },
+    {
+      "placeId": "static-toyokawa-garbo",
+      "name": "boulangerie GARBO",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県豊川市中条町広口7-4",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "平日 08:00–17:00",
+        "土・日・祝 07:00–17:00",
+        "定休日 月"
+      ],
+      "phone": "0533-56-9105",
+      "website": "https://www.izumo-card.jp/shop/671",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "厳選食材で毎日60〜100種類を手作りするベーカリー",
+      "highlights": [
+        "種類豊富",
+        "手づくり",
+        "朝7時営業あり"
+      ],
+      "representativeProduct": "手づくりパン各種"
+    },
+    {
+      "placeId": "static-toyokawa-porco",
+      "name": "PORCO",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県豊川市御津町西方源農1-5",
+      "type": "パン屋",
+      "types": [
+        "bakery",
+        "cafe"
+      ],
+      "openingHours": [
+        "11:00–18:00（L.O.17:30）",
+        "定休日 火・水"
+      ],
+      "phone": "",
+      "website": "https://porco-toyokawa.com/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "焼き菓子とパン、コーヒーを楽しめる御津町の店",
+      "highlights": [
+        "ベーカリー",
+        "コーヒー",
+        "焼き菓子"
+      ],
+      "representativeProduct": "焼きたてパン各種"
+    },
+    {
+      "placeId": "static-toyokawa-bonvoyage",
+      "name": "ボン・ボヤージュ",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県豊川市御油町美世賜123-1",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "08:00–18:00",
+        "定休日 火"
+      ],
+      "phone": "0533-87-8118",
+      "website": "https://www.bonvoyage-goyu.com/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "自家製天然酵母で長時間熟成する御油町の手作りパン店",
+      "highlights": [
+        "自家製天然酵母",
+        "フランスパン",
+        "惣菜パン"
+      ],
+      "representativeProduct": "フランスパン"
     }
   ]
 }
