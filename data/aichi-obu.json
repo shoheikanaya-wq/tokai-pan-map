@@ -29,6 +29,58 @@
         "大府駅徒歩圏"
       ],
       "representativeProduct": "小麦子食パン"
+    },
+    {
+      "placeId": "static-obu-pantoka",
+      "name": "Bread Factory PANTOKA",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県大府市東新町5丁目377 エクセレント東新1F",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "10:00〜",
+        "定休日 日・月"
+      ],
+      "phone": "0562-38-6386",
+      "website": "",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "共和エリアのベーカリー。パンとソフトクリームを扱う",
+      "highlights": [
+        "ベーカリー",
+        "ソフトクリーム",
+        "駐車場あり"
+      ],
+      "representativeProduct": "パン各種"
+    },
+    {
+      "placeId": "static-obu-rizcloture",
+      "name": "リクロチュール",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県大府市柊山町7-46-3",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "水・木・土・日 09:30–18:00",
+        "定休日 月・火・金"
+      ],
+      "phone": "0562-85-7754",
+      "website": "https://www.instagram.com/rizcloture/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "柊山町の一軒家ベーカリー",
+      "highlights": [
+        "ハード系パン",
+        "テイクアウト",
+        "駐車場あり"
+      ],
+      "representativeProduct": "ハード系パン"
     }
   ]
 }
