@@ -1,6 +1,6 @@
 {
   "source": "static-free-verified",
-  "updatedAt": "2026-09-19",
+  "updatedAt": "2026-09-21",
   "attribution": "店舗公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。",
   "shops": [
     {
@@ -14,17 +14,21 @@
         "bakery"
       ],
       "openingHours": [
-        "木・土 10:00–18:00（不定、売り切れ次第終了）"
+        "木・土 10:00–18:00",
+        "臨時営業日あり・売り切れ次第終了"
       ],
       "phone": "080-3651-5695",
       "website": "https://www.komugiko.jp/",
       "googleMaps": "",
       "photo": "",
-      "catchphrase": "パン・ケーキ・フルーツサンド専門店",
+      "catchphrase": "週2日を中心に焼くパン・ケーキ・フルーツサンド専門店",
       "highlights": [
         "食パン",
-        "マフィン"
-      ]
+        "フルーツサンド",
+        "予約対応",
+        "大府駅徒歩圏"
+      ],
+      "representativeProduct": "小麦子食パン"
     }
   ]
 }
