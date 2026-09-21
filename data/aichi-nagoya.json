@@ -1,6 +1,6 @@
 {
   "source": "static-free-verified",
-  "updatedAt": "2026-09-19",
+  "updatedAt": "2026-09-21",
   "attribution": "各店舗・ブランドの公式公開情報を基に確認。来店前に公式情報をご確認ください。",
   "shops": [
     {
@@ -48,7 +48,7 @@
       ]
     },
     {
-      "placeId": "static-nagoya-",
+      "placeId": "static-nagoya-terreaterre",
       "name": "テーラ・テール",
       "rating": 0,
       "reviews": 0,
@@ -88,7 +88,7 @@
       ]
     },
     {
-      "placeId": "static-nagoya-",
+      "placeId": "static-nagoya-pannotora-yagoto",
       "name": "パンのトラ 八事店",
       "rating": 0,
       "reviews": 0,
@@ -108,7 +108,7 @@
       ]
     },
     {
-      "placeId": "static-nagoya-le-supreme",
+      "placeId": "static-nagoya-le-supreme-sako",
       "name": "Le Supreme. 栄生本店",
       "rating": 0,
       "reviews": 0,
@@ -128,7 +128,7 @@
       ]
     },
     {
-      "placeId": "static-nagoya-kako-bucyo-coffee",
+      "placeId": "static-nagoya-kako-bucyo",
       "name": "KAKO BUCYO COFFEE",
       "rating": 0,
       "reviews": 0,
@@ -148,7 +148,7 @@
       ]
     },
     {
-      "placeId": "static-nagoya-milk",
+      "placeId": "static-nagoya-tsubame-amagasaka",
       "name": "つばめパン＆Milk 尼ケ坂本店",
       "rating": 0,
       "reviews": 0,
@@ -168,7 +168,7 @@
       ]
     },
     {
-      "placeId": "static-nagoya-milk",
+      "placeId": "static-nagoya-tsubame-kaminokura",
       "name": "天然酵母の食パン専門店 つばめパン＆Milk 神の倉店",
       "rating": 0,
       "reviews": 0,
@@ -188,7 +188,7 @@
       ]
     },
     {
-      "placeId": "static-nagoya-",
+      "placeId": "static-nagoya-pannoie",
       "name": "ブーランジェリーぱんのいえ",
       "rating": 0,
       "reviews": 0,
