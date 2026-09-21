@@ -1,6 +1,6 @@
 {
   "source": "static-free-verified",
-  "updatedAt": "2026-09-19",
+  "updatedAt": "2026-09-21",
   "attribution": "豊根村・奥三河の公開観光情報を基に確認。来店前に公式情報をご確認ください。",
   "shops": [
     {
@@ -22,8 +22,10 @@
       "photo": "",
       "catchphrase": "森の中のドイツパン店",
       "highlights": [
-        "ドイツパン"
-      ]
+        "ドイツパン",
+        "山間のベーカリー"
+      ],
+      "representativeProduct": "ドイツパン各種"
     }
   ]
 }
