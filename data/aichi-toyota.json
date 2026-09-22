@@ -1,7 +1,7 @@
 {
   "source": "static-free-recovery",
   "updatedAt": "2026-09-23",
-  "attribution": "店舗情報は公開情報を基にした復旧用スナップショット。来店前に公式情報をご確認ください。 ジャックは店舗公式サイトで住所・営業時間・定休日を再確認。 ペンギンベーカリー豊田浄水店は公式店舗一覧で住所・電話・営業時間を再確認。 HORNはフジパンストアー公式、Picoはメグリア井上店公式施設情報を確認。Google Maps導線は店名・住所検索URLで全店舗に付与。 実店舗写真は権利・利用条件を確認できたものだけをphoto/photoAttribution/photoSource/photoLicenseへ登録し、旧tokai-pan-apiには依存しない。 サンクス洋菓子店は2026-09-20に公開情報で店名・住所・営業時間を再確認。 2026-09-23に豊田市公式パンマルシェおよび地域公式情報で現役店舗候補を再照合。Risoを現役確認済み店舗として追加。 Risoは地域公式掲載と第三者掲載保留が競合するため確定掲載から除外し再確認対象へ変更。ジャックは店舗公式の商品情報を反映。 2026-09-23にcoripan・ミカヅキ・サンクス洋菓子店を公開情報で再照合し営業時間・特色を補完。",
+  "attribution": "店舗情報は公開情報を基にした復旧用スナップショット。来店前に公式情報をご確認ください。 ジャックは店舗公式サイトで住所・営業時間・定休日を再確認。 ペンギンベーカリー豊田浄水店は公式店舗一覧で住所・電話・営業時間を再確認。 HORNはフジパンストアー公式、Picoはメグリア井上店公式施設情報を確認。Google Maps導線は店名・住所検索URLで全店舗に付与。 実店舗写真は権利・利用条件を確認できたものだけをphoto/photoAttribution/photoSource/photoLicenseへ登録し、旧tokai-pan-apiには依存しない。 サンクス洋菓子店は2026-09-20に公開情報で店名・住所・営業時間を再確認。 2026-09-23に豊田市公式パンマルシェおよび地域公式情報で現役店舗候補を再照合。Risoを現役確認済み店舗として追加。 Risoは地域公式掲載と第三者掲載保留が競合するため確定掲載から除外し再確認対象へ変更。ジャックは店舗公式の商品情報を反映。 2026-09-23にcoripan・ミカヅキ・サンクス洋菓子店を公開情報で再照合し営業時間・特色を補完。 Cantevole豊田店は2026-09-23に現行公開情報で店名・電話・営業時間を再照合。",
   "shops": [
     {
       "placeId": "ChIJ22dl6EagBGAROlRfruKCPZI",
@@ -134,7 +134,7 @@
     },
     {
       "placeId": "ChIJIz1uBUagBGAR0pFggt_g700",
-      "name": "Contevole",
+      "name": "Cantevole 豊田店",
       "rating": 3.2,
       "reviews": 23,
       "address": "愛知県豊田市広路町1-1",
@@ -145,12 +145,15 @@
       "openingHours": [
         "08:00–21:00"
       ],
-      "phone": "0565-37-9222",
-      "website": "",
+      "phone": "0565-37-9219",
+      "website": "https://www.aeon.com/store/%E3%82%A4%E3%82%AA%E3%83%B3/%E3%82%A4%E3%82%AA%E3%83%B3%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E8%B1%8A%E7%94%B0/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=Contevole%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%B1%8A%E7%94%B0%E5%B8%82%E5%BA%83%E8%B7%AF%E7%94%BA1-1",
       "photo": "",
-      "catchphrase": "広路町のベーカリー",
-      "highlights": [],
+      "catchphrase": "イオンスタイル豊田1階で幅広いパンを揃えるベーカリー",
+      "highlights": [
+        "メニューの種類が豊富",
+        "食事パン・菓子パン・サンド系まで幅広く展開"
+      ],
       "photoAttribution": "",
       "photoSource": "",
       "photoLicense": ""
