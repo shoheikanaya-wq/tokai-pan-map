@@ -1,7 +1,7 @@
 {
   "source": "static-free-recovery",
   "updatedAt": "2026-09-23",
-  "attribution": "店舗情報は公開情報を基にした復旧用スナップショット。来店前に公式情報をご確認ください。 ジャックは店舗公式サイトで住所・営業時間・定休日を再確認。 ペンギンベーカリー豊田浄水店は公式店舗一覧で住所・電話・営業時間を再確認。 HORNはフジパンストアー公式、Picoはメグリア井上店公式施設情報を確認。Google Maps導線は店名・住所検索URLで全店舗に付与。 実店舗写真は権利・利用条件を確認できたものだけをphoto/photoAttribution/photoSource/photoLicenseへ登録し、旧tokai-pan-apiには依存しない。 サンクス洋菓子店は2026-09-20に公開情報で店名・住所・営業時間を再確認。 2026-09-23に豊田市公式パンマルシェおよび地域公式情報で現役店舗候補を再照合。Risoを現役確認済み店舗として追加。 Risoは地域公式掲載と第三者掲載保留が競合するため確定掲載から除外し再確認対象へ変更。ジャックは店舗公式の商品情報を反映。 2026-09-23にcoripan・ミカヅキ・サンクス洋菓子店を公開情報で再照合し営業時間・特色を補完。 Cantevole豊田店は2026-09-23に現行公開情報で店名・電話・営業時間を再照合。",
+  "attribution": "店舗情報は公開情報を基にした復旧用スナップショット。来店前に公式情報をご確認ください。 ジャックは店舗公式サイトで住所・営業時間・定休日を再確認。 ペンギンベーカリー豊田浄水店は公式店舗一覧で住所・電話・営業時間を再確認。 HORNはフジパンストアー公式、Picoはメグリア井上店公式施設情報を確認。Google Maps導線は店名・住所検索URLで全店舗に付与。 実店舗写真は権利・利用条件を確認できたものだけをphoto/photoAttribution/photoSource/photoLicenseへ登録し、旧tokai-pan-apiには依存しない。 サンクス洋菓子店は2026-09-20に公開情報で店名・住所・営業時間を再確認。 2026-09-23に豊田市公式パンマルシェおよび地域公式情報で現役店舗候補を再照合。Risoを現役確認済み店舗として追加。 Risoは地域公式掲載と第三者掲載保留が競合するため確定掲載から除外し再確認対象へ変更。ジャックは店舗公式の商品情報を反映。 2026-09-23にcoripan・ミカヅキ・サンクス洋菓子店を公開情報で再照合し営業時間・特色を補完。 Cantevole豊田店は2026-09-23に現行公開情報で店名・電話・営業時間を再照合。 ホルン高橋店はフジパンストアー公式、ピコはメグリア井上店の現行公式案内を優先して2026-09-23再照合。",
   "shops": [
     {
       "placeId": "ChIJ22dl6EagBGAROlRfruKCPZI",
@@ -84,7 +84,7 @@
     },
     {
       "placeId": "ChIJg7lDtPqgBGARZgyxOYO8nk0",
-      "name": "HORN",
+      "name": "ホルン 高橋店",
       "rating": 3.7,
       "reviews": 6,
       "address": "愛知県豊田市東山町1-5-1",
@@ -93,14 +93,18 @@
         "bakery"
       ],
       "openingHours": [
-        "10:00–20:00"
+        "10:00–20:00",
+        "無休"
       ],
       "phone": "0565-88-8002",
       "website": "https://www.fujipanstore.com/store/store001392/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=HORN%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%B1%8A%E7%94%B0%E5%B8%82%E6%9D%B1%E5%B1%B1%E7%94%BA1-5-1",
       "photo": "",
-      "catchphrase": "東山町のベーカリー",
-      "highlights": [],
+      "catchphrase": "グリーンシティ1階の焼き立てパン店",
+      "highlights": [
+        "フジパンストアー運営の店内焼成ベーカリー",
+        "食事パンから菓子パンまで幅広く展開"
+      ],
       "photoAttribution": "",
       "photoSource": "",
       "photoLicense": ""
@@ -160,7 +164,7 @@
     },
     {
       "placeId": "ChIJZ5kLG_FfA2ARr0hYaoeMQQY",
-      "name": "Pico",
+      "name": "ピコ メグリア井上店",
       "rating": 4.8,
       "reviews": 4,
       "address": "愛知県豊田市井上町4-154",
@@ -168,13 +172,19 @@
       "types": [
         "bakery"
       ],
-      "openingHours": [],
+      "openingHours": [
+        "月〜金 10:00–20:00",
+        "土・日 09:00–20:00"
+      ],
       "phone": "0565-45-1221",
       "website": "https://www.meglia-net.jp/store/inoue/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=Pico%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%B1%8A%E7%94%B0%E5%B8%82%E4%BA%95%E4%B8%8A%E7%94%BA4-154",
       "photo": "",
-      "catchphrase": "井上町のベーカリー",
-      "highlights": [],
+      "catchphrase": "メグリア井上店内のインストアベーカリー",
+      "highlights": [
+        "猿投駅から徒歩圏",
+        "手頃なパンを幅広く展開"
+      ],
       "photoAttribution": "",
       "photoSource": "",
       "photoLicense": ""
