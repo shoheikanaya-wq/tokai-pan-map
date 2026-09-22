@@ -1,7 +1,7 @@
 {
   "source": "static-free-verified",
-  "updatedAt": "2026-09-19",
-  "attribution": "店舗情報は公開情報を基に確認。来店前に公式・地域商工情報をご確認ください。 bread factory okamoto・焼きたてパン Choeikenは渥美半島観光ビューロー公式で現行店舗情報を確認。",
+  "updatedAt": "2026-09-23",
+  "attribution": "店舗情報は公開情報を基に確認。来店前に公式・地域商工情報をご確認ください。 bread factory okamoto・焼きたてパン Choeikenは渥美半島観光ビューロー公式で現行店舗情報を確認。 2026-09-23田原市監査：はなうたパン屋、bread factory okamoto、焼きたてパンChoeikenを渥美半島観光ビューロー等の現行情報で再照合し、営業時間・電話・特色を補完。",
   "shops": [
     {
       "placeId": "static-tahara-hanauta",
@@ -14,18 +14,17 @@
         "bakery"
       ],
       "openingHours": [
-        "07:30–18:30",
+        "月〜土 07:30–18:30",
         "日曜定休"
       ],
       "phone": "0531-22-7123",
       "website": "",
       "googleMaps": "",
       "photo": "",
-      "catchphrase": "田原市のベーカリー",
+      "catchphrase": "朝7時半から、小ぶりで買いやすいパンを豊富に揃える東赤石のベーカリー",
       "highlights": [
-        "菓子パン",
-        "惣菜パン",
-        "食パン"
+        "菓子パン・惣菜パン・食パンまで種類豊富",
+        "三河田原駅から徒歩圏"
       ]
     },
     {
@@ -39,42 +38,46 @@
         "bakery"
       ],
       "openingHours": [
-        "10:00–19:00",
+        "月〜土 10:00–19:00",
         "日曜定休（不定休あり）"
       ],
       "phone": "0531-22-4515",
       "website": "https://www.taharakankou.gr.jp/spot/spot.php?spot_id=575",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=bread%20factory%20okamoto%20%E7%94%B0%E5%8E%9F%E5%B8%82%E7%94%B0%E5%8E%9F%E7%94%BA%E5%8D%97%E6%99%A9%E7%94%B010-11",
       "photo": "",
-      "catchphrase": "パンとベーグル、地元素材の焼菓子",
+      "catchphrase": "パンとベーグル、地元食材の焼き菓子を作る田原町のパン工房",
       "highlights": [
-        "ベーグル",
-        "食パン",
-        "焼菓子"
-      ]
+        "パン・ベーグルに加えて焼き菓子も販売",
+        "パンが出揃うのは昼頃、食パンは14時頃から"
+      ],
+      "representativeProduct": "メロンパンマフィン",
+      "representativeLabel": "2026年メロン企画掲載商品",
+      "specialNotice": "現金のみ。日曜定休に加えて不定休あり。"
     },
     {
       "placeId": "static-tahara-choeiken",
       "name": "焼きたてパン Choeiken",
-      "rating": 0,
-      "reviews": 0,
+      "rating": 3.8,
+      "reviews": 52,
       "address": "愛知県田原市東赤石5-74",
       "type": "パン屋",
       "types": [
         "bakery"
       ],
       "openingHours": [
-        "09:00–16:00"
+        "09:00–16:00",
+        "休業日は来店前に要確認"
       ],
       "phone": "0531-23-7488",
       "website": "https://www.taharakankou.gr.jp/spot/spot.php?spot_id=415",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E7%84%BC%E3%81%8D%E3%81%9F%E3%81%A6%E3%83%91%E3%83%B3%20Choeiken%20%E7%94%B0%E5%8E%9F%E5%B8%82%E6%9D%B1%E8%B5%A4%E7%9F%B35-74",
       "photo": "",
-      "catchphrase": "田原の焼きたてパンとスイーツ",
+      "catchphrase": "長栄軒の流れをくむ、東赤石の焼きたてパンとスイーツの店",
       "highlights": [
-        "メロンパン",
-        "焼きたてパン"
-      ]
+        "パンとスイーツを販売",
+        "田原めっくんはうす近くで利用しやすい"
+      ],
+      "specialNotice": "営業日は変更の場合があるため来店前に最新情報を確認推奨。"
     }
   ]
 }
