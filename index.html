@@ -177,6 +177,14 @@
 .review-text{font-size:13px;line-height:1.5;white-space:pre-wrap}
 .review-note{font-size:10px;line-height:1.35}
 
+.detail-visual{width:100%;aspect-ratio:16/9;margin:8px 0 12px;border-radius:14px;overflow:hidden;background:linear-gradient(145deg,#fff3d6,#e1bd82);display:grid;place-items:center}
+.detail-visual img{width:100%;height:100%;object-fit:cover;display:block}
+.detail-visual-card{width:100%;height:100%;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:18px;text-align:center;color:#4a2d16;background:linear-gradient(145deg,#fff7e7,#ead1a1)}
+.detail-visual-card .mark{font-size:46px;line-height:1}
+.detail-visual-card strong{font-size:22px;line-height:1.2}
+.detail-visual-card small{font-size:12px;color:#765536}
+.detail-photo-credit{font-size:10px;color:#776b61;margin:-7px 2px 9px;text-align:right}
+@media(max-width:600px){.detail-visual{aspect-ratio:4/3;border-radius:10px;margin:6px 0 9px}.detail-visual-card .mark{font-size:38px}.detail-visual-card strong{font-size:18px}}
 .detail-title-row{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
 .detail-title-row h2{margin-right:auto;font-size:26px;line-height:1.2;font-weight:900;overflow-wrap:anywhere}
 @media(max-width:600px){.detail-title-row h2{font-size:22px;line-height:1.2}}
@@ -535,6 +543,8 @@ button,.back,.detail-action,.review-trigger{
     <div class="muted" id="drank"></div>
 
     <div class="detail-title-row"><h2 id="dname"></h2><strong id="drating"></strong></div>
+    <div id="dvisual" class="detail-visual"></div>
+    <div id="dvisualCredit" class="detail-photo-credit hidden"></div>
     <p id="daddr"></p>
 
     <div id="dfeatures" class="detail-info-block hidden"></div>
@@ -558,13 +568,13 @@ button,.back,.detail-action,.review-trigger{
 </section>
   <div id="devTools" class="dev-tools hidden"><button id="clearRankingCache">🔄 ランキングキャッシュ更新</button><div class="muted">開発用：次回ランキング表示時に最新データを取得</div></div><footer id="appFooter" class="app-footer">
 <div>東海パンMAP</div>
-<div>Ver.1.66</div>
+<div>Ver.1.67</div>
   <div>Personal Bakery Discovery Project</div>
   <div>Created & Managed by S.K.</div>
   <div>© 2026 S.K. All Rights Reserved.</div>
 
   <details class="version-history">
-    <summary>更新履歴を見る</summary>
+    <summary>更新履歴を見る</summary>\n    <div>Ver.1.67　TOP10・店舗詳細にワンポイント画像表示を追加</div>
     <div>Ver.1.4　店舗詳細・営業状況・地域表示・画面移動を改善</div>
     <div>Ver.1.2 β　店舗詳細機能を追加</div>
     <div>Ver.1.1 β　市町村・地域ランキングを改善</div>
@@ -955,7 +965,7 @@ const home=document.querySelector('#home'),ranking=document.querySelector('#rank
 const byId = id => document.getElementById(id);
 const appTitle=byId('appTitle'), rankingTitle=byId('rankingTitle');
 const back=byId('back'), backBottom=byId('backBottom'), back2=byId('back2'), backDetailBottom=byId('backDetailBottom');
-const dname=byId('dname'), daddr=byId('daddr'), drating=byId('drating'), dhours=byId('dhours'), dphone=byId('dphone'), dwebsite=byId('dwebsite'), dmaps=byId('dmaps'), drank=byId('drank'), dfeatures=byId('dfeatures'), dspecial=byId('dspecial'), drecommend=byId('drecommend'), dclosed=byId('dclosed'), dproduct=byId('dproduct');
+const dname=byId('dname'), dvisual=byId('dvisual'), dvisualCredit=byId('dvisualCredit'), daddr=byId('daddr'), drating=byId('drating'), dhours=byId('dhours'), dphone=byId('dphone'), dwebsite=byId('dwebsite'), dmaps=byId('dmaps'), drank=byId('drank'), dfeatures=byId('dfeatures'), dspecial=byId('dspecial'), drecommend=byId('drecommend'), dclosed=byId('dclosed'), dproduct=byId('dproduct');
 const toyota=byId('toyota'), okazaki=byId('okazaki'), anjo=byId('anjo'), kariya=byId('kariya'), nishio=byId('nishio'), hekinan=byId('hekinan'), chiryu=byId('chiryu'), takahama=byId('takahama'), miyoshi=byId('miyoshi'), kota=byId('kota');
 const toyohashi=byId('toyohashi'), toyokawa=byId('toyokawa'), gamagori=byId('gamagori'), shinshiro=byId('shinshiro'), tahara=byId('tahara'), shitara=byId('shitara'), toei=byId('toei'), toyone=byId('toyone');
 const nagoya=byId('nagoya'), ichinomiya=byId('ichinomiya'), seto=byId('seto'), kasugai=byId('kasugai'), inuyama=byId('inuyama'), konan=byId('konan'), komaki=byId('komaki'), inazawa=byId('inazawa'), owariasahi=byId('owariasahi'), iwakura=byId('iwakura'), toyoake=byId('toyoake'), nisshin=byId('nisshin'), kiyosu=byId('kiyosu'), kitanagoya=byId('kitanagoya'), nagakute=byId('nagakute'), togo=byId('togo'), toyoyama=byId('toyoyama'), oguchi=byId('oguchi'), fuso=byId('fuso'), ama=byId('ama'), ooharu=byId('ooharu'), kanie=byId('kanie'), tobishima=byId('tobishima'), tsushima=byId('tsushima'), aisai=byId('aisai'), yatomi=byId('yatomi');
@@ -1158,6 +1168,23 @@ drank.textContent =
   `${currentPrefecture} ＞ ${areaName ? areaName + ' ＞ ' : ''}${currentCity} ＞ ${i + 1}位 / Score ${Math.round(s.score)}`;
   dname.textContent = s.name;
   daddr.textContent = s.address;
+  const detailPhoto=Boolean(s.photo);
+  const detailLabel=s.representativeProduct || s.catchphrase || (Array.isArray(s.highlights)&&s.highlights[0]) || 'パン屋さんのワンポイント';
+  if(detailPhoto){
+    dvisual.innerHTML='<img src="'+escapeHtml(s.photo)+'" alt="'+escapeHtml(s.photoAlt || (s.name+' 店舗写真'))+'" loading="lazy" referrerpolicy="no-referrer-when-downgrade">';
+    if(s.photoAttribution){
+      dvisualCredit.textContent='写真: '+s.photoAttribution;
+      dvisualCredit.classList.remove('hidden');
+    }else{
+      dvisualCredit.textContent='';
+      dvisualCredit.classList.add('hidden');
+    }
+  }else{
+    const mark=s.symbolVisual || '🥐';
+    dvisual.innerHTML='<div class="detail-visual-card" role="img" aria-label="'+escapeHtml(s.name+' 店舗紹介ビジュアル')+'"><span class="mark">'+escapeHtml(mark)+'</span><strong>'+escapeHtml(s.name)+'</strong><small>'+escapeHtml(detailLabel)+'</small></div>';
+    dvisualCredit.textContent='店舗の特徴を表すワンポイント表示';
+    dvisualCredit.classList.remove('hidden');
+  }
   drating.textContent = s.rating ? `★${s.rating}` : '評価は地図で確認';
 
   const detailPoints=[s.catchphrase,...(Array.isArray(s.highlights)?s.highlights:[])].filter(Boolean);
