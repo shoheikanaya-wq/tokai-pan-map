@@ -1,7 +1,7 @@
 {
   "source": "static-free-recovery",
   "updatedAt": "2026-09-23",
-  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。評価・口コミ数は取得できた公開情報を使用し、未取得項目は0または空欄。来店前に公式情報をご確認ください。 愛慶食品・あいけいcafeは西尾市公式ウェブサイトで住所・営業時間・定休日・揚げパン販売を確認。 2026-09-23西尾市監査：BAKERY MITROND、Happy Bakery TAKU TAKU、グラーノグラーノ西尾店を公式・愛知県営業許可情報で再照合し、営業時間・特色・評価等を更新。 バプール西尾店・やちよ・あいけいcafeは2026-09-23に公式・西尾市・現行利用情報で再照合し、営業時間・特色を補完。",
+  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。評価・口コミ数は取得できた公開情報を使用し、未取得項目は0または空欄。来店前に公式情報をご確認ください。 愛慶食品・あいけいcafeは西尾市公式ウェブサイトで住所・営業時間・定休日・揚げパン販売を確認。 2026-09-23西尾市監査：BAKERY MITROND、Happy Bakery TAKU TAKU、グラーノグラーノ西尾店を公式・愛知県営業許可情報で再照合し、営業時間・特色・評価等を更新。 バプール西尾店・やちよ・あいけいcafeは2026-09-23に公式・西尾市・現行利用情報で再照合し、営業時間・特色を補完。 2026-09-23西尾市TOP10最終監査：Kouziya、寺田屋、三和パン、矢田平パンを現行店舗情報・愛知県パン協同組合・東海農政局・事業者公開情報で再照合。営業時間と店舗特性を補完し、矢田平パンは予約販売中心であることを明記。",
   "shops": [
     {
       "placeId": "ChIJIVfdeY6XBGARB4UBTCaNU7I",
@@ -40,14 +40,19 @@
         "bakery"
       ],
       "openingHours": [
-        "水〜日 07:00–18:00"
+        "水〜日 07:00–18:00",
+        "月・火 定休"
       ],
       "phone": "0563-35-0076",
       "website": "",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=Kouziya%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%A5%BF%E5%B0%BE%E5%B8%82%E5%90%89%E8%89%AF%E7%94%BA%E4%B8%8A%E6%A8%AA%E9%A0%88%E8%B3%80%E5%AE%AE%E5%89%8D3",
       "photo": "",
-      "catchphrase": "吉良町のベーカリー",
-      "highlights": []
+      "catchphrase": "朝7時から営業する吉良町上横須賀のベーカリー",
+      "highlights": [
+        "朝早くから利用できる地域密着店",
+        "テイクアウト利用に対応"
+      ],
+      "specialNotice": "営業時間・休業日は変更の場合があるため来店前に最新情報を確認推奨。"
     },
     {
       "placeId": "12287510",
@@ -77,7 +82,7 @@
     },
     {
       "placeId": "ChIJLVa47qmRBGARYjQbhtFHxtQ",
-      "name": "Teradaya",
+      "name": "寺田屋",
       "rating": 3.9,
       "reviews": 24,
       "address": "愛知県西尾市楠村町山崎35-3",
@@ -87,18 +92,23 @@
       ],
       "openingHours": [
         "火〜金 10:00–19:00",
-        "土・日 10:00–18:00"
+        "土・日 10:00–18:00",
+        "月曜定休"
       ],
       "phone": "0563-75-3349",
       "website": "",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=Teradaya%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%A5%BF%E5%B0%BE%E5%B8%82%E6%A5%A0%E6%9D%91%E7%94%BA%E5%B1%B1%E5%B4%8E35-3",
       "photo": "",
-      "catchphrase": "楠村町のベーカリー",
-      "highlights": []
+      "catchphrase": "楠村町で幅広いパンを扱う地域密着ベーカリー",
+      "highlights": [
+        "平日は19時まで営業",
+        "予約対応あり"
+      ],
+      "specialNotice": "週末の開店時刻は掲載媒体に差があるため、来店前に最新情報を確認推奨。"
     },
     {
       "placeId": "ChIJfxbe7V-WBGARB870BCaYvls",
-      "name": "三和パン",
+      "name": "有限会社 三和パン",
       "rating": 3.8,
       "reviews": 6,
       "address": "愛知県西尾市米野町土井ノ内4-3",
@@ -107,18 +117,24 @@
         "bakery"
       ],
       "openingHours": [
-        "09:30〜18:00前後"
+        "月〜水・金〜日 10:00–18:00",
+        "木 09:30–18:00"
       ],
       "phone": "0563-52-1063",
       "website": "",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E4%B8%89%E5%92%8C%E3%83%91%E3%83%B3%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%A5%BF%E5%B0%BE%E5%B8%82%E7%B1%B3%E9%87%8E%E7%94%BA%E5%9C%9F%E4%BA%95%E3%83%8E%E5%86%854-3",
       "photo": "",
-      "catchphrase": "米野町のパン店",
-      "highlights": []
+      "catchphrase": "学校給食や米粉パンも手がける米野町の製パン店",
+      "highlights": [
+        "愛知県パン協同組合の組合員",
+        "米粉商品として抹茶デニッシュ・小倉パン・フラワーパンを展開"
+      ],
+      "representativeProduct": "こめっこ抹茶デニッシュ",
+      "representativeLabel": "東海農政局掲載の米粉商品"
     },
     {
       "placeId": "ChIJvaZwbw2RBGAR9m0RkSatL5E",
-      "name": "矢田平パン",
+      "name": "矢田平パン株式会社",
       "rating": 3.8,
       "reviews": 4,
       "address": "愛知県西尾市上矢田町熊子15",
@@ -127,14 +143,19 @@
         "bakery"
       ],
       "openingHours": [
-        "月〜金 09:00–17:00"
+        "月〜金 09:00–17:30",
+        "土・日 定休"
       ],
       "phone": "0563-59-7140",
-      "website": "",
+      "website": "https://www.japan-net.ne.jp/~coupe/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E7%9F%A2%E7%94%B0%E5%B9%B3%E3%83%91%E3%83%B3%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%A5%BF%E5%B0%BE%E5%B8%82%E4%B8%8A%E7%9F%A2%E7%94%B0%E7%94%BA%E7%86%8A%E5%AD%9015",
       "photo": "",
-      "catchphrase": "上矢田町のベーカリー",
-      "highlights": []
+      "catchphrase": "学校給食・企業向け供給と予約販売を手がける老舗製パン会社",
+      "highlights": [
+        "個人向けは完全予約制のパン販売が中心",
+        "学校給食・企業・小売店・イベント向けのパンを供給"
+      ],
+      "specialNotice": "一般店頭販売中心の店舗ではなく、個人向けは予約販売が基本。来店前に電話確認推奨。"
     },
     {
       "placeId": "ChIJzeCGk8qWBGARQAErpdRaNco",
