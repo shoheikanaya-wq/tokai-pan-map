@@ -1,14 +1,14 @@
 {
   "source": "static-free-verified",
-  "updatedAt": "2026-09-19",
-  "attribution": "設楽町観光協会公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。 ペンション グリーンメッセージは設楽町観光協会公式で自家製パン提供を確認。",
+  "updatedAt": "2026-09-23",
+  "attribution": "設楽町観光協会公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。 ペンション グリーンメッセージは設楽町観光協会公式で自家製パン提供を確認。 2026-09-23設楽町監査：設楽町観光協会の現行情報を優先し、ベーグルSan。の住所・営業時間・特色を更新。ペンション グリーンメッセージは自家製パン提供の宿泊施設であり、常設パン店ランキング対象外のため除外。MIKIベーグル等はイベント出店実績のみで常設店舗情報が未確認のため保留。",
   "shops": [
     {
-      "placeId": "static-shitara-bagelsan",
-      "name": "ベーグルSan。（ベーグルさん）",
+      "placeId": "ChIJuziyrdhPG2ARKfv6rarTLWY",
+      "name": "ベーグルSan。",
       "rating": 0,
       "reviews": 0,
-      "address": "愛知県北設楽郡設楽町清崎字小野23番地",
+      "address": "愛知県北設楽郡設楽町清崎字小野23",
       "type": "パン屋",
       "types": [
         "bakery"
@@ -18,34 +18,14 @@
       ],
       "phone": "",
       "website": "https://www.kankoshitara.jp/eat/detail/173/",
-      "googleMaps": "",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%99%E3%83%BC%E3%82%B0%E3%83%ABSan%E3%80%82%20%E8%A8%AD%E6%A5%BD%E7%94%BA%E6%B8%85%E5%B4%8E%E5%AD%97%E5%B0%8F%E9%87%8E23",
       "photo": "",
-      "catchphrase": "自家製酵母で焼く山里のベーグル屋",
+      "catchphrase": "レーズンから起こした自家製酵母で焼く、清崎の週2日ベーグル店",
       "highlights": [
-        "レーズン酵母",
-        "プレーンベーグル"
-      ]
-    },
-    {
-      "placeId": "static-shitara-greenmessage",
-      "name": "ペンション グリーンメッセージ",
-      "rating": 0,
-      "reviews": 0,
-      "address": "愛知県北設楽郡設楽町",
-      "type": "宿泊施設・自家製パン",
-      "types": [
-        "bakery"
+        "主にプレーンベーグルを販売",
+        "レーズン酵母を小麦で継ぎながら使用"
       ],
-      "openingHours": [],
-      "phone": "",
-      "website": "https://www.kankoshitara.jp/eat/search/",
-      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%9A%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%B3%20%E3%82%B0%E3%83%AA%E3%83%BC%E3%83%B3%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%20%E8%A8%AD%E6%A5%BD%E7%94%BA",
-      "photo": "",
-      "catchphrase": "設楽町観光公式掲載、自家製パンを提供",
-      "highlights": [
-        "自家製パン",
-        "ペンション"
-      ]
+      "specialNotice": "金曜・土曜のみ営業。問い合わせは公式Instagramのメッセージ利用。"
     }
   ]
 }
