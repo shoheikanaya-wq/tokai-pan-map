@@ -1,7 +1,7 @@
 {
   "source": "static-free-recovery",
   "updatedAt": "2026-09-23",
-  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。未取得項目は空欄または0。来店前に地図・公式情報をご確認ください。 ふるふるは高浜市公式、PanPalは店舗公式サイトで現行情報を再確認。 パン工房むぎまるはTぽーと公式、エスカフェは高浜市商工会公式で現行のパン製造・販売を確認。 おとうふ工房いしかわは高浜市観光協会・東海農政局でパン製造販売を確認。 2026-09-23高浜市監査：既存7店を現行公開情報で再照合。杜のベーカリー、PanPal、ふるふる、むぎまる、ES cafe、大まめ蔵の名称・住所・営業時間・公式導線・特色を補完。",
+  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。未取得項目は空欄または0。来店前に地図・公式情報をご確認ください。 ふるふるは高浜市公式、PanPalは店舗公式サイトで現行情報を再確認。 パン工房むぎまるはTぽーと公式、エスカフェは高浜市商工会公式で現行のパン製造・販売を確認。 おとうふ工房いしかわは高浜市観光協会・東海農政局でパン製造販売を確認。 2026-09-23高浜市監査：既存7店を現行公開情報で再照合。杜のベーカリー、PanPal、ふるふる、むぎまる、ES cafe、大まめ蔵の名称・住所・営業時間・公式導線・特色を補完。 2026-09-23高浜市最終監査：fuwakoppe tencafe、八百甚、ラ・サンテベーカリー高浜店を2026年の現役情報で追加し10店構成へ。",
   "shops": [
     {
       "placeId": "ChIJw_H48SSbBGARama0JDViLHE",
@@ -176,6 +176,95 @@
         "国産小麦・豆乳・おからを使ったパンを展開",
         "豆腐・ドーナツ・スイーツなど大豆加工品も豊富"
       ]
+    },
+    {
+      "placeId": "static-takahama-fuwakoppe",
+      "name": "fuwakoppe tencafe",
+      "rating": 3.1,
+      "reviews": 12,
+      "address": "愛知県高浜市稗田町1-2-10 コーポ山昭1F",
+      "type": "パン屋",
+      "types": [
+        "bakery",
+        "cafe"
+      ],
+      "openingHours": [
+        "水〜金 10:00–15:00",
+        "土・日 10:00–16:00",
+        "月・火 定休"
+      ],
+      "phone": "0566-93-9003",
+      "website": "https://awaji-b.com/brand/fuwacoppe/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=fuwakoppe%20tencafe%20%E9%AB%98%E6%B5%9C%E5%B8%82%E7%A8%97%E7%94%B0%E7%94%BA1-2-10",
+      "photo": "",
+      "catchphrase": "30種類以上の具材を楽しめる高浜のコッペパンサンド専門店",
+      "highlights": [
+        "惣菜系からスイーツ系まで幅広いコッペパンサンド",
+        "パンがなくなり次第閉店"
+      ],
+      "specialNotice": "営業時間は媒体差があるため来店前に最新SNS・公式情報を確認推奨。",
+      "photoAttribution": "",
+      "photoSource": "",
+      "photoLicense": ""
+    },
+    {
+      "placeId": "static-takahama-yaojin",
+      "name": "八百甚",
+      "rating": 3.29,
+      "reviews": 102,
+      "address": "愛知県高浜市青木町4-5-21",
+      "type": "フルーツサンド",
+      "types": [
+        "bakery",
+        "sandwich_shop"
+      ],
+      "openingHours": [
+        "08:00–18:00",
+        "フルーツサンドは水曜・土曜中心"
+      ],
+      "phone": "0566-53-0740",
+      "website": "https://www.instagram.com/808_yaojin",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E5%85%AB%E7%99%BE%E7%94%9A%20%E9%AB%98%E6%B5%9C%E5%B8%82%E9%9D%92%E6%9C%A8%E7%94%BA4-5-21",
+      "photo": "",
+      "catchphrase": "創業約120年の老舗青果店が作るフルーツサンドの人気店",
+      "highlights": [
+        "目利きした旬の果物を特注食パンで挟むフルーツサンド",
+        "高浜市ふるさと納税返礼品にも採用"
+      ],
+      "representativeProduct": "フルーツサンド",
+      "representativeLabel": "高浜市ふるさと納税返礼品",
+      "specialNotice": "フルーツサンドの販売日は変更の場合があるため最新情報を確認推奨。",
+      "photoAttribution": "",
+      "photoSource": "",
+      "photoLicense": ""
+    },
+    {
+      "placeId": "static-takahama-lasante",
+      "name": "ラ・サンテベーカリー 高浜店",
+      "rating": 3,
+      "reviews": 1,
+      "address": "愛知県高浜市稗田町2-1-25 ヤマナカ高浜店内",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "09:30–23:00",
+        "施設営業に準ずる"
+      ],
+      "phone": "",
+      "website": "",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%A9%E3%83%BB%E3%82%B5%E3%83%B3%E3%83%86%E3%83%99%E3%83%BC%E3%82%AB%E3%83%AA%E3%83%BC%20%E9%AB%98%E6%B5%9C%E5%BA%97",
+      "photo": "",
+      "catchphrase": "ヤマナカ高浜店内の直営インストアベーカリー",
+      "highlights": [
+        "2026年6月の訪問記録で現役確認",
+        "手頃な価格帯で日常使いしやすい"
+      ],
+      "specialNotice": "営業時間・休業日はヤマナカ高浜店の営業に準ずる。",
+      "photoAttribution": "",
+      "photoSource": "",
+      "photoLicense": ""
     }
   ]
 }
