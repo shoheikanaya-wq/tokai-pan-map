@@ -1,7 +1,7 @@
 {
   "source": "static-free-recovery",
-  "updatedAt": "2026-09-19",
-  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。評価・口コミ数は取得できた公開情報を使用し、未取得項目は0または空欄。来店前に公式情報をご確認ください。 愛慶食品・あいけいcafeは西尾市公式ウェブサイトで住所・営業時間・定休日・揚げパン販売を確認。",
+  "updatedAt": "2026-09-23",
+  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。評価・口コミ数は取得できた公開情報を使用し、未取得項目は0または空欄。来店前に公式情報をご確認ください。 愛慶食品・あいけいcafeは西尾市公式ウェブサイトで住所・営業時間・定休日・揚げパン販売を確認。 2026-09-23西尾市監査：BAKERY MITROND、Happy Bakery TAKU TAKU、グラーノグラーノ西尾店を公式・愛知県営業許可情報で再照合し、営業時間・特色・評価等を更新。",
   "shops": [
     {
       "placeId": "ChIJIVfdeY6XBGARB4UBTCaNU7I",
@@ -21,11 +21,13 @@
       "website": "https://bakerymitrond.com/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=BAKERY%20MITROND%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%A5%BF%E5%B0%BE%E5%B8%82%E8%A5%BF%E6%B5%85%E4%BA%95%E7%94%BA%E9%83%B7%E5%86%85103-3",
       "photo": "",
-      "catchphrase": "明太子フランスが看板",
+      "catchphrase": "やわらかな生地と惣菜パンが魅力の西浅井町ベーカリー",
       "highlights": [
-        "惣菜パン",
-        "食パン"
-      ]
+        "約25種類を展開",
+        "一番人気は濃厚な博多明太子を使った明太子フランス"
+      ],
+      "representativeProduct": "明太子フランス",
+      "representativeLabel": "公式サイト掲載の一番人気"
     },
     {
       "placeId": "ChIJ90AYKxOUBGARc7DLEjg9wU4",
@@ -58,18 +60,20 @@
         "bakery"
       ],
       "openingHours": [
-        "火〜日 07:00–19:00",
-        "月・火 定休（公式案内）"
+        "07:00–19:00",
+        "月・火 定休"
       ],
       "phone": "0563-54-9220",
       "website": "https://www.taku-taku.com/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=Happy%20Bakery%20TAKU%20TAKU%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%A5%BF%E5%B0%BE%E5%B8%82%E4%B8%8A%E7%94%BA%E5%8D%97%E8%8D%92%E5%AD%9036-1",
       "photo": "",
-      "catchphrase": "地産地消と抹茶シリーズ",
+      "catchphrase": "朝7時から、西尾らしい素材を生かしたパンを焼く街のパン屋",
       "highlights": [
-        "西尾抹茶",
-        "地域食材"
-      ]
+        "西尾抹茶のメロンパン・食パンなどご当地パンを展開",
+        "地元野菜や碧南産みりんを使う商品も販売"
+      ],
+      "representativeProduct": "抹茶メロンパン",
+      "representativeLabel": "公式サイト掲載の西尾ご当地パン"
     },
     {
       "placeId": "ChIJLVa47qmRBGARYjQbhtFHxtQ",
@@ -134,23 +138,27 @@
     },
     {
       "placeId": "ChIJzeCGk8qWBGARQAErpdRaNco",
-      "name": "Grano Grano Nishio",
-      "rating": 0,
-      "reviews": 0,
-      "address": "愛知県西尾市高畠町3-23-9",
+      "name": "グラーノグラーノ 西尾店",
+      "rating": 3.11,
+      "reviews": 14,
+      "address": "愛知県西尾市高畠町3-23-9 ヴェルサウォーク西尾1F",
       "type": "パン屋",
       "types": [
         "bakery"
       ],
       "openingHours": [
-        "09:00–21:30"
+        "09:00–21:30",
+        "不定休（施設営業に準ずる）"
       ],
       "phone": "0563-54-0137",
-      "website": "",
+      "website": "https://www.fujipanstore.com/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=Grano%20Grano%20Nishio%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%A5%BF%E5%B0%BE%E5%B8%82%E9%AB%98%E7%95%A0%E7%94%BA3-23-9",
       "photo": "",
-      "catchphrase": "高畠町のベーカリー",
-      "highlights": []
+      "catchphrase": "ヴェルサウォーク西尾1階のフジパン系ベーカリーカフェ",
+      "highlights": [
+        "2026年4月開始の愛知県営業許可で現役確認",
+        "西尾駅近くで買い物と一緒に利用しやすい"
+      ]
     },
     {
       "placeId": "ChIJXxfm42GRBGAR-AnHmTZVeOU",
