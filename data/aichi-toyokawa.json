@@ -1,7 +1,7 @@
 {
   "source": "static-free-verified",
   "updatedAt": "2026-09-23",
-  "attribution": "店舗情報は公開情報を基に確認。来店前に公式情報をご確認ください。 2026-09-23豊川市監査：ベークショップカノウ、ヤマトパン、ブーランジェリーガルボ、PORCO、ボン・ボヤージュを公式・豊川市・現行店舗情報で再照合し、営業時間・特色・代表商品等を更新。",
+  "attribution": "店舗情報は公開情報を基に確認。来店前に公式情報をご確認ください。 2026-09-23豊川市監査：ベークショップカノウ、ヤマトパン、ブーランジェリーガルボ、PORCO、ボン・ボヤージュを公式・豊川市・現行店舗情報で再照合し、営業時間・特色・代表商品等を更新。 2026-09-23豊川市TOP10補完：RICE BRAN SU-ZAN、ブーランジュリーヨシオカ、スイートショップやなぎ、カフェベーカリーPannaPan、PoCAFE豊川稲荷店を2026年の現役情報で確認し追加。",
   "shops": [
     {
       "placeId": "static-toyokawa-kanou",
@@ -131,6 +131,152 @@
         "金〜日は惣菜店と連携したサンドイッチも販売"
       ],
       "representativeProduct": "フランスパン"
+    },
+    {
+      "placeId": "ChIJxfJmO-vNBGARtAl2WXrRMoE",
+      "name": "RICE BRAN SU-ZAN",
+      "rating": 4.7,
+      "reviews": 61,
+      "address": "愛知県豊川市明野町4-82",
+      "type": "パン屋",
+      "types": [
+        "bakery",
+        "bagel_shop",
+        "sandwich_shop"
+      ],
+      "openingHours": [
+        "木〜日 10:00–18:00",
+        "月・火・水 定休"
+      ],
+      "phone": "090-3855-0486",
+      "website": "https://www.instagram.com/yoshino.su_zan",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=RICE%20BRAN%20SU-ZAN%20%E8%B1%8A%E5%B7%9D%E5%B8%82%E6%98%8E%E9%87%8E%E7%94%BA4-82",
+      "photo": "",
+      "catchphrase": "米ぬかを生かしたパンやベーグルを展開する明野町のベーカリー",
+      "highlights": [
+        "パン・ベーグル・サンドイッチを展開",
+        "キャッシュレス決済対応"
+      ],
+      "specialNotice": "商品完売次第終了。臨時休業時はSNSで案内。",
+      "photoAttribution": "",
+      "photoSource": "",
+      "photoLicense": ""
+    },
+    {
+      "placeId": "static-toyokawa-yoshioka",
+      "name": "ブーランジュリーヨシオカ",
+      "rating": 4.1,
+      "reviews": 69,
+      "address": "愛知県豊川市南大通4-41-1",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "火〜土 09:30–16:00",
+        "月・日 定休"
+      ],
+      "phone": "0533-84-7882",
+      "website": "",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%96%E3%83%BC%E3%83%A9%E3%83%B3%E3%82%B8%E3%83%A5%E3%83%AA%E3%83%BC%E3%83%A8%E3%82%B7%E3%82%AA%E3%82%AB%20%E8%B1%8A%E5%B7%9D%E5%B8%82%E5%8D%97%E5%A4%A7%E9%80%9A4-41-1",
+      "photo": "",
+      "catchphrase": "デニッシュや食パンなど幅広いパンを揃える南大通のベーカリー",
+      "highlights": [
+        "デニッシュ・食パン・フランスパンなど品揃え豊富",
+        "店舗前・近隣に駐車場あり"
+      ],
+      "specialNotice": "営業時間・定休日は変更の場合があるため来店前に確認推奨。",
+      "photoAttribution": "",
+      "photoSource": "",
+      "photoLicense": ""
+    },
+    {
+      "placeId": "static-toyokawa-yanagi",
+      "name": "スイートショップ やなぎ",
+      "rating": 4,
+      "reviews": 20,
+      "address": "愛知県豊川市伊奈町南山新田301",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "月〜土 06:00–21:30",
+        "日曜定休"
+      ],
+      "phone": "",
+      "website": "",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%82%B9%E3%82%A4%E3%83%BC%E3%83%88%E3%82%B7%E3%83%A7%E3%83%83%E3%83%97%20%E3%82%84%E3%81%AA%E3%81%8E%20%E8%B1%8A%E5%B7%9D%E5%B8%82%E4%BC%8A%E5%A5%88%E7%94%BA%E5%8D%97%E5%B1%B1%E6%96%B0%E7%94%B0301",
+      "photo": "",
+      "catchphrase": "伊奈駅すぐ、朝6時から夜まで利用できる街のパン屋",
+      "highlights": [
+        "伊奈駅から徒歩すぐ",
+        "早朝から営業し日常使いしやすい"
+      ],
+      "specialNotice": "月曜が祝日の場合は休みとなる場合あり。",
+      "photoAttribution": "",
+      "photoSource": "",
+      "photoLicense": ""
+    },
+    {
+      "placeId": "static-toyokawa-pannapan",
+      "name": "カフェベーカリー PannaPan",
+      "rating": 4,
+      "reviews": 50,
+      "address": "愛知県豊川市市田町向野15-1",
+      "type": "パン屋",
+      "types": [
+        "bakery",
+        "cafe"
+      ],
+      "openingHours": [
+        "月・水〜日 08:00–16:00",
+        "火曜・第1/3月曜 定休"
+      ],
+      "phone": "0533-95-8787",
+      "website": "https://www.instagram.com/panna311pan/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%82%AB%E3%83%95%E3%82%A7%E3%83%99%E3%83%BC%E3%82%AB%E3%83%AA%E3%83%BC%20PannaPan%20%E8%B1%8A%E5%B7%9D%E5%B8%82",
+      "photo": "",
+      "catchphrase": "ヨーロッパの田舎家をイメージしたベーカリーカフェ",
+      "highlights": [
+        "朝8時から営業",
+        "パン・カフェ・ランチ利用に対応"
+      ],
+      "specialNotice": "16時以降は予約営業の場合あり。定休日は祝日等で変動あり。",
+      "photoAttribution": "",
+      "photoSource": "",
+      "photoLicense": ""
+    },
+    {
+      "placeId": "static-toyokawa-pocafe",
+      "name": "PoCAFE 豊川稲荷店",
+      "rating": 4.5,
+      "reviews": 10,
+      "address": "愛知県豊川市幸町31",
+      "type": "カレーパン",
+      "types": [
+        "bakery",
+        "cafe"
+      ],
+      "openingHours": [
+        "木・金・土・日・祝 11:00–16:30頃",
+        "月・火・水 定休"
+      ],
+      "phone": "090-7314-6063",
+      "website": "",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=PoCAFE%20%E8%B1%8A%E5%B7%9D%E7%A8%B2%E8%8D%B7%E5%BA%97%20%E8%B1%8A%E5%B7%9D%E5%B8%82%E5%B9%B8%E7%94%BA31",
+      "photo": "",
+      "catchphrase": "豊川稲荷近くで揚げたてスパイスカレーパンを楽しめる店",
+      "highlights": [
+        "ナン生地を使ったザクザク・もちもち食感のカレーパン",
+        "豊川稲荷の食べ歩き向け"
+      ],
+      "representativeProduct": "ホットチキンマサラ ポカレーパン",
+      "representativeLabel": "金賞受賞商品として紹介",
+      "specialNotice": "売り切れ次第終了。",
+      "photoAttribution": "",
+      "photoSource": "",
+      "photoLicense": ""
     }
   ]
 }
