@@ -411,6 +411,23 @@ button,.back,.detail-action,.review-trigger{
 /* Ver.1.68: 店名を主役にして情報密度を確保 */
 #dname{font-size:clamp(28px,5.6vw,40px);line-height:1.12;font-weight:800;margin:8px 0}
 @media(max-width:600px){#dname{font-size:clamp(26px,7.5vw,34px)}}
+
+/* Ver.1.69: TOP10は省スペースのワンポイント画像＋大きな店名 */
+#list .rank-card{display:grid;grid-template-columns:76px minmax(0,1fr);column-gap:10px;padding:9px!important}
+#list .shop-photo{grid-column:1;grid-row:1 / span 3;width:76px;height:76px;aspect-ratio:1;border-radius:10px;align-self:start}
+#list .shop-main{grid-column:2;padding:0}
+#list .shop-name{font-size:24px;line-height:1.14;font-weight:900}
+#list .shop-points{grid-column:2;margin:5px 0 0;padding:5px 0 0}
+#list .rank-card .rating{grid-column:2;padding:5px 0 0;text-align:left}
+#list .rank-card.no-visual{display:block}
+@media(max-width:600px){
+  #list .rank-card{grid-template-columns:64px minmax(0,1fr);column-gap:8px;padding:8px!important}
+  #list .shop-photo{width:64px;height:64px;aspect-ratio:1;border-radius:8px}
+  #list .shop-name{font-size:21px;line-height:1.12}
+  #list .shop-main{padding:0}
+  #list .shop-points{grid-column:2;margin:4px 0 0;padding-top:4px}
+  #list .rank-card .rating{grid-column:2;padding:4px 0 0}
+}
 </style></head>
 <body><header><h1 id="appTitle" style="cursor:pointer;">🥐 東海パンMAP</h1><div class="sub">市町村から、おいしいパン屋を探す</div></header><main>
 <section id="home">
@@ -562,13 +579,13 @@ button,.back,.detail-action,.review-trigger{
 </section>
   <div id="devTools" class="dev-tools hidden"><button id="clearRankingCache">🔄 ランキングキャッシュ更新</button><div class="muted">開発用：次回ランキング表示時に最新データを取得</div></div><footer id="appFooter" class="app-footer">
 <div>東海パンMAP</div>
-<div>Ver.1.68</div>
+<div>Ver.1.69</div>
   <div>Personal Bakery Discovery Project</div>
   <div>Created & Managed by S.K.</div>
   <div>© 2026 S.K. All Rights Reserved.</div>
 
   <details class="version-history">
-    <summary>更新履歴を見る</summary>\n    <div>Ver.1.68　店舗詳細の大型画像枠を撤去し店名を拡大</div>\n    <div>Ver.1.67　TOP10・店舗詳細にワンポイント画像表示を追加</div>
+    <summary>更新履歴を見る</summary>\n    <div>Ver.1.69　TOP10画像を小型化し店舗名をさらに拡大</div>\n    <div>Ver.1.68　店舗詳細の大型画像枠を撤去し店名を拡大</div>\n    <div>Ver.1.67　TOP10・店舗詳細にワンポイント画像表示を追加</div>
     <div>Ver.1.4　店舗詳細・営業状況・地域表示・画面移動を改善</div>
     <div>Ver.1.2 β　店舗詳細機能を追加</div>
     <div>Ver.1.1 β　市町村・地域ランキングを改善</div>
