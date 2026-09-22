@@ -37,15 +37,19 @@
         "bakery"
       ],
       "openingHours": [
-        "10:30〜11:00頃開店・売切次第終了",
+        "木〜日 10:30〜11:00頃開店（焼き上がり次第）",
         "月・火・水 定休"
       ],
       "phone": "0566-72-7623",
       "website": "",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%AB%E3%83%BB%E3%83%91%E3%83%B3%E3%83%BB%E3%83%89%E3%83%BB%E3%83%9A%E3%82%B3%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%AE%89%E5%9F%8E%E5%B8%82%E6%B3%95%E9%80%A3%E7%94%BA17-1%20%E3%83%A1%E3%82%BE%E3%83%B3%E3%82%AF%E3%83%9C%E3%82%BF1F",
       "photo": "",
-      "catchphrase": "法連町のベーカリー",
-      "highlights": []
+      "catchphrase": "焼き上がりとともに開店する法連町の小さなベーカリー",
+      "highlights": [
+        "パンが焼き上がり次第10:30〜11:00頃に開店",
+        "売り切れ次第閉店"
+      ],
+      "specialNotice": "売り切れ次第閉店。来店前の営業確認推奨。"
     },
     {
       "placeId": "ChIJ9wNNCZiZBGARL2yz2QOL1BU",
