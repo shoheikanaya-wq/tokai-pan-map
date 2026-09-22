@@ -1,7 +1,7 @@
 {
   "source": "static-free-verified",
   "updatedAt": "2026-09-23",
-  "attribution": "東栄町公式観光情報などの公開情報を基に確認。来店前に公式情報をご確認ください。 ピッコロパン屋・Pole Poleは東栄町観光公式「東栄町のじかん」で現行店舗情報を確認。",
+  "attribution": "東栄町公式観光情報などの公開情報を基に確認。来店前に公式情報をご確認ください。 ピッコロパン屋・Pole Poleは東栄町観光公式「東栄町のじかん」で現行店舗情報を確認。 2026-09-23東栄町監査：杏の家、ピッコロパン屋、自家製天然酵母パンPole Poleを東栄町観光まちづくり協会の現行公式情報で再照合し、営業時間・定休日・住所・電話・特色を更新。",
   "shops": [
     {
       "placeId": "static-toei-annoie",
@@ -67,20 +67,19 @@
         "bakery"
       ],
       "openingHours": [
-        "10:00–18:00（売り切れ次第終了）",
-        "月・水・金・日曜定休"
+        "火・木・土 10:00–18:00",
+        "月・水・金・日 定休"
       ],
       "phone": "0536-76-1823",
-      "website": "https://www.toeinavi.jp/gourmet/detail/1300/",
-      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E8%87%AA%E5%AE%B6%E8%A3%BD%E5%A4%A9%E7%84%B6%E9%85%B5%E6%AF%8D%E3%83%91%E3%83%B3%20Pole%20Pole%20%E6%9D%B1%E6%A0%84%E7%94%BA",
+      "website": "https://www.instagram.com/polepole_toei_2013/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E8%87%AA%E5%AE%B6%E8%A3%BD%E5%A4%A9%E7%84%B6%E9%85%B5%E6%AF%8D%E3%83%91%E3%83%B3%20Pole%20Pole%20%E6%9D%B1%E6%A0%84%E7%94%BA%E4%B8%AD%E8%A8%AD%E6%A5%BD%E7%9A%84%E5%A0%B424-4",
       "photo": "",
-      "catchphrase": "国産小麦と自家製酵母の手作りパン",
+      "catchphrase": "国産小麦と自家製酵母でじっくり焼く、中設楽の天然酵母パン店",
       "highlights": [
-        "天然酵母",
-        "バケット",
-        "食パン",
-        "惣菜パン"
-      ]
+        "季節の果物パンから惣菜パンまで種類豊富",
+        "ソフト系からハード系まで幅広く展開"
+      ],
+      "specialNotice": "パンがなくなり次第終了。午前中の来店推奨。"
     }
   ]
 }
