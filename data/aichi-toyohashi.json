@@ -1,7 +1,7 @@
 {
   "source": "static-free-verified",
   "updatedAt": "2026-09-23",
-  "attribution": "店舗情報は公開情報を基に確認。来店前に公式情報をご確認ください。 豊橋観光コンベンション協会公式掲載のベーカリーを追加確認。 2026-09-23豊橋市監査：パンとカフェ公園通り、Peche、ベーカリーショパン三ノ輪本店、ラ・ムワソン、コンティキ、アンプレシオンを公式・現行店舗情報で再照合し、住所・営業時間・電話・公式導線・特色を補完。",
+  "attribution": "店舗情報は公開情報を基に確認。来店前に公式情報をご確認ください。 豊橋観光コンベンション協会公式掲載のベーカリーを追加確認。 2026-09-23豊橋市監査：パンとカフェ公園通り、Peche、ベーカリーショパン三ノ輪本店、ラ・ムワソン、コンティキ、アンプレシオンを公式・現行店舗情報で再照合し、住所・営業時間・電話・公式導線・特色を補完。 2026-09-23豊橋市TOP10補完：豊市パン、ベーカリーショパン豊橋西店、マムズ・ブレッド、カメリアを2026年の現役情報・公式情報で確認し追加。",
   "shops": [
     {
       "placeId": "static-toyohashi-koendori",
@@ -154,6 +154,128 @@
       "representativeProduct": "クローネ",
       "representativeLabel": "創業当時からの名物",
       "specialNotice": "パン完売次第閉店。"
+    },
+    {
+      "placeId": "static-toyohashi-toyoichi",
+      "name": "豊市パン",
+      "rating": 4.19,
+      "reviews": 119,
+      "address": "愛知県豊橋市駅前大通2-82 emCAMPUS WEST 1F",
+      "type": "パン屋",
+      "types": [
+        "bakery",
+        "cafe"
+      ],
+      "openingHours": [
+        "水〜日 08:00–18:00",
+        "月・火 定休（月曜祝日は営業）"
+      ],
+      "phone": "0532-54-3911",
+      "website": "https://em-campus.jp/toyoichi/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E8%B1%8A%E5%B8%82%E3%83%91%E3%83%B3%20%E8%B1%8A%E6%A9%8B%E5%B8%82%E9%A7%85%E5%89%8D%E5%A4%A7%E9%80%9A2-82",
+      "photo": "",
+      "catchphrase": "国産小麦100％、東三河食材を生かした約70種類の焼き立てパン",
+      "highlights": [
+        "無添加のパン生地を使用",
+        "モーニング・ランチ・イートインに対応"
+      ],
+      "representativeProduct": "アークリッシュカレーパン",
+      "representativeLabel": "公式サイト掲載の人気商品",
+      "specialNotice": "月曜が祝日の場合は営業。",
+      "photoAttribution": "",
+      "photoSource": "",
+      "photoLicense": ""
+    },
+    {
+      "placeId": "ChIJ85LJHW_OBGARoEv77HtLhrA",
+      "name": "ベーカリーショパン 豊橋西店",
+      "rating": 4.1,
+      "reviews": 718,
+      "address": "愛知県豊橋市川崎町243",
+      "type": "パン屋",
+      "types": [
+        "bakery",
+        "cafe"
+      ],
+      "openingHours": [
+        "月・水〜金 08:00–19:00",
+        "土・日・祝 07:00–19:00",
+        "火曜定休"
+      ],
+      "phone": "0532-43-5743",
+      "website": "https://b-chopin.com/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%99%E3%83%BC%E3%82%AB%E3%83%AA%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%91%E3%83%B3%20%E8%B1%8A%E6%A9%8B%E8%A5%BF%E5%BA%97",
+      "photo": "",
+      "catchphrase": "毎日多彩な焼き立てパンを揃える大型ベーカリー",
+      "highlights": [
+        "大型駐車場とテラス席を備える",
+        "手作り・焼き立てにこだわるショパンの豊橋西店"
+      ],
+      "representativeProduct": "匠のカレーパン",
+      "representativeLabel": "定番人気商品",
+      "specialNotice": "年末年始休業あり。",
+      "photoAttribution": "",
+      "photoSource": "",
+      "photoLicense": ""
+    },
+    {
+      "placeId": "ChIJe4UDEfvRBGARl6rxDWh7RNs",
+      "name": "マムズ・ブレッド",
+      "rating": 4,
+      "reviews": 49,
+      "address": "愛知県豊橋市東脇2-5-11",
+      "type": "パン屋",
+      "types": [
+        "bakery",
+        "cafe"
+      ],
+      "openingHours": [
+        "火〜土 10:00–18:00",
+        "日・月 定休"
+      ],
+      "phone": "0532-33-8755",
+      "website": "http://www.momsbread.net/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%9E%E3%83%A0%E3%82%BA%E3%83%BB%E3%83%96%E3%83%AC%E3%83%83%E3%83%89%20%E8%B1%8A%E6%A9%8B%E5%B8%82%E6%9D%B1%E8%84%872-5-11",
+      "photo": "",
+      "catchphrase": "東脇で親しまれる地域密着のベーカリー",
+      "highlights": [
+        "パンとカフェ利用に対応",
+        "テイクアウト・駐車場あり"
+      ],
+      "specialNotice": "営業時間・休業日は変更の場合があるため来店前に確認推奨。",
+      "photoAttribution": "",
+      "photoSource": "",
+      "photoLicense": ""
+    },
+    {
+      "placeId": "ChIJOyiL7AvSBGAR0cWYRtyb0F8",
+      "name": "カメリア",
+      "rating": 4.4,
+      "reviews": 63,
+      "address": "愛知県豊橋市新本町121",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "月〜土 09:00–17:00",
+        "日曜定休"
+      ],
+      "phone": "0532-52-3383",
+      "website": "",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%82%AB%E3%83%A1%E3%83%AA%E3%82%A2%20%E8%B1%8A%E6%A9%8B%E5%B8%82%E6%96%B0%E6%9C%AC%E7%94%BA121",
+      "photo": "",
+      "catchphrase": "昭和26年創業、まちなかで長く愛される老舗ベーカリー",
+      "highlights": [
+        "惣菜パン・デニッシュ・サンドイッチなど幅広く展開",
+        "豊橋駅から徒歩圏"
+      ],
+      "representativeProduct": "あんバターサンド",
+      "representativeLabel": "店舗紹介で取り上げられる人気商品",
+      "specialNotice": "時間帯により売り切れる商品あり。",
+      "photoAttribution": "",
+      "photoSource": "",
+      "photoLicense": ""
     }
   ]
 }
