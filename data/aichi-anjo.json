@@ -111,14 +111,18 @@
         "bakery"
       ],
       "openingHours": [
-        "火〜土 9:00–16:00"
+        "火〜土 08:00–18:00",
+        "月・日 定休"
       ],
       "phone": "0566-77-5515",
       "website": "",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=foyer%20boulanger%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%AE%89%E5%9F%8E%E5%B8%82%E5%8F%A4%E4%BA%95%E7%94%BA%E5%B0%8F%E4%BB%8F9-2",
       "photo": "",
-      "catchphrase": "古井町のベーカリー",
-      "highlights": []
+      "catchphrase": "サンドイッチや惣菜パンも充実する古井町のベーカリー",
+      "highlights": [
+        "平日は全商品の予約に対応",
+        "店舗外にイートイン席あり"
+      ]
     },
     {
       "placeId": "",
