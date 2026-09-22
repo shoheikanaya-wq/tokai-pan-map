@@ -1,7 +1,7 @@
 {
   "source": "static-free-recovery",
   "updatedAt": "2026-09-23",
-  "attribution": "無料復旧用スナップショット。公開情報を基に構成し、来店前に公式情報をご確認ください。 2026-09-23にグランクレール日名・六ツ美、パンリゴレ、Papa D' Nukuを現行公開情報で再照合し住所・営業時間・電話・特色を補完。",
+  "attribution": "無料復旧用スナップショット。公開情報を基に構成し、来店前に公式情報をご確認ください。 2026-09-23にグランクレール日名・六ツ美、パンリゴレ、Papa D' Nukuを現行公開情報で再照合し住所・営業時間・電話・特色を補完。 2026-09-23にラ・ヴィ・デュ・パン、プース、パンのトラNEOPASA岡崎、バプールを公式情報で再照合し営業時間・公式導線・特色を補完。",
   "shops": [
     {
       "placeId": "",
@@ -14,17 +14,17 @@
         "bakery"
       ],
       "openingHours": [
-        "水〜日 10:00–18:00",
+        "10:00–18:00",
         "月・火 定休"
       ],
       "phone": "0564-83-8029",
       "website": "https://laviedureve.jp/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%A9%E3%83%BB%E3%83%B4%E3%82%A3%E3%83%BB%E3%83%87%E3%83%A5%E3%83%BB%E3%83%91%E3%83%B3%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%B2%A1%E5%B4%8E%E5%B8%82%E7%9C%9F%E4%BC%9D%E7%94%BA%E4%BE%9B%E9%A4%8A%E5%9D%8A16-6",
       "photo": "",
-      "catchphrase": "真伝町の人気ベーカリー",
+      "catchphrase": "本場フランス仕込みのパンを提案する真伝町のブーランジェリー",
       "highlights": [
-        "テイクアウト",
-        "駐車場あり"
+        "フランスの食卓を日本の生活に合わせて提案",
+        "岡崎で本場フランス仕込みのパン文化を発信"
       ]
     },
     {
@@ -38,14 +38,19 @@
         "bakery"
       ],
       "openingHours": [
-        "木 10:00–17:00"
+        "10:00–19:00",
+        "土曜定休"
       ],
       "phone": "0564-59-4551",
-      "website": "",
+      "website": "https://www.pousse.net/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E7%9F%B3%E7%AA%AF%E3%83%91%E3%83%B3%E5%B7%A5%E6%88%BF%20%E3%83%97%E3%83%BC%E3%82%B9%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%B2%A1%E5%B4%8E%E5%B8%82%E7%89%A7%E5%BE%A1%E5%A0%82%E7%94%BA%E6%B0%B4%E6%B4%9750-2",
       "photo": "",
-      "catchphrase": "石窯パン工房",
-      "highlights": []
+      "catchphrase": "国産小麦や天然発酵種にこだわる石窯パン工房",
+      "highlights": [
+        "砂糖・卵・バターを使わない食事パンを展開",
+        "酒種やルヴァン種を使い大型石窯で焼成"
+      ],
+      "specialNotice": "営業時間は掲載媒体で差異があるため、来店前に公式SNSの最新情報を要確認。"
     },
     {
       "placeId": "",
@@ -58,17 +63,19 @@
         "bakery"
       ],
       "openingHours": [
-        "6:00–20:00"
+        "06:00–20:00"
       ],
       "phone": "0564-64-3319",
       "website": "https://pannotora.com/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%82%B9%E3%83%9A%E3%82%A4%E3%83%B3%E7%AA%AF%20%E3%83%91%E3%83%B3%E3%81%AE%E3%83%88%E3%83%A9%20NEOPASA%E5%B2%A1%E5%B4%8E%E5%BA%97%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%B2%A1%E5%B4%8E%E5%B8%82%E5%AE%AE%E7%9F%B3%E7%94%BA%E5%85%AD%E3%83%84%E7%94%B010-4%20NEOPASA%E5%B2%A1%E5%B4%8E%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%82%A8%E3%83%AA%E3%82%A2%E5%86%85",
       "photo": "",
-      "catchphrase": "NEOPASA岡崎のベーカリー",
+      "catchphrase": "約130種類を焼き上げるNEOPASA岡崎のスペイン窯ベーカリー",
       "highlights": [
-        "スペイン窯",
-        "サービスエリア内"
-      ]
+        "独自の湯種製法によるもちもち食パン「パンのトラ」",
+        "早朝6時から営業"
+      ],
+      "representativeProduct": "パンのトラ",
+      "representativeLabel": "看板食パン"
     },
     {
       "placeId": "ChIJZYFh8iW9BGARmCGbhqdvaZ0",
@@ -81,14 +88,18 @@
         "bakery"
       ],
       "openingHours": [
-        "水〜日 11:00–18:00"
+        "11:00–18:00",
+        "月・火 定休"
       ],
       "phone": "0564-73-9328",
-      "website": "",
+      "website": "https://laviedureve.jp/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%90%E3%83%97%E3%83%BC%E3%83%AB%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%B2%A1%E5%B4%8E%E5%B8%82%E5%85%AD%E5%90%8D%E6%9C%AC%E7%94%BA9-21",
       "photo": "",
-      "catchphrase": "六名のベーカリー",
-      "highlights": []
+      "catchphrase": "銭湯のような交流の場をパン屋で表現した六名のベーカリー",
+      "highlights": [
+        "店名はフランス語で「湯気」",
+        "ふらっと立ち寄れる地域のコミュニケーション空間をコンセプトにする"
+      ]
     },
     {
       "placeId": "9666045",
