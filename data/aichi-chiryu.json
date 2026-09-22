@@ -1,7 +1,7 @@
 {
   "source": "static-free-recovery",
-  "updatedAt": "2026-09-19",
-  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。未取得項目は空欄または0。来店前に地図・公式情報をご確認ください。 BERGMANは知立市公式広報の2025年取材でパン屋メインへのリニューアルを確認。住所・営業時間等は店舗公式SNS案内および地域メディア掲載で照合。 正文堂は知立市公式「ちりゅっぴまんぞくーぽん」取扱店一覧で「おにぎり・パン」取扱店として確認。",
+  "updatedAt": "2026-09-23",
+  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。未取得項目は空欄または0。来店前に地図・公式情報をご確認ください。 BERGMANは知立市公式広報の2025年取材でパン屋メインへのリニューアルを確認。住所・営業時間等は店舗公式SNS案内および地域メディア掲載で照合。 正文堂は知立市公式「ちりゅっぴまんぞくーぽん」取扱店一覧で「おにぎり・パン」取扱店として確認。 2026-09-23知立市監査：正文堂を非ベーカリーのため除外。パンのかおり、BERGMAN、メープルけやき、たいいくぱん、サンエトワール、ベルナール、エピールを市・施設・店舗公開情報で再照合。",
   "shops": [
     {
       "placeId": "ChIJMcx1Dv-dBGARZTbjMrfDDZU",
@@ -31,13 +31,20 @@
       "types": [
         "bakery"
       ],
-      "openingHours": [],
+      "openingHours": [
+        "月〜金 10:00–20:00",
+        "土・日 09:30–20:00",
+        "ドミー知立店の営業に準ずる"
+      ],
       "phone": "",
       "website": "",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%82%A8%E3%83%94%E3%83%BC%E3%83%AB%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E7%9F%A5%E7%AB%8B%E5%B8%82%E4%B8%8A%E9%87%8D%E5%8E%9F%E7%94%BA%E5%B7%B1%E3%83%8E%E6%B1%A053-1",
       "photo": "",
-      "catchphrase": "上重原町のベーカリー",
-      "highlights": []
+      "catchphrase": "ドミー知立店内の地域密着ベーカリー",
+      "highlights": [
+        "食パンや調理パンを幅広く展開",
+        "ドミー知立店の現役テナント"
+      ]
     },
     {
       "placeId": "ChIJC-YCvRecBGAROlWvDvyb6nI",
@@ -50,34 +57,45 @@
         "bakery"
       ],
       "openingHours": [
-        "07:00–19:00"
+        "07:00–19:00",
+        "無休（年始除く）"
       ],
       "phone": "0566-93-3875",
-      "website": "",
+      "website": "https://www.comline.co.jp/pannokaori/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%91%E3%83%B3%E3%81%AE%E3%81%8B%E3%81%8A%E3%82%8A%20%E7%9F%A5%E7%AB%8B%E5%BA%97%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E7%9F%A5%E7%AB%8B%E5%B8%82%E5%BA%83%E8%A6%8B1-90",
       "photo": "",
-      "catchphrase": "広見のベーカリー",
-      "highlights": []
+      "catchphrase": "スペイン製石窯で焼き上げる、知立の大型ベーカリー",
+      "highlights": [
+        "人気No.1は自家製牛肉カレーを使った牛肉カレーパン",
+        "イートイン・キッズスペース・駐車場あり"
+      ],
+      "representativeProduct": "牛肉カレーパン",
+      "representativeLabel": "店舗案内掲載の人気No.1商品",
+      "specialNotice": "パンが売り切れ次第閉店。"
     },
     {
       "placeId": "ChIJV5VwUkecBGARpLIqwdqapgg",
-      "name": "ベルナール知立店",
+      "name": "ベルナール ピアゴ知立店",
       "rating": 3,
       "reviews": 4,
-      "address": "愛知県知立市南新地1-2-6",
+      "address": "愛知県知立市南新地1-2-26 ピアゴ知立店1F",
       "type": "パン屋",
       "types": [
         "bakery"
       ],
       "openingHours": [
-        "10:00–21:00"
+        "10:00–21:00",
+        "施設営業に準ずる"
       ],
       "phone": "0566-81-5351",
-      "website": "",
+      "website": "https://www.fujipanstore.com/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%99%E3%83%AB%E3%83%8A%E3%83%BC%E3%83%AB%E7%9F%A5%E7%AB%8B%E5%BA%97%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E7%9F%A5%E7%AB%8B%E5%B8%82%E5%8D%97%E6%96%B0%E5%9C%B01-2-6",
       "photo": "",
-      "catchphrase": "南新地のベーカリー",
-      "highlights": []
+      "catchphrase": "ピアゴ知立店1階のフジパン系インストアベーカリー",
+      "highlights": [
+        "2026年の愛知県営業許可資料でも現役確認",
+        "買い物と一緒に利用しやすい"
+      ]
     },
     {
       "placeId": "ChIJHwXlEVacBGAREabm7FGFVkE",
@@ -107,14 +125,18 @@
       "types": [
         "bakery"
       ],
-      "openingHours": [],
+      "openingHours": [
+        "火〜土 10:00–16:00",
+        "日・月 定休"
+      ],
       "phone": "0566-91-2860",
       "website": "",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%A1%E3%83%BC%E3%83%97%E3%83%AB%E3%81%91%E3%82%84%E3%81%8D%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E7%9F%A5%E7%AB%8B%E5%B8%82%E5%85%AB%E3%83%84%E7%94%B0%E7%94%BA%E6%B3%8945-1",
       "photo": "",
-      "catchphrase": "ベーカリー＆カフェ",
+      "catchphrase": "焼き立てパンとランチを楽しめる福祉の里隣接ベーカリーカフェ",
       "highlights": [
-        "福祉施設併設"
+        "パン・ラスク・クッキーを販売",
+        "喫茶では生麺パスタも提供"
       ]
     },
     {
@@ -134,12 +156,15 @@
       "website": "",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%99%E3%83%BC%E3%82%AB%E3%83%AA%E3%83%BC%EF%BC%86%E3%82%AB%E3%83%95%E3%82%A7%E3%81%9F%E3%81%84%E3%81%84%E3%81%8F%E3%81%B1%E3%82%93%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E7%9F%A5%E7%AB%8B%E5%B8%82%E8%A5%BF%E7%94%BA%E8%8D%89%E5%88%8810-5%20%E7%A6%8F%E7%A5%89%E4%BD%93%E8%82%B2%E9%A4%A8%E5%86%85",
       "photo": "",
-      "catchphrase": "福祉体育館内のベーカリー＆カフェ",
-      "highlights": []
+      "catchphrase": "知立市福祉体育館内のベーカリー＆カフェ",
+      "highlights": [
+        "体育館利用時にも立ち寄りやすい",
+        "パンとカフェメニューを提供"
+      ]
     },
     {
       "placeId": "ChIJ5ZhnhBucBGARE5E2kKIxLGo",
-      "name": "サンエトワール ギャラリエアピタ知立店",
+      "name": "サンエトワール アピタ知立店",
       "rating": 0,
       "reviews": 0,
       "address": "愛知県知立市長篠町大山18-1 ギャラリエアピタ知立1F",
@@ -148,18 +173,22 @@
         "bakery"
       ],
       "openingHours": [
-        "09:00–21:00"
+        "10:00–21:30",
+        "施設営業に準ずる"
       ],
       "phone": "0566-83-8133",
-      "website": "",
+      "website": "https://www.yamazakipan.co.jp/shops/saint_etoile/main.html",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%82%B5%E3%83%B3%E3%82%A8%E3%83%88%E3%83%AF%E3%83%BC%E3%83%AB%20%E3%82%AE%E3%83%A3%E3%83%A9%E3%83%AA%E3%82%A8%E3%82%A2%E3%83%94%E3%82%BF%E7%9F%A5%E7%AB%8B%E5%BA%97%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E7%9F%A5%E7%AB%8B%E5%B8%82%E9%95%B7%E7%AF%A0%E7%94%BA%E5%A4%A7%E5%B1%B118-1%20%E3%82%AE%E3%83%A3%E3%83%A9%E3%83%AA%E3%82%A8%E3%82%A2%E3%83%94%E3%82%BF%E7%9F%A5%E7%AB%8B1F",
       "photo": "",
-      "catchphrase": "アピタ内のベーカリー",
-      "highlights": []
+      "catchphrase": "ギャラリエアピタ知立1階のインストアベーカリー",
+      "highlights": [
+        "買い物と一緒に利用しやすい",
+        "ヤマザキ系ベーカリーブランド"
+      ]
     },
     {
       "placeId": "static-chiryu-bergman",
-      "name": "BERGMAN（バーグマン）",
+      "name": "BERGMAN",
       "rating": 0,
       "reviews": 0,
       "address": "愛知県知立市新池3-56",
@@ -169,39 +198,19 @@
         "cafe"
       ],
       "openingHours": [
-        "09:00–18:00（パンがなくなり次第閉店）",
-        "月・火曜定休"
+        "水〜日 09:00–18:00",
+        "月・火 定休"
       ],
       "phone": "0566-82-6351",
       "website": "https://www.instagram.com/bergman_bakery_restaurant/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=BERGMAN%20%E7%9F%A5%E7%AB%8B%E5%B8%82%E6%96%B0%E6%B1%A03-56",
       "photo": "",
-      "catchphrase": "レストランからパン屋メインへリニューアル",
+      "catchphrase": "洋食店からベーカリー＆カフェへ生まれ変わった新池の店",
       "highlights": [
-        "日替わりパン",
-        "自家製具材"
-      ]
-    },
-    {
-      "placeId": "static-chiryu-seibundo",
-      "name": "正文堂",
-      "rating": 0,
-      "reviews": 0,
-      "address": "愛知県知立市栄1-1 サカエワンビル1F",
-      "type": "パン販売店",
-      "types": [
-        "bakery"
+        "2024年11月にベーカリー業態としてリニューアル",
+        "デニッシュ・ハード系・惣菜系などを日替わりで展開"
       ],
-      "openingHours": [],
-      "phone": "0566-81-3618",
-      "website": "https://www.city.chiryu.aichi.jp/material/files/group/15/sigatuhatikarasonota.pdf",
-      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E6%AD%A3%E6%96%87%E5%A0%82%20%E7%9F%A5%E7%AB%8B%E5%B8%82%E6%A0%841-1%20%E3%82%B5%E3%82%AB%E3%82%A8%E3%83%AF%E3%83%B3%E3%83%93%E3%83%AB1F",
-      "photo": "",
-      "catchphrase": "知立市公式資料掲載のおにぎり・パン取扱店",
-      "highlights": [
-        "パン販売",
-        "知立駅周辺"
-      ]
+      "specialNotice": "パンがなくなり次第閉店。"
     }
   ]
 }
