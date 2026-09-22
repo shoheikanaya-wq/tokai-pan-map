@@ -1,7 +1,7 @@
 {
   "source": "static-free-recovery",
-  "updatedAt": "2026-09-19",
-  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。未取得項目は空欄または0。来店前に地図・公式情報をご確認ください。 グリーンオニオン・珈味香流は碧南市観光協会公式の店舗情報および「碧南と#パンまみれ」でパン商品の現行掲載を確認。",
+  "updatedAt": "2026-09-23",
+  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。未取得項目は空欄または0。来店前に地図・公式情報をご確認ください。 グリーンオニオン・珈味香流は碧南市観光協会公式の店舗情報および「碧南と#パンまみれ」でパン商品の現行掲載を確認。 2026-09-23碧南市監査：ベーカリードゥークー、mon coeur、Bakeshop SolSol、わっぱ堂を現行公開情報で再照合し営業時間・定休日・特色・公式導線を補完。",
   "shops": [
     {
       "placeId": "ChIJVVXhvBuQBGARgmMMfAc8o_Y",
@@ -14,18 +14,19 @@
         "bakery"
       ],
       "openingHours": [
-        "月・木・金・土・日 07:00–18:00",
+        "月・木〜日 07:00–18:00",
         "火・水 定休"
       ],
       "phone": "0566-55-2121",
       "website": "https://pan-dooku.com/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%99%E3%83%BC%E3%82%AB%E3%83%AA%E3%83%BC%20%E3%83%89%E3%82%A5%E3%83%BC%E3%82%AF%E3%83%BC%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E7%A2%A7%E5%8D%97%E5%B8%82%E6%BA%90%E6%B0%8F%E7%94%BA1-15-10",
       "photo": "",
-      "catchphrase": "本格フランスパンのベーカリー",
+      "catchphrase": "碧南駅近くで朝7時から焼き立てパンを楽しめるベーカリー",
       "highlights": [
-        "生地・焼成へのこだわり",
-        "ハード系"
-      ]
+        "碧南駅から徒歩圏",
+        "国産小麦を中心に多彩なパンを展開"
+      ],
+      "specialNotice": "売り切れ状況により品数が少なくなる場合あり。"
     },
     {
       "placeId": "ChIJQ77GeACbBGAR8Cpritx43uw",
@@ -38,18 +39,23 @@
         "bakery"
       ],
       "openingHours": [
-        "08:00–18:00"
+        "08:00–18:00",
+        "水曜・第1/3/5木曜 定休"
       ],
       "phone": "0566-55-1009",
       "website": "",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=mon%20coeur%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E7%A2%A7%E5%8D%97%E5%B8%82%E7%B7%91%E7%94%BA5-45",
       "photo": "",
-      "catchphrase": "緑町のベーカリー",
-      "highlights": []
+      "catchphrase": "クロワッサンやハード系が評判の緑町ベーカリー",
+      "highlights": [
+        "京都・舞鶴で7年間パン店を営んだ店主が碧南で開業",
+        "クロワッサン・ハード系・惣菜パンまで幅広く展開"
+      ],
+      "specialNotice": "木曜休は第1・3・5週。来店前に最新営業情報を確認推奨。"
     },
     {
       "placeId": "ChIJVVXZpmWQBGARAJZX8Wurh-s",
-      "name": "Solsol",
+      "name": "Bakeshop SolSol",
       "rating": 0,
       "reviews": 0,
       "address": "愛知県碧南市三宅町1-82 サンレモン103",
@@ -57,17 +63,27 @@
       "types": [
         "bakery"
       ],
-      "openingHours": [],
+      "openingHours": [
+        "平日 11:00–17:00",
+        "土日祝 11:00–18:00",
+        "月・火 定休"
+      ],
       "phone": "0566-87-1214",
-      "website": "",
+      "website": "https://solsol-gf.com/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=Solsol%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E7%A2%A7%E5%8D%97%E5%B8%82%E4%B8%89%E5%AE%85%E7%94%BA1-82%20%E3%82%B5%E3%83%B3%E3%83%AC%E3%83%A2%E3%83%B3103",
       "photo": "",
-      "catchphrase": "三宅町のベーカリー",
-      "highlights": []
+      "catchphrase": "小麦不使用のグルテンフリー米粉パン専門店",
+      "highlights": [
+        "米粉パン専門で小麦パンとは厨房を分離",
+        "米粉パンコンテスト受賞商品のカンパーニュも展開"
+      ],
+      "representativeProduct": "窯出しコシヒカリ",
+      "representativeLabel": "公式サイト掲載の人気No.1商品",
+      "specialNotice": "商品完売時はその時点で閉店。"
     },
     {
       "placeId": "ChIJsy-zRR2QBGARbsoYWPwEGUw",
-      "name": "Wappa dou",
+      "name": "わっぱ堂",
       "rating": 0,
       "reviews": 0,
       "address": "愛知県碧南市音羽町1-53",
@@ -76,14 +92,19 @@
         "bakery"
       ],
       "openingHours": [
-        "日 11:00–17:00"
+        "水〜日 11:00–17:00",
+        "月・火 定休"
       ],
       "phone": "0566-41-3098",
       "website": "",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=Wappa%20dou%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E7%A2%A7%E5%8D%97%E5%B8%82%E9%9F%B3%E7%BE%BD%E7%94%BA1-53",
       "photo": "",
-      "catchphrase": "音羽町のベーカリー",
-      "highlights": []
+      "catchphrase": "音羽町で営業する小さなパンと焼き菓子の店",
+      "highlights": [
+        "碧南市の現行店舗一覧に掲載",
+        "テイクアウト中心"
+      ],
+      "specialNotice": "営業内容は変更の場合があるため来店前に最新情報を要確認。"
     },
     {
       "placeId": "ChIJuSwqTbyaBGARYH7HIHfS9Cw",
