@@ -1,31 +1,33 @@
 {
   "source": "static-free-verified",
-  "updatedAt": "2026-09-21",
-  "attribution": "豊根村・奥三河の公開観光情報を基に確認。来店前に公式情報をご確認ください。",
+  "updatedAt": "2026-09-23",
+  "attribution": "豊根村・奥三河の公開観光情報を基に確認。来店前に公式情報をご確認ください。 2026-09-23豊根村監査：豊根村公式観光情報・豊根村商工会・店舗公式を再照合し、ベッケライ ミンデンを村唯一の常設ドイツパン店として更新。2026年9月24日までの夏季休業延長を明記。",
   "shops": [
     {
-      "placeId": "static-toyone-minden",
+      "placeId": "ChIJh4ecYYJDG2ARelIbsfrbj_w",
       "name": "ベッケライ ミンデン",
-      "rating": 0,
-      "reviews": 0,
+      "rating": 4.2,
+      "reviews": 229,
       "address": "愛知県北設楽郡豊根村上黒川字柿平22",
       "type": "パン屋",
       "types": [
         "bakery"
       ],
       "openingHours": [
-        "営業日・営業時間は来店前に公開情報で確認"
+        "金・土・日 09:30頃〜売り切れ次第終了",
+        "月〜木 定休"
       ],
-      "phone": "",
-      "website": "https://www.okuminavi.jp/food/detail/125",
-      "googleMaps": "",
+      "phone": "0536-85-1234",
+      "website": "https://r.goope.jp/minden/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%99%E3%83%83%E3%82%B1%E3%83%A9%E3%82%A4%20%E3%83%9F%E3%83%B3%E3%83%87%E3%83%B3%20%E8%B1%8A%E6%A0%B9%E6%9D%91%E4%B8%8A%E9%BB%92%E5%B7%9D%E5%AD%97%E6%9F%BF%E5%B9%B322",
       "photo": "",
-      "catchphrase": "森の中のドイツパン店",
+      "catchphrase": "本場ドイツで磨いた技で焼く、豊根村唯一のドイツパン専門店",
       "highlights": [
-        "ドイツパン",
-        "山間のベーカリー"
+        "ドイツパン各種を販売",
+        "豊根村の食材を生かした酵母にも取り組む"
       ],
-      "representativeProduct": "ドイツパン各種"
+      "representativeProduct": "ドイツパン各種",
+      "specialNotice": "2026年8月17日〜9月24日は夏季休業。通常営業でも臨時休業・長期休業あり。来店前に公式お知らせ確認推奨。"
     }
   ]
 }
