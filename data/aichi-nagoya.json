@@ -1,7 +1,7 @@
 {
   "source": "static-free-verified",
-  "updatedAt": "2026-09-21",
-  "attribution": "各店舗・ブランドの公式公開情報を基に確認。来店前に公式情報をご確認ください。",
+  "updatedAt": "2026-09-23",
+  "attribution": "各店舗・ブランドの公式公開情報を基に確認。来店前に公式情報をご確認ください。 2026-09-23名古屋市監査：焼きたてJaパン、SURIPU、テーラ・テール、baguette rabbit社口本店、パンのトラ八事店、Le Supreme.栄生本店、つばめパン尼ヶ坂本店・神の倉店、Boulangerieぱんのいえを現行公式・2026年現行情報で再照合し、住所・営業時間・電話・定休日・特色を更新。",
   "shops": [
     {
       "placeId": "static-nagoya-yakitatejapan",
@@ -15,23 +15,24 @@
       ],
       "openingHours": [
         "10:00–17:00（売り切れ次第終了）",
-        "月・木曜定休"
+        "月・木 定休"
       ],
-      "phone": "052-851-7580",
+      "phone": "050-5385-3712",
       "website": "https://yakitatejapan-nagoya.com/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E7%84%BC%E3%81%8D%E3%81%9F%E3%81%A6Ja%E3%83%91%E3%83%B3%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E6%98%AD%E5%92%8C%E5%8C%BA%E6%A1%9C%E5%B1%B1%E7%94%BA1-4%20RS%E3%83%93%E3%83%AB1a",
       "photo": "",
-      "catchphrase": "桜山の焼きたてパン店。食パンや季節限定パンを展開",
+      "catchphrase": "安全な食材を大切に、食パンや季節限定パンを焼く桜山のベーカリー",
       "highlights": [
         "食パン",
         "季節限定パン",
         "焼きたて"
       ],
-      "representativeProduct": "食パン"
+      "representativeProduct": "食パン",
+      "specialNotice": "パンがなくなり次第営業終了。"
     },
     {
       "placeId": "static-nagoya-suripu",
-      "name": "SURIPU",
+      "name": "SURIPU（スーリープー）",
       "rating": 0,
       "reviews": 0,
       "address": "愛知県名古屋市中区千代田2-16-20",
@@ -40,20 +41,22 @@
         "bakery"
       ],
       "openingHours": [
-        "08:00–19:00",
-        "定休日 月・火"
+        "水〜金 08:30–18:30",
+        "土・日 08:00–17:00",
+        "月・火 定休"
       ],
       "phone": "052-263-3371",
-      "website": "https://www.instagram.com/suripu_3/",
+      "website": "https://www.instagram.com/suripu_insta/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=SURIPU%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E4%B8%AD%E5%8C%BA%E5%8D%83%E4%BB%A3%E7%94%B02-16-20",
       "photo": "",
-      "catchphrase": "鶴舞エリアでハード系から惣菜パンまで幅広く揃える人気ベーカリー",
+      "catchphrase": "鶴舞駅近く、ハード系から惣菜パンまで幅広く揃える人気ベーカリー",
       "highlights": [
         "ハード系",
         "惣菜パン",
         "菓子パン"
       ],
-      "representativeProduct": "ハード系パン"
+      "representativeProduct": "ハード系パン",
+      "specialNotice": "売り切れ次第閉店。"
     },
     {
       "placeId": "static-nagoya-terreaterre",
@@ -66,20 +69,21 @@
         "bakery"
       ],
       "openingHours": [
-        "10:00–18:00",
-        "定休日 火・水"
+        "08:00–17:00",
+        "年末年始休"
       ],
       "phone": "052-930-5445",
       "website": "https://www.terreaterre.jp/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%86%E3%83%BC%E3%83%A9%E3%83%BB%E3%83%86%E3%83%BC%E3%83%AB%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E6%9D%B1%E5%8C%BA%E6%B3%893-28-3",
       "photo": "",
-      "catchphrase": "泉のベーカリー＆カフェ。素材と食感を生かした個性的なパン",
+      "catchphrase": "国産小麦と素材を生かした個性的なパンを楽しめる高岳のベーカリー＆カフェ",
       "highlights": [
         "国産小麦",
         "カフェ併設",
-        "個性豊かなパン"
+        "サリューなど個性的なパン"
       ],
-      "representativeProduct": "サリュー"
+      "representativeProduct": "サリュー",
+      "specialNotice": "カフェ利用は16:00まで。"
     },
     {
       "placeId": "static-nagoya-baguette-rabbit",
@@ -92,20 +96,20 @@
         "bakery"
       ],
       "openingHours": [
-        "09:00–19:00",
-        "定休日 火"
+        "08:30–19:00"
       ],
       "phone": "052-779-0006",
       "website": "https://baguette-rabbit.com/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=baguette%20rabbit%20%E7%A4%BE%E5%8F%A3%E6%9C%AC%E5%BA%97%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E5%90%8D%E6%9D%B1%E5%8C%BA%E7%A4%BE%E5%8F%A31-916",
       "photo": "",
-      "catchphrase": "石臼挽き小麦を生かしたハード系が特徴の社口本店",
+      "catchphrase": "自家製粉も取り入れ、小麦の風味を引き出す社口のベーカリー",
       "highlights": [
-        "ハード系",
-        "石臼挽き小麦",
-        "ブール"
+        "自家製粉",
+        "国産小麦",
+        "看板商品ブール"
       ],
-      "representativeProduct": "ブール"
+      "representativeProduct": "ブール",
+      "representativeLabel": "公式サイト掲載の看板商品"
     },
     {
       "placeId": "static-nagoya-pannotora-yagoto",
@@ -124,13 +128,13 @@
       "website": "https://pannotora.com/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%91%E3%83%B3%E3%81%AE%E3%83%88%E3%83%A9%20%E5%85%AB%E4%BA%8B%E5%BA%97%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E6%98%AD%E5%92%8C%E5%8C%BA%E5%BA%83%E8%B7%AF%E7%94%BA%E6%A2%85%E5%9C%928-1",
       "photo": "",
-      "catchphrase": "焼きたてを次々提供する八事の大型ベーカリー",
+      "catchphrase": "約120種類を焼き上げる、朝7時開店の八事大型ベーカリー",
       "highlights": [
-        "食パン",
-        "焼きたて",
-        "朝7時営業"
+        "約120種類を展開",
+        "焼きたてパンを連続提供"
       ],
-      "representativeProduct": "食パン"
+      "representativeProduct": "パンのトラ食パン",
+      "representativeLabel": "公式案内の看板食パン"
     },
     {
       "placeId": "static-nagoya-le-supreme-sako",
@@ -143,20 +147,21 @@
         "bakery"
       ],
       "openingHours": [
-        "08:00–19:00",
-        "定休日 月（祝日の場合は営業の場合あり）"
+        "水〜日 08:00–19:00",
+        "月・火 定休"
       ],
       "phone": "052-471-3667",
       "website": "https://lesupreme.jp/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=Le%20Supreme.%20%E6%A0%84%E7%94%9F%E6%9C%AC%E5%BA%97%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E4%B8%AD%E6%9D%91%E5%8C%BA%E6%A0%84%E7%94%9F%E7%94%BA7-8",
       "photo": "",
-      "catchphrase": "栄生駅近く、フランス系を軸に幅広いパンを揃えるベーカリー",
+      "catchphrase": "栄生駅すぐ、フランス系から惣菜パンまで幅広く揃えるベーカリー",
       "highlights": [
         "クロワッサン",
         "ハード系",
         "惣菜パン"
       ],
-      "representativeProduct": "クロワッサン"
+      "representativeProduct": "クロワッサン",
+      "specialNotice": "祝日等で営業変更の場合があるため来店前に最新情報確認推奨。"
     },
     {
       "placeId": "static-nagoya-kako-bucyo",
@@ -194,17 +199,18 @@
         "bakery"
       ],
       "openingHours": [
-        "08:00–19:00"
+        "08:00–19:00（L.O.18:30）",
+        "年末年始 12/31〜1/3 休"
       ],
       "phone": "052-938-6116",
       "website": "https://tsubamepan.jp/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%81%A4%E3%81%B0%E3%82%81%E3%83%91%E3%83%B3%EF%BC%86Milk%20%E5%B0%BC%E3%82%B1%E5%9D%82%E6%9C%AC%E5%BA%97%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E5%8C%97%E5%8C%BA%E5%A4%A7%E6%9D%891-18-21",
       "photo": "",
-      "catchphrase": "天然酵母の食パンを中心に楽しめる、つばめパンの本店",
+      "catchphrase": "北海道美瑛産小麦100％の天然酵母食パンとカフェを楽しめる尼ヶ坂本店",
       "highlights": [
         "天然酵母食パン",
-        "小倉トースト",
-        "カフェ"
+        "モーニング8:00〜11:00",
+        "オムレツサンドは11時から"
       ],
       "representativeProduct": "天然酵母の食パン"
     },
@@ -219,43 +225,46 @@
         "bakery"
       ],
       "openingHours": [
-        "08:00–19:00"
+        "08:00–19:00（L.O.18:30）",
+        "年末年始 12/31〜1/3 休"
       ],
       "phone": "052-875-8788",
       "website": "https://tsubamepan.jp/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E5%A4%A9%E7%84%B6%E9%85%B5%E6%AF%8D%E3%81%AE%E9%A3%9F%E3%83%91%E3%83%B3%E5%B0%82%E9%96%80%E5%BA%97%20%E3%81%A4%E3%81%B0%E3%82%81%E3%83%91%E3%83%B3%EF%BC%86Milk%20%E7%A5%9E%E3%81%AE%E5%80%89%E5%BA%97%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E7%B7%91%E5%8C%BA%E7%A5%9E%E3%81%AE%E5%80%894-183",
       "photo": "",
-      "catchphrase": "天然酵母食パンとカフェメニューを楽しめる神の倉店",
+      "catchphrase": "天然酵母食パンとモーニングを楽しめる神の倉のベーカリーカフェ",
       "highlights": [
         "天然酵母食パン",
-        "トースト",
-        "カフェ"
+        "モーニング8:00〜11:00",
+        "テラス席あり"
       ],
       "representativeProduct": "天然酵母の食パン"
     },
     {
       "placeId": "static-nagoya-pannoie",
-      "name": "ブーランジェリーぱんのいえ",
+      "name": "Boulangerie ぱんのいえ",
       "rating": 0,
       "reviews": 0,
-      "address": "愛知県名古屋市天白区",
+      "address": "愛知県名古屋市千種区星が丘元町1-4",
       "type": "パン屋",
       "types": [
         "bakery"
       ],
       "openingHours": [
-        "営業時間・定休日は公式SNSで確認"
+        "08:00–20:00",
+        "月・火 定休"
       ],
-      "phone": "",
+      "phone": "052-788-2855",
       "website": "https://www.instagram.com/pannoie_nagoya/",
-      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%96%E3%83%BC%E3%83%A9%E3%83%B3%E3%82%B8%E3%82%A7%E3%83%AA%E3%83%BC%E3%81%B1%E3%82%93%E3%81%AE%E3%81%84%E3%81%88%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E5%A4%A9%E7%99%BD%E5%8C%BA",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=Boulangerie%20%E3%81%B1%E3%82%93%E3%81%AE%E3%81%84%E3%81%88%20%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%B8%82%E5%8D%83%E7%A8%AE%E5%8C%BA%E6%98%9F%E3%81%8C%E4%B8%98%E5%85%83%E7%94%BA1-4",
       "photo": "",
-      "catchphrase": "天白区の地域密着型ブーランジェリー",
+      "catchphrase": "星ヶ丘と東山公園の間で長く親しまれる、種類豊富な地域密着ベーカリー",
       "highlights": [
-        "地域密着",
-        "焼きたてパン"
+        "100円台から選べる商品も多い",
+        "惣菜パン・菓子パンを幅広く展開"
       ],
-      "representativeProduct": "パン各種"
+      "representativeProduct": "ちくわパン",
+      "representativeLabel": "店舗紹介で取り上げられる人気商品"
     }
   ]
 }
