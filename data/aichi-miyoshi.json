@@ -1,7 +1,7 @@
 {
   "source": "static-free-recovery",
-  "updatedAt": "2026-09-19",
-  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。未取得項目は空欄または0。来店前に地図・公式情報をご確認ください。 パンとお惣菜 Pur.は公式LINEで2026年9月営業日・住所・パン商品を確認。",
+  "updatedAt": "2026-09-23",
+  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。未取得項目は空欄または0。来店前に地図・公式情報をご確認ください。 パンとお惣菜 Pur.は公式LINEで2026年9月営業日・住所・パン商品を確認。 2026-09-23みよし市監査：既存9店を現行公開情報で再照合。小麦館の住所を修正し、Hyggely・たまご村・はらぺこパン・クグロフ・パリクロアッサン・パン工場・ナビィのパン・Pur.の営業時間・特色・公式導線等を補完。幸せのパンは2026年10月上旬移転予定のため現時点では未追加。",
   "shops": [
     {
       "placeId": "ChIJmREYCmhhA2ARkx2yVcqItV8",
@@ -20,8 +20,12 @@
       "website": "",
       "googleMaps": "",
       "photo": "",
-      "catchphrase": "三好丘緑のベーカリー",
-      "highlights": []
+      "catchphrase": "週2日営業、三好丘緑の小さなベーカリー",
+      "highlights": [
+        "水曜・土曜のみ営業",
+        "テイクアウト中心"
+      ],
+      "specialNotice": "営業日は変更の場合があるため来店前に最新情報を要確認。"
     },
     {
       "placeId": "ChIJv4LxCM1hA2ARu2jvUGJmfok",
@@ -40,48 +44,60 @@
       "website": "",
       "googleMaps": "",
       "photo": "",
-      "catchphrase": "卵・ベーカリー・カフェ",
-      "highlights": []
+      "catchphrase": "卵直売・ベーカリー・カフェを一度に楽しめる打越町の店",
+      "highlights": [
+        "卵の直売に加えてパン・カフェを併設",
+        "無料駐車場あり"
+      ]
     },
     {
       "placeId": "ChIJy1XxCM1hA2ARPTvk6dq5OJc",
       "name": "はらぺこパン",
-      "rating": 0,
-      "reviews": 0,
+      "rating": 3.25,
+      "reviews": 37,
       "address": "愛知県みよし市打越町諸輪坂15-315",
       "type": "パン屋",
       "types": [
         "bakery"
       ],
       "openingHours": [
-        "月・金・土・日 09:00–17:00"
+        "月・金・土・日 09:00–17:00",
+        "火・水・木 定休"
       ],
       "phone": "0561-33-1626",
-      "website": "",
+      "website": "http://ameblo.jp/harapekopan/",
       "googleMaps": "",
       "photo": "",
-      "catchphrase": "打越町のベーカリー",
-      "highlights": []
+      "catchphrase": "薪石窯で焼く、たまご村隣接の小さなベーカリー",
+      "highlights": [
+        "パン・ベーグルを販売",
+        "売り切れやすいため早めの来店向き"
+      ],
+      "specialNotice": "商品がなくなり次第終了する場合あり。"
     },
     {
       "placeId": "ChIJRYm6qIthA2ARNvYHEC3YpgU",
-      "name": "こむぎ館",
-      "rating": 0,
-      "reviews": 0,
-      "address": "愛知県みよし市三好町蜂ヶ池1-38",
+      "name": "小麦館",
+      "rating": 3.21,
+      "reviews": 24,
+      "address": "愛知県みよし市三好町半野木1-38",
       "type": "パン屋",
       "types": [
         "bakery"
       ],
       "openingHours": [
-        "水 09:00–18:30"
+        "火〜日 09:00–18:30",
+        "月曜定休"
       ],
       "phone": "0561-32-3273",
       "website": "",
       "googleMaps": "",
       "photo": "",
-      "catchphrase": "三好町のベーカリー",
-      "highlights": []
+      "catchphrase": "三好町で長く親しまれる地域密着ベーカリー",
+      "highlights": [
+        "みよし市公式協力店舗一覧にも掲載",
+        "菓子パン・惣菜パンを幅広く展開"
+      ]
     },
     {
       "placeId": "ChIJAxLZHV9gA2ARth0ZJorX3MA",
@@ -97,31 +113,38 @@
         "10:00–21:00"
       ],
       "phone": "0561-36-8807",
-      "website": "",
+      "website": "https://www.fujipanstore.com/store/pref/23/",
       "googleMaps": "",
       "photo": "",
-      "catchphrase": "ひばりヶ丘のベーカリー",
-      "highlights": []
+      "catchphrase": "メグリア三好店内のフジパン系インストアベーカリー",
+      "highlights": [
+        "メグリア三好店内で買い物と一緒に利用しやすい",
+        "フジパンストアー公式店舗一覧に掲載"
+      ]
     },
     {
       "placeId": "ChIJuUsHdMZhA2ARhhSgWxdE4iY",
       "name": "ベーカリー クグロフ",
-      "rating": 0,
-      "reviews": 0,
+      "rating": 3.11,
+      "reviews": 10,
       "address": "愛知県みよし市三好町東山90-2",
       "type": "パン屋",
       "types": [
         "bakery"
       ],
       "openingHours": [
-        "10:00–17:00"
+        "火〜土 10:00–17:00",
+        "月・日 定休"
       ],
       "phone": "0561-34-4365",
       "website": "",
       "googleMaps": "",
       "photo": "",
-      "catchphrase": "三好町のベーカリー",
-      "highlights": []
+      "catchphrase": "住宅街にある三好町東山の小さなベーカリー",
+      "highlights": [
+        "2026年5月の訪問記録で現役確認",
+        "レーズンパン・クロックムッシュなどを展開"
+      ]
     },
     {
       "placeId": "ChIJcaCUd75hA2ARqIqBi_N2GiI",
@@ -134,14 +157,18 @@
         "bakery"
       ],
       "openingHours": [
-        "09:00–21:30"
+        "店頭 09:00–19:00",
+        "19:00以降はスーパーのレジで精算"
       ],
       "phone": "0561-33-3031",
-      "website": "",
+      "website": "https://www.fujipanstore.com/store/store020664/",
       "googleMaps": "",
       "photo": "",
-      "catchphrase": "イオン三好店内のベーカリー",
-      "highlights": []
+      "catchphrase": "イオン三好店内のフジパン系ベーカリー",
+      "highlights": [
+        "店頭営業時間は9:00〜19:00",
+        "喫茶スペースあり"
+      ]
     },
     {
       "placeId": "ChIJ5WsCh1phA2ARKzY_1qMJaSY",
@@ -157,17 +184,20 @@
         "10:00–21:00"
       ],
       "phone": "0561-33-3567",
-      "website": "",
+      "website": "https://www.aeon.jp/sc/miyoshi/shop/store/food-221.html",
       "googleMaps": "",
       "photo": "",
-      "catchphrase": "イオン三好店内のベーカリー",
-      "highlights": []
+      "catchphrase": "毎日の食卓向けパンを焼くイオン三好1階のベーカリー",
+      "highlights": [
+        "イオン三好ショッピングセンター公式掲載店",
+        "りんごパン・ベーグルなどを展開"
+      ]
     },
     {
       "placeId": "static-miyoshi-pur",
       "name": "パンとお惣菜 Pur.",
-      "rating": 0,
-      "reviews": 0,
+      "rating": 4.6,
+      "reviews": 14,
       "address": "愛知県みよし市三好丘4-1-15",
       "type": "パン・惣菜",
       "types": [
@@ -176,18 +206,18 @@
       "openingHours": [
         "火・水・金 11:00–17:30",
         "土 11:00–16:00",
-        "日・月・木 定休（臨時変更あり）"
+        "日・月・木 定休"
       ],
-      "phone": "",
+      "phone": "080-8018-9558",
       "website": "https://page.line.me/796jopmi",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%91%E3%83%B3%E3%81%A8%E3%81%8A%E6%83%A3%E8%8F%9C%20Pur.%20%E3%81%BF%E3%82%88%E3%81%97%E5%B8%82%E4%B8%89%E5%A5%BD%E4%B8%984-1-15",
       "photo": "",
-      "catchphrase": "ハードパンから惣菜パンまで日替わりで提供",
+      "catchphrase": "ハードパンから惣菜・スイーツまで日替わりで揃える三好丘の店",
       "highlights": [
-        "フリュイエノア",
-        "惣菜パン",
-        "キューブパン"
-      ]
+        "フリュイエノアやキューブパンを展開",
+        "惣菜パン・日替わり惣菜・スイーツも販売"
+      ],
+      "specialNotice": "第2火曜と続く水曜など臨時休業あり。LINEの営業カレンダー確認推奨。"
     }
   ]
 }
