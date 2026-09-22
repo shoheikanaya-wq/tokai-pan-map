@@ -517,6 +517,20 @@ button,.back,.detail-action,.review-trigger{
   #list .shop-signature,#list .shop-source{font-size:8px}
   #ranking .ranking-bottom-nav{margin-top:6px}
 }
+
+/* Ver.1.75: 店名横へ特色・口コミ・評価を集約 */
+#list .shop-inline-feature{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px;font-weight:700;color:#6c5948}
+#list .shop-review-inline{flex:0 0 auto;white-space:nowrap;font-size:10px;font-weight:700;color:#6f6257}
+@media(max-width:600px){
+ #list .shop-title-row{display:grid;grid-template-columns:auto minmax(70px,1.35fr) minmax(54px,.9fr) auto auto;gap:4px;align-items:center}
+ #list .shop-name{min-width:0}
+ #list .shop-inline-feature{font-size:9px}
+ #list .shop-review-inline{font-size:8px}
+ #list .shop-rating-inline{font-size:11px;margin-left:0}
+ #list .shop-address{margin-top:1px}
+ #list .shop-points{display:none}
+ #list .rank-card,#list .rank-card.no-visual{padding:4px 6px!important;margin-bottom:3px}
+}
 </style></head>
 <body><header><h1 id="appTitle" style="cursor:pointer;">🥐 東海パンMAP</h1><div class="sub">市町村から、おいしいパン屋を探す</div></header><main>
 <section id="home">
@@ -531,7 +545,7 @@ button,.back,.detail-action,.review-trigger{
     </a>
   </div>
   
-  <div class="tabs"><button id="tabAichi" class="active">愛知県</button><button id="tabGifu">岐阜県</button><button id="tabMie">三重県</button></div><div class="notice"><strong>Ver.1.74</strong>　スマホTOP10を一望しやすいコンパクト表示に変更</div><div id="aichiPanel"><h2>西三河</h2><div class="cities"><button id="toyota">豊田市</button><button id="okazaki">岡崎市</button><button id="anjo">安城市</button><button id="kariya">刈谷市</button><button id="nishio">西尾市</button>
+  <div class="tabs"><button id="tabAichi" class="active">愛知県</button><button id="tabGifu">岐阜県</button><button id="tabMie">三重県</button></div><div class="notice"><strong>Ver.1.75</strong>　店名横に特色・口コミ・★評価を集約してTOP10を圧縮</div><div id="aichiPanel"><h2>西三河</h2><div class="cities"><button id="toyota">豊田市</button><button id="okazaki">岡崎市</button><button id="anjo">安城市</button><button id="kariya">刈谷市</button><button id="nishio">西尾市</button>
 <button id="hekinan">碧南市</button>
 <button id="chiryu">知立市</button>
 <button id="takahama">高浜市</button>
@@ -668,13 +682,13 @@ button,.back,.detail-action,.review-trigger{
 </section>
   <div id="devTools" class="dev-tools hidden"><button id="clearRankingCache">🔄 ランキングキャッシュ更新</button><div class="muted">開発用：次回ランキング表示時に最新データを取得</div></div><footer id="appFooter" class="app-footer">
 <div>東海パンMAP</div>
-<div>Ver.1.74</div>
+<div>Ver.1.75</div>
   <div>Personal Bakery Discovery Project</div>
   <div>Created & Managed by S.K.</div>
   <div>© 2026 S.K. All Rights Reserved.</div>
 
   <details class="version-history">
-    <summary>更新履歴を見る</summary>\n    <div>Ver.1.74　6インチ級スマホ向けTOP10コンパクト表示</div>\n    <div>Ver.1.73　店舗詳細の店名サイズを適正化</div>\n    <div>Ver.1.72　店舗詳細の情報階層と余白を整理</div>\n    <div>Ver.1.71　TOP10の店名横に★評価、住所下に口コミ数を配置</div>\n    <div>Ver.1.70　TOP10の店名折り返し・余白・順位と評価の視認性を調整</div>\n    <div>Ver.1.69　TOP10画像を小型化し店舗名をさらに拡大</div>\n    <div>Ver.1.68　店舗詳細の大型画像枠を撤去し店名を拡大</div>\n    <div>Ver.1.67　TOP10・店舗詳細にワンポイント画像表示を追加</div>
+    <summary>更新履歴を見る</summary>\n    <div>Ver.1.75　店名横に特色・口コミ・★評価を集約</div>\n    <div>Ver.1.74　6インチ級スマホ向けTOP10コンパクト表示</div>\n    <div>Ver.1.73　店舗詳細の店名サイズを適正化</div>\n    <div>Ver.1.72　店舗詳細の情報階層と余白を整理</div>\n    <div>Ver.1.71　TOP10の店名横に★評価、住所下に口コミ数を配置</div>\n    <div>Ver.1.70　TOP10の店名折り返し・余白・順位と評価の視認性を調整</div>\n    <div>Ver.1.69　TOP10画像を小型化し店舗名をさらに拡大</div>\n    <div>Ver.1.68　店舗詳細の大型画像枠を撤去し店名を拡大</div>\n    <div>Ver.1.67　TOP10・店舗詳細にワンポイント画像表示を追加</div>
     <div>Ver.1.4　店舗詳細・営業状況・地域表示・画面移動を改善</div>
     <div>Ver.1.2 β　店舗詳細機能を追加</div>
     <div>Ver.1.1 β　市町村・地域ランキングを改善</div>
@@ -1180,7 +1194,7 @@ function showRanking() {
     const productLine = s.representativeProduct && !String(s.catchphrase||'').includes(s.representativeProduct) && !(Array.isArray(s.highlights)&&s.highlights.some(v=>String(v).includes(s.representativeProduct)))
       ? '<span class="shop-signature">🥖 '+escapeHtml(s.representativeProduct)+'</span>' : '';
     const distinctive = `${catchphrase}${points}${productLine}${attribution}`;
-    b.innerHTML=`${photo}<span class="shop-main"><span class="shop-title-row"><strong class="badge">${i+1}位</strong><strong class="shop-name">${escapeHtml(s.name)}</strong>${s.dataSource==='osm-free' ? '' : `<strong class="shop-rating-inline">★${escapeHtml(s.rating)}</strong>`}</span><span class="muted shop-address">${escapeHtml(s.address)}</span>${s.dataSource==='osm-free' ? '<span class="shop-review-count">公開地図データ</span>' : `<span class="shop-review-count">口コミ ${escapeHtml(s.reviews)}件</span>`}</span>${distinctive ? `<span class="shop-points">${distinctive}</span>` : ''}`;
+    b.innerHTML=`${photo}<span class="shop-main"><span class="shop-title-row"><strong class="badge">${i+1}位</strong><strong class="shop-name">${escapeHtml(s.name)}</strong>${displayCatch ? `<span class="shop-inline-feature">${escapeHtml(displayCatch)}</span>` : ''}${s.dataSource==='osm-free' ? '<span class="shop-review-inline">公開地図</span>' : `<span class="shop-review-inline">口コミ ${escapeHtml(s.reviews)}件</span><strong class="shop-rating-inline">★${escapeHtml(s.rating)}</strong>`}</span><span class="muted shop-address">${escapeHtml(s.address)}</span></span>${(points||productLine||attribution) ? `<span class="shop-points">${points}${productLine}${attribution}</span>` : ''}`;
     b.onclick=()=>showDetail(i);
     list.appendChild(b);
   });
