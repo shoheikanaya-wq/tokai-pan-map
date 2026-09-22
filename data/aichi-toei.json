@@ -41,17 +41,20 @@
         "bakery"
       ],
       "openingHours": [
-        "金曜 10:00–16:00",
-        "土曜 10:00–13:00"
+        "金 10:00–16:00",
+        "土 10:00–13:00",
+        "日〜木 定休"
       ],
       "phone": "080-3471-8623",
       "website": "https://www.toeinavi.jp/gourmet/detail/1008/",
-      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%94%E3%83%83%E3%82%B3%E3%83%AD%E3%83%91%E3%83%B3%E5%B1%8B%20%E6%9D%B1%E6%A0%84%E7%94%BA",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%94%E3%83%83%E3%82%B3%E3%83%AD%E3%83%91%E3%83%B3%E5%B1%8B%20%E6%9D%B1%E6%A0%84%E7%94%BA%E4%B8%8B%E7%94%B0%E4%B8%89%E3%83%84%E7%9F%B366",
       "photo": "",
-      "catchphrase": "金・土だけ営業する小さな手作りパン屋",
+      "catchphrase": "金曜・土曜だけ開く、下田の小さな手作りパン屋",
       "highlights": [
-        "手作りパン"
-      ]
+        "2018年開業",
+        "日によってメニューが変わる手作りパン"
+      ],
+      "specialNotice": "金曜・土曜のみ営業。売り切れの場合があるため早めの来店推奨。"
     },
     {
       "placeId": "static-toei-polepole",
