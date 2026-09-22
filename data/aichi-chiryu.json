@@ -1,25 +1,29 @@
 {
   "source": "static-free-recovery",
   "updatedAt": "2026-09-23",
-  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。未取得項目は空欄または0。来店前に地図・公式情報をご確認ください。 BERGMANは知立市公式広報の2025年取材でパン屋メインへのリニューアルを確認。住所・営業時間等は店舗公式SNS案内および地域メディア掲載で照合。 正文堂は知立市公式「ちりゅっぴまんぞくーぽん」取扱店一覧で「おにぎり・パン」取扱店として確認。 2026-09-23知立市監査：正文堂を非ベーカリーのため除外。パンのかおり、BERGMAN、メープルけやき、たいいくぱん、サンエトワール、ベルナール、エピールを市・施設・店舗公開情報で再照合。",
+  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。未取得項目は空欄または0。来店前に地図・公式情報をご確認ください。 BERGMANは知立市公式広報の2025年取材でパン屋メインへのリニューアルを確認。住所・営業時間等は店舗公式SNS案内および地域メディア掲載で照合。 正文堂は知立市公式「ちりゅっぴまんぞくーぽん」取扱店一覧で「おにぎり・パン」取扱店として確認。 2026-09-23知立市監査：正文堂を非ベーカリーのため除外。パンのかおり、BERGMAN、メープルけやき、たいいくぱん、サンエトワール、ベルナール、エピールを市・施設・店舗公開情報で再照合。 2026-09-23知立市最終監査：Bakery OLiは知立市公式取扱店一覧を優先し住所・電話を更新。のりぱんは現行公開情報から営業時間・定休日・特色を補完。乃が美・HARE/PAN知立店は営業確証不足のためTOP10候補保留。",
   "shops": [
     {
       "placeId": "ChIJMcx1Dv-dBGARZTbjMrfDDZU",
       "name": "Bakery OLi",
       "rating": 4.3,
       "reviews": 19,
-      "address": "愛知県知立市宝1-14-5",
+      "address": "愛知県知立市宝1-14-14",
       "type": "パン屋",
       "types": [
         "bakery"
       ],
       "openingHours": [],
-      "phone": "",
+      "phone": "080-9035-3501",
       "website": "",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=Bakery%20OLi%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E7%9F%A5%E7%AB%8B%E5%B8%82%E5%AE%9D1-14-5",
       "photo": "",
-      "catchphrase": "宝のベーカリー",
-      "highlights": []
+      "catchphrase": "マラサダドーナツを中心に販売する宝の小さなベーカリー",
+      "highlights": [
+        "知立市公式取扱店一覧に掲載",
+        "マラサダドーナツのテイクアウト専門店"
+      ],
+      "specialNotice": "営業日時は変動する場合があるため来店前に最新情報を要確認。"
     },
     {
       "placeId": "ChIJb5Jc3lmcBGARiXDe63XD2K4",
@@ -99,7 +103,7 @@
     },
     {
       "placeId": "ChIJHwXlEVacBGAREabm7FGFVkE",
-      "name": "Noripan",
+      "name": "のりぱん",
       "rating": 0,
       "reviews": 0,
       "address": "愛知県知立市上重原町曇り147-1",
@@ -107,13 +111,20 @@
       "types": [
         "bakery"
       ],
-      "openingHours": [],
+      "openingHours": [
+        "火〜土 10:00–18:00",
+        "日・月 定休"
+      ],
       "phone": "090-1788-5432",
       "website": "",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=Noripan%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E7%9F%A5%E7%AB%8B%E5%B8%82%E4%B8%8A%E9%87%8D%E5%8E%9F%E7%94%BA%E6%9B%87%E3%82%8A147-1",
       "photo": "",
-      "catchphrase": "上重原町のベーカリー",
-      "highlights": []
+      "catchphrase": "国産小麦と原材料にこだわる上重原町の小さなパン屋",
+      "highlights": [
+        "食パンを中心に多彩なパンを展開",
+        "商品がなくなり次第終了"
+      ],
+      "specialNotice": "不定休の場合あり。来店前に最新情報を要確認。"
     },
     {
       "placeId": "ChIJ80CxTwKcBGARKwG7IYBvUUA",
