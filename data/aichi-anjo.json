@@ -1,7 +1,7 @@
 {
   "source": "static-free-recovery",
   "updatedAt": "2026-09-23",
-  "attribution": "無料復旧用スナップショット。公開情報を基に構成し、来店前に公式情報をご確認ください。 2026-09-23にパンのトラ安城本店・しあわせをはこぶパン・ボンルーンを現行公開情報で再照合し営業時間・特色・評価情報を更新。",
+  "attribution": "無料復旧用スナップショット。公開情報を基に構成し、来店前に公式情報をご確認ください。 2026-09-23にパンのトラ安城本店・しあわせをはこぶパン・ボンルーンを現行公開情報で再照合し営業時間・特色・評価情報を更新。 2026-09-23にパニーノ安城店・おりひめandひこぼし・コアステージ三河安城店を現行公開情報で再照合し、住所・営業時間・公式導線・特色を補完。",
   "shops": [
     {
       "placeId": "",
@@ -141,7 +141,7 @@
     },
     {
       "placeId": "ChIJK2F3BKWZBGARbnSMxUbDJyU",
-      "name": "Panino Anjo",
+      "name": "パニーノ 安城店",
       "rating": 0,
       "reviews": 0,
       "address": "愛知県安城市御幸本町18-10",
@@ -150,36 +150,52 @@
         "bakery"
       ],
       "openingHours": [
-        "月 7:00–18:00"
+        "平日 07:00–18:00",
+        "土日祝 07:00–17:00",
+        "火曜定休"
       ],
       "phone": "0566-72-4848",
-      "website": "",
+      "website": "https://anjo.hp.peraichi.com/panino/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=Panino%20Anjo%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%AE%89%E5%9F%8E%E5%B8%82%E5%BE%A1%E5%B9%B8%E6%9C%AC%E7%94%BA18-10",
       "photo": "",
-      "catchphrase": "御幸本町のサンドイッチ＆ベーカリー",
-      "highlights": []
+      "catchphrase": "朝7時から手作りサンドイッチを揃える御幸本町の専門店",
+      "highlights": [
+        "新鮮な野菜をたっぷり使った手作りサンドイッチ",
+        "人気メニューはミックス・みそかつ・かぼちゃコロッケ"
+      ],
+      "representativeProduct": "ミックス",
+      "representativeLabel": "公式サイト掲載の人気No.1"
     },
     {
       "placeId": "",
       "name": "おりひめandひこぼし",
       "rating": 3.9,
       "reviews": 48,
-      "address": "愛知県安城市末広町（詳細は地図で確認）",
+      "address": "愛知県安城市末広町3-1 末広大嶽ビル1階B号",
       "type": "パン屋",
       "types": [
         "bakery"
       ],
-      "openingHours": [],
-      "phone": "",
-      "website": "",
+      "openingHours": [
+        "月〜土 10:00–17:00",
+        "日曜定休・不定休あり"
+      ],
+      "phone": "0566-74-3539",
+      "website": "https://sinsan.co.jp/ori-hiko/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%81%8A%E3%82%8A%E3%81%B2%E3%82%81and%E3%81%B2%E3%81%93%E3%81%BC%E3%81%97%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%AE%89%E5%9F%8E%E5%B8%82%E6%9C%AB%E5%BA%83%E7%94%BA%EF%BC%88%E8%A9%B3%E7%B4%B0%E3%81%AF%E5%9C%B0%E5%9B%B3%E3%81%A7%E7%A2%BA%E8%AA%8D%EF%BC%89",
       "photo": "",
-      "catchphrase": "食パン系メニューのあるベーカリー",
-      "highlights": []
+      "catchphrase": "素材にこだわる食パン専門店",
+      "highlights": [
+        "北海道産バターと沖縄産海塩を使う生食パン「ひこぼし」",
+        "北海道産小麦「春よ恋」と愛知県産米粉を使う山型食パンも展開"
+      ],
+      "representativeProduct": "ひこぼし（生食パン）",
+      "representativeLabel": "公式サイト掲載の定番商品",
+      "specialNotice": "パンが売り切れ次第閉店。不定休あり。"
     },
     {
       "placeId": "ChIJo8BrdGOZBGARMhRM2QWLi6c",
-      "name": "Core Stage Anjo",
+      "name": "コアステージ 三河安城店",
       "rating": 0,
       "reviews": 0,
       "address": "愛知県安城市三河安城南町1-4-8 ラフーズコア1F",
@@ -188,14 +204,18 @@
         "bakery"
       ],
       "openingHours": [
-        "9:00–21:00"
+        "09:00–21:00",
+        "不定休（ピアゴ ラ フーズコア三河安城店に準ずる）"
       ],
       "phone": "0566-74-2111",
       "website": "",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=Core%20Stage%20Anjo%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%AE%89%E5%9F%8E%E5%B8%82%E4%B8%89%E6%B2%B3%E5%AE%89%E5%9F%8E%E5%8D%97%E7%94%BA1-4-8%20%E3%83%A9%E3%83%95%E3%83%BC%E3%82%BA%E3%82%B3%E3%82%A21F",
       "photo": "",
-      "catchphrase": "三河安城エリアのベーカリー",
-      "highlights": []
+      "catchphrase": "ピアゴ ラ フーズコア三河安城店内のインストアベーカリー",
+      "highlights": [
+        "フジパン系の店内ベーカリー",
+        "三河安城駅から徒歩圏"
+      ]
     },
     {
       "placeId": "ChIJC27nqnqXBGARfbiNFKzGODg",
