@@ -1,7 +1,7 @@
 {
   "source": "static-free-verified",
   "updatedAt": "2026-09-23",
-  "attribution": "店舗情報は公開情報を基に確認。来店前に公式・地域商工情報をご確認ください。 bread factory okamoto・焼きたてパン Choeikenは渥美半島観光ビューロー公式で現行店舗情報を確認。 2026-09-23田原市監査：はなうたパン屋、bread factory okamoto、焼きたてパンChoeikenを渥美半島観光ビューロー等の現行情報で再照合し、営業時間・電話・特色を補完。",
+  "attribution": "店舗情報は公開情報を基に確認。来店前に公式・地域商工情報をご確認ください。 bread factory okamoto・焼きたてパン Choeikenは渥美半島観光ビューロー公式で現行店舗情報を確認。 2026-09-23田原市監査：はなうたパン屋、bread factory okamoto、焼きたてパンChoeikenを渥美半島観光ビューロー等の現行情報で再照合し、営業時間・電話・特色を補完。 2026-09-23田原市TOP10補完：coffee stand & bakery haru2、ぱん工房あるる、こもぱん、ベーカリー立岩、パン工房あつみ、ohaco、ショップなつめを現行公式・田原市・2026年利用情報で確認し追加。",
   "shops": [
     {
       "placeId": "static-tahara-hanauta",
@@ -78,6 +78,207 @@
         "田原めっくんはうす近くで利用しやすい"
       ],
       "specialNotice": "営業日は変更の場合があるため来店前に最新情報を確認推奨。"
+    },
+    {
+      "placeId": "static-tahara-haru2",
+      "name": "coffee stand & bakery haru2",
+      "rating": 3.05,
+      "reviews": 4,
+      "address": "愛知県田原市赤羽根町四貫目89-1",
+      "type": "ベーカリーカフェ",
+      "types": [
+        "bakery",
+        "cafe"
+      ],
+      "openingHours": [
+        "月〜水・金〜日 08:00–20:00（L.O.19:30）",
+        "木曜定休"
+      ],
+      "phone": "090-7684-4868",
+      "website": "https://www.instagram.com/coffeeandbakestand/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=coffee%20stand%20%26%20bakery%20haru2%20%E7%94%B0%E5%8E%9F%E5%B8%82%E8%B5%A4%E7%BE%BD%E6%A0%B9%E7%94%BA%E5%9B%9B%E8%B2%AB%E7%9B%AE89-1",
+      "photo": "",
+      "catchphrase": "2026年4月開店、店内焼成ベーグルと本格コーヒーを楽しめる赤羽根の新店",
+      "highlights": [
+        "北海道産小麦と2種類の発酵方法を使うベーグル",
+        "モーニング・イートイン・テイクアウト対応"
+      ],
+      "specialNotice": "2026年4月4日オープン。営業時間は変更の場合があるため最新SNS確認推奨。",
+      "photoAttribution": "",
+      "photoSource": "",
+      "photoLicense": ""
+    },
+    {
+      "placeId": "static-tahara-aruru",
+      "name": "ぱん工房 あるる",
+      "rating": 3.14,
+      "reviews": 14,
+      "address": "愛知県田原市保美町段土117-1",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "火〜日 08:30–19:00",
+        "月曜定休"
+      ],
+      "phone": "0531-33-1135",
+      "website": "",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%81%B1%E3%82%93%E5%B7%A5%E6%88%BF%20%E3%81%82%E3%82%8B%E3%82%8B%20%E7%94%B0%E5%8E%9F%E5%B8%82%E4%BF%9D%E7%BE%8E%E7%94%BA%E6%AE%B5%E5%9C%9F117-1",
+      "photo": "",
+      "catchphrase": "保美町で朝8時半から営業する地域密着ベーカリー",
+      "highlights": [
+        "販売専門の小さなパン屋",
+        "駐車場あり"
+      ],
+      "specialNotice": "営業時間・定休日は変更の場合があるため来店前に確認推奨。",
+      "photoAttribution": "",
+      "photoSource": "",
+      "photoLicense": ""
+    },
+    {
+      "placeId": "static-tahara-komopan",
+      "name": "こもぱん",
+      "rating": 3.1,
+      "reviews": 18,
+      "address": "愛知県田原市神戸町ヤンベ168-2",
+      "type": "パン屋",
+      "types": [
+        "bakery",
+        "pizza"
+      ],
+      "openingHours": [
+        "火〜土 10:00–18:00",
+        "日・月 定休"
+      ],
+      "phone": "0531-23-7666",
+      "website": "",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%81%93%E3%82%82%E3%81%B1%E3%82%93%20%E7%94%B0%E5%8E%9F%E5%B8%82%E7%A5%9E%E6%88%B8%E7%94%BA%E3%83%A4%E3%83%B3%E3%83%99168-2",
+      "photo": "",
+      "catchphrase": "2006年開業、手作りパンと石窯焼きピッツァの店",
+      "highlights": [
+        "惣菜パン・デニッシュなど種類豊富",
+        "道の駅でも商品を見かける地域定番ベーカリー"
+      ],
+      "specialNotice": "営業時間は変更の場合があるため来店前に確認推奨。",
+      "photoAttribution": "",
+      "photoSource": "",
+      "photoLicense": ""
+    },
+    {
+      "placeId": "static-tahara-tateiwa",
+      "name": "ベーカリー立岩",
+      "rating": 3.02,
+      "reviews": 2,
+      "address": "愛知県田原市波瀬町波瀬前68",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "営業時間は最新情報を要確認"
+      ],
+      "phone": "0531-22-7282",
+      "website": "",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%99%E3%83%BC%E3%82%AB%E3%83%AA%E3%83%BC%E7%AB%8B%E5%B2%A9%20%E7%94%B0%E5%8E%9F%E5%B8%82%E6%B3%A2%E7%80%AC%E7%94%BA%E6%B3%A2%E7%80%AC%E5%89%8D68",
+      "photo": "",
+      "catchphrase": "波瀬町の地域密着ベーカリー",
+      "highlights": [
+        "2026年田原市SDGsフェスタ・市民緑花まつり出店で現役確認",
+        "手作りパン・菓子を販売"
+      ],
+      "specialNotice": "通常営業時間の一次情報が弱いため、来店前に電話確認推奨。",
+      "photoAttribution": "",
+      "photoSource": "",
+      "photoLicense": ""
+    },
+    {
+      "placeId": "static-tahara-atsumi",
+      "name": "パン工房あつみ",
+      "rating": 3.02,
+      "reviews": 2,
+      "address": "愛知県田原市福江町堂前60 あつみの市レイ内",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "月・水〜日 09:00–16:00",
+        "火曜定休"
+      ],
+      "phone": "0531-33-0757",
+      "website": "https://atsumi-lei.com/shop",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%91%E3%83%B3%E5%B7%A5%E6%88%BF%E3%81%82%E3%81%A4%E3%81%BF%20%E7%94%B0%E5%8E%9F%E5%B8%82%E7%A6%8F%E6%B1%9F%E7%94%BA%E5%A0%82%E5%89%8D60",
+      "photo": "",
+      "catchphrase": "国産小麦を無添加で焼き上げる、あつみの市レイ内のパン工房",
+      "highlights": [
+        "看板の『なごみ食パン』",
+        "揚げたて生ドーナツも展開"
+      ],
+      "representativeProduct": "なごみ食パン",
+      "representativeLabel": "公式施設ページ掲載の定番商品",
+      "specialNotice": "火曜定休。施設営業により変更の場合あり。",
+      "photoAttribution": "",
+      "photoSource": "",
+      "photoLicense": ""
+    },
+    {
+      "placeId": "static-tahara-ohaco",
+      "name": "ohaco",
+      "rating": 3.14,
+      "reviews": 17,
+      "address": "愛知県田原市赤石5-1",
+      "type": "パン屋",
+      "types": [
+        "bakery",
+        "cafe"
+      ],
+      "openingHours": [
+        "水〜金 09:00–19:00",
+        "土・日 09:00–18:00",
+        "月・火 定休"
+      ],
+      "phone": "0531-26-4005",
+      "website": "https://www.palmo-members.jp/shop/617",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=ohaco%20%E7%94%B0%E5%8E%9F%E5%B8%82%E8%B5%A4%E7%9F%B35-1",
+      "photo": "",
+      "catchphrase": "焼き立てパンと手作りドリンク、雑貨を楽しめる赤石のベーカリー",
+      "highlights": [
+        "イートインスペースあり",
+        "パン・ドリンク・セレクト雑貨を展開"
+      ],
+      "specialNotice": "旧野田町店舗とは別の現店舗。月・火定休。",
+      "photoAttribution": "",
+      "photoSource": "",
+      "photoLicense": ""
+    },
+    {
+      "placeId": "static-tahara-natsume",
+      "name": "ショップ なつめ",
+      "rating": 4,
+      "reviews": 1,
+      "address": "愛知県田原市田原町椿30-10",
+      "type": "パン屋・惣菜",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "営業時間は最新情報を要確認",
+        "火曜定休"
+      ],
+      "phone": "0531-22-6355",
+      "website": "",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%82%B7%E3%83%A7%E3%83%83%E3%83%97%20%E3%81%AA%E3%81%A4%E3%82%81%20%E7%94%B0%E5%8E%9F%E5%B8%82%E7%94%B0%E5%8E%9F%E7%94%BA%E6%A4%BF30-10",
+      "photo": "",
+      "catchphrase": "1980年代から続く、パンと惣菜を扱う地域の店",
+      "highlights": [
+        "惣菜パン・サンドイッチに加えて手作り惣菜も販売",
+        "2026年1月の利用記録で現役確認"
+      ],
+      "specialNotice": "通常営業時間は媒体差があるため来店前に電話確認推奨。",
+      "photoAttribution": "",
+      "photoSource": "",
+      "photoLicense": ""
     }
   ]
 }
