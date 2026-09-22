@@ -1,7 +1,7 @@
 {
   "source": "static-free-verified",
-  "updatedAt": "2026-09-21",
-  "attribution": "店舗情報は公開情報を基に確認。来店前に公式情報をご確認ください。",
+  "updatedAt": "2026-09-23",
+  "attribution": "店舗情報は公開情報を基に確認。来店前に公式情報をご確認ください。 2026-09-23豊川市監査：ベークショップカノウ、ヤマトパン、ブーランジェリーガルボ、PORCO、ボン・ボヤージュを公式・豊川市・現行店舗情報で再照合し、営業時間・特色・代表商品等を更新。",
   "shops": [
     {
       "placeId": "static-toyokawa-kanou",
@@ -20,13 +20,13 @@
       "website": "https://www.bakeshop-kanou.com/",
       "googleMaps": "",
       "photo": "",
-      "catchphrase": "市役所前で約60種類の菓子パンと15種類の食パンを日替わり販売",
+      "catchphrase": "豊川市役所前で菓子パン約60種類・食パン約15種類を日替わりで焼く老舗ベーカリー",
       "highlights": [
-        "焼きたてパン",
-        "サンドイッチ",
-        "パン配達"
+        "菓子パン約60種類・食パン約15種類を日替わり販売",
+        "オリジナル食パンのサンドイッチとパン配達にも対応"
       ],
-      "representativeProduct": "北海道産メロンのパン"
+      "representativeProduct": "北海道産メロンのパン",
+      "representativeLabel": "公式サイト掲載商品"
     },
     {
       "placeId": "static-toyokawa-yamato",
@@ -40,23 +40,23 @@
       ],
       "openingHours": [
         "10:00–18:30",
-        "休日 金・土・日・祝日"
+        "金・土・日・祝 定休"
       ],
       "phone": "0533-86-2147",
       "website": "https://yamatopan.co.jp/",
       "googleMaps": "",
       "photo": "",
-      "catchphrase": "創業以来の手づくりを貫く豊川の老舗パンメーカー",
+      "catchphrase": "地元で長く愛される『たけの子パン』を作る豊川の老舗製パン店",
       "highlights": [
-        "全商品手づくり",
-        "天然酵母",
-        "直売"
+        "全商品を手づくり",
+        "自家製酵母パンや地域向け行商も継続"
       ],
-      "representativeProduct": "無添加食パン"
+      "representativeProduct": "たけの子パン",
+      "representativeLabel": "公式サイト掲載のイチ押し商品"
     },
     {
       "placeId": "static-toyokawa-garbo",
-      "name": "boulangerie GARBO",
+      "name": "ブーランジェリー ガルボ",
       "rating": 0,
       "reviews": 0,
       "address": "愛知県豊川市中条町広口7-4",
@@ -65,19 +65,18 @@
         "bakery"
       ],
       "openingHours": [
-        "平日 08:00–17:00",
-        "土・日・祝 07:00–17:00",
-        "定休日 月"
+        "火〜金 08:00–17:00",
+        "土・日 07:00–17:00",
+        "月曜定休"
       ],
       "phone": "0533-56-9105",
-      "website": "https://www.izumo-card.jp/shop/671",
+      "website": "https://www.instagram.com/boulangerie_garbo",
       "googleMaps": "",
       "photo": "",
-      "catchphrase": "厳選食材で毎日60〜100種類を手作りするベーカリー",
+      "catchphrase": "平日は朝8時、週末は朝7時から焼き立てパンを揃える中条町のベーカリー",
       "highlights": [
-        "種類豊富",
-        "手づくり",
-        "朝7時営業あり"
+        "パンの種類が豊富",
+        "駐車場あり・予約対応"
       ],
       "representativeProduct": "手づくりパン各種"
     },
@@ -93,26 +92,26 @@
         "cafe"
       ],
       "openingHours": [
-        "11:00–18:00（L.O.17:30）",
-        "定休日 火・水"
+        "月・木〜日 11:00–18:00（L.O.17:30）",
+        "火・水 定休"
       ],
       "phone": "",
       "website": "https://porco-toyokawa.com/",
       "googleMaps": "",
       "photo": "",
-      "catchphrase": "焼き菓子とパン、コーヒーを楽しめる御津町の店",
+      "catchphrase": "三河の果物や野菜を取り入れたフレッシュベイクとコーヒーの店",
       "highlights": [
-        "ベーカリー",
-        "コーヒー",
-        "焼き菓子"
+        "豊川市公式で現役店として紹介",
+        "地元食材を生かした焼き菓子・パン・コーヒーを提供"
       ],
-      "representativeProduct": "焼きたてパン各種"
+      "representativeProduct": "焼きたてパン各種",
+      "specialNotice": "売り切れ次第終了。"
     },
     {
       "placeId": "static-toyokawa-bonvoyage",
       "name": "ボン・ボヤージュ",
-      "rating": 0,
-      "reviews": 0,
+      "rating": 4.14,
+      "reviews": 24,
       "address": "愛知県豊川市御油町美世賜123-1",
       "type": "パン屋",
       "types": [
@@ -126,11 +125,10 @@
       "website": "https://www.bonvoyage-goyu.com/",
       "googleMaps": "",
       "photo": "",
-      "catchphrase": "自家製天然酵母で長時間熟成する御油町の手作りパン店",
+      "catchphrase": "自家製天然酵母と長時間熟成にこだわる御油町の手作りパン店",
       "highlights": [
-        "自家製天然酵母",
-        "フランスパン",
-        "惣菜パン"
+        "自家製天然酵母を使用",
+        "金〜日は惣菜店と連携したサンドイッチも販売"
       ],
       "representativeProduct": "フランスパン"
     }
