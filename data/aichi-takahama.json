@@ -1,7 +1,7 @@
 {
   "source": "static-free-recovery",
-  "updatedAt": "2026-09-19",
-  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。未取得項目は空欄または0。来店前に地図・公式情報をご確認ください。 ふるふるは高浜市公式、PanPalは店舗公式サイトで現行情報を再確認。 パン工房むぎまるはTぽーと公式、エスカフェは高浜市商工会公式で現行のパン製造・販売を確認。 おとうふ工房いしかわは高浜市観光協会・東海農政局でパン製造販売を確認。",
+  "updatedAt": "2026-09-23",
+  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。未取得項目は空欄または0。来店前に地図・公式情報をご確認ください。 ふるふるは高浜市公式、PanPalは店舗公式サイトで現行情報を再確認。 パン工房むぎまるはTぽーと公式、エスカフェは高浜市商工会公式で現行のパン製造・販売を確認。 おとうふ工房いしかわは高浜市観光協会・東海農政局でパン製造販売を確認。 2026-09-23高浜市監査：既存7店を現行公開情報で再照合。杜のベーカリー、PanPal、ふるふる、むぎまる、ES cafe、大まめ蔵の名称・住所・営業時間・公式導線・特色を補完。",
   "shops": [
     {
       "placeId": "ChIJw_H48SSbBGARama0JDViLHE",
@@ -20,12 +20,16 @@
       "website": "",
       "googleMaps": "",
       "photo": "",
-      "catchphrase": "沢渡町のベーカリー",
-      "highlights": []
+      "catchphrase": "三河高浜駅近くで長く親しまれる地元ベーカリー",
+      "highlights": [
+        "2026年の訪問記録でも現役営業を確認",
+        "高浜市の市制50周年企画では食パンを使ったラスクを提供"
+      ],
+      "specialNotice": "営業日情報に媒体差があるため来店前に最新情報を要確認。"
     },
     {
       "placeId": "ChIJ8YoxxXGbBGARwnopMIdlt8o",
-      "name": "もりのマルシェ",
+      "name": "杜のベーカリー",
       "rating": 4.3,
       "reviews": 4,
       "address": "愛知県高浜市芳川町1-1-11 けやきの杜内",
@@ -34,15 +38,17 @@
         "bakery"
       ],
       "openingHours": [
-        "火〜日 09:00–16:00"
+        "月〜土 09:00–16:00",
+        "日曜定休"
       ],
       "phone": "0566-54-3775",
-      "website": "",
+      "website": "https://www.instagram.com/mori_no_bakery/",
       "googleMaps": "",
       "photo": "",
-      "catchphrase": "けやきの杜内のベーカリー",
+      "catchphrase": "けやきの杜の敷地内で焼き立てパンと地元野菜を販売するベーカリー",
       "highlights": [
-        "コーヒー"
+        "20種類以上の焼き立てパンを展開",
+        "2026年の訪問記録でも現役営業を確認"
       ]
     },
     {
@@ -56,17 +62,19 @@
         "bakery"
       ],
       "openingHours": [
-        "日曜 11:00–17:00（売り切れ次第終了）"
+        "日曜 11:00–17:00（売り切れまで）",
+        "月曜は予約食パンの受け渡し対応"
       ],
       "phone": "070-9144-4099",
       "website": "https://panpal4839.com/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=PanPal%20%E9%AB%98%E6%B5%9C%E5%B8%82%E5%B0%8F%E6%B1%A0%E7%94%BA4-3-6",
       "photo": "",
-      "catchphrase": "小さなパン屋",
+      "catchphrase": "週1日営業、手作りにこだわる小池町の小さなパン屋",
       "highlights": [
-        "キッシュ",
-        "タルティーヌ"
-      ]
+        "食パン・フランスパン・キッシュ・デニッシュなどを手作り",
+        "西尾産ゆめあかりを使った予約販売の山食パンも展開"
+      ],
+      "specialNotice": "一人製造のため商品数に限りあり。売り切れ次第終了。"
     },
     {
       "placeId": "static-takahama-furufuru",
@@ -80,16 +88,18 @@
         "cafe"
       ],
       "openingHours": [
-        "火曜 09:00–16:00"
+        "09:00–11:00",
+        "11:30–16:00",
+        "日・月 定休"
       ],
       "phone": "0566-52-7771",
-      "website": "https://www.city.takahama.lg.jp/soshiki/seisaku/16725.html",
+      "website": "https://www.instagram.com/cafe_furufuru/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%82%AB%E3%83%95%E3%82%A7%EF%BC%86%E3%83%99%E3%83%BC%E3%82%AB%E3%83%AA%E3%83%BC%E3%81%B5%E3%82%8B%E3%81%B5%E3%82%8B%20%E9%AB%98%E6%B5%9C%E5%B8%82%E4%BA%8C%E6%B1%A0%E7%94%BA1-8-5",
       "photo": "",
-      "catchphrase": "高浜市公式掲載のカフェ＆ベーカリー",
+      "catchphrase": "焼き立てパンと手作りランチが自慢の地域密着ベーカリーカフェ",
       "highlights": [
-        "ラスク",
-        "ベーカリー"
+        "就労継続支援B型事業所として地域に根差して営業",
+        "雑穀食パンやラスクなども人気"
       ]
     },
     {
@@ -110,57 +120,61 @@
       "website": "https://www.t-port.info/mugimaru/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%91%E3%83%B3%E5%B7%A5%E6%88%BF%E3%82%80%E3%81%8E%E3%81%BE%E3%82%8B%20%E9%AB%98%E6%B5%9C%E5%B8%82",
       "photo": "",
-      "catchphrase": "オールスクラッチ製法、常時約90種類",
+      "catchphrase": "オールスクラッチ製法で常時約90種類を焼くTぽーとのベーカリー",
       "highlights": [
-        "食パン",
-        "菓子パン",
-        "総菜パン",
-        "バケット"
-      ]
+        "粉から生地を作るオールスクラッチ製法",
+        "食パン・ミニパン・菓子パン・総菜パン・デニッシュ食パンなど約90種類"
+      ],
+      "representativeProduct": "食パン",
+      "representativeLabel": "店舗公式が自信作として紹介"
     },
     {
       "placeId": "static-takahama-escafe",
-      "name": "エスカフェ",
+      "name": "ES cafe",
       "rating": 0,
       "reviews": 0,
-      "address": "愛知県高浜市湯山町3-6-18",
+      "address": "愛知県高浜市湯山町4-5-6",
       "type": "カフェ・ベーグル",
       "types": [
         "bakery",
         "cafe"
       ],
-      "openingHours": [],
+      "openingHours": [
+        "水〜日 09:00–18:00",
+        "月・火 定休"
+      ],
       "phone": "0566-87-8670",
       "website": "https://www.instagram.com/escafegram/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%82%A8%E3%82%B9%E3%82%AB%E3%83%95%E3%82%A7%20%E9%AB%98%E6%B5%9C%E5%B8%82%E6%B9%AF%E5%B1%B1%E7%94%BA3-6-18",
       "photo": "",
-      "catchphrase": "高浜市商工会掲載、自家製ベーグルが買えるカフェ",
+      "catchphrase": "自家製ベーグルとスペシャルティコーヒーを楽しめるカフェ",
       "highlights": [
-        "自家製ベーグル",
-        "パン予約",
-        "テイクアウト"
+        "ふわふわベーグルが看板",
+        "ランチ・テイクアウトに対応"
       ]
     },
     {
       "placeId": "static-takahama-ishikawa",
-      "name": "おとうふ工房いしかわ",
+      "name": "おとうふ市場 大まめ蔵",
       "rating": 0,
       "reviews": 0,
-      "address": "愛知県高浜市豊田町1-204-21",
+      "address": "愛知県高浜市豊田町1-205-5",
       "type": "パン製造・販売",
       "types": [
         "bakery"
       ],
-      "openingHours": [],
-      "phone": "0566-54-0330",
+      "openingHours": [
+        "09:00–18:00",
+        "年末年始除き無休"
+      ],
+      "phone": "0566-54-0334",
       "website": "https://www.otoufu.co.jp/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%81%8A%E3%81%A8%E3%81%86%E3%81%B5%E5%B7%A5%E6%88%BF%E3%81%84%E3%81%97%E3%81%8B%E3%82%8F%20%E9%AB%98%E6%B5%9C%E5%B8%82%E8%B1%8A%E7%94%B0%E7%94%BA1-204-21",
       "photo": "",
-      "catchphrase": "豆乳を使った焼きたてパンを製造",
+      "catchphrase": "豆乳やおからを使ったパンも揃う、おとうふ工房いしかわの直営店",
       "highlights": [
-        "豆乳パン",
-        "おからパン",
-        "豆腐ドーナッツ"
+        "国産小麦・豆乳・おからを使ったパンを展開",
+        "豆腐・ドーナツ・スイーツなど大豆加工品も豊富"
       ]
     }
   ]
