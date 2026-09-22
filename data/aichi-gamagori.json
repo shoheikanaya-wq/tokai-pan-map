@@ -1,7 +1,7 @@
 {
   "source": "static-free-verified",
   "updatedAt": "2026-09-23",
-  "attribution": "店舗情報は公開情報を基に確認。来店前に公式情報をご確認ください。 Gama Cafe & Bakery・ベーカリーショパン蒲郡店・パンとお菓子トレフルは蒲郡市観光協会の現行掲載でパン提供を確認。 2026-09-23蒲郡市監査：メロンだメロン、Gama Cafe & Bakery、ベーカリーショパン蒲郡店、パンとお菓子トレフルを公式・蒲郡市観光協会・2026年利用情報で再照合。Gama Cafeは2026年8月12日〜10月1日の営業休止を明記。",
+  "attribution": "店舗情報は公開情報を基に確認。来店前に公式情報をご確認ください。 Gama Cafe & Bakery・ベーカリーショパン蒲郡店・パンとお菓子トレフルは蒲郡市観光協会の現行掲載でパン提供を確認。 2026-09-23蒲郡市監査：メロンだメロン、Gama Cafe & Bakery、ベーカリーショパン蒲郡店、パンとお菓子トレフルを公式・蒲郡市観光協会・2026年利用情報で再照合。Gama Cafeは2026年8月12日〜10月1日の営業休止を明記。 2026-09-23蒲郡市TOP10補完：アネモネパン、GRAN CAFE三谷店、パン工場蒲郡、ベルナール蒲郡店、リンドバーグ、石窯パン工房あらじんを現行公式・2026年利用情報で確認し追加。パンビュセスは2026年9月に営業不確実情報があるため保留。ベーカリーショパン蒲郡店の電話番号を現行情報へ修正。",
   "shops": [
     {
       "placeId": "static-gamagori-melondamelon",
@@ -70,7 +70,7 @@
         "平日 08:00–19:00",
         "土日祝 07:00–19:00"
       ],
-      "phone": "0533-56-9677",
+      "phone": "0533-95-8818",
       "website": "https://b-chopin.com/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%99%E3%83%BC%E3%82%AB%E3%83%AA%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%91%E3%83%B3%20%E8%92%B2%E9%83%A1%E5%BA%97",
       "photo": "",
@@ -107,6 +107,175 @@
       ],
       "representativeProduct": "蒲郡産章姫のリボンクロワッサン",
       "representativeLabel": "蒲郡『勝負めし』参加商品"
+    },
+    {
+      "placeId": "static-gamagori-anemone",
+      "name": "アネモネ パン",
+      "rating": 3.12,
+      "reviews": 23,
+      "address": "愛知県蒲郡市元町5-3",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "火・水・金・土 11:00–17:00",
+        "月・木・日 定休"
+      ],
+      "phone": "0533-55-1131",
+      "website": "https://www.instagram.com/anemone_pan/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%82%A2%E3%83%8D%E3%83%A2%E3%83%8D%20%E3%83%91%E3%83%B3%20%E8%92%B2%E9%83%A1%E5%B8%82%E5%85%83%E7%94%BA5-3",
+      "photo": "",
+      "catchphrase": "国産小麦・自家製酵母・愛知の食材を使う蒲郡駅近くの小さなパン屋",
+      "highlights": [
+        "蒲郡駅から徒歩約3分",
+        "対面式ショーケースで販売"
+      ],
+      "specialNotice": "完売次第終了。営業日は月ごとに変動するため公式Instagram確認推奨。",
+      "photoAttribution": "",
+      "photoSource": "",
+      "photoLicense": ""
+    },
+    {
+      "placeId": "static-gamagori-grancafe-miya",
+      "name": "GRAN CAFE 三谷店",
+      "rating": 4.09,
+      "reviews": 39,
+      "address": "愛知県蒲郡市三谷北通6-228 精文館書店蒲郡三谷店併設",
+      "type": "ベーカリーカフェ",
+      "types": [
+        "bakery",
+        "cafe"
+      ],
+      "openingHours": [
+        "10:00–20:00（L.O.19:30）",
+        "不定休"
+      ],
+      "phone": "0533-66-0128",
+      "website": "https://grancafe.jp/miya/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=GRAN%20CAFE%20%E4%B8%89%E8%B0%B7%E5%BA%97",
+      "photo": "",
+      "catchphrase": "焼き立てパンとサンドイッチを楽しめるセルフスタイルのベーカリーカフェ",
+      "highlights": [
+        "精文館書店蒲郡三谷店に併設",
+        "パン・サンドイッチ・カフェメニューを提供"
+      ],
+      "specialNotice": "休業日は公式NEWSで随時案内。",
+      "photoAttribution": "",
+      "photoSource": "",
+      "photoLicense": ""
+    },
+    {
+      "placeId": "ChIJ3b9wC7LABGARrvDb5loXbTA",
+      "name": "パン工場 蒲郡",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県蒲郡市竹谷町中野1-1 イオン蒲郡店内",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "店頭 08:00–20:00",
+        "20:00以降はスーパーのレジで精算"
+      ],
+      "phone": "0533-68-7917",
+      "website": "https://www.fujipanstore.com/store/store001538/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%91%E3%83%B3%E5%B7%A5%E5%A0%B4%20%E8%92%B2%E9%83%A1",
+      "photo": "",
+      "catchphrase": "イオン蒲郡店内のフジパン系インストアベーカリー",
+      "highlights": [
+        "フジパンストアー公式掲載店",
+        "喫茶スペースあり"
+      ],
+      "specialNotice": "店舗営業時間後はスーパー側レジで精算。",
+      "photoAttribution": "",
+      "photoSource": "",
+      "photoLicense": ""
+    },
+    {
+      "placeId": "ChIJxezyPTrHBGARx8dUccV61Oc",
+      "name": "ベルナール 蒲郡店",
+      "rating": 3.01,
+      "reviews": 7,
+      "address": "愛知県蒲郡市港町17-10 アピタ蒲郡店1F",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "10:00–21:00",
+        "施設営業に準ずる"
+      ],
+      "phone": "0533-69-0931",
+      "website": "https://www.fujipanstore.com/store/pref/23/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%99%E3%83%AB%E3%83%8A%E3%83%BC%E3%83%AB%20%E8%92%B2%E9%83%A1%E5%BA%97",
+      "photo": "",
+      "catchphrase": "アピタ蒲郡店1階のフジパン系インストアベーカリー",
+      "highlights": [
+        "フジパンストアー公式店舗一覧に掲載",
+        "蒲郡駅から徒歩圏"
+      ],
+      "specialNotice": "営業時間・休業日はアピタ蒲郡店の営業に準ずる。",
+      "photoAttribution": "",
+      "photoSource": "",
+      "photoLicense": ""
+    },
+    {
+      "placeId": "ChIJUTcGHrzABGARt_XJfMszWoc",
+      "name": "リンドバーグ",
+      "rating": 4.4,
+      "reviews": 33,
+      "address": "愛知県蒲郡市拾石町宮前26",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "火〜日 08:00–19:00",
+        "月曜定休"
+      ],
+      "phone": "0533-67-8339",
+      "website": "",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%AA%E3%83%B3%E3%83%89%E3%83%90%E3%83%BC%E3%82%B0%20%E8%92%B2%E9%83%A1%E5%B8%82%E6%8B%BE%E7%9F%B3%E7%94%BA%E5%AE%AE%E5%89%8D26",
+      "photo": "",
+      "catchphrase": "朝8時から営業する拾石町の地域密着ベーカリー",
+      "highlights": [
+        "テイクアウト中心",
+        "朝食用のパンを買いやすい営業時間"
+      ],
+      "specialNotice": "営業時間・定休日は変更の場合があるため来店前に確認推奨。",
+      "photoAttribution": "",
+      "photoSource": "",
+      "photoLicense": ""
+    },
+    {
+      "placeId": "static-gamagori-aladdin",
+      "name": "石窯パン工房 あらじん",
+      "rating": 3.1,
+      "reviews": 17,
+      "address": "愛知県蒲郡市清田町一沢3-1",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "10:00–19:00",
+        "不定休"
+      ],
+      "phone": "0533-65-9951",
+      "website": "http://aladdin.shop-pro.jp/?mode=cate&cbid=987002&csid=0&sort=n",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E7%9F%B3%E7%AA%AF%E3%83%91%E3%83%B3%E5%B7%A5%E6%88%BF%20%E3%81%82%E3%82%89%E3%81%98%E3%82%93%20%E8%92%B2%E9%83%A1%E5%B8%82%E6%B8%85%E7%94%B0%E7%94%BA%E4%B8%80%E6%B2%A23-1",
+      "photo": "",
+      "catchphrase": "石窯焼きのパンを販売する清田町のパン工房",
+      "highlights": [
+        "パン・ド・ミなど石窯焼きパンを展開",
+        "駐車場あり"
+      ],
+      "specialNotice": "パンがなくなり次第終了。不定休のため来店前に確認推奨。",
+      "photoAttribution": "",
+      "photoSource": "",
+      "photoLicense": ""
     }
   ]
 }
