@@ -1,7 +1,7 @@
 {
   "source": "static-free-recovery",
   "updatedAt": "2026-09-23",
-  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。未取得項目は空欄または0。来店前に地図・公式情報をご確認ください。 グリーンオニオン・珈味香流は碧南市観光協会公式の店舗情報および「碧南と#パンまみれ」でパン商品の現行掲載を確認。 2026-09-23碧南市監査：ベーカリードゥークー、mon coeur、Bakeshop SolSol、わっぱ堂を現行公開情報で再照合し営業時間・定休日・特色・公式導線を補完。",
+  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。未取得項目は空欄または0。来店前に地図・公式情報をご確認ください。 グリーンオニオン・珈味香流は碧南市観光協会公式の店舗情報および「碧南と#パンまみれ」でパン商品の現行掲載を確認。 2026-09-23碧南市監査：ベーカリードゥークー、mon coeur、Bakeshop SolSol、わっぱ堂を現行公開情報で再照合し営業時間・定休日・特色・公式導線を補完。 2026-09-23碧南市監査：鶴見町2-135の旧パン工房むぎの家相当の曖昧なBakery登録を、パン屋閉店情報のため除外。現役確認できるホームベーカリーグッディを追加。Bakery Dookuは碧南市公式観光サイトの営業時間・定休日を優先して修正。",
   "shops": [
     {
       "placeId": "ChIJVVXhvBuQBGARgmMMfAc8o_Y",
@@ -14,8 +14,8 @@
         "bakery"
       ],
       "openingHours": [
-        "月・木〜日 07:00–18:00",
-        "火・水 定休"
+        "07:00–19:00",
+        "水曜定休"
       ],
       "phone": "0566-55-2121",
       "website": "https://pan-dooku.com/",
@@ -26,7 +26,7 @@
         "碧南駅から徒歩圏",
         "国産小麦を中心に多彩なパンを展開"
       ],
-      "specialNotice": "売り切れ状況により品数が少なくなる場合あり。"
+      "specialNotice": "営業時間・休業日は変更の場合があるため、来店前に最新情報確認推奨。"
     },
     {
       "placeId": "ChIJQ77GeACbBGAR8Cpritx43uw",
@@ -105,26 +105,6 @@
         "テイクアウト中心"
       ],
       "specialNotice": "営業内容は変更の場合があるため来店前に最新情報を要確認。"
-    },
-    {
-      "placeId": "ChIJuSwqTbyaBGARYH7HIHfS9Cw",
-      "name": "Bakery",
-      "rating": 0,
-      "reviews": 0,
-      "address": "愛知県碧南市鶴見町2-135",
-      "type": "パン屋",
-      "types": [
-        "bakery"
-      ],
-      "openingHours": [
-        "土 10:30–15:00"
-      ],
-      "phone": "0566-42-0877",
-      "website": "",
-      "googleMaps": "https://www.google.com/maps/search/?api=1&query=Bakery%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E7%A2%A7%E5%8D%97%E5%B8%82%E9%B6%B4%E8%A6%8B%E7%94%BA2-135",
-      "photo": "",
-      "catchphrase": "鶴見町のベーカリー",
-      "highlights": []
     },
     {
       "placeId": "hekinan-farine",
@@ -233,6 +213,34 @@
         "フレンチトースト",
         "フルーツサンド"
       ]
+    },
+    {
+      "placeId": "static-hekinan-homebakery-goody",
+      "name": "ホームベーカリーグッディ",
+      "rating": 3.5,
+      "reviews": 2,
+      "address": "愛知県碧南市中山町1-51",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "火〜日 10:00–19:00",
+        "月曜定休"
+      ],
+      "phone": "0566-41-9311",
+      "website": "",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%9B%E3%83%BC%E3%83%A0%E3%83%99%E3%83%BC%E3%82%AB%E3%83%AA%E3%83%BC%E3%82%B0%E3%83%83%E3%83%87%E3%82%A3%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E7%A2%A7%E5%8D%97%E5%B8%82%E4%B8%AD%E5%B1%B1%E7%94%BA1-51",
+      "photo": "",
+      "catchphrase": "古民家のような佇まいで手作りパンを販売する中山町のベーカリー",
+      "highlights": [
+        "2025年の利用記録が確認できる現役店",
+        "菓子パンを中心に手作りパンを展開"
+      ],
+      "specialNotice": "営業時間・定休日は変更の場合があるため来店前に確認推奨。",
+      "photoAttribution": "",
+      "photoSource": "",
+      "photoLicense": ""
     }
   ]
 }
