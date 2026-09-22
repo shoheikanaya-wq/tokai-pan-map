@@ -1,7 +1,7 @@
 {
   "source": "static-free-recovery",
-  "updatedAt": "2026-09-19",
-  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。未取得項目は空欄または0。来店前に地図・公式情報をご確認ください。 オークワ幸田店はチェーン公式店舗ページでベーカリー取扱いを現行確認。 旧ももちゃみBread枠は、おとうふ工房いしかわ公式の現行店舗「風土市場まめぞう幸田店」情報へ統合更新。 幸田町現行生活支援チケット掲載でmomochami Breadの営業情報を再確認し、風土市場まめぞう幸田店とは別店舗として整理。",
+  "updatedAt": "2026-09-23",
+  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。未取得項目は空欄または0。来店前に地図・公式情報をご確認ください。 オークワ幸田店はチェーン公式店舗ページでベーカリー取扱いを現行確認。 旧ももちゃみBread枠は、おとうふ工房いしかわ公式の現行店舗「風土市場まめぞう幸田店」情報へ統合更新。 幸田町現行生活支援チケット掲載でmomochami Breadの営業情報を再確認し、風土市場まめぞう幸田店とは別店舗として整理。 2026-09-23幸田町監査：ヘルシーベーカリー餡、ダーシェンカ幸田店、クリムドファリーヌ、ベルナール幸田店、パン処アンUN、momochami Bread、スーパーセンターオークワ幸田店ベーカリー、風土市場まめぞう幸田店を現行公式・自治体・2026年利用情報で再照合し、住所・営業時間・特色・公式導線等を更新。",
   "shops": [
     {
       "placeId": "ChIJEVjSUdK9BGARZ5DvdQyV6J0",
@@ -16,17 +16,18 @@
       "openingHours": [
         "水〜金 08:00–18:00",
         "土 08:00–14:00",
-        "日〜火 定休"
+        "日・月・火 定休"
       ],
       "phone": "0564-62-5519",
       "website": "https://r.goope.jp/dnsakahi/",
       "googleMaps": "",
       "photo": "",
-      "catchphrase": "低糖質・減塩のパン",
+      "catchphrase": "油・卵・バターを使わず、低糖質・減塩を意識したからだにやさしいパン屋",
       "highlights": [
-        "油・卵・バター不使用",
-        "イートイン"
-      ]
+        "グルテンフリー米粉パンも展開",
+        "イートイン4席・無料Wi-Fi・近隣配達に対応"
+      ],
+      "specialNotice": "売り切れ次第終了。土曜は14時閉店。"
     },
     {
       "placeId": "ChIJ1yfT9Wi-BGARuE1Bs_TD_H0",
@@ -43,41 +44,48 @@
         "月・火 定休"
       ],
       "phone": "0564-63-3273",
-      "website": "http://ishigamapan.jp/top.html",
+      "website": "https://gourmet.tsuku2.jp/shop/0000041410/top",
       "googleMaps": "",
       "photo": "",
-      "catchphrase": "自家製酵母と薪窯焼き",
+      "catchphrase": "自家製自然酵母を薪窯で焼き上げる幸田の人気ベーカリー",
       "highlights": [
-        "天然酵母",
-        "薪窯"
-      ]
+        "旬の果物などから起こす自家製自然酵母を使用",
+        "薪窯焼きのパンやベーグルを幅広く展開"
+      ],
+      "representativeProduct": "ダーシェンカ",
+      "representativeLabel": "店舗名を冠した看板パン"
     },
     {
       "placeId": "ChIJWxSOKvC-BGARoBStPGxb8f8",
-      "name": "Creme de Farine",
-      "rating": 3.9,
-      "reviews": 29,
-      "address": "愛知県額田郡幸田町大草北前田23",
+      "name": "クリム ド ファリーヌ",
+      "rating": 3.17,
+      "reviews": 26,
+      "address": "愛知県額田郡幸田町大草字北前田11-3",
       "type": "パン屋",
       "types": [
         "bakery"
       ],
       "openingHours": [
-        "10:00–18:00"
+        "月・木〜日 09:00–18:00",
+        "火・水 定休"
       ],
       "phone": "0564-73-0308",
       "website": "",
       "googleMaps": "",
       "photo": "",
-      "catchphrase": "大草のベーカリー",
-      "highlights": []
+      "catchphrase": "森のケーキ屋クリムの姉妹店として生まれたメルヘン調ベーカリー",
+      "highlights": [
+        "菓子店と連携してパンを販売",
+        "売り切れ次第終了"
+      ],
+      "specialNotice": "2026年3月時点で、パンを向かいの森のケーキ屋クリム側で販売する日あり。来店前に最新営業情報を確認推奨。"
     },
     {
       "placeId": "ChIJqzq-VF--BGARIZ51lXDV5QY",
-      "name": "ベルナール幸田店",
+      "name": "ベルナール 幸田店",
       "rating": 3.5,
       "reviews": 4,
-      "address": "愛知県額田郡幸田町大草山添63",
+      "address": "愛知県額田郡幸田町大草山添170 ピアゴ幸田店1F",
       "type": "パン屋",
       "types": [
         "bakery"
@@ -86,11 +94,14 @@
         "09:00–20:00"
       ],
       "phone": "0564-63-5711",
-      "website": "",
+      "website": "https://www.fujipanstore.com/store/pref/23/",
       "googleMaps": "",
       "photo": "",
-      "catchphrase": "大草のベーカリー",
-      "highlights": []
+      "catchphrase": "ピアゴ幸田店1階のフジパン系インストアベーカリー",
+      "highlights": [
+        "フジパンストアー公式店舗一覧に掲載",
+        "愛知県の営業許可も2028年4月まで確認可能"
+      ]
     },
     {
       "placeId": "ChIJPyyROfC_BGARV-nkd4GwQ7A",
@@ -103,40 +114,46 @@
         "bakery"
       ],
       "openingHours": [
-        "水〜土 10:00–17:00（売り切れ次第終了）"
+        "水〜土 10:00–17:00",
+        "日・月・火 定休"
       ],
       "phone": "0564-62-0688",
       "website": "https://laviedureve.jp/casestudy/un/",
       "googleMaps": "",
       "photo": "",
-      "catchphrase": "三ヶ根食パンとハード系",
+      "catchphrase": "自家製あんの『unパン』が看板、三ヶ根駅近くの小さなパン処",
       "highlights": [
-        "約20種類",
-        "手ごね生地"
-      ]
+        "毎日20種類ほど・約400個を製造",
+        "三ヶ根食パンやハード系パンも展開"
+      ],
+      "representativeProduct": "unパン",
+      "representativeLabel": "公式紹介の看板商品",
+      "specialNotice": "売り切れ次第閉店。"
     },
     {
       "placeId": "ChIJHeufME6-BGARj-id0EabU8w",
       "name": "momochami Bread",
-      "rating": 0,
-      "reviews": 0,
+      "rating": 3.24,
+      "reviews": 62,
       "address": "愛知県額田郡幸田町大字芦谷字幸田36（幸田駅前銀座内）",
       "type": "パン屋",
       "types": [
         "bakery"
       ],
       "openingHours": [
-        "09:00–19:00",
-        "火・水曜定休"
+        "月・水〜日 09:00–19:00",
+        "火曜定休"
       ],
       "phone": "0564-62-6255",
       "website": "https://www.kota-ticket.com/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=momochami%20Bread%20%E5%B9%B8%E7%94%B0%E7%94%BA",
       "photo": "",
-      "catchphrase": "自家製酵母でつくるパン",
+      "catchphrase": "自家製天然酵母でもっちり食感に仕上げる幸田駅前のパン屋",
       "highlights": [
-        "自家製酵母パン"
-      ]
+        "レーズン・小麦・ライ麦の自家製酵母を使用",
+        "幸田町ふるさと納税返礼品にも採用"
+      ],
+      "specialNotice": "営業カレンダーでは水曜休の場合もあるため、来店前に最新情報確認推奨。"
     },
     {
       "placeId": "static-kota-okuwa-bakery",
@@ -149,17 +166,18 @@
         "bakery"
       ],
       "openingHours": [
-        "店舗 09:00–21:00",
-        "ベーカリー個別営業時間は店頭確認"
+        "09:00–21:00"
       ],
       "phone": "0564-62-6110",
       "website": "https://www.okuwa.net/store/aichi/561.html",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%82%B9%E3%83%BC%E3%83%91%E3%83%BC%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E3%82%AA%E3%83%BC%E3%82%AF%E3%83%AF%20%E5%B9%B8%E7%94%B0%E5%BA%97",
       "photo": "",
-      "catchphrase": "オークワ公式でベーカリー取扱いを確認",
+      "catchphrase": "スーパーセンターオークワ幸田店内の焼き立てベーカリー",
       "highlights": [
-        "店内ベーカリー"
-      ]
+        "オークワ公式でベーカリー取扱いを確認",
+        "買い物と一緒に利用しやすい"
+      ],
+      "specialNotice": "一部専門店は営業時間が異なる場合あり。"
     },
     {
       "placeId": "static-kota-mamezou",
@@ -173,18 +191,19 @@
       ],
       "openingHours": [
         "10:00–18:00",
-        "年中無休（年末年始除く）"
+        "年末年始除き無休"
       ],
       "phone": "0564-83-8039",
       "website": "https://www.otoufu.co.jp/store/2202/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E9%A2%A8%E5%9C%9F%E5%B8%82%E5%A0%B4%E3%81%BE%E3%82%81%E3%81%9E%E3%81%86%20%E5%B9%B8%E7%94%B0%E5%BA%97",
       "photo": "",
-      "catchphrase": "メーカー公式でパン・ドーナツ取扱いを確認",
+      "catchphrase": "国産原料にこだわる豆腐直売店で、パンやドーナツも販売",
       "highlights": [
-        "パン",
-        "ドーナツ",
-        "工場直売"
-      ]
+        "豆腐・パン・スイーツ・ドーナツ・惣菜を展開",
+        "幸田駅東口前で利用しやすい"
+      ],
+      "representativeProduct": "おからパン",
+      "representativeLabel": "店舗取扱商品の一例"
     }
   ]
 }
