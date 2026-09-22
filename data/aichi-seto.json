@@ -1,13 +1,13 @@
 {
   "source": "static-free-verified",
-  "updatedAt": "2026-09-21",
-  "attribution": "店舗公式サイト等の公開情報を基に確認。来店前に公式情報をご確認ください。",
+  "updatedAt": "2026-09-23",
+  "attribution": "店舗公式サイト等の公開情報を基に確認。来店前に公式情報をご確認ください。 2026-09-23瀬戸市監査：モンタナベーカリー、anopan、カルムを現行情報へ更新し、ペンギンベーカリー瀬戸苗場店、ベルナール瀬戸店、北欧倶楽部バロー品野店を現役確認のうえ追加。",
   "shops": [
     {
       "placeId": "static-seto-montana",
       "name": "モンタナベーカリー",
-      "rating": 0,
-      "reviews": 0,
+      "rating": 3.47,
+      "reviews": 133,
       "address": "愛知県瀬戸市今林町205",
       "type": "パン屋",
       "types": [
@@ -15,71 +15,158 @@
       ],
       "openingHours": [
         "火〜土 09:00–19:30",
-        "定休日 月・日"
+        "月・日 定休"
       ],
       "phone": "0561-83-4494",
       "website": "https://montanabakery.jp/",
       "googleMaps": "",
       "photo": "",
-      "catchphrase": "パンと欧風料理を楽しめるベーカリーカフェ",
+      "catchphrase": "焼き立てパンとランチを楽しめる今林町の人気ベーカリー",
       "highlights": [
-        "ベーカリーカフェ",
-        "テイクアウト",
-        "駐車場あり"
+        "パン・ヨーロッパ料理・カフェを楽しめる",
+        "店舗前と裏に駐車場あり"
       ],
-      "representativeProduct": "パン各種"
+      "representativeProduct": "パン各種",
+      "specialNotice": "営業時間・定休日は変更の場合があるため来店前に確認推奨。"
     },
     {
       "placeId": "static-seto-anopan",
       "name": "anopan",
-      "rating": 0,
-      "reviews": 0,
+      "rating": 3.13,
+      "reviews": 23,
       "address": "愛知県瀬戸市平町1丁目15番地",
       "type": "パン屋",
       "types": [
         "bakery"
       ],
       "openingHours": [
-        "10:00開店・完売次第閉店",
-        "不定休（公式のお休みカレンダー参照）"
+        "10:00〜完売まで",
+        "不定休"
       ],
       "phone": "0561-82-7767",
       "website": "https://anopan.net/",
       "googleMaps": "",
       "photo": "",
-      "catchphrase": "2人で営む瀬戸市の小さなパン屋",
+      "catchphrase": "二人で営む、平町の小さな地域密着ベーカリー",
       "highlights": [
-        "小さなベーカリー",
-        "テイクアウト",
-        "駐車場あり"
+        "11時頃まで順次パンが焼き上がる",
+        "前日20時頃までLINE予約に対応"
       ],
-      "representativeProduct": "あんバタ"
+      "representativeProduct": "あんバタ",
+      "specialNotice": "完売次第閉店。営業日は公式カレンダー確認推奨。"
     },
     {
       "placeId": "static-seto-calme",
-      "name": "Calme（カルム）",
-      "rating": 0,
-      "reviews": 0,
+      "name": "カルム",
+      "rating": 3.19,
+      "reviews": 27,
       "address": "愛知県瀬戸市本郷町285",
       "type": "パン屋",
       "types": [
         "bakery"
       ],
       "openingHours": [
-        "10:30〜売り切れまで",
-        "定休日 火・水（臨時休業あり）"
+        "月・木〜日 10:30〜売り切れまで",
+        "火・水 定休"
       ],
       "phone": "0561-48-3805",
       "website": "",
       "googleMaps": "",
       "photo": "",
-      "catchphrase": "薪窯と自然酵母の手づくりパン",
+      "catchphrase": "天然酵母パンと手作りジャムを焼く本郷町のベーカリー",
       "highlights": [
-        "自然酵母",
-        "薪窯焼き",
+        "2026年8月の利用記録で現役確認",
+        "天然酵母パンと手作りジャムが特徴"
+      ],
+      "representativeProduct": "レーズンパン",
+      "specialNotice": "売り切れ次第終了。臨時休業あり。"
+    },
+    {
+      "placeId": "static-seto-penguin-naeba",
+      "name": "ペンギンベーカリー 瀬戸苗場店",
+      "rating": 3.03,
+      "reviews": 14,
+      "address": "愛知県瀬戸市苗場町134-1",
+      "type": "パン屋",
+      "types": [
+        "bakery",
+        "sandwich_shop",
+        "cafe"
+      ],
+      "openingHours": [
+        "08:30–19:00",
+        "売り切れ次第終了"
+      ],
+      "phone": "0561-56-6855",
+      "website": "https://www.penguinbakery.com/shop/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%9A%E3%83%B3%E3%82%AE%E3%83%B3%E3%83%99%E3%83%BC%E3%82%AB%E3%83%AA%E3%83%BC%20%E7%80%AC%E6%88%B8%E8%8B%97%E5%A0%B4%E5%BA%97",
+      "photo": "",
+      "catchphrase": "北海道産小麦を使った多彩なパンを揃える苗場町のベーカリー",
+      "highlights": [
+        "カレーパン・菓子パン・サンドイッチなど種類豊富",
         "駐車場あり"
       ],
-      "representativeProduct": "レーズンパン"
+      "specialNotice": "売り切れ次第営業終了。",
+      "photoAttribution": "",
+      "photoSource": "",
+      "photoLicense": ""
+    },
+    {
+      "placeId": "static-seto-bernard",
+      "name": "ベルナール 瀬戸店",
+      "rating": 3.01,
+      "reviews": 4,
+      "address": "愛知県瀬戸市幸町33 アピタ瀬戸店内",
+      "type": "パン屋",
+      "types": [
+        "bakery",
+        "cafe"
+      ],
+      "openingHours": [
+        "09:00–21:00",
+        "施設営業に準ずる"
+      ],
+      "phone": "0561-21-0221",
+      "website": "https://www.fujipanstore.com/store/store023132/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%99%E3%83%AB%E3%83%8A%E3%83%BC%E3%83%AB%20%E7%80%AC%E6%88%B8%E5%BA%97",
+      "photo": "",
+      "catchphrase": "アピタ瀬戸店内のフジパン系インストアベーカリー",
+      "highlights": [
+        "喫茶スペースあり",
+        "買い物と一緒に利用しやすい"
+      ],
+      "specialNotice": "営業時間・休業日はアピタ瀬戸店に準ずる。",
+      "photoAttribution": "",
+      "photoSource": "",
+      "photoLicense": ""
+    },
+    {
+      "placeId": "static-seto-hokuoclub-shinano",
+      "name": "北欧倶楽部 バロー品野店",
+      "rating": 3,
+      "reviews": 3,
+      "address": "愛知県瀬戸市品野町4-66-2 バロー品野店内",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "月〜土 10:00–20:00",
+        "日 09:30–20:00"
+      ],
+      "phone": "0561-86-7770",
+      "website": "https://stores.valor.jp/detail/127/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E5%8C%97%E6%AC%A7%E5%80%B6%E6%A5%BD%E9%83%A8%20%E3%83%90%E3%83%AD%E3%83%BC%E5%93%81%E9%87%8E%E5%BA%97",
+      "photo": "",
+      "catchphrase": "バロー品野店内の焼き立てベーカリーコーナー",
+      "highlights": [
+        "バロー公式ページでベーカリー専門コーナーとして掲載",
+        "買い物と一緒に利用しやすい"
+      ],
+      "specialNotice": "営業時間・休業日はバロー品野店に準ずる。",
+      "photoAttribution": "",
+      "photoSource": "",
+      "photoLicense": ""
     }
   ]
 }
