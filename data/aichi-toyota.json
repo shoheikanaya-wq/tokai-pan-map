@@ -1,7 +1,7 @@
 {
   "source": "static-free-recovery",
   "updatedAt": "2026-09-23",
-  "attribution": "店舗情報は公開情報を基にした復旧用スナップショット。来店前に公式情報をご確認ください。 ジャックは店舗公式サイトで住所・営業時間・定休日を再確認。 ペンギンベーカリー豊田浄水店は公式店舗一覧で住所・電話・営業時間を再確認。 HORNはフジパンストアー公式、Picoはメグリア井上店公式施設情報を確認。Google Maps導線は店名・住所検索URLで全店舗に付与。 実店舗写真は権利・利用条件を確認できたものだけをphoto/photoAttribution/photoSource/photoLicenseへ登録し、旧tokai-pan-apiには依存しない。 サンクス洋菓子店は2026-09-20に公開情報で店名・住所・営業時間を再確認。 2026-09-23に豊田市公式パンマルシェおよび地域公式情報で現役店舗候補を再照合。Risoを現役確認済み店舗として追加。 Risoは地域公式掲載と第三者掲載保留が競合するため確定掲載から除外し再確認対象へ変更。ジャックは店舗公式の商品情報を反映。",
+  "attribution": "店舗情報は公開情報を基にした復旧用スナップショット。来店前に公式情報をご確認ください。 ジャックは店舗公式サイトで住所・営業時間・定休日を再確認。 ペンギンベーカリー豊田浄水店は公式店舗一覧で住所・電話・営業時間を再確認。 HORNはフジパンストアー公式、Picoはメグリア井上店公式施設情報を確認。Google Maps導線は店名・住所検索URLで全店舗に付与。 実店舗写真は権利・利用条件を確認できたものだけをphoto/photoAttribution/photoSource/photoLicenseへ登録し、旧tokai-pan-apiには依存しない。 サンクス洋菓子店は2026-09-20に公開情報で店名・住所・営業時間を再確認。 2026-09-23に豊田市公式パンマルシェおよび地域公式情報で現役店舗候補を再照合。Risoを現役確認済み店舗として追加。 Risoは地域公式掲載と第三者掲載保留が競合するため確定掲載から除外し再確認対象へ変更。ジャックは店舗公式の商品情報を反映。 2026-09-23にcoripan・ミカヅキ・サンクス洋菓子店を公開情報で再照合し営業時間・特色を補完。",
   "shops": [
     {
       "placeId": "ChIJ22dl6EagBGAROlRfruKCPZI",
@@ -73,8 +73,11 @@
       "website": "",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%82%B5%E3%83%B3%E3%82%AF%E3%82%B9%E6%B4%8B%E8%8F%93%E5%AD%90%E5%BA%97%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%B1%8A%E7%94%B0%E5%B8%82%E6%B5%84%E6%B0%B4%E7%94%BA%E4%BC%8A%E4%BF%9D%E5%8E%9F178-4",
       "photo": "",
-      "catchphrase": "パン・ケーキ・喫茶を楽しめる老舗洋菓子店",
-      "highlights": [],
+      "catchphrase": "パン・カフェ・洋菓子を楽しめる浄水町の老舗店",
+      "highlights": [
+        "モーニングからランチまで利用可能",
+        "自家製天然酵母を使った食パンも展開"
+      ],
       "photoAttribution": "",
       "photoSource": "",
       "photoLicense": ""
@@ -112,13 +115,19 @@
       "types": [
         "bakery"
       ],
-      "openingHours": [],
+      "openingHours": [
+        "木曜 11:00–16:00",
+        "月・火・水・金・土・日 定休"
+      ],
       "phone": "090-2925-0621",
       "website": "",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=coripan%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%B1%8A%E7%94%B0%E5%B8%82%E6%B7%B1%E7%94%B0%E7%94%BA1-86-3",
       "photo": "",
-      "catchphrase": "深田町のベーカリー",
-      "highlights": [],
+      "catchphrase": "週1日、木曜日に営業する深田町のパン屋",
+      "highlights": [
+        "木曜11:00〜16:00営業",
+        "ハード系を含む小ぶりなパンが並ぶ"
+      ],
       "photoAttribution": "",
       "photoSource": "",
       "photoLicense": ""
@@ -169,24 +178,31 @@
     },
     {
       "placeId": "ChIJfdZhtN46rKERKChPRq5x0oU",
-      "name": "Mikazuki",
-      "rating": 0,
-      "reviews": 0,
+      "name": "ミカヅキ",
+      "rating": 3.92,
+      "reviews": 20,
       "address": "愛知県豊田市月見町2-9-2",
       "type": "パン屋",
       "types": [
         "bakery"
       ],
-      "openingHours": [],
+      "openingHours": [
+        "木・金・土・日 10:00–17:00",
+        "月・火・水 定休"
+      ],
       "phone": "0565-42-7170",
       "website": "",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=Mikazuki%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%B1%8A%E7%94%B0%E5%B8%82%E6%9C%88%E8%A6%8B%E7%94%BA2-9-2",
       "photo": "",
-      "catchphrase": "月見町のベーカリー",
-      "highlights": [],
+      "catchphrase": "クロワッサン生地を活かしたパンが特徴の月見町のベーカリー",
+      "highlights": [
+        "木〜日10:00〜17:00営業",
+        "新豊田駅から徒歩圏"
+      ],
       "photoAttribution": "",
       "photoSource": "",
-      "photoLicense": ""
+      "photoLicense": "",
+      "specialNotice": "GW・夏季・年末年始は休業日あり。来店前に最新情報を要確認。"
     },
     {
       "placeId": "ChIJB7nKugpfA2ARNr7BOZoe0Y4",
