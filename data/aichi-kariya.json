@@ -1,7 +1,7 @@
 {
   "source": "static-free-recovery",
   "updatedAt": "2026-09-23",
-  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。評価・口コミ数は取得できた公開情報を使用し、未取得項目は0または空欄。来店前に公式情報をご確認ください。 PAIN DE PARISは刈谷市観光協会公式で現行情報を確認。 2026-09-23にBOULANGERIE Pan me・PAIN DE PARISを刈谷市観光協会等の現行公開情報で再照合し営業時間・特色を補完。 2026-09-23にパンのかおり刈谷店・パリーズベーカリー・パン食菜館トレトゥールを公式・刈谷市観光協会情報で再照合。",
+  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。評価・口コミ数は取得できた公開情報を使用し、未取得項目は0または空欄。来店前に公式情報をご確認ください。 PAIN DE PARISは刈谷市観光協会公式で現行情報を確認。 2026-09-23にBOULANGERIE Pan me・PAIN DE PARISを刈谷市観光協会等の現行公開情報で再照合し営業時間・特色を補完。 2026-09-23にパンのかおり刈谷店・パリーズベーカリー・パン食菜館トレトゥールを公式・刈谷市観光協会情報で再照合。 ハースブラウン アピタ刈谷店は2026-09-23に現行営業情報・2026年訪問記録を確認し、名称・評価・営業時間・公式導線を補完。",
   "shops": [
     {
       "placeId": "ChIJt1ro6HScBGAR9kpnjNSAlEs",
@@ -140,21 +140,26 @@
     },
     {
       "placeId": "ChIJ1bBbSu-cBGARyoTHQuDdDQM",
-      "name": "Hearth Brown",
-      "rating": 0,
-      "reviews": 0,
-      "address": "愛知県刈谷市南桜町2-56-1",
+      "name": "ハースブラウン アピタ刈谷店",
+      "rating": 3.04,
+      "reviews": 23,
+      "address": "愛知県刈谷市南桜町2-56-1 アピタ刈谷店1F",
       "type": "パン屋",
       "types": [
         "bakery"
       ],
-      "openingHours": [],
+      "openingHours": [
+        "10:00–21:00"
+      ],
       "phone": "0566-29-5236",
-      "website": "",
+      "website": "https://www.yamazakipan.co.jp/shops/hearthbrown/main.html",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=Hearth%20Brown%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%88%88%E8%B0%B7%E5%B8%82%E5%8D%97%E6%A1%9C%E7%94%BA2-56-1",
       "photo": "",
-      "catchphrase": "南桜町のベーカリー",
-      "highlights": []
+      "catchphrase": "アピタ刈谷店1階のヤマザキ系インストアベーカリー",
+      "highlights": [
+        "刈谷駅から徒歩圏",
+        "パンとカフェ利用に対応"
+      ]
     },
     {
       "placeId": "ChIJ31Rzd-ycBGARihGYHQoRV98",
@@ -171,7 +176,7 @@
         "月・日 定休"
       ],
       "phone": "0566-21-3095",
-      "website": "",
+      "website": "https://www.kariya-guide.com/gourmet/000164.html",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=Traiteur%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%88%88%E8%B0%B7%E5%B8%82%E5%A4%A7%E6%89%8B%E7%94%BA5-55",
       "photo": "",
       "catchphrase": "パンとランチを楽しめる大手町のパン食菜館",
@@ -183,8 +188,8 @@
     {
       "placeId": "ChIJ1Ui73BydBGARe-X4q_TBokA",
       "name": "パリーズベーカリー",
-      "rating": 0,
-      "reviews": 0,
+      "rating": 3,
+      "reviews": 20,
       "address": "愛知県刈谷市池田町2-226",
       "type": "パン屋",
       "types": [
