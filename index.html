@@ -442,6 +442,14 @@ button,.back,.detail-action,.review-trigger{
  #list .shop-title-row{gap:5px}
  #list .shop-address{font-size:11px;line-height:1.25;margin-top:3px}
 }
+
+/* Ver.1.71: 店名横に評価、住所下に口コミ数 */
+#list .shop-rating-inline{flex:0 0 auto;margin-left:auto;font-size:17px;line-height:1.15;white-space:nowrap;color:#8a4b08}
+#list .shop-review-count{display:block;margin-top:2px;font-size:11px;line-height:1.2;color:#6f6257;font-weight:700}
+@media(max-width:600px){
+  #list .shop-rating-inline{font-size:15px}
+  #list .shop-review-count{font-size:10px;margin-top:2px}
+}
 </style></head>
 <body><header><h1 id="appTitle" style="cursor:pointer;">🥐 東海パンMAP</h1><div class="sub">市町村から、おいしいパン屋を探す</div></header><main>
 <section id="home">
@@ -456,7 +464,7 @@ button,.back,.detail-action,.review-trigger{
     </a>
   </div>
   
-  <div class="tabs"><button id="tabAichi" class="active">愛知県</button><button id="tabGifu">岐阜県</button><button id="tabMie">三重県</button></div><div class="notice"><strong>Ver.1.70</strong>　TOP10の店名・写真・余白・視認性を改善</div><div id="aichiPanel"><h2>西三河</h2><div class="cities"><button id="toyota">豊田市</button><button id="okazaki">岡崎市</button><button id="anjo">安城市</button><button id="kariya">刈谷市</button><button id="nishio">西尾市</button>
+  <div class="tabs"><button id="tabAichi" class="active">愛知県</button><button id="tabGifu">岐阜県</button><button id="tabMie">三重県</button></div><div class="notice"><strong>Ver.1.71</strong>　TOP10の店名横に★評価、住所下に口コミ数を配置</div><div id="aichiPanel"><h2>西三河</h2><div class="cities"><button id="toyota">豊田市</button><button id="okazaki">岡崎市</button><button id="anjo">安城市</button><button id="kariya">刈谷市</button><button id="nishio">西尾市</button>
 <button id="hekinan">碧南市</button>
 <button id="chiryu">知立市</button>
 <button id="takahama">高浜市</button>
@@ -1105,7 +1113,7 @@ function showRanking() {
     const productLine = s.representativeProduct && !String(s.catchphrase||'').includes(s.representativeProduct) && !(Array.isArray(s.highlights)&&s.highlights.some(v=>String(v).includes(s.representativeProduct)))
       ? '<span class="shop-signature">🥖 '+escapeHtml(s.representativeProduct)+'</span>' : '';
     const distinctive = `${catchphrase}${points}${productLine}${attribution}`;
-    b.innerHTML=`${photo}<span class="shop-main"><span class="shop-title-row"><strong class="badge">${i+1}位</strong><strong class="shop-name">${escapeHtml(s.name)}</strong></span><span class="muted shop-address">${escapeHtml(s.address)}</span></span>${distinctive ? `<span class="shop-points">${distinctive}</span>` : ''}<span class="rating">${s.dataSource==='osm-free' ? '<small>公開地図データ</small>' : ('★'+s.rating+'<br><small>口コミ '+s.reviews+'件</small>')}</span>`;
+    b.innerHTML=`${photo}<span class="shop-main"><span class="shop-title-row"><strong class="badge">${i+1}位</strong><strong class="shop-name">${escapeHtml(s.name)}</strong>${s.dataSource==='osm-free' ? '' : `<strong class="shop-rating-inline">★${escapeHtml(s.rating)}</strong>`}</span><span class="muted shop-address">${escapeHtml(s.address)}</span>${s.dataSource==='osm-free' ? '<span class="shop-review-count">公開地図データ</span>' : `<span class="shop-review-count">口コミ ${escapeHtml(s.reviews)}件</span>`}</span>${distinctive ? `<span class="shop-points">${distinctive}</span>` : ''}`;
     b.onclick=()=>showDetail(i);
     list.appendChild(b);
   });
