@@ -1,55 +1,59 @@
 {
   "source": "static-free-verified",
-  "updatedAt": "2026-09-19",
-  "attribution": "店舗情報は公開情報を基に確認。来店前に公式情報をご確認ください。 パンヤモギは奥三河観光協議会公式の2026年朝活Cafe情報で所在地・開催営業を確認。 もっくるベーカリーは愛知県公式情報および道の駅公式で存在を確認。",
+  "updatedAt": "2026-09-23",
+  "attribution": "店舗情報は公開情報を基に確認。来店前に公式情報をご確認ください。 パンヤモギは奥三河観光協議会公式の2026年朝活Cafe情報で所在地・開催営業を確認。 もっくるベーカリーは愛知県公式情報および道の駅公式で存在を確認。 2026-09-23新城市監査：石窯パン工房ちゃっと、自然酵母パンRaisin、パンヤモギ、もっくるベーカリーを公式・観光協会・2026年現行情報で再照合し、住所・営業時間・評価・特色を補完。",
   "shops": [
     {
       "placeId": "static-shinshiro-chat",
       "name": "石窯パン工房ちゃっと",
-      "rating": 0,
-      "reviews": 0,
+      "rating": 4.3,
+      "reviews": 136,
       "address": "愛知県新城市中宇利字三社五所33-3",
       "type": "パン屋",
       "types": [
         "bakery"
       ],
       "openingHours": [
-        "月・火・金、第1水曜定休"
+        "水・木・土・日 09:00〜売り切れまで",
+        "月・火・金・第1水曜 定休"
       ],
       "phone": "0536-26-0383",
       "website": "https://chatpan.net/",
       "googleMaps": "",
       "photo": "",
-      "catchphrase": "国産小麦と自家製天然酵母の石窯パン",
+      "catchphrase": "国産小麦と自家製天然酵母を石窯で焼く中宇利の田舎パン屋",
       "highlights": [
-        "手作り石窯",
-        "自家製天然酵母"
-      ]
+        "店主いちおしはくるみレーズンパン「ちゃっと」",
+        "駐車場20台・キャッシュレス決済対応"
+      ],
+      "representativeProduct": "ちゃっと",
+      "representativeLabel": "公式サイト掲載の店主いちおし",
+      "specialNotice": "季節によりパン販売休止・ピザのみ営業の期間あり。営業カレンダー確認推奨。"
     },
     {
       "placeId": "static-shinshiro-raisin",
       "name": "自然酵母パン Raisin（レザン）",
-      "rating": 0,
-      "reviews": 0,
-      "address": "愛知県新城市作手高里",
+      "rating": 4.4,
+      "reviews": 94,
+      "address": "愛知県新城市作手高里字大平25-5",
       "type": "パン屋",
       "types": [
         "bakery"
       ],
       "openingHours": [
-        "11:00–17:00",
-        "営業日は公式カレンダー参照"
+        "木〜日 11:00–17:00",
+        "月・火・水 定休"
       ],
       "phone": "0536-29-0870",
       "website": "https://raisin-tukude.com/",
       "googleMaps": "",
       "photo": "",
-      "catchphrase": "作手高原の自然酵母パン",
+      "catchphrase": "作手高原の自然酵母と国産小麦を薪石窯で焼くベーカリーカフェ",
       "highlights": [
-        "自然酵母",
-        "国産小麦",
-        "薪石窯"
-      ]
+        "3種類の自然酵母を使用",
+        "店内で自家焙煎コーヒーも楽しめる"
+      ],
+      "specialNotice": "営業日は公式カレンダーで要確認。"
     },
     {
       "placeId": "static-shinshiro-panyamogi",
@@ -62,40 +66,45 @@
         "bakery"
       ],
       "openingHours": [
-        "朝活Cafe：2026/6/27〜11/29 第4土・日 06:10–09:00",
-        "通常営業は店舗SNSで確認"
+        "水〜金 07:00–15:00",
+        "土・日 06:00–17:00",
+        "月・火 定休"
       ],
       "phone": "",
-      "website": "https://www.okuminavi.jp/event/detail/1358/",
+      "website": "https://www.instagram.com/panyamogi/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%91%E3%83%B3%E3%83%A4%E3%83%A2%E3%82%AE%20%E6%96%B0%E5%9F%8E%E5%B8%82%E4%BD%9C%E6%89%8B%E4%BF%9D%E6%B0%B8%E3%82%A8%E3%83%9E%E3%83%847-3",
       "photo": "",
-      "catchphrase": "作手の朝は、パンの香りと一緒に",
+      "catchphrase": "作手の朝に焼き立てパンを届ける早朝営業ベーカリー",
       "highlights": [
-        "朝活Cafe",
-        "作手",
-        "パン"
-      ]
+        "週末は朝6時から営業",
+        "新城市観光協会の2026年『朝活Cafe！』参加店"
+      ],
+      "specialNotice": "朝活Cafe開催日は6:10〜9:00の特別営業あり。"
     },
     {
       "placeId": "static-shinshiro-mokkuru",
       "name": "もっくるベーカリー",
-      "rating": 0,
-      "reviews": 0,
+      "rating": 3.13,
+      "reviews": 11,
       "address": "愛知県新城市八束穂字五反田329-7 道の駅もっくる新城",
       "type": "ベーカリー",
       "types": [
         "bakery"
       ],
-      "openingHours": [],
-      "phone": "",
+      "openingHours": [
+        "08:30–18:00",
+        "無休（施設営業に準ずる）"
+      ],
+      "phone": "0536-24-3005",
       "website": "https://mokkulu.jp/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%82%82%E3%81%A3%E3%81%8F%E3%82%8B%E3%83%99%E3%83%BC%E3%82%AB%E3%83%AA%E3%83%BC%20%E6%96%B0%E5%9F%8E%E5%B8%82%E5%85%AB%E6%9D%9F%E7%A9%82%E5%AD%97%E4%BA%94%E5%8F%8D%E7%94%B0329-7",
       "photo": "",
-      "catchphrase": "道の駅もっくる新城のベーカリー",
+      "catchphrase": "道の駅もっくる新城内で地元客・観光客に親しまれるベーカリー",
       "highlights": [
-        "メロンパン",
-        "道の駅"
-      ]
+        "食パン・クリームパン・コロネ・サンド・バーガーなどを展開",
+        "2026年は旧『東京ベーカリー』の人気メニュー復活にも取り組む"
+      ],
+      "specialNotice": "営業時間は道の駅もっくる新城の営業に準ずる。"
     }
   ]
 }
