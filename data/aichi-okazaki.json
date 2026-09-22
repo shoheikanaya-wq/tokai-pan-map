@@ -1,7 +1,7 @@
 {
   "source": "static-free-recovery",
-  "updatedAt": "2026-09-19",
-  "attribution": "無料復旧用スナップショット。公開情報を基に構成し、来店前に公式情報をご確認ください。",
+  "updatedAt": "2026-09-23",
+  "attribution": "無料復旧用スナップショット。公開情報を基に構成し、来店前に公式情報をご確認ください。 2026-09-23にグランクレール日名・六ツ美、パンリゴレ、Papa D' Nukuを現行公開情報で再照合し住所・営業時間・電話・特色を補完。",
   "shops": [
     {
       "placeId": "",
@@ -100,13 +100,19 @@
       "types": [
         "bakery"
       ],
-      "openingHours": [],
+      "openingHours": [
+        "月・木・金・土・日 07:00–19:00",
+        "火・水 定休"
+      ],
       "phone": "0564-23-2775",
       "website": "",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=Papa%20D'%20Nuku%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%B2%A1%E5%B4%8E%E5%B8%82%E6%AC%A0%E7%94%BA%E9%87%91%E8%B0%B726-1",
       "photo": "",
-      "catchphrase": "欠町のベーカリー",
-      "highlights": []
+      "catchphrase": "朝7時から営業する欠町のベーカリー",
+      "highlights": [
+        "朝7時からパンを購入できる",
+        "火曜・水曜定休、不定休はSNSで案内"
+      ]
     },
     {
       "placeId": "ChIJG293BgC9BGARsC0iNK3Zv4Y",
@@ -130,39 +136,56 @@
     },
     {
       "placeId": "",
-      "name": "グランクレール",
+      "name": "グランクレール 日名店",
       "rating": 3.28,
       "reviews": 67,
-      "address": "愛知県岡崎市（詳細は地図で確認）",
+      "address": "愛知県岡崎市日名南町18-3",
       "type": "パン屋",
       "types": [
         "bakery"
       ],
-      "openingHours": [],
-      "phone": "",
-      "website": "",
+      "openingHours": [
+        "07:00–18:00",
+        "定休日なし"
+      ],
+      "phone": "0564-26-3907",
+      "website": "https://grandclair.jp/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%82%B0%E3%83%A9%E3%83%B3%E3%82%AF%E3%83%AC%E3%83%BC%E3%83%AB%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%B2%A1%E5%B4%8E%E5%B8%82%EF%BC%88%E8%A9%B3%E7%B4%B0%E3%81%AF%E5%9C%B0%E5%9B%B3%E3%81%A7%E7%A2%BA%E8%AA%8D%EF%BC%89",
       "photo": "",
-      "catchphrase": "岡崎市内のベーカリー",
-      "highlights": []
+      "catchphrase": "焼き立てパンと自家製カスタードが人気の日名店",
+      "highlights": [
+        "不動の人気No.1「ふわとろクリームパン」",
+        "岡崎おうはんと八丁味噌を使う「おかざきカレーパン」"
+      ],
+      "representativeProduct": "ふわとろクリームパン",
+      "representativeLabel": "公式サイト掲載の人気No.1商品"
     },
     {
       "placeId": "",
       "name": "グランクレール 六ツ美",
       "rating": 3.24,
       "reviews": 41,
-      "address": "愛知県岡崎市（詳細は地図で確認）",
+      "address": "愛知県岡崎市赤渋町田中31-1",
       "type": "パン屋",
       "types": [
         "bakery"
       ],
-      "openingHours": [],
-      "phone": "",
-      "website": "",
+      "openingHours": [
+        "平日 08:00–18:00",
+        "土日 07:00–18:00",
+        "定休日なし"
+      ],
+      "phone": "0564-54-0141",
+      "website": "https://grandclair.jp/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%82%B0%E3%83%A9%E3%83%B3%E3%82%AF%E3%83%AC%E3%83%BC%E3%83%AB%20%E5%85%AD%E3%83%84%E7%BE%8E%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%B2%A1%E5%B4%8E%E5%B8%82%EF%BC%88%E8%A9%B3%E7%B4%B0%E3%81%AF%E5%9C%B0%E5%9B%B3%E3%81%A7%E7%A2%BA%E8%AA%8D%EF%BC%89",
       "photo": "",
-      "catchphrase": "六ツ美エリアのベーカリー",
-      "highlights": []
+      "catchphrase": "スペイン石窯で焼く、岡崎発祥カレーパンの人気店",
+      "highlights": [
+        "「おかざきカレーパン」発祥店舗",
+        "ふわとろクリームパンも看板商品"
+      ],
+      "representativeProduct": "おかざきカレーパン",
+      "representativeLabel": "岡崎のご当地パン"
     },
     {
       "placeId": "ChIJM8S3YqK9BGARHDVf3aAi2hI",
@@ -187,18 +210,24 @@
       "name": "パン リゴレ",
       "rating": 3.19,
       "reviews": 30,
-      "address": "愛知県岡崎市美合エリア（詳細は地図で確認）",
+      "address": "愛知県岡崎市緑丘2-10-8",
       "type": "パン屋",
       "types": [
         "bakery"
       ],
-      "openingHours": [],
-      "phone": "",
-      "website": "",
+      "openingHours": [
+        "月・火・金・土・日 10:00–18:00",
+        "水・木 定休"
+      ],
+      "phone": "0564-64-1825",
+      "website": "https://www.instagram.com/pain_rigoler",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%91%E3%83%B3%20%E3%83%AA%E3%82%B4%E3%83%AC%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E5%B2%A1%E5%B4%8E%E5%B8%82%E7%BE%8E%E5%90%88%E3%82%A8%E3%83%AA%E3%82%A2%EF%BC%88%E8%A9%B3%E7%B4%B0%E3%81%AF%E5%9C%B0%E5%9B%B3%E3%81%A7%E7%A2%BA%E8%AA%8D%EF%BC%89",
       "photo": "",
-      "catchphrase": "美合エリアのベーカリー",
-      "highlights": []
+      "catchphrase": "緑丘の小さなベーカリー",
+      "highlights": [
+        "水曜・木曜定休",
+        "店舗前に駐車場あり"
+      ]
     }
   ]
 }
