@@ -1,7 +1,7 @@
 {
   "source": "static-free-verified",
   "updatedAt": "2026-09-23",
-  "attribution": "店舗公式サイト等の公開情報を基に確認。来店前に公式情報をご確認ください。 2026-09-23瀬戸市監査：モンタナベーカリー、anopan、カルムを現行情報へ更新し、ペンギンベーカリー瀬戸苗場店、ベルナール瀬戸店、北欧倶楽部バロー品野店を現役確認のうえ追加。",
+  "attribution": "店舗公式サイト等の公開情報を基に確認。来店前に公式情報をご確認ください。 2026-09-23瀬戸市監査：モンタナベーカリー、anopan、カルムを現行情報へ更新し、ペンギンベーカリー瀬戸苗場店、ベルナール瀬戸店、北欧倶楽部バロー品野店を現役確認のうえ追加。 2026-09-23瀬戸市TOP10補完：天使のぱん屋、エムルパン、パリクロアッサン瀬戸菱野店、コンディトライ アキクマザワ瀬戸本店を2026年の現役情報・公式情報で確認し追加。",
   "shops": [
     {
       "placeId": "static-seto-montana",
@@ -164,6 +164,119 @@
         "買い物と一緒に利用しやすい"
       ],
       "specialNotice": "営業時間・休業日はバロー品野店に準ずる。",
+      "photoAttribution": "",
+      "photoSource": "",
+      "photoLicense": ""
+    },
+    {
+      "placeId": "ChIJUQHwkLdoA2ARhcl1g58fKfU",
+      "name": "天使のぱん屋",
+      "rating": 3.71,
+      "reviews": 12,
+      "address": "愛知県瀬戸市松原町1-59-2",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "火・水・金・土 10:00–18:00",
+        "月・木・日 定休"
+      ],
+      "phone": "0561-83-7109",
+      "website": "",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E5%A4%A9%E4%BD%BF%E3%81%AE%E3%81%B1%E3%82%93%E5%B1%8B%20%E7%80%AC%E6%88%B8%E5%B8%82%E6%9D%BE%E5%8E%9F%E7%94%BA1-59-2",
+      "photo": "",
+      "catchphrase": "白神こだま酵母も扱う、水野駅近くのもちもち食感ベーカリー",
+      "highlights": [
+        "メロンパンや惣菜パンなどを販売",
+        "2026年7月の利用記録で現役確認"
+      ],
+      "specialNotice": "営業時間・定休日は変更の場合があるため来店前に確認推奨。",
+      "photoAttribution": "",
+      "photoSource": "",
+      "photoLicense": ""
+    },
+    {
+      "placeId": "static-seto-aime-le-pain",
+      "name": "エムルパン",
+      "rating": 4.18,
+      "reviews": 47,
+      "address": "愛知県瀬戸市南仲之切町60-8",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "水〜土 10:00–18:30",
+        "月・火・日 定休"
+      ],
+      "phone": "0561-69-2636",
+      "website": "",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%82%A8%E3%83%A0%E3%83%AB%E3%83%91%E3%83%B3%20%E7%80%AC%E6%88%B8%E5%B8%82%E5%8D%97%E4%BB%B2%E4%B9%8B%E5%88%87%E7%94%BA60-8",
+      "photo": "",
+      "catchphrase": "食パンやデニッシュ、ハード系まで揃える尾張瀬戸の人気ベーカリー",
+      "highlights": [
+        "キタノカオリ食パンなど小麦の風味を生かしたパン",
+        "2026年7月の利用記録で現役確認"
+      ],
+      "specialNotice": "売り切れ次第終了。",
+      "photoAttribution": "",
+      "photoSource": "",
+      "photoLicense": ""
+    },
+    {
+      "placeId": "static-seto-paris-croissant",
+      "name": "パリクロアッサン 瀬戸菱野店",
+      "rating": 3,
+      "reviews": 1,
+      "address": "愛知県瀬戸市緑町1-106 ドミー瀬戸菱野店内",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "10:00–20:00",
+        "不定休（ドミー瀬戸菱野店に準ずる）"
+      ],
+      "phone": "",
+      "website": "https://www.fujipanstore.com/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%91%E3%83%AA%E3%82%AF%E3%83%AD%E3%82%A2%E3%83%83%E3%82%B5%E3%83%B3%20%E7%80%AC%E6%88%B8%E8%8F%B1%E9%87%8E%E5%BA%97",
+      "photo": "",
+      "catchphrase": "ドミー瀬戸菱野店内のフジパン系インストアベーカリー",
+      "highlights": [
+        "買い物と一緒に利用しやすい",
+        "愛知県営業許可資料でも現役確認"
+      ],
+      "specialNotice": "営業時間・休業日はドミー瀬戸菱野店に準ずる。",
+      "photoAttribution": "",
+      "photoSource": "",
+      "photoLicense": ""
+    },
+    {
+      "placeId": "static-seto-aki-kumazawa",
+      "name": "コンディトライ アキクマザワ 瀬戸本店",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県瀬戸市美濃池町27-2",
+      "type": "ケーキ・パン",
+      "types": [
+        "bakery",
+        "cake_shop"
+      ],
+      "openingHours": [
+        "09:00–20:00",
+        "水曜定休"
+      ],
+      "phone": "0561-85-0024",
+      "website": "https://aki-kumazawa.com/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%82%B3%E3%83%B3%E3%83%87%E3%82%A3%E3%83%88%E3%83%A9%E3%82%A4%20%E3%82%A2%E3%82%AD%E3%82%AF%E3%83%9E%E3%82%B6%E3%83%AF%20%E7%80%AC%E6%88%B8%E6%9C%AC%E5%BA%97",
+      "photo": "",
+      "catchphrase": "添加物に頼らず、ケーキと毎朝焼きたてのパンを手作りする瀬戸本店",
+      "highlights": [
+        "毎朝焼きたてのパンを販売",
+        "焼き菓子・ラスク・ケーキも幅広く展開"
+      ],
+      "specialNotice": "月ごとの追加休業日は公式サイトで告知。",
       "photoAttribution": "",
       "photoSource": "",
       "photoLicense": ""
