@@ -1,7 +1,7 @@
 {
   "source": "static-free-recovery",
   "updatedAt": "2026-09-23",
-  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。未取得項目は空欄または0。来店前に地図・公式情報をご確認ください。 グリーンオニオン・珈味香流は碧南市観光協会公式の店舗情報および「碧南と#パンまみれ」でパン商品の現行掲載を確認。 2026-09-23碧南市監査：ベーカリードゥークー、mon coeur、Bakeshop SolSol、わっぱ堂を現行公開情報で再照合し営業時間・定休日・特色・公式導線を補完。 2026-09-23碧南市監査：鶴見町2-135の旧パン工房むぎの家相当の曖昧なBakery登録を、パン屋閉店情報のため除外。現役確認できるホームベーカリーグッディを追加。Bakery Dookuは碧南市公式観光サイトの営業時間・定休日を優先して修正。",
+  "attribution": "公開店舗情報を基にした無料復旧用スナップショット。未取得項目は空欄または0。来店前に地図・公式情報をご確認ください。 グリーンオニオン・珈味香流は碧南市観光協会公式の店舗情報および「碧南と#パンまみれ」でパン商品の現行掲載を確認。 2026-09-23碧南市監査：ベーカリードゥークー、mon coeur、Bakeshop SolSol、わっぱ堂を現行公開情報で再照合し営業時間・定休日・特色・公式導線を補完。 2026-09-23碧南市監査：鶴見町2-135の旧パン工房むぎの家相当の曖昧なBakery登録を、パン屋閉店情報のため除外。現役確認できるホームベーカリーグッディを追加。Bakery Dookuは碧南市公式観光サイトの営業時間・定休日を優先して修正。 2026-09-23碧南市監査：運営確認不能のファリーヌ、現住所が2022年からカネスエ碧南幸町店となっている旧ブーランジェ碧南店を除外。現役確認できるモンスター碧南、アルトポリオンヤマキピアゴ碧南東店へ入替。モンテ碧南店は現行電話帳掲載があるため再確認対象として維持。",
   "shops": [
     {
       "placeId": "ChIJVVXhvBuQBGARgmMMfAc8o_Y",
@@ -107,26 +107,6 @@
       "specialNotice": "営業内容は変更の場合があるため来店前に最新情報を要確認。"
     },
     {
-      "placeId": "hekinan-farine",
-      "name": "ファリーヌ",
-      "rating": 3.25,
-      "reviews": 2,
-      "address": "愛知県碧南市栄町4-29",
-      "type": "パン屋",
-      "types": [
-        "bakery"
-      ],
-      "openingHours": [
-        "08:00–18:30"
-      ],
-      "phone": "",
-      "website": "",
-      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%95%E3%82%A1%E3%83%AA%E3%83%BC%E3%83%8C%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E7%A2%A7%E5%8D%97%E5%B8%82%E6%A0%84%E7%94%BA4-29",
-      "photo": "",
-      "catchphrase": "栄町のベーカリー",
-      "highlights": []
-    },
-    {
       "placeId": "hekinan-monte",
       "name": "モンテ碧南店",
       "rating": 3.15,
@@ -137,30 +117,13 @@
         "bakery"
       ],
       "openingHours": [],
-      "phone": "",
+      "phone": "0566-48-4311",
       "website": "",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%A2%E3%83%B3%E3%83%86%E7%A2%A7%E5%8D%97%E5%BA%97%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E7%A2%A7%E5%8D%97%E5%B8%82%E6%A0%84%E7%94%BA3-1",
       "photo": "",
       "catchphrase": "栄町のベーカリー",
-      "highlights": []
-    },
-    {
-      "placeId": "hekinan-boulanger",
-      "name": "ブーランジェ碧南店",
-      "rating": 3.29,
-      "reviews": 1,
-      "address": "愛知県碧南市幸町7-65",
-      "type": "パン屋",
-      "types": [
-        "bakery"
-      ],
-      "openingHours": [],
-      "phone": "",
-      "website": "",
-      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%96%E3%83%BC%E3%83%A9%E3%83%B3%E3%82%B8%E3%82%A7%E7%A2%A7%E5%8D%97%E5%BA%97%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E7%A2%A7%E5%8D%97%E5%B8%82%E5%B9%B8%E7%94%BA7-65",
-      "photo": "",
-      "catchphrase": "幸町のベーカリー",
-      "highlights": []
+      "highlights": [],
+      "specialNotice": "現行の電話帳・地図情報では掲載継続。営業日時は来店前に要確認。"
     },
     {
       "placeId": "static-hekinan-green-onion",
@@ -238,6 +201,63 @@
         "菓子パンを中心に手作りパンを展開"
       ],
       "specialNotice": "営業時間・定休日は変更の場合があるため来店前に確認推奨。",
+      "photoAttribution": "",
+      "photoSource": "",
+      "photoLicense": ""
+    },
+    {
+      "placeId": "static-hekinan-monster",
+      "name": "モンスター碧南",
+      "rating": 3.24,
+      "reviews": 28,
+      "address": "愛知県碧南市天王町2-11",
+      "type": "サンドイッチ",
+      "types": [
+        "bakery",
+        "sandwich_shop"
+      ],
+      "openingHours": [
+        "火〜日 08:00–16:00",
+        "月曜定休"
+      ],
+      "phone": "0566-41-5769",
+      "website": "http://aichi.j47.jp/monster/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%A2%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%BC%E7%A2%A7%E5%8D%97%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E7%A2%A7%E5%8D%97%E5%B8%82%E5%A4%A9%E7%8E%8B%E7%94%BA2-11",
+      "photo": "",
+      "catchphrase": "手作りサンドを豊富に揃える碧南中央駅近くの専門店",
+      "highlights": [
+        "惣菜系からデザート系までサンドイッチを幅広く展開",
+        "テイクアウト利用に対応"
+      ],
+      "specialNotice": "営業時間・定休日は変更の場合があるため来店前に確認推奨。",
+      "photoAttribution": "",
+      "photoSource": "",
+      "photoLicense": ""
+    },
+    {
+      "placeId": "static-hekinan-altopolion-yamaki",
+      "name": "アルトポリオン ヤマキ ピアゴ碧南東店",
+      "rating": 3.9,
+      "reviews": 51,
+      "address": "愛知県碧南市東浦町6-17 ピアゴ碧南東店内",
+      "type": "パン屋",
+      "types": [
+        "bakery",
+        "cafe"
+      ],
+      "openingHours": [
+        "08:30–20:00"
+      ],
+      "phone": "0566-46-5051",
+      "website": "",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%82%A2%E3%83%AB%E3%83%88%E3%83%9D%E3%83%AA%E3%82%AA%E3%83%B3%20%E3%83%A4%E3%83%9E%E3%82%AD%20%E3%83%94%E3%82%A2%E3%82%B4%E7%A2%A7%E5%8D%97%E6%9D%B1%E5%BA%97",
+      "photo": "",
+      "catchphrase": "手作りパン・サンドイッチとカフェを併設するインストアベーカリー",
+      "highlights": [
+        "2026年の求人情報でもパン製造販売店として現役確認",
+        "カフェコーナー併設"
+      ],
+      "specialNotice": "営業時間・休業日は施設都合で変更の場合あり。",
       "photoAttribution": "",
       "photoSource": "",
       "photoLicense": ""
