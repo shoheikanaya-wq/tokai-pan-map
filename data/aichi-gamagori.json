@@ -1,7 +1,7 @@
 {
   "source": "static-free-verified",
-  "updatedAt": "2026-09-19",
-  "attribution": "店舗情報は公開情報を基に確認。来店前に公式情報をご確認ください。 Gama Cafe & Bakery・ベーカリーショパン蒲郡店・パンとお菓子トレフルは蒲郡市観光協会の現行掲載でパン提供を確認。",
+  "updatedAt": "2026-09-23",
+  "attribution": "店舗情報は公開情報を基に確認。来店前に公式情報をご確認ください。 Gama Cafe & Bakery・ベーカリーショパン蒲郡店・パンとお菓子トレフルは蒲郡市観光協会の現行掲載でパン提供を確認。 2026-09-23蒲郡市監査：メロンだメロン、Gama Cafe & Bakery、ベーカリーショパン蒲郡店、パンとお菓子トレフルを公式・蒲郡市観光協会・2026年利用情報で再照合。Gama Cafeは2026年8月12日〜10月1日の営業休止を明記。",
   "shops": [
     {
       "placeId": "static-gamagori-melondamelon",
@@ -15,86 +15,98 @@
       ],
       "openingHours": [
         "10:00–20:00",
-        "年中無休（年末年始を除く）"
+        "年中無休（年末年始除く）"
       ],
       "phone": "090-2087-8880",
       "website": "https://melondamelon.jp/",
       "googleMaps": "",
       "photo": "",
-      "catchphrase": "蒲郡のメロンパン専門店",
+      "catchphrase": "サクサク外皮ともっちり生地が楽しめる蒲郡発のメロンパン専門店",
       "highlights": [
-        "メロンパン",
-        "クロワッサン",
-        "パイ"
-      ]
+        "人気No.1はプレーンメロンパン",
+        "メロンパン・クロワッサン・パイを販売"
+      ],
+      "representativeProduct": "プレーンメロンパン",
+      "representativeLabel": "公式サイト掲載の人気No.1商品",
+      "specialNotice": "売り切れ次第終了。"
     },
     {
       "placeId": "static-gamagori-gamacafe",
       "name": "Gama Cafe ＆ Bakery",
       "rating": 0,
       "reviews": 0,
-      "address": "愛知県蒲郡市港町18-23 蒲郡商工会議所1F",
+      "address": "愛知県蒲郡市港町19-11 蒲郡商工会議所1F",
       "type": "カフェ＆ベーカリー",
       "types": [
         "bakery",
         "cafe"
       ],
       "openingHours": [
-        "11:00–17:00（L.O.16:00）",
-        "定休日なし"
+        "11:00–17:00",
+        "通常は定休日なし"
       ],
       "phone": "0533-65-7101",
       "website": "https://gamacafe.com/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=Gama%20Cafe%20Bakery%20%E8%92%B2%E9%83%A1%E5%B8%82%E6%B8%AF%E7%94%BA18-23",
       "photo": "",
-      "catchphrase": "海を眺めながら素材にこだわったパンを楽しめる",
+      "catchphrase": "蒲郡クラシックホテルプロデュース、地元食材を生かす海辺のベーカリーカフェ",
       "highlights": [
-        "ベーカリー",
-        "カフェ",
-        "ランチ"
-      ]
+        "地元産食材を使ったパンとカフェメニュー",
+        "蒲郡駅から徒歩約5分"
+      ],
+      "specialNotice": "2026年8月12日〜10月1日はアジア競技大会対応のため営業休止。再開予定は10月2日以降。"
     },
     {
       "placeId": "static-gamagori-chopin",
       "name": "ベーカリーショパン 蒲郡店",
       "rating": 0,
       "reviews": 0,
-      "address": "愛知県蒲郡市",
+      "address": "愛知県蒲郡市三谷北通1-71",
       "type": "パン屋",
       "types": [
         "bakery"
       ],
-      "openingHours": [],
-      "phone": "",
-      "website": "https://www.gamagori.jp/archives/shun/konsyesyuzai",
+      "openingHours": [
+        "平日 08:00–19:00",
+        "土日祝 07:00–19:00"
+      ],
+      "phone": "0533-56-9677",
+      "website": "https://b-chopin.com/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%99%E3%83%BC%E3%82%AB%E3%83%AA%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%91%E3%83%B3%20%E8%92%B2%E9%83%A1%E5%BA%97",
       "photo": "",
-      "catchphrase": "蒲郡市観光協会の蒲郡みかん祭り参加ベーカリー",
+      "catchphrase": "三河三谷駅近く、焼き立てを何度も提供する大型ベーカリー",
       "highlights": [
-        "菓子パン",
-        "蒲郡みかん"
-      ]
+        "平日8時・土日祝7時から営業",
+        "ショパンの定番人気パンを幅広く展開"
+      ],
+      "representativeProduct": "匠のカレーパン",
+      "representativeLabel": "定番人気商品"
     },
     {
       "placeId": "static-gamagori-trefle",
       "name": "パンとお菓子 トレフル",
       "rating": 0,
       "reviews": 0,
-      "address": "愛知県蒲郡市",
+      "address": "愛知県蒲郡市鹿島町柴崎3-29",
       "type": "パン・菓子",
       "types": [
         "bakery"
       ],
-      "openingHours": [],
-      "phone": "",
-      "website": "https://www.gamagori.jp/shobumeshi2025",
+      "openingHours": [
+        "水〜土 10:00–18:00",
+        "日・月・火 定休"
+      ],
+      "phone": "0533-67-6219",
+      "website": "https://www.instagram.com/trefle_bakery/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%91%E3%83%B3%E3%81%A8%E3%81%8A%E8%8F%93%E5%AD%90%20%E3%83%88%E3%83%AC%E3%83%95%E3%83%AB%20%E8%92%B2%E9%83%A1%E5%B8%82",
       "photo": "",
-      "catchphrase": "蒲郡市公式事業掲載のパンとお菓子の店",
+      "catchphrase": "住宅街に佇む対面販売スタイルの小さなパンとお菓子の店",
       "highlights": [
-        "クロワッサン",
-        "菓子"
-      ]
+        "パンのほかケーキ・焼き菓子も販売",
+        "専用駐車場あり"
+      ],
+      "representativeProduct": "蒲郡産章姫のリボンクロワッサン",
+      "representativeLabel": "蒲郡『勝負めし』参加商品"
     }
   ]
 }
