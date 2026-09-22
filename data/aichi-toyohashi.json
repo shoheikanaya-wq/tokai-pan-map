@@ -1,7 +1,7 @@
 {
   "source": "static-free-verified",
-  "updatedAt": "2026-09-19",
-  "attribution": "店舗情報は公開情報を基に確認。来店前に公式情報をご確認ください。 豊橋観光コンベンション協会公式掲載のベーカリーを追加確認。",
+  "updatedAt": "2026-09-23",
+  "attribution": "店舗情報は公開情報を基に確認。来店前に公式情報をご確認ください。 豊橋観光コンベンション協会公式掲載のベーカリーを追加確認。 2026-09-23豊橋市監査：パンとカフェ公園通り、Peche、ベーカリーショパン三ノ輪本店、ラ・ムワソン、コンティキ、アンプレシオンを公式・現行店舗情報で再照合し、住所・営業時間・電話・公式導線・特色を補完。",
   "shops": [
     {
       "placeId": "static-toyohashi-koendori",
@@ -14,41 +14,48 @@
         "bakery"
       ],
       "openingHours": [
-        "09:00–15:00",
+        "火〜日 09:00–15:00",
         "月曜定休"
       ],
       "phone": "0532-35-6737",
       "website": "https://tf-jigyoukai.org/works/cafe/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%91%E3%83%B3%E3%81%A8%E3%82%AB%E3%83%95%E3%82%A7%E5%85%AC%E5%9C%92%E9%80%9A%E3%82%8A%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%B1%8A%E6%A9%8B%E5%B8%82%E9%AB%98%E5%B8%AB%E7%94%BA%E5%AD%97%E5%8C%97%E5%8E%9F1-107",
       "photo": "",
-      "catchphrase": "手づくりパンと喫茶",
+      "catchphrase": "幸公園を望む、手づくりパンとモーニングのベーカリーカフェ",
       "highlights": [
-        "パンは定番・季節品を常時約30種類"
-      ]
+        "定番・季節品を常時約30種類販売",
+        "食パン・コッペパンは地域の保育園給食にも採用"
+      ],
+      "representativeProduct": "トヨッキーあんぱん",
+      "representativeLabel": "店舗限定商品"
     },
     {
       "placeId": "static-toyohashi-peche",
       "name": "Peche",
       "rating": 0,
       "reviews": 0,
-      "address": "愛知県豊橋市",
+      "address": "愛知県豊橋市南牛川1-14-15",
       "type": "パン屋",
       "types": [
         "bakery"
       ],
-      "openingHours": [],
-      "phone": "",
-      "website": "https://www.honokuni.or.jp/toyohashi/spot/000142.html",
+      "openingHours": [
+        "火〜土 10:00–18:00",
+        "日・月 定休"
+      ],
+      "phone": "0532-66-5700",
+      "website": "http://peche-pan.jugem.jp/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=Peche%20%E8%B1%8A%E6%A9%8B%E5%B8%82",
       "photo": "",
-      "catchphrase": "豊橋観光コンベンション協会公式掲載のベーカリー",
+      "catchphrase": "デニッシュや食事パンまで幅広く揃える南牛川のベーカリー",
       "highlights": [
-        "パン"
+        "クロワッサンやデニッシュ系が人気",
+        "テイクアウト・駐車場あり"
       ]
     },
     {
       "placeId": "static-toyohashi--",
-      "name": "ショパン 三ノ輪本店",
+      "name": "ベーカリーショパン 三ノ輪本店",
       "rating": 0,
       "reviews": 0,
       "address": "愛知県豊橋市三ノ輪町本興寺23-5",
@@ -56,54 +63,69 @@
       "types": [
         "bakery"
       ],
-      "openingHours": [],
-      "phone": "",
-      "website": "https://www.honokuni.or.jp/toyohashi/spot/000133.html",
+      "openingHours": [
+        "平日 08:00–19:00",
+        "土日祝 07:00–19:00",
+        "火曜定休"
+      ],
+      "phone": "0532-35-9435",
+      "website": "https://b-chopin.com/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%82%B7%E3%83%A7%E3%83%91%E3%83%B3%20%E4%B8%89%E3%83%8E%E8%BC%AA%E6%9C%AC%E5%BA%97%20%E8%B1%8A%E6%A9%8B%E5%B8%82",
       "photo": "",
-      "catchphrase": "豊橋観光コンベンション協会公式掲載のベーカリー",
+      "catchphrase": "手作り・焼きたてにこだわる豊橋発の大型ベーカリー",
       "highlights": [
-        "パン"
-      ]
+        "一日に同じ商品を何度も分けて焼き上げ",
+        "イートイン・無料コーヒー・大型駐車場あり"
+      ],
+      "representativeProduct": "匠のカレーパン",
+      "representativeLabel": "定番人気商品"
     },
     {
       "placeId": "static-toyohashi--",
       "name": "ラ・ムワソン",
       "rating": 0,
       "reviews": 0,
-      "address": "愛知県豊橋市",
+      "address": "愛知県豊橋市松葉町3-63-3",
       "type": "パン屋",
       "types": [
         "bakery"
       ],
-      "openingHours": [],
-      "phone": "",
-      "website": "https://www.honokuni.or.jp/toyohashi/spot/000135.html",
+      "openingHours": [
+        "月・木〜日 10:30–18:00",
+        "火・水 定休"
+      ],
+      "phone": "0532-55-6827",
+      "website": "https://la-moisson.jimdofree.com/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%83%A9%E3%83%BB%E3%83%A0%E3%83%AF%E3%82%BD%E3%83%B3%20%E8%B1%8A%E6%A9%8B%E5%B8%82",
       "photo": "",
-      "catchphrase": "豊橋観光コンベンション協会公式掲載のベーカリー",
+      "catchphrase": "店主ひとりで焼き上げる、松葉町の小さな街のパン屋",
       "highlights": [
-        "パン"
+        "30年以上の経験を生かした手作りパン",
+        "豊橋駅東口から徒歩圏"
       ]
     },
     {
       "placeId": "static-toyohashi--",
-      "name": "コンティキ",
+      "name": "コンティキ（KON-TIKI）",
       "rating": 0,
       "reviews": 0,
-      "address": "愛知県豊橋市",
+      "address": "愛知県豊橋市仲ノ町4",
       "type": "パン屋",
       "types": [
         "bakery"
       ],
-      "openingHours": [],
-      "phone": "",
+      "openingHours": [
+        "月・火・金〜日 09:00–19:00",
+        "水・木 定休"
+      ],
+      "phone": "0532-35-9922",
       "website": "https://www.honokuni.or.jp/toyohashi/spot/000137.html",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%82%B3%E3%83%B3%E3%83%86%E3%82%A3%E3%82%AD%20%E8%B1%8A%E6%A9%8B%E5%B8%82",
       "photo": "",
-      "catchphrase": "豊橋観光コンベンション協会公式掲載のベーカリー",
+      "catchphrase": "ベーグルやプレッツェルも揃う仲ノ町のベーカリー",
       "highlights": [
-        "パン"
+        "食パン・バゲット・ベーグルなど食事系が充実",
+        "惣菜系・甘いパンまで幅広く展開"
       ]
     },
     {
@@ -111,20 +133,27 @@
       "name": "アンプレシオン",
       "rating": 0,
       "reviews": 0,
-      "address": "愛知県豊橋市",
+      "address": "愛知県豊橋市草間町字郷裏62-1",
       "type": "パン屋",
       "types": [
         "bakery"
       ],
-      "openingHours": [],
-      "phone": "",
-      "website": "https://www.honokuni.or.jp/toyohashi/spot/000140.html",
+      "openingHours": [
+        "火〜日・祝 09:30–17:30",
+        "月曜定休"
+      ],
+      "phone": "0532-46-9495",
+      "website": "https://kinoko-bread.com/",
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E3%82%A2%E3%83%B3%E3%83%97%E3%83%AC%E3%82%B7%E3%82%AA%E3%83%B3%20%E8%B1%8A%E6%A9%8B%E5%B8%82",
       "photo": "",
-      "catchphrase": "豊橋観光コンベンション協会公式掲載のベーカリー",
+      "catchphrase": "クローネやクロワッサンが看板の草間町のパン専門店",
       "highlights": [
-        "パン"
-      ]
+        "2025年にパン売り場をリニューアル",
+        "購入者向けに持ち帰り用の自家焙煎コーヒーサービスあり"
+      ],
+      "representativeProduct": "クローネ",
+      "representativeLabel": "創業当時からの名物",
+      "specialNotice": "パン完売次第閉店。"
     }
   ]
 }
