@@ -563,7 +563,7 @@ button,.back,.detail-action,.review-trigger{
  #list .shop-address{font-size:10px;line-height:1.1;margin-top:2px}
 }
 
-/* Ver.1.81: TOP10の文字密度を整理して視認性を改善 */
+/* Ver.1.82: TOP10の文字密度を整理して視認性を改善 */
 @media(max-width:600px){
  #list .rank-card,#list .rank-card.no-visual{
    padding:5px 6px 5px 3px!important;
@@ -608,6 +608,27 @@ button,.back,.detail-action,.review-trigger{
    opacity:.78;
  }
 }
+
+/* Ver.1.82: 店舗詳細を6インチ級スマホ向けに最終整理 */
+@media(max-width:600px){
+ #detail>.card{padding:10px 11px}
+ #detail #drank{font-size:10px;line-height:1.15;margin-bottom:2px;opacity:.72}
+ #detail .detail-title-row{gap:7px;margin-bottom:1px;align-items:baseline}
+ #detail #dname{font-size:clamp(22px,6.2vw,28px);line-height:1.08;margin:2px 0}
+ #detail #drating{font-size:17px;line-height:1;font-weight:900}
+ #detail #daddr{font-size:12px;line-height:1.25;margin:4px 0 6px}
+ #detail .detail-info-block{margin-top:5px;padding:7px 8px;line-height:1.3;border-radius:9px}
+ #detail .detail-feature-list{margin-top:3px}
+ #detail .detail-product-name{margin-top:3px;font-weight:900}
+ #detail .detail-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;margin:7px 0 5px}
+ #detail .detail-action{min-width:0;min-height:40px;padding:6px 4px;font-size:11px;line-height:1.15;text-align:center}
+ #detail .review-panel{margin:6px 0;padding:8px}
+ #detail .review-item{padding:7px 0}
+ #detail .review-text{font-size:12px;line-height:1.4}
+ #detail .hours-title{margin-top:5px}
+ #detail .hours-row{line-height:1.25}
+ #detail .detail-bottom-nav{margin-top:7px}
+}
 </style></head>
 <body><header><h1 id="appTitle" style="cursor:pointer;">🥐 東海パンMAP</h1><div class="sub">市町村から、おいしいパン屋を探す</div></header><main>
 <section id="home">
@@ -622,7 +643,7 @@ button,.back,.detail-action,.review-trigger{
     </a>
   </div>
   
-  <div class="tabs"><button id="tabAichi" class="active">愛知県</button><button id="tabGifu">岐阜県</button><button id="tabMie">三重県</button></div><div class="notice"><strong>Ver.1.81</strong>　TOP10の文字密度と強弱を整理して見やすさを改善</div><div id="aichiPanel"><h2>西三河</h2><div class="cities"><button id="toyota">豊田市</button><button id="okazaki">岡崎市</button><button id="anjo">安城市</button><button id="kariya">刈谷市</button><button id="nishio">西尾市</button>
+  <div class="tabs"><button id="tabAichi" class="active">愛知県</button><button id="tabGifu">岐阜県</button><button id="tabMie">三重県</button></div><div class="notice"><strong>Ver.1.82</strong>　TOP10の文字密度と強弱を整理して見やすさを改善</div><div id="aichiPanel"><h2>西三河</h2><div class="cities"><button id="toyota">豊田市</button><button id="okazaki">岡崎市</button><button id="anjo">安城市</button><button id="kariya">刈谷市</button><button id="nishio">西尾市</button>
 <button id="hekinan">碧南市</button>
 <button id="chiryu">知立市</button>
 <button id="takahama">高浜市</button>
@@ -761,13 +782,13 @@ button,.back,.detail-action,.review-trigger{
 </section>
   <div id="devTools" class="dev-tools hidden"><button id="clearRankingCache">🔄 ランキングキャッシュ更新</button><div class="muted">開発用：次回ランキング表示時に最新データを取得</div></div><footer id="appFooter" class="app-footer">
 <div>東海パンMAP</div>
-<div>Ver.1.81</div>
+<div>Ver.1.82</div>
   <div>Personal Bakery Discovery Project</div>
   <div>Created & Managed by S.K.</div>
   <div>© 2026 S.K. All Rights Reserved.</div>
 
   <details class="version-history">
-    <summary>更新履歴を見る</summary>\n    <div>Ver.1.81　店舗詳細の空欄を解消し確認導線を統一</div>\n    <div>Ver.1.81　店舗詳細の口コミを地図から分離しアプリ内表示に対応</div>\n    <div>Ver.1.81　TOP10の文字密度と強弱を整理</div>\n    <div>Ver.1.78　スマホTOP10の住所を少し拡大</div>\n    <div>Ver.1.77　スマホTOP10左端の空欄をなくし順位から表示</div>\n    <div>Ver.1.76　順位を左寄せして店舗名の表示幅を拡大</div>\n    <div>Ver.1.75　店名横に特色・口コミ・★評価を集約</div>\n    <div>Ver.1.74　6インチ級スマホ向けTOP10コンパクト表示</div>\n    <div>Ver.1.73　店舗詳細の店名サイズを適正化</div>\n    <div>Ver.1.72　店舗詳細の情報階層と余白を整理</div>\n    <div>Ver.1.71　TOP10の店名横に★評価、住所下に口コミ数を配置</div>\n    <div>Ver.1.70　TOP10の店名折り返し・余白・順位と評価の視認性を調整</div>\n    <div>Ver.1.69　TOP10画像を小型化し店舗名をさらに拡大</div>\n    <div>Ver.1.68　店舗詳細の大型画像枠を撤去し店名を拡大</div>\n    <div>Ver.1.67　TOP10・店舗詳細にワンポイント画像表示を追加</div>
+    <summary>更新履歴を見る</summary>\n    <div>Ver.1.82　6インチ級スマホ向けに店舗詳細の情報密度と余白を最終調整</div>\n    <div>Ver.1.82　店舗詳細の空欄を解消し確認導線を統一</div>\n    <div>Ver.1.82　店舗詳細の口コミを地図から分離しアプリ内表示に対応</div>\n    <div>Ver.1.82　TOP10の文字密度と強弱を整理</div>\n    <div>Ver.1.78　スマホTOP10の住所を少し拡大</div>\n    <div>Ver.1.77　スマホTOP10左端の空欄をなくし順位から表示</div>\n    <div>Ver.1.76　順位を左寄せして店舗名の表示幅を拡大</div>\n    <div>Ver.1.75　店名横に特色・口コミ・★評価を集約</div>\n    <div>Ver.1.74　6インチ級スマホ向けTOP10コンパクト表示</div>\n    <div>Ver.1.73　店舗詳細の店名サイズを適正化</div>\n    <div>Ver.1.72　店舗詳細の情報階層と余白を整理</div>\n    <div>Ver.1.71　TOP10の店名横に★評価、住所下に口コミ数を配置</div>\n    <div>Ver.1.70　TOP10の店名折り返し・余白・順位と評価の視認性を調整</div>\n    <div>Ver.1.69　TOP10画像を小型化し店舗名をさらに拡大</div>\n    <div>Ver.1.68　店舗詳細の大型画像枠を撤去し店名を拡大</div>\n    <div>Ver.1.67　TOP10・店舗詳細にワンポイント画像表示を追加</div>
     <div>Ver.1.4　店舗詳細・営業状況・地域表示・画面移動を改善</div>
     <div>Ver.1.2 β　店舗詳細機能を追加</div>
     <div>Ver.1.1 β　市町村・地域ランキングを改善</div>
