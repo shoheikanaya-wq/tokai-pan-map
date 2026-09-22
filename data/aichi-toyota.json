@@ -1,7 +1,7 @@
 {
   "source": "static-free-recovery",
-  "updatedAt": "2026-09-20",
-  "attribution": "店舗情報は公開情報を基にした復旧用スナップショット。来店前に公式情報をご確認ください。 ジャックは店舗公式サイトで住所・営業時間・定休日を再確認。 ペンギンベーカリー豊田浄水店は公式店舗一覧で住所・電話・営業時間を再確認。 HORNはフジパンストアー公式、Picoはメグリア井上店公式施設情報を確認。Google Maps導線は店名・住所検索URLで全店舗に付与。 実店舗写真は権利・利用条件を確認できたものだけをphoto/photoAttribution/photoSource/photoLicenseへ登録し、旧tokai-pan-apiには依存しない。 サンクス洋菓子店は2026-09-20に公開情報で店名・住所・営業時間を再確認。",
+  "updatedAt": "2026-09-23",
+  "attribution": "店舗情報は公開情報を基にした復旧用スナップショット。来店前に公式情報をご確認ください。 ジャックは店舗公式サイトで住所・営業時間・定休日を再確認。 ペンギンベーカリー豊田浄水店は公式店舗一覧で住所・電話・営業時間を再確認。 HORNはフジパンストアー公式、Picoはメグリア井上店公式施設情報を確認。Google Maps導線は店名・住所検索URLで全店舗に付与。 実店舗写真は権利・利用条件を確認できたものだけをphoto/photoAttribution/photoSource/photoLicenseへ登録し、旧tokai-pan-apiには依存しない。 サンクス洋菓子店は2026-09-20に公開情報で店名・住所・営業時間を再確認。 2026-09-23に豊田市公式パンマルシェおよび地域公式情報で現役店舗候補を再照合。Risoを現役確認済み店舗として追加。",
   "shops": [
     {
       "placeId": "ChIJ22dl6EagBGAROlRfruKCPZI",
@@ -184,27 +184,6 @@
       "photoLicense": ""
     },
     {
-      "placeId": "ChIJizXqtuGhBGARe58aP9Jpvj0",
-      "name": "純生食パン工房 HARE/PAN",
-      "rating": 0,
-      "reviews": 0,
-      "address": "愛知県豊田市元城町1-8",
-      "type": "パン屋",
-      "types": [
-        "bakery"
-      ],
-      "openingHours": [],
-      "phone": "0565-41-8080",
-      "website": "",
-      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E7%B4%94%E7%94%9F%E9%A3%9F%E3%83%91%E3%83%B3%E5%B7%A5%E6%88%BF%20HARE%2FPAN%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%B1%8A%E7%94%B0%E5%B8%82%E5%85%83%E5%9F%8E%E7%94%BA1-8",
-      "photo": "",
-      "catchphrase": "食パン専門店",
-      "highlights": [],
-      "photoAttribution": "",
-      "photoSource": "",
-      "photoLicense": ""
-    },
-    {
       "placeId": "ChIJB7nKugpfA2ARNr7BOZoe0Y4",
       "name": "ミッチのパン工房 豊田店",
       "rating": 0,
@@ -221,6 +200,33 @@
       "photo": "",
       "catchphrase": "四郷町のパン工房",
       "highlights": [],
+      "photoAttribution": "",
+      "photoSource": "",
+      "photoLicense": ""
+    },
+    {
+      "placeId": "static-toyota-riso",
+      "name": "Riso",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県豊田市西町2-8 コンテンツニシマチ",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "08:00–18:00",
+        "日曜・月曜定休"
+      ],
+      "phone": "0565-39-2836",
+      "website": "https://www.toyota-machinaka.com/store/detail/131/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=Riso%20%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%B1%8A%E7%94%B0%E5%B8%82%E8%A5%BF%E7%94%BA2-8%20%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84%E3%83%8B%E3%82%B7%E3%83%9E%E3%83%81",
+      "photo": "",
+      "catchphrase": "地域食材と自家製天然酵母にこだわる豊田市駅前のパン屋",
+      "highlights": [
+        "地域・季節の食材を使ったパン",
+        "自家製天然酵母と手づくりにこだわる"
+      ],
       "photoAttribution": "",
       "photoSource": "",
       "photoLicense": ""
