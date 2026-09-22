@@ -1,7 +1,7 @@
 {
   "source": "static-free-verified",
   "updatedAt": "2026-09-23",
-  "attribution": "店舗情報は公開情報を基に確認。来店前に公式情報をご確認ください。 パンヤモギは奥三河観光協議会公式の2026年朝活Cafe情報で所在地・開催営業を確認。 もっくるベーカリーは愛知県公式情報および道の駅公式で存在を確認。 2026-09-23新城市監査：石窯パン工房ちゃっと、自然酵母パンRaisin、パンヤモギ、もっくるベーカリーを公式・観光協会・2026年現行情報で再照合し、住所・営業時間・評価・特色を補完。",
+  "attribution": "店舗情報は公開情報を基に確認。来店前に公式情報をご確認ください。 パンヤモギは奥三河観光協議会公式の2026年朝活Cafe情報で所在地・開催営業を確認。 もっくるベーカリーは愛知県公式情報および道の駅公式で存在を確認。 2026-09-23新城市監査：石窯パン工房ちゃっと、自然酵母パンRaisin、パンヤモギ、もっくるベーカリーを公式・観光協会・2026年現行情報で再照合し、住所・営業時間・評価・特色を補完。 2026-09-23新城市補完：手作りの店ぱんやさん、高原のパン屋麦の家、北欧倶楽部バロー新城店を現行情報で確認し追加。ベルナール新城店は現行の一次情報確認を継続し保留。",
   "shops": [
     {
       "placeId": "static-shinshiro-chat",
@@ -105,6 +105,90 @@
         "2026年は旧『東京ベーカリー』の人気メニュー復活にも取り組む"
       ],
       "specialNotice": "営業時間は道の駅もっくる新城の営業に準ずる。"
+    },
+    {
+      "placeId": "static-shinshiro-panyasan",
+      "name": "手作りの店 ぱんやさん",
+      "rating": 4.12,
+      "reviews": 13,
+      "address": "愛知県新城市平井字若杉1-3",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "月〜土 07:30–15:00",
+        "日・祝 定休"
+      ],
+      "phone": "0536-23-6354",
+      "website": "",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E6%89%8B%E4%BD%9C%E3%82%8A%E3%81%AE%E5%BA%97%20%E3%81%B1%E3%82%93%E3%82%84%E3%81%95%E3%82%93%20%E6%96%B0%E5%9F%8E%E5%B8%82%E5%B9%B3%E4%BA%95%E5%AD%97%E8%8B%A5%E6%9D%891-3",
+      "photo": "",
+      "catchphrase": "東新町駅すぐ、朝7時半から営業する街のパン屋",
+      "highlights": [
+        "食パン・惣菜パン・季節商品を幅広く販売",
+        "愛知県営業許可が2028年10月まで確認可能"
+      ],
+      "specialNotice": "営業時間・休業日は変更の場合があるため来店前に確認推奨。",
+      "photoAttribution": "",
+      "photoSource": "",
+      "photoLicense": ""
+    },
+    {
+      "placeId": "static-shinshiro-muginoie",
+      "name": "高原のパン屋 麦の家",
+      "rating": 3.85,
+      "reviews": 10,
+      "address": "愛知県新城市作手清岳字荒井1-2",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "月・火・金〜日 09:30–18:00",
+        "水・木 定休（祝日は営業の場合あり）"
+      ],
+      "phone": "0536-38-1680",
+      "website": "",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E9%AB%98%E5%8E%9F%E3%81%AE%E3%83%91%E3%83%B3%E5%B1%8B%20%E9%BA%A6%E3%81%AE%E5%AE%B6%20%E6%96%B0%E5%9F%8E%E5%B8%82%E4%BD%9C%E6%89%8B%E6%B8%85%E5%B2%B3%E5%AD%97%E8%8D%92%E4%BA%951-2",
+      "photo": "",
+      "catchphrase": "作手高原で手作りパンを焼く小さなベーカリー",
+      "highlights": [
+        "2026年4月の訪問記録で現役確認",
+        "道の駅つくで手作り村からも立ち寄りやすい"
+      ],
+      "specialNotice": "年末年始休業あり。祝日は定休日でも営業する場合あり。",
+      "photoAttribution": "",
+      "photoSource": "",
+      "photoLicense": ""
+    },
+    {
+      "placeId": "static-shinshiro-hokuoclub-valor",
+      "name": "北欧倶楽部 バロー新城店",
+      "rating": 3,
+      "reviews": 3,
+      "address": "愛知県新城市野田字西町屋敷75 バロー新城店内",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "月〜金 10:00–20:00",
+        "土・日 09:00–20:00"
+      ],
+      "phone": "0536-24-0701",
+      "website": "https://stores.valor.jp/detail/96/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=%E5%8C%97%E6%AC%A7%E5%80%B6%E6%A5%BD%E9%83%A8%20%E3%83%90%E3%83%AD%E3%83%BC%E6%96%B0%E5%9F%8E%E5%BA%97",
+      "photo": "",
+      "catchphrase": "バロー新城店内の焼き立てベーカリーコーナー",
+      "highlights": [
+        "バロー公式店舗ページでベーカリー専門コーナーとして掲載",
+        "買い物と一緒に利用しやすい"
+      ],
+      "specialNotice": "営業時間・休業日はバロー新城店の営業に準ずる。",
+      "photoAttribution": "",
+      "photoSource": "",
+      "photoLicense": ""
     }
   ]
 }
