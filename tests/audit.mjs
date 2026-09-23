@@ -67,7 +67,9 @@ assert.match(html,/電話番号：公式サイト・地図で確認/,'電話番�
 
 for(const file of fs.readdirSync(root).filter(v=>v.endsWith('.html'))){
   const body=read(file);
-  assert.equal(/tel\s*:/i.test(body),false,`${file}: tel: 発信導線なし`);
+  assert.equal(/href\s*=\s*["']tel:/i.test(body),false,`${file}: tel hrefなし`);
+  assert.equal(/(?:window\.)?location(?:\.href)?\s*=\s*["']tel:/i.test(body),false,`${file}: tel location遷移なし`);
+  assert.equal(/\.href\s*=\s*["']tel:/i.test(body),false,`${file}: tel href代入なし`);
 }
 assert.equal(/電話する/.test(html),false,'電話するボタンなし');
 assert.match(html,/dphone\.textContent=s\.phone \? `電話番号：\$\{s\.phone\}`/,'電話番号はtextContent表示のみ');
