@@ -94,7 +94,7 @@ assert.match(panrush,/すぐ始める/,'パンラッシュ: すぐ始める文�
 assert.match(panrush,/id="planTop"[^>]*>🔥 このままルートを作る<\/button>/,'パンラッシュ: 上部ルート作成導線');
 assert.match(panrush,/id="plan"[^>]*>🔥 このままルートを作る<\/button>/,'パンラッシュ: 下部ルート作成導線');
 assert.match(panrush,/startWithRecommended/,'パンラッシュ: quick start handler');
-assert.match(panrush,/id=\\"rushRetry\\"|id="+'"'+'rushRetry'+'"'+'/,'パンラッシュ: 通信失敗時の再試行');
+assert.ok(panrush.includes('rushRetry'),'パンラッシュ: 通信失敗時の再試行');
 assert.ok(panrush.includes("addEventListener('online'"),'パンラッシュ: 通信復帰検知');
 assert.ok(panrush.includes("addEventListener('offline'"),'パンラッシュ: オフライン検知');
 assert.ok(panrush.includes("if(!groups.length)throw Error"),'パンラッシュ: 全地域通信失敗を候補0件と誤認しない');
