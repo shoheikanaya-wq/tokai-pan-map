@@ -95,9 +95,9 @@ assert.match(panrush,/id="planTop"[^>]*>🔥 このままルートを作る<\/bu
 assert.match(panrush,/id="plan"[^>]*>🔥 このままルートを作る<\/button>/,'パンラッシュ: 下部ルート作成導線');
 assert.match(panrush,/startWithRecommended/,'パンラッシュ: quick start handler');
 assert.match(panrush,/id=\\"rushRetry\\"|id="+'"'+'rushRetry'+'"'+'/,'パンラッシュ: 通信失敗時の再試行');
-assert.match(panrush,/addEventListener\\('online'/,'パンラッシュ: 通信復帰検知');
-assert.match(panrush,/addEventListener\\('offline'/,'パンラッシュ: オフライン検知');
-assert.match(panrush,/if\\(!groups\\.length\\)throw Error/,'パンラッシュ: 全地域通信失敗を候補0件と誤認しない');
+assert.ok(panrush.includes("addEventListener('online'"),'パンラッシュ: 通信復帰検知');
+assert.ok(panrush.includes("addEventListener('offline'"),'パンラッシュ: オフライン検知');
+assert.ok(panrush.includes("if(!groups.length)throw Error"),'パンラッシュ: 全地域通信失敗を候補0件と誤認しない');
 assert.match(panrush,/24時間内立寄り可能/,'パンラッシュ: 24時間内立寄り可能数');
 assert.match(panrush,/開店待ち/,'パンラッシュ: 待ち時間反映');
 assert.match(panrush,/value="bike">クロスカブ/,'パンラッシュ: クロスカブ');
