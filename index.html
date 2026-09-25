@@ -629,6 +629,67 @@ button,.back,.detail-action,.review-trigger{
  #detail .hours-row{line-height:1.25}
  #detail .detail-bottom-nav{margin-top:7px}
 }
+
+/* Ver.1.86: TOP10店名を最大2行で読みやすく表示 */
+#list .shop-name{
+  white-space:normal;
+  overflow-wrap:break-word;
+  word-break:auto-phrase;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+  overflow:hidden;
+}
+@media(max-width:600px){
+  #list .shop-title-row{
+    display:grid;
+    grid-template-columns:auto minmax(0,1fr) auto;
+    grid-template-rows:auto auto;
+    column-gap:5px;
+    row-gap:2px;
+    align-items:start;
+  }
+  #list .rank-card .badge{
+    grid-column:1;
+    grid-row:1 / span 2;
+    align-self:start;
+    margin-top:1px;
+  }
+  #list .shop-name{
+    grid-column:2;
+    grid-row:1;
+    min-width:0;
+    font-size:16px;
+    line-height:1.12;
+    white-space:normal;
+    text-overflow:clip;
+    -webkit-line-clamp:2;
+  }
+  #list .shop-rating-inline{
+    grid-column:3;
+    grid-row:1;
+    align-self:start;
+    white-space:nowrap;
+    font-size:12px;
+    margin-top:1px;
+  }
+  #list .shop-inline-feature{
+    grid-column:2;
+    grid-row:2;
+    min-width:0;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+  }
+  #list .shop-review-inline{
+    grid-column:3;
+    grid-row:2;
+    justify-self:end;
+    align-self:center;
+    white-space:nowrap;
+  }
+}
+
 </style></head>
 <body><header><h1 id="appTitle" style="cursor:pointer;">🥐 東海パンMAP</h1><div class="sub">市町村から、おいしいパン屋を探す</div></header><main>
 <section id="home">
@@ -643,7 +704,7 @@ button,.back,.detail-action,.review-trigger{
     </a>
   </div>
   
-  <div class="tabs"><button id="tabAichi" class="active">愛知県</button><button id="tabGifu">岐阜県</button><button id="tabMie">三重県</button></div><div class="notice"><strong>Ver.1.85</strong>　パンラッシュ通信失敗時の再試行・復帰導線を追加</div><div id="aichiPanel"><h2>西三河</h2><div class="cities"><button id="toyota">豊田市</button><button id="okazaki">岡崎市</button><button id="anjo">安城市</button><button id="kariya">刈谷市</button><button id="nishio">西尾市</button>
+  <div class="tabs"><button id="tabAichi" class="active">愛知県</button><button id="tabGifu">岐阜県</button><button id="tabMie">三重県</button></div><div class="notice"><strong>Ver.1.86</strong>　TOP10店舗名を最大2行で読みやすく表示</div><div id="aichiPanel"><h2>西三河</h2><div class="cities"><button id="toyota">豊田市</button><button id="okazaki">岡崎市</button><button id="anjo">安城市</button><button id="kariya">刈谷市</button><button id="nishio">西尾市</button>
 <button id="hekinan">碧南市</button>
 <button id="chiryu">知立市</button>
 <button id="takahama">高浜市</button>
