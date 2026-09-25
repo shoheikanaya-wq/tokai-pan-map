@@ -796,13 +796,13 @@ button,.back,.detail-action,.review-trigger{
 </section>
   <div id="devTools" class="dev-tools hidden"><button id="clearRankingCache">🔄 ランキングキャッシュ更新</button><div class="muted">開発用：次回ランキング表示時に最新データを取得</div></div><footer id="appFooter" class="app-footer">
 <div>東海パンMAP</div>
-<div>Ver.1.85</div>
+<div>Ver.1.88</div>
   <div>Personal Bakery Discovery Project</div>
   <div>Created & Managed by S.K.</div>
   <div>© 2026 S.K. All Rights Reserved.</div>
 
   <details class="version-history">
-    <summary>更新履歴を見る</summary>\n    <div>Ver.1.85　54市町村完全性・欠損表示・スマホ店名・PWA同期の自動監査を強化</div>\n    <div>Ver.1.82　6インチ級スマホ向けに店舗詳細の情報密度と余白を最終調整</div>\n    <div>Ver.1.82　店舗詳細の空欄を解消し確認導線を統一</div>\n    <div>Ver.1.82　店舗詳細の口コミを地図から分離しアプリ内表示に対応</div>\n    <div>Ver.1.82　TOP10の文字密度と強弱を整理</div>\n    <div>Ver.1.78　スマホTOP10の住所を少し拡大</div>\n    <div>Ver.1.77　スマホTOP10左端の空欄をなくし順位から表示</div>\n    <div>Ver.1.76　順位を左寄せして店舗名の表示幅を拡大</div>\n    <div>Ver.1.75　店名横に特色・口コミ・★評価を集約</div>\n    <div>Ver.1.74　6インチ級スマホ向けTOP10コンパクト表示</div>\n    <div>Ver.1.73　店舗詳細の店名サイズを適正化</div>\n    <div>Ver.1.72　店舗詳細の情報階層と余白を整理</div>\n    <div>Ver.1.71　TOP10の店名横に★評価、住所下に口コミ数を配置</div>\n    <div>Ver.1.70　TOP10の店名折り返し・余白・順位と評価の視認性を調整</div>\n    <div>Ver.1.69　TOP10画像を小型化し店舗名をさらに拡大</div>\n    <div>Ver.1.68　店舗詳細の大型画像枠を撤去し店名を拡大</div>\n    <div>Ver.1.67　TOP10・店舗詳細にワンポイント画像表示を追加</div>
+    <summary>更新履歴を見る</summary>\n    <div>Ver.1.88　愛知県TOP10の固定店舗でも実Place IDを再解決して口コミをアプリ内表示</div>\n    <div>Ver.1.85　54市町村完全性・欠損表示・スマホ店名・PWA同期の自動監査を強化</div>\n    <div>Ver.1.82　6インチ級スマホ向けに店舗詳細の情報密度と余白を最終調整</div>\n    <div>Ver.1.82　店舗詳細の空欄を解消し確認導線を統一</div>\n    <div>Ver.1.82　店舗詳細の口コミを地図から分離しアプリ内表示に対応</div>\n    <div>Ver.1.82　TOP10の文字密度と強弱を整理</div>\n    <div>Ver.1.78　スマホTOP10の住所を少し拡大</div>\n    <div>Ver.1.77　スマホTOP10左端の空欄をなくし順位から表示</div>\n    <div>Ver.1.76　順位を左寄せして店舗名の表示幅を拡大</div>\n    <div>Ver.1.75　店名横に特色・口コミ・★評価を集約</div>\n    <div>Ver.1.74　6インチ級スマホ向けTOP10コンパクト表示</div>\n    <div>Ver.1.73　店舗詳細の店名サイズを適正化</div>\n    <div>Ver.1.72　店舗詳細の情報階層と余白を整理</div>\n    <div>Ver.1.71　TOP10の店名横に★評価、住所下に口コミ数を配置</div>\n    <div>Ver.1.70　TOP10の店名折り返し・余白・順位と評価の視認性を調整</div>\n    <div>Ver.1.69　TOP10画像を小型化し店舗名をさらに拡大</div>\n    <div>Ver.1.68　店舗詳細の大型画像枠を撤去し店名を拡大</div>\n    <div>Ver.1.67　TOP10・店舗詳細にワンポイント画像表示を追加</div>
     <div>Ver.1.4　店舗詳細・営業状況・地域表示・画面移動を改善</div>
     <div>Ver.1.2 β　店舗詳細機能を追加</div>
     <div>Ver.1.1 β　市町村・地域ランキングを改善</div>
@@ -1402,29 +1402,54 @@ function escapeHtml(value) {
   setTimeout(refreshVisibleFeatures,0);
 }
 
+async function resolveReviewPlaceId(shop){
+  if(shop?.placeId && !String(shop.placeId).startsWith('static-') && shop.dataSource!=='osm-free' && shop.dataSource!=='static-free'){
+    return shop.placeId;
+  }
+  const query=[shop?.name,shop?.address].filter(Boolean).join(' ');
+  if(!query) return '';
+  const r=await fetch(REVIEW_API,{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({textQuery:query})
+  });
+  const data=await r.json();
+  if(!r.ok) throw new Error(data?.error||('HTTP '+r.status));
+  const candidates=Array.isArray(data.places)?data.places:[];
+  if(!candidates.length) return '';
+  const exact=candidates.find(p=>{
+    const n=String(p?.displayName?.text||'').normalize('NFKC').replace(/\s+/g,'').toLowerCase();
+    const target=String(shop?.name||'').normalize('NFKC').replace(/\s+/g,'').toLowerCase();
+    return n===target || n.includes(target) || target.includes(n);
+  });
+  return (exact||candidates[0])?.id||'';
+}
+
 async function loadDetailReviews(shop){
   dreviewPanel.classList.remove('hidden');
   dreviewPanel.innerHTML='<div class="review-panel-head"><strong>💬 口コミ</strong></div><div class="muted">口コミを読み込んでいます…</div>';
-  if(!shop?.placeId || String(shop.placeId).startsWith('static-') || shop.dataSource==='osm-free' || shop.dataSource==='static-free'){
-    dreviewPanel.innerHTML='<div class="review-panel-head"><strong>💬 口コミ</strong></div><div class="review-note">この店舗は現在、アプリ内口コミ本文を取得していません。地図ボタンから外部の最新情報を確認できます。</div>';
-    return;
-  }
   try{
-    const r=await fetch(REVIEW_API+'?placeId='+encodeURIComponent(shop.placeId)+'&reviews=1');
+    const placeId=await resolveReviewPlaceId(shop);
+    if(!placeId) throw new Error('place_not_found');
+    const r=await fetch(REVIEW_API+'?placeId='+encodeURIComponent(placeId)+'&reviews=1');
     const data=await r.json();
     if(!r.ok) throw new Error(data?.error||('HTTP '+r.status));
     const rows=Array.isArray(data.reviews)?data.reviews.slice(0,5):[];
     if(!rows.length) throw new Error('no_reviews');
-    dreviewPanel.innerHTML='<div class="review-panel-head"><strong>💬 口コミ（最大5件）</strong></div>'+rows.map(v=>{
+    dreviewPanel.innerHTML='<div class="review-panel-head"><strong>💬 口コミ（最大5件）</strong><button type="button" class="review-close" id="dreviewClose">閉じる</button></div>'+rows.map(v=>{
       const author=v?.authorAttribution?.displayName||v?.author||'Googleユーザー';
       const rating=v?.rating?('★'+v.rating):'';
       const when=v?.relativePublishTimeDescription||v?.publishTime||'';
       const body=v?.text?.text||v?.originalText?.text||v?.text||'';
       return '<div class="review-item"><div class="review-meta">'+escapeHtml([rating,author,when].filter(Boolean).join(' ／ '))+'</div><div class="review-text">'+escapeHtml(body)+'</div></div>';
     }).join('')+'<div class="review-note">口コミは取得元の公開情報です。内容・営業情報は来店前に最新情報をご確認ください。</div>';
+    const closeBtn=document.getElementById('dreviewClose');
+    if(closeBtn) closeBtn.onclick=()=>dreviewPanel.classList.add('hidden');
   }catch(e){
     console.warn('reviews',e);
-    dreviewPanel.innerHTML='<div class="review-panel-head"><strong>💬 口コミ</strong></div><div class="review-note">現在アプリ内口コミを取得できません。地図ボタンから最新の口コミを確認できます。</div>';
+    dreviewPanel.innerHTML='<div class="review-panel-head"><strong>💬 口コミ</strong><button type="button" class="review-close" id="dreviewClose">閉じる</button></div><div class="review-note">現在アプリ内口コミを取得できません。地図ボタンから最新の口コミを確認できます。</div>';
+    const closeBtn=document.getElementById('dreviewClose');
+    if(closeBtn) closeBtn.onclick=()=>dreviewPanel.classList.add('hidden');
   }
 }
 
