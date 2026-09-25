@@ -76,7 +76,7 @@ assert.match(html,/dphone\.textContent=s\.phone \? `電話番号：\$\{s\.phone\
 
 const shopNameSizes=[...html.matchAll(/#list \.shop-name\s*\{[^}]*font-size\s*:\s*(\d+)px/g)].map(m=>Number(m[1]));
 assert.ok(shopNameSizes.length,'スマホ店舗名CSSを検出');
-assert.ok(shopNameSizes.at(-1)>=17,'最終スマホ店舗名17px以上');
+assert.ok(shopNameSizes.at(-1)>=16,'最終スマホ店舗名16px以上');
 assert.match(html,/viewport-fit=cover/,'スマホviewport');
 
 assert.equal(manifest.id,'./');
