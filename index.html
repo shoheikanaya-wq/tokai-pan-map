@@ -794,7 +794,12 @@ button,.back,.detail-action,.review-trigger{
     <button class="back" id="backDetailBottom">← 戻る</button>
   </div>
 </section>
-  <div id="devTools" class="dev-tools hidden"><button id="clearRankingCache">🔄 ランキングキャッシュ更新</button><div class="muted">開発用：次回ランキング表示時に最新データを取得</div></div><footer id="appFooter" class="app-footer">
+  <div id="devTools" class="dev-tools hidden">
+    <button id="adminFootprints" type="button">利用状況</button>
+    <button id="clearRankingCache" type="button">🔄 ランキングキャッシュ更新</button>
+    <div id="adminFootprintPanel" class="card hidden" aria-live="polite"></div>
+    <div class="muted">管理用。利用状況のサーバー保存は管理API認証・永続保存の準備完了後に有効化します。</div>
+  </div><footer id="appFooter" class="app-footer">
 <div>東海パンMAP</div>
 <div>Ver.1.88</div>
   <div>Personal Bakery Discovery Project</div>
@@ -2046,7 +2051,7 @@ appTitle.onclick = () => {
   syncViewHistory('home');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };
-const devTools=byId('devTools'), clearRankingCache=byId('clearRankingCache'), appFooter=byId('appFooter');
+const devTools=byId('devTools'), clearRankingCache=byId('clearRankingCache'), adminFootprints=byId('adminFootprints'), adminFootprintPanel=byId('adminFootprintPanel'), appFooter=byId('appFooter');
 let devTapCount=0, devTapTimer;
 
 // 管理機能は誤操作防止のため、5回タップだけでは開かない。
@@ -2070,6 +2075,40 @@ appFooter.addEventListener('click',()=>{
     devTools.classList.remove('hidden');
   }
 });
+
+
+// 足あと管理UIの公開準備。永続保存・一覧取得はサーバー側認証が整うまで接続しない。
+const FOOTPRINT_SCHEMA_VERSION = 1;
+function anonymousDeviceId(){
+  const key='tokai-pan:anonymous-device-id';
+  let id=localStorage.getItem(key);
+  if(!id){
+    id=(crypto.randomUUID?.() || ('dev-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2)));
+    localStorage.setItem(key,id);
+  }
+  return id;
+}
+function footprintPreview(){
+  const ua=navigator.userAgent||'';
+  const mobile=/Android|iPhone|iPad|Mobile/i.test(ua);
+  const os=/Android/i.test(ua)?'Android':/iPhone|iPad/i.test(ua)?'iOS':/Windows/i.test(ua)?'Windows':/Mac OS/i.test(ua)?'macOS':'不明';
+  const browser=/Edg\//.test(ua)?'Edge':/CriOS|Chrome\//.test(ua)?'Chrome':/FxiOS|Firefox\//.test(ua)?'Firefox':/Safari\//.test(ua)?'Safari':'不明';
+  return {
+    schemaVersion:FOOTPRINT_SCHEMA_VERSION,
+    anonymousDeviceId:anonymousDeviceId(),
+    accessedAt:new Date().toISOString(),
+    os,browser,deviceType:mobile?'スマホ/タブレット':'PC',
+    deviceModel:/iPhone/i.test(ua)?'iPhone（機種詳細不明）':/Android/i.test(ua)?'Android（取得可能範囲のみ）':'取得対象外',
+    launchPage:location.pathname.split('/').pop()||'index.html',
+    appVersion:'20260923-173'
+  };
+}
+adminFootprints.onclick=()=>{
+  const p=footprintPreview();
+  adminFootprintPanel.innerHTML='<strong>利用状況（接続準備）</strong><div class="muted" style="margin-top:6px">現在はサーバー保存を開始していません。名前・電話・メール・GPS・正確な位置・IP・強いフィンガープリントは収集しません。</div>'+
+    '<div style="margin-top:8px;font-size:12px;line-height:1.6">端末ID: '+escapeHtml(p.anonymousDeviceId)+'<br>OS: '+escapeHtml(p.os)+' / '+escapeHtml(p.browser)+'<br>種別: '+escapeHtml(p.deviceType)+'<br>端末: '+escapeHtml(p.deviceModel)+'<br>起動: '+escapeHtml(p.launchPage)+' / '+escapeHtml(p.appVersion)+'</div>';
+  adminFootprintPanel.classList.remove('hidden');
+};
 
 clearRankingCache.onclick=()=>{
   if(!confirm('管理者用操作です。ランキングキャッシュを削除しますか？\n次回表示時にAPIから最新データを取得します。')) return;
