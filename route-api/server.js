@@ -1,4 +1,5 @@
 import express from 'express';
+import { Firestore, FieldValue } from '@google-cloud/firestore';
 
 const app = express();
 app.use(express.json({ limit: '256kb' }));
@@ -6,6 +7,7 @@ app.use(express.json({ limit: '256kb' }));
 const PORT = process.env.PORT || 8080;
 const GOOGLE_MAPS_API_KEY = process.env.GOOGLE_MAPS_API_KEY;
 const ALLOWED_ORIGIN = process.env.ALLOWED_ORIGIN || 'https://shoheikanaya-wq.github.io';
+const db = new Firestore();
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', ALLOWED_ORIGIN);
@@ -18,6 +20,40 @@ app.use((req, res, next) => {
 
 app.get('/health', (_req, res) => {
   res.json({ ok: true, service: 'tokai-pan-route-api' });
+});
+
+function cleanFootprintText(value, max = 120) {
+  return String(value || '').replace(/[\\u0000-\\u001f]/g, '').slice(0, max);
+}
+
+app.post('/footprint', async (req, res) => {
+  try {
+    const b = req.body || {};
+    const id = cleanFootprintText(b.anonymousDeviceId, 80);
+    if (!/^[A-Za-z0-9._:-]{8,80}$/.test(id)) {
+      return res.status(400).json({ error: 'invalid_device_id' });
+    }
+    const ref = db.collection('pan_footprints').doc(id);
+    const snap = await ref.get();
+    const now = FieldValue.serverTimestamp();
+    const record = {
+      anonymousDeviceId: id,
+      lastAccess: now,
+      visitCount: FieldValue.increment(1),
+      os: cleanFootprintText(b.os, 40),
+      browser: cleanFootprintText(b.browser, 40),
+      deviceType: cleanFootprintText(b.deviceType, 40),
+      deviceModel: cleanFootprintText(b.deviceModel, 80),
+      launchPage: cleanFootprintText(b.launchPage, 120),
+      appVersion: cleanFootprintText(b.appVersion, 40)
+    };
+    if (!snap.exists) record.firstAccess = now;
+    await ref.set(record, { merge: true });
+    res.status(204).end();
+  } catch (err) {
+    console.error('footprint write failed', err);
+    res.status(503).json({ error: 'footprint_unavailable' });
+  }
 });
 
 function validPoint(p) {
