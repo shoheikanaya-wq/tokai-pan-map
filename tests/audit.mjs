@@ -79,6 +79,15 @@ assert.ok(shopNameSizes.length,'スマホ店舗名CSSを検出');
 assert.equal(shopNameSizes.at(-1),16,'最終スマホ店舗名16px');
 assert.match(html,/viewport-fit=cover/,'スマホviewport');
 
+assert.match(html,/フッター5回タップ|5回タップ/,'管理入口は通常UIに常設しない方針');
+assert.match(html,/PINは「本格認証」ではなく/,'管理PINを本格認証と誤認しない');
+assert.match(html,/管理一覧API[\s\S]*false[\s\S]*サーバー認証前のため未接続/,'管理一覧APIは認証前に未接続');
+assert.match(html,/足あと永続保存[\s\S]*false[\s\S]*承認前のため未開始/,'足あと保存は承認前に未開始');
+assert.match(html,/名前・電話・メール・GPS・正確な位置・IP・強いフィンガープリントは収集しません/,'非収集データを管理画面に明示');
+assert.equal(/fetch\([^)]*(?:footprint|admin)/i.test(html),false,'認証前の管理・足あとAPI fetchなし');
+assert.equal(/localStorage\.setItem\([^,]*(?:pin|password|token|secret)/i.test(html),false,'管理秘密情報をlocalStorageへ保存しない');
+
+
 assert.equal(manifest.id,'./');
 assert.equal(manifest.scope,'./');
 const cacheVersion=sw.match(/CACHE_NAME\s*=\s*['"]tokai-pan-v(\d+)['"]/)?.[1];
