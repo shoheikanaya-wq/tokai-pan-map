@@ -87,6 +87,17 @@ assert.match(html,/名前・電話・メール・GPS・正確な位置・IP・�
 assert.equal(/fetch\([^)]*(?:footprint|admin)/i.test(html),false,'認証前の管理・足あとAPI fetchなし');
 assert.equal(/localStorage\.setItem\([^,]*(?:pin|password|token|secret)/i.test(html),false,'管理秘密情報をlocalStorageへ保存しない');
 
+assert.equal(/AIza[0-9A-Za-z_-]{20,}/.test(html),false,'Google APIキーをフロントHTMLへ直書きしない');
+assert.equal(/(?:api[_-]?key|secret|password)\s*[:=]\s*['"][^'"]{8,}['"]/i.test(html),false,'秘密情報らしい固定値をフロントへ追加しない');
+for(const m of html.matchAll(/<a\b[^>]*target=["']_blank["'][^>]*>/gi)){
+  assert.match(m[0],/rel=["'][^"']*noopener/i,'target=_blank はnoopener必須');
+}
+assert.equal(/href\s*=\s*["']http:\/\//i.test(html),false,'固定外部リンクはHTTPSのみ');
+assert.match(html,/function escapeHtml\(/,'HTMLエスケープ関数を維持');
+assert.match(html,/shop-name[^\n]*\$\{escapeHtml\(displayName\)\}/,'店舗名をinnerHTMLへ入れる際はescape');
+assert.match(html,/shop-address[^\n]*\$\{escapeHtml\(displayAddress\)\}/,'住所をinnerHTMLへ入れる際はescape');
+
+
 
 assert.equal(manifest.id,'./');
 assert.equal(manifest.scope,'./');
