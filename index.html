@@ -796,8 +796,10 @@ button,.back,.detail-action,.review-trigger{
 </section>
   <div id="devTools" class="dev-tools hidden">
     <button id="adminFootprints" type="button">利用状況</button>
+    <button id="adminSecurity" type="button">セキュリティ状態</button>
     <button id="clearRankingCache" type="button">🔄 ランキングキャッシュ更新</button>
     <div id="adminFootprintPanel" class="card hidden" aria-live="polite"></div>
+    <div id="adminSecurityPanel" class="card hidden" aria-live="polite"></div>
     <div class="muted">管理用。利用状況のサーバー保存は管理API認証・永続保存の準備完了後に有効化します。</div>
   </div><footer id="appFooter" class="app-footer">
 <div>東海パンMAP</div>
@@ -2051,7 +2053,7 @@ appTitle.onclick = () => {
   syncViewHistory('home');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };
-const devTools=byId('devTools'), clearRankingCache=byId('clearRankingCache'), adminFootprints=byId('adminFootprints'), adminFootprintPanel=byId('adminFootprintPanel'), appFooter=byId('appFooter');
+const devTools=byId('devTools'), clearRankingCache=byId('clearRankingCache'), adminFootprints=byId('adminFootprints'), adminFootprintPanel=byId('adminFootprintPanel'), adminSecurity=byId('adminSecurity'), adminSecurityPanel=byId('adminSecurityPanel'), appFooter=byId('appFooter');
 let devTapCount=0, devTapTimer;
 
 // 管理機能は誤操作防止のため、5回タップだけでは開かない。
@@ -2108,6 +2110,27 @@ adminFootprints.onclick=()=>{
   adminFootprintPanel.innerHTML='<strong>利用状況（接続準備）</strong><div class="muted" style="margin-top:6px">現在はサーバー保存を開始していません。名前・電話・メール・GPS・正確な位置・IP・強いフィンガープリントは収集しません。</div>'+
     '<div style="margin-top:8px;font-size:12px;line-height:1.6">端末ID: '+escapeHtml(p.anonymousDeviceId)+'<br>OS: '+escapeHtml(p.os)+' / '+escapeHtml(p.browser)+'<br>種別: '+escapeHtml(p.deviceType)+'<br>端末: '+escapeHtml(p.deviceModel)+'<br>起動: '+escapeHtml(p.launchPage)+' / '+escapeHtml(p.appVersion)+'</div>';
   adminFootprintPanel.classList.remove('hidden');
+};
+
+
+function securitySnapshot(){
+  return [
+    ['HTTPS',location.protocol==='https:','通信をHTTPSで保護'],
+    ['Service Worker','serviceWorker' in navigator,'PWA更新機構'],
+    ['管理一覧API',false,'サーバー認証前のため未接続（安全側）'],
+    ['足あと永続保存',false,'承認前のため未開始（安全側）'],
+    ['管理者認証',false,'現在のPINは誤操作防止のみ。本番認証ではない']
+  ];
+}
+adminSecurity.onclick=()=>{
+  const rows=securitySnapshot().map(([name,ok,note])=>
+    '<div style="padding:6px 0;border-bottom:1px solid #eee"><strong>'+escapeHtml(name)+'</strong>：'+
+    (ok?'確認':'要対応/未有効')+'<br><span class="muted">'+escapeHtml(note)+'</span></div>'
+  ).join('');
+  adminSecurityPanel.innerHTML='<strong>セキュリティ状態</strong>'+
+    '<div class="muted" style="margin-top:6px">端末のウイルス検出ではなく、Webアプリ側の安全状態を確認します。</div>'+
+    '<div style="margin-top:8px;font-size:12px;line-height:1.5">'+rows+'</div>';
+  adminSecurityPanel.classList.remove('hidden');
 };
 
 clearRankingCache.onclick=()=>{
