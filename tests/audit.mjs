@@ -13,7 +13,7 @@ const manifest=JSON.parse(read('manifest.webmanifest'));
 const catalog=JSON.parse(read('data/static-catalog.json'));
 assert.match(portal,/puratto-tokai-pc\.png/,'portal PC visual exists');
 assert.match(portal,/puratto-tokai-mobile\.png/,'portal mobile visual exists');
-assert.match(portal,/href="pan\.html"/,'portal new-pan entry exists');
+assert.match(portal,/href="new-pan\.html"/,'portal new-pan entry exists');
 assert.match(portal,/href="ramen\.html"/,'portal ramen entry exists');
 const script=html.match(/<script>([\s\S]*)<\/script>/)?.[1];
 assert.ok(script,'index inline app script exists');
