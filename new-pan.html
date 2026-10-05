@@ -644,11 +644,12 @@ button,.back,.detail-action,.review-trigger{
 }
 
 .new-pan-nav{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:9px;font-size:13px}.new-pan-nav a{color:inherit;font-weight:800;text-decoration:none}.new-pan-back{display:inline-flex;align-items:center;min-height:42px;margin-top:10px;padding:8px 15px;border-radius:999px;background:#fff;color:#6b431f;text-decoration:none;font-weight:800;border:1px solid #d8c2a8;box-shadow:0 2px 7px #00000012}.new-pan-back:focus-visible,.new-pan-nav a:focus-visible{outline:3px solid #7a4b20;outline-offset:3px}@media(max-width:600px){.new-pan-nav{font-size:12px}.new-pan-back{min-height:44px;padding:9px 16px}}
+.new-pan-intro{margin:10px 0 12px;padding:12px 14px;border:1px solid #ead8bf;border-radius:14px;background:#fffaf1}.new-pan-intro strong{display:block;font-size:16px;margin-bottom:3px}.new-pan-intro span{font-size:12px;line-height:1.45;color:#6d5b49}.new-pan-section-title{margin:16px 0 8px;font-size:17px}.new-pan-version{font-size:11px;opacity:.72;text-align:right;margin:3px 2px 8px}@media(max-width:600px){.new-pan-intro{margin:8px 0 10px;padding:10px 11px}.new-pan-intro strong{font-size:15px}.new-pan-section-title{margin:13px 0 7px;font-size:16px}}
 </style></head>
 <body><header><h1 id="appTitle" style="cursor:pointer;">🥐 ぷらっとパン</h1><div class="sub">市町村から、おいしいパン屋を探す</div><nav class="new-pan-nav" aria-label="現在位置"><a href="index.html">ぷらっと東海</a><span aria-hidden="true">›</span><strong aria-current="page">ぷらっとパン</strong></nav><a class="new-pan-back" href="index.html" aria-label="ぷらっと東海のホームへ戻る">← ぷらっと東海へ戻る</a></header><main>
 <section id="home">
  
-  <img src="tokai-pan-home.png" class="home-visual" alt="ぷらっとパン ホーム">
+  <img src="tokai-pan-home.png" class="home-visual" alt="ぷらっとパン ホーム"><div class="new-pan-intro"><strong>🥐 東海のパン屋を、ぷらっと探そう。</strong><span>エリアから探す・TOP10を見る・パンラッシュで巡る。気分に合わせてパン屋探索を楽しめます。</span></div>
   <div class="notice">⚡ パンラッシュは「おまかせで始める」または条件指定から直感的に開始できます。TOP10で実店舗写真が未取得の店は、複数のAI生成外観イメージを店舗ごとに分け、明記して表示します。</div><div class="rush-entry-grid" id="rushEntryGrid">
     <a class="rush-entry rush-main" href="panrush.html?v=20260908-start">
       <span class="rush-icon">⚡</span><span><strong>パンラッシュ</strong><small>愛知県内・24時間耐久</small></span>
@@ -658,7 +659,7 @@ button,.back,.detail-action,.review-trigger{
     </a>
   </div>
   
-  <div class="tabs"><button id="tabAichi" class="active">愛知県</button><button id="tabGifu">岐阜県</button><button id="tabMie">三重県</button></div><div class="notice"><strong>Ver.1.87</strong>　PC版TOP10店舗名のみ最大2行で読みやすく表示</div><div id="aichiPanel"><h2>西三河</h2><div class="cities"><button id="toyota">豊田市</button><button id="okazaki">岡崎市</button><button id="anjo">安城市</button><button id="kariya">刈谷市</button><button id="nishio">西尾市</button>
+  <h2 class="new-pan-section-title">📍 エリアから探す</h2><div class="tabs"><button id="tabAichi" class="active">愛知県</button><button id="tabGifu">岐阜県</button><button id="tabMie">三重県</button></div><div class="new-pan-version">ぷらっとパン Ver.1.87</div><div id="aichiPanel"><h2>西三河</h2><div class="cities"><button id="toyota">豊田市</button><button id="okazaki">岡崎市</button><button id="anjo">安城市</button><button id="kariya">刈谷市</button><button id="nishio">西尾市</button>
 <button id="hekinan">碧南市</button>
 <button id="chiryu">知立市</button>
 <button id="takahama">高浜市</button>
