@@ -110,6 +110,8 @@ app.post('/', async (req, res) => {
         'X-Goog-Api-Key': GOOGLE_MAPS_API_KEY,
         'X-Goog-FieldMask': [
           'places.id',
+          'places.types',
+          'places.primaryType',
           'places.displayName',
           'places.formattedAddress',
           'places.location',
