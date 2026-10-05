@@ -645,7 +645,7 @@ button,.back,.detail-action,.review-trigger{
 
 .new-pan-nav{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:9px;font-size:13px}.new-pan-nav a{color:inherit;font-weight:800;text-decoration:none}.new-pan-back{display:inline-flex;align-items:center;min-height:42px;margin-top:10px;padding:8px 15px;border-radius:999px;background:#fff;color:#6b431f;text-decoration:none;font-weight:800;border:1px solid #d8c2a8;box-shadow:0 2px 7px #00000012}.new-pan-back:focus-visible,.new-pan-nav a:focus-visible{outline:3px solid #7a4b20;outline-offset:3px}@media(max-width:600px){.new-pan-nav{font-size:12px}.new-pan-back{min-height:44px;padding:9px 16px}}
 .new-pan-intro{margin:10px 0 12px;padding:12px 14px;border:1px solid #ead8bf;border-radius:14px;background:#fffaf1}.new-pan-intro strong{display:block;font-size:16px;margin-bottom:3px}.new-pan-intro span{font-size:12px;line-height:1.45;color:#6d5b49}.new-pan-section-title{margin:16px 0 8px;font-size:17px}.new-pan-version{font-size:11px;opacity:.72;text-align:right;margin:3px 2px 8px}@media(max-width:600px){.new-pan-intro{margin:8px 0 10px;padding:10px 11px}.new-pan-intro strong{font-size:15px}.new-pan-section-title{margin:13px 0 7px;font-size:16px}}
-.new-pan-quick{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:10px 0 14px}.new-pan-quick a,.new-pan-quick button{min-width:0;min-height:54px;border:1px solid #e1c59e;border-radius:13px;background:#fff9ef;color:#4b331f;text-decoration:none;font:inherit;font-weight:800;display:flex;align-items:center;justify-content:center;text-align:center;padding:8px;cursor:pointer}.new-pan-quick a:focus-visible,.new-pan-quick button:focus-visible{outline:3px solid #7a4b20;outline-offset:2px}@media(max-width:600px){.new-pan-quick{gap:6px}.new-pan-quick a,.new-pan-quick button{font-size:12px;min-height:50px;padding:6px}}
+.new-pan-quick{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:10px 0 14px}.new-pan-quick a,.new-pan-quick button{min-width:0;min-height:54px;border:1px solid #e1c59e;border-radius:13px;background:#fff9ef;color:#4b331f;text-decoration:none;font:inherit;font-weight:800;display:flex;align-items:center;justify-content:center;text-align:center;padding:8px;cursor:pointer}.new-pan-quick a:focus-visible,.new-pan-quick button:focus-visible{outline:3px solid #7a4b20;outline-offset:2px}.mobile-city-picker{display:none;margin:7px 0 10px}.mobile-city-picker label{display:block;font-size:11px;font-weight:800;margin-bottom:4px}.mobile-city-picker select{width:100%;min-height:42px;border:1px solid #b98a55;border-radius:11px;background:#fffaf1;color:#332316;font:inherit;font-weight:800;padding:8px 10px}@media(max-width:600px){.new-pan-quick{gap:6px}.new-pan-quick a,.new-pan-quick button{font-size:12px;min-height:50px;padding:6px}.mobile-city-picker{display:block}#aichiPanel .cities,#gifuPanel .cities,#miePanel .cities{display:none}}
 </style></head>
 <body><header><h1 id="appTitle" style="cursor:pointer;">🥐 ぷらっとパン</h1><div class="sub">市町村から、おいしいパン屋を探す</div><nav class="new-pan-nav" aria-label="現在位置"><a href="index.html">ぷらっと東海</a><span aria-hidden="true">›</span><strong aria-current="page">ぷらっとパン</strong></nav><a class="new-pan-back" href="index.html" aria-label="ぷらっと東海のホームへ戻る">← ぷらっと東海へ戻る</a></header><main>
 <section id="home">
@@ -660,7 +660,7 @@ button,.back,.detail-action,.review-trigger{
     </a>
   </div>
   
-  <h2 class="new-pan-section-title">📍 エリアから探す</h2><div class="tabs"><button id="tabAichi" class="active">愛知県</button><button id="tabGifu">岐阜県</button><button id="tabMie">三重県</button></div><div class="new-pan-version">ぷらっとパン Ver.1.87</div><div id="aichiPanel"><h2>西三河</h2><div class="cities"><button id="toyota">豊田市</button><button id="okazaki">岡崎市</button><button id="anjo">安城市</button><button id="kariya">刈谷市</button><button id="nishio">西尾市</button>
+  <h2 class="new-pan-section-title">📍 エリアから探す</h2><div class="tabs"><button id="tabAichi" class="active">愛知県</button><button id="tabGifu">岐阜県</button><button id="tabMie">三重県</button></div><div class="mobile-city-picker"><label for="mobileCitySelect">市町村を選ぶ</label><select id="mobileCitySelect" aria-label="市町村を選択"><option value="">市町村を選択</option></select></div><div class="new-pan-version">ぷらっとパン Ver.1.87</div><div id="aichiPanel"><h2>西三河</h2><div class="cities"><button id="toyota">豊田市</button><button id="okazaki">岡崎市</button><button id="anjo">安城市</button><button id="kariya">刈谷市</button><button id="nishio">西尾市</button>
 <button id="hekinan">碧南市</button>
 <button id="chiryu">知立市</button>
 <button id="takahama">高浜市</button>
@@ -1205,6 +1205,7 @@ function showDetailView(){
 }
 const home=document.querySelector('#home'),ranking=document.querySelector('#ranking'),detail=document.querySelector('#detail'),list=document.querySelector('#list');
 const byId = id => document.getElementById(id);
+const mobileCitySelect=byId('mobileCitySelect');
 const appTitle=byId('appTitle'), rankingTitle=byId('rankingTitle');
 const back=byId('back'), backBottom=byId('backBottom'), back2=byId('back2'), backDetailBottom=byId('backDetailBottom');
 const dname=byId('dname'), daddr=byId('daddr'), drating=byId('drating'), dhours=byId('dhours'), dphone=byId('dphone'), dwebsite=byId('dwebsite'), dmaps=byId('dmaps'), dreviewBtn=byId('dreviewBtn'), dreviewPanel=byId('dreviewPanel'), drank=byId('drank'), dfeatures=byId('dfeatures'), dspecial=byId('dspecial'), drecommend=byId('drecommend'), dclosed=byId('dclosed'), dproduct=byId('dproduct');
@@ -1625,6 +1626,22 @@ currentVisualKey = '';
   }
 }
 
+function refreshMobileCitySelect(){
+  if(!mobileCitySelect) return;
+  const panel=currentPrefecture==='岐阜県'?byId('gifuPanel'):currentPrefecture==='三重県'?byId('miePanel'):byId('aichiPanel');
+  mobileCitySelect.innerHTML='<option value="">市町村を選択</option>';
+  panel?.querySelectorAll('.cities button').forEach(btn=>{
+    const o=document.createElement('option');
+    o.value=btn.id; o.textContent=btn.textContent.trim();
+    mobileCitySelect.appendChild(o);
+  });
+  mobileCitySelect.value='';
+}
+mobileCitySelect?.addEventListener('change',()=>{
+  const btn=byId(mobileCitySelect.value);
+  if(btn) btn.click();
+});
+
 function selectPrefecture(pref){
   currentPrefecture=pref;
   const isAichi=pref==='愛知県', isGifu=pref==='岐阜県', isMie=pref==='三重県';
@@ -1634,10 +1651,12 @@ function selectPrefecture(pref){
   tabAichi.classList.toggle('active',isAichi);
   tabGifu.classList.toggle('active',isGifu);
   tabMie.classList.toggle('active',isMie);
+  refreshMobileCitySelect();
 }
 tabAichi.onclick=()=>selectPrefecture('愛知県');
 tabGifu.onclick=()=>selectPrefecture('岐阜県');
 tabMie.onclick=()=>selectPrefecture('三重県');
+refreshMobileCitySelect();
 
 yokkaichi.onclick=()=>selectCity(yokkaichi,'四日市市');
 kuwana.onclick=()=>selectCity(kuwana,'桑名市');
