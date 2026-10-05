@@ -28,7 +28,7 @@ main{max-width:760px;margin:auto;padding:12px}
 .tabs button,.chips button{border:1px solid #cda791;background:#f8e6da;color:#4b2c24;border-radius:999px;padding:9px 13px;font:inherit;font-weight:800}
 .tabs .active,.chips .active{background:#9a3f2f;color:white;border-color:#7f3026}
 .note{font-size:12px;line-height:1.55;color:#715e55;margin-top:10px}
-.coming{padding:14px;border-radius:14px;background:#f7e9df;text-align:center;font-weight:800;color:#7d4437}.search-action{display:flex;gap:8px;align-items:center;justify-content:center;margin-top:10px}.search-action a{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:10px 16px;border-radius:13px;background:#9a3f2f;color:#fff8f1;text-decoration:none;font-weight:900}.search-action a[aria-disabled="true"]{opacity:.45;pointer-events:none}
+.coming{padding:14px;border-radius:14px;background:#f7e9df;text-align:center;font-weight:800;color:#7d4437}.search-action{display:flex;gap:8px;align-items:center;justify-content:center;margin-top:10px}.search-action a{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:10px 16px;border-radius:13px;background:#9a3f2f;color:#fff8f1;text-decoration:none;font-weight:900}.search-action a[aria-disabled="true"]{opacity:.45;pointer-events:none}.results{display:grid;gap:8px;margin-top:10px}.shop-card{display:block;padding:11px;border:1px solid #dfc0ae;border-radius:13px;background:#fffdf9;color:inherit;text-decoration:none}.shop-card strong{display:block;font-size:14px}.shop-card small{display:block;margin-top:3px;color:#765f54;line-height:1.4}.result-empty{padding:12px;border-radius:12px;background:#f7e9df;color:#795044;font-size:12px;line-height:1.5;text-align:center}
 footer{text-align:center;padding:22px 8px 28px;color:#8a7469;font-size:11px}
 @media(max-width:600px){
  header{padding:7px 8px}h1{font-size:16px}.sub{font-size:9px}.back{min-height:40px;margin-top:6px;padding:6px 12px;font-size:12px}
@@ -68,7 +68,7 @@ footer{text-align:center;padding:22px 8px 28px;color:#8a7469;font-size:11px}
   <div class="coming" id="areaStatus" aria-live="polite">愛知県を選択中。</div>
   <div id="regionList" class="region-list" aria-label="地域選択"></div>
   <div id="cityList" class="city-list" aria-label="市町村選択"></div><div class="mobile-area-picker"><div><label for="regionSelect">地域</label><select id="regionSelect" aria-label="地域を選択"></select></div><div><label for="citySelect">市町村</label><select id="citySelect" aria-label="市町村を選択"></select></div></div>
-  <div class="search-action"><a id="mapSearch" href="#" target="_blank" rel="noopener" aria-disabled="true">🗺️ この条件でラーメン店を探す</a></div><p class="note">県 → 地域 → 市町村の順で絞り込みます。店舗DB接続前でも、選択条件で地図検索できます。</p>
+  <div id="ramenResults" class="results" aria-live="polite"><div class="result-empty">市町村を選ぶと、ぷらっとラーメン内の登録店舗を表示します。</div></div><div class="search-action"><a id="mapSearch" href="#" target="_blank" rel="noopener" aria-disabled="true">🗺️ 地図でも探す</a></div><p class="note">ぷらっとラーメン内の確認済み店舗を優先表示し、未整備地域では地図検索を補助として使います。</p>
  </section>
 
  <section class="section" id="genre">
@@ -116,6 +116,37 @@ const cityList=document.getElementById('cityList');
 const regionSelect=document.getElementById('regionSelect');
 const citySelect=document.getElementById('citySelect');
 const mapSearch=document.getElementById('mapSearch');
+const ramenResults=document.getElementById('ramenResults');
+let ramenCatalogPromise=null;
+function escapeText(v){return String(v??'').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));}
+async function loadRamenCatalog(){
+  if(!ramenCatalogPromise){
+    ramenCatalogPromise=fetch('./data/ramen-catalog.json?rev=20261006-1',{cache:'no-store'})
+      .then(r=>r.ok?r.json():({shops:[]}))
+      .catch(()=>({shops:[]}));
+  }
+  return ramenCatalogPromise;
+}
+async function renderRamenResults(){
+  if(!ramenResults) return;
+  if(!selectedCity){
+    ramenResults.innerHTML='<div class="result-empty">市町村を選ぶと、ぷらっとラーメン内の登録店舗を表示します。</div>';
+    return;
+  }
+  const data=await loadRamenCatalog();
+  const rows=(Array.isArray(data.shops)?data.shops:[]).filter(s=>
+    s.prefecture===selectedPref && s.city===selectedCity &&
+    (!selectedGenre || !Array.isArray(s.genres) || s.genres.includes(selectedGenre))
+  );
+  if(!rows.length){
+    ramenResults.innerHTML='<div class="result-empty"><strong>'+escapeText(selectedCity)+'</strong> は現在、確認済み店舗データを整備中です。下の「地図でも探す」を利用できます。</div>';
+    return;
+  }
+  ramenResults.innerHTML=rows.slice(0,10).map((s,i)=>{
+    const q=encodeURIComponent([s.name,s.address].filter(Boolean).join(' '));
+    return '<a class="shop-card" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query='+q+'"><strong>'+(i+1)+'. '+escapeText(s.name)+'</strong><small>'+escapeText(s.address||'住所確認中')+(s.rating?' ／ ★'+escapeText(s.rating):'')+'</small></a>';
+  }).join('');
+}
 function refreshMapSearch(){
   if(!mapSearch) return;
   const terms=['ラーメン',selectedPref,selectedCity,selectedGenre].filter(Boolean).join(' ');
@@ -150,9 +181,10 @@ function renderCities(){
  });
  areaStatus.textContent=selectedPref+' / '+selectedRegion+' を選択中。市町村を選べます。';
  refreshMapSearch();
+ renderRamenResults();
 }
 regionSelect?.addEventListener('change',()=>{selectedRegion=regionSelect.value;selectedCity='';renderCities();});
-citySelect?.addEventListener('change',()=>{selectedCity=citySelect.value;if(!selectedCity){refreshMapSearch();return;}areaStatus.textContent=selectedPref+' / '+selectedRegion+' / '+selectedCity+' を選択中。';refreshMapSearch();});
+citySelect?.addEventListener('change',()=>{selectedCity=citySelect.value;if(!selectedCity){refreshMapSearch();renderRamenResults();return;}areaStatus.textContent=selectedPref+' / '+selectedRegion+' / '+selectedCity+' を選択中。';refreshMapSearch();renderRamenResults();});
 prefTabs?.addEventListener('click',e=>{
   const btn=e.target.closest('button[data-pref]'); if(!btn) return;
   prefTabs.querySelectorAll('button').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-pressed','false');});
@@ -169,6 +201,7 @@ genreChips?.addEventListener('click',e=>{
   if(on){selectedGenre=btn.dataset.genre;btn.classList.add('active');btn.setAttribute('aria-pressed','true');genreStatus.textContent=selectedGenre+'系を選択中。地図検索にも反映します。';}
   else{selectedGenre='';genreStatus.textContent='味・系統を選ぶと、地図検索にも反映できます。';}
   refreshMapSearch();
+  renderRamenResults();
 });
 </script>
 </body>
