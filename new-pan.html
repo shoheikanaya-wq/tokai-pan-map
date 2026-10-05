@@ -858,7 +858,31 @@ function writeBakeryCache(prefecture,city,cityShops){
 
 
 // ===== Google Places補助API =====
+// 詳細・口コミ・写真は旧APIを維持。検索のみ統合APIへ段階移行する。
 const REVIEW_API = 'https://tokai-pan-api-873562719766.asia-northeast1.run.app';
+const LEGACY_PLACES_API = REVIEW_API;
+const SHARED_PLACES_API = 'https://tokai-pan-route-api-873562719766.asia-northeast1.run.app';
+
+async function fetchPlacesSearch(textQuery){
+  const payload=JSON.stringify({category:'bakery',textQuery});
+  const endpoints=[SHARED_PLACES_API,LEGACY_PLACES_API];
+  let lastError=null;
+  for(const endpoint of endpoints){
+    try{
+      const response=await fetch(endpoint,{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:payload
+      });
+      if(!response.ok) throw new Error('Google Places API エラー: '+response.status);
+      return response;
+    }catch(e){
+      lastError=e;
+      console.warn('[ぷらっとパン] Places検索先を切替',endpoint,e);
+    }
+  }
+  throw lastError || new Error('パン屋APIへ接続できません');
+}
 
 // ===== 店舗写真 =====
 // Cloud Run側の ?photoName=... エンドポイントから写真を取得する。
@@ -873,14 +897,7 @@ function placePhotoUrl(photoName){
 // ===== 広域ランキング高速取得 =====
 // 愛知県全域を市町村ごとに54回検索せず、広域Text Searchを1回だけ実行する。
 async function fetchWideBakeryCandidates(textQuery, allowedPrefectures) {
-  const response = await fetch(
-    'https://tokai-pan-api-873562719766.asia-northeast1.run.app',
-    {
-      method: 'POST',
-      headers: {'Content-Type':'application/json'},
-      body: JSON.stringify({textQuery})
-    }
-  );
+  const response = await fetchPlacesSearch(textQuery);
 
   if (!response.ok) {
     throw new Error('Google Places API エラー: ' + response.status);
