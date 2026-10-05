@@ -38,6 +38,60 @@ function normalizeSearchRequest(body = {}) {
   return { category, query };
 }
 
+function safePlaceId(value = '') {
+  const id = String(value).trim();
+  return /^[A-Za-z0-9_-]{10,300}$/.test(id) ? id : '';
+}
+
+app.get('/', async (req, res) => {
+  try {
+    if (!GOOGLE_MAPS_API_KEY) return res.status(503).json({ error: 'places_api_not_configured' });
+
+    if (req.query.photoName) {
+      const photoName = String(req.query.photoName);
+      if (!/^places\/[A-Za-z0-9_-]+\/photos\/[A-Za-z0-9_-]+$/.test(photoName)) {
+        return res.status(400).json({ error: 'invalid_photo_name' });
+      }
+      const maxWidthPx = Math.min(1600, Math.max(200, Number(req.query.maxWidthPx) || 900));
+      const url = `https://places.googleapis.com/v1/${photoName}/media?maxWidthPx=${maxWidthPx}&skipHttpRedirect=true&key=${encodeURIComponent(GOOGLE_MAPS_API_KEY)}`;
+      const r = await fetch(url);
+      const data = await r.json();
+      if (!r.ok || !data.photoUri) return res.status(502).json({ error: 'photo_api_failed' });
+      return res.redirect(302, data.photoUri);
+    }
+
+    const placeId = safePlaceId(req.query.placeId);
+    if (!placeId) return res.status(400).json({ error: 'invalid_place_id' });
+
+    const wantsReviews = String(req.query.reviews || '') === '1';
+    const wantsFeatures = String(req.query.features || '') === '1';
+    if (!wantsReviews && !wantsFeatures) return res.status(400).json({ error: 'unsupported_request' });
+
+    const fieldMask = wantsReviews
+      ? 'id,reviews'
+      : 'id,types,primaryType,editorialSummary';
+    const url = `https://places.googleapis.com/v1/places/${encodeURIComponent(placeId)}?languageCode=ja`;
+    const r = await fetch(url, {
+      headers: {
+        'X-Goog-Api-Key': GOOGLE_MAPS_API_KEY,
+        'X-Goog-FieldMask': fieldMask
+      }
+    });
+    const data = await r.json();
+    if (!r.ok) return res.status(502).json({ error: 'place_details_failed', status: r.status });
+
+    if (wantsReviews) return res.json({ reviews: Array.isArray(data.reviews) ? data.reviews : [] });
+
+    const features = [];
+    const summary = String(data.editorialSummary?.text || '').trim();
+    if (summary) features.push({ label: summary });
+    return res.json({ features: features.slice(0, 3) });
+  } catch (err) {
+    console.error('place helper failed', err);
+    res.status(500).json({ error: 'internal_error' });
+  }
+});
+
 // Places search shared by ぷらっとパン / ぷらっとラーメン.
 // Backward compatible: existing clients may POST { textQuery: 'パン屋 愛知県豊田市' } to '/'.
 app.post('/', async (req, res) => {
