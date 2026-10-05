@@ -1,1 +1,87 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#7a4b20"><title>ぷらっとラーメン</title><style>body{margin:0;background:#f3efe6;color:#3f372f;font-family:system-ui,-apple-system,sans-serif}main{min-height:100dvh;display:grid;place-items:center;padding:24px;text-align:center}.card{max-width:560px;background:#fff9ed;border:1px solid #d8b987;border-radius:20px;padding:28px}a{display:inline-block;margin-top:18px;padding:12px 18px;border-radius:14px;background:#ead3ad;color:#332316;font-weight:800;text-decoration:none}</style></head><body><main><div class="card"><h1>🍜 ぷらっとラーメン</h1><p>ラーメン版はここから育てていきます。</p><p>NOW PRINTING</p><a href="index.html">← ぷらっと東海へ</a></div></main></body></html>
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#9a3f2f">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>ぷらっとラーメン｜東海のラーメン探索</title>
+<style>
+*{box-sizing:border-box}
+:root{font-family:system-ui,-apple-system,"Noto Sans JP",sans-serif;color:#35251d;background:#f4eee7}
+body{margin:0;background:#f4eee7;color:#35251d}
+header{position:sticky;top:0;z-index:5;background:#f8f0e9ee;backdrop-filter:blur(8px);border-bottom:1px solid #e4cfc3;padding:12px 14px;text-align:center}
+h1{font-size:20px;margin:0}.sub{font-size:12px;color:#765f54;margin-top:3px}
+nav{display:flex;justify-content:center;gap:7px;align-items:center;margin-top:8px;font-size:12px}
+nav a{color:#7a3328;font-weight:800;text-decoration:none}
+.back{display:inline-flex;align-items:center;min-height:42px;margin-top:9px;padding:8px 14px;border:1px solid #c89f8d;border-radius:999px;background:#fff8f3;color:#6c3027;text-decoration:none;font-weight:800}
+main{max-width:760px;margin:auto;padding:12px}
+.hero{border-radius:20px;padding:20px 16px;background:linear-gradient(145deg,#8d3026,#c96539 52%,#efba68);color:#fff8f1;box-shadow:0 6px 18px #6e2f1f24}
+.hero-mark{font-size:58px;line-height:1;text-align:center}.hero h2{text-align:center;margin:8px 0 4px;font-size:26px}.hero p{text-align:center;margin:0;font-size:13px;line-height:1.55}
+.quick{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:12px 0}
+.quick a,.quick button{min-height:56px;border:1px solid #d1a68d;border-radius:14px;background:#fff8f3;color:#5b2a22;text-decoration:none;font:inherit;font-weight:900;display:flex;align-items:center;justify-content:center;text-align:center;padding:8px}
+.section{background:#fffaf6;border:1px solid #ead6cb;border-radius:18px;padding:14px;margin:12px 0}
+.section h2{font-size:17px;margin:0 0 9px}
+.tabs,.chips{display:flex;gap:7px;flex-wrap:wrap}
+.tabs button,.chips button{border:1px solid #cda791;background:#f8e6da;color:#4b2c24;border-radius:999px;padding:9px 13px;font:inherit;font-weight:800}
+.tabs .active{background:#9a3f2f;color:white;border-color:#7f3026}
+.note{font-size:12px;line-height:1.55;color:#715e55;margin-top:10px}
+.coming{padding:14px;border-radius:14px;background:#f7e9df;text-align:center;font-weight:800;color:#7d4437}
+footer{text-align:center;padding:22px 8px 28px;color:#8a7469;font-size:11px}
+@media(max-width:600px){
+ header{padding:7px 8px}h1{font-size:16px}.sub{font-size:9px}.back{min-height:40px;margin-top:6px;padding:6px 12px;font-size:12px}
+ main{padding:7px}.hero{padding:15px 10px;border-radius:15px}.hero-mark{font-size:46px}.hero h2{font-size:21px}.hero p{font-size:11px}
+ .quick{gap:5px;margin:8px 0}.quick a,.quick button{min-height:50px;font-size:11px;padding:6px}
+ .section{padding:10px;margin:8px 0;border-radius:14px}.section h2{font-size:15px}.tabs button,.chips button{font-size:11px;padding:7px 10px}
+}
+</style>
+</head>
+<body>
+<header>
+ <h1>🍜 ぷらっとラーメン</h1>
+ <div class="sub">東海の一杯を、気分とエリアから探す</div>
+ <nav aria-label="現在位置"><a href="index.html">ぷらっと東海</a><span aria-hidden="true">›</span><strong aria-current="page">ぷらっとラーメン</strong></nav>
+ <a class="back" href="index.html">← ぷらっと東海へ戻る</a>
+</header>
+<main>
+ <section class="hero" aria-label="ぷらっとラーメン ホーム">
+  <div class="hero-mark">🍜</div>
+  <h2>今日は、どの一杯にする？</h2>
+  <p>醤油・味噌・豚骨・塩・台湾・まぜそば。<br>エリアと気分から、東海のラーメンをぷらっと探索。</p>
+ </section>
+
+ <div class="quick" aria-label="ぷらっとラーメン クイックメニュー">
+  <a href="#area">📍 エリアから探す</a>
+  <a href="#genre">🍥 味から探す</a>
+  <a href="#top10">👑 TOP10</a>
+ </div>
+
+ <section class="section" id="area">
+  <h2>📍 エリアから探す</h2>
+  <div class="tabs">
+   <button type="button" class="active">愛知県</button>
+   <button type="button">岐阜県</button>
+   <button type="button">三重県</button>
+  </div>
+  <p class="note">パン版と同じく、県 → 地域 → 市町村へ掘り下げられる構成にしていきます。</p>
+ </section>
+
+ <section class="section" id="genre">
+  <h2>🍥 味・系統から探す</h2>
+  <div class="chips">
+   <button type="button">醤油</button><button type="button">味噌</button><button type="button">塩</button>
+   <button type="button">豚骨</button><button type="button">台湾</button><button type="button">まぜそば</button>
+  </div>
+ </section>
+
+ <section class="section" id="top10">
+  <h2>👑 ラーメンTOP10</h2>
+  <div class="coming">ランキング機能は次の段階で接続します。</div>
+  <p class="note">店舗名・評価・口コミ数・住所・営業時間・定休日・地図・Web・複数口コミを、パン版と同じ考え方で統合予定です。</p>
+ </section>
+</main>
+<footer>ぷらっと東海 ／ ぷらっとラーメン β</footer>
+</body>
+</html>
