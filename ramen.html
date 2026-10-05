@@ -28,7 +28,7 @@ main{max-width:760px;margin:auto;padding:12px}
 .tabs button,.chips button{border:1px solid #cda791;background:#f8e6da;color:#4b2c24;border-radius:999px;padding:9px 13px;font:inherit;font-weight:800}
 .tabs .active,.chips .active{background:#9a3f2f;color:white;border-color:#7f3026}
 .note{font-size:12px;line-height:1.55;color:#715e55;margin-top:10px}
-.coming{padding:14px;border-radius:14px;background:#f7e9df;text-align:center;font-weight:800;color:#7d4437}
+.coming{padding:14px;border-radius:14px;background:#f7e9df;text-align:center;font-weight:800;color:#7d4437}.search-action{display:flex;gap:8px;align-items:center;justify-content:center;margin-top:10px}.search-action a{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:10px 16px;border-radius:13px;background:#9a3f2f;color:#fff8f1;text-decoration:none;font-weight:900}.search-action a[aria-disabled="true"]{opacity:.45;pointer-events:none}
 footer{text-align:center;padding:22px 8px 28px;color:#8a7469;font-size:11px}
 @media(max-width:600px){
  header{padding:7px 8px}h1{font-size:16px}.sub{font-size:9px}.back{min-height:40px;margin-top:6px;padding:6px 12px;font-size:12px}
@@ -68,7 +68,7 @@ footer{text-align:center;padding:22px 8px 28px;color:#8a7469;font-size:11px}
   <div class="coming" id="areaStatus" aria-live="polite">愛知県を選択中。</div>
   <div id="regionList" class="region-list" aria-label="地域選択"></div>
   <div id="cityList" class="city-list" aria-label="市町村選択"></div><div class="mobile-area-picker"><div><label for="regionSelect">地域</label><select id="regionSelect" aria-label="地域を選択"></select></div><div><label for="citySelect">市町村</label><select id="citySelect" aria-label="市町村を選択"></select></div></div>
-  <p class="note">県 → 地域 → 市町村の順で絞り込みます。選択した市町村は、次の段階で店舗一覧・TOP10へ接続します。</p>
+  <div class="search-action"><a id="mapSearch" href="#" target="_blank" rel="noopener" aria-disabled="true">🗺️ この条件でラーメン店を探す</a></div><p class="note">県 → 地域 → 市町村の順で絞り込みます。店舗DB接続前でも、選択条件で地図検索できます。</p>
  </section>
 
  <section class="section" id="genre">
@@ -108,13 +108,23 @@ const ramenAreas={
  '伊勢志摩・東紀州':['伊勢市','鳥羽市','志摩市','尾鷲市','熊野市','玉城町','度会町','大紀町','南伊勢町','紀北町','御浜町','紀宝町']
 }
 };
-let selectedPref='愛知県',selectedRegion='',selectedCity='';
+let selectedPref='愛知県',selectedRegion='',selectedCity='',selectedGenre='';
 const prefTabs=document.getElementById('prefTabs');
 const areaStatus=document.getElementById('areaStatus');
 const regionList=document.getElementById('regionList');
 const cityList=document.getElementById('cityList');
 const regionSelect=document.getElementById('regionSelect');
 const citySelect=document.getElementById('citySelect');
+const mapSearch=document.getElementById('mapSearch');
+function refreshMapSearch(){
+  if(!mapSearch) return;
+  const terms=['ラーメン',selectedPref,selectedCity,selectedGenre].filter(Boolean).join(' ');
+  if(!selectedCity){
+    mapSearch.href='#'; mapSearch.setAttribute('aria-disabled','true'); return;
+  }
+  mapSearch.href='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(terms);
+  mapSearch.setAttribute('aria-disabled','false');
+}
 function renderRegions(){
  selectedRegion=''; selectedCity='';
  regionList.innerHTML='';
@@ -139,9 +149,10 @@ function renderCities(){
   const o=document.createElement('option');o.value=city;o.textContent=city;citySelect.appendChild(o);
  });
  areaStatus.textContent=selectedPref+' / '+selectedRegion+' を選択中。市町村を選べます。';
+ refreshMapSearch();
 }
 regionSelect?.addEventListener('change',()=>{selectedRegion=regionSelect.value;selectedCity='';renderCities();});
-citySelect?.addEventListener('change',()=>{selectedCity=citySelect.value;if(!selectedCity)return;areaStatus.textContent=selectedPref+' / '+selectedRegion+' / '+selectedCity+' を選択中。';});
+citySelect?.addEventListener('change',()=>{selectedCity=citySelect.value;if(!selectedCity){refreshMapSearch();return;}areaStatus.textContent=selectedPref+' / '+selectedRegion+' / '+selectedCity+' を選択中。';refreshMapSearch();});
 prefTabs?.addEventListener('click',e=>{
   const btn=e.target.closest('button[data-pref]'); if(!btn) return;
   prefTabs.querySelectorAll('button').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-pressed','false');});
@@ -155,8 +166,9 @@ genreChips?.addEventListener('click',e=>{
   const btn=e.target.closest('button[data-genre]'); if(!btn) return;
   const on=!btn.classList.contains('active');
   genreChips.querySelectorAll('button').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-pressed','false');});
-  if(on){btn.classList.add('active');btn.setAttribute('aria-pressed','true');genreStatus.textContent=btn.dataset.genre+'系を選択中。店舗データ接続後、この条件で絞り込みます。';}
-  else{genreStatus.textContent='味・系統を選ぶと、今後その条件の店舗一覧へつなぎます。';}
+  if(on){selectedGenre=btn.dataset.genre;btn.classList.add('active');btn.setAttribute('aria-pressed','true');genreStatus.textContent=selectedGenre+'系を選択中。地図検索にも反映します。';}
+  else{selectedGenre='';genreStatus.textContent='味・系統を選ぶと、地図検索にも反映できます。';}
+  refreshMapSearch();
 });
 </script>
 </body>
