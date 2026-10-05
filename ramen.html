@@ -23,7 +23,7 @@ main{max-width:760px;margin:auto;padding:12px}
 .quick{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:12px 0}
 .quick a,.quick button{min-height:56px;border:1px solid #d1a68d;border-radius:14px;background:#fff8f3;color:#5b2a22;text-decoration:none;font:inherit;font-weight:900;display:flex;align-items:center;justify-content:center;text-align:center;padding:8px}
 .section{background:#fffaf6;border:1px solid #ead6cb;border-radius:18px;padding:14px;margin:12px 0}
-.section h2{font-size:17px;margin:0 0 9px}
+.section h2{font-size:17px;margin:0 0 9px}.region-list,.city-list{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}.region-list button,.city-list button{border:1px solid #cda791;background:#fff7f0;color:#4b2c24;border-radius:12px;padding:8px 11px;font:inherit;font-weight:800}.region-list button.active,.city-list button.active{background:#7f3026;color:#fff;border-color:#68251e}
 .tabs,.chips{display:flex;gap:7px;flex-wrap:wrap}
 .tabs button,.chips button{border:1px solid #cda791;background:#f8e6da;color:#4b2c24;border-radius:999px;padding:9px 13px;font:inherit;font-weight:800}
 .tabs .active,.chips .active{background:#9a3f2f;color:white;border-color:#7f3026}
@@ -65,8 +65,10 @@ footer{text-align:center;padding:22px 8px 28px;color:#8a7469;font-size:11px}
    <button type="button" data-pref="岐阜県" aria-pressed="false">岐阜県</button>
    <button type="button" data-pref="三重県" aria-pressed="false">三重県</button>
   </div>
-  <div class="coming" id="areaStatus" aria-live="polite">愛知県を選択中。市町村一覧は次の段階で接続します。</div>
-  <p class="note">パン版と同じく、県 → 地域 → 市町村へ掘り下げられる構成にしていきます。</p>
+  <div class="coming" id="areaStatus" aria-live="polite">愛知県を選択中。</div>
+  <div id="regionList" class="region-list" aria-label="地域選択"></div>
+  <div id="cityList" class="city-list" aria-label="市町村選択"></div>
+  <p class="note">県 → 地域 → 市町村の順で絞り込みます。選択した市町村は、次の段階で店舗一覧・TOP10へ接続します。</p>
  </section>
 
  <section class="section" id="genre">
@@ -86,14 +88,59 @@ footer{text-align:center;padding:22px 8px 28px;color:#8a7469;font-size:11px}
 </main>
 <footer>ぷらっと東海 ／ ぷらっとラーメン β</footer>
 <script>
+const ramenAreas={
+'愛知県':{
+ '西三河':['豊田市','岡崎市','安城市','刈谷市','西尾市','碧南市','知立市','高浜市','みよし市','幸田町'],
+ '東三河':['豊橋市','豊川市','蒲郡市','新城市','田原市','設楽町','東栄町','豊根村'],
+ '名古屋':['名古屋市'],
+ '尾張':['一宮市','瀬戸市','春日井市','犬山市','江南市','小牧市','稲沢市','尾張旭市','岩倉市','豊明市','日進市','清須市','北名古屋市','長久手市','東郷町','豊山町','大口町','扶桑町','あま市','大治町','蟹江町','飛島村'],
+ '知多・海部':['津島市','愛西市','弥富市','半田市','常滑市','東海市','大府市','知多市','阿久比町','東浦町','南知多町','美浜町','武豊町']
+},
+'岐阜県':{
+ '岐阜・西濃':['岐阜市','大垣市','各務原市','羽島市','瑞穂市','岐南町','笠松町','養老町','垂井町','関ケ原町','神戸町','輪之内町','安八町','揖斐川町','大野町','池田町','北方町'],
+ '東濃・中濃':['多治見市','可児市','関市','美濃市','郡上市','美濃加茂市','土岐市','瑞浪市','恵那市','中津川市','坂祝町','富加町','川辺町','七宗町','八百津町','白川町','東白川村','御嵩町'],
+ '飛騨':['下呂市','高山市','飛騨市','白川村'],
+ 'その他':['山県市','本巣市','海津市']
+},
+'三重県':{
+ '北勢':['四日市市','桑名市','鈴鹿市','いなべ市','木曽岬町','東員町','菰野町','朝日町','川越町'],
+ '中勢・伊賀':['津市','松阪市','亀山市','伊賀市','名張市','多気町','明和町','大台町'],
+ '伊勢志摩・東紀州':['伊勢市','鳥羽市','志摩市','尾鷲市','熊野市','玉城町','度会町','大紀町','南伊勢町','紀北町','御浜町','紀宝町']
+}
+};
+let selectedPref='愛知県',selectedRegion='',selectedCity='';
 const prefTabs=document.getElementById('prefTabs');
 const areaStatus=document.getElementById('areaStatus');
+const regionList=document.getElementById('regionList');
+const cityList=document.getElementById('cityList');
+function renderRegions(){
+ selectedRegion=''; selectedCity='';
+ regionList.innerHTML='';
+ cityList.innerHTML='';
+ Object.keys(ramenAreas[selectedPref]||{}).forEach((region,i)=>{
+  const b=document.createElement('button'); b.type='button'; b.textContent=region;
+  b.addEventListener('click',()=>{selectedRegion=region;selectedCity='';regionList.querySelectorAll('button').forEach(x=>x.classList.remove('active'));b.classList.add('active');renderCities();});
+  regionList.appendChild(b);
+  if(i===0){selectedRegion=region;b.classList.add('active');}
+ });
+ renderCities();
+}
+function renderCities(){
+ cityList.innerHTML='';
+ (ramenAreas[selectedPref]?.[selectedRegion]||[]).forEach(city=>{
+  const b=document.createElement('button');b.type='button';b.textContent=city;
+  b.addEventListener('click',()=>{selectedCity=city;cityList.querySelectorAll('button').forEach(x=>x.classList.remove('active'));b.classList.add('active');areaStatus.textContent=selectedPref+' / '+selectedRegion+' / '+selectedCity+' を選択中。';});
+  cityList.appendChild(b);
+ });
+ areaStatus.textContent=selectedPref+' / '+selectedRegion+' を選択中。市町村を選べます。';
+}
 prefTabs?.addEventListener('click',e=>{
   const btn=e.target.closest('button[data-pref]'); if(!btn) return;
   prefTabs.querySelectorAll('button').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-pressed','false');});
   btn.classList.add('active'); btn.setAttribute('aria-pressed','true');
-  areaStatus.textContent=btn.dataset.pref+'を選択中。市町村一覧は次の段階で接続します。';
+  selectedPref=btn.dataset.pref; renderRegions();
 });
+renderRegions();
 const genreChips=document.getElementById('genreChips');
 const genreStatus=document.getElementById('genreStatus');
 genreChips?.addEventListener('click',e=>{
