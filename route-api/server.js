@@ -22,6 +22,75 @@ app.get('/health', (_req, res) => {
   res.json({ ok: true, service: 'tokai-pan-route-api' });
 });
 
+const PLACES_TEXT_SEARCH_URL = 'https://places.googleapis.com/v1/places:searchText';
+const ALLOWED_CATEGORIES = new Set(['bakery', 'ramen']);
+
+function normalizeSearchRequest(body = {}) {
+  const category = String(body.category || 'bakery').toLowerCase();
+  if (!ALLOWED_CATEGORIES.has(category)) return { error: 'unsupported_category' };
+
+  const defaultWord = category === 'ramen' ? 'ラーメン' : 'パン屋';
+  const textQuery = String(body.textQuery || '').trim();
+  const area = String(body.area || '').trim();
+  const query = textQuery || (area ? `${defaultWord} ${area}` : '');
+
+  if (!query || query.length > 200) return { error: 'invalid_text_query' };
+  return { category, query };
+}
+
+// Places search shared by ぷらっとパン / ぷらっとラーメン.
+// Backward compatible: existing clients may POST { textQuery: 'パン屋 愛知県豊田市' } to '/'.
+app.post('/', async (req, res) => {
+  try {
+    if (!GOOGLE_MAPS_API_KEY) {
+      return res.status(503).json({ error: 'places_api_not_configured' });
+    }
+
+    const search = normalizeSearchRequest(req.body);
+    if (search.error) return res.status(400).json({ error: search.error });
+
+    const r = await fetch(PLACES_TEXT_SEARCH_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Goog-Api-Key': GOOGLE_MAPS_API_KEY,
+        'X-Goog-FieldMask': [
+          'places.id',
+          'places.displayName',
+          'places.formattedAddress',
+          'places.location',
+          'places.rating',
+          'places.userRatingCount',
+          'places.currentOpeningHours',
+          'places.regularOpeningHours',
+          'places.nationalPhoneNumber',
+          'places.websiteUri',
+          'places.googleMapsUri',
+          'places.photos'
+        ].join(',')
+      },
+      body: JSON.stringify({
+        textQuery: search.query,
+        languageCode: 'ja',
+        regionCode: 'JP',
+        maxResultCount: 20
+      })
+    });
+
+    const text = await r.text();
+    if (!r.ok) {
+      console.error('Places API error', r.status, text.slice(0, 1000));
+      return res.status(502).json({ error: 'places_api_failed', status: r.status });
+    }
+
+    const data = JSON.parse(text);
+    res.json({ places: data.places || [], category: search.category });
+  } catch (err) {
+    console.error('places search failed', err);
+    res.status(500).json({ error: 'internal_error' });
+  }
+});
+
 function cleanFootprintText(value, max = 120) {
   return String(value || '').replace(/[\\u0000-\\u001f]/g, '').slice(0, max);
 }
