@@ -26,7 +26,7 @@ main{max-width:760px;margin:auto;padding:12px}
 .section h2{font-size:17px;margin:0 0 9px}
 .tabs,.chips{display:flex;gap:7px;flex-wrap:wrap}
 .tabs button,.chips button{border:1px solid #cda791;background:#f8e6da;color:#4b2c24;border-radius:999px;padding:9px 13px;font:inherit;font-weight:800}
-.tabs .active{background:#9a3f2f;color:white;border-color:#7f3026}
+.tabs .active,.chips .active{background:#9a3f2f;color:white;border-color:#7f3026}
 .note{font-size:12px;line-height:1.55;color:#715e55;margin-top:10px}
 .coming{padding:14px;border-radius:14px;background:#f7e9df;text-align:center;font-weight:800;color:#7d4437}
 footer{text-align:center;padding:22px 8px 28px;color:#8a7469;font-size:11px}
@@ -60,20 +60,22 @@ footer{text-align:center;padding:22px 8px 28px;color:#8a7469;font-size:11px}
 
  <section class="section" id="area">
   <h2>📍 エリアから探す</h2>
-  <div class="tabs">
-   <button type="button" class="active">愛知県</button>
-   <button type="button">岐阜県</button>
-   <button type="button">三重県</button>
+  <div class="tabs" id="prefTabs">
+   <button type="button" class="active" data-pref="愛知県" aria-pressed="true">愛知県</button>
+   <button type="button" data-pref="岐阜県" aria-pressed="false">岐阜県</button>
+   <button type="button" data-pref="三重県" aria-pressed="false">三重県</button>
   </div>
+  <div class="coming" id="areaStatus" aria-live="polite">愛知県を選択中。市町村一覧は次の段階で接続します。</div>
   <p class="note">パン版と同じく、県 → 地域 → 市町村へ掘り下げられる構成にしていきます。</p>
  </section>
 
  <section class="section" id="genre">
   <h2>🍥 味・系統から探す</h2>
-  <div class="chips">
-   <button type="button">醤油</button><button type="button">味噌</button><button type="button">塩</button>
-   <button type="button">豚骨</button><button type="button">台湾</button><button type="button">まぜそば</button>
+  <div class="chips" id="genreChips">
+   <button type="button" data-genre="醤油" aria-pressed="false">醤油</button><button type="button" data-genre="味噌" aria-pressed="false">味噌</button><button type="button" data-genre="塩" aria-pressed="false">塩</button>
+   <button type="button" data-genre="豚骨" aria-pressed="false">豚骨</button><button type="button" data-genre="台湾" aria-pressed="false">台湾</button><button type="button" data-genre="まぜそば" aria-pressed="false">まぜそば</button>
   </div>
+  <div class="coming" id="genreStatus" aria-live="polite">味・系統を選ぶと、今後その条件の店舗一覧へつなぎます。</div>
  </section>
 
  <section class="section" id="top10">
@@ -83,5 +85,24 @@ footer{text-align:center;padding:22px 8px 28px;color:#8a7469;font-size:11px}
  </section>
 </main>
 <footer>ぷらっと東海 ／ ぷらっとラーメン β</footer>
+<script>
+const prefTabs=document.getElementById('prefTabs');
+const areaStatus=document.getElementById('areaStatus');
+prefTabs?.addEventListener('click',e=>{
+  const btn=e.target.closest('button[data-pref]'); if(!btn) return;
+  prefTabs.querySelectorAll('button').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-pressed','false');});
+  btn.classList.add('active'); btn.setAttribute('aria-pressed','true');
+  areaStatus.textContent=btn.dataset.pref+'を選択中。市町村一覧は次の段階で接続します。';
+});
+const genreChips=document.getElementById('genreChips');
+const genreStatus=document.getElementById('genreStatus');
+genreChips?.addEventListener('click',e=>{
+  const btn=e.target.closest('button[data-genre]'); if(!btn) return;
+  const on=!btn.classList.contains('active');
+  genreChips.querySelectorAll('button').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-pressed','false');});
+  if(on){btn.classList.add('active');btn.setAttribute('aria-pressed','true');genreStatus.textContent=btn.dataset.genre+'系を選択中。店舗データ接続後、この条件で絞り込みます。';}
+  else{genreStatus.textContent='味・系統を選ぶと、今後その条件の店舗一覧へつなぎます。';}
+});
+</script>
 </body>
 </html>
