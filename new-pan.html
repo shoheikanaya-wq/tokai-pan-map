@@ -645,11 +645,12 @@ button,.back,.detail-action,.review-trigger{
 
 .new-pan-nav{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:9px;font-size:13px}.new-pan-nav a{color:inherit;font-weight:800;text-decoration:none}.new-pan-back{display:inline-flex;align-items:center;min-height:42px;margin-top:10px;padding:8px 15px;border-radius:999px;background:#fff;color:#6b431f;text-decoration:none;font-weight:800;border:1px solid #d8c2a8;box-shadow:0 2px 7px #00000012}.new-pan-back:focus-visible,.new-pan-nav a:focus-visible{outline:3px solid #7a4b20;outline-offset:3px}@media(max-width:600px){.new-pan-nav{font-size:12px}.new-pan-back{min-height:44px;padding:9px 16px}}
 .new-pan-intro{margin:10px 0 12px;padding:12px 14px;border:1px solid #ead8bf;border-radius:14px;background:#fffaf1}.new-pan-intro strong{display:block;font-size:16px;margin-bottom:3px}.new-pan-intro span{font-size:12px;line-height:1.45;color:#6d5b49}.new-pan-section-title{margin:16px 0 8px;font-size:17px}.new-pan-version{font-size:11px;opacity:.72;text-align:right;margin:3px 2px 8px}@media(max-width:600px){.new-pan-intro{margin:8px 0 10px;padding:10px 11px}.new-pan-intro strong{font-size:15px}.new-pan-section-title{margin:13px 0 7px;font-size:16px}}
+.new-pan-quick{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:10px 0 14px}.new-pan-quick a,.new-pan-quick button{min-width:0;min-height:54px;border:1px solid #e1c59e;border-radius:13px;background:#fff9ef;color:#4b331f;text-decoration:none;font:inherit;font-weight:800;display:flex;align-items:center;justify-content:center;text-align:center;padding:8px;cursor:pointer}.new-pan-quick a:focus-visible,.new-pan-quick button:focus-visible{outline:3px solid #7a4b20;outline-offset:2px}@media(max-width:600px){.new-pan-quick{gap:6px}.new-pan-quick a,.new-pan-quick button{font-size:12px;min-height:50px;padding:6px}}
 </style></head>
 <body><header><h1 id="appTitle" style="cursor:pointer;">🥐 ぷらっとパン</h1><div class="sub">市町村から、おいしいパン屋を探す</div><nav class="new-pan-nav" aria-label="現在位置"><a href="index.html">ぷらっと東海</a><span aria-hidden="true">›</span><strong aria-current="page">ぷらっとパン</strong></nav><a class="new-pan-back" href="index.html" aria-label="ぷらっと東海のホームへ戻る">← ぷらっと東海へ戻る</a></header><main>
 <section id="home">
  
-  <img src="tokai-pan-home.png" class="home-visual" alt="ぷらっとパン ホーム"><div class="new-pan-intro"><strong>🥐 東海のパン屋を、ぷらっと探そう。</strong><span>エリアから探す・TOP10を見る・パンラッシュで巡る。気分に合わせてパン屋探索を楽しめます。</span></div>
+  <img src="tokai-pan-home.png" class="home-visual" alt="ぷらっとパン ホーム"><div class="new-pan-intro"><strong>🥐 東海のパン屋を、ぷらっと探そう。</strong><span>エリアから探す・TOP10を見る・パンラッシュで巡る。気分に合わせてパン屋探索を楽しめます。</span></div><div class="new-pan-quick" aria-label="ぷらっとパン クイックメニュー"><a href="#aichiPanel">📍 エリアから探す</a><button type="button" id="quickTop10">👑 TOP10を見る</button><a href="panrush.html?v=20260908-start">⚡ パンラッシュ</a></div>
   <div class="notice">⚡ パンラッシュは「おまかせで始める」または条件指定から直感的に開始できます。TOP10で実店舗写真が未取得の店は、複数のAI生成外観イメージを店舗ごとに分け、明記して表示します。</div><div class="rush-entry-grid" id="rushEntryGrid">
     <a class="rush-entry rush-main" href="panrush.html?v=20260908-start">
       <span class="rush-icon">⚡</span><span><strong>パンラッシュ</strong><small>愛知県内・24時間耐久</small></span>
@@ -824,6 +825,7 @@ button,.back,.detail-action,.review-trigger{
   </div>
 </footer>
 </main><script>
+document.addEventListener('DOMContentLoaded',()=>{const q=document.getElementById('quickTop10');if(q)q.addEventListener('click',()=>{const t=document.getElementById('toyota');if(t){t.scrollIntoView({behavior:'smooth',block:'center'});t.focus();}});});
 
 let shops = [];
 let currentCity = '';
