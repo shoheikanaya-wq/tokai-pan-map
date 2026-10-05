@@ -23,7 +23,7 @@ main{max-width:760px;margin:auto;padding:12px}
 .quick{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:12px 0}
 .quick a,.quick button{min-height:56px;border:1px solid #d1a68d;border-radius:14px;background:#fff8f3;color:#5b2a22;text-decoration:none;font:inherit;font-weight:900;display:flex;align-items:center;justify-content:center;text-align:center;padding:8px}
 .section{background:#fffaf6;border:1px solid #ead6cb;border-radius:18px;padding:14px;margin:12px 0}
-.section h2{font-size:17px;margin:0 0 9px}.region-list,.city-list{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}.region-list button,.city-list button{border:1px solid #cda791;background:#fff7f0;color:#4b2c24;border-radius:12px;padding:8px 11px;font:inherit;font-weight:800}.region-list button.active,.city-list button.active{background:#7f3026;color:#fff;border-color:#68251e}
+.section h2{font-size:17px;margin:0 0 9px}.region-list,.city-list{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}.region-list button,.city-list button{border:1px solid #cda791;background:#fff7f0;color:#4b2c24;border-radius:12px;padding:8px 11px;font:inherit;font-weight:800}.region-list button.active,.city-list button.active{background:#7f3026;color:#fff;border-color:#68251e}.city-select-wrap{display:none;margin-top:9px}.city-select{width:100%;min-height:44px;border:1px solid #cda791;border-radius:12px;background:#fff7f0;color:#4b2c24;font:inherit;font-weight:800;padding:8px 10px}
 .tabs,.chips{display:flex;gap:7px;flex-wrap:wrap}
 .tabs button,.chips button{border:1px solid #cda791;background:#f8e6da;color:#4b2c24;border-radius:999px;padding:9px 13px;font:inherit;font-weight:800}
 .tabs .active,.chips .active{background:#9a3f2f;color:white;border-color:#7f3026}
@@ -34,7 +34,7 @@ footer{text-align:center;padding:22px 8px 28px;color:#8a7469;font-size:11px}
  header{padding:7px 8px}h1{font-size:16px}.sub{font-size:9px}.back{min-height:40px;margin-top:6px;padding:6px 12px;font-size:12px}
  main{padding:7px}.hero{padding:15px 10px;border-radius:15px}.hero-mark{font-size:46px}.hero h2{font-size:21px}.hero p{font-size:11px}
  .quick{gap:5px;margin:8px 0}.quick a,.quick button{min-height:50px;font-size:11px;padding:6px}
- .section{padding:10px;margin:8px 0;border-radius:14px}.section h2{font-size:15px}.tabs button,.chips button{font-size:11px;padding:7px 10px}
+ .section{padding:10px;margin:8px 0;border-radius:14px}.section h2{font-size:15px}.tabs button,.chips button{font-size:11px;padding:7px 10px}.region-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}.region-list button{font-size:10px;padding:7px 5px;min-height:34px}.city-list{display:none}.city-select-wrap{display:block}.city-select{min-height:40px;font-size:12px;padding:7px 9px}
 }
 </style>
 </head>
@@ -67,7 +67,7 @@ footer{text-align:center;padding:22px 8px 28px;color:#8a7469;font-size:11px}
   </div>
   <div class="coming" id="areaStatus" aria-live="polite">愛知県を選択中。</div>
   <div id="regionList" class="region-list" aria-label="地域選択"></div>
-  <div id="cityList" class="city-list" aria-label="市町村選択"></div>
+  <div id="cityList" class="city-list" aria-label="市町村選択"></div><div class="city-select-wrap"><label for="citySelect" class="note">市町村</label><select id="citySelect" class="city-select" aria-label="市町村を選択"></select></div>
   <p class="note">県 → 地域 → 市町村の順で絞り込みます。選択した市町村は、次の段階で店舗一覧・TOP10へ接続します。</p>
  </section>
 
@@ -113,6 +113,7 @@ const prefTabs=document.getElementById('prefTabs');
 const areaStatus=document.getElementById('areaStatus');
 const regionList=document.getElementById('regionList');
 const cityList=document.getElementById('cityList');
+const citySelect=document.getElementById('citySelect');
 function renderRegions(){
  selectedRegion=''; selectedCity='';
  regionList.innerHTML='';
@@ -127,13 +128,16 @@ function renderRegions(){
 }
 function renderCities(){
  cityList.innerHTML='';
+ citySelect.innerHTML='<option value="">市町村を選択</option>';
  (ramenAreas[selectedPref]?.[selectedRegion]||[]).forEach(city=>{
   const b=document.createElement('button');b.type='button';b.textContent=city;
   b.addEventListener('click',()=>{selectedCity=city;cityList.querySelectorAll('button').forEach(x=>x.classList.remove('active'));b.classList.add('active');areaStatus.textContent=selectedPref+' / '+selectedRegion+' / '+selectedCity+' を選択中。';});
   cityList.appendChild(b);
+  const o=document.createElement('option');o.value=city;o.textContent=city;citySelect.appendChild(o);
  });
  areaStatus.textContent=selectedPref+' / '+selectedRegion+' を選択中。市町村を選べます。';
 }
+citySelect?.addEventListener('change',()=>{selectedCity=citySelect.value;if(!selectedCity)return;areaStatus.textContent=selectedPref+' / '+selectedRegion+' / '+selectedCity+' を選択中。';});
 prefTabs?.addEventListener('click',e=>{
   const btn=e.target.closest('button[data-pref]'); if(!btn) return;
   prefTabs.querySelectorAll('button').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-pressed','false');});
