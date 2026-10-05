@@ -825,7 +825,7 @@ button,.back,.detail-action,.review-trigger{
   </div>
 </footer>
 </main><script>
-document.addEventListener('DOMContentLoaded',()=>{const q=document.getElementById('quickTop10');if(q)q.addEventListener('click',()=>{const t=document.getElementById('toyota');if(t){t.scrollIntoView({behavior:'smooth',block:'center'});t.focus();}});});
+document.addEventListener('DOMContentLoaded',()=>{const q=document.getElementById('quickTop10');if(q)q.addEventListener('click',()=>{const pref=document.querySelector('.tabs button.active')?.textContent?.trim()||'愛知県';const target=pref==='岐阜県'?document.getElementById('gifuPanel'):pref==='三重県'?document.getElementById('miePanel'):document.getElementById('aichiPanel');if(target)target.scrollIntoView({behavior:'smooth',block:'start'});const preferred=target?.querySelector('button.active')||target?.querySelector('.cities button')||target?.querySelector('button');if(preferred){setTimeout(()=>preferred.focus(),250);}});});
 
 let shops = [];
 let currentCity = '';
