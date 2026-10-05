@@ -24,6 +24,14 @@ button{border:0;border-radius:13px;background:#8b2f22;color:#fff;font-weight:800
 button:disabled{opacity:.55}
 .chips{display:flex;gap:7px;flex-wrap:wrap;margin:8px 0 14px}
 .chips button{background:#fff7ed;color:#633326;border:1px solid #d9b69b;padding:8px 11px}
+.area-picker{margin:14px 0;padding:13px;background:#fffaf3;border:1px solid #ead9c7;border-radius:16px}
+.area-picker h2{font-size:16px;margin:0 0 9px}
+.pref-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:8px}
+.pref-tabs button{background:#fff7ed;color:#633326;border:1px solid #d9b69b;padding:9px}
+.pref-tabs button.active{background:#8b2f22;color:#fff;border-color:#8b2f22}
+.select-row{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+select{width:100%;min-width:0;min-height:44px;border:1px solid #c99e7e;border-radius:12px;background:#fff;padding:9px;font:inherit;color:#3b2c25}
+@media(max-width:430px){.select-row{grid-template-columns:1fr}}
 .note{font-size:12px;color:#78685e;line-height:1.5}
 .card{background:#fffaf3;border:1px solid #ead9c7;border-radius:16px;padding:13px;margin:9px 0}
 .rank{display:flex;gap:10px;align-items:flex-start}
@@ -49,8 +57,20 @@ footer{text-align:center;padding:26px 10px 40px;font-size:11px;color:#85746a}
 <main>
   <section id="home">
     <div class="hero"><strong>🍜 まずは街の名前から。</strong><span class="note">愛知・岐阜・三重の市町村を入力すると、評価と口コミ数を加味して最大10店を表示します。</span></div>
+    <div class="area-picker">
+      <h2>📍 エリアから探す</h2>
+      <div class="pref-tabs">
+        <button type="button" class="active" data-pref="愛知県">愛知県</button>
+        <button type="button" data-pref="岐阜県">岐阜県</button>
+        <button type="button" data-pref="三重県">三重県</button>
+      </div>
+      <div class="select-row">
+        <select id="regionSelect" aria-label="地域"></select>
+        <select id="citySelect" aria-label="市町村"></select>
+      </div>
+    </div>
     <div class="search">
-      <input id="areaInput" inputmode="search" autocomplete="address-level2" placeholder="例：豊田市、岡崎市、岐阜市、四日市市" aria-label="市町村名">
+      <input id="areaInput" inputmode="search" autocomplete="address-level2" placeholder="市町村名を直接入力しても検索できます" aria-label="市町村名">
       <button id="searchBtn" type="button">ラーメンを探す</button>
     </div>
     <div class="chips" aria-label="すぐ探す">
@@ -60,7 +80,7 @@ footer{text-align:center;padding:26px 10px 40px;font-size:11px;color:#85746a}
       <button type="button" data-area="岐阜市">岐阜市</button>
       <button type="button" data-area="四日市市">四日市市</button>
     </div>
-    <div class="note">現在はMVP版。今後、パン版と同様に地域選択、TOP10、詳細、ラーメンラッシュへ拡張します。</div>
+    <div class="note">県→地域→市町村から選ぶか、市町村名を直接入力できます。次段階で店舗詳細とラーメンラッシュへ拡張します。</div>
   </section>
   <section id="results" class="hidden">
     <button id="backBtn" type="button">← 検索へ戻る</button>
@@ -77,6 +97,48 @@ const home=document.getElementById('home');
 const results=document.getElementById('results');
 const list=document.getElementById('list');
 const title=document.getElementById('resultTitle');
+const regionSelect=document.getElementById('regionSelect');
+const citySelect=document.getElementById('citySelect');
+let currentPref='愛知県';
+const AREAS={
+ '愛知県':{
+  '西三河':['豊田市','岡崎市','安城市','刈谷市','西尾市','碧南市','知立市','高浜市','みよし市','幸田町'],
+  '東三河':['豊橋市','豊川市','蒲郡市','新城市','田原市'],
+  '名古屋':['名古屋市'],
+  '尾張':['一宮市','瀬戸市','春日井市','犬山市','江南市','小牧市','稲沢市','尾張旭市','岩倉市','豊明市','日進市','長久手市'],
+  '知多':['半田市','常滑市','東海市','大府市','知多市']
+ },
+ '岐阜県':{
+  '岐阜・西濃':['岐阜市','大垣市','各務原市','羽島市','瑞穂市','本巣市'],
+  '中濃':['関市','美濃市','美濃加茂市','可児市','郡上市'],
+  '東濃':['多治見市','土岐市','瑞浪市','恵那市','中津川市'],
+  '飛騨':['高山市','飛騨市','下呂市']
+ },
+ '三重県':{
+  '北勢':['四日市市','桑名市','鈴鹿市','亀山市','いなべ市'],
+  '中勢':['津市','松阪市'],
+  '伊賀':['伊賀市','名張市'],
+  '伊勢志摩':['伊勢市','鳥羽市','志摩市'],
+  '東紀州':['尾鷲市','熊野市']
+ }
+};
+function refreshRegions(){
+ const regions=Object.keys(AREAS[currentPref]||{});
+ regionSelect.innerHTML=regions.map(v=>'<option value="'+esc(v)+'">'+esc(v)+'</option>').join('');
+ refreshCities();
+}
+function refreshCities(){
+ const cities=AREAS[currentPref]?.[regionSelect.value]||[];
+ citySelect.innerHTML='<option value="">市町村を選択</option>'+cities.map(v=>'<option value="'+esc(v)+'">'+esc(v)+'</option>').join('');
+}
+document.querySelectorAll('[data-pref]').forEach(b=>b.addEventListener('click',()=>{
+ currentPref=b.dataset.pref;
+ document.querySelectorAll('[data-pref]').forEach(x=>x.classList.toggle('active',x===b));
+ refreshRegions();
+}));
+regionSelect.addEventListener('change',refreshCities);
+citySelect.addEventListener('change',()=>{if(citySelect.value)runSearch(citySelect.value,currentPref);});
+refreshRegions();
 
 function esc(v=''){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 function score(p){
@@ -90,7 +152,7 @@ function validRamen(p){
   if(/コンビニ|スーパー|ホテル|居酒屋/.test(n)) return false;
   return types.includes('ramen_restaurant') || /ラーメン|らーめん|拉麺|中華そば|麺屋|麺処|麺場|担々麺|つけ麺/.test(n);
 }
-async function runSearch(area){
+async function runSearch(area,pref=currentPref){
   area=String(area||'').trim();
   if(!area)return;
   input.value=area;
@@ -99,7 +161,7 @@ async function runSearch(area){
   title.textContent=area+' ラーメン TOP10';
   list.innerHTML='<div class="loading">ラーメン店を探しています…</div>';
   try{
-    const r=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({category:'ramen',area})});
+    const r=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({category:'ramen',area:(pref||'')+area})});
     if(!r.ok)throw new Error('API '+r.status);
     const data=await r.json();
     const shops=(data.places||[]).filter(validRamen).filter(p=>String(p.formattedAddress||'').includes(area.replace(/[市区町村]$/,''))).sort((a,b)=>score(b)-score(a)).slice(0,10);
