@@ -825,7 +825,7 @@ button,.back,.detail-action,.review-trigger{
   </div>
 </footer>
 </main><script>
-document.addEventListener('DOMContentLoaded',()=>{const q=document.getElementById('quickTop10');if(q)q.addEventListener('click',()=>{const pref=document.querySelector('.tabs button.active')?.textContent?.trim()||'愛知県';const target=pref==='岐阜県'?document.getElementById('gifuPanel'):pref==='三重県'?document.getElementById('miePanel'):document.getElementById('aichiPanel');if(target)target.scrollIntoView({behavior:'smooth',block:'start'});const preferred=target?.querySelector('button.active')||target?.querySelector('.cities button')||target?.querySelector('button');if(preferred){setTimeout(()=>preferred.focus(),250);}});});
+document.addEventListener('DOMContentLoaded',()=>{const q=document.getElementById('quickTop10');if(!q)return;q.addEventListener('click',()=>{if(currentCity){const activeCity=[...document.querySelectorAll('.cities button')].find(b=>b.textContent.trim()===currentCity);if(activeCity){activeCity.click();return;}}const pref=currentPrefecture||document.querySelector('.tabs button.active')?.textContent?.trim()||'愛知県';const top=pref==='岐阜県'?document.getElementById('gifuTop10'):pref==='三重県'?document.getElementById('mieTop10'):document.getElementById('aichi');if(top){top.click();return;}document.getElementById('tokaiTop10')?.click();});});
 
 let shops = [];
 let currentCity = '';
