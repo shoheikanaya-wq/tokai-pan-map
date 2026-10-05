@@ -82,8 +82,8 @@ footer{text-align:center;padding:22px 8px 28px;color:#8a7469;font-size:11px}
 
  <section class="section" id="top10">
   <h2>👑 ラーメンTOP10</h2>
-  <div class="coming">ランキング機能は次の段階で接続します。</div>
-  <p class="note">店舗名・評価・口コミ数・住所・営業時間・定休日・地図・Web・複数口コミを、パン版と同じ考え方で統合予定です。</p>
+  <div id="top10List" class="results"><div class="result-empty">市町村を選ぶと、その地域の登録TOP10を表示します。</div></div>
+  <p class="note">現在は確認済みデータから表示。今後、営業時間・定休日・Web・口コミも順次統合します。</p>
  </section>
 </main>
 <footer>ぷらっと東海 ／ ぷらっとラーメン β</footer>
@@ -117,6 +117,7 @@ const regionSelect=document.getElementById('regionSelect');
 const citySelect=document.getElementById('citySelect');
 const mapSearch=document.getElementById('mapSearch');
 const ramenResults=document.getElementById('ramenResults');
+const top10List=document.getElementById('top10List');
 let ramenCatalogPromise=null;
 function escapeText(v){return String(v??'').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));}
 async function loadRamenCatalog(){
@@ -126,6 +127,24 @@ async function loadRamenCatalog(){
       .catch(()=>({shops:[]}));
   }
   return ramenCatalogPromise;
+}
+async function renderTop10(){
+  if(!top10List) return;
+  if(!selectedCity){
+    top10List.innerHTML='<div class="result-empty">市町村を選ぶと、その地域の登録TOP10を表示します。</div>'; return;
+  }
+  const data=await loadRamenCatalog();
+  const rows=(Array.isArray(data.shops)?data.shops:[])
+    .filter(s=>s.prefecture===selectedPref&&s.city===selectedCity)
+    .sort((a,b)=>(b.rating||0)-(a.rating||0)||(b.reviewCount||0)-(a.reviewCount||0))
+    .slice(0,10);
+  if(!rows.length){
+    top10List.innerHTML='<div class="result-empty">'+escapeText(selectedCity)+'のTOP10データは整備中です。</div>'; return;
+  }
+  top10List.innerHTML=rows.map((s,i)=>{
+    const q=encodeURIComponent([s.name,s.address].filter(Boolean).join(' '));
+    return '<a class="shop-card" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query='+q+'"><strong>'+(i+1)+'位 '+escapeText(s.name)+'</strong><small>★'+escapeText(s.rating||'-')+' ／ 口コミ '+escapeText(s.reviewCount||'-')+(s.address?' ／ '+escapeText(s.address):'')+'</small></a>';
+  }).join('');
 }
 async function renderRamenResults(){
   if(!ramenResults) return;
@@ -182,9 +201,12 @@ function renderCities(){
  areaStatus.textContent=selectedPref+' / '+selectedRegion+' を選択中。市町村を選べます。';
  refreshMapSearch();
  renderRamenResults();
+ renderTop10();
 }
 regionSelect?.addEventListener('change',()=>{selectedRegion=regionSelect.value;selectedCity='';renderCities();});
-citySelect?.addEventListener('change',()=>{selectedCity=citySelect.value;if(!selectedCity){refreshMapSearch();renderRamenResults();return;}areaStatus.textContent=selectedPref+' / '+selectedRegion+' / '+selectedCity+' を選択中。';refreshMapSearch();renderRamenResults();});
+citySelect?.addEventListener('change',()=>{selectedCity=citySelect.value;if(!selectedCity){refreshMapSearch();renderRamenResults();
+ renderTop10();return;}areaStatus.textContent=selectedPref+' / '+selectedRegion+' / '+selectedCity+' を選択中。';refreshMapSearch();renderRamenResults();
+ renderTop10();});
 prefTabs?.addEventListener('click',e=>{
   const btn=e.target.closest('button[data-pref]'); if(!btn) return;
   prefTabs.querySelectorAll('button').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-pressed','false');});
@@ -202,6 +224,7 @@ genreChips?.addEventListener('click',e=>{
   else{selectedGenre='';genreStatus.textContent='味・系統を選ぶと、地図検索にも反映できます。';}
   refreshMapSearch();
   renderRamenResults();
+ renderTop10();
 });
 </script>
 </body>
