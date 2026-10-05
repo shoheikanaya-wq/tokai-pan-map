@@ -1152,8 +1152,54 @@ function showPendingMunicipality(prefecture,city){
 }
 
 async function loadBakeries(prefecture,city) {
+  const cached=readBakeryCache(prefecture,city);
+  if(cached?.length) return cached;
+
+  // 第一取得先：ぷらっとパン／ラーメン共通Places API
+  try{
+    const live=await fetchWideBakeryCandidates(`パン屋 ${prefecture}${city}`,[prefecture]);
+    const cityShops=live.filter(s=>municipalityMatches(s.address,city)).slice(0,10);
+    if(cityShops.length){
+      writeBakeryCache(prefecture,city,cityShops);
+      return cityShops;
+    }
+  }catch(e){
+    console.warn('[ぷらっとパン] 共通API取得失敗。静的データへ切替',e);
+  }
+
+  // 第二取得先：確認済み静的データ。本番障害時も一覧を維持する。
   const catalog=await loadStaticCatalog();
   const entry=catalog?.municipalities?.find(v=>v.prefecture===prefecture&&v.city===city);
+
+  if(entry?.status==='ready' && entry.file){
+    const r=await fetch('./'+entry.file+'?rev=20260919-static1',{cache:'no-store'});
+    if(!r.ok) throw new Error('静的データを読み込めません');
+    const data=await r.json();
+    if(Array.isArray(data.shops) && data.shops.length){
+      const staticShops=data.shops.map(s=>({
+        ...s,
+        dataSource:'static-free',
+        featuresLoaded:true,
+        featureLabels:Array.isArray(s.highlights)?s.highlights:[],
+        openNow:s.openNow??null,
+        photoName:'',
+        photo:'',
+        photoAlt:(s.name||'パン屋')+'の写真',
+        photoAttribution:'',
+        score:rankingScore(s.rating,s.reviews)
+      })).sort((a,b)=>b.score-a.score||b.reviews-a.reviews);
+      writeBakeryCache(prefecture,city,staticShops);
+      return staticShops;
+    }
+  }
+
+  // 第三取得先：無料公開地図。API/静的データ双方の欠落を補う。
+  try{
+    const osmShops=await fetchOpenStreetMapBakeries(prefecture,city);
+    if(osmShops?.length) return osmShops;
+  }catch(e){
+    console.warn('[ぷらっとパン] OSM退避も失敗',e);
+  }
 
   if(entry?.status==='reviewed'){
     const err=new Error('STATIC_REVIEWED');
@@ -1161,33 +1207,6 @@ async function loadBakeries(prefecture,city) {
     err.reviewNote=entry.note||'調査済み：現在掲載できる常設パン店を確認できていません';
     throw err;
   }
-
-  if(entry?.status==='ready' && entry.file){
-    const r=await fetch('./'+entry.file+'?rev=20260919-static1',{cache:'no-store'});
-    if(!r.ok) throw new Error('静的データを読み込めません');
-    const data=await r.json();
-    if(!Array.isArray(data.shops) || !data.shops.length) throw new Error('静的データが空です');
-
-    const staticShops=data.shops.map(s=>({
-      ...s,
-      dataSource:'static-free',
-      featuresLoaded:true,
-      featureLabels:Array.isArray(s.highlights)?s.highlights:[],
-      openNow:s.openNow??null,
-      photoName:'',
-      photo:'',
-      photoAlt:(s.name||'パン屋')+'の写真',
-      photoAttribution:'',
-      score:rankingScore(s.rating,s.reviews)
-    })).sort((a,b)=>b.score-a.score||b.reviews-a.reviews);
-
-    writeBakeryCache(prefecture,city,staticShops);
-    return staticShops;
-  }
-
-  const cached=readBakeryCache(prefecture,city);
-  if(cached?.length) return cached;
-
   const err=new Error('STATIC_PENDING');
   err.code='STATIC_PENDING';
   throw err;
