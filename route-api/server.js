@@ -195,7 +195,7 @@ app.post('/route', async (req, res) => {
       return res.status(503).json({ error: 'route_api_not_configured' });
     }
 
-    const { origin, destination, intermediates = [], vehicle = 'car' } = req.body || {};
+    const { origin, destination, intermediates = [], vehicle = 'car', optimize = false } = req.body || {};
     if (!validPoint(origin) || !validPoint(destination)) {
       return res.status(400).json({ error: 'invalid_origin_or_destination' });
     }
@@ -212,7 +212,8 @@ app.post('/route', async (req, res) => {
       routingPreference: 'TRAFFIC_AWARE',
       computeAlternativeRoutes: false,
       languageCode: 'ja-JP',
-      units: 'METRIC'
+      units: 'METRIC',
+      optimizeWaypointOrder: Boolean(optimize && intermediates.length > 1)
     };
 
     const r = await fetch('https://routes.googleapis.com/directions/v2:computeRoutes', {
@@ -220,7 +221,7 @@ app.post('/route', async (req, res) => {
       headers: {
         'Content-Type': 'application/json',
         'X-Goog-Api-Key': GOOGLE_MAPS_API_KEY,
-        'X-Goog-FieldMask': 'routes.distanceMeters,routes.duration,routes.staticDuration,routes.legs.distanceMeters,routes.legs.duration,routes.legs.staticDuration'
+        'X-Goog-FieldMask': 'routes.distanceMeters,routes.duration,routes.staticDuration,routes.optimizedIntermediateWaypointIndex,routes.legs.distanceMeters,routes.legs.duration,routes.legs.staticDuration'
       },
       body: JSON.stringify(body)
     });
@@ -240,6 +241,7 @@ app.post('/route', async (req, res) => {
       distanceMeters: route.distanceMeters || 0,
       durationSeconds: seconds(route.duration),
       staticDurationSeconds: seconds(route.staticDuration),
+      optimizedIntermediateWaypointIndex: Array.isArray(route.optimizedIntermediateWaypointIndex) ? route.optimizedIntermediateWaypointIndex : [],
       legs: (route.legs || []).map((leg, index) => ({
         index,
         distanceMeters: leg.distanceMeters || 0,
