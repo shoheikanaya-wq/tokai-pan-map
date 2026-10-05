@@ -42,6 +42,7 @@ select{width:100%;min-width:0;min-height:44px;border:1px solid #c99e7e;border-ra
 .detail-title{font-size:22px;margin:8px 0}.detail-grid{display:grid;gap:8px}.detail-row{background:#fffaf3;border:1px solid #ead9c7;border-radius:13px;padding:11px;font-size:13px;line-height:1.55}.hours{white-space:pre-line}.detail-actions{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:12px 0}.detail-actions a,.detail-actions button{display:flex;align-items:center;justify-content:center;min-height:46px;border-radius:12px;text-decoration:none;font-weight:800}.detail-actions a{background:#f0ddca;color:#543326}.review{border-top:1px solid #ead9c7;padding:10px 0}.review:first-child{border-top:0}.review-meta{font-size:12px;font-weight:800}.review-text{font-size:13px;line-height:1.5;margin-top:4px}
 .meta{font-size:12px;color:#75665d;margin-top:4px;line-height:1.45}
 .actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px}
+.tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:7px}.tag{display:inline-flex;padding:4px 7px;border-radius:999px;background:#f7e2c9;color:#6b3929;font-size:11px;font-weight:800}.filters{display:flex;gap:6px;overflow-x:auto;padding:3px 0 10px;scrollbar-width:none}.filters::-webkit-scrollbar{display:none}.filters button{white-space:nowrap;background:#fff7ed;color:#633326;border:1px solid #d9b69b;padding:8px 11px}.filters button.active{background:#8b2f22;color:#fff;border-color:#8b2f22}
 .actions a{display:inline-flex;padding:8px 10px;border-radius:10px;background:#f0ddca;color:#543326;text-decoration:none;font-size:12px;font-weight:800}
 .loading,.error{background:#fffaf3;border:1px solid #ead9c7;border-radius:15px;padding:18px;text-align:center;margin-top:12px}
 .error{color:#7c2d22}
@@ -87,6 +88,8 @@ footer{text-align:center;padding:26px 10px 40px;font-size:11px;color:#85746a}
   <section id="results" class="hidden">
     <button id="backBtn" type="button">← 検索へ戻る</button>
     <h2 id="resultTitle"></h2>
+    <div id="filterBar" class="filters" aria-label="ラーメンの系統で絞り込み"></div>
+    <div id="filterNote" class="note"></div>
     <div id="list"></div>
   </section>
   <section id="detail" class="hidden">
@@ -118,6 +121,7 @@ const list=document.getElementById('list');
 const title=document.getElementById('resultTitle');
 const detail=document.getElementById('detail');
 let currentShops=[];
+let activeTag='すべて';
 const regionSelect=document.getElementById('regionSelect');
 const citySelect=document.getElementById('citySelect');
 let currentPref='愛知県';
@@ -173,6 +177,38 @@ function validRamen(p){
   if(/コンビニ|スーパー|ホテル|居酒屋/.test(n)) return false;
   return types.includes('ramen_restaurant') || /ラーメン|らーめん|拉麺|中華そば|麺屋|麺処|麺場|担々麺|つけ麺/.test(n);
 }
+const RAMEN_TAGS=['すべて','醤油','味噌','塩','豚骨','家系','二郎系','担々麺','つけ麺','中華そば'];
+function ramenTags(p){
+ const name=String(p.displayName?.text||'');
+ const tags=[];
+ const rules=[
+  ['醤油',/醤油|しょうゆ|正油/],['味噌',/味噌|みそ/],['塩',/(^|[^美])塩|しおラーメン/],
+  ['豚骨',/豚骨|とんこつ/],['家系',/家系|横浜家系/],['二郎系',/二郎|二郎系|ラーメン荘/],
+  ['担々麺',/担々麺|担担麺|坦々麺/],['つけ麺',/つけ麺|つけめん/],['中華そば',/中華そば/]
+ ];
+ rules.forEach(([tag,re])=>{if(re.test(name))tags.push(tag)});
+ return [...new Set(tags)];
+}
+function renderFilters(){
+ const available=new Set(currentShops.flatMap(ramenTags));
+ const shown=RAMEN_TAGS.filter(t=>t==='すべて'||available.has(t));
+ if(!shown.includes(activeTag))activeTag='すべて';
+ const bar=document.getElementById('filterBar');
+ bar.innerHTML=shown.map(t=>'<button type="button" class="'+(t===activeTag?'active':'')+'" data-filter="'+esc(t)+'">'+esc(t)+'</button>').join('');
+ bar.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{activeTag=b.dataset.filter;renderShopList();renderFilters()}));
+ document.getElementById('filterNote').textContent=available.size?'店名から確認できる系統だけを表示しています。推測だけで分類はしません。':'系統を断定できる店名がないため、分類なしで表示しています。';
+}
+function renderShopList(){
+ const visible=activeTag==='すべて'?currentShops:currentShops.filter(p=>ramenTags(p).includes(activeTag));
+ if(!visible.length){list.innerHTML='<div class="error">この系統に該当する店舗はありません。</div>';return}
+ list.innerHTML=visible.map((p)=>{
+   const i=currentShops.indexOf(p),name=p.displayName?.text||'名称不明',rating=Number(p.rating)||0,reviews=Number(p.userRatingCount)||0;
+   const maps=p.googleMapsUri||('https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(name+' '+(p.formattedAddress||'')));
+   const web=p.websiteUri||'',tags=ramenTags(p);
+   return '<article class="card"><div class="rank"><div class="badge">'+(i+1)+'位</div><div class="grow"><button class="name-btn" type="button" data-detail="'+i+'">'+esc(name)+'</button><div class="meta">★ '+(rating?rating.toFixed(1):'―')+'　口コミ '+reviews.toLocaleString()+'件<br>'+esc(p.formattedAddress||'住所情報なし')+'</div>'+(tags.length?'<div class="tags">'+tags.map(t=>'<span class="tag">'+esc(t)+'</span>').join('')+'</div>':'')+'<div class="actions"><a target="_blank" rel="noopener" href="'+esc(maps)+'">📍 地図</a>'+(web?'<a target="_blank" rel="noopener" href="'+esc(web)+'">🌐 Web</a>':'')+'</div></div></div></article>';
+ }).join('');
+ list.querySelectorAll('[data-detail]').forEach(b=>b.addEventListener('click',()=>showDetail(Number(b.dataset.detail))));
+}
 async function runSearch(area,pref=currentPref){
   area=String(area||'').trim();
   if(!area)return;
@@ -187,14 +223,10 @@ async function runSearch(area,pref=currentPref){
     const data=await r.json();
     const shops=(data.places||[]).filter(validRamen).filter(p=>String(p.formattedAddress||'').includes(area.replace(/[市区町村]$/,''))).sort((a,b)=>score(b)-score(a)).slice(0,10);
     currentShops=shops;
-    if(!shops.length){list.innerHTML='<div class="error">該当するラーメン店を確認できませんでした。別の市町村名でも試してください。</div>';return;}
-    list.innerHTML=shops.map((p,i)=>{
-      const name=p.displayName?.text||'名称不明', rating=Number(p.rating)||0, reviews=Number(p.userRatingCount)||0;
-      const maps=p.googleMapsUri||('https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(name+' '+(p.formattedAddress||area)));
-      const web=p.websiteUri||'';
-      return '<article class="card"><div class="rank"><div class="badge">'+(i+1)+'位</div><div class="grow"><button class="name-btn" type="button" data-detail="'+i+'">'+esc(name)+'</button><div class="meta">★ '+(rating?rating.toFixed(1):'―')+'　口コミ '+reviews.toLocaleString()+'件<br>'+esc(p.formattedAddress||'住所情報なし')+'</div><div class="actions"><a target="_blank" rel="noopener" href="'+esc(maps)+'">📍 地図</a>'+(web?'<a target="_blank" rel="noopener" href="'+esc(web)+'">🌐 Web</a>':'')+'</div></div></div></article>';
-    }).join('');
-    list.querySelectorAll('[data-detail]').forEach(b=>b.addEventListener('click',()=>showDetail(Number(b.dataset.detail))));
+    activeTag='すべて';
+    if(!shops.length){list.innerHTML='<div class="error">該当するラーメン店を確認できませんでした。別の市町村名でも試してください。</div>';document.getElementById('filterBar').innerHTML='';document.getElementById('filterNote').textContent='';return;}
+    renderFilters();
+    renderShopList();
   }catch(e){
     console.error(e);
     list.innerHTML='<div class="error"><strong>店舗情報を取得できませんでした。</strong><br>少し時間を置いて再試行してください。</div>';
@@ -210,7 +242,7 @@ function showDetail(i){
  results.classList.add('hidden');home.classList.add('hidden');detail.classList.remove('hidden');
  const name=p.displayName?.text||'名称不明',rating=Number(p.rating)||0,reviews=Number(p.userRatingCount)||0;
  document.getElementById('detailName').textContent=name;
- document.getElementById('detailRating').textContent='★ '+(rating?rating.toFixed(1):'―')+'　口コミ '+reviews.toLocaleString()+'件';
+ document.getElementById('detailRating').innerHTML='★ '+(rating?rating.toFixed(1):'―')+'　口コミ '+reviews.toLocaleString()+'件'+(ramenTags(p).length?'<div class="tags">'+ramenTags(p).map(t=>'<span class="tag">'+esc(t)+'</span>').join('')+'</div>':'');
  document.getElementById('detailAddress').textContent='📍 '+(p.formattedAddress||'住所情報なし');
  const hours=p.regularOpeningHours?.weekdayDescriptions||[];
  document.getElementById('detailHours').textContent=hours.length?'🕒 営業時間\n'+hours.join('\n'):'🕒 営業時間：情報なし';
