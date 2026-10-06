@@ -643,6 +643,7 @@ button,.back,.detail-action,.review-trigger{
   }
 }
 
+.mobile-area-picker{display:none;margin:7px 0 10px;grid-template-columns:1fr 1fr;gap:6px}.mobile-area-picker label{display:block;font-size:10px;font-weight:800;margin-bottom:3px}.mobile-area-picker select{width:100%;min-height:42px;border:1px solid #b98a55;border-radius:11px;background:#fffaf1;color:#332316;font:inherit;font-weight:800;padding:8px 9px}@media(max-width:600px){.mobile-area-picker{display:grid}#aichiPanel .cities,#gifuPanel .cities,#miePanel .cities{display:none}#aichiPanel>h2,#gifuPanel>h2,#miePanel>h2{display:none}}
 </style></head>
 <body><header><h1 id="appTitle" style="cursor:pointer;">🥐 ぷらっとパン</h1><div class="sub">市町村から、おいしいパン屋を探す</div><div style="margin-top:10px"><a href="index.html" aria-label="ぷらっと東海へ戻る" style="display:inline-block;padding:9px 14px;border-radius:999px;background:#fff;color:#6b431f;text-decoration:none;font-weight:700;border:1px solid #d8c2a8">← ぷらっと東海へ戻る</a></div></header><main>
 <section id="home">
@@ -657,7 +658,7 @@ button,.back,.detail-action,.review-trigger{
     </a>
   </div>
   
-  <div class="tabs"><button id="tabAichi" class="active">愛知県</button><button id="tabGifu">岐阜県</button><button id="tabMie">三重県</button></div><div class="notice"><strong>Ver.1.87</strong>　PC版TOP10店舗名のみ最大2行で読みやすく表示</div><div id="aichiPanel"><h2>西三河</h2><div class="cities"><button id="toyota">豊田市</button><button id="okazaki">岡崎市</button><button id="anjo">安城市</button><button id="kariya">刈谷市</button><button id="nishio">西尾市</button>
+  <div class="tabs"><button id="tabAichi" class="active">愛知県</button><button id="tabGifu">岐阜県</button><button id="tabMie">三重県</button></div><div class="mobile-area-picker"><div><label for="mobileRegionSelect">地域</label><select id="mobileRegionSelect" aria-label="地域を選択"><option value="">地域を選択</option></select></div><div><label for="mobileCitySelect">市町村</label><select id="mobileCitySelect" aria-label="市町村を選択"><option value="">市町村を選択</option></select></div></div><div class="notice"><strong>Ver.1.87</strong>　PC版TOP10店舗名のみ最大2行で読みやすく表示</div><div id="aichiPanel"><h2>西三河</h2><div class="cities"><button id="toyota">豊田市</button><button id="okazaki">岡崎市</button><button id="anjo">安城市</button><button id="kariya">刈谷市</button><button id="nishio">西尾市</button>
 <button id="hekinan">碧南市</button>
 <button id="chiryu">知立市</button>
 <button id="takahama">高浜市</button>
@@ -858,7 +859,31 @@ function writeBakeryCache(prefecture,city,cityShops){
 
 
 // ===== Google Places補助API =====
+// 詳細・口コミ・写真は旧APIを維持。検索のみ統合APIへ段階移行する。
 const REVIEW_API = 'https://tokai-pan-api-873562719766.asia-northeast1.run.app';
+const LEGACY_PLACES_API = REVIEW_API;
+const SHARED_PLACES_API = 'https://tokai-pan-route-api-873562719766.asia-northeast1.run.app';
+
+async function fetchPlacesSearch(textQuery){
+  const payload=JSON.stringify({category:'bakery',textQuery});
+  const endpoints=[SHARED_PLACES_API,LEGACY_PLACES_API];
+  let lastError=null;
+  for(const endpoint of endpoints){
+    try{
+      const response=await fetch(endpoint,{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:payload
+      });
+      if(!response.ok) throw new Error('Google Places API エラー: '+response.status);
+      return response;
+    }catch(e){
+      lastError=e;
+      console.warn('[ぷらっとパン] Places検索先を切替',endpoint,e);
+    }
+  }
+  throw lastError || new Error('パン屋APIへ接続できません');
+}
 
 // ===== 店舗写真 =====
 // Cloud Run側の ?photoName=... エンドポイントから写真を取得する。
@@ -873,14 +898,7 @@ function placePhotoUrl(photoName){
 // ===== 広域ランキング高速取得 =====
 // 愛知県全域を市町村ごとに54回検索せず、広域Text Searchを1回だけ実行する。
 async function fetchWideBakeryCandidates(textQuery, allowedPrefectures) {
-  const response = await fetch(
-    'https://tokai-pan-api-873562719766.asia-northeast1.run.app',
-    {
-      method: 'POST',
-      headers: {'Content-Type':'application/json'},
-      body: JSON.stringify({textQuery})
-    }
-  );
+  const response = await fetchPlacesSearch(textQuery);
 
   if (!response.ok) {
     throw new Error('Google Places API エラー: ' + response.status);
@@ -1135,8 +1153,54 @@ function showPendingMunicipality(prefecture,city){
 }
 
 async function loadBakeries(prefecture,city) {
+  const cached=readBakeryCache(prefecture,city);
+  if(cached?.length) return cached;
+
+  // 第一取得先：ぷらっとパン／ラーメン共通Places API
+  try{
+    const live=await fetchWideBakeryCandidates(`パン屋 ${prefecture}${city}`,[prefecture]);
+    const cityShops=live.filter(s=>municipalityMatches(s.address,city)).slice(0,10);
+    if(cityShops.length){
+      writeBakeryCache(prefecture,city,cityShops);
+      return cityShops;
+    }
+  }catch(e){
+    console.warn('[ぷらっとパン] 共通API取得失敗。静的データへ切替',e);
+  }
+
+  // 第二取得先：確認済み静的データ。本番障害時も一覧を維持する。
   const catalog=await loadStaticCatalog();
   const entry=catalog?.municipalities?.find(v=>v.prefecture===prefecture&&v.city===city);
+
+  if(entry?.status==='ready' && entry.file){
+    const r=await fetch('./'+entry.file+'?rev=20260919-static1',{cache:'no-store'});
+    if(!r.ok) throw new Error('静的データを読み込めません');
+    const data=await r.json();
+    if(Array.isArray(data.shops) && data.shops.length){
+      const staticShops=data.shops.map(s=>({
+        ...s,
+        dataSource:'static-free',
+        featuresLoaded:true,
+        featureLabels:Array.isArray(s.highlights)?s.highlights:[],
+        openNow:s.openNow??null,
+        photoName:'',
+        photo:'',
+        photoAlt:(s.name||'パン屋')+'の写真',
+        photoAttribution:'',
+        score:rankingScore(s.rating,s.reviews)
+      })).sort((a,b)=>b.score-a.score||b.reviews-a.reviews);
+      writeBakeryCache(prefecture,city,staticShops);
+      return staticShops;
+    }
+  }
+
+  // 第三取得先：無料公開地図。API/静的データ双方の欠落を補う。
+  try{
+    const osmShops=await fetchOpenStreetMapBakeries(prefecture,city);
+    if(osmShops?.length) return osmShops;
+  }catch(e){
+    console.warn('[ぷらっとパン] OSM退避も失敗',e);
+  }
 
   if(entry?.status==='reviewed'){
     const err=new Error('STATIC_REVIEWED');
@@ -1144,33 +1208,6 @@ async function loadBakeries(prefecture,city) {
     err.reviewNote=entry.note||'調査済み：現在掲載できる常設パン店を確認できていません';
     throw err;
   }
-
-  if(entry?.status==='ready' && entry.file){
-    const r=await fetch('./'+entry.file+'?rev=20260919-static1',{cache:'no-store'});
-    if(!r.ok) throw new Error('静的データを読み込めません');
-    const data=await r.json();
-    if(!Array.isArray(data.shops) || !data.shops.length) throw new Error('静的データが空です');
-
-    const staticShops=data.shops.map(s=>({
-      ...s,
-      dataSource:'static-free',
-      featuresLoaded:true,
-      featureLabels:Array.isArray(s.highlights)?s.highlights:[],
-      openNow:s.openNow??null,
-      photoName:'',
-      photo:'',
-      photoAlt:(s.name||'パン屋')+'の写真',
-      photoAttribution:'',
-      score:rankingScore(s.rating,s.reviews)
-    })).sort((a,b)=>b.score-a.score||b.reviews-a.reviews);
-
-    writeBakeryCache(prefecture,city,staticShops);
-    return staticShops;
-  }
-
-  const cached=readBakeryCache(prefecture,city);
-  if(cached?.length) return cached;
-
   const err=new Error('STATIC_PENDING');
   err.code='STATIC_PENDING';
   throw err;
@@ -1201,6 +1238,8 @@ function showDetailView(){
 }
 const home=document.querySelector('#home'),ranking=document.querySelector('#ranking'),detail=document.querySelector('#detail'),list=document.querySelector('#list');
 const byId = id => document.getElementById(id);
+const mobileRegionSelect=byId('mobileRegionSelect');
+const mobileCitySelect=byId('mobileCitySelect');
 const appTitle=byId('appTitle'), rankingTitle=byId('rankingTitle');
 const back=byId('back'), backBottom=byId('backBottom'), back2=byId('back2'), backDetailBottom=byId('backDetailBottom');
 const dname=byId('dname'), daddr=byId('daddr'), drating=byId('drating'), dhours=byId('dhours'), dphone=byId('dphone'), dwebsite=byId('dwebsite'), dmaps=byId('dmaps'), dreviewBtn=byId('dreviewBtn'), dreviewPanel=byId('dreviewPanel'), drank=byId('drank'), dfeatures=byId('dfeatures'), dspecial=byId('dspecial'), drecommend=byId('drecommend'), dclosed=byId('dclosed'), dproduct=byId('dproduct');
@@ -1621,6 +1660,40 @@ currentVisualKey = '';
   }
 }
 
+function currentPrefPanel(){
+  return currentPrefecture==='岐阜県'?byId('gifuPanel'):currentPrefecture==='三重県'?byId('miePanel'):byId('aichiPanel');
+}
+function mobileRegionGroups(){
+  const panel=currentPrefPanel();
+  if(!panel) return [];
+  const groups=[]; let regionIndex=0;
+  [...panel.children].forEach(el=>{
+    if(el.tagName==='H2'){
+      const next=el.nextElementSibling;
+      if(next?.classList.contains('cities')) groups.push({key:String(regionIndex++),label:el.textContent.trim(),cities:[...next.querySelectorAll('button')]});
+    }
+  });
+  return groups;
+}
+function refreshMobileRegionSelect(){
+  if(!mobileRegionSelect||!mobileCitySelect) return;
+  const groups=mobileRegionGroups();
+  mobileRegionSelect.innerHTML='';
+  groups.forEach(g=>{const o=document.createElement('option');o.value=g.key;o.textContent=g.label;mobileRegionSelect.appendChild(o);});
+  mobileRegionSelect.value=groups[0]?.key||'';
+  refreshMobileCitySelect();
+}
+function refreshMobileCitySelect(){
+  if(!mobileCitySelect) return;
+  const groups=mobileRegionGroups();
+  const group=groups.find(g=>g.key===mobileRegionSelect?.value)||groups[0];
+  mobileCitySelect.innerHTML='<option value="">市町村を選択</option>';
+  group?.cities.forEach(btn=>{const o=document.createElement('option');o.value=btn.id;o.textContent=btn.textContent.trim();mobileCitySelect.appendChild(o);});
+  mobileCitySelect.value='';
+}
+mobileRegionSelect?.addEventListener('change',refreshMobileCitySelect);
+mobileCitySelect?.addEventListener('change',()=>{const btn=byId(mobileCitySelect.value);if(btn) btn.click();});
+
 function selectPrefecture(pref){
   currentPrefecture=pref;
   const isAichi=pref==='愛知県', isGifu=pref==='岐阜県', isMie=pref==='三重県';
@@ -1630,10 +1703,12 @@ function selectPrefecture(pref){
   tabAichi.classList.toggle('active',isAichi);
   tabGifu.classList.toggle('active',isGifu);
   tabMie.classList.toggle('active',isMie);
+  refreshMobileRegionSelect();
 }
 tabAichi.onclick=()=>selectPrefecture('愛知県');
 tabGifu.onclick=()=>selectPrefecture('岐阜県');
 tabMie.onclick=()=>selectPrefecture('三重県');
+refreshMobileRegionSelect();
 
 yokkaichi.onclick=()=>selectCity(yokkaichi,'四日市市');
 kuwana.onclick=()=>selectCity(kuwana,'桑名市');
@@ -2102,7 +2177,7 @@ function footprintPreview(){
     os,browser,deviceType:mobile?'スマホ/タブレット':'PC',
     deviceModel:/iPhone/i.test(ua)?'iPhone（機種詳細不明）':/Android/i.test(ua)?'Android（取得可能範囲のみ）':'取得対象外',
     launchPage:location.pathname.split('/').pop()||'index.html',
-    appVersion:'20260923-173'
+    appVersion:'20261005-174'
   };
 }
 adminFootprints.onclick=()=>{
@@ -2147,7 +2222,7 @@ clearRankingCache.onclick=()=>{
 };
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js?rev=20260923-173').then(reg => {
+  navigator.serviceWorker.register('./sw.js?rev=20261005-174').then(reg => {
     reg.update();
   });
 }
