@@ -2177,7 +2177,7 @@ function footprintPreview(){
     os,browser,deviceType:mobile?'スマホ/タブレット':'PC',
     deviceModel:/iPhone/i.test(ua)?'iPhone（機種詳細不明）':/Android/i.test(ua)?'Android（取得可能範囲のみ）':'取得対象外',
     launchPage:location.pathname.split('/').pop()||'index.html',
-    appVersion:'20260923-173'
+    appVersion:'20261005-174'
   };
 }
 adminFootprints.onclick=()=>{
@@ -2222,7 +2222,7 @@ clearRankingCache.onclick=()=>{
 };
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js?rev=20260923-173').then(reg => {
+  navigator.serviceWorker.register('./sw.js?rev=20261005-174').then(reg => {
     reg.update();
   });
 }
