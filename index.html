@@ -6,6 +6,7 @@
 <meta name="theme-color" content="#7a4b20">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
 <title>ぷらっと東海</title>
 <style>
 *{box-sizing:border-box}
@@ -36,5 +37,10 @@ html,body{margin:0;min-height:100%;background:#f3efe6;font-family:system-ui,-app
   <a class="entry ramen" href="ramen.html" aria-label="ぷらっとラーメンへ">ぷらっとラーメンへ</a>
  </div>
 </main>
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("./sw.js?rev=20261005-174").then(reg => reg.update());
+}
+</script>
 </body>
 </html>

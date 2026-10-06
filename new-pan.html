@@ -1,4 +1,4 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#7a4b20"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon-192.png"><title>ぷらっとパン</title><style>
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#7a4b20"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png"><title>ぷらっとパン｜東海のパン屋探索</title><style>
 :root{font-family:system-ui,-apple-system,sans-serif;color:#2d241d;background:#fffaf4}body{margin:0;background:#f3efe6;color:#3f372f}header{position:sticky;top:0;background:#f7f0e4ef;backdrop-filter:blur(8px);padding:16px;border-bottom:1px solid #eadfce}h1{font-size:20px;margin:0}.sub{font-size:12px;color:#776b61;margin-top:3px}main{padding:14px;max-width:720px;margin:auto}.tabs,.cities{display:flex;gap:8px;flex-wrap:wrap}button{font:inherit;border:1px solid #d7c7b4;background:#fbf7ef;border-radius:14px;padding:10px 14px}.active{background:#7a4b20;color:white}.card{background:#fbf7ef;border:1px solid #eadfce;border-radius:16px;padding:14px;margin:10px 0}.rank{display:flex;gap:12px;align-items:center}.badge{min-width:38px;text-align:center;font-weight:700}.grow{flex:1}.rating{font-weight:700}.muted{font-size:12px;color:#776b61}.hidden{display:none}.back{margin-bottom:8px}.notice{background:#f4eadf;border-radius:14px;padding:12px;font-size:13px;margin:12px 0}.app-footer{
   margin-top:40px;
   padding:24px 16px;
@@ -643,11 +643,14 @@ button,.back,.detail-action,.review-trigger{
   }
 }
 
+.new-pan-nav{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:9px;font-size:13px}.new-pan-nav a{color:inherit;font-weight:800;text-decoration:none}.new-pan-back{display:inline-flex;align-items:center;min-height:42px;margin-top:10px;padding:8px 15px;border-radius:999px;background:#fff;color:#6b431f;text-decoration:none;font-weight:800;border:1px solid #d8c2a8;box-shadow:0 2px 7px #00000012}.new-pan-back:focus-visible,.new-pan-nav a:focus-visible{outline:3px solid #7a4b20;outline-offset:3px}@media(max-width:600px){.new-pan-nav{font-size:12px}.new-pan-back{min-height:44px;padding:9px 16px}}
+.new-pan-intro{margin:10px 0 12px;padding:12px 14px;border:1px solid #ead8bf;border-radius:14px;background:#fffaf1}.new-pan-intro strong{display:block;font-size:16px;margin-bottom:3px}.new-pan-intro span{font-size:12px;line-height:1.45;color:#6d5b49}.new-pan-section-title{margin:16px 0 8px;font-size:17px}.new-pan-version{font-size:11px;opacity:.72;text-align:right;margin:3px 2px 8px}@media(max-width:600px){.new-pan-intro{margin:8px 0 10px;padding:10px 11px}.new-pan-intro strong{font-size:15px}.new-pan-section-title{margin:13px 0 7px;font-size:16px}}
+.new-pan-quick{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:10px 0 14px}.new-pan-quick a,.new-pan-quick button{min-width:0;min-height:54px;border:1px solid #e1c59e;border-radius:13px;background:#fff9ef;color:#4b331f;text-decoration:none;font:inherit;font-weight:800;display:flex;align-items:center;justify-content:center;text-align:center;padding:8px;cursor:pointer}.new-pan-quick a:focus-visible,.new-pan-quick button:focus-visible{outline:3px solid #7a4b20;outline-offset:2px}.mobile-area-picker{display:none;margin:7px 0 10px;grid-template-columns:1fr 1fr;gap:6px}.mobile-area-picker label{display:block;font-size:10px;font-weight:800;margin-bottom:3px}.mobile-area-picker select{width:100%;min-height:42px;border:1px solid #b98a55;border-radius:11px;background:#fffaf1;color:#332316;font:inherit;font-weight:800;padding:8px 9px}@media(max-width:600px){.new-pan-quick{gap:6px}.new-pan-quick a,.new-pan-quick button{font-size:12px;min-height:50px;padding:6px}.mobile-area-picker{display:grid}#aichiPanel .cities,#gifuPanel .cities,#miePanel .cities{display:none}#aichiPanel>h2,#gifuPanel>h2,#miePanel>h2{display:none}}
 </style></head>
-<body><header><h1 id="appTitle" style="cursor:pointer;">🥐 ぷらっとパン</h1><div class="sub">市町村から、おいしいパン屋を探す</div><div style="margin-top:10px"><a href="index.html" aria-label="ぷらっと東海へ戻る" style="display:inline-block;padding:9px 14px;border-radius:999px;background:#fff;color:#6b431f;text-decoration:none;font-weight:700;border:1px solid #d8c2a8">← ぷらっと東海へ戻る</a></div></header><main>
+<body><header><h1 id="appTitle" style="cursor:pointer;">🥐 ぷらっとパン</h1><div class="sub">市町村から、おいしいパン屋を探す</div><nav class="new-pan-nav" aria-label="現在位置"><a href="index.html">ぷらっと東海</a><span aria-hidden="true">›</span><strong aria-current="page">ぷらっとパン</strong></nav><a class="new-pan-back" href="index.html" aria-label="ぷらっと東海のホームへ戻る">← ぷらっと東海へ戻る</a></header><main>
 <section id="home">
  
-  <img src="tokai-pan-home.png" class="home-visual" alt="ぷらっとパン ホーム">
+  <img src="tokai-pan-home.png" class="home-visual" alt="ぷらっとパン ホーム"><div class="new-pan-intro"><strong>🥐 東海のパン屋を、ぷらっと探そう。</strong><span>エリアから探す・TOP10を見る・パンラッシュで巡る。気分に合わせてパン屋探索を楽しめます。</span></div><div class="new-pan-quick" aria-label="ぷらっとパン クイックメニュー"><a href="#aichiPanel">📍 エリアから探す</a><button type="button" id="quickTop10">👑 TOP10を見る</button><a href="panrush.html?v=20260908-start">⚡ パンラッシュ</a></div>
   <div class="notice">⚡ パンラッシュは「おまかせで始める」または条件指定から直感的に開始できます。TOP10で実店舗写真が未取得の店は、複数のAI生成外観イメージを店舗ごとに分け、明記して表示します。</div><div class="rush-entry-grid" id="rushEntryGrid">
     <a class="rush-entry rush-main" href="panrush.html?v=20260908-start">
       <span class="rush-icon">⚡</span><span><strong>パンラッシュ</strong><small>愛知県内・24時間耐久</small></span>
@@ -657,7 +660,7 @@ button,.back,.detail-action,.review-trigger{
     </a>
   </div>
   
-  <div class="tabs"><button id="tabAichi" class="active">愛知県</button><button id="tabGifu">岐阜県</button><button id="tabMie">三重県</button></div><div class="notice"><strong>Ver.1.87</strong>　PC版TOP10店舗名のみ最大2行で読みやすく表示</div><div id="aichiPanel"><h2>西三河</h2><div class="cities"><button id="toyota">豊田市</button><button id="okazaki">岡崎市</button><button id="anjo">安城市</button><button id="kariya">刈谷市</button><button id="nishio">西尾市</button>
+  <h2 class="new-pan-section-title">📍 エリアから探す</h2><div class="tabs"><button id="tabAichi" class="active">愛知県</button><button id="tabGifu">岐阜県</button><button id="tabMie">三重県</button></div><div class="mobile-area-picker"><div><label for="mobileRegionSelect">地域</label><select id="mobileRegionSelect" aria-label="地域を選択"><option value="">地域を選択</option></select></div><div><label for="mobileCitySelect">市町村</label><select id="mobileCitySelect" aria-label="市町村を選択"><option value="">市町村を選択</option></select></div></div><div class="new-pan-version">ぷらっとパン Ver.1.87</div><div id="aichiPanel"><h2>西三河</h2><div class="cities"><button id="toyota">豊田市</button><button id="okazaki">岡崎市</button><button id="anjo">安城市</button><button id="kariya">刈谷市</button><button id="nishio">西尾市</button>
 <button id="hekinan">碧南市</button>
 <button id="chiryu">知立市</button>
 <button id="takahama">高浜市</button>
@@ -822,6 +825,7 @@ button,.back,.detail-action,.review-trigger{
   </div>
 </footer>
 </main><script>
+document.addEventListener('DOMContentLoaded',()=>{const q=document.getElementById('quickTop10');if(!q)return;q.addEventListener('click',()=>{if(currentCity){const activeCity=[...document.querySelectorAll('.cities button')].find(b=>b.textContent.trim()===currentCity);if(activeCity){activeCity.click();return;}}const pref=currentPrefecture||document.querySelector('.tabs button.active')?.textContent?.trim()||'愛知県';const top=pref==='岐阜県'?document.getElementById('gifuTop10'):pref==='三重県'?document.getElementById('mieTop10'):document.getElementById('aichi');if(top){top.click();return;}document.getElementById('tokaiTop10')?.click();});});
 
 let shops = [];
 let currentCity = '';
@@ -1201,6 +1205,8 @@ function showDetailView(){
 }
 const home=document.querySelector('#home'),ranking=document.querySelector('#ranking'),detail=document.querySelector('#detail'),list=document.querySelector('#list');
 const byId = id => document.getElementById(id);
+const mobileRegionSelect=byId('mobileRegionSelect');
+const mobileCitySelect=byId('mobileCitySelect');
 const appTitle=byId('appTitle'), rankingTitle=byId('rankingTitle');
 const back=byId('back'), backBottom=byId('backBottom'), back2=byId('back2'), backDetailBottom=byId('backDetailBottom');
 const dname=byId('dname'), daddr=byId('daddr'), drating=byId('drating'), dhours=byId('dhours'), dphone=byId('dphone'), dwebsite=byId('dwebsite'), dmaps=byId('dmaps'), dreviewBtn=byId('dreviewBtn'), dreviewPanel=byId('dreviewPanel'), drank=byId('drank'), dfeatures=byId('dfeatures'), dspecial=byId('dspecial'), drecommend=byId('drecommend'), dclosed=byId('dclosed'), dproduct=byId('dproduct');
@@ -1621,6 +1627,50 @@ currentVisualKey = '';
   }
 }
 
+function currentPrefPanel(){
+  return currentPrefecture==='岐阜県'?byId('gifuPanel'):currentPrefecture==='三重県'?byId('miePanel'):byId('aichiPanel');
+}
+function mobileRegionGroups(){
+  const panel=currentPrefPanel();
+  if(!panel) return [];
+  const groups=[];
+  let regionIndex=0;
+  [...panel.children].forEach(el=>{
+    if(el.tagName==='H2'){
+      const next=el.nextElementSibling;
+      if(next?.classList.contains('cities')){
+        groups.push({key:String(regionIndex++),label:el.textContent.trim(),cities:[...next.querySelectorAll('button')]});
+      }
+    }
+  });
+  return groups;
+}
+function refreshMobileRegionSelect(){
+  if(!mobileRegionSelect||!mobileCitySelect) return;
+  const groups=mobileRegionGroups();
+  mobileRegionSelect.innerHTML='';
+  groups.forEach(g=>{
+    const o=document.createElement('option');o.value=g.key;o.textContent=g.label;mobileRegionSelect.appendChild(o);
+  });
+  mobileRegionSelect.value=groups[0]?.key||'';
+  refreshMobileCitySelect();
+}
+function refreshMobileCitySelect(){
+  if(!mobileCitySelect) return;
+  const groups=mobileRegionGroups();
+  const group=groups.find(g=>g.key===mobileRegionSelect?.value)||groups[0];
+  mobileCitySelect.innerHTML='<option value="">市町村を選択</option>';
+  group?.cities.forEach(btn=>{
+    const o=document.createElement('option');o.value=btn.id;o.textContent=btn.textContent.trim();mobileCitySelect.appendChild(o);
+  });
+  mobileCitySelect.value='';
+}
+mobileRegionSelect?.addEventListener('change',refreshMobileCitySelect);
+mobileCitySelect?.addEventListener('change',()=>{
+  const btn=byId(mobileCitySelect.value);
+  if(btn) btn.click();
+});
+
 function selectPrefecture(pref){
   currentPrefecture=pref;
   const isAichi=pref==='愛知県', isGifu=pref==='岐阜県', isMie=pref==='三重県';
@@ -1630,10 +1680,12 @@ function selectPrefecture(pref){
   tabAichi.classList.toggle('active',isAichi);
   tabGifu.classList.toggle('active',isGifu);
   tabMie.classList.toggle('active',isMie);
+  refreshMobileRegionSelect();
 }
 tabAichi.onclick=()=>selectPrefecture('愛知県');
 tabGifu.onclick=()=>selectPrefecture('岐阜県');
 tabMie.onclick=()=>selectPrefecture('三重県');
+refreshMobileCitySelect();
 
 yokkaichi.onclick=()=>selectCity(yokkaichi,'四日市市');
 kuwana.onclick=()=>selectCity(kuwana,'桑名市');
@@ -2147,7 +2199,7 @@ clearRankingCache.onclick=()=>{
 };
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js?rev=20260923-173').then(reg => {
+  navigator.serviceWorker.register('./sw.js?rev=20261005-174').then(reg => {
     reg.update();
   });
 }
