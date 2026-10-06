@@ -1653,7 +1653,7 @@ function refreshMobileRegionSelect(){
     const o=document.createElement('option');o.value=g.key;o.textContent=g.label;mobileRegionSelect.appendChild(o);
   });
   mobileRegionSelect.value=groups[0]?.key||'';
-  refreshMobileRegionSelect();
+  refreshMobileCitySelect();
 }
 function refreshMobileCitySelect(){
   if(!mobileCitySelect) return;
