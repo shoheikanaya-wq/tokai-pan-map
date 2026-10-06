@@ -643,6 +643,7 @@ button,.back,.detail-action,.review-trigger{
   }
 }
 
+.mobile-area-picker{display:none;margin:7px 0 10px;grid-template-columns:1fr 1fr;gap:6px}.mobile-area-picker label{display:block;font-size:10px;font-weight:800;margin-bottom:3px}.mobile-area-picker select{width:100%;min-height:42px;border:1px solid #b98a55;border-radius:11px;background:#fffaf1;color:#332316;font:inherit;font-weight:800;padding:8px 9px}@media(max-width:600px){.mobile-area-picker{display:grid}#aichiPanel .cities,#gifuPanel .cities,#miePanel .cities{display:none}#aichiPanel>h2,#gifuPanel>h2,#miePanel>h2{display:none}}
 </style></head>
 <body><header><h1 id="appTitle" style="cursor:pointer;">🥐 ぷらっとパン</h1><div class="sub">市町村から、おいしいパン屋を探す</div><div style="margin-top:10px"><a href="index.html" aria-label="ぷらっと東海へ戻る" style="display:inline-block;padding:9px 14px;border-radius:999px;background:#fff;color:#6b431f;text-decoration:none;font-weight:700;border:1px solid #d8c2a8">← ぷらっと東海へ戻る</a></div></header><main>
 <section id="home">
@@ -657,7 +658,7 @@ button,.back,.detail-action,.review-trigger{
     </a>
   </div>
   
-  <div class="tabs"><button id="tabAichi" class="active">愛知県</button><button id="tabGifu">岐阜県</button><button id="tabMie">三重県</button></div><div class="notice"><strong>Ver.1.87</strong>　PC版TOP10店舗名のみ最大2行で読みやすく表示</div><div id="aichiPanel"><h2>西三河</h2><div class="cities"><button id="toyota">豊田市</button><button id="okazaki">岡崎市</button><button id="anjo">安城市</button><button id="kariya">刈谷市</button><button id="nishio">西尾市</button>
+  <div class="tabs"><button id="tabAichi" class="active">愛知県</button><button id="tabGifu">岐阜県</button><button id="tabMie">三重県</button></div><div class="mobile-area-picker"><div><label for="mobileRegionSelect">地域</label><select id="mobileRegionSelect" aria-label="地域を選択"><option value="">地域を選択</option></select></div><div><label for="mobileCitySelect">市町村</label><select id="mobileCitySelect" aria-label="市町村を選択"><option value="">市町村を選択</option></select></div></div><div class="notice"><strong>Ver.1.87</strong>　PC版TOP10店舗名のみ最大2行で読みやすく表示</div><div id="aichiPanel"><h2>西三河</h2><div class="cities"><button id="toyota">豊田市</button><button id="okazaki">岡崎市</button><button id="anjo">安城市</button><button id="kariya">刈谷市</button><button id="nishio">西尾市</button>
 <button id="hekinan">碧南市</button>
 <button id="chiryu">知立市</button>
 <button id="takahama">高浜市</button>
@@ -1237,6 +1238,8 @@ function showDetailView(){
 }
 const home=document.querySelector('#home'),ranking=document.querySelector('#ranking'),detail=document.querySelector('#detail'),list=document.querySelector('#list');
 const byId = id => document.getElementById(id);
+const mobileRegionSelect=byId('mobileRegionSelect');
+const mobileCitySelect=byId('mobileCitySelect');
 const appTitle=byId('appTitle'), rankingTitle=byId('rankingTitle');
 const back=byId('back'), backBottom=byId('backBottom'), back2=byId('back2'), backDetailBottom=byId('backDetailBottom');
 const dname=byId('dname'), daddr=byId('daddr'), drating=byId('drating'), dhours=byId('dhours'), dphone=byId('dphone'), dwebsite=byId('dwebsite'), dmaps=byId('dmaps'), dreviewBtn=byId('dreviewBtn'), dreviewPanel=byId('dreviewPanel'), drank=byId('drank'), dfeatures=byId('dfeatures'), dspecial=byId('dspecial'), drecommend=byId('drecommend'), dclosed=byId('dclosed'), dproduct=byId('dproduct');
@@ -1657,6 +1660,40 @@ currentVisualKey = '';
   }
 }
 
+function currentPrefPanel(){
+  return currentPrefecture==='岐阜県'?byId('gifuPanel'):currentPrefecture==='三重県'?byId('miePanel'):byId('aichiPanel');
+}
+function mobileRegionGroups(){
+  const panel=currentPrefPanel();
+  if(!panel) return [];
+  const groups=[]; let regionIndex=0;
+  [...panel.children].forEach(el=>{
+    if(el.tagName==='H2'){
+      const next=el.nextElementSibling;
+      if(next?.classList.contains('cities')) groups.push({key:String(regionIndex++),label:el.textContent.trim(),cities:[...next.querySelectorAll('button')]});
+    }
+  });
+  return groups;
+}
+function refreshMobileRegionSelect(){
+  if(!mobileRegionSelect||!mobileCitySelect) return;
+  const groups=mobileRegionGroups();
+  mobileRegionSelect.innerHTML='';
+  groups.forEach(g=>{const o=document.createElement('option');o.value=g.key;o.textContent=g.label;mobileRegionSelect.appendChild(o);});
+  mobileRegionSelect.value=groups[0]?.key||'';
+  refreshMobileCitySelect();
+}
+function refreshMobileCitySelect(){
+  if(!mobileCitySelect) return;
+  const groups=mobileRegionGroups();
+  const group=groups.find(g=>g.key===mobileRegionSelect?.value)||groups[0];
+  mobileCitySelect.innerHTML='<option value="">市町村を選択</option>';
+  group?.cities.forEach(btn=>{const o=document.createElement('option');o.value=btn.id;o.textContent=btn.textContent.trim();mobileCitySelect.appendChild(o);});
+  mobileCitySelect.value='';
+}
+mobileRegionSelect?.addEventListener('change',refreshMobileCitySelect);
+mobileCitySelect?.addEventListener('change',()=>{const btn=byId(mobileCitySelect.value);if(btn) btn.click();});
+
 function selectPrefecture(pref){
   currentPrefecture=pref;
   const isAichi=pref==='愛知県', isGifu=pref==='岐阜県', isMie=pref==='三重県';
@@ -1666,10 +1703,12 @@ function selectPrefecture(pref){
   tabAichi.classList.toggle('active',isAichi);
   tabGifu.classList.toggle('active',isGifu);
   tabMie.classList.toggle('active',isMie);
+  refreshMobileRegionSelect();
 }
 tabAichi.onclick=()=>selectPrefecture('愛知県');
 tabGifu.onclick=()=>selectPrefecture('岐阜県');
 tabMie.onclick=()=>selectPrefecture('三重県');
+refreshMobileRegionSelect();
 
 yokkaichi.onclick=()=>selectCity(yokkaichi,'四日市市');
 kuwana.onclick=()=>selectCity(kuwana,'桑名市');
