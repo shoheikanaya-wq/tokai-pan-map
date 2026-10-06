@@ -221,7 +221,7 @@ function renderShopList(){
  list.querySelectorAll('[data-detail]').forEach(b=>b.addEventListener('click',()=>showDetail(Number(b.dataset.detail))));
  list.querySelectorAll('[data-rush]').forEach(b=>b.addEventListener('click',()=>toggleRush(Number(b.dataset.rush))));
 }
-async function runSearch(area,pref=currentPref){
+async function runSearch(area,pref=''){
   area=String(area||'').trim();
   if(!area)return;
   input.value=area;
@@ -341,9 +341,9 @@ async function loadReviews(p){
 }
 document.getElementById('detailBack').addEventListener('click',()=>{detail.classList.add('hidden');results.classList.remove('hidden')});
 
-searchBtn.addEventListener('click',()=>runSearch(input.value));
-input.addEventListener('keydown',e=>{if(e.key==='Enter')runSearch(input.value);});
-document.querySelectorAll('[data-area]').forEach(b=>b.addEventListener('click',()=>runSearch(b.dataset.area)));
+searchBtn.addEventListener('click',()=>runSearch(input.value,''));
+input.addEventListener('keydown',e=>{if(e.key==='Enter')runSearch(input.value,'');});
+document.querySelectorAll('[data-area]').forEach(b=>b.addEventListener('click',()=>runSearch(b.dataset.area,'')));
 document.getElementById('backBtn').addEventListener('click',()=>{results.classList.add('hidden');detail.classList.add('hidden');home.classList.remove('hidden');});
 </script>
 </body>
