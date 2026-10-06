@@ -22,6 +22,131 @@ app.get('/health', (_req, res) => {
   res.json({ ok: true, service: 'tokai-pan-route-api' });
 });
 
+const PLACES_TEXT_SEARCH_URL = 'https://places.googleapis.com/v1/places:searchText';
+const ALLOWED_CATEGORIES = new Set(['bakery', 'ramen']);
+
+function normalizeSearchRequest(body = {}) {
+  const category = String(body.category || 'bakery').toLowerCase();
+  if (!ALLOWED_CATEGORIES.has(category)) return { error: 'unsupported_category' };
+
+  const defaultWord = category === 'ramen' ? 'ラーメン' : 'パン屋';
+  const textQuery = String(body.textQuery || '').trim();
+  const area = String(body.area || '').trim();
+  const query = textQuery || (area ? `${defaultWord} ${area}` : '');
+
+  if (!query || query.length > 200) return { error: 'invalid_text_query' };
+  return { category, query };
+}
+
+function safePlaceId(value = '') {
+  const id = String(value).trim();
+  return /^[A-Za-z0-9_-]{10,300}$/.test(id) ? id : '';
+}
+
+app.get('/', async (req, res) => {
+  try {
+    if (!GOOGLE_MAPS_API_KEY) return res.status(503).json({ error: 'places_api_not_configured' });
+
+    if (req.query.photoName) {
+      const photoName = String(req.query.photoName);
+      if (!/^places\/[A-Za-z0-9_-]+\/photos\/[A-Za-z0-9_-]+$/.test(photoName)) {
+        return res.status(400).json({ error: 'invalid_photo_name' });
+      }
+      const maxWidthPx = Math.min(1600, Math.max(200, Number(req.query.maxWidthPx) || 900));
+      const url = `https://places.googleapis.com/v1/${photoName}/media?maxWidthPx=${maxWidthPx}&skipHttpRedirect=true&key=${encodeURIComponent(GOOGLE_MAPS_API_KEY)}`;
+      const r = await fetch(url);
+      const data = await r.json();
+      if (!r.ok || !data.photoUri) return res.status(502).json({ error: 'photo_api_failed' });
+      return res.redirect(302, data.photoUri);
+    }
+
+    const placeId = safePlaceId(req.query.placeId);
+    if (!placeId) return res.status(400).json({ error: 'invalid_place_id' });
+
+    const wantsReviews = String(req.query.reviews || '') === '1';
+    const wantsFeatures = String(req.query.features || '') === '1';
+    if (!wantsReviews && !wantsFeatures) return res.status(400).json({ error: 'unsupported_request' });
+
+    const fieldMask = wantsReviews
+      ? 'id,reviews'
+      : 'id,types,primaryType,editorialSummary';
+    const url = `https://places.googleapis.com/v1/places/${encodeURIComponent(placeId)}?languageCode=ja`;
+    const r = await fetch(url, {
+      headers: {
+        'X-Goog-Api-Key': GOOGLE_MAPS_API_KEY,
+        'X-Goog-FieldMask': fieldMask
+      }
+    });
+    const data = await r.json();
+    if (!r.ok) return res.status(502).json({ error: 'place_details_failed', status: r.status });
+
+    if (wantsReviews) return res.json({ reviews: Array.isArray(data.reviews) ? data.reviews : [] });
+
+    const features = [];
+    const summary = String(data.editorialSummary?.text || '').trim();
+    if (summary) features.push({ label: summary });
+    return res.json({ features: features.slice(0, 3) });
+  } catch (err) {
+    console.error('place helper failed', err);
+    res.status(500).json({ error: 'internal_error' });
+  }
+});
+
+// Places search shared by ぷらっとパン / ぷらっとラーメン.
+// Backward compatible: existing clients may POST { textQuery: 'パン屋 愛知県豊田市' } to '/'.
+app.post('/', async (req, res) => {
+  try {
+    if (!GOOGLE_MAPS_API_KEY) {
+      return res.status(503).json({ error: 'places_api_not_configured' });
+    }
+
+    const search = normalizeSearchRequest(req.body);
+    if (search.error) return res.status(400).json({ error: search.error });
+
+    const r = await fetch(PLACES_TEXT_SEARCH_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Goog-Api-Key': GOOGLE_MAPS_API_KEY,
+        'X-Goog-FieldMask': [
+          'places.id',
+          'places.types',
+          'places.primaryType',
+          'places.displayName',
+          'places.formattedAddress',
+          'places.location',
+          'places.rating',
+          'places.userRatingCount',
+          'places.currentOpeningHours',
+          'places.regularOpeningHours',
+          'places.nationalPhoneNumber',
+          'places.websiteUri',
+          'places.googleMapsUri',
+          'places.photos'
+        ].join(',')
+      },
+      body: JSON.stringify({
+        textQuery: search.query,
+        languageCode: 'ja',
+        regionCode: 'JP',
+        maxResultCount: 20
+      })
+    });
+
+    const text = await r.text();
+    if (!r.ok) {
+      console.error('Places API error', r.status, text.slice(0, 1000));
+      return res.status(502).json({ error: 'places_api_failed', status: r.status });
+    }
+
+    const data = JSON.parse(text);
+    res.json({ places: data.places || [], category: search.category });
+  } catch (err) {
+    console.error('places search failed', err);
+    res.status(500).json({ error: 'internal_error' });
+  }
+});
+
 function cleanFootprintText(value, max = 120) {
   return String(value || '').replace(/[\\u0000-\\u001f]/g, '').slice(0, max);
 }
@@ -70,7 +195,7 @@ app.post('/route', async (req, res) => {
       return res.status(503).json({ error: 'route_api_not_configured' });
     }
 
-    const { origin, destination, intermediates = [], vehicle = 'car' } = req.body || {};
+    const { origin, destination, intermediates = [], vehicle = 'car', optimize = false } = req.body || {};
     if (!validPoint(origin) || !validPoint(destination)) {
       return res.status(400).json({ error: 'invalid_origin_or_destination' });
     }
@@ -87,7 +212,8 @@ app.post('/route', async (req, res) => {
       routingPreference: 'TRAFFIC_AWARE',
       computeAlternativeRoutes: false,
       languageCode: 'ja-JP',
-      units: 'METRIC'
+      units: 'METRIC',
+      optimizeWaypointOrder: Boolean(optimize && intermediates.length > 1)
     };
 
     const r = await fetch('https://routes.googleapis.com/directions/v2:computeRoutes', {
@@ -95,7 +221,7 @@ app.post('/route', async (req, res) => {
       headers: {
         'Content-Type': 'application/json',
         'X-Goog-Api-Key': GOOGLE_MAPS_API_KEY,
-        'X-Goog-FieldMask': 'routes.distanceMeters,routes.duration,routes.staticDuration,routes.legs.distanceMeters,routes.legs.duration,routes.legs.staticDuration'
+        'X-Goog-FieldMask': 'routes.distanceMeters,routes.duration,routes.staticDuration,routes.optimizedIntermediateWaypointIndex,routes.legs.distanceMeters,routes.legs.duration,routes.legs.staticDuration'
       },
       body: JSON.stringify(body)
     });
@@ -115,6 +241,7 @@ app.post('/route', async (req, res) => {
       distanceMeters: route.distanceMeters || 0,
       durationSeconds: seconds(route.duration),
       staticDurationSeconds: seconds(route.staticDuration),
+      optimizedIntermediateWaypointIndex: Array.isArray(route.optimizedIntermediateWaypointIndex) ? route.optimizedIntermediateWaypointIndex : [],
       legs: (route.legs || []).map((leg, index) => ({
         index,
         distanceMeters: leg.distanceMeters || 0,
