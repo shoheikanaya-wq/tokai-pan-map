@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-06",
+  "rankingNote": "豊田・三好の公開ランキングを参考に、豊田市内店舗のみ抽出した初期データ。順位はアプリ内で豊田市対象に再構成。",
+  "shops": [
+    {
+      "name": "麺創 なな家",
+      "prefecture": "愛知県",
+      "city": "豊田市",
+      "address": "愛知県豊田市松ヶ枝町2-21-2",
+      "rating": 3.59,
+      "reviewCount": 620,
+      "genres": [
+        "ラーメン",
+        "つけ麺",
+        "台湾",
+        "まぜそば"
+      ],
+      "sourceRank": 1
+    },
+    {
+      "name": "神田町 虎玄",
+      "prefecture": "愛知県",
+      "city": "豊田市",
+      "address": "愛知県豊田市神田町1-6-6",
+      "rating": 3.52,
+      "reviewCount": 320,
+      "genres": [
+        "担々麺"
+      ],
+      "sourceRank": 2
+    },
+    {
+      "name": "虎玄 山之手本店",
+      "prefecture": "愛知県",
+      "city": "豊田市",
+      "address": "愛知県豊田市山之手5-91",
+      "rating": 3.5,
+      "reviewCount": 191,
+      "genres": [
+        "担々麺"
+      ],
+      "sourceRank": 3
+    },
+    {
+      "name": "麺屋GOO",
+      "prefecture": "愛知県",
+      "city": "豊田市",
+      "address": "愛知県豊田市渋谷町1-6-8",
+      "rating": 3.48,
+      "reviewCount": 232,
+      "genres": [
+        "ラーメン",
+        "まぜそば"
+      ],
+      "sourceRank": 4
+    },
+    {
+      "name": "じゅんちゃんラーメン",
+      "prefecture": "愛知県",
+      "city": "豊田市",
+      "address": "",
+      "rating": 3.48,
+      "reviewCount": 227,
+      "genres": [
+        "ラーメン",
+        "味噌"
+      ],
+      "sourceRank": 5
+    },
+    {
+      "name": "ラーメン食堂 来楽軒 兄弟店",
+      "prefecture": "愛知県",
+      "city": "豊田市",
+      "address": "愛知県豊田市小坂町6-67-2",
+      "rating": 3.45,
+      "reviewCount": 120,
+      "genres": [
+        "ラーメン",
+        "担々麺"
+      ],
+      "sourceRank": 7
+    },
+    {
+      "name": "かど家",
+      "prefecture": "愛知県",
+      "city": "豊田市",
+      "address": "愛知県豊田市伊保町下川原92-1",
+      "rating": 3.42,
+      "reviewCount": 186,
+      "genres": [
+        "ラーメン",
+        "塩"
+      ],
+      "sourceRank": 8
+    },
+    {
+      "name": "粋麺屋",
+      "prefecture": "愛知県",
+      "city": "豊田市",
+      "address": "愛知県豊田市陣中町1-15-10",
+      "rating": 3.41,
+      "reviewCount": 68,
+      "genres": [
+        "ラーメン"
+      ],
+      "sourceRank": 9
+    },
+    {
+      "name": "細麺屋 くわとろ",
+      "prefecture": "愛知県",
+      "city": "豊田市",
+      "address": "愛知県豊田市小坂町5-27-2",
+      "rating": 3.36,
+      "reviewCount": 129,
+      "genres": [
+        "ラーメン"
+      ],
+      "sourceRank": 11
+    },
+    {
+      "name": "中華そば 桜花",
+      "prefecture": "愛知県",
+      "city": "豊田市",
+      "address": "",
+      "rating": 3.35,
+      "reviewCount": 106,
+      "genres": [
+        "醤油",
+        "ラーメン"
+      ],
+      "sourceRank": 13
+    }
+  ]
+}
