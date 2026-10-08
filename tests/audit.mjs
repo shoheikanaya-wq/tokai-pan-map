@@ -94,6 +94,11 @@ assert.equal(/localStorage\.setItem\([^,]*(?:pin|password|token|secret)/i.test(h
 
 assert.equal(/AIza[0-9A-Za-z_-]{20,}/.test(html),false,'Google APIキーをフロントHTMLへ直書きしない');
 assert.equal(/asia-northeast1\.run\.app/.test(html),false,'Cloud Run URLを本番HTMLへ残さない');
+assert.match(portal,/serviceWorker\.register\('\.\/sw\.js\?rev=20261009-174'\)/,'ポータルから現行SWを登録');
+assert.equal(/https:\/\/[^'"]*\.run\.app/.test(portal),false,'ポータルにCloud Run URLなし');
+assert.equal(/https:\/\/[^'"]*\.run\.app/.test(sw),false,'Service WorkerにCloud Run URLなし');
+assert.equal(/googleapis\.com/.test(sw),false,'Service WorkerにGoogle API直結なし');
+
 assert.equal(/(?:api[_-]?key|secret|password)\s*[:=]\s*['"][^'"]{8,}['"]/i.test(html),false,'秘密情報らしい固定値をフロントへ追加しない');
 for(const m of html.matchAll(/<a\b[^>]*target=["']_blank["'][^>]*>/gi)){
   assert.match(m[0],/rel=["'][^"']*noopener/i,'target=_blank はnoopener必須');
