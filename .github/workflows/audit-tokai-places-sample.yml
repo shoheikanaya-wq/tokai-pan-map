@@ -1,15 +1,14 @@
-name: Audit Tokai Places sample
+name: Deprecated Places audit (disabled)
 
 on:
-  push:
-    paths:
-      - 'tokai-places-audit-trigger.txt'
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
-  audit:
+  disabled:
+    if: ${{ false }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Audit representative municipalities
-        run: python scripts/audit_tokai_places_sample.py
+      - run: echo "Cloud Run / Places audit is disabled. Static free mode is active."
