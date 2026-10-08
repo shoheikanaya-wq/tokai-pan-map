@@ -1871,7 +1871,7 @@ taketoyo.onclick = () => selectCity(taketoyo, '武豊町');
   nishimikawa.disabled=true; nishimikawa.textContent='取得中...';
   try {
     const local=buildTop10FromMunicipalityCache('愛知県',cities);
-    const wide=await fetchWideBakeryCandidates('パン屋 愛知県 西三河',['愛知県']);
+    const wide=FREE_ONLY_MODE ? await buildFreeTop10('愛知県',cities) : await fetchWideBakeryCandidates('パン屋 愛知県 西三河',['愛知県']);
     shops=mergeAndRankShops(['愛知県'],wide,local.shops).slice(0,10);
     setTop10Cache('西三河',shops);
     currentCity='西三河'; rankingTitle.textContent='西三河 パン屋 TOP10'; showRanking();
@@ -1893,7 +1893,7 @@ taketoyo.onclick = () => selectCity(taketoyo, '武豊町');
   higashimikawa.disabled=true; higashimikawa.textContent='取得中...';
   try {
     const local=buildTop10FromMunicipalityCache('愛知県',cities);
-    const wide=await fetchWideBakeryCandidates('パン屋 愛知県 東三河',['愛知県']);
+    const wide=FREE_ONLY_MODE ? await buildFreeTop10('愛知県',cities) : await fetchWideBakeryCandidates('パン屋 愛知県 東三河',['愛知県']);
     shops=mergeAndRankShops(['愛知県'],wide,local.shops).slice(0,10);
     setTop10Cache('東三河',shops);
     currentCity='東三河'; rankingTitle.textContent='東三河 パン屋 TOP10'; showRanking();
@@ -1912,7 +1912,7 @@ taketoyo.onclick = () => selectCity(taketoyo, '武豊町');
   mieTop10.disabled=true; mieTop10.textContent='取得中...';
   try{
     const local=buildTop10FromMunicipalityCache('三重県',cities);
-    const wide=await fetchWideBakeryCandidates('パン屋 三重県',['三重県']);
+    const wide=FREE_ONLY_MODE ? await buildFreeTop10('三重県',cities) : await fetchWideBakeryCandidates('パン屋 三重県',['三重県']);
     shops=mergeAndRankShops(['三重県'],wide,local.shops).slice(0,10);
     setTop10Cache('三重県',shops); currentCity='三重県'; rankingTitle.textContent='三重県 パン屋 TOP10'; showRanking();
   }catch(e){showLoadError('三重県ランキングを取得できませんでした。',()=>mieTop10.click());}
@@ -1954,7 +1954,7 @@ taketoyo.onclick = () => selectCity(taketoyo, '武豊町');
   gifuTop10.disabled=true; gifuTop10.textContent='取得中...';
   try{
     const local=buildTop10FromMunicipalityCache('岐阜県',cities);
-    const wide=await fetchWideBakeryCandidates('パン屋 岐阜県',['岐阜県']);
+    const wide=FREE_ONLY_MODE ? await buildFreeTop10('岐阜県',cities) : await fetchWideBakeryCandidates('パン屋 岐阜県',['岐阜県']);
     shops=mergeAndRankShops(['岐阜県'],wide,local.shops).slice(0,10);
     setTop10Cache('岐阜県',shops);
     currentCity='岐阜県';
@@ -2000,7 +2000,7 @@ taketoyo.onclick = () => selectCity(taketoyo, '武豊町');
     const local = buildTop10FromMunicipalityCache('愛知県',cities);
 
     // Google Placesへの新規問い合わせは「愛知県全域」1回だけ
-    const wide = await fetchWideBakeryCandidates('パン屋 愛知県',['愛知県']);
+    const wide = FREE_ONLY_MODE ? await buildFreeTop10('愛知県',cities) : await fetchWideBakeryCandidates('パン屋 愛知県',['愛知県']);
 
     shops = mergeAndRankShops(['愛知県'],wide, local.shops).slice(0,10);
     setTop10Cache('愛知県', shops);
