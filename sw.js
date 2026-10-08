@@ -1,11 +1,17 @@
-const CACHE_NAME = 'tokai-pan-v173';
+const CACHE_NAME = 'puratto-tokai-v174';
 
 const FILES = [
   './',
+  './index.html',
+  './new-pan.html',
+  './ramen.html',
   './panrush.html',
   './autumn-rush.html',
   './manifest.webmanifest',
   './data/static-catalog.json',
+  './aichi-top10.json',
+  './puratto-tokai-mobile.png',
+  './puratto-tokai-pc.png',
   './icon-192.png',
   './icon-512.png'
 ];
