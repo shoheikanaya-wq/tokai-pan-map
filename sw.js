@@ -1,4 +1,5 @@
-const CACHE_NAME = 'puratto-tokai-v174';
+const CACHE_NAME = 'puratto-tokai-v175';
+const RUNTIME_CACHE = 'puratto-tokai-runtime-v175';
 
 const FILES = [
   './',
@@ -27,21 +28,58 @@ self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(keys =>
       Promise.all(
-        keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key))
+        keys
+          .filter(key => key !== CACHE_NAME && key !== RUNTIME_CACHE)
+          .map(key => caches.delete(key))
       )
     ).then(() => self.clients.claim())
   );
 });
 
 self.addEventListener('fetch', event => {
-  if (event.request.mode === 'navigate') {
+  const req = event.request;
+  if (req.method !== 'GET') return;
+
+  const url = new URL(req.url);
+  const sameOrigin = url.origin === self.location.origin;
+
+  if (req.mode === 'navigate') {
     event.respondWith(
-      fetch(event.request).catch(() => caches.match(event.request, {ignoreSearch:true}) || caches.match('./'))
+      fetch(req)
+        .then(response => {
+          if (response && response.ok) {
+            const copy = response.clone();
+            caches.open(RUNTIME_CACHE).then(cache => cache.put(req, copy));
+          }
+          return response;
+        })
+        .catch(async () =>
+          (await caches.match(req, {ignoreSearch:true})) ||
+          (await caches.match('./index.html')) ||
+          (await caches.match('./'))
+        )
     );
     return;
   }
 
-  event.respondWith(
-    caches.match(event.request).then(response => response || fetch(event.request))
-  );
+  if (sameOrigin) {
+    event.respondWith(
+      caches.match(req, {ignoreSearch:true}).then(async cached => {
+        if (cached) return cached;
+        try {
+          const response = await fetch(req);
+          if (response && response.ok) {
+            const copy = response.clone();
+            caches.open(RUNTIME_CACHE).then(cache => cache.put(req, copy));
+          }
+          return response;
+        } catch (e) {
+          return new Response('', {status: 503, statusText: 'Offline'});
+        }
+      })
+    );
+    return;
+  }
+
+  event.respondWith(fetch(req));
 });
