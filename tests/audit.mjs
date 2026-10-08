@@ -93,6 +93,7 @@ assert.equal(/fetch\([^)]*(?:footprint|admin)/i.test(html),false,'認証前の�
 assert.equal(/localStorage\.setItem\([^,]*(?:pin|password|token|secret)/i.test(html),false,'管理秘密情報をlocalStorageへ保存しない');
 
 assert.equal(/AIza[0-9A-Za-z_-]{20,}/.test(html),false,'Google APIキーをフロントHTMLへ直書きしない');
+assert.equal(/asia-northeast1\.run\.app/.test(html),false,'Cloud Run URLを本番HTMLへ残さない');
 assert.equal(/(?:api[_-]?key|secret|password)\s*[:=]\s*['"][^'"]{8,}['"]/i.test(html),false,'秘密情報らしい固定値をフロントへ追加しない');
 for(const m of html.matchAll(/<a\b[^>]*target=["']_blank["'][^>]*>/gi)){
   assert.match(m[0],/rel=["'][^"']*noopener/i,'target=_blank はnoopener必須');
@@ -106,7 +107,7 @@ assert.match(html,/shop-address[^\n]*\$\{escapeHtml\(displayAddress\)\}/,'住所
 
 assert.equal(manifest.id,'./');
 assert.equal(manifest.scope,'./');
-const cacheVersion=sw.match(/CACHE_NAME\s*=\s*['"]tokai-pan-v(\d+)['"]/)?.[1];
+const cacheVersion=sw.match(/CACHE_NAME\s*=\s*['"](?:tokai-pan|puratto-tokai)-v(\d+)['"]/)?.[1];
 const swRevision=html.match(/serviceWorker\.register\(['"]\.\/sw\.js\?rev=[^'"]*-(\d+)['"]\)/)?.[1];
 assert.ok(cacheVersion,'Service Worker cache version found');
 assert.ok(swRevision,'Service Worker registration revision found');
