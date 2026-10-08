@@ -862,9 +862,6 @@ function writeBakeryCache(prefecture,city,cityShops){
 // 市町村・広域TOP10はGitHub内の静的データと端末キャッシュから構成する。
 const FREE_ONLY_MODE = true;
 
-// ===== Google Places補助API =====
-const REVIEW_API = '';
-
 // ===== 店舗写真 =====
 // 無料運用ではCloud Run写真APIを使わない。静的画像または既存フォールバックを使う。
 function placePhotoUrl(photoName){
@@ -1092,42 +1089,8 @@ function buildFactCatch(shop,usedLabels){
   };
 }
 
-async function loadShopFeatures(shop){
-  if(!shop?.placeId || shop.featuresLoaded) return false;
-  if(shop.featureRetryAt && Date.now()<shop.featureRetryAt) return false;
-  try{
-    const r=await fetch(REVIEW_API+'?placeId='+encodeURIComponent(shop.placeId)+'&features=1');
-    const data=await r.json();
-    if(!r.ok) throw new Error(data?.error || ('HTTP '+r.status));
-    shop.featureLabels=(Array.isArray(data.features)?data.features:[]).map(v=>v?.label).filter(Boolean);
-    shop.featuresLoaded=true;
-    shop.featureLoadError=false;
-    shop.featureFailCount=0;
-    shop.featureRetryAt=0;
-    return true;
-  }catch(e){
-    console.error('features',e);
-    shop.featureLoadError=true;
-    shop.featureFailCount=(shop.featureFailCount||0)+1;
-    shop.featureRetryAt=Date.now()+Math.min(60000,5000*shop.featureFailCount);
-    return false;
-  }
-}
-
-async function refreshVisibleFeatures(){
-  if(FREE_ONLY_MODE) return;
-  const now=Date.now();
-  const targets=shops.slice(0,10).filter(s=>s.placeId && !s.featuresLoaded && (!s.featureRetryAt || now>=s.featureRetryAt));
-  if(!targets.length) return;
-  const queue=[...targets];
-  const worker=async()=>{
-    while(queue.length){
-      const shop=queue.shift();
-      if(shop) await loadShopFeatures(shop);
-    }
-  };
-  await Promise.all(Array.from({length:Math.min(3,queue.length)},worker));
-  showRanking();
+function refreshVisibleFeatures(){
+  // 無料固定運用では外部APIへ問い合わせない。
 }
 
 function shopDisplayName(shop){
@@ -1267,61 +1230,11 @@ function escapeHtml(value) {
   setTimeout(refreshVisibleFeatures,0);
 }
 
-async function resolveReviewPlaceId(shop){
-  if(shop?.placeId && !String(shop.placeId).startsWith('static-') && shop.dataSource!=='osm-free' && shop.dataSource!=='static-free'){
-    return shop.placeId;
-  }
-  const query=[shop?.name,shop?.address].filter(Boolean).join(' ');
-  if(!query) return '';
-  const r=await fetch(REVIEW_API,{
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({textQuery:query})
-  });
-  const data=await r.json();
-  if(!r.ok) throw new Error(data?.error||('HTTP '+r.status));
-  const candidates=Array.isArray(data.places)?data.places:[];
-  if(!candidates.length) return '';
-  const exact=candidates.find(p=>{
-    const n=String(p?.displayName?.text||'').normalize('NFKC').replace(/\s+/g,'').toLowerCase();
-    const target=String(shop?.name||'').normalize('NFKC').replace(/\s+/g,'').toLowerCase();
-    return n===target || n.includes(target) || target.includes(n);
-  });
-  return (exact||candidates[0])?.id||'';
-}
-
 async function loadDetailReviews(shop){
-  if(FREE_ONLY_MODE){
-    dreviewPanel.classList.remove('hidden');
-    dreviewPanel.innerHTML='<div class="review-panel-head"><strong>💬 口コミ</strong><button type="button" class="review-close" id="dreviewClose">閉じる</button></div><div class="review-note">最新の口コミは地図ボタンから確認できます。</div>';
-    const closeBtn=document.getElementById('dreviewClose'); if(closeBtn) closeBtn.onclick=()=>dreviewPanel.classList.add('hidden');
-    return;
-  }
   dreviewPanel.classList.remove('hidden');
-  dreviewPanel.innerHTML='<div class="review-panel-head"><strong>💬 口コミ</strong></div><div class="muted">口コミを読み込んでいます…</div>';
-  try{
-    const placeId=await resolveReviewPlaceId(shop);
-    if(!placeId) throw new Error('place_not_found');
-    const r=await fetch(REVIEW_API+'?placeId='+encodeURIComponent(placeId)+'&reviews=1');
-    const data=await r.json();
-    if(!r.ok) throw new Error(data?.error||('HTTP '+r.status));
-    const rows=Array.isArray(data.reviews)?data.reviews.slice(0,5):[];
-    if(!rows.length) throw new Error('no_reviews');
-    dreviewPanel.innerHTML='<div class="review-panel-head"><strong>💬 口コミ（最大5件）</strong><button type="button" class="review-close" id="dreviewClose">閉じる</button></div>'+rows.map(v=>{
-      const author=v?.authorAttribution?.displayName||v?.author||'Googleユーザー';
-      const rating=v?.rating?('★'+v.rating):'';
-      const when=v?.relativePublishTimeDescription||v?.publishTime||'';
-      const body=v?.text?.text||v?.originalText?.text||v?.text||'';
-      return '<div class="review-item"><div class="review-meta">'+escapeHtml([rating,author,when].filter(Boolean).join(' ／ '))+'</div><div class="review-text">'+escapeHtml(body)+'</div></div>';
-    }).join('')+'<div class="review-note">口コミは取得元の公開情報です。内容・営業情報は来店前に最新情報をご確認ください。</div>';
-    const closeBtn=document.getElementById('dreviewClose');
-    if(closeBtn) closeBtn.onclick=()=>dreviewPanel.classList.add('hidden');
-  }catch(e){
-    console.warn('reviews',e);
-    dreviewPanel.innerHTML='<div class="review-panel-head"><strong>💬 口コミ</strong><button type="button" class="review-close" id="dreviewClose">閉じる</button></div><div class="review-note">現在アプリ内口コミを取得できません。地図ボタンから最新の口コミを確認できます。</div>';
-    const closeBtn=document.getElementById('dreviewClose');
-    if(closeBtn) closeBtn.onclick=()=>dreviewPanel.classList.add('hidden');
-  }
+  dreviewPanel.innerHTML='<div class="review-panel-head"><strong>💬 口コミ</strong><button type="button" class="review-close" id="dreviewClose">閉じる</button></div><div class="review-note">最新の口コミは地図ボタンから確認できます。</div>';
+  const closeBtn=document.getElementById('dreviewClose');
+  if(closeBtn) closeBtn.onclick=()=>dreviewPanel.classList.add('hidden');
 }
 
   function showDetail(i,updateHistory=true) {
