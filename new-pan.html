@@ -961,6 +961,19 @@ async function buildFreeTop10(prefecture,cities){
   return mergeAndRankShops([prefecture],...groups).slice(0,10);
 }
 
+async function buildFreePrefectureTop10(prefecture){
+  const catalog=await loadStaticCatalog();
+  const entries=(catalog?.municipalities||[]).filter(v=>v.prefecture===prefecture&&v.status==='ready'&&v.file);
+  const groups=[];
+  for(const entry of entries){
+    try{
+      const cityShops=await loadBakeries(prefecture,entry.city);
+      if(Array.isArray(cityShops)&&cityShops.length) groups.push(cityShops);
+    }catch(e){ /* 静的データ未整備・読込失敗は他地域の候補で継続 */ }
+  }
+  return mergeAndRankShops([prefecture],...groups).slice(0,10);
+}
+
 function mergeAndRankShops(allowedPrefectures,...groups) {
   const unique=new Map();
   groups.flat().forEach(s=>{
@@ -1929,9 +1942,9 @@ taketoyo.onclick = () => selectCity(taketoyo, '武豊町');
     const g=getTop10Cache('岐阜県',AICHI_TOP10_TTL)?.shops||[];
     const m=getTop10Cache('三重県',AICHI_TOP10_TTL)?.shops||[];
     const [aw,gw,mw]=await Promise.all([
-      a.length?Promise.resolve([]):fetchWideBakeryCandidates('パン屋 愛知県',['愛知県']),
-      g.length?Promise.resolve([]):fetchWideBakeryCandidates('パン屋 岐阜県',['岐阜県']),
-      m.length?Promise.resolve([]):fetchWideBakeryCandidates('パン屋 三重県',['三重県'])
+      a.length?Promise.resolve([]):(FREE_ONLY_MODE?buildFreePrefectureTop10('愛知県'):fetchWideBakeryCandidates('パン屋 愛知県',['愛知県'])),
+      g.length?Promise.resolve([]):(FREE_ONLY_MODE?buildFreePrefectureTop10('岐阜県'):fetchWideBakeryCandidates('パン屋 岐阜県',['岐阜県'])),
+      m.length?Promise.resolve([]):(FREE_ONLY_MODE?buildFreePrefectureTop10('三重県'):fetchWideBakeryCandidates('パン屋 三重県',['三重県']))
     ]);
     shops=mergeAndRankShops(['愛知県','岐阜県','三重県'],[...a,...g,...m],[...aw,...gw,...mw]).slice(0,10);
     setTop10Cache('東海三県',shops); currentCity='東海三県'; rankingTitle.textContent='東海三県 パン屋 TOP10'; showRanking();
