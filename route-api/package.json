@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "node server.js"
+    "start": "node -e \"console.log('route-api is deprecated and disabled; ぷらっと東海 uses GitHub Pages static mode')\"",
+    "start:legacy": "node server.js"
   },
   "engines": {
     "node": ">=20"
