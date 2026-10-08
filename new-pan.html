@@ -863,60 +863,19 @@ function writeBakeryCache(prefecture,city,cityShops){
 const FREE_ONLY_MODE = true;
 
 // ===== Google Places補助API =====
-const REVIEW_API = 'https://tokai-pan-api-873562719766.asia-northeast1.run.app';
+const REVIEW_API = '';
 
 // ===== 店舗写真 =====
-// Cloud Run側の ?photoName=... エンドポイントから写真を取得する。
-// photo resource nameは短命なので、クロワッサンはフォールバックとして残す。
+// 無料運用ではCloud Run写真APIを使わない。静的画像または既存フォールバックを使う。
 function placePhotoUrl(photoName){
-  if(!photoName) return '';
-  return 'https://tokai-pan-api-873562719766.asia-northeast1.run.app'
-    + '?photoName=' + encodeURIComponent(photoName)
-    + '&maxWidthPx=900';
+  return '';
 }
 
-// ===== 広域ランキング高速取得 =====
-// 愛知県全域を市町村ごとに54回検索せず、広域Text Searchを1回だけ実行する。
+// ===== 広域ランキング =====
+// 無料運用では外部Google Places/Cloud Runへ問い合わせない。
+// 呼び出し元はGitHub内の静的市町村データからTOP10を構成する。
 async function fetchWideBakeryCandidates(textQuery, allowedPrefectures) {
-  if(FREE_ONLY_MODE) return [];
-  const response = await fetch(
-    'https://tokai-pan-api-873562719766.asia-northeast1.run.app',
-    {
-      method: 'POST',
-      headers: {'Content-Type':'application/json'},
-      body: JSON.stringify({textQuery})
-    }
-  );
-
-  if (!response.ok) {
-    throw new Error('Google Places API エラー: ' + response.status);
-  }
-
-  const data = await response.json();
-
-  return (data.places || []).map(p => ({
-    placeId: p.id || '',
-    name: p.displayName?.text || '名称不明',
-    rating: p.rating || 0,
-    reviews: p.userRatingCount || 0,
-    address: p.formattedAddress || '住所不明',
-    type: 'パン屋',
-    types: p.types || [],
-    openingHours: p.regularOpeningHours?.weekdayDescriptions || [],
-    openNow: p.currentOpeningHours?.openNow ?? null,
-    phone: p.nationalPhoneNumber || '',
-    website: p.websiteUri || '',
-    googleMaps: p.googleMapsUri || '',
-    photoName: p.photos?.[0]?.name || '',
-    photo: placePhotoUrl(p.photos?.[0]?.name || ''),
-    photoAlt: `${p.displayName?.text || 'パン屋'}の写真`,
-    photoAttribution: p.photos?.[0]?.authorAttributions?.[0]?.displayName || '',
-    catchphrase: p.catchphrase || p.editorialSummary?.text || '',
-    highlights: Array.isArray(p.highlights) ? p.highlights.slice(0, 2) : [],
-    score: rankingScore(p.rating,p.userRatingCount)
-  }))
-  .filter(isBakeryCandidate)
-  .filter(s => allowedPrefectures.some(pref => s.address.includes(pref)));
+  return [];
 }
 
 function rankingScore(rating,reviews){
