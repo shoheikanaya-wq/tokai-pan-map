@@ -64,6 +64,13 @@
       "file": "assets/scenes/pan/hekinan/puratto-pan-hekinan-akashi-park-three-characters-walking-02.png",
       "status": "published",
       "description": "碧南市・明石公園の観覧車と3キャラの散歩。場所が分かるファイル名でPNGを登録済み。現地写真ではなくイメージイラスト"
+    },
+    {
+      "id": "PAN-TAKAHAMA-001",
+      "page": "pan/takahama/ranking",
+      "file": "assets/scenes/pan/takahama/puratto-pan_takahama_onimichi_bench-bread-three-characters_01.webp",
+      "status": "local-only",
+      "description": "高浜市・鬼みちを題材にした、女子高生がベンチでパンを食べ、柴犬と猫が寄り添う3キャラのイメージイラスト。実景未照合、画像本体アップロード待ち"
     }
   ]
 }
