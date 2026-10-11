@@ -68,9 +68,9 @@
     {
       "id": "PAN-TAKAHAMA-001",
       "page": "pan/takahama/ranking",
-      "file": "assets/scenes/pan/takahama/puratto-pan_takahama_onimichi_bench-bread-three-characters_01.webp",
-      "status": "local-only",
-      "description": "高浜市・鬼みちを題材にした、女子高生がベンチでパンを食べ、柴犬と猫が寄り添う3キャラのイメージイラスト。実景未照合、画像本体アップロード待ち"
+      "file": "assets/scenes/pan/takahama/puratto-pan-takahama-onimichi-oni-tile-bread-break-01.png",
+      "status": "published",
+      "description": "高浜市・鬼みちを題材にした鬼瓦の町でパン休憩する3キャラのイメージイラスト。画像本体はPNGでGitHub登録済み、実景未照合"
     }
   ]
 }
