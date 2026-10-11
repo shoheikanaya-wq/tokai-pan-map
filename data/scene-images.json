@@ -22,6 +22,13 @@
       "file": "assets/scenes/pan/toyota/puratto-toyota-pan-scene-02.webp",
       "status": "published",
       "description": "パン屋の店先で女子高生がパンを選び猫と柴犬が見守る"
+    },
+    {
+      "id": "PAN-OKAZAKI-001",
+      "page": "pan/okazaki/ranking",
+      "file": "assets/scenes/pan/okazaki/puratto-pan-okazaki-scene-01.webp",
+      "status": "local-only",
+      "description": "岡崎城と桜の河畔で女子高生・猫・柴犬がパンを楽しむ独自シーン"
     }
   ]
 }
