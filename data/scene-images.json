@@ -71,6 +71,13 @@
       "file": "assets/scenes/pan/takahama/puratto-pan-takahama-onimichi-oni-tile-bread-break-01.png",
       "status": "published",
       "description": "高浜市・鬼みちを題材にした鬼瓦の町でパン休憩する3キャラのイメージイラスト。画像本体はPNGでGitHub登録済み、実景未照合"
+    },
+    {
+      "id": "PAN-MIYOSHI-001",
+      "page": "pan/miyoshi/ranking",
+      "file": "assets/scenes/pan/miyoshi/puratto-pan-miyoshi-miyoshi-pond-hydrangea-lakeside-3characters-01.png",
+      "status": "published",
+      "description": "愛知県みよし市・三好池を題材にした湖畔とアジサイ、3キャラのイメージイラスト。実景の細部照合は未完了"
     }
   ]
 }
