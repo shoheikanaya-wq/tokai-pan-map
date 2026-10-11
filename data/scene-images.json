@@ -55,8 +55,8 @@
       "id": "PAN-NISHIO-001",
       "page": "pan/nishio/ranking",
       "file": "assets/scenes/pan/nishio/puratto-pan-nishio-castle-02.webp",
-      "status": "local-only",
-      "description": "西尾城跡を題材にした3キャラの表情・動作を変えた最新版。背景の建物は実景と未照合のため仮採用"
+      "status": "published",
+      "description": "西尾城跡を題材にした3キャラの表情・動作を変えた最新版。画像本体はGitHub登録済み。背景の建物は実景未照合のためイメージイラスト扱い"
     }
   ]
 }
