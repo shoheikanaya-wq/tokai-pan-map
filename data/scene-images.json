@@ -78,6 +78,13 @@
       "file": "assets/scenes/pan/miyoshi/puratto-pan-miyoshi-miyoshi-pond-hydrangea-lakeside-3characters-01.png",
       "status": "published",
       "description": "愛知県みよし市・三好池を題材にした湖畔とアジサイ、3キャラのイメージイラスト。実景の細部照合は未完了"
+    },
+    {
+      "id": "PAN-GAMAGORI-001",
+      "page": "pan/gamagori/ranking",
+      "file": "assets/scenes/pan/gamagori/puratto-pan-gamagori-takeshima-bridge-breadbag-three-characters-01.png",
+      "status": "published",
+      "description": "蒲郡市・竹島橋を題材にした女子高生（パン袋）・柴犬・猫のイラスト。GitHub画像本体登録済み。橋の銘板・構造の現地写真との細部照合は未完了"
     }
   ]
 }
