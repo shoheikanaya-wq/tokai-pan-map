@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "policy": {
+    "scene_image_reuse": false,
+    "shared_assets_exempt": [
+      "logo",
+      "icon"
+    ],
+    "preserve_existing_images": true
+  },
+  "images": [
+    {
+      "id": "PAN-TOYOTA-001",
+      "page": "pan/toyota/hero",
+      "file": "assets/scenes/pan/toyota/puratto-pan-toyota.webp",
+      "status": "local-only",
+      "description": "豊田市パン・第1シーン"
+    },
+    {
+      "id": "PAN-TOYOTA-002",
+      "page": "pan/toyota/ranking",
+      "file": "assets/scenes/pan/toyota/puratto-toyota-pan-scene-02.webp",
+      "status": "local-only",
+      "description": "パン屋の店先で女子高生がパンを選び猫と柴犬が見守る"
+    }
+  ]
+}
