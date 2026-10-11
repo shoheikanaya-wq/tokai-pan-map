@@ -36,6 +36,13 @@
       "file": "assets/scenes/pan/anjo/puratto-pan-anjo-scene-01.webp",
       "status": "published",
       "description": "安城市・安城駅前をイメージした花の広場で3キャラがパンを楽しむオリジナルイラスト（実景の正確な再現ではない）"
+    },
+    {
+      "id": "PAN-KARIYA-001",
+      "page": "pan/kariya/ranking",
+      "file": "assets/scenes/pan/kariya/puratto-pan-kariya-highway-oasis-01.webp",
+      "status": "local-only",
+      "description": "刈谷ハイウェイオアシスの観覧車を背景とする3キャラのパン散歩イラスト。実景の細部は未照合"
     }
   ]
 }
