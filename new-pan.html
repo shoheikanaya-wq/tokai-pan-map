@@ -1388,6 +1388,7 @@ function escapeHtml(value) {
     '西尾市': 'assets/scenes/pan/nishio/puratto-pan-nishio-castle-02.webp',
     '碧南市': 'assets/scenes/pan/hekinan/puratto-pan-hekinan-akashi-park-three-characters-walking-02.png',
     '高浜市': 'assets/scenes/pan/takahama/puratto-pan-takahama-onimichi-oni-tile-bread-break-01.png',
+    'みよし市': 'assets/scenes/pan/miyoshi/puratto-pan-miyoshi-miyoshi-pond-hydrangea-lakeside-3characters-01.png',
     '西三河': 'nishimikawa-v2.png',
     '東三河': 'higashimikawa-v2.png'
   };
@@ -1395,7 +1396,7 @@ function escapeHtml(value) {
   const area = images[city] ? city : getAreaName(city);
 
   if (images[area]) {
-    areaVisual.innerHTML = area === '豊田' ? `<img src="${images[area]}" alt="豊田市のパン屋さん" onerror="this.onerror=null;this.src='toyota-v2.png'">` : area === '岡崎市' ? `<img src="${images[area]}" alt="岡崎城と桜のパン散歩" onerror="this.onerror=null;this.src='nishimikawa-v2.png'">` : area === '安城市' ? `<img src="${images[area]}" alt="安城市のパン散歩" onerror="this.onerror=null;this.src='nishimikawa-v2.png'">` : area === '刈谷市' ? `<img src="${images[area]}" alt="刈谷ハイウェイオアシスとパン散歩" onerror="this.onerror=null;this.src='nishimikawa-v2.png'">` : area === '知立市' ? `<img src="${images[area]}" alt="知立市・八橋かきつばた園を題材にしたパン散歩イラスト" onerror="this.onerror=null;this.src='nishimikawa-v2.png'">` : area === '西尾市' ? `<img src="${images[area]}" alt="西尾城跡を題材にしたパン散歩イラスト" onerror="this.onerror=null;this.src='nishimikawa-v2.png'">` : area === '碧南市' ? `<img src="${images[area]}" alt="碧南市・明石公園を題材にしたパン散歩イラスト" onerror="this.onerror=null;this.src='nishimikawa-v2.png'">` : area === '高浜市' ? `<img src="${images[area]}" alt="高浜市・鬼みちのベンチで3キャラがパンを楽しむイラスト" onerror="this.onerror=null;this.src='nishimikawa-v2.png'">` : `<img src="${images[area]}" alt="${area}">`;
+    areaVisual.innerHTML = area === '豊田' ? `<img src="${images[area]}" alt="豊田市のパン屋さん" onerror="this.onerror=null;this.src='toyota-v2.png'">` : area === '岡崎市' ? `<img src="${images[area]}" alt="岡崎城と桜のパン散歩" onerror="this.onerror=null;this.src='nishimikawa-v2.png'">` : area === '安城市' ? `<img src="${images[area]}" alt="安城市のパン散歩" onerror="this.onerror=null;this.src='nishimikawa-v2.png'">` : area === '刈谷市' ? `<img src="${images[area]}" alt="刈谷ハイウェイオアシスとパン散歩" onerror="this.onerror=null;this.src='nishimikawa-v2.png'">` : area === '知立市' ? `<img src="${images[area]}" alt="知立市・八橋かきつばた園を題材にしたパン散歩イラスト" onerror="this.onerror=null;this.src='nishimikawa-v2.png'">` : area === '西尾市' ? `<img src="${images[area]}" alt="西尾城跡を題材にしたパン散歩イラスト" onerror="this.onerror=null;this.src='nishimikawa-v2.png'">` : area === '碧南市' ? `<img src="${images[area]}" alt="碧南市・明石公園を題材にしたパン散歩イラスト" onerror="this.onerror=null;this.src='nishimikawa-v2.png'">` : area === 'みよし市' ? `<img src="${images[area]}" alt="みよし市・三好池の湖畔と3キャラ" onerror="this.onerror=null;this.src='nishimikawa-v2.png'">` : area === '高浜市' ? `<img src="${images[area]}" alt="高浜市・鬼みちのベンチで3キャラがパンを楽しむイラスト" onerror="this.onerror=null;this.src='nishimikawa-v2.png'">` : `<img src="${images[area]}" alt="${area}">`;
     areaVisual.style.display = 'block';
     rankingHero.classList.remove('no-visual');
   } else {
