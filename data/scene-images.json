@@ -57,6 +57,13 @@
       "file": "assets/scenes/pan/nishio/puratto-pan-nishio-castle-02.webp",
       "status": "published",
       "description": "西尾城跡を題材にした3キャラの表情・動作を変えた最新版。画像本体はGitHub登録済み。背景の建物は実景未照合のためイメージイラスト扱い"
+    },
+    {
+      "id": "PAN-HEKINAN-001",
+      "page": "pan/hekinan/ranking",
+      "file": "assets/scenes/pan/hekinan/puratto-pan-hekinan-akashi-02.webp",
+      "status": "local-only",
+      "description": "碧南市明石公園を題材にした3キャラの採用イラスト。女子高生のスカート丈は後ろ姿でも臀部が見えない長さ。画像本体アップロード待ち、実景写真ではない。"
     }
   ]
 }
