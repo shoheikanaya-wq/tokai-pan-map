@@ -652,6 +652,24 @@ button,.back,.detail-action,.review-trigger{
 @media(max-width:600px){#ranking .mini-mascot-margin img{width:24px;opacity:.28}}
 @media(prefers-reduced-motion:reduce){#ranking .mini-mascot-margin img{animation:none}}
 
+
+/* Compact horizontal TOP10 cards: details live on the linked shop page. */
+#list .rank-card{position:relative;min-height:48px;align-items:center;gap:7px;padding:6px 62px 6px 7px!important;margin:4px 0;overflow:hidden;text-align:left}
+#list .rank-card .shop-main{min-width:0}
+#list .rank-card .shop-points{display:none!important}
+#list .rank-card .shop-address{display:none!important}
+#list .rank-detail-cue{position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:12px;font-weight:800;white-space:nowrap;color:#93440e;background:#fff4e5;border-radius:9px;padding:5px 7px}
+#list .rank-card:focus-visible{outline:3px solid #a05219;outline-offset:2px}
+@media(max-width:600px){
+ #list .rank-card,#list .rank-card.no-visual{display:block;min-height:43px;padding:6px 54px 6px 5px!important;margin-bottom:3px}
+ #list .rank-card .shop-photo{display:none!important}
+ #list .shop-title-row{display:flex!important;flex-wrap:wrap;align-items:center;gap:3px 6px}
+ #list .shop-name{font-size:clamp(12px,3.6vw,16px);line-height:1.18;min-width:0;white-space:normal}
+ #list .shop-inline-feature{font-size:9px;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+ #list .shop-review-inline,#list .shop-rating-inline{display:none!important}
+ #list .rank-detail-cue{right:5px;font-size:10px;padding:5px 4px}
+}
+
 </style></head>
 <body><header><h1 id="appTitle" style="cursor:pointer;">🥐 ぷらっとパン</h1><div class="sub">市町村から、おいしいパン屋を探す</div><div style="margin-top:10px"><a href="index.html" aria-label="ぷらっと東海へ戻る" style="display:inline-block;padding:9px 14px;border-radius:999px;background:#fff;color:#6b431f;text-decoration:none;font-weight:700;border:1px solid #d8c2a8">← ぷらっと東海へ戻る</a></div></header><main>
 <section id="home">
@@ -1379,7 +1397,7 @@ function showRanking() {
     const productLine = s.representativeProduct && !String(s.catchphrase||'').includes(s.representativeProduct) && !(Array.isArray(s.highlights)&&s.highlights.some(v=>String(v).includes(s.representativeProduct)))
       ? '<span class="shop-signature">🥖 '+escapeHtml(s.representativeProduct)+'</span>' : '';
     const distinctive = `${catchphrase}${points}${productLine}${attribution}`;
-    b.innerHTML=`${photo}<span class="shop-main"><span class="shop-title-row"><strong class="badge">${i+1}位</strong><strong class="shop-name">${escapeHtml(displayName)}</strong>${displayCatch ? `<span class="shop-inline-feature">${escapeHtml(displayCatch)}</span>` : ''}${s.dataSource==='osm-free' ? '<span class="shop-review-inline">公開地図</span>' : `<span class="shop-review-inline">口コミ ${escapeHtml(s.reviews)}件</span><strong class="shop-rating-inline">★${escapeHtml(s.rating)}</strong>`}</span><span class="muted shop-address">${escapeHtml(displayAddress)}</span></span>${(points||productLine||attribution) ? `<span class="shop-points">${points}${productLine}${attribution}</span>` : ''}`;
+    b.innerHTML=`${photo}<span class="shop-main"><span class="shop-title-row"><strong class="badge">${i+1}位</strong><strong class="shop-name">${escapeHtml(displayName)}</strong>${displayCatch ? `<span class="shop-inline-feature">${escapeHtml(displayCatch)}</span>` : ''}${s.dataSource==='osm-free' ? '<span class="shop-review-inline">公開地図</span>' : `<span class="shop-review-inline">口コミ ${escapeHtml(s.reviews)}件</span><strong class="shop-rating-inline">★${escapeHtml(s.rating)}</strong>`}</span><span class="muted shop-address">${escapeHtml(displayAddress)}</span></span><span class="rank-detail-cue" aria-hidden="true">詳細 ›</span>${(points||productLine||attribution) ? `<span class="shop-points">${points}${productLine}${attribution}</span>` : ''}`;
     b.onclick=()=>showDetail(i);
     list.appendChild(b);
   });
