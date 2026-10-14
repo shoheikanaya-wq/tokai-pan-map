@@ -1363,35 +1363,82 @@ function renderMascotWhitespace(id){
   if(section.classList.contains('hidden'))return;
   const bounds=section.getBoundingClientRect();
   if(bounds.width<240||bounds.height<120)return;
-  // Block all visible text, images, buttons, links and cards. Only free space qualifies.
-  const blocked=[...section.querySelectorAll('button,a,img,h1,h2,h3,h4,p,small,strong,.notice,.tabs,.cities,.card,.rush-entry-grid,.detail-info-block,.detail-actions,.nav-buttons,.detail-bottom-nav,.muted')].filter(el=>!layer.contains(el)&&el.getClientRects().length);
-  const rects=blocked.map(el=>el.getBoundingClientRect()).filter(r=>r.width>0&&r.height>0);
   const mobile=bounds.width<600;
-  const size=mobile?30:42, gap=mobile?9:12;
-  const candidates=[];
-  // Inspect a sparse grid, never alter the document's layout or scroll height.
-  const stepX=mobile?43:58,stepY=mobile?61:76;
-  for(let y=18;y<bounds.height-size-12;y+=stepY){
-    for(let x=8;x<bounds.width-size-8;x+=stepX){
-      const left=bounds.left+x,top=bounds.top+y;
-      if(rects.some(r=>left<r.right+gap&&left+size>r.left-gap&&top<r.bottom+gap&&top+size>r.top-gap))continue;
-      candidates.push({x,y});
-    }
-  }
-  for(let i=candidates.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[candidates[i],candidates[j]]=[candidates[j],candidates[i]]}
+  const size=mobile?34:44, gap=4;
   const files=miniMascotFiles.slice();
   for(let i=files.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[files[i],files[j]]=[files[j],files[i]]}
-  const chosen=[];
-  const limit=mobile?9:16;
-  for(const spot of candidates){
-    if(chosen.length>=limit)break;
-    if(chosen.some(p=>Math.abs(p.x-spot.x)<size+20&&Math.abs(p.y-spot.y)<size+20))continue;
-    chosen.push(spot);
-    const img=document.createElement('img');
-    img.src=files[(chosen.length-1)%files.length];img.alt='';img.loading='lazy';img.decoding='async';
-    img.style.left=spot.x+'px';img.style.top=spot.y+'px';img.style.setProperty('--mascot-size',size+'px');
-    img.onerror=()=>img.remove();
-    layer.append(img);
+  // Block actual controls, text, and photos — not entire city-button containers.
+  const selectors='button,a,img,h1,h2,h3,h4,p,small,strong,.notice,.tabs,.card,.rush-entry-grid,.detail-info-block,.detail-actions,.nav-buttons,.detail-bottom-nav,.muted';
+  const obstacles=[...section.querySelectorAll(selectors)].filter(el=>!layer.contains(el)&&el.getClientRects().length&&!el.closest('.hidden'));
+  const rects=[];
+  for(const el of obstacles){
+    let rect=el.getBoundingClientRect();
+    if(rect.width<1||rect.height<1)continue;
+    if(el.matches('h1,h2,h3,h4,p,small,strong')&&el.firstChild){
+      const range=document.createRange();range.selectNodeContents(el);
+      const textRect=range.getBoundingClientRect();
+      if(textRect.width>0&&textRect.height>0)rect=textRect;
+    }
+    rects.push(rect);
+  }
+  function safe(x,y){
+    if(x<4||y<0||x+size>bounds.width-4||y+size>bounds.height)return false;
+    const left=bounds.left+x,top=bounds.top+y;
+    return !rects.some(r=>left<r.right+gap&&left+size>r.left-gap&&top<r.bottom+gap&&top+size>r.top-gap);
+  }
+  const candidates=[];
+  // Add gaps to the right of headings across the whole prefecture panel.
+  const headings=[...section.querySelectorAll('h2,h3')].filter(el=>el.getClientRects().length&&!el.closest('.hidden'));
+  for(const h of headings){
+    const r=h.getBoundingClientRect(), y=r.top-bounds.top+(r.height-size)/2;
+    for(let x=bounds.width-size-8;x>bounds.width*.42;x-=size+9){
+      if(safe(x,y)){candidates.push({x,y});break}
+    }
+  }
+  // Use the unused portion at the right of each city-button row.
+  for(const group of section.querySelectorAll('.cities')){
+    if(!group.getClientRects().length||group.closest('.hidden'))continue;
+    const rows=new Map();
+    for(const button of group.querySelectorAll('button')){
+      const b=button.getBoundingClientRect();
+      const key=Math.round((b.top-bounds.top)/7)*7;
+      const old=rows.get(key);
+      rows.set(key,old?{right:Math.max(old.right,b.right),top:Math.min(old.top,b.top),bottom:Math.max(old.bottom,b.bottom)}:{right:b.right,top:b.top,bottom:b.bottom});
+    }
+    for(const row of rows.values()){
+      const y=row.top-bounds.top+(row.bottom-row.top-size)/2, x=row.right-bounds.left+8;
+      if(safe(x,y))candidates.push({x,y});
+    }
+  }
+  // Other naturally empty areas, including store-detail page margins.
+  for(let y=12;y<bounds.height-size;y+=(mobile?37:54)){
+    for(let x=6;x<bounds.width-size;x+=(mobile?37:51)){
+      if(safe(x,y))candidates.push({x,y});
+    }
+  }
+  // Spread mascots across vertical bands rather than all near the bottom.
+  const bands=new Map();
+  for(const p of candidates){
+    const band=Math.floor(p.y/(mobile?155:200));
+    if(!bands.has(band))bands.set(band,[]);
+    bands.get(band).push(p);
+  }
+  const chosen=[], keys=[...bands.keys()].sort((a,b)=>a-b);
+  const limit=mobile?Math.min(36,keys.length*2):Math.min(40,keys.length*2);
+  for(let pass=0;pass<2&&chosen.length<limit;pass++){
+    for(const key of keys){
+      if(chosen.length>=limit)break;
+      const options=bands.get(key);
+      for(let i=options.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[options[i],options[j]]=[options[j],options[i]]}
+      const spot=options.find(p=>!chosen.some(q=>Math.abs(p.x-q.x)<size+12&&Math.abs(p.y-q.y)<size+12));
+      if(!spot)continue;
+      chosen.push(spot);
+      const img=document.createElement('img');
+      img.src=files[(chosen.length-1)%files.length];img.alt='';img.loading='lazy';img.decoding='async';
+      img.style.left=spot.x+'px';img.style.top=spot.y+'px';img.style.setProperty('--mascot-size',size+'px');
+      img.onerror=()=>img.remove();
+      layer.append(img);
+    }
   }
 }
 function queueMascotWhitespace(id){requestAnimationFrame(()=>requestAnimationFrame(()=>renderMascotWhitespace(id)))}
@@ -1400,6 +1447,11 @@ window.addEventListener('resize',()=>{
   if(!document.getElementById('detail').classList.contains('hidden'))queueMascotWhitespace('detailMascots');
 },{passive:true});
 queueMascotWhitespace('homeMascots');
+const mascotPanelObserver=new MutationObserver(()=>queueMascotWhitespace('homeMascots'));
+for(const id of ['aichiPanel','gifuPanel','miePanel']){
+  const panel=document.getElementById(id);
+  if(panel)mascotPanelObserver.observe(panel,{attributes:true,attributeFilter:['class']});
+}
 function showRanking() {
   showAreaVisual(currentVisualKey || currentCity);
   home.classList.add('hidden');
