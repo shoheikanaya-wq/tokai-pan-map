@@ -644,15 +644,6 @@ button,.back,.detail-action,.review-trigger{
 }
 
 
-/* Mini mascot margin decorations: isolated from existing city hero and TOP10 data. */
-#ranking{position:relative;isolation:isolate}
-#ranking .ranking-hero,#ranking h2,#ranking .muted,#ranking #list,#ranking .ranking-bottom-nav{position:relative;z-index:1}
-#ranking .mini-mascot-margin{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-#ranking .mini-mascot-margin img{position:absolute;width:clamp(24px,6vw,52px);height:auto;max-height:62px;object-fit:contain;opacity:.42;filter:drop-shadow(0 1px 1px #fff)}
-@media(max-width:600px){#ranking .mini-mascot-margin img{width:24px;opacity:.28}}
-@media(prefers-reduced-motion:reduce){#ranking .mini-mascot-margin img{animation:none}}
-
-
 /* Compact horizontal TOP10 cards: details live on the linked shop page. */
 #list .rank-card{position:relative;min-height:48px;align-items:center;gap:7px;padding:6px 62px 6px 7px!important;margin:4px 0;overflow:hidden;text-align:left}
 #list .rank-card .shop-main{min-width:0}
@@ -689,16 +680,18 @@ button,.back,.detail-action,.review-trigger{
 }
 
 
-/* Reserve genuine side gutters for mascot stickers without obscuring shop names. */
-@media(min-width:720px){#ranking #list{margin-inline:64px!important}}
-@media(min-width:480px) and (max-width:719px){#ranking #list{margin-inline:34px!important}}
-@media(max-width:479px){#ranking #list{margin-inline:0!important}}
 
+/* Decorative gallery only on home and shop details, never TOP10. */
+#ranking #list{margin-inline:0!important}
+.mascot-gallery{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));align-items:end;gap:clamp(4px,1vw,14px);padding:12px 8px;margin:12px 0 16px;border-radius:18px;background:rgba(255,248,231,.58);pointer-events:none;overflow:hidden}
+.mascot-gallery img{display:block;width:100%;height:clamp(54px,9vw,120px);object-fit:contain;object-position:center bottom;filter:drop-shadow(0 2px 2px rgba(95,59,26,.16))}
+@media(max-width:600px){.mascot-gallery{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px 10px;padding:9px 5px}.mascot-gallery img{height:72px}}
 </style></head>
 <body><header><h1 id="appTitle" style="cursor:pointer;">🥐 ぷらっとパン</h1><div class="sub">市町村から、おいしいパン屋を探す</div><div style="margin-top:10px"><a href="index.html" aria-label="ぷらっと東海へ戻る" style="display:inline-block;padding:9px 14px;border-radius:999px;background:#fff;color:#6b431f;text-decoration:none;font-weight:700;border:1px solid #d8c2a8">← ぷらっと東海へ戻る</a></div></header><main>
 <section id="home">
  
   <img src="tokai-pan-home%20(1).png" class="home-visual" alt="ぷらっとパン ホーム">
+  <div id="homeMascots" class="mascot-gallery" aria-hidden="true"></div>
   <div class="notice">⚡ パンラッシュは「おまかせで始める」または条件指定から直感的に開始できます。TOP10で実店舗写真が未取得の店は、複数のAI生成外観イメージを店舗ごとに分け、明記して表示します。</div><div class="rush-entry-grid" id="rushEntryGrid">
     <a class="rush-entry rush-main" href="panrush.html?v=20260908-start">
       <span class="rush-icon">⚡</span><span><strong>パンラッシュ</strong><small>愛知県内・24時間耐久</small></span>
@@ -841,6 +834,7 @@ button,.back,.detail-action,.review-trigger{
 
     <p class="muted">営業時間・定休日・特別営業などは変更される場合があります。来店前に公式情報またはGoogle Mapsでも最新情報をご確認ください。</p>
   </div>
+  <div id="detailMascots" class="mascot-gallery" aria-hidden="true"></div>
   <div class="detail-bottom-nav">
     <button class="back" id="backDetailBottom">← 戻る</button>
   </div>
@@ -1225,6 +1219,7 @@ function syncViewHistory(view,extra={}){
   }
 }
 function showHomeView(){
+  renderMascotGallery('homeMascots');
   ranking.classList.add('hidden');
   detail.classList.add('hidden');
   home.classList.remove('hidden');
@@ -1235,6 +1230,7 @@ function showRankingView(){
   ranking.classList.remove('hidden');
 }
 function showDetailView(){
+  renderMascotGallery('detailMascots');
   home.classList.add('hidden');
   ranking.classList.add('hidden');
   detail.classList.remove('hidden');
@@ -1338,44 +1334,23 @@ const miniMascotFiles=[
   'assets/mini-mascots/shiba-rest-02.webp',
   'assets/mini-mascots/cat-look-02.webp'
 ];
-function refreshMiniMascotMargins(){
-  const panel=document.getElementById('ranking');
-  const cards=document.getElementById('list');
-  if(!panel||!cards)return;
-  let layer=panel.querySelector('.mini-mascot-margin');
-  if(!layer){layer=document.createElement('div');layer.className='mini-mascot-margin';layer.setAttribute('aria-hidden','true');panel.prepend(layer)}
-  layer.replaceChildren();
-  const cardNodes=[...cards.children].filter(n=>n.getBoundingClientRect().height>20);
-  if(!cardNodes.length)return;
-  const bounds=panel.getBoundingClientRect();
-  const width=bounds.width;
-  // Card bounds, not viewport width, determine safe sticker positions.
-  // Never overlay ranking cards; only use free horizontal space.
-  const candidates=[];
-  cardNodes.forEach((card,i)=>{
-    const rect=card.getBoundingClientRect();
-    const left=Math.max(0,rect.left-bounds.left),right=Math.max(0,bounds.right-rect.right);
-    const y=rect.top-bounds.top+Math.min(16,rect.height/3);
-    if(left>=30)candidates.push({x:left-27,y});
-    if(right>=30)candidates.push({x:rect.right-bounds.left+3,y});
-  });
-  if(!candidates.length)return;
-  const shuffled=candidates.slice();
-  for(let i=shuffled.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[shuffled[i],shuffled[j]]=[shuffled[j],shuffled[i]]}
-  shuffled.slice(0,Math.min(8,Math.ceil(cardNodes.length*.7))).forEach((spot,i)=>{
+function renderMascotGallery(id){
+  const target=document.getElementById(id);
+  if(!target)return;
+  target.replaceChildren();
+  const files=miniMascotFiles.slice();
+  for(let i=files.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [files[i],files[j]]=[files[j],files[i]];
+  }
+  for(const file of files){
     const img=document.createElement('img');
-    img.src=miniMascotFiles[(i+Math.floor(Math.random()*miniMascotFiles.length))%miniMascotFiles.length];
-    img.alt='';img.loading='lazy';img.decoding='async';
-    img.style.left=spot.x+'px';img.style.top=spot.y+'px';
+    img.src=file;img.alt='';img.loading='lazy';img.decoding='async';
     img.onerror=()=>img.remove();
-    layer.append(img);
-  });
+    target.appendChild(img);
+  }
 }
-
-
-const miniMascotObserver=new MutationObserver(()=>{if(!document.getElementById('ranking')?.classList.contains('hidden'))requestAnimationFrame(refreshMiniMascotMargins)});
-miniMascotObserver.observe(document.getElementById('list'),{childList:true});
-window.addEventListener('resize',()=>{if(!document.getElementById('ranking')?.classList.contains('hidden'))refreshMiniMascotMargins()},{passive:true});
+renderMascotGallery('homeMascots');
 function showRanking() {
   showAreaVisual(currentVisualKey || currentCity);
   home.classList.add('hidden');
