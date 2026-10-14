@@ -687,6 +687,10 @@ button,.back,.detail-action,.review-trigger{
 #home>.mascot-whitespace,#detail>.mascot-whitespace{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden}
 .mascot-whitespace img{position:absolute;display:block;width:var(--mascot-size,42px);height:var(--mascot-size,42px);object-fit:contain;opacity:.72;filter:drop-shadow(0 1px 1px rgba(83,59,31,.22))}
 @media(max-width:600px){.mascot-whitespace img{opacity:.65}}
+
+/* Four home variants: crop the mockup's painted navigation and keep real controls interactive. */
+#home #panHomeRandomVisual{width:100%;max-width:900px;height:min(66vw,340px);min-height:180px;object-fit:cover;object-position:center 28%;border-radius:16px;margin:0 auto 12px}
+@media(max-width:600px){#home #panHomeRandomVisual{height:65vw;min-height:0;max-height:330px;object-position:center 30%}}
 </style></head>
 <body><header><h1 id="appTitle" style="cursor:pointer;">🥐 ぷらっとパン</h1><div class="sub">市町村から、おいしいパン屋を探す</div><div style="margin-top:10px"><a href="index.html" aria-label="ぷらっと東海へ戻る" style="display:inline-block;padding:9px 14px;border-radius:999px;background:#fff;color:#6b431f;text-decoration:none;font-weight:700;border:1px solid #d8c2a8">← ぷらっと東海へ戻る</a></div></header><main>
 <section id="home">
