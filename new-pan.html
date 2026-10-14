@@ -688,6 +688,12 @@ button,.back,.detail-action,.review-trigger{
  #list .rank-detail-cue{right:5px}
 }
 
+
+/* Reserve genuine side gutters for mascot stickers without obscuring shop names. */
+@media(min-width:720px){#ranking #list{margin-inline:64px!important}}
+@media(min-width:480px) and (max-width:719px){#ranking #list{margin-inline:34px!important}}
+@media(max-width:479px){#ranking #list{margin-inline:0!important}}
+
 </style></head>
 <body><header><h1 id="appTitle" style="cursor:pointer;">🥐 ぷらっとパン</h1><div class="sub">市町村から、おいしいパン屋を探す</div><div style="margin-top:10px"><a href="index.html" aria-label="ぷらっと東海へ戻る" style="display:inline-block;padding:9px 14px;border-radius:999px;background:#fff;color:#6b431f;text-decoration:none;font-weight:700;border:1px solid #d8c2a8">← ぷらっと東海へ戻る</a></div></header><main>
 <section id="home">
@@ -1343,7 +1349,7 @@ function refreshMiniMascotMargins(){
   if(!cardNodes.length)return;
   const bounds=panel.getBoundingClientRect();
   const width=bounds.width;
-  const margin=Math.max(0,(width-Math.min(width,860))/2);
+  // Card bounds, not viewport width, determine safe sticker positions.
   // Never overlay ranking cards; only use free horizontal space.
   const candidates=[];
   cardNodes.forEach((card,i)=>{
@@ -1354,7 +1360,8 @@ function refreshMiniMascotMargins(){
     if(right>=30)candidates.push({x:rect.right-bounds.left+3,y});
   });
   if(!candidates.length)return;
-  const shuffled=candidates.sort(()=>Math.random()-.5);
+  const shuffled=candidates.slice();
+  for(let i=shuffled.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[shuffled[i],shuffled[j]]=[shuffled[j],shuffled[i]]}
   shuffled.slice(0,Math.min(8,Math.ceil(cardNodes.length*.7))).forEach((spot,i)=>{
     const img=document.createElement('img');
     img.src=miniMascotFiles[(i+Math.floor(Math.random()*miniMascotFiles.length))%miniMascotFiles.length];
