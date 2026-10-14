@@ -1,4 +1,4 @@
-const CACHE_NAME = 'puratto-tokai-v192';
+const CACHE_NAME = 'puratto-tokai-v193';
 
 const FILES = [
   './',
@@ -10,6 +10,10 @@ const FILES = [
   './manifest.webmanifest',
   './data/static-catalog.json',
   './aichi-top10.json',
+  './assets/home-variants/home-a1.webp',
+  './assets/home-variants/home-d1.webp',
+  './assets/home-variants/home-a2.webp',
+  './assets/home-variants/home-d2.webp',
   './puratto-tokai-mobile.png',
   './puratto-tokai-pc.png',
   './icon-192.png',
