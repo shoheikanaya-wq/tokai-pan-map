@@ -681,17 +681,18 @@ button,.back,.detail-action,.review-trigger{
 
 
 
-/* Decorative gallery only on home and shop details, never TOP10. */
+/* Existing whitespace only: sprites are absolute overlays, never new rows. */
 #ranking #list{margin-inline:0!important}
-.mascot-gallery{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));align-items:end;gap:clamp(4px,1vw,14px);padding:12px 8px;margin:12px 0 16px;border-radius:18px;background:rgba(255,248,231,.58);pointer-events:none;overflow:hidden}
-.mascot-gallery img{display:block;width:100%;height:clamp(54px,9vw,120px);object-fit:contain;object-position:center bottom;filter:drop-shadow(0 2px 2px rgba(95,59,26,.16))}
-@media(max-width:600px){.mascot-gallery{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px 10px;padding:9px 5px}.mascot-gallery img{height:72px}}
+#home,#detail{position:relative;isolation:isolate}
+#home>.mascot-whitespace,#detail>.mascot-whitespace{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden}
+.mascot-whitespace img{position:absolute;display:block;width:var(--mascot-size,42px);height:var(--mascot-size,42px);object-fit:contain;opacity:.72;filter:drop-shadow(0 1px 1px rgba(83,59,31,.22))}
+@media(max-width:600px){.mascot-whitespace img{opacity:.65}}
 </style></head>
 <body><header><h1 id="appTitle" style="cursor:pointer;">🥐 ぷらっとパン</h1><div class="sub">市町村から、おいしいパン屋を探す</div><div style="margin-top:10px"><a href="index.html" aria-label="ぷらっと東海へ戻る" style="display:inline-block;padding:9px 14px;border-radius:999px;background:#fff;color:#6b431f;text-decoration:none;font-weight:700;border:1px solid #d8c2a8">← ぷらっと東海へ戻る</a></div></header><main>
 <section id="home">
  
   <img src="tokai-pan-home%20(1).png" class="home-visual" alt="ぷらっとパン ホーム">
-  <div id="homeMascots" class="mascot-gallery" aria-hidden="true"></div>
+  <div id="homeMascots" class="mascot-whitespace" aria-hidden="true"></div>
   <div class="notice">⚡ パンラッシュは「おまかせで始める」または条件指定から直感的に開始できます。TOP10で実店舗写真が未取得の店は、複数のAI生成外観イメージを店舗ごとに分け、明記して表示します。</div><div class="rush-entry-grid" id="rushEntryGrid">
     <a class="rush-entry rush-main" href="panrush.html?v=20260908-start">
       <span class="rush-icon">⚡</span><span><strong>パンラッシュ</strong><small>愛知県内・24時間耐久</small></span>
@@ -834,7 +835,7 @@ button,.back,.detail-action,.review-trigger{
 
     <p class="muted">営業時間・定休日・特別営業などは変更される場合があります。来店前に公式情報またはGoogle Mapsでも最新情報をご確認ください。</p>
   </div>
-  <div id="detailMascots" class="mascot-gallery" aria-hidden="true"></div>
+  <div id="detailMascots" class="mascot-whitespace" aria-hidden="true"></div>
   <div class="detail-bottom-nav">
     <button class="back" id="backDetailBottom">← 戻る</button>
   </div>
@@ -1219,7 +1220,7 @@ function syncViewHistory(view,extra={}){
   }
 }
 function showHomeView(){
-  renderMascotGallery('homeMascots');
+  queueMascotWhitespace('homeMascots');
   ranking.classList.add('hidden');
   detail.classList.add('hidden');
   home.classList.remove('hidden');
@@ -1230,7 +1231,7 @@ function showRankingView(){
   ranking.classList.remove('hidden');
 }
 function showDetailView(){
-  renderMascotGallery('detailMascots');
+  queueMascotWhitespace('detailMascots');
   home.classList.add('hidden');
   ranking.classList.add('hidden');
   detail.classList.remove('hidden');
@@ -1334,23 +1335,51 @@ const miniMascotFiles=[
   'assets/mini-mascots/shiba-rest-02.webp',
   'assets/mini-mascots/cat-look-02.webp'
 ];
-function renderMascotGallery(id){
-  const target=document.getElementById(id);
-  if(!target)return;
-  target.replaceChildren();
-  const files=miniMascotFiles.slice();
-  for(let i=files.length-1;i>0;i--){
-    const j=Math.floor(Math.random()*(i+1));
-    [files[i],files[j]]=[files[j],files[i]];
+function renderMascotWhitespace(id){
+  const layer=document.getElementById(id);
+  if(!layer)return;
+  const section=layer.parentElement;
+  layer.replaceChildren();
+  if(section.classList.contains('hidden'))return;
+  const bounds=section.getBoundingClientRect();
+  if(bounds.width<240||bounds.height<120)return;
+  // Block all visible text, images, buttons, links and cards. Only free space qualifies.
+  const blocked=[...section.querySelectorAll('button,a,img,h1,h2,h3,h4,p,small,strong,.notice,.tabs,.cities,.card,.rush-entry-grid,.detail-info-block,.detail-actions,.nav-buttons,.detail-bottom-nav,.muted')].filter(el=>!layer.contains(el)&&el.getClientRects().length);
+  const rects=blocked.map(el=>el.getBoundingClientRect()).filter(r=>r.width>0&&r.height>0);
+  const mobile=bounds.width<600;
+  const size=mobile?30:42, gap=mobile?9:12;
+  const candidates=[];
+  // Inspect a sparse grid, never alter the document's layout or scroll height.
+  const stepX=mobile?43:58,stepY=mobile?61:76;
+  for(let y=18;y<bounds.height-size-12;y+=stepY){
+    for(let x=8;x<bounds.width-size-8;x+=stepX){
+      const left=bounds.left+x,top=bounds.top+y;
+      if(rects.some(r=>left<r.right+gap&&left+size>r.left-gap&&top<r.bottom+gap&&top+size>r.top-gap))continue;
+      candidates.push({x,y});
+    }
   }
-  for(const file of files){
+  for(let i=candidates.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[candidates[i],candidates[j]]=[candidates[j],candidates[i]]}
+  const files=miniMascotFiles.slice();
+  for(let i=files.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[files[i],files[j]]=[files[j],files[i]]}
+  const chosen=[];
+  const limit=mobile?9:16;
+  for(const spot of candidates){
+    if(chosen.length>=limit)break;
+    if(chosen.some(p=>Math.abs(p.x-spot.x)<size+20&&Math.abs(p.y-spot.y)<size+20))continue;
+    chosen.push(spot);
     const img=document.createElement('img');
-    img.src=file;img.alt='';img.loading='lazy';img.decoding='async';
+    img.src=files[(chosen.length-1)%files.length];img.alt='';img.loading='lazy';img.decoding='async';
+    img.style.left=spot.x+'px';img.style.top=spot.y+'px';img.style.setProperty('--mascot-size',size+'px');
     img.onerror=()=>img.remove();
-    target.appendChild(img);
+    layer.append(img);
   }
 }
-renderMascotGallery('homeMascots');
+function queueMascotWhitespace(id){requestAnimationFrame(()=>requestAnimationFrame(()=>renderMascotWhitespace(id)))}
+window.addEventListener('resize',()=>{
+  if(!document.getElementById('home').classList.contains('hidden'))queueMascotWhitespace('homeMascots');
+  if(!document.getElementById('detail').classList.contains('hidden'))queueMascotWhitespace('detailMascots');
+},{passive:true});
+queueMascotWhitespace('homeMascots');
 function showRanking() {
   showAreaVisual(currentVisualKey || currentCity);
   home.classList.add('hidden');
