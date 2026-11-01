@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#7a4b20">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<title>ぷらっと東海 おでかけ</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;background:#f3efe6;color:#2b2118;font-family:system-ui,-apple-system,"Noto Sans JP",sans-serif}
+header{position:sticky;top:0;z-index:5;background:#7a4b20;color:#fff;padding:10px 14px;display:flex;align-items:center;gap:10px}
+header a{color:#fff;text-decoration:none;font-weight:900;font-size:17px;padding:8px 12px;border:2px solid #fff;border-radius:12px}
+header h1{margin:0;font-size:20px}
+main{max-width:760px;margin:0 auto;padding:12px 12px 40px}
+.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:10px}
+.tabs a{text-align:center;padding:10px 2px;border-radius:12px;background:#fff;border:2px solid #cdb995;color:#5a3714;font-weight:900;font-size:15px;text-decoration:none}
+.tabs a.on{background:#7a4b20;color:#fff;border-color:#7a4b20}
+.ctl{display:flex;gap:8px;margin-bottom:10px}
+.ctl input,.ctl select{flex:1;min-height:46px;font-size:17px;border:2px solid #cdb995;border-radius:12px;padding:0 10px;background:#fff}
+.card{background:#fff;border-radius:16px;border:2px solid #e2d6bd;padding:14px;margin-bottom:12px}
+.card h2{margin:0 0 4px;font-size:21px;color:#3b2511}
+.area{display:inline-block;font-size:14px;font-weight:800;background:#efe3c9;color:#5a3714;border-radius:8px;padding:2px 8px;margin-bottom:6px}
+.cat{font-size:17px;font-weight:700;margin:2px 0 8px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.chips span{background:#f3efe6;border-radius:999px;padding:4px 10px;font-size:15px;font-weight:700}
+.hours{font-size:16px;line-height:1.5;margin:6px 0}
+.addr{font-size:15px;color:#6b5a48;margin:4px 0 8px}
+.btns{display:flex;gap:8px;flex-wrap:wrap}
+.btns a{flex:1 1 140px;text-align:center;min-height:48px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:#7a4b20;color:#fff;font-weight:900;font-size:17px;text-decoration:none}
+.btns a.sub{background:#fff;color:#7a4b20;border:2px solid #7a4b20}
+.warn{display:inline-block;font-size:13px;font-weight:800;color:#8a4b00;background:#fff0c9;border:1px solid #e0a31f;border-radius:8px;padding:2px 8px;margin-left:6px}
+.note{font-size:14px;color:#6b5a48;line-height:1.5;margin-top:16px}
+.empty{text-align:center;padding:40px 10px;font-size:18px;font-weight:800;color:#6b5a48}
+.stops{margin:6px 0 8px;padding-left:20px;font-size:16px;line-height:1.6}
+</style>
+</head>
+<body>
+<header><a href="index.html">← もどる</a><h1 id="ttl">おでかけ</h1></header>
+<main>
+ <nav class="tabs" id="tabs"></nav>
+ <div class="ctl"><input id="q" type="search" placeholder="名前・市町村・ことばで探す"><select id="area"><option value="">すべての市町村</option></select></div>
+ <div id="list"></div>
+ <p class="note" id="note"></p>
+</main>
+<script>
+(function(){
+  'use strict';
+  var CATS={michi:['🚗 道の駅','道の駅'],drive:['🛣 ドライブ','ドライブコース'],anaba:['🌿 穴場','穴場'],meisho:['⛩ 名所','名所']};
+  var cat=(new URLSearchParams(location.search).get('cat')||'michi');
+  if(!CATS[cat])cat='michi';
+  var shops=[];
+  function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]})}
+  function safeUrl(u){return /^https?:\/\//.test(u||'')?u:''}
+  function areaOf(s){if(s.area)return s.area;var m=(s.address||'').match(/(?:県|府|都|道)(.+?[市町村])/);return m?m[1]:''}
+  function mapUrl(s){return 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent((s.name||'')+' '+(s.address||''))}
+
+  document.getElementById('ttl').textContent=CATS[cat][0];
+  document.title='ぷらっと東海 '+CATS[cat][1];
+  document.getElementById('tabs').innerHTML=Object.keys(CATS).map(function(k){
+    return '<a href="spots.html?cat='+k+'"'+(k===cat?' class="on"':'')+'>'+CATS[k][0]+'</a>'}).join('');
+
+  function render(){
+    var q=document.getElementById('q').value.trim().toLowerCase();
+    var ar=document.getElementById('area').value;
+    var rows=shops.filter(function(s){
+      if(ar&&areaOf(s)!==ar)return false;
+      if(!q)return true;
+      return [s.name,s.address,s.catchphrase,(s.highlights||[]).join(' '),areaOf(s)].join(' ').toLowerCase().indexOf(q)>=0;
+    });
+    var box=document.getElementById('list');
+    if(!rows.length){box.innerHTML='<div class="empty">'+(shops.length?'見つかりませんでした':'準備中です。もうすぐ追加されます。')+'</div>';return}
+    box.innerHTML=rows.map(function(s){
+      var w=safeUrl(s.website);
+      return '<article class="card"><span class="area">'+esc(areaOf(s))+'</span>'+(s.verify?'<span class="warn">お出かけ前に要確認</span>':'')+
+        '<h2>'+esc(s.name)+'</h2>'+
+        (s.catchphrase?'<div class="cat">'+esc(s.catchphrase)+'</div>':'')+
+        (s.stops&&s.stops.length?'<ol class="stops">'+s.stops.map(function(t){return '<li>'+esc(t)+'</li>'}).join('')+'</ol>':'')+
+        ((s.highlights||[]).length?'<div class="chips">'+s.highlights.map(function(h){return '<span>'+esc(h)+'</span>'}).join('')+'</div>':'')+
+        ((s.openingHours||[]).length?'<div class="hours">🕒 '+s.openingHours.map(esc).join('<br>')+'</div>':'')+
+        (s.address?'<div class="addr">📍 '+esc(s.address)+'</div>':'')+
+        '<div class="btns"><a href="'+mapUrl(s)+'" target="_blank" rel="noopener">🗺 地図で見る</a>'+(w?'<a class="sub" href="'+esc(w)+'" target="_blank" rel="noopener">公式・詳細</a>':'')+'</div></article>';
+    }).join('');
+  }
+
+  fetch('spots-'+cat+'.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw 0;return r.json()}).catch(function(){return{shops:[]}}).then(function(d){
+    shops=d.shops||[];
+    document.getElementById('note').textContent=d.attribution||'';
+    var set={};shops.forEach(function(s){var a=areaOf(s);if(a)set[a]=1});
+    document.getElementById('area').innerHTML='<option value="">すべての市町村</option>'+Object.keys(set).sort().map(function(a){return '<option>'+esc(a)+'</option>'}).join('');
+    render();
+  });
+  document.getElementById('q').addEventListener('input',render);
+  document.getElementById('area').addEventListener('change',render);
+})();
+</script>
+</body>
+</html>

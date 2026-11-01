@@ -1,0 +1,65 @@
+{
+  "source": "static-walkerplus-2026-11-01",
+  "updatedAt": "2026-11-01",
+  "attribution": "公開情報(ウォーカープラス・各公式サイト)を基に作成。営業時間や休業日は変わるため、お出かけ前に公式サイトでご確認ください。",
+  "shops": [
+    {
+      "placeId": "michi-fujikawajuku",
+      "name": "道の駅 藤川宿",
+      "area": "岡崎市",
+      "type": "道の駅",
+      "address": "愛知県岡崎市藤川町字東沖田44番地",
+      "openingHours": [
+        "9:00〜18:00",
+        "定休日なし(臨時休業あり)"
+      ],
+      "website": "https://okazaki-kanko.jp/feature/michinoeki.hujikawa-juku/top",
+      "catchphrase": "東海道・藤川宿の町屋をイメージした道の駅",
+      "highlights": [
+        "地元の農産物",
+        "授乳室あり",
+        "入場無料"
+      ],
+      "verify": true
+    },
+    {
+      "placeId": "michi-akabane",
+      "name": "道の駅 あかばねロコステーション",
+      "area": "田原市",
+      "type": "道の駅",
+      "address": "愛知県田原市赤羽根町大西32-4",
+      "openingHours": [
+        "9:00〜17:00",
+        "レストランは平日11:00〜16:00・土日祝11:00〜17:00",
+        "レストランは冬季の水曜が定休"
+      ],
+      "website": "https://tahara-michinoeki.com/akabane",
+      "catchphrase": "サーフポイント・赤羽根海岸の目の前にある道の駅",
+      "highlights": [
+        "2階展望デッキ(BBQは予約制)",
+        "フリーWi-Fi",
+        "授乳室あり"
+      ],
+      "verify": true
+    },
+    {
+      "placeId": "michi-iragocrystal",
+      "name": "道の駅 伊良湖クリスタルポルト",
+      "area": "田原市",
+      "type": "道の駅",
+      "address": "愛知県田原市伊良湖町宮下3000-65",
+      "openingHours": [
+        "物産コーナー 8:00〜17:30",
+        "フェリー切符売場 7:30〜17:40"
+      ],
+      "website": "https://tahara-michinoeki.com/crystal",
+      "catchphrase": "渥美半島の先端、鳥羽・知多へのフェリー乗り場にある道の駅",
+      "highlights": [
+        "伊良湖のり",
+        "フェリー乗り場",
+        "入場無料"
+      ],
+      "verify": true
+    }
+  ]
+}
