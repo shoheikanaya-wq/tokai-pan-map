@@ -9,90 +9,121 @@
 <title>ぷらっと東海 おでかけ</title>
 <style>
 *{box-sizing:border-box}
-html,body{margin:0;background:#f3efe6;color:#2b2118;font-family:system-ui,-apple-system,"Noto Sans JP",sans-serif}
-header{position:sticky;top:0;z-index:5;background:#7a4b20;color:#fff;padding:10px 14px;display:flex;align-items:center;gap:10px}
-header a{color:#fff;text-decoration:none;font-weight:900;font-size:17px;padding:8px 12px;border:2px solid #fff;border-radius:12px}
-header h1{margin:0;font-size:20px}
-main{max-width:760px;margin:0 auto;padding:12px 12px 40px}
-.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:10px}
-.tabs a{text-align:center;padding:10px 2px;border-radius:12px;background:#fff;border:2px solid #cdb995;color:#5a3714;font-weight:900;font-size:15px;text-decoration:none}
+html,body{margin:0;height:100%;background:#f3efe6;color:#2b2118;font-family:system-ui,-apple-system,"Noto Sans JP",sans-serif;overscroll-behavior-y:none}
+/* 1画面に収める: 上=ヘッダー/タブ/絞り込み、中=1件の表示、下=前へ・次へ */
+.app{height:100dvh;display:flex;flex-direction:column;max-width:760px;margin:0 auto}
+header{flex:none;background:#7a4b20;color:#fff;padding:8px 12px;display:flex;align-items:center;gap:10px}
+header a{color:#fff;text-decoration:none;font-weight:900;font-size:16px;padding:6px 10px;border:2px solid #fff;border-radius:12px}
+header h1{margin:0;font-size:19px;flex:1}
+header button{font-size:15px;font-weight:900;padding:6px 10px;border:2px solid #fff;border-radius:12px;background:transparent;color:#fff}
+.tabs{flex:none;display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding:8px 10px 0}
+.tabs a{text-align:center;padding:9px 2px;border-radius:12px;background:#fff;border:2px solid #cdb995;color:#5a3714;font-weight:900;font-size:14px;text-decoration:none;white-space:nowrap}
 .tabs a.on{background:#7a4b20;color:#fff;border-color:#7a4b20}
-.ctl{display:flex;gap:8px;margin-bottom:10px}
-.ctl input,.ctl select{flex:1;min-height:46px;font-size:17px;border:2px solid #cdb995;border-radius:12px;padding:0 10px;background:#fff}
-.card{background:#fff;border-radius:16px;border:2px solid #e2d6bd;padding:14px;margin-bottom:12px}
-.card h2{margin:0 0 4px;font-size:21px;color:#3b2511}
-.area{display:inline-block;font-size:14px;font-weight:800;background:#efe3c9;color:#5a3714;border-radius:8px;padding:2px 8px;margin-bottom:6px}
-.cat{font-size:17px;font-weight:700;margin:2px 0 8px}
-.chips{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
-.chips span{background:#f3efe6;border-radius:999px;padding:4px 10px;font-size:15px;font-weight:700}
-.hours{font-size:16px;line-height:1.5;margin:6px 0}
-.addr{font-size:15px;color:#6b5a48;margin:4px 0 8px}
-.btns{display:flex;gap:8px;flex-wrap:wrap}
-.btns a{flex:1 1 140px;text-align:center;min-height:48px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:#7a4b20;color:#fff;font-weight:900;font-size:17px;text-decoration:none}
+.ctl{flex:none;display:flex;gap:6px;padding:8px 10px 0}
+.ctl input,.ctl select{min-width:0;flex:1;min-height:42px;font-size:16px;border:2px solid #cdb995;border-radius:12px;padding:0 8px;background:#fff}
+.stage{flex:1;min-height:0;padding:8px 10px;display:flex}
+.card{flex:1;min-height:0;overflow:auto;background:#fff;border-radius:16px;border:2px solid #e2d6bd;padding:14px;display:flex;flex-direction:column}
+.card h2{margin:2px 0 4px;font-size:clamp(20px,5.6vw,26px);color:#3b2511;line-height:1.25}
+.area{align-self:flex-start;font-size:14px;font-weight:800;background:#efe3c9;color:#5a3714;border-radius:8px;padding:2px 8px}
+.warn{font-size:12px;font-weight:800;color:#8a4b00;background:#fff0c9;border:1px solid #e0a31f;border-radius:8px;padding:2px 6px;margin-left:6px}
+.cat{font-size:clamp(15px,4.2vw,18px);font-weight:700;margin:2px 0 6px}
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin:4px 0}
+.chips span{background:#f3efe6;border-radius:999px;padding:3px 9px;font-size:14px;font-weight:700}
+.hours{font-size:15px;line-height:1.45;margin:4px 0}
+.addr{font-size:14px;color:#6b5a48;margin:4px 0}
+.stops{margin:4px 0;padding-left:20px;font-size:15px;line-height:1.5}
+.spacer{flex:1}
+.btns{display:flex;gap:8px;margin-top:8px}
+.btns a{flex:1;text-align:center;min-height:50px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:#7a4b20;color:#fff;font-weight:900;font-size:17px;text-decoration:none}
 .btns a.sub{background:#fff;color:#7a4b20;border:2px solid #7a4b20}
-.warn{display:inline-block;font-size:13px;font-weight:800;color:#8a4b00;background:#fff0c9;border:1px solid #e0a31f;border-radius:8px;padding:2px 8px;margin-left:6px}
-.note{font-size:14px;color:#6b5a48;line-height:1.5;margin-top:16px}
-.empty{text-align:center;padding:40px 10px;font-size:18px;font-weight:800;color:#6b5a48}
-.stops{margin:6px 0 8px;padding-left:20px;font-size:16px;line-height:1.6}
+.pager{flex:none;display:flex;align-items:center;gap:8px;padding:0 10px calc(10px + env(safe-area-inset-bottom))}
+.pager button{min-height:54px;font-size:18px;font-weight:900;border-radius:14px;border:0;background:#7a4b20;color:#fff;flex:1}
+.pager button:disabled{background:#cdb995}
+.pager .n{flex:none;min-width:70px;text-align:center;font-weight:900;font-size:17px;color:#5a3714}
+.empty{margin:auto;text-align:center;font-size:18px;font-weight:800;color:#6b5a48;padding:20px}
+.note{font-size:12px;color:#8a7c6b;margin:6px 0 0;line-height:1.4}
+/* 一覧表示 */
+.listrow{display:flex;align-items:center;gap:8px;padding:12px 4px;border-bottom:1px solid #eee3cc;font-size:17px;font-weight:800;color:#3b2511;cursor:pointer}
+.listrow small{margin-left:auto;font-weight:700;color:#8a7c6b;font-size:14px}
 </style>
 </head>
 <body>
-<header><a href="index.html">← もどる</a><h1 id="ttl">おでかけ</h1></header>
-<main>
+<div class="app">
+ <header><a href="index.html">← もどる</a><h1 id="ttl">おでかけ</h1><button id="mode" type="button">一覧</button></header>
  <nav class="tabs" id="tabs"></nav>
- <div class="ctl"><input id="q" type="search" placeholder="名前・市町村・ことばで探す"><select id="area"><option value="">すべての市町村</option></select></div>
- <div id="list"></div>
- <p class="note" id="note"></p>
-</main>
+ <div class="ctl"><input id="q" type="search" placeholder="さがす"><select id="area"><option value="">全エリア</option></select></div>
+ <div class="stage"><div class="card" id="card"></div></div>
+ <div class="pager"><button id="prev" type="button">◀ 前へ</button><div class="n" id="n"></div><button id="next" type="button">次へ ▶</button></div>
+</div>
 <script>
 (function(){
   'use strict';
-  var CATS={michi:['🚗 道の駅','道の駅'],drive:['🛣 ドライブ','ドライブコース'],anaba:['🌿 穴場','穴場'],meisho:['⛩ 名所','名所']};
+  var CATS={michi:['🚗 道の駅','道の駅'],drive:['🛣 ドライブ','ドライブコース'],anaba:['🌿 とっておき','とっておき'],meisho:['⛩ 名所','名所']};
   var cat=(new URLSearchParams(location.search).get('cat')||'michi');
   if(!CATS[cat])cat='michi';
-  var shops=[];
+  var all=[],rows=[],idx=0,listMode=false,attribution='';
+  function $(i){return document.getElementById(i)}
   function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]})}
   function safeUrl(u){return /^https?:\/\//.test(u||'')?u:''}
   function areaOf(s){if(s.area)return s.area;var m=(s.address||'').match(/(?:県|府|都|道)(.+?[市町村])/);return m?m[1]:''}
   function mapUrl(s){return 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent((s.name||'')+' '+(s.address||''))}
 
-  document.getElementById('ttl').textContent=CATS[cat][0];
+  $('ttl').textContent=CATS[cat][0];
   document.title='ぷらっと東海 '+CATS[cat][1];
-  document.getElementById('tabs').innerHTML=Object.keys(CATS).map(function(k){
-    return '<a href="spots.html?cat='+k+'"'+(k===cat?' class="on"':'')+'>'+CATS[k][0]+'</a>'}).join('');
+  $('tabs').innerHTML=Object.keys(CATS).map(function(k){return '<a href="spots.html?cat='+k+'"'+(k===cat?' class="on"':'')+'>'+CATS[k][0]+'</a>'}).join('');
 
-  function render(){
-    var q=document.getElementById('q').value.trim().toLowerCase();
-    var ar=document.getElementById('area').value;
-    var rows=shops.filter(function(s){
+  function cardHtml(s){
+    var w=safeUrl(s.website);
+    return '<div><span class="area">'+esc(areaOf(s))+'</span>'+(s.verify?'<span class="warn">お出かけ前に要確認</span>':'')+'</div>'+
+      '<h2>'+esc(s.name)+'</h2>'+
+      (s.catchphrase?'<div class="cat">'+esc(s.catchphrase)+'</div>':'')+
+      (s.stops&&s.stops.length?'<ol class="stops">'+s.stops.map(function(t){return '<li>'+esc(t)+'</li>'}).join('')+'</ol>':'')+
+      ((s.highlights||[]).length?'<div class="chips">'+s.highlights.map(function(h){return '<span>'+esc(h)+'</span>'}).join('')+'</div>':'')+
+      ((s.openingHours||[]).length?'<div class="hours">🕒 '+s.openingHours.map(esc).join('<br>')+'</div>':'')+
+      (s.address?'<div class="addr">📍 '+esc(s.address)+'</div>':'')+
+      '<div class="spacer"></div>'+
+      '<div class="btns"><a href="'+mapUrl(s)+'" target="_blank" rel="noopener">🗺 地図で見る</a>'+(w?'<a class="sub" href="'+esc(w)+'" target="_blank" rel="noopener">公式・詳細</a>':'')+'</div>'+
+      (attribution?'<div class="note">'+esc(attribution)+'</div>':'');
+  }
+
+  function show(){
+    var card=$('card');
+    if(!rows.length){card.innerHTML='<div class="empty">'+(all.length?'見つかりませんでした':'準備中です。もうすぐ追加されます。')+'</div>';$('n').textContent='';$('prev').disabled=$('next').disabled=true;return}
+    $('prev').disabled=listMode||idx<=0; $('next').disabled=listMode||idx>=rows.length-1;
+    if(listMode){
+      card.innerHTML=rows.map(function(s,i){return '<div class="listrow" data-i="'+i+'">'+esc(s.name)+'<small>'+esc(areaOf(s))+'</small></div>'}).join('');
+      $('n').textContent=rows.length+'件';
+    }else{
+      card.innerHTML=cardHtml(rows[idx]); card.scrollTop=0;
+      $('n').textContent=(idx+1)+' / '+rows.length;
+    }
+  }
+  function filter(){
+    var q=$('q').value.trim().toLowerCase(),ar=$('area').value;
+    rows=all.filter(function(s){
       if(ar&&areaOf(s)!==ar)return false;
       if(!q)return true;
       return [s.name,s.address,s.catchphrase,(s.highlights||[]).join(' '),areaOf(s)].join(' ').toLowerCase().indexOf(q)>=0;
     });
-    var box=document.getElementById('list');
-    if(!rows.length){box.innerHTML='<div class="empty">'+(shops.length?'見つかりませんでした':'準備中です。もうすぐ追加されます。')+'</div>';return}
-    box.innerHTML=rows.map(function(s){
-      var w=safeUrl(s.website);
-      return '<article class="card"><span class="area">'+esc(areaOf(s))+'</span>'+(s.verify?'<span class="warn">お出かけ前に要確認</span>':'')+
-        '<h2>'+esc(s.name)+'</h2>'+
-        (s.catchphrase?'<div class="cat">'+esc(s.catchphrase)+'</div>':'')+
-        (s.stops&&s.stops.length?'<ol class="stops">'+s.stops.map(function(t){return '<li>'+esc(t)+'</li>'}).join('')+'</ol>':'')+
-        ((s.highlights||[]).length?'<div class="chips">'+s.highlights.map(function(h){return '<span>'+esc(h)+'</span>'}).join('')+'</div>':'')+
-        ((s.openingHours||[]).length?'<div class="hours">🕒 '+s.openingHours.map(esc).join('<br>')+'</div>':'')+
-        (s.address?'<div class="addr">📍 '+esc(s.address)+'</div>':'')+
-        '<div class="btns"><a href="'+mapUrl(s)+'" target="_blank" rel="noopener">🗺 地図で見る</a>'+(w?'<a class="sub" href="'+esc(w)+'" target="_blank" rel="noopener">公式・詳細</a>':'')+'</div></article>';
-    }).join('');
+    idx=0;show();
   }
 
   fetch('spots-'+cat+'.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw 0;return r.json()}).catch(function(){return{shops:[]}}).then(function(d){
-    shops=d.shops||[];
-    document.getElementById('note').textContent=d.attribution||'';
-    var set={};shops.forEach(function(s){var a=areaOf(s);if(a)set[a]=1});
-    document.getElementById('area').innerHTML='<option value="">すべての市町村</option>'+Object.keys(set).sort().map(function(a){return '<option>'+esc(a)+'</option>'}).join('');
-    render();
+    all=d.shops||[];attribution=d.attribution||'';
+    var set={};all.forEach(function(s){var a=areaOf(s);if(a)set[a]=1});
+    $('area').innerHTML='<option value="">全エリア</option>'+Object.keys(set).sort().map(function(a){return '<option>'+esc(a)+'</option>'}).join('');
+    filter();
   });
-  document.getElementById('q').addEventListener('input',render);
-  document.getElementById('area').addEventListener('change',render);
+  $('q').addEventListener('input',filter);
+  $('area').addEventListener('change',filter);
+  $('prev').onclick=function(){if(idx>0){idx--;show()}};
+  $('next').onclick=function(){if(idx<rows.length-1){idx++;show()}};
+  $('mode').onclick=function(){listMode=!listMode;$('mode').textContent=listMode?'1件ずつ':'一覧';show()};
+  $('card').addEventListener('click',function(e){var r=e.target.closest('.listrow');if(r){idx=+r.dataset.i;listMode=false;$('mode').textContent='一覧';show()}});
+  // 左右にスワイプして前後へ
+  var sx=0;
+  $('card').addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
+  $('card').addEventListener('touchend',function(e){if(listMode)return;var dx=e.changedTouches[0].clientX-sx;if(dx<-60&&idx<rows.length-1){idx++;show()}else if(dx>60&&idx>0){idx--;show()}},{passive:true});
 })();
 </script>
 </body>
