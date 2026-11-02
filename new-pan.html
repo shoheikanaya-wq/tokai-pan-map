@@ -691,6 +691,19 @@ button,.back,.detail-action,.review-trigger{
 /* Four home variants: crop the mockup's painted navigation and keep real controls interactive. */
 #home #panHomeRandomVisual{width:100%;max-width:900px;height:min(66vw,340px);min-height:180px;object-fit:cover;object-position:center 28%;border-radius:16px;margin:0 auto 12px}
 @media(max-width:600px){#home #panHomeRandomVisual{height:65vw;min-height:0;max-height:330px;object-position:center 30%}}
+
+/* ===== Ver.2.1 画面を1枚に収める調整(口コミボタンなし・余白を詰める)。元に戻すときはこのブロックを消す ===== */
+#dreviewBtn,#dreviewPanel{display:none!important}
+#detail .detail-actions{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;margin:8px 0 6px!important}
+#detail .detail-action{min-height:48px!important;font-size:15px!important;padding:8px 6px!important}
+#detail .detail-bottom-nav{display:none!important}
+#detail .card>p.muted{font-size:11px!important;line-height:1.35!important;margin:6px 0 0!important}
+#detail .card{margin:6px 0!important}
+body:has(#detail:not(.hidden)) #appFooter,body:has(#ranking:not(.hidden)) #appFooter{display:none!important}
+#ranking .card{margin:4px 0!important;padding:7px 8px!important}
+#ranking .ranking-hero{margin:0 auto 4px!important}
+#ranking h2#rankingTitle{margin:6px 0 2px!important;font-size:18px!important}
+#ranking #rankingNote{display:none!important}
 </style></head>
 <body><header><h1 id="appTitle" style="cursor:pointer;">🥐 ぷらっとパン</h1><div class="sub">市町村から、おいしいパン屋を探す</div><div style="margin-top:10px"><a href="index.html" aria-label="ぷらっと東海へ戻る" style="display:inline-block;padding:9px 14px;border-radius:999px;background:#fff;color:#6b431f;text-decoration:none;font-weight:700;border:1px solid #d8c2a8">← ぷらっと東海へ戻る</a></div></header><main>
 <section id="home">
