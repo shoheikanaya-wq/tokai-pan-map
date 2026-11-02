@@ -37,11 +37,11 @@ html,body{margin:0;min-height:100%;background:#f3efe6;font-family:system-ui,-app
 }
 @media(prefers-reduced-motion:reduce){.entry{transition:none}}
 
-/* おでかけ(道の駅・ドライブ・穴場・名所) */
+/* おでかけ(道の駅・日帰りドライブ・絶景名所・日帰り温泉) */
 .more{width:min(100%,1200px);margin:0 auto;padding:14px 14px 28px}
 .more h2{margin:0 0 10px;font-size:18px;color:#5a3714;text-align:center}
 .more .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.more a{display:flex;align-items:center;justify-content:center;gap:6px;min-height:64px;border-radius:16px;
+.more a{display:flex;align-items:center;justify-content:center;gap:6px;min-height:64px;padding:0 6px;text-align:center;border-radius:16px;
   background:#fff;border:3px solid #7a4b20;color:#5a3714;font-size:19px;font-weight:900;text-decoration:none;
   -webkit-tap-highlight-color:transparent;touch-action:manipulation}
 .more a:active{transform:translateY(3px);filter:brightness(.94)}
@@ -62,16 +62,16 @@ html,body{margin:0;min-height:100%;background:#f3efe6;font-family:system-ui,-app
   <h2>おでかけスポット</h2>
   <div class="grid">
    <a href="spots.html?cat=michi">🚗 道の駅</a>
-   <a href="spots.html?cat=drive">🛣 ドライブ</a>
-   <a href="spots.html?cat=anaba">🌿 とっておき</a>
-   <a href="spots.html?cat=meisho">⛩ 名所</a>
+   <a href="spots.html?cat=drive">🛣 日帰りドライブ</a>
+   <a href="spots.html?cat=meisho">🏞 絶景・名所</a>
+   <a href="spots.html?cat=onsen">♨ 日帰り温泉</a>
   </div>
  </nav>
 </main>
 <script>
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js?rev=20261102-176').catch(err => console.warn('SW registration failed', err));
+    navigator.serviceWorker.register('./sw.js?rev=20261103-177').catch(err => console.warn('SW registration failed', err));
   });
 }
 </script>
