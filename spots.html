@@ -16,8 +16,8 @@ header{flex:none;background:#7a4b20;color:#fff;padding:8px 12px;display:flex;ali
 header a{color:#fff;text-decoration:none;font-weight:900;font-size:16px;padding:6px 10px;border:2px solid #fff;border-radius:12px}
 header h1{margin:0;font-size:19px;flex:1}
 header button{font-size:15px;font-weight:900;padding:6px 10px;border:2px solid #fff;border-radius:12px;background:transparent;color:#fff}
-.tabs{flex:none;display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding:8px 10px 0}
-.tabs a{display:flex;flex-direction:column;gap:1px;align-items:center;justify-content:center;word-break:keep-all;text-align:center;padding:6px 2px;min-height:48px;border-radius:12px;background:#fff;border:2px solid #cdb995;color:#5a3714;font-weight:900;font-size:13px;line-height:1.2;text-decoration:none}
+.tabs{flex:none;display:grid;grid-template-columns:repeat(5,1fr);gap:4px;padding:8px 6px 0}
+.tabs a{display:flex;flex-direction:column;gap:1px;align-items:center;justify-content:center;word-break:keep-all;text-align:center;padding:6px 2px;min-height:48px;border-radius:12px;background:#fff;border:2px solid #cdb995;color:#5a3714;font-weight:900;font-size:12px;line-height:1.2;text-decoration:none}
 .tabs a.on{background:#7a4b20;color:#fff;border-color:#7a4b20}
 .ctl{flex:none;display:flex;gap:6px;padding:8px 10px 0}
 .ctl input,.ctl select{min-width:0;flex:1;min-height:42px;font-size:16px;border:2px solid #cdb995;border-radius:12px;padding:0 8px;background:#fff}
@@ -59,7 +59,7 @@ header button{font-size:15px;font-weight:900;padding:6px 10px;border:2px solid #
 <script>
 (function(){
   'use strict';
-  var CATS={michi:['🚗 道の駅','道の駅'],drive:['🛣 日帰りドライブ','日帰りドライブ'],meisho:['🏞 絶景・名所','絶景・名所'],onsen:['♨ 日帰り温泉','日帰り温泉']};
+  var CATS={michi:['🚗 道の駅','道の駅'],drive:['🛣 日帰りドライブ','日帰りドライブ'],meisho:['🏞 絶景・名所','絶景・名所'],onsen:['♨ 日帰り温泉','日帰り温泉'],ramen:['🍜 ご当地ラーメン','ご当地ラーメン']};
   var cat=(new URLSearchParams(location.search).get('cat')||'michi');
   if(!CATS[cat])cat='michi';
   var all=[],rows=[],idx=0,listMode=false,attribution='';
@@ -71,7 +71,7 @@ header button{font-size:15px;font-weight:900;padding:6px 10px;border:2px solid #
 
   $('ttl').textContent=CATS[cat][0];
   document.title='ぷらっと東海 '+CATS[cat][1];
-  var SHORT={michi:'道の駅',drive:'ドライブ',meisho:'絶景・名所',onsen:'温泉'};
+  var SHORT={michi:'道の駅',drive:'ドライブ',meisho:'絶景・名所',onsen:'温泉',ramen:'ラーメン'};
   $('tabs').innerHTML=Object.keys(CATS).map(function(k){var e=CATS[k][0].split(' ')[0];return '<a href="spots.html?cat='+k+'"'+(k===cat?' class="on"':'')+'><span style="font-size:18px;line-height:1">'+e+'</span><span>'+SHORT[k]+'</span></a>'}).join('');
 
   function cardHtml(s){
