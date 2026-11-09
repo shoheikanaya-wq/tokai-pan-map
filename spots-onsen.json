@@ -1,6 +1,11 @@
 {
   "source": "static",
-  "updatedAt": "2026-11-03",
-  "attribution": "公開情報を基に作成。営業時間や休業日は変わるため、お出かけ前に公式サイトでご確認ください。",
-  "shops": []
+  "updatedAt": "2026-11-09",
+  "attribution": "公開情報(下呂市・アクアイグニス・愛知県観光サイト)を基に作成。営業時間や料金は変わるため、お出かけ前に公式サイトでご確認ください。",
+  "shops": [
+    {"placeId":"onsen-gero-quagarden","name":"下呂温泉 クアガーデン露天風呂","area":"下呂市","type":"日帰り温泉","address":"岐阜県下呂市湯之島894-2","openingHours":["8:00〜20:45(受付は20:00まで)","定休日:毎週木曜(祝日の場合は翌日休業)","大人700円・小学生400円・幼児200円"],"website":"https://www.city.gero.lg.jp/site/kanko/1226.html","catchphrase":"日本三名泉・下呂温泉の露天風呂に気軽に入れる施設","highlights":["日本三名泉の下呂温泉","露天風呂","朝8時から入れる"],"verify":true},
+    {"placeId":"onsen-gero-shirasagi","name":"下呂温泉 白鷺の湯","area":"下呂市","type":"日帰り温泉","address":"岐阜県下呂市湯之島856-1","openingHours":["10:00〜20:45(受付は20:00まで)","定休日:毎週水曜(祝日の場合は金曜休業)","大人430円・小学生160円・幼児80円"],"website":"https://www.city.gero.lg.jp/site/kanko/1226.html","catchphrase":"下呂温泉街の中にある、お手ごろ料金の共同浴場","highlights":["日本三名泉の下呂温泉","大人430円","温泉街の散歩のついでに"],"verify":true},
+    {"placeId":"onsen-kataoka","name":"アクアイグニス 片岡温泉","area":"菰野町","type":"日帰り温泉","address":"三重県三重郡菰野町菰野4800-1","openingHours":["6:00〜24:00","無休"],"website":"https://aquaignis.jp/spa_kataoka.php","catchphrase":"加水・加温・循環なしの源泉100%かけ流し、竹林の露天風呂","highlights":["源泉100%かけ流し","アルカリ性単純温泉","竹林の露天風呂","早朝6時から"],"verify":true},
+    {"placeId":"onsen-yuya","name":"湯谷温泉(温泉街の旅館で日帰り入浴)","area":"新城市","type":"日帰り温泉","address":"愛知県新城市豊岡字滝上64-3","openingHours":["営業時間・料金は施設ごとに異なります","旅館・ホテルへ事前に確認を"],"website":"https://aichinow.pref.aichi.jp/spots/detail/189/","catchphrase":"奥三河の清流・豊川ぞいの温泉地。旅館で日帰り入浴ができます","highlights":["奥三河","旅館の日帰り入浴","観光案内 0536-32-6058"],"verify":true}
+  ]
 }
