@@ -1,6 +1,104 @@
 {
   "source": "static",
-  "updatedAt": "2026-11-01",
-  "attribution": "公開情報を基に作成。お出かけ前に最新情報をご確認ください。",
-  "shops": []
+  "updatedAt": "2026-11-09",
+  "attribution": "公開情報(愛知県観光サイト・三重県観光連盟・岐阜県観光連盟・静岡市観光ナビ)を基に作成。営業時間や料金は変わるため、お出かけ前に公式サイトでご確認ください。",
+  "shops": [
+    {
+      "placeId": "drive-tahara-koijigahama",
+      "name": "恋路ヶ浜",
+      "area": "田原市",
+      "type": "日帰りドライブ",
+      "address": "愛知県田原市伊良湖町恋路浦",
+      "openingHours": [
+        "入場無料",
+        "営業時間・休業日は要確認"
+      ],
+      "website": "https://aichinow.pref.aichi.jp/spots/detail/187/",
+      "catchphrase": "渥美半島の先っぽ、伊良湖岬のそばに続く長い砂浜",
+      "highlights": [
+        "渥美半島ドライブの目的地",
+        "入場無料",
+        "海をながめて散歩"
+      ],
+      "verify": true
+    },
+    {
+      "placeId": "drive-komono-gozaisho",
+      "name": "御在所ロープウエイ",
+      "area": "菰野町",
+      "type": "日帰りドライブ",
+      "address": "三重県三重郡菰野町湯の山温泉",
+      "openingHours": [
+        "4〜11月 9:00〜17:00 / 12〜3月 9:00〜16:00",
+        "定休日:不定休",
+        "往復 大人2,600円・小人1,300円"
+      ],
+      "website": "https://www.gozaisho.co.jp/",
+      "catchphrase": "湯の山温泉から山の上へ。景色を楽しむロープウエイ",
+      "highlights": [
+        "湯の山温泉からすぐ",
+        "山上からの眺め",
+        "温泉とセットで楽しめる"
+      ],
+      "verify": true
+    },
+    {
+      "placeId": "drive-iseshima-skyline",
+      "name": "伊勢志摩スカイライン",
+      "area": "伊勢市・鳥羽市",
+      "type": "日帰りドライブ",
+      "address": "三重県伊勢市〜鳥羽市(朝熊山を越える道。伊勢側ゲートは伊勢西ICから約5分)",
+      "openingHours": [
+        "7:00〜19:00(時期により変わります)",
+        "普通車 1,270円"
+      ],
+      "website": "https://www.kankomie.or.jp/topic/1264",
+      "catchphrase": "朝熊山の稜線を走る、伊勢と鳥羽を結ぶドライブウェイ",
+      "highlights": [
+        "伊勢と鳥羽をつなぐ山道",
+        "見晴らしの良い道",
+        "125cc以下のバイクと自転車は通れません"
+      ],
+      "verify": true
+    },
+    {
+      "placeId": "drive-gujo-hirugano-bunsuirei",
+      "name": "ひるがの分水嶺公園",
+      "area": "郡上市",
+      "type": "日帰りドライブ",
+      "address": "岐阜県郡上市高鷲町ひるがの",
+      "openingHours": [
+        "営業時間・料金は要確認"
+      ],
+      "website": "https://www.kankou-gifu.jp/spot/1173/",
+      "catchphrase": "水が太平洋側と日本海側に分かれていく、高原の公園",
+      "highlights": [
+        "標高約875mの高原",
+        "春は山野草、秋は紅葉",
+        "高鷲ICから車で約15分"
+      ],
+      "verify": true
+    },
+    {
+      "placeId": "drive-shizuoka-nihondaira-yumeterrace",
+      "name": "日本平夢テラス",
+      "area": "静岡市",
+      "type": "日帰りドライブ",
+      "address": "静岡県静岡市清水区草薙600-1",
+      "openingHours": [
+        "9:00〜17:00(土曜のみ21:00まで)",
+        "定休日:毎月第2火曜・12/26〜12/31",
+        "入館 一般100円(屋外の展望回廊は無料)",
+        "駐車場 無料"
+      ],
+      "website": "https://www.visit-shizuoka.com/spots/detail.php?kanko=454",
+      "catchphrase": "富士山・駿河湾・三保松原を360度で見わたせる展望施設",
+      "highlights": [
+        "富士山と駿河湾の眺め",
+        "駐車場が無料",
+        "夜景も人気"
+      ],
+      "verify": true
+    }
+  ]
 }
