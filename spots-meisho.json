@@ -1,6 +1,6 @@
 {
   "source": "static",
-  "updatedAt": "2026-11-11",
+  "updatedAt": "2026-11-12",
   "attribution": "公開情報を基に作成。お出かけ前に最新情報をご確認ください。",
   "shops": [
     {
@@ -14,12 +14,12 @@
         "定休日:12月29日〜31日",
         "大人1,000円・小中学生200円"
       ],
-      "website": "https://aichinow.pref.aichi.jp/spots/detail/20/",
+      "website": "https://inuyama-castle.jp/",
       "catchphrase": "木曽川のほとりに建つ、現存する国宝の天守",
       "highlights": [
         "天守からの眺め",
         "城下町の散策もできる",
-        "営業状況は出かける前に確認"
+        "木曽川ぞいの景色"
       ],
       "verify": true
     },
@@ -31,10 +31,10 @@
       "address": "愛知県豊田市足助町",
       "openingHours": [
         "園内はいつでも入れます",
-        "もみじ祭りのライトアップ 11月1日〜30日 日没〜21時",
+        "もみじまつりのライトアップ 11月1日〜30日 毎日21時まで",
         "料金は要確認"
       ],
-      "website": "https://aichinow.pref.aichi.jp/news/detail/171/",
+      "website": "https://asuke.info/",
       "catchphrase": "約3,000本のモミジが色づく、愛知を代表する紅葉の名所",
       "highlights": [
         "見ごろは11月",
@@ -50,11 +50,11 @@
       "type": "絶景・名所",
       "address": "岐阜県大野郡白川村荻町",
       "openingHours": [
-        "散策は8:00〜17:00(夜は宿泊者以外は不可)",
-        "散策は自由",
-        "せせらぎ公園駐車場 有料(最終受入16:30)"
+        "散策の目安は8:00〜17:00(夜は宿泊者のみ)",
+        "せせらぎ公園駐車場 8:00〜17:00(最終受入16:30)",
+        "駐車場は有料(普通車2,000円)"
       ],
-      "website": "https://rurubu.jp/andmore/spot/80021526/",
+      "website": "https://shirakawa-go.gr.jp/",
       "catchphrase": "合掌造りの家々が並ぶ、世界遺産ののどかな山里",
       "highlights": [
         "世界遺産の集落",
@@ -70,11 +70,11 @@
       "type": "絶景・名所",
       "address": "三重県熊野市木本町",
       "openingHours": [
-        "入場無料・駐車場も無料",
-        "遊歩道は約1.2km(40〜50分)",
-        "通行できるかは要確認"
+        "第一駐車場は有料(1時間まで500円)",
+        "第二駐車場(歩いて約7分)は無料",
+        "遊歩道は約1km。波や台風で通れない日があります"
       ],
-      "website": "https://www.kankomie.or.jp/report/685",
+      "website": "https://onigajyo.mie.jp/",
       "catchphrase": "波に削られた断崖と洞くつが続く、熊野灘ぞいの海岸絶景",
       "highlights": [
         "世界遺産・熊野の景色",
@@ -90,10 +90,10 @@
       "type": "絶景・名所",
       "address": "静岡県静岡市清水区三保",
       "openingHours": [
-        "料金・時間は要確認",
-        "案内所「みほしるべ」 清水区三保1338-45"
+        "松原の散策は自由",
+        "案内所「みほしるべ」 9:00〜16:30(静岡市清水区三保1338-45)"
       ],
-      "website": "https://www.city.shizuoka.lg.jp/documents/56067/20250613007.pdf",
+      "website": "https://miho-no-matsubara.jp/",
       "catchphrase": "松林ごしに富士山をながめる、世界遺産の海岸",
       "highlights": [
         "羽衣の松",
