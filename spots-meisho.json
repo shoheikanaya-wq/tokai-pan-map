@@ -1,6 +1,106 @@
 {
   "source": "static",
-  "updatedAt": "2026-11-01",
+  "updatedAt": "2026-11-11",
   "attribution": "公開情報を基に作成。お出かけ前に最新情報をご確認ください。",
-  "shops": []
+  "shops": [
+    {
+      "placeId": "meisho-inuyama-castle",
+      "name": "国宝 犬山城",
+      "area": "犬山市",
+      "type": "絶景・名所",
+      "address": "愛知県犬山市犬山北古券65-2",
+      "openingHours": [
+        "9:00〜17:00(入場は16:30まで)",
+        "定休日:12月29日〜31日",
+        "大人1,000円・小中学生200円"
+      ],
+      "website": "https://aichinow.pref.aichi.jp/spots/detail/20/",
+      "catchphrase": "木曽川のほとりに建つ、現存する国宝の天守",
+      "highlights": [
+        "天守からの眺め",
+        "城下町の散策もできる",
+        "営業状況は出かける前に確認"
+      ],
+      "verify": true
+    },
+    {
+      "placeId": "meisho-toyota-korankei",
+      "name": "香嵐渓",
+      "area": "豊田市",
+      "type": "絶景・名所",
+      "address": "愛知県豊田市足助町",
+      "openingHours": [
+        "園内はいつでも入れます",
+        "もみじ祭りのライトアップ 11月1日〜30日 日没〜21時",
+        "料金は要確認"
+      ],
+      "website": "https://aichinow.pref.aichi.jp/news/detail/171/",
+      "catchphrase": "約3,000本のモミジが色づく、愛知を代表する紅葉の名所",
+      "highlights": [
+        "見ごろは11月",
+        "夜はライトアップ",
+        "足助の町並みも近い"
+      ],
+      "verify": true
+    },
+    {
+      "placeId": "meisho-shirakawago-ogimachi",
+      "name": "白川郷 荻町合掌造り集落",
+      "area": "白川村",
+      "type": "絶景・名所",
+      "address": "岐阜県大野郡白川村荻町",
+      "openingHours": [
+        "散策は8:00〜17:00(夜は宿泊者以外は不可)",
+        "散策は自由",
+        "せせらぎ公園駐車場 有料(最終受入16:30)"
+      ],
+      "website": "https://rurubu.jp/andmore/spot/80021526/",
+      "catchphrase": "合掌造りの家々が並ぶ、世界遺産ののどかな山里",
+      "highlights": [
+        "世界遺産の集落",
+        "歩いてまわれる",
+        "駐車場は有料で混みやすい"
+      ],
+      "verify": true
+    },
+    {
+      "placeId": "meisho-kumano-onigajo",
+      "name": "鬼ヶ城",
+      "area": "熊野市",
+      "type": "絶景・名所",
+      "address": "三重県熊野市木本町",
+      "openingHours": [
+        "入場無料・駐車場も無料",
+        "遊歩道は約1.2km(40〜50分)",
+        "通行できるかは要確認"
+      ],
+      "website": "https://www.kankomie.or.jp/report/685",
+      "catchphrase": "波に削られた断崖と洞くつが続く、熊野灘ぞいの海岸絶景",
+      "highlights": [
+        "世界遺産・熊野の景色",
+        "海ぞいを歩く遊歩道",
+        "歩きやすい靴で"
+      ],
+      "verify": true
+    },
+    {
+      "placeId": "meisho-shizuoka-miho-matsubara",
+      "name": "三保松原",
+      "area": "静岡市",
+      "type": "絶景・名所",
+      "address": "静岡県静岡市清水区三保",
+      "openingHours": [
+        "料金・時間は要確認",
+        "案内所「みほしるべ」 清水区三保1338-45"
+      ],
+      "website": "https://www.city.shizuoka.lg.jp/documents/56067/20250613007.pdf",
+      "catchphrase": "松林ごしに富士山をながめる、世界遺産の海岸",
+      "highlights": [
+        "羽衣の松",
+        "富士山と海の景色",
+        "案内所みほしるべで情報が聞ける"
+      ],
+      "verify": true
+    }
+  ]
 }
