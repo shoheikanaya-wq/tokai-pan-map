@@ -5,17 +5,21 @@
 <style>
 *{box-sizing:border-box}
 body{margin:0;background:#f3efe6;color:#2b2118;font-family:system-ui,-apple-system,"Noto Sans JP",sans-serif}
-header{background:#7a4b20;color:#fff;padding:12px 14px}
-header h1{margin:0;font-size:22px}
-header .sub{font-size:14px;margin-top:2px;opacity:.95}
-header a{display:inline-block;margin-top:8px;padding:8px 14px;border-radius:999px;background:#fff;color:#6b431f;text-decoration:none;font-weight:800;font-size:14px}
+:root{--gh:clamp(108px,34vw,150px);--cw:calc(var(--gh)*.89 + 12px)}
+/* 茶色の帯の右側に明るい台をつくり、そこに3キャラを立たせる */
+header{position:relative;overflow:hidden;background:#7a4b20;color:#fff;padding:12px calc(var(--cw) + 18px) 12px 14px;min-height:calc(var(--gh) + 12px)}
+header::after{content:"";position:absolute;right:0;top:0;bottom:0;width:calc(var(--cw) + 14px);background:#f3efe6;border-radius:56px 0 0 0}
+header .chars{position:absolute;right:4px;bottom:0;padding:0;gap:4px;z-index:1}
+header h1{margin:0;font-size:clamp(17px,5.4vw,22px)}
+header .sub{font-size:clamp(12px,3.6vw,14px);margin-top:2px;opacity:.95}
+header a{display:inline-block;margin-top:8px;padding:8px 14px;border-radius:999px;background:#fff;color:#6b431f;text-decoration:none;font-weight:800;font-size:clamp(12px,3.6vw,14px);white-space:nowrap}
 main{max-width:760px;margin:0 auto;padding:10px 12px 28px}
 .chars{display:flex;justify-content:center;align-items:flex-end;gap:10px;padding:8px 0}
-.chars img{height:clamp(104px,30vw,160px);width:auto;object-fit:contain;transform-origin:50% 100%}
+.chars img{height:var(--gh);width:auto;object-fit:contain;transform-origin:50% 100%}
 /* キャラの動き(ゆれる・首をかしげる・ぴょんと跳ねる) */
 .chars img.girl{animation:sway 3.2s ease-in-out infinite}
-.chars img.cat{height:clamp(45px,13vw,70px);animation:tilt 2.6s ease-in-out infinite}
-.chars img.dog{height:clamp(56px,16vw,88px);animation:hop 1.8s ease-in-out infinite}
+.chars img.cat{height:calc(var(--gh)*.37);animation:tilt 2.6s ease-in-out infinite}
+.chars img.dog{height:calc(var(--gh)*.46);animation:hop 1.8s ease-in-out infinite}
 .chars.pop img.girl{animation:pop .5s ease-out both,sway 3.2s .5s ease-in-out infinite}
 .chars.pop img.cat{animation:pop .5s .12s ease-out both,tilt 2.6s .7s ease-in-out infinite}
 .chars.pop img.dog{animation:pop .5s .24s ease-out both,hop 1.8s .8s ease-in-out infinite}
@@ -45,9 +49,8 @@ main{max-width:760px;margin:0 auto;padding:10px 12px 28px}
 .note{font-size:12px;color:#8a7c6b;margin-top:10px;line-height:1.5}
 </style></head>
 <body>
-<header><h1>🍜 ぷらっとラーメン</h1><div class="sub">市町村から、ラーメン店を探す</div><a href="index.html">← ぷらっと東海へ戻る</a></header>
+<header><h1>🍜 ぷらっとラーメン</h1><div class="sub">市町村から、ラーメン店を探す</div><a href="index.html">← ぷらっと東海へ戻る</a><div class="chars" id="chars" aria-hidden="true"></div></header>
 <main>
- <div class="chars" id="chars" aria-hidden="true"></div>
  <a class="zukan" href="spots.html?cat=ramen">🍜 東海のご当地ラーメン図鑑を見る</a>
  <div class="tabs" id="tabs"></div>
  <div class="cities" id="cities"></div>
