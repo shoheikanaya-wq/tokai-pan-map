@@ -1,4 +1,4 @@
-const CACHE_NAME = 'puratto-tokai-v199';
+const CACHE_NAME = 'puratto-tokai-v200';
 
 const FILES = [
   './',
