@@ -1,6 +1,6 @@
 {
   "source": "static-walkerplus-2026-11-01",
-  "updatedAt": "2026-11-01",
+  "updatedAt": "2026-11-13",
   "attribution": "公開情報(ウォーカープラス・各公式サイト)を基に作成。営業時間や休業日は変わるため、お出かけ前に公式サイトでご確認ください。",
   "shops": [
     {
@@ -58,6 +58,102 @@
         "伊良湖のり",
         "フェリー乗り場",
         "入場無料"
+      ],
+      "verify": true
+    },
+    {
+      "placeId": "michi-minoniwakachaya",
+      "name": "道の駅 美濃にわか茶屋",
+      "area": "美濃市",
+      "type": "道の駅",
+      "address": "岐阜県美濃市曽代2007",
+      "openingHours": [
+        "8:30〜18:00",
+        "休みは元日"
+      ],
+      "website": "https://www.mino-niwakachaya.com/",
+      "catchphrase": "レンタサイクルで美濃の町並みめぐりができる道の駅",
+      "highlights": [
+        "朝採れ野菜の産直",
+        "鮎料理のレストラン",
+        "レンタサイクル"
+      ],
+      "verify": true
+    },
+    {
+      "placeId": "michi-kokindenju-yamato",
+      "name": "道の駅 古今伝授の里やまと",
+      "area": "郡上市",
+      "type": "道の駅",
+      "address": "岐阜県郡上市大和町剣164",
+      "openingHours": [
+        "9:00〜18:00(店舗により異なる)",
+        "火曜定休(祝日の場合は翌平日)・年末年始休み"
+      ],
+      "website": "https://gujo-yamato.jp/",
+      "catchphrase": "温泉・朝市・パン工房がそろう郡上の道の駅",
+      "highlights": [
+        "無料の足湯",
+        "やまと温泉 やすらぎ館",
+        "野菜の朝市"
+      ],
+      "verify": true
+    },
+    {
+      "placeId": "michi-iseshima",
+      "name": "道の駅 伊勢志摩",
+      "area": "志摩市",
+      "type": "道の駅",
+      "address": "三重県志摩市磯部町穴川511-5",
+      "openingHours": [
+        "9:00〜18:00(季節により変わります)",
+        "年中無休"
+      ],
+      "website": "https://www.kankomie.or.jp/spot/detail_3980.html",
+      "catchphrase": "志摩スペイン村や賢島へ向かう途中に寄れる道の駅",
+      "highlights": [
+        "志摩の海産物のおみやげ",
+        "となりの観光農園で季節の花",
+        "トイレ・駐車場は24時間"
+      ],
+      "verify": true
+    },
+    {
+      "placeId": "michi-fujikawarakuza",
+      "name": "道の駅 富士川楽座",
+      "area": "富士市",
+      "type": "道の駅",
+      "address": "静岡県富士市岩淵1488-1",
+      "openingHours": [
+        "おみやげ・フードコート 8:00〜21:00",
+        "店・施設により時間が異なります"
+      ],
+      "website": "https://fujikawarakuza.co.jp/",
+      "catchphrase": "富士山を望む、プラネタリウムもある道の駅",
+      "highlights": [
+        "富士山フードコート",
+        "プラネタリウム(火曜休映)",
+        "授乳室あり"
+      ],
+      "verify": true
+    },
+    {
+      "placeId": "michi-itomarinetown",
+      "name": "道の駅 伊東マリンタウン",
+      "area": "伊東市",
+      "type": "道の駅",
+      "address": "静岡県伊東市湯川571-19",
+      "openingHours": [
+        "ショップ 9:00〜18:00(エリアにより異なる)",
+        "レストラン 11:00〜19:30(L.O.)",
+        "年中無休"
+      ],
+      "website": "https://ito-marinetown.co.jp/",
+      "catchphrase": "伊東温泉の入口、海辺の足湯と日帰り温泉がある道の駅",
+      "highlights": [
+        "海を見ながら足湯",
+        "日帰り温泉 朝日の湯",
+        "海中展望の遊覧船"
       ],
       "verify": true
     }
