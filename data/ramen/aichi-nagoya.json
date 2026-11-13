@@ -1,0 +1,167 @@
+{
+ "source": "static-public-info",
+ "updatedAt": "2026-11-14",
+ "attribution": "順位はGoogleマップのクチコミ評価をもとにした公開ランキング(ねとらぼ、2025年2月版)の順番です。営業時間はのせていません。閉店や移転がありえるので、お出かけ前に「地図」ボタンや各店の公式情報で確かめてください。",
+ "shops": [
+  {
+   "name": "担担麺と麻婆豆腐の店 柳橋虎玄",
+   "catchphrase": "濃厚でクリーミーな担担麺の専門店",
+   "openingHours": [],
+   "address": "愛知県名古屋市中村区名駅南1丁目5-22 金森ビル",
+   "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "麺屋 牛次郎 名古屋駅店",
+   "catchphrase": "牛骨ラーメンが看板",
+   "openingHours": [],
+   "address": "愛知県名古屋市中村区則武2丁目14-10",
+   "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "名古屋辛麺 鯱輪 熱田店",
+   "catchphrase": "麺屋はなびの総大将が監修した名古屋辛麺",
+   "openingHours": [],
+   "address": "愛知県名古屋市熱田区伝馬2丁目28-1",
+   "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "麺屋聖 名古屋栄店",
+   "catchphrase": "",
+   "openingHours": [],
+   "address": "愛知県名古屋市中区栄3丁目25-3 1F",
+   "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "らーめん天葵",
+   "catchphrase": "",
+   "openingHours": [],
+   "address": "愛知県名古屋市南区元鳴尾町76",
+   "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "麺家 獅子丸",
+   "catchphrase": "",
+   "openingHours": [],
+   "address": "愛知県名古屋市中村区亀島2丁目1-1",
+   "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "雷杏 名駅店",
+   "catchphrase": "",
+   "openingHours": [],
+   "address": "愛知県名古屋市中村区椿町4-12",
+   "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "濃厚中華そば 佐とう",
+   "catchphrase": "濃厚な中華そば",
+   "openingHours": [],
+   "address": "愛知県名古屋市中区丸の内2丁目8-25 丸の内中野ビル1F",
+   "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "朧月",
+   "catchphrase": "",
+   "openingHours": [],
+   "address": "愛知県名古屋市中区平和1丁目15-25 今井ダイアパレス1F",
+   "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "名古屋辛麺 鯱輪",
+   "catchphrase": "名古屋辛麺のお店",
+   "openingHours": [],
+   "address": "愛知県名古屋市中区栄3丁目11-15 LRDビル1F",
+   "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "からみそラーメンふくろう 本店",
+   "catchphrase": "からみそラーメンが看板",
+   "openingHours": [],
+   "address": "愛知県名古屋市北区辻町2丁目32",
+   "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "酒楽亭 空庵",
+   "catchphrase": "",
+   "openingHours": [],
+   "address": "愛知県名古屋市緑区武路町122",
+   "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "らあめん工房 雪濃湯",
+   "catchphrase": "",
+   "openingHours": [],
+   "address": "愛知県名古屋市東区芳野3丁目9-22",
+   "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "ラーメン福 黄金店",
+   "catchphrase": "",
+   "openingHours": [],
+   "address": "愛知県名古屋市中村区畑江通4丁目8",
+   "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "ラーメン大 名古屋店",
+   "catchphrase": "",
+   "openingHours": [],
+   "address": "愛知県名古屋市中区錦2丁目9-6 名和丸の内ビル1階",
+   "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "萬来亭",
+   "catchphrase": "",
+   "openingHours": [],
+   "address": "愛知県名古屋市緑区作の山町230 メゾン作の山1階",
+   "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "好陽軒",
+   "catchphrase": "",
+   "openingHours": [],
+   "address": "愛知県名古屋市昭和区広見町2丁目21-3",
+   "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "ラーメン福 島田橋店",
+   "catchphrase": "",
+   "openingHours": [],
+   "address": "愛知県名古屋市天白区元八事2丁目104",
+   "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "麺屋はなび 高畑本店",
+   "catchphrase": "台湾まぜそばの元祖として知られるお店",
+   "openingHours": [],
+   "address": "愛知県名古屋市中川区高畑1丁目170",
+   "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "麺家 半蔵",
+   "catchphrase": "",
+   "openingHours": [],
+   "address": "愛知県名古屋市名東区藤が丘148",
+   "verify": false,
+   "type": "ラーメン"
+  }
+ ]
+}

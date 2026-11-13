@@ -1,0 +1,167 @@
+{
+ "source": "static-public-info",
+ "updatedAt": "2026-11-14",
+ "attribution": "順位はGoogleマップのクチコミ評価をもとにした公開ランキング(ねとらぼ、2025年2月版)の順番です。営業時間はのせていません。閉店や移転がありえるので、お出かけ前に「地図」ボタンや各店の公式情報で確かめてください。",
+ "shops": [
+  {
+   "name": "岡崎台湾バスラーメン 喜楽亭",
+   "catchphrase": "バスの中で食べる台湾ラーメン。三河もち豚のミンチ使用。〆はご飯を入れる「セレブセット」",
+   "openingHours": [],
+   "address": "愛知県岡崎市牧御堂町油田32",
+   "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "キブサチ",
+   "catchphrase": "地元食材を使う。担々麺、東海八丁台湾、スペシャル醤油など",
+   "openingHours": [],
+   "address": "愛知県岡崎市日名南町17-7 レジャービル1F",
+   "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "麺屋 あきのそら",
+   "catchphrase": "",
+   "openingHours": [],
+   "address": "愛知県岡崎市大門3丁目20-15",
+   "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "中華そば おにぎり 番い-tsugai",
+   "catchphrase": "中華そばとおにぎりのお店",
+   "openingHours": [],
+   "address": "愛知県岡崎市明大寺町川端6",
+   "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "やま辰",
+   "catchphrase": "",
+   "openingHours": [],
+   "address": "愛知県岡崎市大和町字西六反58-1",
+   "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "五十六商店",
+   "catchphrase": "",
+   "openingHours": [],
+   "address": "愛知県岡崎市本宿町平田1-2",
+   "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "日本晴れ",
+   "catchphrase": "",
+   "openingHours": [],
+   "address": "愛知県岡崎市上和田町南屋敷2-1",
+   "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "自家製麺 公園前",
+   "catchphrase": "自家製麺のラーメン店",
+   "openingHours": [],
+   "address": "愛知県岡崎市柱4丁目8-16",
+   "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "まるぎん商店",
+   "catchphrase": "",
+   "openingHours": [],
+   "address": "愛知県岡崎市鴨田町田起49-13",
+   "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "まるぎん二号",
+   "catchphrase": "",
+   "openingHours": [],
+   "address": "愛知県岡崎市昭和町下川田10-2",
+   "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "くっちゃん",
+   "catchphrase": "",
+   "openingHours": [],
+   "address": "愛知県岡崎市六名本町1-8",
+   "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "つけめん舎一輝",
+   "catchphrase": "つけ麺のお店",
+   "openingHours": [],
+   "address": "愛知県岡崎市法性寺町荒子54-2",
+   "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "有頂天 岡崎店",
+   "catchphrase": "",
+   "openingHours": [],
+   "address": "愛知県岡崎市稲熊町1丁目27",
+   "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "麺屋 こはる",
+   "catchphrase": "",
+   "openingHours": [],
+   "address": "愛知県岡崎市美合町五反田8-1",
+   "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "暖だん",
+   "catchphrase": "",
+   "openingHours": [],
+   "address": "愛知県岡崎市若松東1丁目8-26",
+   "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "一蘭 岡崎店",
+   "catchphrase": "天然とんこつラーメンの専門店",
+   "openingHours": [],
+   "address": "愛知県岡崎市岩津町川畔18-6",
+   "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "おかざき商店 総本店",
+   "catchphrase": "",
+   "openingHours": [],
+   "address": "愛知県岡崎市小呂町4丁目50 ファイネスビルA棟1階",
+   "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "丸源ラーメン 岡崎羽根店",
+   "catchphrase": "肉そばが看板のラーメンチェーン",
+   "openingHours": [],
+   "address": "愛知県岡崎市羽根東町2丁目7-5",
+   "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "濃厚味噌ラーメン 北のれん本店",
+   "catchphrase": "濃厚な味噌ラーメン",
+   "openingHours": [],
+   "address": "愛知県岡崎市鴨田南町1-1",
+   "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "バイシャンタン 藤川本店",
+   "catchphrase": "",
+   "openingHours": [],
+   "address": "愛知県岡崎市藤川町西川向34-2",
+   "verify": false,
+   "type": "ラーメン"
+  }
+ ]
+}
