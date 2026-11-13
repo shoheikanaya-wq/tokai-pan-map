@@ -1,0 +1,47 @@
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#f3efe6;color:#2b2118;font-family:system-ui,-apple-system,"Noto Sans JP",sans-serif;overscroll-behavior-y:none}
+.app{height:100dvh;display:flex;flex-direction:column;max-width:760px;margin:0 auto}
+header{flex:none;background:#7a4b20;color:#fff;padding:8px 12px;display:flex;align-items:center;gap:10px}
+header a,header button{color:#fff;text-decoration:none;font-weight:900;font-size:15px;padding:6px 10px;border:2px solid #fff;border-radius:12px;background:transparent;font-family:inherit}
+header h1{margin:0;font-size:clamp(17px,4.8vw,21px);flex:1;line-height:1.2}
+.prefs{flex:none;display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:8px 8px 0}
+.prefs button,.kinds button{min-height:44px;border-radius:12px;background:#fff;border:2px solid #cdb995;color:#5a3714;font-weight:900;font-size:16px;font-family:inherit}
+.prefs button.on{background:#7a4b20;color:#fff;border-color:#7a4b20}
+.kinds{flex:none;display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:6px 8px 0}
+.kinds button{min-height:38px;font-size:14px;border-radius:999px}
+.kinds button.on{background:#efe3c9;border-color:#7a4b20}
+.stage{flex:1;min-height:0;padding:8px;display:flex}
+.panel{flex:1;min-height:0;overflow:auto;background:#fff;border-radius:16px;border:2px solid #e2d6bd;padding:4px 12px 10px}
+.grp{position:sticky;top:-4px;background:#fff;margin:0;padding:10px 0 6px;font-size:15px;color:#7a4b20;border-bottom:2px solid #efe3c9;z-index:1}
+.row{display:flex;align-items:center;gap:8px;width:100%;padding:11px 2px;border:0;border-bottom:1px solid #eee3cc;background:none;text-align:left;font-family:inherit;font-size:17px;font-weight:800;color:#3b2511;cursor:pointer}
+.row .nm{flex:1;min-width:0}
+.row small{font-weight:700;color:#8a7c6b;font-size:13px;white-space:nowrap}
+.k{flex:none;font-size:12px;font-weight:900;border-radius:8px;padding:2px 6px;color:#fff;min-width:44px;text-align:center}
+.k.SA{background:#2f6b8f}.k.PA{background:#4f8a4a}.k.michi{background:#b5481f}
+.dir{font-size:12px;font-weight:800;background:#efe3c9;color:#5a3714;border-radius:8px;padding:2px 6px;white-space:nowrap}
+.card{display:flex;flex-direction:column;min-height:100%}
+.card h2{margin:8px 0 4px;font-size:clamp(20px,5.6vw,26px);color:#3b2511;line-height:1.25}
+.meta{display:flex;flex-wrap:wrap;gap:5px;align-items:center;margin-top:6px}
+.area{font-size:13px;font-weight:800;background:#efe3c9;color:#5a3714;border-radius:8px;padding:2px 8px}
+.road{font-size:14px;font-weight:800;color:#5a3714}
+.cat{font-size:clamp(15px,4.2vw,18px);font-weight:700;margin:4px 0 6px}
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin:4px 0}
+.chips span{background:#f3efe6;border-radius:999px;padding:3px 9px;font-size:14px;font-weight:700}
+.hours{font-size:15px;line-height:1.45;margin:4px 0}
+.addr{font-size:14px;color:#6b5a48;margin:4px 0}
+.spacer{flex:1}
+.btns{display:flex;gap:8px;margin-top:8px}
+.btns a{flex:1;text-align:center;min-height:50px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:#7a4b20;color:#fff;font-weight:900;font-size:17px;text-decoration:none}
+.btns a.sub{background:#fff;color:#7a4b20;border:2px solid #7a4b20}
+.note{font-size:12px;color:#8a7c6b;margin:8px 0 0;line-height:1.4}
+.pager{flex:none;display:flex;align-items:center;gap:8px;padding:0 8px calc(10px + env(safe-area-inset-bottom))}
+.pager button{min-height:52px;font-size:17px;font-weight:900;border-radius:14px;border:0;background:#7a4b20;color:#fff;flex:1;font-family:inherit}
+.pager button:disabled{background:#cdb995}
+.pager[hidden]{display:none}
+.pager .n{flex:none;min-width:64px;text-align:center;font-weight:900;font-size:16px;color:#5a3714}
+.empty{text-align:center;font-size:17px;font-weight:800;color:#6b5a48;padding:30px 10px}
+button,a{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+button:active,.btns a:active{filter:brightness(.92)}
+.k.tag{background:#7a4b20}
+.stops{margin:4px 0;padding-left:20px;font-size:15px;line-height:1.5}
+.prefs small{font-size:12px;opacity:.8}
