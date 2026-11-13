@@ -1,7 +1,7 @@
 {
  "source": "static-public-info",
  "updatedAt": "2026-11-13",
- "attribution": "順位はGoogleマップのクチコミ評価をもとにした公開ランキング(ねとらぼ、2024年10月調査)を参考にしています。営業が確認できなかった1店を外し、11位を繰り上げました。営業時間は公開情報で確かめたものだけ載せています。「要確認」のお店は、お出かけ前に必ず最新情報をご確認ください。",
+ "attribution": "順位はGoogleマップのクチコミ評価をもとにした公開ランキング(ねとらぼ、2024年10月調査)を参考にしています。今は営業を確かめられない1店を外しました。21位以降は、同じランキングの2024年3月・5月版や地域のグルメ情報に出ているお店です。営業時間は公開情報で確かめたものだけ載せています。「要確認」のお店は、お出かけ前に必ず最新情報をご確認ください。",
  "shops": [
   {
    "name": "虎玄 山之手本店",
@@ -96,6 +96,182 @@
    ],
    "address": "愛知県豊田市渋谷町1丁目6-8",
    "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "麺場 田所商店 豊田店",
+   "catchphrase": "北海道・信州・九州など、味噌の種類を選べる味噌ラーメン専門店",
+   "openingHours": [
+    "月〜木・祝 10:00–23:00",
+    "金土 10:00–23:30 / 日 10:00–22:00"
+   ],
+   "address": "愛知県豊田市下市場町2丁目53-6",
+   "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "豚旨うま屋ラーメン 豊田浄水店",
+   "catchphrase": "豚骨ベースのラーメン。夏はレタスたっぷりの冷やし中華も人気",
+   "openingHours": [
+    "火〜日 11:00–翌4:00",
+    "月曜定休"
+   ],
+   "address": "愛知県豊田市保見町南山4-1",
+   "verify": true,
+   "type": "ラーメン"
+  },
+  {
+   "name": "かど家",
+   "catchphrase": "鯛塩スープのラーメンが評判",
+   "openingHours": [],
+   "address": "愛知県豊田市伊保町下川原92-1",
+   "verify": true,
+   "type": "ラーメン"
+  },
+  {
+   "name": "じゅんちゃんラーメン",
+   "catchphrase": "札幌風の味噌ラーメン。にんにくとバターをのせた一杯が看板",
+   "openingHours": [
+    "11:30–14:00 / 18:00–23:00"
+   ],
+   "address": "愛知県豊田市東梅坪町2丁目1-23",
+   "verify": false,
+   "type": "ラーメン"
+  },
+  {
+   "name": "岐阜タンメン 豊田店",
+   "catchphrase": "野菜たっぷりのタンメン。辛さを選べる",
+   "openingHours": [],
+   "address": "愛知県豊田市逢妻町4丁目59-1",
+   "verify": true,
+   "type": "ラーメン"
+  },
+  {
+   "name": "有頂天 豊田店",
+   "catchphrase": "地元で人気のラーメン店",
+   "openingHours": [],
+   "address": "愛知県豊田市大林町12丁目5",
+   "verify": true,
+   "type": "ラーメン"
+  },
+  {
+   "name": "麦笑らあめん 豊田店",
+   "catchphrase": "地元のラーメンチェーン",
+   "openingHours": [],
+   "address": "愛知県豊田市下林町1丁目109",
+   "verify": true,
+   "type": "ラーメン"
+  },
+  {
+   "name": "ネギいちラーメン 元町店",
+   "catchphrase": "ねぎとチャーシューがたっぷりの昔なつかしいラーメン",
+   "openingHours": [],
+   "address": "愛知県豊田市東新町6丁目12-5",
+   "verify": true,
+   "type": "ラーメン"
+  },
+  {
+   "name": "町田商店 豊田店",
+   "catchphrase": "濃厚な豚骨醤油の横浜家系ラーメン",
+   "openingHours": [],
+   "address": "愛知県豊田市竜神町寺池18",
+   "verify": true,
+   "type": "ラーメン"
+  },
+  {
+   "name": "大豊商店",
+   "catchphrase": "ラーメンとつけ麺の大きな看板が目印。濃厚なつけ麺が人気",
+   "openingHours": [],
+   "address": "愛知県豊田市山之手7丁目55",
+   "verify": true,
+   "type": "ラーメン"
+  },
+  {
+   "name": "麺屋 八丸",
+   "catchphrase": "地元で評価の高いラーメン店",
+   "openingHours": [],
+   "address": "愛知県豊田市陣中町2丁目17-6",
+   "verify": true,
+   "type": "ラーメン"
+  },
+  {
+   "name": "五十五番 豊田店",
+   "catchphrase": "自家製極太麺と濃厚魚介豚骨スープ。名物は濃厚つけ麺",
+   "openingHours": [],
+   "address": "愛知県豊田市西町1丁目16",
+   "verify": true,
+   "type": "ラーメン"
+  },
+  {
+   "name": "来来亭 豊田秋葉店",
+   "catchphrase": "背脂入りの醤油ラーメンが定番",
+   "openingHours": [],
+   "address": "愛知県豊田市秋葉町1丁目26-3",
+   "verify": true,
+   "type": "ラーメン"
+  },
+  {
+   "name": "横浜家系ラーメン きがる家 豊田美里店",
+   "catchphrase": "豚骨醤油の家系ラーメン",
+   "openingHours": [],
+   "address": "愛知県豊田市美里4丁目1-11",
+   "verify": true,
+   "type": "ラーメン"
+  },
+  {
+   "name": "ネギいちラーメン 豊田店",
+   "catchphrase": "シャキシャキのねぎと味噌スープのラーメンも人気",
+   "openingHours": [],
+   "address": "愛知県豊田市篠原町上り花112",
+   "verify": true,
+   "type": "ラーメン"
+  },
+  {
+   "name": "丸源ラーメン 豊田下市場店",
+   "catchphrase": "肉そばが看板のラーメンチェーン",
+   "openingHours": [],
+   "address": "愛知県豊田市前田町3丁目76-3",
+   "verify": true,
+   "type": "ラーメン"
+  },
+  {
+   "name": "麺家神明 とよた店",
+   "catchphrase": "地元の人気ラーメン店",
+   "openingHours": [
+    "11:00–15:00 / 17:00–22:00",
+    "火曜定休"
+   ],
+   "address": "愛知県豊田市永覚新町4-88",
+   "verify": true,
+   "type": "ラーメン"
+  },
+  {
+   "name": "天神一番亭",
+   "catchphrase": "豊田市駅近くで夜遅くまで営業。博多ラーメンと餃子",
+   "openingHours": [
+    "夜 18:00–翌1:00",
+    "日曜定休"
+   ],
+   "address": "愛知県豊田市西町6-57",
+   "verify": true,
+   "type": "ラーメン"
+  },
+  {
+   "name": "中国料理 幸華 豊田店",
+   "catchphrase": "コシの強い刀削麺が名物の中華料理店",
+   "openingHours": [
+    "11:30–14:00 / 17:30–翌3:00"
+   ],
+   "address": "愛知県豊田市日之出町2-4-15",
+   "verify": true,
+   "type": "ラーメン"
+  },
+  {
+   "name": "権ちゃんラーメン",
+   "catchphrase": "足助・香嵐渓へ向かう道沿い。濃い色のスープに細麺。チャーシュー麺がおすすめ",
+   "openingHours": [],
+   "address": "愛知県豊田市近岡町藤ノ木49-9",
+   "verify": true,
    "type": "ラーメン"
   }
  ]

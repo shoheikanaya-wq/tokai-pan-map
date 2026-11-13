@@ -95,11 +95,12 @@ function show(){
  if(!cityId){p.hidden=true;return}
  p.hidden=false;
  var id=cityId,pf=pref;
- p.innerHTML='<h2>'+esc(cityName())+' ラーメン TOP10</h2><div class="chars pop" aria-hidden="true">'+charsHtml(girlNo(id))+'</div><div class="empty">読み込み中…</div>';
+ p.innerHTML='<h2>'+esc(cityName())+' ラーメン <span id="topn">TOP10</span></h2><div class="chars pop" aria-hidden="true">'+charsHtml(girlNo(id))+'</div><div class="empty">読み込み中…</div>';
  fetch('data/ramen/'+pf+'-'+id+'.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw 0;return r.json()}).catch(function(){return null}).then(function(d){
   if(id!==cityId||pf!==pref)return;
   var shops=d&&d.shops||[];
-  var body=shops.length?shops.slice(0,10).map(shopHtml).join('')+(d.attribution?'<div class="note">'+esc(d.attribution)+'</div>':''):'<div class="empty">🍜 準備中です<br>もうすぐ追加されます</div>';
+  var top=shops.slice(0,30);var tn=p.querySelector('#topn');if(tn&&top.length)tn.textContent='TOP'+(top.length>10?top.length:10);
+  var body=shops.length?top.map(shopHtml).join('')+(d.attribution?'<div class="note">'+esc(d.attribution)+'</div>':''):'<div class="empty">🍜 準備中です<br>もうすぐ追加されます</div>';
   var w=p.querySelector('.empty');if(w)w.outerHTML=body;
  });
 }
