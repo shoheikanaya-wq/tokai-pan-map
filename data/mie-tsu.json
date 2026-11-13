@@ -1,6 +1,6 @@
 {
   "source": "static-free-verified",
-  "updatedAt": "2026-09-19",
+  "updatedAt": "2026-11-12",
   "attribution": "店舗公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。",
   "shops": [
     {
@@ -46,6 +46,30 @@
       "googleMaps": "https://www.google.com/maps/search/?api=1&query=513BAKERY%20%E4%B8%89%E9%87%8D%E6%B4%A5%E7%9C%8C%E5%BA%81%E5%89%8D%E5%BA%97%20%E4%B8%89%E9%87%8D%E7%9C%8C%E6%B4%A5%E5%B8%82%E6%A0%84%E7%94%BA2%E4%B8%81%E7%9B%AE393",
       "photo": "",
       "catchphrase": "石窯で焼く焼きたてパンとイートインを楽しめるベーカリー",
+      "highlights": [
+        "石窯パン",
+        "イートイン"
+      ]
+    },
+    {
+      "placeId": "static-tsu-513takachaya",
+      "name": "513BAKERY 三重津高茶屋店",
+      "rating": 0,
+      "reviews": 0,
+      "address": "三重県津市高茶屋小森町4092-3",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "07:30–19:30",
+        "定休日 月（祝日の場合は火）"
+      ],
+      "phone": "059-238-0513",
+      "website": "https://www.513bakery.jp/shop/takachaya/",
+      "googleMaps": "https://www.google.com/maps/search/?api=1&query=513BAKERY%20%E4%B8%89%E9%87%8D%E6%B4%A5%E9%AB%98%E8%8C%B6%E5%B1%8B%E5%BA%97%20%E4%B8%89%E9%87%8D%E7%9C%8C%E6%B4%A5%E5%B8%82%E9%AB%98%E8%8C%B6%E5%B1%8B%E5%B0%8F%E6%A3%AE%E7%94%BA4092-3",
+      "photo": "",
+      "catchphrase": "スペイン製石窯で焼く焼きたてベーカリー",
       "highlights": [
         "石窯パン",
         "イートイン"
