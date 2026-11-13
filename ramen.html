@@ -99,7 +99,7 @@ function show(){
  fetch('data/ramen/'+pf+'-'+id+'.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw 0;return r.json()}).catch(function(){return null}).then(function(d){
   if(id!==cityId||pf!==pref)return;
   var shops=d&&d.shops||[];
-  var top=shops.slice(0,30);var tn=p.querySelector('#topn');if(tn&&top.length)tn.textContent='TOP'+(top.length>10?top.length:10);
+  var top=shops.slice(0,20);var tn=p.querySelector('#topn');if(tn&&top.length)tn.textContent='TOP'+(top.length>10?top.length:10);
   var body=shops.length?top.map(shopHtml).join('')+(d.attribution?'<div class="note">'+esc(d.attribution)+'</div>':''):'<div class="empty">🍜 準備中です<br>もうすぐ追加されます</div>';
   var w=p.querySelector('.empty');if(w)w.outerHTML=body;
  });
