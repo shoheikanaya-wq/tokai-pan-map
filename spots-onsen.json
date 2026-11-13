@@ -1,11 +1,15 @@
 {
   "source": "static",
-  "updatedAt": "2026-11-09",
+  "updatedAt": "2026-11-14",
   "attribution": "公開情報(下呂市・アクアイグニス・愛知県観光サイト)を基に作成。営業時間や料金は変わるため、お出かけ前に公式サイトでご確認ください。",
   "shops": [
     {"placeId":"onsen-gero-quagarden","name":"下呂温泉 クアガーデン露天風呂","area":"下呂市","type":"日帰り温泉","address":"岐阜県下呂市湯之島894-2","openingHours":["8:00〜20:45(受付は20:00まで)","定休日:毎週木曜(祝日の場合は翌日休業)","大人700円・小学生400円・幼児200円"],"website":"https://www.city.gero.lg.jp/site/kanko/1226.html","catchphrase":"日本三名泉・下呂温泉の露天風呂に気軽に入れる施設","highlights":["日本三名泉の下呂温泉","露天風呂","朝8時から入れる"],"verify":true},
     {"placeId":"onsen-gero-shirasagi","name":"下呂温泉 白鷺の湯","area":"下呂市","type":"日帰り温泉","address":"岐阜県下呂市湯之島856-1","openingHours":["10:00〜20:45(受付は20:00まで)","定休日:毎週水曜(祝日の場合は金曜休業)","大人430円・小学生160円・幼児80円"],"website":"https://www.city.gero.lg.jp/site/kanko/1226.html","catchphrase":"下呂温泉街の中にある、お手ごろ料金の共同浴場","highlights":["日本三名泉の下呂温泉","大人430円","温泉街の散歩のついでに"],"verify":true},
     {"placeId":"onsen-kataoka","name":"アクアイグニス 片岡温泉","area":"菰野町","type":"日帰り温泉","address":"三重県三重郡菰野町菰野4800-1","openingHours":["6:00〜24:00","無休"],"website":"https://aquaignis.jp/spa_kataoka.php","catchphrase":"加水・加温・循環なしの源泉100%かけ流し、竹林の露天風呂","highlights":["源泉100%かけ流し","アルカリ性単純温泉","竹林の露天風呂","早朝6時から"],"verify":true},
-    {"placeId":"onsen-yuya","name":"湯谷温泉(温泉街の旅館で日帰り入浴)","area":"新城市","type":"日帰り温泉","address":"愛知県新城市豊岡字滝上64-3","openingHours":["営業時間・料金は施設ごとに異なります","旅館・ホテルへ事前に確認を"],"website":"https://aichinow.pref.aichi.jp/spots/detail/189/","catchphrase":"奥三河の清流・豊川ぞいの温泉地。旅館で日帰り入浴ができます","highlights":["奥三河","旅館の日帰り入浴","観光案内 0536-32-6058"],"verify":true}
+    {"placeId":"onsen-yuya","name":"湯谷温泉(温泉街の旅館で日帰り入浴)","area":"新城市","type":"日帰り温泉","address":"愛知県新城市豊岡字滝上64-3","openingHours":["営業時間・料金は施設ごとに異なります","旅館・ホテルへ事前に確認を"],"website":"https://aichinow.pref.aichi.jp/spots/detail/189/","catchphrase":"奥三河の清流・豊川ぞいの温泉地。旅館で日帰り入浴ができます","highlights":["奥三河","旅館の日帰り入浴","観光案内 0536-32-6058"],"verify":true},
+    {"placeId":"onsen-sakakibara-yunose","name":"ラムちゃんパーク 榊原温泉 湯の瀬","area":"津市","type":"日帰り温泉","address":"三重県津市榊原町6103","openingHours":["8:00〜21:00(最終受付は20:30)","不定休(メンテナンスで臨時休業あり)","一般 平日550円・土日祝650円/こども200円"],"website":"https://www.kankomie.or.jp/spot/1220","catchphrase":"とろっとした湯ざわりの榊原温泉。2022年に建て替えて新しくなった日帰り温泉","highlights":["アルカリ性単純温泉","源泉かけ流し風呂あり","朝8時から"],"verify":true},
+    {"placeId":"onsen-hirayunomori","name":"ひらゆの森","area":"高山市","type":"日帰り温泉","address":"岐阜県高山市奥飛騨温泉郷平湯763","openingHours":["10:00〜21:00(受付は20:30まで)","年中無休(メンテナンス休業あり)","大人700円・小人500円"],"website":"https://www.kankou-gifu.jp/spot/detail_3163.html","catchphrase":"標高約1300mの平湯温泉。湯ぶねごとに色や温度がちがう露天風呂めぐり","highlights":["奥飛騨温泉郷","男女あわせて16の露天風呂","源泉かけ流し"],"verify":true},
+    {"placeId":"onsen-otainai","name":"御殿場市 御胎内温泉健康センター","area":"御殿場市","type":"日帰り温泉","address":"静岡県御殿場市印野1380-25","openingHours":["10:00〜21:00(受付は20:00まで)","定休日:毎週火曜(祝日の場合は翌日)"],"website":"https://www.japan47go.travel/en/detail/4fd15369-77a8-4a03-8309-9b963e658b77","catchphrase":"富士山のふもと、御殿場市の日帰り温泉。露天風呂から富士山をながめられます","highlights":["富士山が見える露天風呂","サウナあり","御殿場駅からバス約20分"],"verify":true},
+    {"placeId":"onsen-sanage-kinsen","name":"猿投温泉 岩風呂 金泉の湯","area":"豊田市","type":"日帰り温泉","address":"愛知県豊田市加納町馬道通21","openingHours":["営業時間・料金は曜日で異なります","お出かけ前に施設へ確認を"],"website":"https://www.mapple.net/original/526181/","catchphrase":"猿投山のふもと、日本庭園に囲まれた天然ラドン温泉の岩風呂","highlights":["天然ラドン温泉","日本庭園の岩風呂","ジブリパークから車で約15分"],"verify":true}
   ]
 }
