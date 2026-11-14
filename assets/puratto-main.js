@@ -1,4 +1,4 @@
-/* ぷらっと東海 メイン共通の画面(SA・PA 道の駅/温泉/ドライブ/絶景)
+/* ぷらっと東海 メイン共通の画面(SA・PA 道の駅/温泉/ドライブ/絶景/不動産)
    各ページは window.PURATTO に設定を書いてから、このファイルを読み込む。 */
 (function(){
   var C=window.PURATTO||{};
@@ -13,6 +13,9 @@
   function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
   function safeUrl(u){return /^https:\/\//.test(u||'')?u:''}
   function kcls(x){return C.kindClass?C.kindClass(x):'tag'}
+  function facts(x){if(!C.facts)return '';var h='';C.facts.forEach(function(f){var v=x[f[0]];if(v)h+='<dt>'+esc(f[1])+'</dt><dd>'+esc(v)+'</dd>'});return h?'<dl class="facts">'+h+'</dl>':''}
+  function srcs(x){var a=(x.sources||[]).map(safeUrl).filter(Boolean);if(!a.length&&!x.checkedAt)return '';return '<div class="srcs">'+(x.checkedAt?'<span>確かめた日 '+esc(x.checkedAt)+'</span>':'')+a.map(function(u,i){return '<a href="'+esc(u)+'" target="_blank" rel="noopener">出どころ'+(i+1)+'</a>'}).join('')+'</div>'}
+  function caution(){return C.caution?'<p class="caution">'+esc(C.caution)+'</p>':''}
   function load(u){return fetch(u,{cache:'no-cache'}).then(function(r){if(!r.ok)throw 0;return r.json()}).catch(function(){return null})}
 
   document.title=C.title||document.title;
@@ -54,7 +57,7 @@
   function render(){
     tabs();setUrl();view=filtered();cur=-1;$('pager').hidden=true;$('back').textContent='← もどる';
     if(!view.length){$('panel').innerHTML='<p class="empty">この県の'+esc(C.noun||'データ')+'は準備中です。<br>少しずつ増えていきます。</p>';return}
-    var h='',g=null;
+    var h=caution(),g=null;
     view.forEach(function(x,i){
       var grp=group(x);
       if(grp!==g){h+='<h3 class="grp">'+esc((C.groupIcon?C.groupIcon(x):'📍')+' '+grp)+'</h3>';g=grp}
@@ -69,15 +72,16 @@
     cur=i;var x=view[i];if(!x)return;
     var map='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(x.name.replace(/[((].*?[))]/g,' ')+' '+(x.address||''));
     var web=safeUrl(x.website);
-    var h='<div class="card"><div class="meta">'+(x.kind?'<span class="k '+kcls(x)+'">'+esc(x.kind)+'</span>':'')+
+    var h='<div class="card">'+caution()+'<div class="meta">'+(x.kind?'<span class="k '+kcls(x)+'">'+esc(x.kind)+'</span>':'')+
       (x.direction?'<span class="dir">'+esc(x.direction)+'</span>':'')+'<span class="area">'+esc(x.area)+'</span>'+
       (x.road?'<span class="road">'+esc(x.road)+'</span>':'')+'</div>'+
       '<h2>'+esc(x.name)+'</h2><div class="cat">'+esc(x.catchphrase)+'</div>'+
       '<div class="chips">'+(x.highlights||[]).map(function(t){return '<span>'+esc(t)+'</span>'}).join('')+'</div>'+
       (x.stops&&x.stops.length?'<ol class="stops">'+x.stops.map(function(t){return '<li>'+esc(t)+'</li>'}).join('')+'</ol>':'')+
       (x.openingHours&&x.openingHours.length?'<div class="hours">🕒 '+x.openingHours.map(esc).join('<br>')+'</div>':'')+
-      '<div class="addr">📍 '+esc(x.address)+'</div><div class="spacer"></div>'+
-      '<div class="btns"><a href="'+map+'" target="_blank" rel="noopener">🗺 地図で見る</a>'+(web?'<a class="sub" href="'+esc(web)+'" target="_blank" rel="noopener">くわしく</a>':'')+'</div>'+
+      facts(x)+
+      '<div class="addr">📍 '+esc(x.address)+'</div>'+srcs(x)+'<div class="spacer"></div>'+
+      '<div class="btns"><a href="'+map+'" target="_blank" rel="noopener">🗺 地図で見る</a>'+(web?'<a class="sub" href="'+esc(web)+'" target="_blank" rel="noopener">'+esc(C.webLabel||'くわしく')+'</a>':'')+'</div>'+
       '<p class="note">'+esc(x._note)+'</p></div>';
     $('panel').innerHTML=h;$('panel').scrollTop=0;
     $('pager').hidden=false;$('pos').textContent=(i+1)+'/'+view.length;

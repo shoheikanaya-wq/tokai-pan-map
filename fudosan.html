@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#7a4b20">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<title>ぷらっと不動産</title>
+<link rel="stylesheet" href="assets/puratto-main.css">
+<style>
+.kinds{grid-template-columns:repeat(5,1fr)}
+.kinds button{font-size:13px;padding:0 2px}
+</style>
+</head>
+<body>
+<div class="app">
+ <header>
+  <a href="index.html" id="back" aria-label="ぷらっと東海へ戻る">← もどる</a>
+  <h1 id="title">🏠 ぷらっと不動産</h1>
+ </header>
+ <nav class="prefs" id="prefs" aria-label="県をえらぶ"></nav>
+ <nav class="kinds" id="kinds" aria-label="暮らし方の型をえらぶ"></nav>
+ <div class="stage"><div class="panel" id="panel"><p class="empty">読みこみ中…</p></div></div>
+ <div class="pager" id="pager" hidden>
+  <button id="prev">◀ 前へ</button><span class="n" id="pos"></span><button id="next">次へ ▶</button>
+ </div>
+</div>
+<script>
+window.PURATTO={
+  title:'ぷらっと不動産',emoji:'🏠',noun:'平屋むけの地域メモ',
+  sources:[{url:'data/fudosan.json'}],
+  caution:'平屋を建てるなら、の目安です。金額や制度は変わります。本当の見積もりや相談の代わりにはなりません。',
+  webLabel:'市の公式ページ',
+  kinds:[['all','すべて'],['tsukin','通勤'],['hiroi','広い土地'],['umi','海の近く'],['yama','山あい']],
+  kindClass:function(x){return {'名古屋に通いながら':'tsukin','ゆったり広い土地':'hiroi','海の近く':'umi','山あい・高原':'yama'}[x.style]||'other'},
+  group:function(x){return x.style||'そのほか'},
+  groupIcon:function(){return '🏠'},
+  groupOrder:function(x){var i=['名古屋に通いながら','ゆったり広い土地','海の近く','山あい・高原'].indexOf(x.style);return i<0?9:i},
+  rowRight:function(x){return x.area!==x.name?x.area:''},
+  facts:[['landPrice','💴 土地の値段の目安'],['hazard','🌊 災害への備え'],['life','🚃 暮らしの便利さ'],['climate','☀ 気候のくせ'],['support','🤝 補助の制度']]
+};
+</script>
+<script src="assets/puratto-main.js"></script>
+</body>
+</html>
