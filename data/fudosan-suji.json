@@ -1,0 +1,81 @@
+{
+  "source": "static",
+  "updatedAt": "2026-11-15",
+  "pref": "愛知県",
+  "attribution": "公的な資料から、使う数字だけを出どころつきで引用しています。目安です。本当の見積もりではありません。",
+  "fieldsGuide": {
+    "label": "何の数字か",
+    "value": "数字",
+    "unit": "単位",
+    "asOf": "いつの数字か",
+    "scope": "どこの数字か(あるときだけ)",
+    "count": "もとになった件数(あるときだけ)",
+    "sourceName": "出どころの名前",
+    "sourceUrl": "出どころのアドレス(https)",
+    "checkedAt": "確かめた日 YYYY-MM-DD",
+    "notes": "読むときに気をつけること"
+  },
+  "figures": {
+    "buildUnit": {
+      "label": "建物の1㎡あたりの建設費(平均)",
+      "value": 36.1,
+      "unit": "万円/㎡",
+      "asOf": "2025年度(2025年4月〜2026年3月に承認された分)",
+      "scope": "愛知県",
+      "count": 244,
+      "sourceName": "住宅金融支援機構「2025年度 フラット35利用者調査」注文住宅",
+      "sourceUrl": "https://www.jhf.go.jp/about/research/loan/flat35/index.html",
+      "checkedAt": "2026-11-15",
+      "notes": [
+        "フラット35を使った人だけの数字です。",
+        "2階建てもまざった平均です。平屋だけの数字ではありません。",
+        "「建設費」には、設計費・工事監理費・除却工事費(古い建物をこわす費用)・屋外附帯工事費などが、もう入っています。",
+        "古い建物をこわした人もまざっています。更地に建てる人には、少し高めに出る向きがあります。"
+      ]
+    },
+    "buildArea": {
+      "label": "住宅面積(平均)",
+      "value": 121.7,
+      "unit": "㎡",
+      "asOf": "2025年度(2025年4月〜2026年3月に承認された分)",
+      "scope": "愛知県",
+      "count": 244,
+      "sourceName": "住宅金融支援機構「2025年度 フラット35利用者調査」注文住宅",
+      "sourceUrl": "https://www.jhf.go.jp/about/research/loan/flat35/index.html",
+      "checkedAt": "2026-11-15",
+      "notes": ["バルコニーをのぞいた広さです。2階建てもまざった平均です。"]
+    },
+    "buildCost": {
+      "label": "建設費(平均)",
+      "value": 4402.8,
+      "unit": "万円",
+      "asOf": "2025年度(2025年4月〜2026年3月に承認された分)",
+      "scope": "愛知県",
+      "count": 244,
+      "sourceName": "住宅金融支援機構「2025年度 フラット35利用者調査」注文住宅",
+      "sourceUrl": "https://www.jhf.go.jp/about/research/loan/flat35/index.html",
+      "checkedAt": "2026-11-15",
+      "notes": ["土地の費用は入っていません。"]
+    },
+    "rate21to35": {
+      "label": "フラット35の、いちばん多い金利(返す期間 21〜35年)",
+      "value": 3.81,
+      "unit": "年%",
+      "asOf": "2026年11月",
+      "sourceName": "【フラット35】金利情報(最頻金利)",
+      "sourceUrl": "https://www.flat35.com/loan/lineup/flat35/",
+      "checkedAt": "2026-11-15",
+      "notes": ["金利は毎月変わります。本当の金利は、お金を受け取る時に決まります。金融機関によってもちがいます。"]
+    },
+    "rate15to20": {
+      "label": "フラット35の、いちばん多い金利(返す期間 15〜20年)",
+      "value": 3.49,
+      "unit": "年%",
+      "asOf": "2026年11月",
+      "sourceName": "【フラット35】金利情報(最頻金利)",
+      "sourceUrl": "https://www.flat35.com/loan/lineup/flat35/",
+      "checkedAt": "2026-11-15",
+      "notes": []
+    }
+  }
+}
