@@ -1,7 +1,7 @@
 {
   "source": "static-walkerplus-2026-11-01",
-  "updatedAt": "2026-11-13",
-  "attribution": "公開情報(ウォーカープラス・各公式サイト)を基に作成。営業時間や休業日は変わるため、お出かけ前に公式サイトでご確認ください。",
+  "updatedAt": "2026-11-15",
+  "attribution": "公開情報(ウォーカープラス・愛知県観光サイト・岐阜県観光連盟・各公式サイト)を基に作成。営業時間や休業日は変わるため、お出かけ前に公式サイトでご確認ください。",
   "shops": [
     {
       "placeId": "michi-fujikawajuku",
@@ -154,6 +154,106 @@
         "海を見ながら足湯",
         "日帰り温泉 朝日の湯",
         "海中展望の遊覧船"
+      ],
+      "verify": true
+    },
+    {
+      "placeId": "michi-donguri-inabu",
+      "name": "道の駅 どんぐりの里いなぶ",
+      "area": "豊田市",
+      "type": "道の駅",
+      "address": "愛知県豊田市武節町針原22-1",
+      "openingHours": [
+        "売店 9:00〜17:00(土日祝は18:00まで)",
+        "温泉 10:00〜21:00(土日祝は9:30から)",
+        "木曜休み(売店は12〜3月だけ)"
+      ],
+      "website": "https://www.aichinow.pref.aichi.jp/spots/detail/981/",
+      "catchphrase": "温泉に入れて、山の味も買える道の駅",
+      "highlights": [
+        "天然温泉あり",
+        "米粉パンなどの特産品",
+        "五平餅づくりなどの体験"
+      ],
+      "verify": true
+    },
+    {
+      "placeId": "michi-tsukude-tezukurimura",
+      "name": "道の駅 つくで手作り村",
+      "area": "新城市",
+      "type": "道の駅",
+      "address": "愛知県新城市作手清岳字ナガラミ10-2",
+      "openingHours": [
+        "9:00〜17:00",
+        "食堂 平日10:00〜15:00・土日祝10:00〜16:00",
+        "定休日:毎週木曜(祝日は営業)、12月31日〜1月3日"
+      ],
+      "website": "https://aichinow.pref.aichi.jp/spots/detail/1189",
+      "catchphrase": "田園のなかで、手作り体験と地元の味が楽しめる",
+      "highlights": [
+        "地元の農産物・加工品",
+        "木工や郷土料理の体験",
+        "バーベキューができる"
+      ],
+      "verify": true
+    },
+    {
+      "placeId": "michi-palettepia-ono",
+      "name": "道の駅 パレットピアおおの",
+      "area": "大野町",
+      "type": "道の駅",
+      "address": "岐阜県揖斐郡大野町下磯313番地2",
+      "openingHours": [
+        "ベーカリー・直売所 9:00〜18:00",
+        "レストラン 11:00〜15:00",
+        "年中無休"
+      ],
+      "website": "https://www.kankou-gifu.jp/spot/detail_6010.html",
+      "catchphrase": "岐阜県でいちばん大きい道の駅。直売所とパンが人気",
+      "highlights": [
+        "焼きたてパンのベーカリー",
+        "屋根つきの丸い回廊",
+        "農産物直売所「みのもんや」"
+      ],
+      "verify": true
+    },
+    {
+      "placeId": "michi-kiinagashima-manbou",
+      "name": "道の駅 紀伊長島マンボウ",
+      "area": "紀北町",
+      "type": "道の駅",
+      "address": "三重県北牟婁郡紀北町東長島2410-73",
+      "openingHours": [
+        "物販 平日8:15〜18:00・土日祝8:00〜18:00",
+        "食堂 9:00〜15:00",
+        "臨時休業あり"
+      ],
+      "website": "https://42manbou.com/",
+      "catchphrase": "マンボウの串焼きが名物。めずらしい味に会える",
+      "highlights": [
+        "マンボウの串焼き",
+        "サメの串焼き",
+        "紀北町の海の幸・山の幸"
+      ],
+      "verify": true
+    },
+    {
+      "placeId": "michi-shiomizaka",
+      "name": "道の駅 潮見坂",
+      "area": "湖西市",
+      "type": "道の駅",
+      "address": "静岡県湖西市白須賀1896-2",
+      "openingHours": [
+        "売店 8:00〜18:00",
+        "レストラン 8:30〜18:00(ラストオーダー17:00)",
+        "年中無休"
+      ],
+      "website": "https://www.shiomizaka.com/",
+      "catchphrase": "太平洋を見ながら足湯に入れる道の駅",
+      "highlights": [
+        "海が見える無料の足湯",
+        "しらす丼・生のりうどん",
+        "地元の野菜とくだもの"
       ],
       "verify": true
     }

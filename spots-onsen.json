@@ -1,7 +1,7 @@
 {
   "source": "static",
-  "updatedAt": "2026-11-14",
-  "attribution": "公開情報(下呂市・アクアイグニス・愛知県観光サイト)を基に作成。営業時間や料金は変わるため、お出かけ前に公式サイトでご確認ください。",
+  "updatedAt": "2026-11-15",
+  "attribution": "公開情報(下呂市・アクアイグニス・愛知県観光サイト・各公式サイト)を基に作成。営業時間や料金は変わるため、お出かけ前に公式サイトでご確認ください。",
   "shops": [
     {"placeId":"onsen-gero-quagarden","name":"下呂温泉 クアガーデン露天風呂","area":"下呂市","type":"日帰り温泉","address":"岐阜県下呂市湯之島894-2","openingHours":["8:00〜20:45(受付は20:00まで)","定休日:毎週木曜(祝日の場合は翌日休業)","大人700円・小学生400円・幼児200円"],"website":"https://www.city.gero.lg.jp/site/kanko/1226.html","catchphrase":"日本三名泉・下呂温泉の露天風呂に気軽に入れる施設","highlights":["日本三名泉の下呂温泉","露天風呂","朝8時から入れる"],"verify":true},
     {"placeId":"onsen-gero-shirasagi","name":"下呂温泉 白鷺の湯","area":"下呂市","type":"日帰り温泉","address":"岐阜県下呂市湯之島856-1","openingHours":["10:00〜20:45(受付は20:00まで)","定休日:毎週水曜(祝日の場合は金曜休業)","大人430円・小学生160円・幼児80円"],"website":"https://www.city.gero.lg.jp/site/kanko/1226.html","catchphrase":"下呂温泉街の中にある、お手ごろ料金の共同浴場","highlights":["日本三名泉の下呂温泉","大人430円","温泉街の散歩のついでに"],"verify":true},
@@ -10,6 +10,11 @@
     {"placeId":"onsen-sakakibara-yunose","name":"ラムちゃんパーク 榊原温泉 湯の瀬","area":"津市","type":"日帰り温泉","address":"三重県津市榊原町6103","openingHours":["8:00〜21:00(最終受付は20:30)","不定休(メンテナンスで臨時休業あり)","一般 平日550円・土日祝650円/こども200円"],"website":"https://www.kankomie.or.jp/spot/1220","catchphrase":"とろっとした湯ざわりの榊原温泉。2022年に建て替えて新しくなった日帰り温泉","highlights":["アルカリ性単純温泉","源泉かけ流し風呂あり","朝8時から"],"verify":true},
     {"placeId":"onsen-hirayunomori","name":"ひらゆの森","area":"高山市","type":"日帰り温泉","address":"岐阜県高山市奥飛騨温泉郷平湯763","openingHours":["10:00〜21:00(受付は20:30まで)","年中無休(メンテナンス休業あり)","大人700円・小人500円"],"website":"https://www.kankou-gifu.jp/spot/detail_3163.html","catchphrase":"標高約1300mの平湯温泉。湯ぶねごとに色や温度がちがう露天風呂めぐり","highlights":["奥飛騨温泉郷","男女あわせて16の露天風呂","源泉かけ流し"],"verify":true},
     {"placeId":"onsen-otainai","name":"御殿場市 御胎内温泉健康センター","area":"御殿場市","type":"日帰り温泉","address":"静岡県御殿場市印野1380-25","openingHours":["10:00〜21:00(受付は20:00まで)","定休日:毎週火曜(祝日の場合は翌日)"],"website":"https://www.japan47go.travel/en/detail/4fd15369-77a8-4a03-8309-9b963e658b77","catchphrase":"富士山のふもと、御殿場市の日帰り温泉。露天風呂から富士山をながめられます","highlights":["富士山が見える露天風呂","サウナあり","御殿場駅からバス約20分"],"verify":true},
-    {"placeId":"onsen-sanage-kinsen","name":"猿投温泉 岩風呂 金泉の湯","area":"豊田市","type":"日帰り温泉","address":"愛知県豊田市加納町馬道通21","openingHours":["営業時間・料金は曜日で異なります","お出かけ前に施設へ確認を"],"website":"https://www.mapple.net/original/526181/","catchphrase":"猿投山のふもと、日本庭園に囲まれた天然ラドン温泉の岩風呂","highlights":["天然ラドン温泉","日本庭園の岩風呂","ジブリパークから車で約15分"],"verify":true}
+    {"placeId":"onsen-sanage-kinsen","name":"猿投温泉 岩風呂 金泉の湯","area":"豊田市","type":"日帰り温泉","address":"愛知県豊田市加納町馬道通21","openingHours":["営業時間・料金は曜日で異なります","お出かけ前に施設へ確認を"],"website":"https://www.mapple.net/original/526181/","catchphrase":"猿投山のふもと、日本庭園に囲まれた天然ラドン温泉の岩風呂","highlights":["天然ラドン温泉","日本庭園の岩風呂","ジブリパークから車で約15分"],"verify":true},
+    {"placeId":"onsen-honguu-no-yu","name":"天然温泉 本宮の湯","area":"豊川市","type":"日帰り温泉","address":"愛知県豊川市上長山町本宮下1番地1685","openingHours":["10:00〜22:00(受付は21:30まで)","定休日:毎週水曜(祝日の場合は翌日休み)","大人700円・子ども(3歳以上)350円"],"website":"http://www.honguu-no-yu.com/","catchphrase":"炭酸泉の露天風呂がある、家族で行きやすい温泉","highlights":["炭酸泉の露天風呂","薬湯","泡風呂"],"verify":true},
+    {"placeId":"onsen-gongitsune-no-yu","name":"まるは ごんぎつねの湯","area":"半田市","type":"日帰り温泉","address":"愛知県半田市平和町5-73-2","openingHours":["10:00〜22:00(受付は21:00まで)","月曜は16:00から営業","平日 大人900円・子ども400円/土日祝 大人950円・子ども450円"],"website":"https://maruhagongitsunenoyu.com/","catchphrase":"童話「ごんぎつね」がテーマ。庭をながめる露天風呂","highlights":["源泉かけ流し","庭園の露天風呂","寝湯・滝湯"],"verify":true},
+    {"placeId":"onsen-furukawa-nukumori","name":"ぬく森の湯 すぱ〜ふる","area":"飛騨市","type":"日帰り温泉","address":"岐阜県飛騨市古川町黒内1407","openingHours":["11:00〜21:00","定休日:火曜・水曜(水曜が祝日なら営業)","大人700円・小学生300円・未就学児は無料"],"website":"https://www.spafurukawa.com/","catchphrase":"肌にやさしい湯の、飛騨古川の温泉","highlights":["やわらかい美人の湯","露天風呂","冬はりんご風呂の日あり"],"verify":true},
+    {"placeId":"onsen-suzuka-satsuki","name":"鈴鹿さつき温泉","area":"鈴鹿市","type":"日帰り温泉","address":"三重県鈴鹿市津賀町850-2","openingHours":["10:00〜21:00(受付は20:00まで)","定休日:木曜と第3水曜(祝日なら営業)、年末年始","大人650円・子ども(4歳〜小学生)200円"],"website":"https://ja-suzuka.or.jp/living/suzuka-satsuki-onsen/","catchphrase":"地下1,400mからの湯を、かけ流しで楽しめる","highlights":["源泉かけ流し","露天風呂","サウナ"],"verify":true},
+    {"placeId":"onsen-fukuroi-yawaraginoyu","name":"袋井温泉 和の湯","area":"袋井市","type":"日帰り温泉","address":"静岡県袋井市諸井2022-3","openingHours":["10:00〜22:00","不定休(メンテナンス休館あり)","大人1,000円・子ども(3歳以上)500円"],"website":"https://www.yawaraginoyu.co.jp/","catchphrase":"炭酸泉やサウナが楽しめる、袋井の大きな温泉","highlights":["露天風呂","高濃度炭酸泉","サウナと水風呂"],"verify":true}
   ]
 }
