@@ -37,16 +37,22 @@ html,body{margin:0;min-height:100%;background:#f3efe6;font-family:system-ui,-app
 }
 @media(prefers-reduced-motion:reduce){.entry{transition:none}}
 
-/* おでかけ(道の駅・日帰りドライブ・絶景名所・日帰り温泉) */
-.more{width:min(100%,1200px);margin:0 auto;padding:14px 14px 28px}
+/* おでかけ(絵のカード。絵は assets/home-cards/、題名とボタンは文字で重ねる) */
+.more{width:min(100%,1200px);margin:0 auto;padding:14px 12px 28px}
 .more h2{margin:0 0 10px;font-size:18px;color:#5a3714;text-align:center}
-.more .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.more a{display:flex;align-items:center;justify-content:center;gap:6px;min-height:64px;padding:0 6px;text-align:center;border-radius:16px;
-  background:#fff;border:3px solid #7a4b20;color:#5a3714;font-size:17px;line-height:1.3;word-break:keep-all;font-weight:900;text-decoration:none;
-  -webkit-tap-highlight-color:transparent;touch-action:manipulation}
-.more a:active{transform:translateY(3px);filter:brightness(.94)}
-@media(min-width:700px){.more .grid{grid-template-columns:repeat(4,1fr)}}
-@media(max-width:699px){.more .grid a:last-child:nth-child(odd){grid-column:1/-1}}
+.more .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{--c:#7a4b20;display:flex;flex-direction:column;overflow:hidden;border-radius:18px;background:#fffaf0;border:3px solid var(--c);
+  color:#fff;text-decoration:none;box-shadow:0 3px 8px rgba(90,55,20,.22);
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;transition:transform .08s ease,filter .08s ease}
+.card:active{transform:translateY(4px) scale(.985);filter:brightness(.92)}
+.card:focus-visible{outline:4px solid #1a73e8;outline-offset:2px}
+.card .band{display:flex;align-items:center;justify-content:center;min-height:3.2em;padding:5px 4px;background:var(--c);font-size:16px;font-weight:900;text-align:center;line-height:1.25;word-break:keep-all}
+.card img{display:block;width:100%;height:auto;aspect-ratio:10/11;object-fit:cover;margin-bottom:8px}
+.card .go{display:block;margin:8px;margin-top:auto;padding:9px 4px;border-radius:999px;background:var(--c);font-size:15px;font-weight:900;text-align:center;word-break:keep-all}
+.c-sapa{--c:#2f7d4f}.c-drive{--c:#1f6fb2}.c-zekkei{--c:#b4541e}.c-onsen{--c:#b23a48}.c-fudosan{--c:#6a4fa3}
+@media(min-width:700px){.more .grid{grid-template-columns:repeat(5,1fr)}}
+@media(max-width:699px){.more .grid .card:last-child:nth-child(odd){grid-column:1/-1;width:calc(50% - 6px);justify-self:center}}
+@media(prefers-reduced-motion:reduce){.card{transition:none}}
 </style>
 <script data-goatcounter="https://puratto-tokai.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
@@ -63,11 +69,11 @@ html,body{margin:0;min-height:100%;background:#f3efe6;font-family:system-ui,-app
  <nav class="more" aria-label="ぷらっと おでかけ">
   <h2>ぷらっと おでかけ</h2>
   <div class="grid">
-   <a href="sapa-michi.html">🛣 ぷらっとSA・PA 道の駅</a>
-   <a href="drive.html">🚙 ぷらっとドライブ</a>
-   <a href="zekkei.html">🏞 ぷらっと絶景</a>
-   <a href="onsen.html">♨ ぷらっと温泉</a>
-   <a href="fudosan.html">🏠 ぷらっと不動産</a>
+   <a class="card c-sapa" href="sapa-michi.html" aria-label="ぷらっとSA・PA 道の駅へ"><span class="band">🛣 ぷらっとSA・PA 道の駅</span><img src="assets/home-cards/card-sapa-michi.webp" alt="" width="600" height="660" loading="lazy"><span class="go">SA・PA 道の駅へ ›</span></a>
+   <a class="card c-drive" href="drive.html" aria-label="ぷらっとドライブへ"><span class="band">🚙 ぷらっとドライブ</span><img src="assets/home-cards/card-drive.webp" alt="" width="600" height="660" loading="lazy"><span class="go">ドライブへ ›</span></a>
+   <a class="card c-zekkei" href="zekkei.html" aria-label="ぷらっと絶景へ"><span class="band">🏞 ぷらっと絶景</span><img src="assets/home-cards/card-zekkei.webp" alt="" width="600" height="660" loading="lazy"><span class="go">絶景へ ›</span></a>
+   <a class="card c-onsen" href="onsen.html" aria-label="ぷらっと温泉へ"><span class="band">♨ ぷらっと温泉</span><img src="assets/home-cards/card-onsen.webp" alt="" width="600" height="660" loading="lazy"><span class="go">温泉へ ›</span></a>
+   <a class="card c-fudosan" href="fudosan.html" aria-label="ぷらっと不動産へ"><span class="band">🏠 ぷらっと不動産</span><img src="assets/home-cards/card-fudosan.webp" alt="" width="600" height="660" loading="lazy"><span class="go">不動産へ ›</span></a>
   </div>
  </nav>
 </main>
