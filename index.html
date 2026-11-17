@@ -23,8 +23,11 @@ body::before{content:"";position:fixed;inset:-30px;background:url(home-main.webp
 .tile{display:block;position:relative;border-radius:14px;background-image:url(home-main.webp);background-repeat:no-repeat;
   box-shadow:0 3px 6px rgba(0,0,0,.35);-webkit-tap-highlight-color:transparent;touch-action:manipulation;transition:transform .08s,filter .08s}
 a.tile:active{transform:translateY(3px) scale(.985);filter:brightness(.88)}
+.tile.wide{grid-column:1/-1;background-size:100% 100%;aspect-ratio:2568/559;border-radius:12px}
+
 .soon i{position:absolute;top:6%;right:4%;font-style:normal;font-size:11px;font-weight:900;color:#fff;background:rgba(40,30,20,.75);border-radius:99px;padding:2px 8px}
 footer{flex:none;padding:2px 8px calc(6px + env(safe-area-inset-bottom));text-align:center;color:#fff;font-size:9.5px;line-height:1.5;white-space:nowrap;text-shadow:0 1px 2px rgba(0,0,0,.6)}
+.tile.wide.soon i{left:2.5%;right:auto}
 </style>
 <script data-goatcounter="https://puratto-tokai.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
@@ -40,8 +43,8 @@ footer{flex:none;padding:2px 8px calc(6px + env(safe-area-inset-bottom));text-al
   <a class="tile" href="fudosan.html" style="background-size:221.121% auto;background-position:93.541% 81.178%;aspect-ratio:767/307" aria-label="ぷらっと不動産へ"></a>
   <span class="tile soon" style="background-size:221.121% auto;background-position:6.674% 98.779%;aspect-ratio:767/345" aria-label="ぷらっと未来(準備中)"><i>準備中</i></span>
   <span class="tile soon" style="background-size:221.121% auto;background-position:93.541% 98.779%;aspect-ratio:767/345" aria-label="ぷらっと秋田青森北海道(準備中)"><i>準備中</i></span>
-  <span class="tile soon" style="background-image:url(tile-stoic.webp?v=3);background-size:100% 100%;aspect-ratio:767/345;box-shadow:none" aria-label="ぷらっとストイック(準備中)"><i>準備中</i></span>
-  <span class="tile soon" style="background-image:url(tile-kousaku.webp?v=3);background-size:100% 100%;aspect-ratio:767/345;box-shadow:none" aria-label="ぷらっと工作(準備中)"><i>準備中</i></span>
+  <span class="tile soon wide" style="background-image:url(tile-stoic.webp?v=6)" aria-label="ぷらっとストイック(準備中)"><i>準備中</i></span>
+  <span class="tile soon wide" style="background-image:url(tile-kousaku.webp?v=6)" aria-label="ぷらっと工作(準備中)"><i>準備中</i></span>
  </nav>
  <footer>
   Copyright &copy; 2026 SK. All Rights Reserved.<br>
@@ -53,12 +56,14 @@ footer{flex:none;padding:2px 8px calc(6px + env(safe-area-inset-bottom));text-al
 function fitTop(){
   const app=document.querySelector('.app'),top=document.querySelector('.top'),pic=top.querySelector('.pic');
   const w=app.clientWidth,H=app.clientHeight,tw=(w-18)/2;
-  const tiles=tw*(382+350+307+345+345)/767+36, foot=document.querySelector('footer').offsetHeight;
+  const tiles=tw*(382+350+307+345)/767+(w-12)*559/2568*2+42, foot=document.querySelector('footer').offsetHeight;
   const avail=H-tiles-foot;
-  const pw=Math.max(w,Math.min(w*1.8,avail*1696/800));
+  const pw=Math.min(w*1.8,avail*1696/800);
   pic.style.width=pw+'px';top.style.height=(pw*800/1696)+'px';
 }
 addEventListener('resize',fitTop);fitTop();
+// 「戻る」でホームに戻ったとき画面が青くなるのを防ぐ(読み込み直す)
+addEventListener('pageshow',e=>{ if(e.persisted) location.reload(); });
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('./sw.js?rev=20261117-home10').catch(err => console.warn('SW registration failed', err));
