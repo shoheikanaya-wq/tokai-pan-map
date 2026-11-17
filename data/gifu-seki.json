@@ -1,5 +1,5 @@
 {
- "source":"static-free-verified","updatedAt":"2026-09-19",
+ "source":"static-free-verified","updatedAt":"2026-11-17",
  "attribution":"マーゴ公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。",
- "shops":[{"placeId":"static-seki-london","name":"ロンドンベーカリー","rating":0,"reviews":0,"address":"岐阜県関市倉知516 マーゴ本館1F","type":"パン屋","types":["bakery"],"openingHours":[],"phone":"0575-21-0776","website":"https://www.ma-go.co.jp/london/","googleMaps":"","photo":"","catchphrase":"焼きたてパンとサンドイッチのベーカリー","highlights":["フランスパン","食パン","サンドイッチ"]}]
+ "shops":[{"placeId":"static-seki-london","name":"ロンドンベーカリー","rating":0,"reviews":0,"address":"岐阜県関市倉知516 マーゴ本館1F","type":"パン屋","types":["bakery"],"openingHours":[],"phone":"0575-21-0776","website":"https://www.ma-go.co.jp/london/","googleMaps":"","photo":"","catchphrase":"焼きたてパンとサンドイッチのベーカリー","highlights":["フランスパン","食パン","サンドイッチ"]},{"placeId":"static-seki-paysan","name":"ブーランジェ ペイザン","rating":0,"reviews":0,"address":"岐阜県関市池田町66","type":"パン屋","types":["bakery"],"openingHours":["定休日 水（ほか不定休あり）"],"phone":"0575-23-5557","website":"https://www.kankou-gifu.jp/pantabi-sekigujyo","googleMaps":"","photo":"","catchphrase":"国産小麦と自家製酵母で焼く親子2代のパン屋","highlights":["ドイツパン","カレーパン"]}]
 }
