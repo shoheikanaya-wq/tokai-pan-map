@@ -41,7 +41,7 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
   if (event.request.mode === 'navigate') {
     event.respondWith(
-      fetch(event.request).catch(() => caches.match(event.request, {ignoreSearch:true}) || caches.match('./'))
+      fetch(event.request).catch(() => caches.match(event.request, {ignoreSearch:true}).then(res => res || caches.match('./')))
     );
     return;
   }

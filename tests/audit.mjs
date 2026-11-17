@@ -15,6 +15,11 @@ assert.match(portal,/assets\/home\/puratto-tokai-home\.webp/,'portal home visual
 assert.ok(fs.existsSync(path.join(root,'assets/home/puratto-tokai-home.webp')),'portal home visual file exists');
 assert.match(portal,/href="new-pan\.html"/,'portal new-pan entry exists');
 assert.match(portal,/href="ramen\.html"/,'portal ramen entry exists');
+for(const page of ['onsen.html','sapa-michi.html','zekkei.html','fudosan.html']){
+  assert.ok(portal.includes(`href="${page}"`),`portal entry: ${page}`);
+  assert.ok(fs.existsSync(path.join(root,page)),`portal entry page exists: ${page}`);
+}
+assert.equal((portal.match(/data-soon="/g)||[]).length,2,'portal 準備中ボタン2つ');
 // new-pan.html は <script> が複数あるため、1つずつ構文チェックする
 const scripts=[...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].map(m=>m[1]);
 assert.ok(scripts.length>0,'index inline app script exists');

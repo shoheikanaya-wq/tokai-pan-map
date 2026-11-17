@@ -17,10 +17,11 @@ html,body{margin:0;min-height:100%;background:#f9e9d9;font-family:system-ui,-app
 .hit{position:absolute;z-index:2;display:block;margin:0;padding:0;border:0;border-radius:4.5%/12%;background:transparent;cursor:pointer;
   -webkit-tap-highlight-color:transparent;touch-action:manipulation;transition:background-color .08s ease,box-shadow .08s ease}
 .hit:active{background:rgba(0,0,0,.16);box-shadow:inset 0 4px 10px rgba(0,0,0,.25)}
-.hit:focus-visible{outline:4px solid #1a73e8;outline-offset:2px}
-.copy{margin:14px 16px 0;text-align:center;font-size:12px;line-height:1.6;color:#8a6a4a}
-.toast{position:fixed;left:50%;bottom:24px;z-index:9;max-width:calc(100% - 32px);padding:12px 18px;border-radius:999px;background:#5a3714;color:#fff;
-  font-size:15px;font-weight:700;text-align:center;transform:translate(-50%,20px);opacity:0;pointer-events:none;transition:opacity .2s ease,transform .2s ease}
+.hit:focus-visible{outline:3px solid #fff;outline-offset:0;box-shadow:0 0 0 7px #1a73e8}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.copy{margin:14px 16px 0;text-align:center;font-size:13px;line-height:1.6;color:#8a6a4a}
+.toast{position:fixed;left:50%;top:16px;z-index:9;max-width:calc(100% - 32px);padding:12px 18px;border-radius:999px;background:#5a3714;color:#fff;
+  font-size:15px;font-weight:700;text-align:center;transform:translate(-50%,-20px);opacity:0;pointer-events:none;transition:opacity .2s ease,transform .2s ease}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 @media(prefers-reduced-motion:reduce){.hit,.toast{transition:none}}
 </style>
@@ -28,6 +29,7 @@ html,body{margin:0;min-height:100%;background:#f9e9d9;font-family:system-ui,-app
 </head>
 <body>
 <main class="portal">
+ <h1 class="sr">ぷらっと東海</h1>
  <div class="home">
   <img src="assets/home/puratto-tokai-home.webp" width="1342" height="1832" alt="ぷらっと東海。食べて・見て・楽しむ 東海のおでかけMAP">
   <a class="hit" style="left:3.58%;top:37.66%;width:45.23%;height:15.72%" href="new-pan.html" aria-label="ぷらっとパンへ"></a>
@@ -47,9 +49,10 @@ html,body{margin:0;min-height:100%;background:#f9e9d9;font-family:system-ui,-app
   var toast=document.querySelector('.toast'),timer;
   document.querySelectorAll('[data-soon]').forEach(function(b){
     b.addEventListener('click',function(){
+      toast.textContent='';void toast.offsetWidth;
       toast.textContent=b.getAttribute('data-soon')+'は準備中です';
       toast.classList.add('show');clearTimeout(timer);
-      timer=setTimeout(function(){toast.classList.remove('show')},2600);
+      timer=setTimeout(function(){toast.classList.remove('show');toast.textContent=''},4000);
     });
   });
 })();
