@@ -12,15 +12,15 @@
 html{background:#1f6fb8}
 html,body{margin:0;height:100%;font-family:system-ui,-apple-system,"Noto Sans JP",sans-serif}
 /* 背景:同じ絵をぼかして全面に敷く(肌色の余白を出さない) */
-body::before{content:"";position:fixed;inset:-30px;background:url(assets/home-main.webp) center/cover;filter:blur(18px) brightness(.8);z-index:-1}
+body::before{content:"";position:fixed;inset:-30px;background:url(home-main.webp) center/cover;filter:blur(18px) brightness(.8);z-index:-1}
 .app{height:100dvh;max-width:600px;margin:0 auto;display:flex;flex-direction:column;overflow:hidden}
-.pic{background-image:url(assets/home-main.webp);background-repeat:no-repeat}
+.pic{background-image:url(home-main.webp);background-repeat:no-repeat}
 /* 上:タイトル絵(縦長の画面では少し大きく表示) */
 .top{flex:none;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
 .top .pic{flex:none;width:100%}
 /* 下:8つのボタン */
 .grid{flex:none;display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:6px}
-.tile{display:block;position:relative;border-radius:14px;background-image:url(assets/home-main.webp);background-repeat:no-repeat;
+.tile{display:block;position:relative;border-radius:14px;background-image:url(home-main.webp);background-repeat:no-repeat;
   box-shadow:0 3px 6px rgba(0,0,0,.35);-webkit-tap-highlight-color:transparent;touch-action:manipulation;transition:transform .08s,filter .08s}
 a.tile:active{transform:translateY(3px) scale(.985);filter:brightness(.88)}
 .soon i{position:absolute;top:6%;right:4%;font-style:normal;font-size:11px;font-weight:900;color:#fff;background:rgba(40,30,20,.75);border-radius:99px;padding:2px 8px}
@@ -40,8 +40,8 @@ footer{flex:none;padding:2px 8px calc(6px + env(safe-area-inset-bottom));text-al
   <a class="tile" href="fudosan.html" style="background-size:221.121% auto;background-position:93.541% 81.178%;aspect-ratio:767/307" aria-label="ぷらっと不動産へ"></a>
   <span class="tile soon" style="background-size:221.121% auto;background-position:6.674% 98.779%;aspect-ratio:767/345" aria-label="ぷらっと未来(準備中)"><i>準備中</i></span>
   <span class="tile soon" style="background-size:221.121% auto;background-position:93.541% 98.779%;aspect-ratio:767/345" aria-label="ぷらっと秋田青森北海道(準備中)"><i>準備中</i></span>
-  <span class="tile soon" style="background-image:url(assets/tile-stoic.webp?v=3);background-size:100% 100%;aspect-ratio:767/345;box-shadow:none" aria-label="ぷらっとストイック(準備中)"><i>準備中</i></span>
-  <span class="tile soon" style="background-image:url(assets/tile-kousaku.webp?v=3);background-size:100% 100%;aspect-ratio:767/345;box-shadow:none" aria-label="ぷらっと工作(準備中)"><i>準備中</i></span>
+  <span class="tile soon" style="background-image:url(tile-stoic.webp?v=3);background-size:100% 100%;aspect-ratio:767/345;box-shadow:none" aria-label="ぷらっとストイック(準備中)"><i>準備中</i></span>
+  <span class="tile soon" style="background-image:url(tile-kousaku.webp?v=3);background-size:100% 100%;aspect-ratio:767/345;box-shadow:none" aria-label="ぷらっと工作(準備中)"><i>準備中</i></span>
  </nav>
  <footer>
   Copyright &copy; 2026 SK. All Rights Reserved.<br>
