@@ -1,4 +1,4 @@
-const CACHE_NAME = 'puratto-tokai-v204';
+const CACHE_NAME = 'puratto-tokai-v205';
 
 const FILES = [
   './',
@@ -14,6 +14,7 @@ const FILES = [
   './assets/home-variants/home-d1.webp',
   './assets/home-variants/home-a2.webp',
   './assets/home-variants/home-d2.webp',
+  './assets/home/puratto-tokai-home.webp',
   './puratto-tokai-mobile.png',
   './puratto-tokai-pc.png',
   './icon-192.png',

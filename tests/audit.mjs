@@ -11,8 +11,8 @@ const panrush=read('panrush.html');
 const sw=read('sw.js');
 const manifest=JSON.parse(read('manifest.webmanifest'));
 const catalog=JSON.parse(read('data/static-catalog.json'));
-assert.match(portal,/puratto-tokai-pc\.png/,'portal PC visual exists');
-assert.match(portal,/puratto-tokai-mobile\.png/,'portal mobile visual exists');
+assert.match(portal,/assets\/home\/puratto-tokai-home\.webp/,'portal home visual exists');
+assert.ok(fs.existsSync(path.join(root,'assets/home/puratto-tokai-home.webp')),'portal home visual file exists');
 assert.match(portal,/href="new-pan\.html"/,'portal new-pan entry exists');
 assert.match(portal,/href="ramen\.html"/,'portal ramen entry exists');
 // new-pan.html は <script> が複数あるため、1つずつ構文チェックする

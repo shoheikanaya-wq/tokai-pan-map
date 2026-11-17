@@ -6,81 +6,56 @@
 <meta name="theme-color" content="#7a4b20">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icon-192.png">
+<link rel="preload" as="image" href="assets/home/puratto-tokai-home.webp">
 <title>ぷらっと東海</title>
 <style>
 *{box-sizing:border-box}
-html,body{margin:0;min-height:100%;background:#f3efe6;font-family:system-ui,-apple-system,"Noto Sans JP",sans-serif}
-.portal{min-height:100dvh;display:block;padding:0}
-.hero{position:relative;width:min(100%,1200px);margin:auto}
-.hero picture,.hero img{display:block;width:100%;height:auto}
-.entry{position:absolute;bottom:2.2%;height:17%;z-index:2;border-radius:18px;text-indent:-9999px;overflow:hidden}
-.entry:focus-visible{outline:5px solid #fff;outline-offset:-5px}
-.pan{left:5%;width:43%}
-.ramen{right:5%;width:43%}
-@media(max-width:600px){
- .hero{width:100%;display:block}
- .hero picture,.hero img{display:block;width:100%;height:auto}
- .entry{bottom:.6%;height:12.5%}
- .pan{left:4%;width:44%}.ramen{right:4%;width:44%}
-}
-
-/* Shared tactile button feedback */
-.entry{
-  -webkit-tap-highlight-color:transparent;
-  touch-action:manipulation;
-  transition:transform .08s ease,filter .08s ease,box-shadow .08s ease;
-}
-.entry:active,.entry[aria-pressed="true"]{
-  transform:translateY(4px) scale(.985);
-  filter:brightness(.92);
-  box-shadow:inset 0 4px 10px rgba(0,0,0,.22);
-}
-@media(prefers-reduced-motion:reduce){.entry{transition:none}}
-
-/* おでかけ(絵のカード。絵は assets/home-cards/、題名とボタンは文字で重ねる) */
-.more{width:min(100%,1200px);margin:0 auto;padding:14px 12px 28px}
-.more h2{margin:0 0 10px;font-size:18px;color:#5a3714;text-align:center}
-.more .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.card{--c:#7a4b20;display:flex;flex-direction:column;overflow:hidden;border-radius:18px;background:#fffaf0;border:3px solid var(--c);
-  color:#fff;text-decoration:none;box-shadow:0 3px 8px rgba(90,55,20,.22);
-  -webkit-tap-highlight-color:transparent;touch-action:manipulation;transition:transform .08s ease,filter .08s ease}
-.card:active{transform:translateY(4px) scale(.985);filter:brightness(.92)}
-.card:focus-visible{outline:4px solid #1a73e8;outline-offset:2px}
-.card .band{display:flex;align-items:center;justify-content:center;min-height:3.2em;padding:5px 4px;background:var(--c);font-size:16px;font-weight:900;text-align:center;line-height:1.25;word-break:keep-all}
-.card img{display:block;width:100%;height:auto;aspect-ratio:10/11;object-fit:cover;margin-bottom:8px}
-.card .go{display:block;margin:8px;margin-top:auto;padding:9px 4px;border-radius:999px;background:var(--c);font-size:15px;font-weight:900;text-align:center;word-break:keep-all}
-.c-sapa{--c:#2f7d4f}.c-drive{--c:#1f6fb2}.c-zekkei{--c:#b4541e}.c-onsen{--c:#b23a48}.c-fudosan{--c:#6a4fa3}
-@media(min-width:700px){.more .grid{grid-template-columns:repeat(5,1fr)}}
-@media(max-width:699px){.more .grid .card:last-child:nth-child(odd){grid-column:1/-1;width:calc(50% - 6px);justify-self:center}}
-@media(prefers-reduced-motion:reduce){.card{transition:none}}
+html,body{margin:0;min-height:100%;background:#f9e9d9;font-family:system-ui,-apple-system,"Noto Sans JP",sans-serif;color:#5a3714}
+.portal{min-height:100dvh;padding:0 0 18px}
+.home{position:relative;width:min(100%,640px);margin:0 auto}
+.home img{display:block;width:100%;height:auto}
+.hit{position:absolute;z-index:2;display:block;margin:0;padding:0;border:0;border-radius:4.5%/12%;background:transparent;cursor:pointer;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;transition:background-color .08s ease,box-shadow .08s ease}
+.hit:active{background:rgba(0,0,0,.16);box-shadow:inset 0 4px 10px rgba(0,0,0,.25)}
+.hit:focus-visible{outline:4px solid #1a73e8;outline-offset:2px}
+.copy{margin:14px 16px 0;text-align:center;font-size:12px;line-height:1.6;color:#8a6a4a}
+.toast{position:fixed;left:50%;bottom:24px;z-index:9;max-width:calc(100% - 32px);padding:12px 18px;border-radius:999px;background:#5a3714;color:#fff;
+  font-size:15px;font-weight:700;text-align:center;transform:translate(-50%,20px);opacity:0;pointer-events:none;transition:opacity .2s ease,transform .2s ease}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(prefers-reduced-motion:reduce){.hit,.toast{transition:none}}
 </style>
 <script data-goatcounter="https://puratto-tokai.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
 <main class="portal">
- <div class="hero">
-  <picture>
-   <source media="(max-width:600px)" srcset="puratto-tokai-mobile.png">
-   <img src="puratto-tokai-pc.png" alt="ぷらっと東海。パンとラーメンから選べます">
-  </picture>
-  <a class="entry pan" href="new-pan.html" aria-label="ぷらっとパンへ">ぷらっとパンへ</a>
-  <a class="entry ramen" href="ramen.html" aria-label="ぷらっとラーメンへ">ぷらっとラーメンへ</a>
+ <div class="home">
+  <img src="assets/home/puratto-tokai-home.webp" width="1342" height="1832" alt="ぷらっと東海。食べて・見て・楽しむ 東海のおでかけMAP">
+  <a class="hit" style="left:3.58%;top:37.66%;width:45.23%;height:15.72%" href="new-pan.html" aria-label="ぷらっとパンへ"></a>
+  <a class="hit" style="left:51.27%;top:37.66%;width:45.08%;height:15.72%" href="ramen.html" aria-label="ぷらっとラーメンへ"></a>
+  <a class="hit" style="left:3.58%;top:54.75%;width:45.23%;height:14.19%" href="onsen.html" aria-label="ぷらっと温泉へ"></a>
+  <a class="hit" style="left:51.27%;top:54.75%;width:45.08%;height:14.19%" href="sapa-michi.html" aria-label="ぷらっと道の駅・SA・PAへ"></a>
+  <a class="hit" style="left:3.58%;top:70.20%;width:45.23%;height:12.39%" href="zekkei.html" aria-label="ぷらっと絶景へ"></a>
+  <a class="hit" style="left:51.27%;top:70.20%;width:45.08%;height:12.39%" href="fudosan.html" aria-label="ぷらっと不動産へ"></a>
+  <button class="hit" type="button" style="left:3.58%;top:83.79%;width:45.23%;height:15.12%" data-soon="ぷらっと未来" aria-label="ぷらっと未来(準備中)"></button>
+  <button class="hit" type="button" style="left:51.27%;top:83.79%;width:45.08%;height:15.12%" data-soon="ぷらっと秋田・青森・北海道" aria-label="ぷらっと秋田・青森・北海道(準備中)"></button>
  </div>
- <nav class="more" aria-label="ぷらっと おでかけ">
-  <h2>ぷらっと おでかけ</h2>
-  <div class="grid">
-   <a class="card c-sapa" href="sapa-michi.html" aria-label="ぷらっとSA・PA 道の駅へ"><span class="band">🛣 ぷらっとSA・PA 道の駅</span><img src="assets/home-cards/card-sapa-michi.webp" alt="" width="600" height="660" loading="lazy"><span class="go">SA・PA 道の駅へ ›</span></a>
-   <a class="card c-drive" href="drive.html" aria-label="ぷらっとドライブへ"><span class="band">🚙 ぷらっとドライブ</span><img src="assets/home-cards/card-drive.webp" alt="" width="600" height="660" loading="lazy"><span class="go">ドライブへ ›</span></a>
-   <a class="card c-zekkei" href="zekkei.html" aria-label="ぷらっと絶景へ"><span class="band">🏞 ぷらっと絶景</span><img src="assets/home-cards/card-zekkei.webp" alt="" width="600" height="660" loading="lazy"><span class="go">絶景へ ›</span></a>
-   <a class="card c-onsen" href="onsen.html" aria-label="ぷらっと温泉へ"><span class="band">♨ ぷらっと温泉</span><img src="assets/home-cards/card-onsen.webp" alt="" width="600" height="660" loading="lazy"><span class="go">温泉へ ›</span></a>
-   <a class="card c-fudosan" href="fudosan.html" aria-label="ぷらっと不動産へ"><span class="band">🏠 ぷらっと不動産</span><img src="assets/home-cards/card-fudosan.webp" alt="" width="600" height="660" loading="lazy"><span class="go">不動産へ ›</span></a>
-  </div>
- </nav>
+ <p class="copy">© 2026 ぷらっと東海</p>
 </main>
+<div class="toast" role="status" aria-live="polite"></div>
 <script>
+(function(){
+  var toast=document.querySelector('.toast'),timer;
+  document.querySelectorAll('[data-soon]').forEach(function(b){
+    b.addEventListener('click',function(){
+      toast.textContent=b.getAttribute('data-soon')+'は準備中です';
+      toast.classList.add('show');clearTimeout(timer);
+      timer=setTimeout(function(){toast.classList.remove('show')},2600);
+    });
+  });
+})();
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js?rev=20261103-177').catch(err => console.warn('SW registration failed', err));
+    navigator.serviceWorker.register('./sw.js?rev=20261117-178').catch(err => console.warn('SW registration failed', err));
   });
 }
 </script>
