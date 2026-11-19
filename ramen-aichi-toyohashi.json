@@ -1,0 +1,87 @@
+{
+ "source": "static-public-info",
+ "updatedAt": "2026-11-20",
+ "attribution": "順位はGoogleマップのクチコミ評価をもとにした公開ランキング(ねとらぼ、2024年10月調査)を参考にしています。営業時間と、いまも営業しているかはまだ確かめていないため、すべて「要確認」にしています。お出かけ前に必ず最新情報をご確認ください。",
+ "shops": [
+  {
+   "name": "麺の亭 ささき屋",
+   "catchphrase": "魚介のバランスがよいつけ麺が人気。しめの雑炊も",
+   "openingHours": [],
+   "address": "愛知県豊橋市大脇町大脇20-42",
+   "verify": true,
+   "type": "ラーメン"
+  },
+  {
+   "name": "カドワラ",
+   "catchphrase": "肉塩ラーメン、トマト麺、担々麺など個性のあるメニュー",
+   "openingHours": [],
+   "address": "愛知県豊橋市札木町39",
+   "verify": true,
+   "type": "ラーメン"
+  },
+  {
+   "name": "ラーメンたのしみ",
+   "catchphrase": "",
+   "openingHours": [],
+   "address": "愛知県豊橋市菰口町6丁目46",
+   "verify": true,
+   "type": "ラーメン"
+  },
+  {
+   "name": "ラーメン 歩く花",
+   "catchphrase": "",
+   "openingHours": [],
+   "address": "愛知県豊橋市牛川通1丁目19-1",
+   "verify": true,
+   "type": "ラーメン"
+  },
+  {
+   "name": "らぁ麺 芳山",
+   "catchphrase": "",
+   "openingHours": [],
+   "address": "愛知県豊橋市つつじが丘3丁目6-6",
+   "verify": true,
+   "type": "ラーメン"
+  },
+  {
+   "name": "最強肉汁餃子 麺遊庵",
+   "catchphrase": "ラーメンと肉汁餃子のお店",
+   "openingHours": [],
+   "address": "愛知県豊橋市高師石塚町字石塚45番1号 コーポセブン101",
+   "verify": true,
+   "type": "ラーメン"
+  },
+  {
+   "name": "ORIBE",
+   "catchphrase": "",
+   "openingHours": [],
+   "address": "愛知県豊橋市井原町26-1",
+   "verify": true,
+   "type": "ラーメン"
+  },
+  {
+   "name": "いしやま屋",
+   "catchphrase": "",
+   "openingHours": [],
+   "address": "愛知県豊橋市中岩田3丁目2-18",
+   "verify": true,
+   "type": "ラーメン"
+  },
+  {
+   "name": "三八3sanyasa",
+   "catchphrase": "ラーメンとつけ麺のお店",
+   "openingHours": [],
+   "address": "愛知県豊橋市菰口町3丁目77-1",
+   "verify": true,
+   "type": "ラーメン"
+  },
+  {
+   "name": "ふくろう 豊橋三本木店",
+   "catchphrase": "ラーメンと台湾まぜそばのお店",
+   "openingHours": [],
+   "address": "愛知県豊橋市三本木町新三本木6-1",
+   "verify": true,
+   "type": "ラーメン"
+  }
+ ]
+}

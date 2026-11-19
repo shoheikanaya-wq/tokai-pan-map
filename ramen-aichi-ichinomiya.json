@@ -1,0 +1,87 @@
+{
+ "source": "static-public-info",
+ "updatedAt": "2026-11-20",
+ "attribution": "順位はGoogleマップのクチコミ評価をもとにした公開ランキング(ねとらぼ、2025年3月調査)を参考にしています。営業時間と、いまも営業しているかはまだ確かめていないため、すべて「要確認」にしています。お出かけ前に必ず最新情報をご確認ください。",
+ "shops": [
+  {
+   "name": "麦の道 すぐれ",
+   "catchphrase": "自家製の太麺に牡蠣風味のつけ汁のつけ麺と、名古屋コーチンの鶏白湯ラーメン",
+   "openingHours": [],
+   "address": "愛知県一宮市本町3丁目5-2",
+   "verify": true,
+   "type": "ラーメン"
+  },
+  {
+   "name": "中華そば華丸",
+   "catchphrase": "豚と鶏に煮干し・かつおを合わせたスープの味玉そば。ミシュランガイド2019掲載",
+   "openingHours": [],
+   "address": "愛知県一宮市萩原町串作1407-2",
+   "verify": true,
+   "type": "ラーメン"
+  },
+  {
+   "name": "中華そば 味万",
+   "catchphrase": "",
+   "openingHours": [],
+   "address": "愛知県一宮市白旗通4丁目9 グランドール白旗",
+   "verify": true,
+   "type": "ラーメン"
+  },
+  {
+   "name": "博多ラーメン ばりばり軒 一宮本店",
+   "catchphrase": "博多ラーメンのお店",
+   "openingHours": [],
+   "address": "愛知県一宮市大和町宮地花池高見10",
+   "verify": true,
+   "type": "ラーメン"
+  },
+  {
+   "name": "尾張ラーメン 本店 第一旭",
+   "catchphrase": "",
+   "openingHours": [],
+   "address": "愛知県一宮市栄1丁目2-20",
+   "verify": true,
+   "type": "ラーメン"
+  },
+  {
+   "name": "西村麺業",
+   "catchphrase": "",
+   "openingHours": [],
+   "address": "愛知県一宮市多加木1丁目28-8",
+   "verify": true,
+   "type": "ラーメン"
+  },
+  {
+   "name": "こしがや 一宮店",
+   "catchphrase": "",
+   "openingHours": [],
+   "address": "愛知県一宮市大和町苅安賀字伝治越24-2",
+   "verify": true,
+   "type": "ラーメン"
+  },
+  {
+   "name": "はらや TORI PAITAN RAMEN",
+   "catchphrase": "",
+   "openingHours": [],
+   "address": "愛知県一宮市花池4丁目24-12",
+   "verify": true,
+   "type": "ラーメン"
+  },
+  {
+   "name": "岐阜タンメン 一宮インター店",
+   "catchphrase": "",
+   "openingHours": [],
+   "address": "愛知県一宮市伝法寺7丁目1-2",
+   "verify": true,
+   "type": "ラーメン"
+  },
+  {
+   "name": "カプサイメン 一宮本店",
+   "catchphrase": "",
+   "openingHours": [],
+   "address": "愛知県一宮市伝法寺7丁目1-7",
+   "verify": true,
+   "type": "ラーメン"
+  }
+ ]
+}
