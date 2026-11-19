@@ -1,6 +1,6 @@
 {
   "source": "static",
-  "updatedAt": "2026-11-12",
+  "updatedAt": "2026-11-19",
   "attribution": "公開情報を基に作成。お出かけ前に最新情報をご確認ください。",
   "shops": [
     {
@@ -99,6 +99,103 @@
         "羽衣の松",
         "富士山と海の景色",
         "案内所みほしるべで情報が聞ける"
+      ],
+      "verify": true
+    },
+    {
+      "placeId": "meisho-tahara-koijigahama",
+      "name": "恋路ヶ浜",
+      "area": "田原市",
+      "type": "絶景・名所",
+      "address": "愛知県田原市伊良湖町恋路浦",
+      "openingHours": [
+        "見学は無料",
+        "駐車場あり(124台)"
+      ],
+      "website": "https://www.taharakankou.gr.jp/spot/spot.php?search_category1=&spot_id=6",
+      "catchphrase": "渥美半島の先っぽに弓なりに続く、太平洋の白い砂浜",
+      "highlights": [
+        "伊良湖岬灯台まで歩ける",
+        "「椰子の実」の歌の舞台",
+        "恋人の聖地の鐘がある"
+      ],
+      "verify": true
+    },
+    {
+      "placeId": "meisho-yoro-yoronotaki",
+      "name": "養老の滝",
+      "area": "養老町",
+      "type": "絶景・名所",
+      "address": "岐阜県養老郡養老町高林1298-2",
+      "openingHours": [
+        "見学は無料",
+        "駐車場は1台300円",
+        "養老公園の休みは月曜(祝日なら翌日)・12月29日〜1月3日"
+      ],
+      "website": "https://www.kankou-gifu.jp/spot/903/",
+      "catchphrase": "高さ約30m、親孝行の伝説が残る養老山地の名瀑",
+      "highlights": [
+        "秋はモミジの紅葉",
+        "養老公園とあわせて散策",
+        "春は約3,000本の桜"
+      ],
+      "verify": true
+    },
+    {
+      "placeId": "meisho-seki-monenoike",
+      "name": "モネの池(根道神社の名もなき池)",
+      "area": "関市",
+      "type": "絶景・名所",
+      "address": "岐阜県関市板取白谷",
+      "openingHours": [
+        "見学は無料",
+        "駐車場あり(普通車200台)",
+        "光がきれいなのは午前9時〜11時ごろ"
+      ],
+      "website": "https://www.kankou-gifu.jp/spot/5094/",
+      "catchphrase": "すきとおった湧き水に睡蓮と鯉がうかぶ、絵画のような池",
+      "highlights": [
+        "一年中たのしめる",
+        "冬も凍らない湧き水",
+        "カーナビは「フラワーパーク板取」が目印"
+      ],
+      "verify": true
+    },
+    {
+      "placeId": "meisho-ise-meotoiwa",
+      "name": "夫婦岩(二見興玉神社)",
+      "area": "伊勢市",
+      "type": "絶景・名所",
+      "address": "三重県伊勢市二見町江575",
+      "openingHours": [
+        "見学は自由",
+        "無料駐車場あり"
+      ],
+      "website": "https://futamiokitamajinja.or.jp/meguru/meotoiwa/",
+      "catchphrase": "しめ縄で結ばれた大小2つの岩が海に並ぶ、二見浦の名所",
+      "highlights": [
+        "5〜7月は岩の間から朝日",
+        "11〜1月は岩の間から満月",
+        "伊勢神宮とあわせて"
+      ],
+      "verify": true
+    },
+    {
+      "placeId": "meisho-fujinomiya-shiraito",
+      "name": "白糸ノ滝",
+      "area": "富士宮市",
+      "type": "絶景・名所",
+      "address": "静岡県富士宮市上井出273-1(駐車場)",
+      "openingHours": [
+        "見学は無料",
+        "駐車場 8:30〜17:00(普通車500円)"
+      ],
+      "website": "https://www.pref.shizuoka.jp/kurashikankyo/shizenkankyo/mizu_miyako/1002389/1012436.html",
+      "catchphrase": "幅約150mの崖から富士山の湧き水が糸のように流れ落ちる滝",
+      "highlights": [
+        "世界遺産・富士山の構成資産",
+        "国の名勝・天然記念物",
+        "バス停「白糸の滝」から歩いて約5分"
       ],
       "verify": true
     }
