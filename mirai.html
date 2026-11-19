@@ -26,8 +26,8 @@ main{max-width:600px;margin:0 auto;padding:10px 12px 28px}
 .meta{margin-top:3px;font-size:12px;font-weight:800;color:#2a5aa8}
 .card p{margin:4px 0 0;font-size:13px;line-height:1.55;color:#33415c}
 .src{display:inline-block;margin-top:5px;font-size:11px;color:#6a7894;text-decoration:underline}
-.filter{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:12px 0 0}
-.filter button{min-height:44px;border-radius:12px;border:2px solid #c9d6ea;background:#fff;color:#1d3a6e;font-weight:900;font-size:15px}
+.filter{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin:12px 0 0}
+.filter button{min-height:44px;border-radius:12px;border:2px solid #c9d6ea;background:#fff;color:#1d3a6e;font-weight:900;font-size:13px;padding:2px}
 .filter button.on{background:#1d3a6e;border-color:#1d3a6e;color:#fff}
 .note{margin-top:14px;font-size:11px;line-height:1.6;color:#6a7894}
 </style>
@@ -37,36 +37,51 @@ main{max-width:600px;margin:0 auto;padding:10px 12px 28px}
  <div class="hero">
  <div class="top"><div><h1>🚄 ぷらっと未来</h1><div class="sub">東海のこれから — できるもの・変わるもの</div></div><a href="index.html">← ホーム</a></div>
  <div class="banner" role="img" aria-label="ぷらっと未来"></div>
- <p class="lead">東海3県で、これから開業・開通するものを近い順に並べました。「豊田市とその周辺」を押すと、豊田・岡崎・知立あたりだけにしぼれます。「あと◯日」は今日から数えた目安です。</p>
+ <p class="lead">東海3県で、これから開業・開通するものを近い順に並べました。「豊田市と周辺」で豊田・岡崎・知立あたり、「交通・道路」で道路や鉄道の予定だけにしぼれます。「あと◯日」は今日から数えた目安です。</p>
  </div>
- <div class="filter" id="filter"><button type="button" data-a="all" class="on">東海ぜんぶ</button><button type="button" data-a="t">🚗 豊田市とその周辺</button></div>
+ <div class="filter" id="filter"><button type="button" data-a="all" class="on">東海ぜんぶ</button><button type="button" data-a="t">🚗 豊田市と周辺</button><button type="button" data-a="k">🚦 交通・道路</button></div>
  <div id="list"></div>
  <p class="note">日付は各社・行政の公表情報をもとにした予定です。「春」「年度中」などは目安の日付で数えています。予定は変わることがあるので、お出かけ前は出典で最新情報を確かめてください。(2026年11月20日時点)</p>
-</main>
+</main><footer style="margin:18px auto 8px;padding:10px 8px calc(10px + env(safe-area-inset-bottom));text-align:center;font-size:11px;line-height:1.6;color:#8a7c6b">
+ <div style="font-size:14px;font-weight:bold;color:#5d3a1a">ぷらっと未来</div>
+ <div>Ver.1.2</div>
+ <div>Created &amp; Managed by S.K.</div>
+ <div>&copy; 2026 S.K. All Rights Reserved.</div>
+</footer>
+
 <script>
 (function(){
 'use strict';
 // date:数える目安の日(YYYY-MM-DD)。when:画面に出す時期。date:null は時期未定。done:true は開業済み。
 var ITEMS=[
+ {t:'国道155号 豊田南バイパス 全線開通',p:'豊田市(東新町〜逢妻町)',when:'2026年度中(見込み)',date:'2027-03-31',e:'🛣',a:'t',k:1,
+  d:'残る東新町〜逢妻町の3.7kmが暫定2車線でつながり、全線開通。市の中心を通らずに東海環状道・東名・伊勢湾岸道を行き来しやすくなります。',
+  s:'https://trafficnews.jp/post/132460'},
+ {t:'国道153号 豊田北バイパス',p:'豊田市(逢妻町〜勘八町)',when:'開通時期は未定',date:null,e:'🛣',a:'t',k:1,
+  d:'豊田南バイパスと逢妻町でつながる、豊田市中心部をぐるっと囲む外環状道路の一部。建設中です。',
+  s:'https://trafficnews.jp/post/586710'},
+ {t:'名鉄三河線 若林駅の高架化',p:'豊田市(若林駅付近)',when:'2026年3月28日 高架に切り替え',date:'2026-03-28',done:true,e:'🚃',a:'t',k:1,
+  d:'若林駅が高架ホームになり、国道155号豊田南バイパスに通じる道を含む踏切4か所がなくなりました。仮線の撤去などはこれからです。',
+  s:'https://trafficnews.jp/post/636164'},
  {t:'μPLAT 豊田市(豊田市駅の高架下)',p:'豊田市若宮町(名鉄豊田市駅)',when:'2026年8月26日 開業',date:'2026-08-26',done:true,e:'🛍',a:'t',
   d:'名鉄豊田市駅の高架下に8店舗。丸亀製麺、タリーズ、スギ薬局、パン屋さんのエピシェールなどが入りました。',
   s:'https://tetsudo-ch.com/13032487.html'},
  {t:'トヨタの新しい研究拠点(フォレスタヒルズ跡)',p:'豊田市(旧フォレスタヒルズ)',when:'2028年3月 完成目標',date:'2028-03-31',e:'🤖',a:'t',
   d:'AIやロボットなどの研究拠点。緑地や歩道、駐車場の一般開放や、市民が使えるホール・レストランも計画されているそうです。',
   s:'https://www.kenbiya.com/ar/ns/region/toukai/10536.html'},
- {t:'豊田市駅まわりの再整備 全面完成',p:'豊田市(豊田市駅・新豊田駅周辺)',when:'2029年度末 完成目標',date:'2030-03-31',e:'🚉',a:'t',
+ {t:'豊田市駅まわりの再整備 全面完成',p:'豊田市(豊田市駅・新豊田駅周辺)',when:'2029年度末 完成目標',date:'2030-03-31',e:'🚉',a:'t',k:1,
   d:'西口・駅の中・東口の3エリアを順に整備。駅前を人が歩いて楽しめる広い空間に生まれ変わらせる計画です。',
   s:'https://skyscrapers-and-urbandevelopment.com/86117/'},
  {t:'東岡崎駅 北口の新しい駅ビル',p:'岡崎市(名鉄東岡崎駅)',when:'2029年度内 完成予定',date:'2030-03-31',e:'🏢',a:'t',
   d:'北口に地上9階の複合施設。お店・事務所・公共施設が入ります。',
   s:'https://www.watch.impress.co.jp/docs/news/1577309.html'},
- {t:'知立駅の高架化(名鉄名古屋本線・三河線)',p:'知立市(名鉄知立駅)',when:'完成時期は未定',date:null,e:'🚃',a:'t',
+ {t:'知立駅の高架化(名鉄名古屋本線・三河線)',p:'知立市(名鉄知立駅)',when:'完成時期は未定',date:null,e:'🚃',a:'t',k:1,
   d:'知立駅まわり約5kmを高架にして、踏切10か所をなくす工事。事業の進み具合は約6割です。',
   s:'https://www.mlit.go.jp/road/ir/ir-hyouka/r7sai/2_r7s_60.pdf'},
  {t:'ザ・ランドマーク名古屋栄',p:'名古屋市中区(栄)',when:'2026年6月11日 開業',date:'2026-06-11',done:true,e:'🏙',
   d:'栄でいちばん高い約211mのビル。商業施設「HAERA」とTOHOシネマズ名古屋栄が開業。ホテル「コンラッド名古屋」も入ります。',
   s:'https://travel.watch.impress.co.jp/docs/news/2094000.html'},
- {t:'東海環状自動車道 全線開通(養老IC〜北勢IC)',p:'岐阜県・三重県',when:'2026年度中(予定)',date:'2027-03-31',e:'🛣',a:'t',
+ {t:'東海環状自動車道 全線開通(養老IC〜北勢IC)',p:'岐阜県・三重県',when:'2026年度中(予定)',date:'2027-03-31',e:'🛣',a:'t',k:1,
   d:'残る県境の約18kmがつながると、豊田から岐阜・四日市までぐるっと一周。用地取得などが順調な場合の見通しです。',
   s:'https://www.pref.mie.lg.jp/TOPICS/m0035100028.htm'},
  {t:'星が丘ボウル跡地プロジェクト(一期)',p:'名古屋市千種区(星ヶ丘)',when:'2027年春',date:'2027-04-15',e:'🛍',
@@ -84,13 +99,13 @@ var ITEMS=[
  {t:'大野神戸IC そばのホテル×コミュニティモール',p:'岐阜県 大野町・神戸町',when:'2027年秋以降',date:'2027-10-01',e:'♨',
   d:'東海環状道の大野神戸IC近くに、宿泊施設と商業施設の複合施設。飲食・温浴・スポーツの予定です。',
   s:'https://www.watch.impress.co.jp/docs/news/2117791.html'},
- {t:'中部国際空港 代替滑走路',p:'愛知県常滑市(セントレア)',when:'2028年3月31日(供用予定)',date:'2028-03-31',e:'✈',
+ {t:'中部国際空港 代替滑走路',p:'愛知県常滑市(セントレア)',when:'2028年3月31日(供用予定)',date:'2028-03-31',e:'✈',k:1,
   d:'今の滑走路の補修中も空港を動かせるようになり、完全24時間運用をめざします。',
   s:'https://www.mlit.go.jp/report/press/kouku18_hh_000058.html'},
  {t:'名古屋駅地区再開発(名鉄名古屋駅)',p:'名古屋市中村区(名駅)',when:'2033年度 1期完成(予定)',date:'2034-03-31',e:'🏗',
   d:'名鉄百貨店などの跡に高さ約172mの複合ビル。1期でオフィス・ホテル・バスターミナルが開業。2027年度に建設が始まります。',
   s:'https://www.meitetsu.co.jp/ir/reference/results_briefing/__icsFiles/afieldfile/2025/06/06/keieisenryaku_setsumeikai250605.pdf'},
- {t:'リニア中央新幹線(品川〜名古屋)',p:'名古屋駅',when:'開業時期は未定',date:null,e:'🚄',
+ {t:'リニア中央新幹線(品川〜名古屋)',p:'名古屋駅',when:'開業時期は未定',date:null,e:'🚄',k:1,
   d:'JR東海は開業時期の年内公表を見送りました。品川〜名古屋の開業は2036年以降と見込まれています。',
   s:'https://news.web.nhk/newsweb/na/nd-20261117de77431'}
 ];
@@ -114,6 +129,7 @@ function draw(area){
  var soon=[],mid=[],far=[],done=[];
  ITEMS.forEach(function(it){
   if(area==='t'&&it.a!=='t')return;
+  if(area==='k'&&!it.k)return;
   if(it.done||(it.date&&days(it.date)<=0))done.push(it);
   else if(!it.date)far.push(it);
   else if(days(it.date)<=365)soon.push(it);
