@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ja"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1d3a6e"><title>ぷらっと未来｜東海のこれから</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#eef3fb;color:#1b2a44;font-family:system-ui,-apple-system,"Noto Sans JP",sans-serif}
+main{max-width:600px;margin:0 auto;padding:10px 12px 28px}
+.hero{background:linear-gradient(#0f2347,#1d3a6e);margin:-10px -12px 0;padding:10px 12px 12px;border-radius:0 0 18px 18px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:8px;color:#fff}
+.top h1{margin:0;font-size:22px;letter-spacing:.03em}
+.top .sub{font-size:12px;opacity:.85;margin-top:2px}
+.top a{flex:none;padding:8px 12px;border-radius:999px;background:#fff;color:#1d3a6e;text-decoration:none;font-weight:800;font-size:13px}
+.banner{margin:10px 0 4px;border-radius:14px;aspect-ratio:767/345;background:url(home-main.webp) no-repeat;background-size:221.121% auto;background-position:6.674% 98.779%;box-shadow:0 4px 12px rgba(0,0,0,.35)}
+.lead{margin:8px 2px 0;font-size:13px;line-height:1.6;color:#fff;opacity:.92}
+.sec{margin:16px 2px 8px;font-size:15px;font-weight:900;color:#1d3a6e;display:flex;align-items:center;gap:8px}
+.sec::after{content:"";flex:1;height:2px;background:#c9d6ea;border-radius:2px}
+.card{display:grid;grid-template-columns:72px 1fr;gap:10px;background:#fff;border:2px solid #d6e1f1;border-radius:14px;padding:10px;margin:0 0 8px;box-shadow:0 2px 0 #c9d6ea}
+.cd{border-radius:10px;background:linear-gradient(#2a5aa8,#1d3a6e);color:#fff;text-align:center;display:flex;flex-direction:column;justify-content:center;padding:6px 2px;line-height:1.1}
+.cd small{font-size:10px;opacity:.85}
+.cd b{font-size:22px;font-weight:900;margin:2px 0}
+.cd.done{background:linear-gradient(#3aa76d,#257a4e)}
+.cd.tbd{background:linear-gradient(#8a93a6,#5f6b82)}
+.cd.tbd b{font-size:16px}
+.card h3{margin:0;font-size:16px;line-height:1.35}
+.meta{margin-top:3px;font-size:12px;font-weight:800;color:#2a5aa8}
+.card p{margin:4px 0 0;font-size:13px;line-height:1.55;color:#33415c}
+.src{display:inline-block;margin-top:5px;font-size:11px;color:#6a7894;text-decoration:underline}
+.note{margin-top:14px;font-size:11px;line-height:1.6;color:#6a7894}
+</style>
+<script data-goatcounter="https://puratto-tokai.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</head><body>
+<main>
+ <div class="hero">
+ <div class="top"><div><h1>🚄 ぷらっと未来</h1><div class="sub">東海のこれから — できるもの・変わるもの</div></div><a href="index.html">← ホーム</a></div>
+ <div class="banner" role="img" aria-label="ぷらっと未来"></div>
+ <p class="lead">東海3県で、これから開業・開通するものを近い順に並べました。「あと◯日」は今日から数えた目安です。</p>
+ </div>
+ <div id="list"></div>
+ <p class="note">日付は各社・行政の公表情報をもとにした予定です。「春」「年度中」などは目安の日付で数えています。予定は変わることがあるので、お出かけ前は出典で最新情報を確かめてください。(2026年11月20日時点)</p>
+</main>
+<script>
+(function(){
+'use strict';
+// date:数える目安の日(YYYY-MM-DD)。when:画面に出す時期。date:null は時期未定。done:true は開業済み。
+var ITEMS=[
+ {t:'ザ・ランドマーク名古屋栄',p:'名古屋市中区(栄)',when:'2026年6月11日 開業',date:'2026-06-11',done:true,e:'🏙',
+  d:'栄でいちばん高い約211mのビル。商業施設「HAERA」とTOHOシネマズ名古屋栄が開業。ホテル「コンラッド名古屋」も入ります。',
+  s:'https://travel.watch.impress.co.jp/docs/news/2094000.html'},
+ {t:'東海環状自動車道 全線開通(養老IC〜北勢IC)',p:'岐阜県・三重県',when:'2026年度中(予定)',date:'2027-03-31',e:'🛣',
+  d:'残る県境の約18kmがつながると、豊田から岐阜・四日市までぐるっと一周。用地取得などが順調な場合の見通しです。',
+  s:'https://www.pref.mie.lg.jp/TOPICS/m0035100028.htm'},
+ {t:'星が丘ボウル跡地プロジェクト(一期)',p:'名古屋市千種区(星ヶ丘)',when:'2027年春',date:'2027-04-15',e:'🛍',
+  d:'星が丘テラスの増床を含む複合ビルと大学施設。商業・学び・広場がひとつになる街づくりです。',
+  s:'https://www.fashionsnap.com/article/2024-10-01/hosigaoka-redevelopment/'},
+ {t:'松坂屋名古屋店 南館の新商業施設',p:'名古屋市中区(栄)',when:'2027年春',date:'2027-04-15',e:'🛍',
+  d:'南館の約1万9,000㎡を新しい商業施設に。J.フロント・パルコが開業予定を公表しています。',
+  s:'https://hiroset.com/aichi-commercial-facilities-2027/'},
+ {t:'MTG PARK',p:'名古屋市熱田区',when:'2027年春',date:'2027-04-15',e:'🌳',
+  d:'MTGがグランドオープン予定を公表している施設です。',
+  s:'https://hiroset.com/aichi-commercial-facilities-2027/'},
+ {t:'劇場「星が丘プレイハウス」',p:'名古屋市千種区(星ヶ丘)',when:'2027年7月1日',date:'2027-07-01',e:'🎭',
+  d:'星が丘ボウル跡地の新しいビル6階に、最大121席の劇場が誕生します。',
+  s:'https://prtimes.jp/main/html/rd/p/000000013.000129602.html'},
+ {t:'大野神戸IC そばのホテル×コミュニティモール',p:'岐阜県 大野町・神戸町',when:'2027年秋以降',date:'2027-10-01',e:'♨',
+  d:'東海環状道の大野神戸IC近くに、宿泊施設と商業施設の複合施設。飲食・温浴・スポーツの予定です。',
+  s:'https://www.watch.impress.co.jp/docs/news/2117791.html'},
+ {t:'中部国際空港 代替滑走路',p:'愛知県常滑市(セントレア)',when:'2028年3月31日(供用予定)',date:'2028-03-31',e:'✈',
+  d:'今の滑走路の補修中も空港を動かせるようになり、完全24時間運用をめざします。',
+  s:'https://www.mlit.go.jp/report/press/kouku18_hh_000058.html'},
+ {t:'名古屋駅地区再開発(名鉄名古屋駅)',p:'名古屋市中村区(名駅)',when:'2033年度 1期完成(予定)',date:'2034-03-31',e:'🏗',
+  d:'名鉄百貨店などの跡に高さ約172mの複合ビル。1期でオフィス・ホテル・バスターミナルが開業。2027年度に建設が始まります。',
+  s:'https://www.meitetsu.co.jp/ir/reference/results_briefing/__icsFiles/afieldfile/2025/06/06/keieisenryaku_setsumeikai250605.pdf'},
+ {t:'リニア中央新幹線(品川〜名古屋)',p:'名古屋駅',when:'開業時期は未定',date:null,e:'🚄',
+  d:'JR東海は開業時期の年内公表を見送りました。品川〜名古屋の開業は2036年以降と見込まれています。',
+  s:'https://news.web.nhk/newsweb/na/nd-20261117de77431'}
+];
+function $(i){return document.getElementById(i)}
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]})}
+var today=new Date();today.setHours(0,0,0,0);
+function days(d){var x=new Date(d+'T00:00:00');return Math.round((x-today)/86400000)}
+function badge(it){
+ if(it.done||(it.date&&days(it.date)<=0))return '<div class="cd done"><small>もう</small><b>開業</b><small>済み</small></div>';
+ if(!it.date)return '<div class="cd tbd"><small>時期</small><b>未定</b><small>&nbsp;</small></div>';
+ var n=days(it.date);
+ if(n<=99)return '<div class="cd"><small>あと</small><b>'+n+'</b><small>日</small></div>';
+ if(n<=730)return '<div class="cd"><small>あと約</small><b>'+Math.round(n/30.4)+'</b><small>か月</small></div>';
+ return '<div class="cd"><small>あと約</small><b>'+Math.round(n/365)+'</b><small>年</small></div>';
+}
+function card(it){
+ return '<div class="card">'+badge(it)+'<div><h3>'+it.e+' '+esc(it.t)+'</h3><div class="meta">📅 '+esc(it.when)+' ・ 📍 '+esc(it.p)+'</div><p>'+esc(it.d)+'</p><a class="src" href="'+esc(it.s)+'" target="_blank" rel="noopener">出典を見る</a></div></div>';
+}
+function group(name,arr){return arr.length?'<div class="sec">'+name+'</div>'+arr.map(card).join(''):''}
+var soon=[],mid=[],far=[],done=[];
+ITEMS.forEach(function(it){
+ if(it.done||(it.date&&days(it.date)<=0))done.push(it);
+ else if(!it.date)far.push(it);
+ else if(days(it.date)<=365)soon.push(it);
+ else if(days(it.date)<=365*3)mid.push(it);
+ else far.push(it);
+});
+function byDate(a,b){return (a.date||'9999')<(b.date||'9999')?-1:1}
+[soon,mid,far].forEach(function(a){a.sort(byDate)});
+$('list').innerHTML=group('⏳ 1年以内',soon)+group('📆 2〜3年後',mid)+group('🔭 もっと先',far)+group('✅ 最近できた',done);
+})();
+</script>
+</body></html>
