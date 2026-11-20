@@ -1,44 +1,47 @@
 {
  "source": "static-public-info",
- "updatedAt": "2026-11-20",
- "attribution": "順位はGoogleマップのクチコミ評価をもとにした公開ランキング(ねとらぼ、2025年3月調査)を参考にしています。営業時間と、いまも営業しているかはまだ確かめていないため、すべて「要確認」にしています。お出かけ前に必ず最新情報をご確認ください。",
+ "updatedAt": "2026-11-21",
+ "attribution": "順位はGoogleマップのクチコミ評価をもとにした公開ランキング(ねとらぼ、2025年3月調査)を参考にしています。2026年11月に1店の閉店がわかったため外しました。公式の案内で営業時間を確かめたお店は「要確認」を外しています。それ以外のお店は、確かめられなかった理由をそえて「要確認」にしています。お出かけ前に必ず最新情報をご確認ください。",
  "shops": [
   {
    "name": "麦の道 すぐれ",
    "catchphrase": "自家製の太麺に牡蠣風味のつけ汁のつけ麺と、名古屋コーチンの鶏白湯ラーメン",
-   "openingHours": [],
+   "openingHours": [
+    "平日 11:00–14:00 / 18:00–22:00",
+    "土日祝 11:00–14:30 / 18:00–22:00",
+    "不定休"
+   ],
    "address": "愛知県一宮市本町3丁目5-2",
-   "verify": true,
+   "verify": false,
    "type": "ラーメン"
   },
   {
    "name": "中華そば華丸",
    "catchphrase": "豚と鶏に煮干し・かつおを合わせたスープの味玉そば。ミシュランガイド2019掲載",
-   "openingHours": [],
+   "openingHours": [
+    "営業時間は公式の案内を確かめられないため要確認(掲載サイトでは昼のみ・火水曜休み)"
+   ],
    "address": "愛知県一宮市萩原町串作1407-2",
-   "verify": true,
-   "type": "ラーメン"
-  },
-  {
-   "name": "中華そば 味万",
-   "catchphrase": "",
-   "openingHours": [],
-   "address": "愛知県一宮市白旗通4丁目9 グランドール白旗",
    "verify": true,
    "type": "ラーメン"
   },
   {
    "name": "博多ラーメン ばりばり軒 一宮本店",
    "catchphrase": "博多ラーメンのお店",
-   "openingHours": [],
+   "openingHours": [
+    "11:00–翌3:00(ラストオーダー2:30)",
+    "年中無休"
+   ],
    "address": "愛知県一宮市大和町宮地花池高見10",
-   "verify": true,
+   "verify": false,
    "type": "ラーメン"
   },
   {
    "name": "尾張ラーメン 本店 第一旭",
    "catchphrase": "",
-   "openingHours": [],
+   "openingHours": [
+    "営業時間・定休日は掲載サイトごとにちがい、公式の案内も見つからないため要確認"
+   ],
    "address": "愛知県一宮市栄1丁目2-20",
    "verify": true,
    "type": "ラーメン"
@@ -46,7 +49,9 @@
   {
    "name": "西村麺業",
    "catchphrase": "",
-   "openingHours": [],
+   "openingHours": [
+    "営業時間は公式サイトを確かめられないため要確認(掲載サイトでは月曜休み)"
+   ],
    "address": "愛知県一宮市多加木1丁目28-8",
    "verify": true,
    "type": "ラーメン"
@@ -54,7 +59,9 @@
   {
    "name": "こしがや 一宮店",
    "catchphrase": "",
-   "openingHours": [],
+   "openingHours": [
+    "営業時間は公式の案内を確かめられないため要確認(掲載サイトでは木曜休み)"
+   ],
    "address": "愛知県一宮市大和町苅安賀字伝治越24-2",
    "verify": true,
    "type": "ラーメン"
@@ -62,7 +69,10 @@
   {
    "name": "はらや TORI PAITAN RAMEN",
    "catchphrase": "",
-   "openingHours": [],
+   "openingHours": [
+    "昼 11:30–14:00 / 夜 18:30–21:30(掲載サイトの案内)",
+    "定休日は水曜とする案内と木曜も休みとする案内があるため要確認"
+   ],
    "address": "愛知県一宮市花池4丁目24-12",
    "verify": true,
    "type": "ラーメン"
@@ -70,17 +80,23 @@
   {
    "name": "岐阜タンメン 一宮インター店",
    "catchphrase": "",
-   "openingHours": [],
+   "openingHours": [
+    "11:00–翌3:00(ラストオーダー2:30)",
+    "年中無休"
+   ],
    "address": "愛知県一宮市伝法寺7丁目1-2",
-   "verify": true,
+   "verify": false,
    "type": "ラーメン"
   },
   {
    "name": "カプサイメン 一宮本店",
    "catchphrase": "",
-   "openingHours": [],
+   "openingHours": [
+    "11:00–翌1:00",
+    "年中無休"
+   ],
    "address": "愛知県一宮市伝法寺7丁目1-7",
-   "verify": true,
+   "verify": false,
    "type": "ラーメン"
   }
  ]
