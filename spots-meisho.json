@@ -1,6 +1,6 @@
 {
   "source": "static",
-  "updatedAt": "2026-11-19",
+  "updatedAt": "2026-11-21",
   "attribution": "公開情報を基に作成。お出かけ前に最新情報をご確認ください。",
   "shops": [
     {
@@ -196,6 +196,84 @@
         "世界遺産・富士山の構成資産",
         "国の名勝・天然記念物",
         "バス停「白糸の滝」から歩いて約5分"
+      ],
+      "verify": true
+    },
+    {
+      "placeId": "meisho-shinshiro-yotsuya-senmaida",
+      "name": "四谷の千枚田",
+      "area": "新城市",
+      "type": "絶景・名所",
+      "address": "愛知県新城市四谷230",
+      "openingHours": [
+        "見学は無料",
+        "駐車場あり(20台)"
+      ],
+      "website": "https://aichinow.pref.aichi.jp/spots/detail/49/",
+      "catchphrase": "鞍掛山の斜面に、石積みの田んぼが段々に重なる山里の景色",
+      "highlights": [
+        "約400枚の棚田",
+        "標高220〜420mに広がる",
+        "豊川ICから国道151号で北へ"
+      ],
+      "verify": true
+    },
+    {
+      "placeId": "meisho-nabari-akame48taki",
+      "name": "赤目四十八滝",
+      "area": "名張市",
+      "type": "絶景・名所",
+      "address": "三重県名張市赤目町長坂",
+      "openingHours": [
+        "4〜11月 8:30〜17:00 / 12〜3月 9:00〜16:30",
+        "休み:12月28日〜31日、12月〜3月第2木曜までの毎週木曜",
+        "料金は要確認",
+        "大雨や台風の日は入れないことがあります"
+      ],
+      "website": "https://www.akame48taki.com/",
+      "catchphrase": "渓谷ぞいの遊歩道を歩きながら、大小の滝を次々にめぐる",
+      "highlights": [
+        "日本の滝百選",
+        "赤目五瀑",
+        "歩きやすい靴で"
+      ],
+      "verify": true
+    },
+    {
+      "placeId": "meisho-kumano-maruyama-senmaida",
+      "name": "丸山千枚田",
+      "area": "熊野市",
+      "type": "絶景・名所",
+      "address": "三重県熊野市丸山",
+      "openingHours": [
+        "無料駐車場あり",
+        "熊野大泊ICから車で約40分"
+      ],
+      "website": "https://www.kankomie.or.jp/spot/2234",
+      "catchphrase": "山の斜面に約1,340枚の小さな田んぼが広がる、熊野の棚田",
+      "highlights": [
+        "日本一の棚田の景色とも",
+        "山あいの里の景色",
+        "鬼ヶ城とあわせて"
+      ],
+      "verify": true
+    },
+    {
+      "placeId": "meisho-nishiizu-dogashima-tensodo",
+      "name": "堂ヶ島天窓洞",
+      "area": "西伊豆町",
+      "type": "絶景・名所",
+      "address": "静岡県賀茂郡西伊豆町仁科(堂ヶ島)",
+      "openingHours": [
+        "洞くつの中は舟で入れます(運航は要確認)",
+        "駐車場は要確認"
+      ],
+      "website": "https://www.pref.shizuoka.jp/kankosports/bunkageijutsu/bunkazai/1002825/1041003/1041888/1004974/1021029.html",
+      "catchphrase": "波がけずった海の洞くつ。天井にあいた穴から光が差しこむ",
+      "highlights": [
+        "国の天然記念物",
+        "天井の「天窓」",
+        "西伊豆の海岸"
       ],
       "verify": true
     }
