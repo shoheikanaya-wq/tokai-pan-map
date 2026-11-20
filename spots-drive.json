@@ -1,6 +1,6 @@
 {
   "source": "static",
-  "updatedAt": "2026-11-15",
+  "updatedAt": "2026-11-21",
   "attribution": "公開情報(愛知県観光サイト・三重県観光連盟・岐阜県観光連盟・静岡市観光ナビ)を基に作成。営業時間や料金は変わるため、お出かけ前に公式サイトでご確認ください。",
   "shops": [
     {
@@ -178,6 +178,83 @@
         "山頂の遊歩道は1周約1km",
         "360度の見晴らし",
         "駐車場が広い"
+      ],
+      "verify": true
+    },
+    {
+      "placeId": "drive-toyone-chausuyama",
+      "name": "茶臼山高原",
+      "area": "豊根村",
+      "type": "日帰りドライブ",
+      "address": "愛知県北設楽郡豊根村大字坂宇場字御所平70-185",
+      "openingHours": [
+        "営業時間は曜日・季節で変わります(要確認)",
+        "定休日:木曜(イベント期間中は無休)",
+        "駐車場 普通車1,000台・無料(芝桜の時期は有料)"
+      ],
+      "website": "https://aichinow.pref.aichi.jp/spots/detail/140/",
+      "catchphrase": "愛知県と長野県の境にある、県でいちばん高い山・茶臼山の高原",
+      "highlights": [
+        "春は芝桜、夏は新緑",
+        "冬はスキー場になる",
+        "名古屋ICから約2時間"
+      ],
+      "verify": true
+    },
+    {
+      "placeId": "drive-mihama-nomazaki-todai",
+      "name": "野間埼灯台",
+      "area": "美浜町",
+      "type": "日帰りドライブ",
+      "address": "愛知県知多郡美浜町小野浦岩成20-1",
+      "openingHours": [
+        "見学自由・無休",
+        "駐車場は近くに有料駐車場あり"
+      ],
+      "website": "https://aichinow.pref.aichi.jp/spots/detail/115/",
+      "catchphrase": "知多半島の海辺に立つ、大正10年にできた愛知県でいちばん古い灯台",
+      "highlights": [
+        "知多半島ドライブの立ち寄りに",
+        "海辺の白い灯台",
+        "美浜ICから約20分"
+      ],
+      "verify": true
+    },
+    {
+      "placeId": "drive-hidamino-seseragi-kaido",
+      "name": "飛騨・美濃せせらぎ街道",
+      "area": "郡上市・高山市",
+      "type": "日帰りドライブ",
+      "address": "岐阜県郡上市〜高山市(郡上八幡ICから国道472号、または高山西ICから県道73号)",
+      "openingHours": [
+        "通行無料",
+        "冬の道路状況は要確認"
+      ],
+      "website": "https://www.kankou-gifu.jp/spot/detail_1040.html",
+      "catchphrase": "郡上市から高山市へ続く、全長約64kmの紅葉ドライブの道",
+      "highlights": [
+        "秋は高いところから順に色づく",
+        "最高地点は西ウレ峠(標高1,113m)",
+        "飛騨・美濃紅葉33選"
+      ],
+      "verify": true
+    },
+    {
+      "placeId": "drive-izu-skyline",
+      "name": "伊豆スカイライン",
+      "area": "函南町〜伊豆市",
+      "type": "日帰りドライブ",
+      "address": "静岡県田方郡函南町(熱海峠)〜伊豆市(天城高原)の山の尾根を通る道",
+      "openingHours": [
+        "普通車 熱海峠〜亀石峠500円・亀石峠〜冷川500円・冷川〜天城高原300円(2026年11月の案内)",
+        "支払いは現金・回数券・ETCXのみ(ETC・クレジットカードは使えません)"
+      ],
+      "website": "https://siz-road.or.jp/road/izusk/",
+      "catchphrase": "熱海峠から天城高原まで、伊豆半島の山の上を約40km走るドライブウェイ",
+      "highlights": [
+        "全長約40kmの2車線の道",
+        "料金所は4か所",
+        "2025年10月に料金が新しくなりました"
       ],
       "verify": true
     }
