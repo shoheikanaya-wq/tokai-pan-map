@@ -2,10 +2,10 @@
    各ページは window.PURATTO に設定を書いてから、このファイルを読み込む。 */
 (function(){
   var C=window.PURATTO||{};
-  var PREFS=['愛知県','岐阜県','三重県','静岡県'];
+  var PREFS=C.prefs||['愛知県','岐阜県','三重県','静岡県']; // ページごとにタブを変えられる(例: 港)
   var KINDS=C.kinds||null; // [['all','すべて'],['SA','SA'],...] または null
   var q=new URLSearchParams(location.search);
-  var pref=PREFS.indexOf(q.get('pref'))>=0?q.get('pref'):'愛知県';
+  var pref=PREFS.indexOf(q.get('pref'))>=0?q.get('pref'):PREFS[0];
   var kindKeys=KINDS?KINDS.map(function(k){return k[0]}):['all'];
   var kind=kindKeys.indexOf(q.get('kind'))>=0?q.get('kind'):'all';
   var all=[],view=[],cur=-1,listTop=0;
@@ -27,7 +27,7 @@
       if(!d||!d.shops)return;
       var src=C.sources[i];
       d.shops.forEach(function(x){
-        var p=x.pref||PREFS.filter(function(P){return (x.address||'').indexOf(P)===0})[0];
+        var p=(x.pref&&PREFS.indexOf(x.pref)>=0)?x.pref:PREFS.filter(function(P){return (x.address||'').indexOf(P)===0})[0];
         if(!p)return;
         var y={};for(var k in x)y[k]=x[k];
         y.pref=p;y._note=d.attribution||'';
@@ -56,7 +56,7 @@
   }
   function render(){
     tabs();setUrl();view=filtered();cur=-1;$('pager').hidden=true;$('back').textContent='← もどる';
-    if(!view.length){$('panel').innerHTML='<p class="empty">この県の'+esc(C.noun||'データ')+'は準備中です。<br>少しずつ増えていきます。</p>';return}
+    if(!view.length){$('panel').innerHTML='<p class="empty">'+(C.prefs?'ここ':'この県')+'の'+esc(C.noun||'データ')+'は準備中です。<br>少しずつ増えていきます。</p>';return}
     var h=caution(),g=null;
     view.forEach(function(x,i){
       var grp=group(x);
@@ -80,8 +80,8 @@
       (x.stops&&x.stops.length?'<ol class="stops">'+x.stops.map(function(t){return '<li>'+esc(t)+'</li>'}).join('')+'</ol>':'')+
       (x.openingHours&&x.openingHours.length?'<div class="hours">🕒 '+x.openingHours.map(esc).join('<br>')+'</div>':'')+
       facts(x)+
-      '<div class="addr">📍 '+esc(x.address)+'</div>'+srcs(x)+'<div class="spacer"></div>'+
-      '<div class="btns"><a href="'+map+'" target="_blank" rel="noopener">🗺 地図で見る</a>'+(web?'<a class="sub" href="'+esc(web)+'" target="_blank" rel="noopener">'+esc(C.webLabel||'くわしく')+'</a>':'')+'</div>'+
+      (x.address?'<div class="addr">📍 '+esc(x.address)+'</div>':'')+srcs(x)+'<div class="spacer"></div>'+
+      '<div class="btns">'+(x.address?'<a href="'+map+'" target="_blank" rel="noopener">🗺 地図で見る</a>':'')+(web?'<a class="sub" href="'+esc(web)+'" target="_blank" rel="noopener">'+esc(C.webLabel||'くわしく')+'</a>':'')+'</div>'+
       '<p class="note">'+esc(x._note)+'</p></div>';
     $('panel').innerHTML=h;$('panel').scrollTop=0;
     $('pager').hidden=false;$('pos').textContent=(i+1)+'/'+view.length;

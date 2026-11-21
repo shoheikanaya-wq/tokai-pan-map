@@ -1,0 +1,174 @@
+{
+  "source": "static-public-info",
+  "updatedAt": "2026-11-21",
+  "attribution": "財務省・税関・国土交通省・港の管理者など、国や公的な機関の公表データをもとに作ったメモです。金額や順位は年によって変わるので、年をそえています。お店や会社の宣伝ではありません。",
+  "fieldsGuide": {
+    "placeId": "minato-<しくみ/港のローマ字>",
+    "name": "港の名前、または、しくみの題",
+    "pref": "タブ: しくみ/東海/日本/世界 のどれか",
+    "area": "しくみはまとまりの名前。港は 県と市(日本)、国と都市(世界)",
+    "address": "港の所在地(地図に使う)。しくみは空",
+    "kind": "港の種類(例: 国際戦略港湾・国際拠点港湾・重要港湾)。しくみは空",
+    "catchphrase": "ひとことで(自分の言葉で短く)",
+    "highlights": [
+      "短い要点"
+    ],
+    "stops": [
+      "しくみの流れを順番に(しくみの件だけ。1行ずつ)"
+    ],
+    "exports": "主な輸出品と相手国(年と、わかれば割合)",
+    "imports": "主な輸入品と相手国(年と、わかれば割合)",
+    "routes": "定期航路の方面・数や、主な相手の国・地域",
+    "how": "どうやって運ぶか(船の種類・ふ頭・ターミナル・手続き)",
+    "when": "いつ・どのくらい(便の数・かかる時間・季節・貿易額など。年をそえる)",
+    "website": "港の管理者や役所の公式ページ(https)",
+    "sources": [
+      "確かめた公的な出典URL(https)"
+    ],
+    "checkedAt": "確かめた日 YYYY-MM-DD",
+    "verify": true
+  },
+  "shops": [
+    {
+      "placeId": "minato-shikumi-yushutsu",
+      "name": "輸出の流れ",
+      "pref": "しくみ",
+      "area": "輸出入のしくみ",
+      "address": "",
+      "catchphrase": "日本の品物が、手続きをして船に積まれるまで",
+      "highlights": [
+        "保税地域",
+        "輸出申告",
+        "通関業者"
+      ],
+      "stops": [
+        "荷主(輸出する人)が、船や飛行機を手配する",
+        "荷物を「保税地域」(港の中の、税関が見張る置き場)に入れる",
+        "荷主か、たのまれた通関業者が、税関に「輸出申告」をする(品名・数量・値段の書類とインボイス)",
+        "税関が書類を見て、必要なら荷物も調べる",
+        "「輸出許可」が出たら、保税地域から船に積みこむ"
+      ],
+      "how": "申告は、荷物を置く保税地域を受け持つ税関に出します。ほかの法律で許可がいる品物は、その書類もそえます。手続きは、ほとんど「NACCS(ナックス)」というオンラインのしくみで行われ、輸出入の申告の約99.9%が電子で処理されています。",
+      "when": "輸出にかかる時間の公式な調べは見つからなかったため、要確認です。",
+      "website": "https://www.customs.go.jp/tetsuzuki/c-answer/extsukan/5001_jr.htm",
+      "sources": [
+        "https://www.customs.go.jp/tetsuzuki/c-answer/extsukan/5001_jr.htm",
+        "https://www.customs.go.jp/tokyo/zei/03_A.pdf",
+        "https://www.naccs.jp/aboutnaccs/aboutnaccs.html"
+      ],
+      "checkedAt": "2026-11-21",
+      "verify": true
+    },
+    {
+      "placeId": "minato-shikumi-yunyu",
+      "name": "輸入の流れ",
+      "pref": "しくみ",
+      "area": "輸出入のしくみ",
+      "address": "",
+      "catchphrase": "外国の品物が、港から国内に入ってくるまで",
+      "highlights": [
+        "保税地域",
+        "関税・消費税",
+        "検疫"
+      ],
+      "stops": [
+        "船が港に着き、荷物を「保税地域」におろす",
+        "輸入する人(か通関業者)が、税関に「輸入申告」をする",
+        "税関が書類を見て、必要なら荷物も調べる",
+        "関税・消費税などがあれば先に納める",
+        "「輸入許可」が出たら、国内の荷物として引き取れる"
+      ],
+      "how": "植物・肉などの動物の品・食品や食器などは、植物防疫法・家畜伝染病予防法・食品衛生法の手続き(検疫など)を先にすませ、そのことを税関に示さないと輸入できません。",
+      "when": "海の荷物は、船が港に入ってから輸入許可まで平均54.3時間(約2.3日)。そのうち申告から許可までは平均1.0時間です(2024年3月の調べ。2024年6月発表)。",
+      "website": "https://www.customs.go.jp/tetsuzuki/c-answer/imtsukan/1101_jr.htm",
+      "sources": [
+        "https://www.customs.go.jp/tetsuzuki/c-answer/imtsukan/1101_jr.htm",
+        "https://www.customs.go.jp/tetsuzuki/c-answer/imtsukan/1801_jr.htm",
+        "https://www.mof.go.jp/policy/customs_tariff/trade/facilitation/ka20240626.htm"
+      ],
+      "checkedAt": "2026-11-21",
+      "verify": true
+    },
+    {
+      "placeId": "minato-shikumi-fune",
+      "name": "船と荷物の種類",
+      "pref": "しくみ",
+      "area": "船と航路",
+      "address": "",
+      "catchphrase": "荷物の形に合わせて、船も専用のものに分かれている",
+      "highlights": [
+        "コンテナ船",
+        "自動車専用船",
+        "ばら積み船",
+        "タンカー・LNG船"
+      ],
+      "stops": [
+        "コンテナ船: 箱(コンテナ)に入れた工業製品などを運ぶ。大きなクレーン(ガントリークレーン)で積みおろし。数え方は20フィートの箱1本=1TEU、40フィート=2TEU",
+        "自動車専用船: 完成した車を運ぶ。大きい船は約6,500台。RORO船は、トラックなどが自分で船に乗り入れる",
+        "ばら積み船: 鉱石・穀物・木材チップなどを、袋や箱に入れずそのまま運ぶ",
+        "タンカー: 原油を運ぶ。日本の原油の9割以上は中東からタンカーで来る",
+        "LNG船・LPG船: 液化天然ガスを約−162℃、LPGを約−50℃に冷やして運ぶ"
+      ],
+      "how": "日本の貿易の量(重さ)の99.6%は船で運ばれています(2023年)。",
+      "website": "https://www.mlit.go.jp/k-toukei/kowanyougo.html",
+      "sources": [
+        "https://www.mlit.go.jp/k-toukei/kowanyougo.html",
+        "https://www.shimizu.pa.cbr.mlit.go.jp/502/534/539/540/index.html",
+        "https://www.pa.ktr.mlit.go.jp/wankou/knowledg/index7.htm",
+        "https://www.mlit.go.jp/maritime/content/001753372.pdf"
+      ],
+      "checkedAt": "2026-11-21",
+      "verify": true
+    },
+    {
+      "placeId": "minato-shikumi-teikisen",
+      "name": "定期船と不定期船",
+      "pref": "しくみ",
+      "area": "船と航路",
+      "address": "",
+      "catchphrase": "決まった道を走る船と、荷物に合わせてどこへでも行く船",
+      "highlights": [
+        "定期船(ライナー)",
+        "不定期船(トランパー)",
+        "週の寄港回数"
+      ],
+      "stops": [
+        "定期船: 決まった航路を、決まった予定で回る。たくさんの荷主の工業製品などを速く確実に運ぶ",
+        "不定期船: 決まった航路はなく、荷物があるところへ行く。石炭・鉱石や、季節で出る穀物・砂糖などを運ぶ"
+      ],
+      "how": "国は、港の運ぶ力を「1週間に何回船が寄るか」と「船の大きさ(TEU)」で見ています。",
+      "when": "京浜港(東京・横浜・川崎)のコンテナの運ぶ力は週に約27万TEU、阪神港(大阪・神戸)は約10万TEU(国土交通省の資料・2026年1月)。",
+      "website": "https://www.mlit.go.jp/k-toukei/kowanyougo.html",
+      "sources": [
+        "https://www.mlit.go.jp/k-toukei/kowanyougo.html",
+        "https://www.pa.cbr.mlit.go.jp/12/17/18/page-20.html",
+        "https://www.mlit.go.jp/kowan/content/001978073.pdf"
+      ],
+      "checkedAt": "2026-11-21",
+      "verify": true
+    },
+    {
+      "placeId": "minato-shikumi-nihon-zentai",
+      "name": "日本の貿易の全体",
+      "pref": "しくみ",
+      "area": "日本の貿易",
+      "address": "",
+      "catchphrase": "日本は何を売って、何を買っているか(2025年)",
+      "highlights": [
+        "輸出 約110兆円",
+        "輸入 約114兆円",
+        "3.2兆円の赤字"
+      ],
+      "exports": "自動車 17.6兆円(16.0%)、半導体などの電子部品 6.6兆円(6.0%)、半導体などの製造装置 4.5兆円(4.1%)、鉄鋼 3.9兆円(3.6%)、自動車の部品 3.7兆円(3.3%)(2025年・確定値)",
+      "imports": "原油 9.6兆円(8.5%)、液化天然ガス 5.7兆円(5.0%)、医薬品 5.2兆円(4.6%)、通信機 4.7兆円(4.1%)、半導体などの電子部品 4.2兆円(3.7%)(2025年・確定値)",
+      "when": "2025年の輸出は110兆4,001億円(前の年より3.1%増)、輸入は113兆5,743億円(0.8%増)。差し引き3兆1,741億円の赤字(財務省貿易統計・確定値)。",
+      "website": "https://www.customs.go.jp/toukei/shinbun/happyou.htm",
+      "sources": [
+        "https://www.customs.go.jp/toukei/shinbun/trade-st/2025/2025_117.pdf",
+        "https://www.customs.go.jp/toukei/shinbun/happyou.htm"
+      ],
+      "checkedAt": "2026-11-21",
+      "verify": true
+    }
+  ]
+}
