@@ -1,7 +1,7 @@
 {
   "source": "static-public-info",
   "updatedAt": "2026-11-21",
-  "attribution": "財務省・税関・国土交通省・港の管理者など、国や公的な機関の公表データをもとに作ったメモです。金額や順位は年によって変わるので、年をそえています。お店や会社の宣伝ではありません。",
+  "attribution": "出典: 財務省貿易統計・税関・国土交通省・気象庁など国のウェブサイト(公共データ利用規約 第1.0版)と、港の管理者(名古屋港管理組合・四日市港管理組合など)の公表資料。これらをもとに、ぷらっと東海が要約・加工して作成しました(国や港の管理者が作ったものではありません)。くわしい数字は、各件の「出どころ」のページで確かめてください。",
   "fieldsGuide": {
     "placeId": "minato-<しくみ/港のローマ字>",
     "name": "港の名前、または、しくみの題",
@@ -54,7 +54,7 @@
       "sources": [
         "https://www.customs.go.jp/tetsuzuki/c-answer/extsukan/5001_jr.htm",
         "https://www.customs.go.jp/tokyo/zei/03_A.pdf",
-        "https://www.naccs.jp/aboutnaccs/aboutnaccs.html"
+        "https://www.customs.go.jp/zeikan/pamphlet/report/pdf/report_005j.pdf"
       ],
       "checkedAt": "2026-11-21",
       "verify": true
@@ -188,13 +188,10 @@
       "routes": "コンテナの定期航路は、北米西岸・欧州・アフリカ・インド/パキスタン・東南アジア(インドネシア・シンガポール・タイ・インドシナ・フィリピン)・韓国・中国・ロシア(ナホトカ)・南太平洋の14の方面(2026年11月)。1週間の便の数の公式な合計は見つからなかったため要確認",
       "how": "コンテナは飛島ふ頭(港でいちばん大きいコンテナの拠点)と鍋田ふ頭(中国・韓国からの輸入が中心)。完成自動車は新宝ふ頭・金城ふ頭・弥富ふ頭から自動車専用船で。LNGは南浜ふ頭、原油は沖の伊勢湾シーバース、鉄鉱石・石炭は製鉄所のある東海元浜ふ頭、穀物(とうもろこし・小麦)は北浜ふ頭で受け入れ",
       "when": "2025年の輸出は16兆3,734億円、輸入は7兆7,153億円、合計24兆887億円。貿易の黒字(8兆6,581億円)は28年連続日本一。取り扱う荷物は1億5,938万トンで24年連続日本一、外国とのコンテナは約264万TEU(国内3位)、入港した船は27,769隻(いずれも2025年)",
-      "website": "https://www.port-of-nagoya.jp/shokai/kohoshiryo/1001907/1001909.html",
+      "website": "https://www.port-of-nagoya.jp/",
       "sources": [
-        "https://www.port-of-nagoya.jp/shokai/kohoshiryo/1001907/1001909.html",
-        "https://www.port-of-nagoya.jp/_res/projects/default_project/_page_/001/004/601/20260323.pdf",
+        "https://www.port-of-nagoya.jp/",
         "https://www.customs.go.jp/nagoya/boueki/sokur-ng07.pdf",
-        "https://www.port-of-nagoya.jp/business/kowanriyo/1000899.html",
-        "https://www.port-of-nagoya.jp/_res/projects/default_project/_page_/001/001/943/20260805.pdf",
         "https://www.mlit.go.jp/statistics/details/content/001997622.pdf"
       ],
       "checkedAt": "2026-11-21",
