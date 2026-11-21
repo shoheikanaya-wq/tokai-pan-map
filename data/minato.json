@@ -169,6 +169,67 @@
       ],
       "checkedAt": "2026-11-21",
       "verify": true
+    },
+    {
+      "placeId": "minato-nagoya",
+      "name": "名古屋港",
+      "pref": "東海",
+      "area": "愛知県名古屋市ほか",
+      "address": "愛知県名古屋市港区港町1-11",
+      "kind": "国際拠点港湾",
+      "catchphrase": "自動車を世界へ送り出す、輸出額日本一の港",
+      "highlights": [
+        "輸出額 27年連続日本一",
+        "取扱貨物量 24年連続日本一",
+        "自動車輸出 47年連続日本一"
+      ],
+      "exports": "量で多いのは、完成自動車(約2,030万トン)・自動車部品(約795万トン)・産業機械・鋼材(2025年)。完成自動車と自動車部品で輸出の量の約64%。自動車の輸出は約148万台(2025年)。量で多い相手は、アメリカ・中国・オーストラリアの順(2025年)。金額での品目の順位は、統計表の数字を確かめきれなかったため要確認",
+      "imports": "量で多いのは、LNG(液化天然ガス・約1,299万トン)・鉄鉱石(約966万トン)・原油(約717万トン)・石炭(約552万トン)(2025年)。これらの原料で輸入の量の約52%。量で多い相手は、中国・オーストラリア・アメリカの順(2025年)。金額での品目の順位は、同じ理由で要確認",
+      "routes": "コンテナの定期航路は、北米西岸・欧州・アフリカ・インド/パキスタン・東南アジア(インドネシア・シンガポール・タイ・インドシナ・フィリピン)・韓国・中国・ロシア(ナホトカ)・南太平洋の14の方面(2026年11月)。1週間の便の数の公式な合計は見つからなかったため要確認",
+      "how": "コンテナは飛島ふ頭(港でいちばん大きいコンテナの拠点)と鍋田ふ頭(中国・韓国からの輸入が中心)。完成自動車は新宝ふ頭・金城ふ頭・弥富ふ頭から自動車専用船で。LNGは南浜ふ頭、原油は沖の伊勢湾シーバース、鉄鉱石・石炭は製鉄所のある東海元浜ふ頭、穀物(とうもろこし・小麦)は北浜ふ頭で受け入れ",
+      "when": "2025年の輸出は16兆3,734億円、輸入は7兆7,153億円、合計24兆887億円。貿易の黒字(8兆6,581億円)は28年連続日本一。取り扱う荷物は1億5,938万トンで24年連続日本一、外国とのコンテナは約264万TEU(国内3位)、入港した船は27,769隻(いずれも2025年)",
+      "website": "https://www.port-of-nagoya.jp/shokai/kohoshiryo/1001907/1001909.html",
+      "sources": [
+        "https://www.port-of-nagoya.jp/shokai/kohoshiryo/1001907/1001909.html",
+        "https://www.port-of-nagoya.jp/_res/projects/default_project/_page_/001/004/601/20260323.pdf",
+        "https://www.customs.go.jp/nagoya/boueki/sokur-ng07.pdf",
+        "https://www.port-of-nagoya.jp/business/kowanriyo/1000899.html",
+        "https://www.port-of-nagoya.jp/_res/projects/default_project/_page_/001/001/943/20260805.pdf",
+        "https://www.mlit.go.jp/statistics/details/content/001997622.pdf"
+      ],
+      "checkedAt": "2026-11-21",
+      "verify": true
+    },
+    {
+      "placeId": "minato-yokkaichi",
+      "name": "四日市港",
+      "pref": "東海",
+      "area": "三重県四日市市・川越町",
+      "address": "三重県四日市市霞2丁目1-1",
+      "kind": "国際拠点港湾",
+      "catchphrase": "石油化学コンビナートを支える、エネルギーの港",
+      "highlights": [
+        "日本で最初の石油化学コンビナート",
+        "輸入の約半分が原油",
+        "沖のシーバースで原油を受け入れ"
+      ],
+      "exports": "2025年の輸出は1兆243億円(前の年より8.7%減)。増えたのは写真用材料・自動車の部分品・プラスチック、減ったのは石油製品など。量で多いのは化学薬品・自動車部品・完成自動車(2024年)。金額の順位と相手国は、統計表の数字を確かめきれなかったため要確認",
+      "imports": "2025年の輸入は2兆756億円(13.5%減)で、そのうち原油が約1兆969億円とおよそ半分。LNGは増えた。量で多いのは原油・LNG・石炭(2024年)。LNGはカタール・インドネシアなどから専用船で来る。相手国の順位は、同じ理由で要確認",
+      "routes": "外国とのコンテナの定期航路は13あり、どれも週1便(2026年4月)。韓国3・中国2・東南アジア方面(台湾・香港・ベトナム・シンガポール・マレーシア・タイ・インドネシア・フィリピン)7・アフリカ(ケニア・タンザニア方面)1。ほかに神戸港との国内の航路が週1便",
+      "how": "原油は沖合約6kmのシーバース(船をつなぐ海の上の施設)2基で受け入れ、海の底のパイプラインで陸のタンクへ。LNGは霞ヶ浦地区・川越地区の桟橋で荷揚げし、都市ガスや発電に使う。コンテナは霞ヶ浦北ふ頭80号と南ふ頭26・27号(ガントリークレーン計6基)。石炭は南ふ頭、穀物・鉱石は第2・第3ふ頭",
+      "when": "2025年の輸出は1兆243億円、輸入は2兆756億円で、1兆512億円の輸入超過。取り扱う荷物は約3,020万トン(2025年・速報)。外国と国内のコンテナは約22万TEUで全国13位(2024年・速報)",
+      "website": "https://www.yokkaichi-port.or.jp/w_state.html",
+      "sources": [
+        "https://www.customs.go.jp/nagoya/boueki/sisho_yokkaichi.htm",
+        "https://www.customs.go.jp/nagoya/boueki/yokkaichi-sokur-g071.pdf",
+        "https://www.yokkaichi-port.or.jp/w_state.html",
+        "https://www.yokkaichi-port.or.jp/pdf/b_liner_routes/latest_container_service-networkR202604.pdf",
+        "https://www.yokkaichi-port.or.jp/b_container_terminai.html",
+        "https://www.yokkaichi-port.or.jp/pdf/w_statistics/2026-1preliminary_results_yp-data.pdf",
+        "https://www.pa.cbr.mlit.go.jp/storage/001/202602/content_file_2026_3_r7d-yokkaichi-port-gaiyou.pdf"
+      ],
+      "checkedAt": "2026-11-21",
+      "verify": true
     }
   ]
 }
