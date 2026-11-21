@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#7a4b20">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<title>ぷらっと港</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="assets/puratto-main.css">
+<script data-goatcounter="https://puratto-tokai.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</head>
+<body>
+<div class="app">
+ <header>
+  <a href="fudosan.html" id="back" aria-label="ぷらっと不動産へ戻る">← もどる</a>
+  <h1 id="title">⚓ ぷらっと港</h1>
+ </header>
+ <nav class="prefs" id="prefs" aria-label="見たいものをえらぶ"></nav>
+ <nav class="kinds" id="kinds" aria-label="種類をえらぶ"></nav>
+ <div class="stage"><div class="panel" id="panel"><p class="empty">読みこみ中…</p></div></div>
+ <div class="pager" id="pager" hidden>
+  <button id="prev">◀ 前へ</button><span class="n" id="pos"></span><button id="next">次へ ▶</button>
+ </div>
+<footer style="flex:none;padding:2px 8px calc(4px + env(safe-area-inset-bottom));text-align:center;font-size:10px;line-height:1.45;color:#8a7c6b">
+ <div><b style="color:#5d3a1a">ぷらっと港</b> Ver.1.0 ・ Created &amp; Managed by S.K.</div>
+ <div>&copy; 2026 S.K. All Rights Reserved.</div>
+</footer>
+</div>
+<script>
+window.PURATTO={
+  title:'ぷらっと港',emoji:'⚓',noun:'港のメモ',
+  prefs:['しくみ','東海','日本','世界'],
+  sources:[{url:'data/minato.json'}],
+  caution:'国や税関・港の公表データをもとにしたメモです。数字は年によって変わります。くわしくは出どころのページで確かめてください。',
+  webLabel:'港・役所の公式ページ',
+  group:function(x){return x.area||''},
+  groupOrder:function(x){var i=['輸出入のしくみ','船と航路','日本の貿易'].indexOf(x.area);return i<0?9:i},
+  groupIcon:function(x){return x.pref==='しくみ'?'📘':'⚓'},
+  rowRight:function(x){return x.pref==='しくみ'?'':(x.kind||'')},
+  facts:[['exports','📤 主な輸出'],['imports','📥 主な輸入'],['routes','🧭 航路・相手先'],['how','⚙ どうやって運ぶか'],['when','🕒 いつ・どのくらい']]
+};
+</script>
+<script src="assets/puratto-main.js"></script>
+</body>
+</html>
