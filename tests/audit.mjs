@@ -11,8 +11,8 @@ const panrush=read('panrush.html');
 const sw=read('sw.js');
 const manifest=JSON.parse(read('manifest.webmanifest'));
 const catalog=JSON.parse(read('data/static-catalog.json'));
-assert.match(portal,/puratto-tokai-pc\.png/,'portal PC visual exists');
-assert.match(portal,/puratto-tokai-mobile\.png/,'portal mobile visual exists');
+// トップページ(index.html)は2026-11-20にメイン画像 home-main.webp の形に作り変えられたので、それを確かめる
+assert.match(portal,/home-main\.webp/,'portal main visual exists');
 assert.match(portal,/href="new-pan\.html"/,'portal new-pan entry exists');
 assert.match(portal,/href="ramen\.html"/,'portal ramen entry exists');
 // new-pan.html は <script> が複数あるため、1つずつ構文チェックする
@@ -95,7 +95,7 @@ assert.equal(/localStorage\.setItem\([^,]*(?:pin|password|token|secret)/i.test(h
 
 assert.equal(/AIza[0-9A-Za-z_-]{20,}/.test(html),false,'Google APIキーをフロントHTMLへ直書きしない');
 assert.equal(/asia-northeast1\.run\.app/.test(html),false,'Cloud Run URLを本番HTMLへ残さない');
-assert.match(portal,/serviceWorker\.register\('\.\/sw\.js\?rev=\d{8}-\d+'\)/,'ポータルからSWを版付きで登録');
+assert.match(portal,/serviceWorker\.register\('\.\/sw\.js\?rev=\d{8}-[0-9A-Za-z]+'\)/,'ポータルからSWを版付きで登録');
 assert.equal(/https:\/\/[^'"]*\.run\.app/.test(portal),false,'ポータルにCloud Run URLなし');
 assert.equal(/https:\/\/[^'"]*\.run\.app/.test(sw),false,'Service WorkerにCloud Run URLなし');
 assert.equal(/googleapis\.com/.test(sw),false,'Service WorkerにGoogle API直結なし');
