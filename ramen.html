@@ -75,7 +75,7 @@ main{max-width:760px;margin:0 auto;padding:10px 12px 28px}
  <section id="panel" hidden></section>
 </main><footer style="margin:18px auto 8px;padding:10px 8px calc(10px + env(safe-area-inset-bottom));text-align:center;font-size:11px;line-height:1.6;color:#8a7c6b">
  <div style="font-size:14px;font-weight:bold;color:#5d3a1a">ぷらっとラーメン</div>
- <div>Ver.1.1</div>
+ <div>Ver.1.2</div>
  <div>Created &amp; Managed by S.K.</div>
  <div>&copy; 2026 S.K. All Rights Reserved.</div>
 </footer>
@@ -117,9 +117,9 @@ function drawTabs(){
 }
 function cityName(){var r=CITIES[pref].filter(function(c){return c[0]===cityId})[0];return r?r[1]:''}
 function mapUrl(s){return 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent((s.name||'')+' '+(s.address||''))}
-function shopHtml(s,i){
+function shopHtml(s,i,pick){
  var w=safeUrl(s.website);
- return '<div class="rank"><div class="num">'+(i+1)+'</div><div><h3>'+esc(s.name)+(s.verify?'<span class="warn">要確認</span>':'')+'</h3>'+
+ return '<div class="rank"><div class="num">'+(pick?'🍜':(i+1))+'</div><div><h3>'+esc(s.name)+(s.verify?'<span class="warn">要確認</span>':'')+'</h3>'+
   (s.catchphrase?'<p>'+esc(s.catchphrase)+'</p>':'')+
   ((s.openingHours||[]).length?'<p>🕒 '+s.openingHours.map(esc).join('<br>')+'</p>':'')+
   (s.address?'<p>📍 '+esc(s.address)+'</p>':'')+
@@ -135,10 +135,11 @@ function show(){
  fetch('data/ramen/'+pf+'-'+id+'.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw 0;return r.json()}).catch(function(){return fetch('ramen-'+pf+'-'+id+'.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw 0;return r.json()})}).catch(function(){return null}).then(function(d){
   if(id!==cityId||pf!==pref)return;
   var shops=d&&d.shops||[];
-  var top=shops.slice(0,20);var tn=p.querySelector('#topn');if(tn&&top.length)tn.textContent='TOP'+top.length;
+  var pick=!!(d&&d.source==='static-pick');
+  var top=shops.slice(0,20);var tn=p.querySelector('#topn');if(tn&&top.length)tn.textContent=(pick?'おすすめ':'TOP')+top.length;
   var list=top.map(function(s,i){
-   var h=shopHtml(s,i);
-   if(i===2&&top.length>3)h+=sceneHtml('c','ここまでがTOP3だニャ',{r:true});
+   var h=shopHtml(s,i,pick);
+   if(!pick&&i===2&&top.length>3)h+=sceneHtml('c','ここまでがTOP3だニャ',{r:true});
    if(i===9&&top.length>10)h+=sceneHtml('d','まだまだ続くワン!',{flipD:true});
    return h}).join('');
   var body=shops.length?list+sceneHtml('gcd','お出かけ前に、営業時間をチェックしてね',{girl:gn,r:true})+(d.attribution?'<div class="note">'+esc(d.attribution)+'</div>':''):sceneHtml('dcg','',{girl:gn,mid:true})+'<div class="empty">🍜 準備中です<br>もうすぐ追加されます</div>';
