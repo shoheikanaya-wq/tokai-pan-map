@@ -803,9 +803,9 @@ body:has(#detail:not(.hidden)) #appFooter,body:has(#ranking:not(.hidden)) #appFo
 <button id="taketoyo">武豊町</button>
 </div>
 <div style="margin-top:18px">
-  <button id="nishimikawa">🏆 西三河 TOP10</button>
-  <button id="higashimikawa">🏆 東三河 TOP10</button>
-  <button id="aichi">🏆 愛知県 TOP10</button>
+  <button id="nishimikawa" disabled title="作り直し中">🏆 西三河 10選(準備中)</button>
+  <button id="higashimikawa" disabled title="作り直し中">🏆 東三河 10選(準備中)</button>
+  <button id="aichi" disabled title="作り直し中">🏆 愛知県 10選(準備中)</button>
 </div>
 </div>
 <div id="gifuPanel" class="hidden">
@@ -818,17 +818,17 @@ body:has(#detail:not(.hidden)) #appFooter,body:has(#ranking:not(.hidden)) #appFo
   <h2>岐阜北部・飛騨</h2><div class="cities">
     <button id="yamagata">山県市</button><button id="motosu">本巣市</button><button id="kaizu">海津市</button><button id="gero">下呂市</button><button id="takayama">高山市</button><button id="hida">飛騨市</button><button id="shirakawaVillage">白川村</button>
   </div>
-  <div style="margin-top:18px"><button id="gifuTop10">🏆 岐阜県 TOP10</button></div>
+  <div style="margin-top:18px"><button id="gifuTop10" disabled title="作り直し中">🏆 岐阜県 10選(準備中)</button></div>
   <div class="notice">岐阜県42市町村すべてに対応。市町村別TOP10と岐阜県TOP10を、愛知県と同じランキング・店舗詳細方式で表示します。</div>
 </div>
 <div id="miePanel" class="hidden">
   <h2>北勢</h2><div class="cities"><button id="yokkaichi">四日市市</button><button id="kuwana">桑名市</button><button id="suzuka">鈴鹿市</button><button id="inabe">いなべ市</button><button id="kisosaki">木曽岬町</button><button id="toin">東員町</button><button id="komono">菰野町</button><button id="asahiMie">朝日町</button><button id="kawagoe">川越町</button></div>
   <h2>中勢・伊賀</h2><div class="cities"><button id="tsu">津市</button><button id="matsusaka">松阪市</button><button id="kameyama">亀山市</button><button id="iga">伊賀市</button><button id="nabari">名張市</button><button id="taki">多気町</button><button id="meiwa">明和町</button><button id="odai">大台町</button></div>
   <h2>伊勢志摩・東紀州</h2><div class="cities"><button id="ise">伊勢市</button><button id="toba">鳥羽市</button><button id="shima">志摩市</button><button id="owase">尾鷲市</button><button id="kumano">熊野市</button><button id="tamaki">玉城町</button><button id="watarai">度会町</button><button id="taiki">大紀町</button><button id="minamiise">南伊勢町</button><button id="kihoku">紀北町</button><button id="mihamaMie">御浜町</button><button id="kiho">紀宝町</button></div>
-  <div style="margin-top:18px"><button id="mieTop10">🏆 三重県 TOP10</button></div>
+  <div style="margin-top:18px"><button id="mieTop10" disabled title="作り直し中">🏆 三重県 10選(準備中)</button></div>
   <div class="notice">三重県29市町すべてに対応。市町別TOP10と三重県TOP10を利用できます。</div>
 </div>
-<div style="margin-top:18px"><button id="tokaiTop10">🏆 東海三県 TOP10</button></div>
+<div style="margin-top:18px"><button id="tokaiTop10" disabled title="作り直し中">🏆 東海三県 10選(準備中)</button></div>
 <div class="notice">愛知・岐阜・三重の候補をまとめた東海三県TOP10です。通常MAPのみの機能で、パンラッシュは愛知県内限定です。</div>
 </section>
 <section id="ranking" class="hidden">
@@ -837,7 +837,7 @@ body:has(#detail:not(.hidden)) #appFooter,body:has(#ranking:not(.hidden)) #appFo
     <div class="nav-buttons">
       <button class="back" id="back">← 戻る</button>
     </div>
-  </div><h2 id="rankingTitle">豊田市 パン屋 TOP10</h2><div class="muted" id="rankingNote">ランキングについて：評価点と口コミ件数をもとに、東海パンMAP独自の方法で順位を算出しています。</div><div id="list"></div>
+  </div><h2 id="rankingTitle">豊田市 パン屋 10選</h2><div class="muted" id="rankingNote">ぷらっと東海が、営業を確かめられたお店から選びました(順位ではありません)。評価や口コミは「地図」ボタンで見られます。</div><div id="list"></div>
   <div class="ranking-bottom-nav">
     <button class="back" id="backBottom">← 戻る</button>
   </div>
@@ -885,13 +885,13 @@ body:has(#detail:not(.hidden)) #appFooter,body:has(#ranking:not(.hidden)) #appFo
     <div class="muted">管理用。利用状況のサーバー保存は管理API認証・永続保存の準備完了後に有効化します。</div>
   </div><footer id="appFooter" class="app-footer">
 <div>ぷらっとパン</div>
-<div>Ver.1.88</div>
+<div>Ver.1.89</div>
   <div>Personal Bakery Discovery Project</div>
   <div>Created & Managed by S.K.</div>
   <div>© 2026 S.K. All Rights Reserved.</div>
 
   <details class="version-history">
-    <summary>更新履歴を見る</summary>\n    <div>Ver.1.88　愛知県TOP10の固定店舗でも実Place IDを再解決して口コミをアプリ内表示</div>\n    <div>Ver.1.85　54市町村完全性・欠損表示・スマホ店名・PWA同期の自動監査を強化</div>\n    <div>Ver.1.82　6インチ級スマホ向けに店舗詳細の情報密度と余白を最終調整</div>\n    <div>Ver.1.82　店舗詳細の空欄を解消し確認導線を統一</div>\n    <div>Ver.1.82　店舗詳細の口コミを地図から分離しアプリ内表示に対応</div>\n    <div>Ver.1.82　TOP10の文字密度と強弱を整理</div>\n    <div>Ver.1.78　スマホTOP10の住所を少し拡大</div>\n    <div>Ver.1.77　スマホTOP10左端の空欄をなくし順位から表示</div>\n    <div>Ver.1.76　順位を左寄せして店舗名の表示幅を拡大</div>\n    <div>Ver.1.75　店名横に特色・口コミ・★評価を集約</div>\n    <div>Ver.1.74　6インチ級スマホ向けTOP10コンパクト表示</div>\n    <div>Ver.1.73　店舗詳細の店名サイズを適正化</div>\n    <div>Ver.1.72　店舗詳細の情報階層と余白を整理</div>\n    <div>Ver.1.71　TOP10の店名横に★評価、住所下に口コミ数を配置</div>\n    <div>Ver.1.70　TOP10の店名折り返し・余白・順位と評価の視認性を調整</div>\n    <div>Ver.1.69　TOP10画像を小型化し店舗名をさらに拡大</div>\n    <div>Ver.1.68　店舗詳細の大型画像枠を撤去し店名を拡大</div>\n    <div>Ver.1.67　TOP10・店舗詳細にワンポイント画像表示を追加</div>
+    <summary>更新履歴を見る</summary>\n    <div>Ver.1.89　市町村ページを順位なしの「10選」に変更(星・口コミ数・順位を表示しない)。広域TOP10は作り直しのため準備中</div>\n    <div>Ver.1.88　愛知県TOP10の固定店舗でも実Place IDを再解決して口コミをアプリ内表示</div>\n    <div>Ver.1.85　54市町村完全性・欠損表示・スマホ店名・PWA同期の自動監査を強化</div>\n    <div>Ver.1.82　6インチ級スマホ向けに店舗詳細の情報密度と余白を最終調整</div>\n    <div>Ver.1.82　店舗詳細の空欄を解消し確認導線を統一</div>\n    <div>Ver.1.82　店舗詳細の口コミを地図から分離しアプリ内表示に対応</div>\n    <div>Ver.1.82　TOP10の文字密度と強弱を整理</div>\n    <div>Ver.1.78　スマホTOP10の住所を少し拡大</div>\n    <div>Ver.1.77　スマホTOP10左端の空欄をなくし順位から表示</div>\n    <div>Ver.1.76　順位を左寄せして店舗名の表示幅を拡大</div>\n    <div>Ver.1.75　店名横に特色・口コミ・★評価を集約</div>\n    <div>Ver.1.74　6インチ級スマホ向けTOP10コンパクト表示</div>\n    <div>Ver.1.73　店舗詳細の店名サイズを適正化</div>\n    <div>Ver.1.72　店舗詳細の情報階層と余白を整理</div>\n    <div>Ver.1.71　TOP10の店名横に★評価、住所下に口コミ数を配置</div>\n    <div>Ver.1.70　TOP10の店名折り返し・余白・順位と評価の視認性を調整</div>\n    <div>Ver.1.69　TOP10画像を小型化し店舗名をさらに拡大</div>\n    <div>Ver.1.68　店舗詳細の大型画像枠を撤去し店名を拡大</div>\n    <div>Ver.1.67　TOP10・店舗詳細にワンポイント画像表示を追加</div>
     <div>Ver.1.4　店舗詳細・営業状況・地域表示・画面移動を改善</div>
     <div>Ver.1.2 β　店舗詳細機能を追加</div>
     <div>Ver.1.1 β　市町村・地域ランキングを改善</div>
@@ -1233,7 +1233,7 @@ async function loadBakeries(prefecture,city) {
       photoAlt:(s.name||'パン屋')+'の写真',
       photoAttribution:'',
       score:rankingScore(s.rating,s.reviews)
-    })).sort((a,b)=>b.score-a.score||b.reviews-a.reviews);
+    })); // 2026-11-27: 順位はつけず、データの並び順のまま(10選)
 
     writeBakeryCache(prefecture,city,staticShops);
     return staticShops;
@@ -1480,7 +1480,7 @@ function showRanking() {
   if(rankingNote){
     rankingNote.textContent=usingOsm
       ? '無料公開地図データ（OpenStreetMap）から取得した店舗候補です。Googleの評価・口コミ順位ではなく、登録情報の充実度を参考に表示しています。'
-      : 'ランキングについて：評価点と口コミ件数をもとに、東海パンMAP独自の方法で順位を算出しています。';
+      : 'ぷらっと東海が、営業を確かめられたお店から選びました(順位ではありません)。評価や口コミは「地図」ボタンで見られます。';
   }
   const usedFeatureLabels=new Set();
   shops.slice(0,10).forEach((s,i)=>{
@@ -1514,7 +1514,7 @@ function showRanking() {
     const productLine = s.representativeProduct && !String(s.catchphrase||'').includes(s.representativeProduct) && !(Array.isArray(s.highlights)&&s.highlights.some(v=>String(v).includes(s.representativeProduct)))
       ? '<span class="shop-signature">🥖 '+escapeHtml(s.representativeProduct)+'</span>' : '';
     const distinctive = `${catchphrase}${points}${productLine}${attribution}`;
-    b.innerHTML=`${photo}<span class="shop-main"><span class="shop-title-row"><strong class="badge">${i+1}位</strong><strong class="shop-name">${escapeHtml(displayName)}</strong>${displayCatch ? `<span class="shop-inline-feature">${escapeHtml(displayCatch)}</span>` : ''}${s.dataSource==='osm-free' ? '<span class="shop-review-inline">公開地図</span>' : `<span class="shop-review-inline">口コミ ${escapeHtml(s.reviews)}件</span><strong class="shop-rating-inline">★${escapeHtml(s.rating)}</strong>`}</span><span class="muted shop-address">${escapeHtml(displayAddress)}</span></span><span class="rank-detail-cue" aria-hidden="true">詳細 ›</span>${(points||productLine||attribution) ? `<span class="shop-points">${points}${productLine}${attribution}</span>` : ''}`;
+    b.innerHTML=`${photo}<span class="shop-main"><span class="shop-title-row"><strong class="badge">🥐</strong><strong class="shop-name">${escapeHtml(displayName)}</strong>${displayCatch ? `<span class="shop-inline-feature">${escapeHtml(displayCatch)}</span>` : ''}${s.dataSource==='osm-free' ? '<span class="shop-review-inline">公開地図</span>' : ''}</span><span class="muted shop-address">${escapeHtml(displayAddress)}</span></span><span class="rank-detail-cue" aria-hidden="true">詳細 ›</span>${(points||productLine||attribution) ? `<span class="shop-points">${points}${productLine}${attribution}</span>` : ''}`;
     b.onclick=()=>showDetail(i);
     list.appendChild(b);
   });
@@ -1665,13 +1665,13 @@ async function loadDetailReviews(shop){
 const areaName = getAreaName(currentCity);
 
 drank.textContent =
-  `${currentPrefecture} ＞ ${areaName ? areaName + ' ＞ ' : ''}${currentCity} ＞ ${i + 1}位 / Score ${Math.round(s.score)}`;
+  `${currentPrefecture} ＞ ${areaName ? areaName + ' ＞ ' : ''}${currentCity}`;
   dname.textContent = shopDisplayName(s);
   dreviewPanel.classList.add('hidden');
   dreviewPanel.innerHTML='';
   dreviewBtn.onclick=()=>loadDetailReviews(s);
   daddr.textContent = shopDisplayAddress(s);
-  drating.textContent = s.rating ? `★${s.rating}` : '評価は地図で確認';
+  drating.textContent = '評価は地図で確認';
 
   const detailPoints=[s.catchphrase,...(Array.isArray(s.highlights)?s.highlights:[])].filter(Boolean);
   const detailDisplayPoints=detailPoints.length?detailPoints:['特色は公式サイト・地図で確認'];
@@ -1775,7 +1775,7 @@ const loadSeq=++cityLoadSeq;
 currentCity = city;
 currentVisualKey = '';
     try {
-    rankingTitle.textContent = `${city} パン屋 ${shops.length >= 10 ? 'TOP10' : '全'+shops.length+'店'}`;
+    rankingTitle.textContent = `${city} パン屋 ${shops.length >= 10 ? '10選' : '全'+shops.length+'店'}`;
     button.disabled = true;
     button.textContent = '取得中…';
 
@@ -1788,7 +1788,7 @@ currentVisualKey = '';
     );
     if(loadSeq!==cityLoadSeq || currentPrefecture!==selectedPrefecture || currentCity!==city) return;
     shops=loadedShops;
-    rankingTitle.textContent = `${city} パン屋 ${shops.length >= 10 ? 'TOP10' : '全'+shops.length+'店'}`;
+    rankingTitle.textContent = `${city} パン屋 ${shops.length >= 10 ? '10選' : '全'+shops.length+'店'}`;
     showRanking();
     const catalog=await loadStaticCatalog();
     const note=byId('rankingNote');
