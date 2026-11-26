@@ -353,6 +353,7 @@ button,.back,.detail-action,.review-trigger{
 .load-error button{margin-top:8px;min-height:40px}
 
 /* ===== 写真タップ型ランキングカード（外観写真対応） ===== */
+.area-chips{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 8px}.area-chips[hidden]{display:none}.area-chips button{border:1px solid #d9c3a0;background:#fffaf1;color:#5d3a1a;border-radius:999px;padding:5px 11px;font-size:13px;font-weight:700;line-height:1.2;width:auto;min-height:0;margin:0;box-shadow:none}.area-chips button.on{background:#8a5a2b!important;border-color:#8a5a2b!important;color:#fff!important}.area-chips small{font-weight:400;opacity:.8;margin-left:2px}#list .shop-area{flex:0 0 auto;white-space:nowrap;font-size:11px;font-weight:700;color:#7a5a2e;background:#f6ecdb;border-radius:999px;padding:1px 7px}
 #list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 #list .rank-card{position:relative;display:grid;grid-template-columns:1fr;gap:0;align-content:start;overflow:hidden;padding:0!important;margin:0!important;min-height:0;border-radius:16px;background:#fff;text-align:left}
 #list .rank-card .badge{position:static;display:inline-block;flex:0 0 auto;padding:3px 7px;border-radius:999px;background:#f3e6cf;box-shadow:none;font-size:14px;font-weight:900;line-height:1.2}
@@ -837,7 +838,7 @@ body:has(#detail:not(.hidden)) #appFooter,body:has(#ranking:not(.hidden)) #appFo
     <div class="nav-buttons">
       <button class="back" id="back">← 戻る</button>
     </div>
-  </div><h2 id="rankingTitle">豊田市 パン屋 10選</h2><div class="muted" id="rankingNote">ぷらっと東海が、営業を確かめられたお店から選びました(順位ではありません)。評価や口コミは「地図」ボタンで見られます。</div><div id="list"></div>
+  </div><h2 id="rankingTitle">豊田市 パン屋 10選</h2><div class="muted" id="rankingNote">ぷらっと東海が、営業を確かめられたお店から選びました(順位ではありません)。評価や口コミは「地図」ボタンで見られます。</div><div id="areaChips" class="area-chips" hidden></div><div id="list"></div>
   <div class="ranking-bottom-nav">
     <button class="back" id="backBottom">← 戻る</button>
   </div>
@@ -885,13 +886,13 @@ body:has(#detail:not(.hidden)) #appFooter,body:has(#ranking:not(.hidden)) #appFo
     <div class="muted">管理用。利用状況のサーバー保存は管理API認証・永続保存の準備完了後に有効化します。</div>
   </div><footer id="appFooter" class="app-footer">
 <div>ぷらっとパン</div>
-<div>Ver.1.89</div>
+<div>Ver.1.90</div>
   <div>Personal Bakery Discovery Project</div>
   <div>Created & Managed by S.K.</div>
   <div>© 2026 S.K. All Rights Reserved.</div>
 
   <details class="version-history">
-    <summary>更新履歴を見る</summary>\n    <div>Ver.1.89　市町村ページを順位なしの「10選」に変更(星・口コミ数・順位を表示しない)。広域TOP10は作り直しのため準備中</div>\n    <div>Ver.1.88　愛知県TOP10の固定店舗でも実Place IDを再解決して口コミをアプリ内表示</div>\n    <div>Ver.1.85　54市町村完全性・欠損表示・スマホ店名・PWA同期の自動監査を強化</div>\n    <div>Ver.1.82　6インチ級スマホ向けに店舗詳細の情報密度と余白を最終調整</div>\n    <div>Ver.1.82　店舗詳細の空欄を解消し確認導線を統一</div>\n    <div>Ver.1.82　店舗詳細の口コミを地図から分離しアプリ内表示に対応</div>\n    <div>Ver.1.82　TOP10の文字密度と強弱を整理</div>\n    <div>Ver.1.78　スマホTOP10の住所を少し拡大</div>\n    <div>Ver.1.77　スマホTOP10左端の空欄をなくし順位から表示</div>\n    <div>Ver.1.76　順位を左寄せして店舗名の表示幅を拡大</div>\n    <div>Ver.1.75　店名横に特色・口コミ・★評価を集約</div>\n    <div>Ver.1.74　6インチ級スマホ向けTOP10コンパクト表示</div>\n    <div>Ver.1.73　店舗詳細の店名サイズを適正化</div>\n    <div>Ver.1.72　店舗詳細の情報階層と余白を整理</div>\n    <div>Ver.1.71　TOP10の店名横に★評価、住所下に口コミ数を配置</div>\n    <div>Ver.1.70　TOP10の店名折り返し・余白・順位と評価の視認性を調整</div>\n    <div>Ver.1.69　TOP10画像を小型化し店舗名をさらに拡大</div>\n    <div>Ver.1.68　店舗詳細の大型画像枠を撤去し店名を拡大</div>\n    <div>Ver.1.67　TOP10・店舗詳細にワンポイント画像表示を追加</div>
+    <summary>更新履歴を見る</summary>\n    <div>Ver.1.90　地区ボタンを追加(押すとその地区の営業中のお店をすべて表示)。各店に地区名を表示</div>\n    <div>Ver.1.89　市町村ページを順位なしの「10選」に変更(星・口コミ数・順位を表示しない)。広域TOP10は作り直しのため準備中</div>\n    <div>Ver.1.88　愛知県TOP10の固定店舗でも実Place IDを再解決して口コミをアプリ内表示</div>\n    <div>Ver.1.85　54市町村完全性・欠損表示・スマホ店名・PWA同期の自動監査を強化</div>\n    <div>Ver.1.82　6インチ級スマホ向けに店舗詳細の情報密度と余白を最終調整</div>\n    <div>Ver.1.82　店舗詳細の空欄を解消し確認導線を統一</div>\n    <div>Ver.1.82　店舗詳細の口コミを地図から分離しアプリ内表示に対応</div>\n    <div>Ver.1.82　TOP10の文字密度と強弱を整理</div>\n    <div>Ver.1.78　スマホTOP10の住所を少し拡大</div>\n    <div>Ver.1.77　スマホTOP10左端の空欄をなくし順位から表示</div>\n    <div>Ver.1.76　順位を左寄せして店舗名の表示幅を拡大</div>\n    <div>Ver.1.75　店名横に特色・口コミ・★評価を集約</div>\n    <div>Ver.1.74　6インチ級スマホ向けTOP10コンパクト表示</div>\n    <div>Ver.1.73　店舗詳細の店名サイズを適正化</div>\n    <div>Ver.1.72　店舗詳細の情報階層と余白を整理</div>\n    <div>Ver.1.71　TOP10の店名横に★評価、住所下に口コミ数を配置</div>\n    <div>Ver.1.70　TOP10の店名折り返し・余白・順位と評価の視認性を調整</div>\n    <div>Ver.1.69　TOP10画像を小型化し店舗名をさらに拡大</div>\n    <div>Ver.1.68　店舗詳細の大型画像枠を撤去し店名を拡大</div>\n    <div>Ver.1.67　TOP10・店舗詳細にワンポイント画像表示を追加</div>
     <div>Ver.1.4　店舗詳細・営業状況・地域表示・画面移動を改善</div>
     <div>Ver.1.2 β　店舗詳細機能を追加</div>
     <div>Ver.1.1 β　市町村・地域ランキングを改善</div>
@@ -906,6 +907,8 @@ body:has(#detail:not(.hidden)) #appFooter,body:has(#ranking:not(.hidden)) #appFo
 </main><script>
 
 let shops = [];
+let currentArea = '';   // 2026-11-27: 地区ボタンで選んだ地区(空=10選)
+let areaForCity = '';
 let currentCity = '';
 let currentVisualKey = '';
 let currentPrefecture = '愛知県';
@@ -1483,7 +1486,35 @@ function showRanking() {
       : 'ぷらっと東海が、営業を確かめられたお店から選びました(順位ではありません)。評価や口コミは「地図」ボタンで見られます。';
   }
   const usedFeatureLabels=new Set();
-  shops.slice(0,10).forEach((s,i)=>{
+  // 2026-11-27: 最初は10選。地区ボタンを押すと、その地区の営業中のお店をすべて出す
+  if(areaForCity!==currentCity){currentArea='';areaForCity=currentCity;}
+  const areaList=[];
+  shops.forEach(s=>{const a=String(s.area||'').trim(); if(a && !areaList.includes(a)) areaList.push(a);});
+  if(currentArea && !areaList.includes(currentArea)) currentArea='';
+  let viewIdx;
+  if(currentArea){
+    viewIdx=shops.map((s,i)=>i).filter(i=>String(shops[i].area||'').trim()===currentArea);
+  }else{
+    viewIdx=shops.map((s,i)=>i).filter(i=>shops[i].pick===true);
+    if(!viewIdx.length) viewIdx=shops.slice(0,10).map((s,i)=>i);
+  }
+  const chips=byId('areaChips');
+  if(chips){
+    if(areaList.length){
+      chips.hidden=false;
+      chips.innerHTML='<button type="button" data-area=""'+(currentArea?'':' class="on"')+'>⭐ 10選</button>'+
+        areaList.map(a=>{const n=shops.filter(s=>String(s.area||'').trim()===a).length;
+          return '<button type="button" data-area="'+escapeHtml(a)+'"'+(a===currentArea?' class="on"':'')+'>📍 '+escapeHtml(a)+'<small>'+n+'</small></button>';}).join('');
+      chips.onclick=e=>{const btn=e.target.closest('button[data-area]'); if(!btn) return; currentArea=btn.dataset.area||''; showRanking();};
+      rankingTitle.textContent=currentArea
+        ? `${currentCity} パン屋 ${currentArea}あたり(${viewIdx.length}店)`
+        : `${currentCity} パン屋 ${viewIdx.length>=10?'10選':'全'+viewIdx.length+'店'}`;
+    }else{
+      chips.hidden=true; chips.innerHTML='';
+    }
+  }
+  viewIdx.forEach(i=>{
+    const s=shops[i];
     let b=document.createElement('button');
     b.className='card rank-card'+((s.photo||s.symbolVisual)?'':' no-visual');
     b.style.width='100%';
@@ -1514,7 +1545,7 @@ function showRanking() {
     const productLine = s.representativeProduct && !String(s.catchphrase||'').includes(s.representativeProduct) && !(Array.isArray(s.highlights)&&s.highlights.some(v=>String(v).includes(s.representativeProduct)))
       ? '<span class="shop-signature">🥖 '+escapeHtml(s.representativeProduct)+'</span>' : '';
     const distinctive = `${catchphrase}${points}${productLine}${attribution}`;
-    b.innerHTML=`${photo}<span class="shop-main"><span class="shop-title-row"><strong class="badge">🥐</strong><strong class="shop-name">${escapeHtml(displayName)}</strong>${displayCatch ? `<span class="shop-inline-feature">${escapeHtml(displayCatch)}</span>` : ''}${s.dataSource==='osm-free' ? '<span class="shop-review-inline">公開地図</span>' : ''}</span><span class="muted shop-address">${escapeHtml(displayAddress)}</span></span><span class="rank-detail-cue" aria-hidden="true">詳細 ›</span>${(points||productLine||attribution) ? `<span class="shop-points">${points}${productLine}${attribution}</span>` : ''}`;
+    b.innerHTML=`${photo}<span class="shop-main"><span class="shop-title-row"><strong class="badge">🥐</strong><strong class="shop-name">${escapeHtml(displayName)}</strong>${s.area ? `<span class="shop-area">📍${escapeHtml(s.area)}</span>` : ''}${displayCatch ? `<span class="shop-inline-feature">${escapeHtml(displayCatch)}</span>` : ''}${s.dataSource==='osm-free' ? '<span class="shop-review-inline">公開地図</span>' : ''}</span><span class="muted shop-address">${escapeHtml(displayAddress)}</span></span><span class="rank-detail-cue" aria-hidden="true">詳細 ›</span>${(points||productLine||attribution) ? `<span class="shop-points">${points}${productLine}${attribution}</span>` : ''}`;
     b.onclick=()=>showDetail(i);
     list.appendChild(b);
   });
@@ -1665,7 +1696,7 @@ async function loadDetailReviews(shop){
 const areaName = getAreaName(currentCity);
 
 drank.textContent =
-  `${currentPrefecture} ＞ ${areaName ? areaName + ' ＞ ' : ''}${currentCity}`;
+  `${currentPrefecture} ＞ ${areaName ? areaName + ' ＞ ' : ''}${currentCity}${shops[i]&&shops[i].area ? ' ＞ '+shops[i].area+'あたり' : ''}`;
   dname.textContent = shopDisplayName(s);
   dreviewPanel.classList.add('hidden');
   dreviewPanel.innerHTML='';

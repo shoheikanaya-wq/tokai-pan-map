@@ -63,6 +63,7 @@ main{max-width:760px;margin:0 auto;padding:10px 12px 28px}
 .scene.pop img{animation:pop .5s ease-out both}
 .scene.mid{justify-content:center}
 @media (prefers-reduced-motion:reduce){.scene img{animation:none!important}}
+.achips{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px}.achips button{border:1px solid #e3c39a;background:#fffaf1;color:#6b3b12;border-radius:999px;padding:5px 11px;font-size:13px;font-weight:700;cursor:pointer}.achips button.on{background:#b5562a;border-color:#b5562a;color:#fff}.achips small{font-weight:400;opacity:.8;margin-left:2px}.rank h3 .area{display:inline-block;margin-left:6px;font-size:11px;font-weight:700;color:#7a4a1e;background:#f8ead6;border-radius:999px;padding:1px 7px;vertical-align:middle}
 </style><script data-goatcounter="https://puratto-tokai.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -75,7 +76,7 @@ main{max-width:760px;margin:0 auto;padding:10px 12px 28px}
  <section id="panel" hidden></section>
 </main><footer style="margin:18px auto 8px;padding:10px 8px calc(10px + env(safe-area-inset-bottom));text-align:center;font-size:11px;line-height:1.6;color:#8a7c6b">
  <div style="font-size:14px;font-weight:bold;color:#5d3a1a">ぷらっとラーメン</div>
- <div>Ver.1.3</div>
+ <div>Ver.1.4</div>
  <div>Created &amp; Managed by S.K.</div>
  <div>&copy; 2026 S.K. All Rights Reserved.</div>
 </footer>
@@ -119,7 +120,7 @@ function cityName(){var r=CITIES[pref].filter(function(c){return c[0]===cityId})
 function mapUrl(s){return 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent((s.name||'')+' '+(s.address||''))}
 function shopHtml(s,i,pick){
  var w=safeUrl(s.website);
- return '<div class="rank"><div class="num">'+(pick?'🍜':(i+1))+'</div><div><h3>'+esc(s.name)+(s.verify?'<span class="warn">要確認</span>':'')+'</h3>'+
+ return '<div class="rank"><div class="num">'+(pick?'🍜':(i+1))+'</div><div><h3>'+esc(s.name)+(s.area?'<span class="area">📍'+esc(s.area)+'</span>':'')+(s.verify?'<span class="warn">要確認</span>':'')+'</h3>'+
   (s.catchphrase?'<p>'+esc(s.catchphrase)+'</p>':'')+
   ((s.openingHours||[]).length?'<p>🕒 '+s.openingHours.map(esc).join('<br>')+'</p>':'')+
   (s.address?'<p>📍 '+esc(s.address)+'</p>':'')+
@@ -136,17 +137,26 @@ function show(){
   if(id!==cityId||pf!==pref)return;
   var shops=d&&d.shops||[];
   var pick=true; // 2026-11-27: 順位はつけず「○選」で表示
-  var top=shops.slice(0,20);var tn=p.querySelector('#topn');if(tn&&top.length)tn.textContent=top.length+'選';
+  // 2026-11-27: 最初は○選。地区ボタンを押すと、その地区の営業中のお店をすべて出す
+  var areas=[];shops.forEach(function(s){var a=String(s.area||'').trim();if(a&&areas.indexOf(a)<0)areas.push(a)});
+  if(areaFor!==pf+'-'+id){curArea='';areaFor=pf+'-'+id}
+  if(curArea&&areas.indexOf(curArea)<0)curArea='';
+  var picks=shops.filter(function(s){return s.pick===true});
+  var top=curArea?shops.filter(function(s){return String(s.area||'').trim()===curArea}):(picks.length?picks:shops.slice(0,20));
+  var tn=p.querySelector('#topn');if(tn&&top.length)tn.textContent=curArea?(curArea+'あたり '+top.length+'店'):(top.length+'選');
+  var chips=areas.length?'<div class="achips">'+'<button type="button" data-area=""'+(curArea?'':' class="on"')+'>⭐ '+(picks.length||Math.min(shops.length,20))+'選</button>'+areas.map(function(a){var n=shops.filter(function(s){return String(s.area||'').trim()===a}).length;return '<button type="button" data-area="'+esc(a)+'"'+(a===curArea?' class="on"':'')+'>📍 '+esc(a)+'<small>'+n+'</small></button>'}).join('')+'</div>':'';
   var list=top.map(function(s,i){
    var h=shopHtml(s,i,pick);
    if(!pick&&i===2&&top.length>3)h+=sceneHtml('c','ここまでがTOP3だニャ',{r:true});
    if(i===9&&top.length>10)h+=sceneHtml('d','まだまだ続くワン!',{flipD:true});
    return h}).join('');
-  var body=shops.length?list+sceneHtml('gcd','お出かけ前に、営業時間をチェックしてね',{girl:gn,r:true})+(d.attribution?'<div class="note">'+esc(d.attribution)+'</div>':''):sceneHtml('dcg','',{girl:gn,mid:true})+'<div class="empty">🍜 準備中です<br>もうすぐ追加されます</div>';
+  var body=shops.length?chips+list+sceneHtml('gcd','お出かけ前に、営業時間をチェックしてね',{girl:gn,r:true})+(d.attribution?'<div class="note">'+esc(d.attribution)+'</div>':''):sceneHtml('dcg','',{girl:gn,mid:true})+'<div class="empty">🍜 準備中です<br>もうすぐ追加されます</div>';
   if(!shops.length){var sc=p.querySelector('.scene');if(sc)sc.remove()}
   var w=p.querySelector('.empty');if(w)w.outerHTML=body;
  });
 }
+var curArea='',areaFor='';
+$('panel').addEventListener('click',function(e){var b=e.target.closest('.achips button[data-area]');if(!b)return;curArea=b.dataset.area||'';show()});
 $('tabs').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;pref=b.dataset.p;cityId='';drawTabs();show();drawIntro()});
 $('cities').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;cityId=b.dataset.c;drawTabs();show();drawIntro();$('panel').scrollIntoView({behavior:'smooth',block:'start'})});
 drawTabs();drawIntro();
