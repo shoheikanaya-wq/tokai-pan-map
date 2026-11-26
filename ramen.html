@@ -64,6 +64,7 @@ main{max-width:760px;margin:0 auto;padding:10px 12px 28px}
 .scene.mid{justify-content:center}
 @media (prefers-reduced-motion:reduce){.scene img{animation:none!important}}
 .achips{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px}.achips button{border:1px solid #e3c39a;background:#fffaf1;color:#6b3b12;border-radius:999px;padding:5px 11px;font-size:13px;font-weight:700;cursor:pointer}.achips button.on{background:#b5562a;border-color:#b5562a;color:#fff}.achips small{font-weight:400;opacity:.8;margin-left:2px}.rank h3 .area{display:inline-block;margin-left:6px;font-size:11px;font-weight:700;color:#7a4a1e;background:#f8ead6;border-radius:999px;padding:1px 7px;vertical-align:middle}
+.rank p.where{font-weight:700;color:#7a4a1e}
 </style><script data-goatcounter="https://puratto-tokai.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -118,11 +119,21 @@ function drawTabs(){
 }
 function cityName(){var r=CITIES[pref].filter(function(c){return c[0]===cityId})[0];return r?r[1]:''}
 function mapUrl(s){return 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent((s.name||'')+' '+(s.address||''))}
+// 2026-11-27: 住所から町名を取り出す(例: 愛知県豊田市山之手5丁目… → 山之手)
+function townOf(address){
+ var a=String(address||'').replace(/\s+/g,''),c=cityName();
+ if(c&&a.indexOf(c)>=0)a=a.slice(a.indexOf(c)+c.length);
+ if(/名古屋市|浜松市|静岡市/.test(String(address)))a=a.replace(/^.+?区/,'');
+ var m=a.match(/^[^0-9０-９\-－−‐ー丁番(（]+/),t=m?m[0]:'';
+ var mt=t.match(/^.+?町/);if(mt)t=mt[0];
+ return t.length>=2&&t.length<=10?t:'';
+}
 function shopHtml(s,i,pick){
  var w=safeUrl(s.website);
  return '<div class="rank"><div class="num">'+(pick?'🍜':(i+1))+'</div><div><h3>'+esc(s.name)+(s.area?'<span class="area">📍'+esc(s.area)+'</span>':'')+(s.verify?'<span class="warn">要確認</span>':'')+'</h3>'+
   (s.catchphrase?'<p>'+esc(s.catchphrase)+'</p>':'')+
   ((s.openingHours||[]).length?'<p>🕒 '+s.openingHours.map(esc).join('<br>')+'</p>':'')+
+  (function(){var t=townOf(s.address),l=String(s.landmark||'').trim();return (t||l)?'<p class="where">🧭 '+esc([t,l].filter(Boolean).join('・'))+'</p>':''})()+
   (s.address?'<p>📍 '+esc(s.address)+'</p>':'')+
   '<div class="btns"><a href="'+mapUrl(s)+'" target="_blank" rel="noopener">🗺 地図</a>'+(w?'<a class="sub" href="'+esc(w)+'" target="_blank" rel="noopener">公式・詳細</a>':'')+'</div></div></div>';
 }
