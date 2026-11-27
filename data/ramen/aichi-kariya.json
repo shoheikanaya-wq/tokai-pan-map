@@ -1,0 +1,215 @@
+{
+ "source": "static-public-info",
+ "updatedAt": "2026-11-27",
+ "attribution": "ぷらっと東海が、公式の案内や地元の公開情報で営業を確かめられたお店です。最初に出る「10選」は、ぷらっと東海が選んだ人気店です(順位ではありません)。営業時間は、公式の案内で確かめられたお店だけのせています。「要確認」のお店は、確かめられなかった理由をそえています。閉店や移転がありえるので、お出かけ前に「地図」ボタンや各店の公式情報で確かめてください。",
+ "shops": [
+  {
+   "name": "ひろさんラーメン",
+   "catchphrase": "野菜だけのスープと自家製スピルリナ麺",
+   "openingHours": [
+    "7:00〜9:00",
+    "11:30〜13:30",
+    "18:00〜24:00",
+    "日曜定休"
+   ],
+   "address": "愛知県刈谷市南桜町1丁目67-1",
+   "verify": false,
+   "type": "ラーメン",
+   "area": "刈谷南",
+   "checkedAt": "2026-11-27",
+   "pick": true
+  },
+  {
+   "name": "俺の夢",
+   "catchphrase": "オリジナル豚骨と塩チャーハンが看板",
+   "openingHours": [
+    "11:30〜14:00",
+    "18:00〜24:00(スープがなくなり次第終了)",
+    "日曜定休"
+   ],
+   "address": "愛知県刈谷市桜町1-20",
+   "verify": false,
+   "type": "ラーメン",
+   "area": "刈谷東",
+   "checkedAt": "2026-11-27",
+   "pick": true
+  },
+  {
+   "name": "鶏そば のぶる",
+   "catchphrase": "泡立てた鶏白湯の鶏そばの店",
+   "openingHours": [
+    "公式Instagramを確認できず、地元報道(2023年)と今の案内で時間がちがうため要確認"
+   ],
+   "address": "愛知県刈谷市高倉町1-213",
+   "verify": true,
+   "type": "ラーメン",
+   "area": "刈谷東",
+   "checkedAt": "2026-11-27",
+   "pick": true
+  },
+  {
+   "name": "麺 玉響 刈谷店",
+   "catchphrase": "",
+   "openingHours": [
+    "公式サイトを確認できなかったため要確認"
+   ],
+   "address": "愛知県刈谷市中手町6-705",
+   "verify": true,
+   "type": "ラーメン",
+   "area": "刈谷東",
+   "checkedAt": "2026-11-27",
+   "pick": true
+  },
+  {
+   "name": "自家製麺らーめん かり屋",
+   "catchphrase": "国産小麦の自家製麺と天然だし",
+   "openingHours": [
+    "観光協会の案内に時間の記載がなく、店の情報も更新日が分からないため要確認(定休は火曜と月・木曜の夜)"
+   ],
+   "address": "愛知県刈谷市松栄町2-10-2",
+   "verify": true,
+   "type": "ラーメン",
+   "area": "朝日",
+   "landmark": "野田新町駅から約700m",
+   "checkedAt": "2026-11-27",
+   "pick": true
+  },
+  {
+   "name": "らーめん みそ膳",
+   "catchphrase": "札幌・八丁など各地の味噌がそろう",
+   "openingHours": [
+    "11:00〜15:00",
+    "17:00〜22:00(ラストオーダーは各10分前)",
+    "月曜・火曜定休"
+   ],
+   "address": "愛知県刈谷市東刈谷町2-1-3",
+   "verify": false,
+   "type": "ラーメン",
+   "area": "朝日",
+   "landmark": "東刈谷駅から車で3分",
+   "checkedAt": "2026-11-27",
+   "pick": true
+  },
+  {
+   "name": "すすきのらぁめん 膳",
+   "catchphrase": "",
+   "openingHours": [
+    "公式の案内が見つからないため要確認"
+   ],
+   "address": "愛知県刈谷市築地町2-11-9",
+   "verify": true,
+   "type": "ラーメン",
+   "area": "雁が音",
+   "checkedAt": "2026-11-27",
+   "pick": true
+  },
+  {
+   "name": "らーめん つかさ家",
+   "catchphrase": "熟成味噌をブレンドした味噌らーめん",
+   "openingHours": [
+    "11:00〜23:00",
+    "火曜・第2月曜定休"
+   ],
+   "address": "愛知県刈谷市井ヶ谷町桜島42-1",
+   "verify": false,
+   "type": "ラーメン",
+   "area": "富士松",
+   "landmark": "井ケ谷市民館バス停前",
+   "checkedAt": "2026-11-27",
+   "pick": true
+  },
+  {
+   "name": "らぅめん 愛ごや",
+   "catchphrase": "賞をとった塩そばが看板",
+   "openingHours": [
+    "店の案内で定休日の書き方が食いちがい、更新日も分からないため要確認"
+   ],
+   "address": "愛知県刈谷市井ケ谷町青木31",
+   "verify": true,
+   "type": "ラーメン",
+   "area": "富士松",
+   "landmark": "州原公園から約500m",
+   "checkedAt": "2026-11-27",
+   "pick": true
+  },
+  {
+   "name": "ラーメン壱八",
+   "catchphrase": "濃厚豚骨の家系ラーメン",
+   "openingHours": [
+    "11:00〜14:00",
+    "17:00〜21:00",
+    "水曜定休(臨時休業あり)"
+   ],
+   "address": "愛知県刈谷市井ケ谷町桜島22",
+   "verify": false,
+   "type": "ラーメン",
+   "area": "富士松",
+   "landmark": "県道234号沿い",
+   "checkedAt": "2026-11-27",
+   "pick": true
+  },
+  {
+   "name": "スガキヤ 刈谷アピタ店",
+   "catchphrase": "",
+   "openingHours": [
+    "9:00〜21:00(ラストオーダー20:30)"
+   ],
+   "address": "愛知県刈谷市南桜町2-56-1 アピタ刈谷店3階",
+   "verify": false,
+   "type": "ラーメン",
+   "area": "刈谷南",
+   "landmark": "アピタ刈谷店3階",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "name": "らあめん花月嵐 刈谷駅前店",
+   "catchphrase": "",
+   "openingHours": [
+    "月〜木・日 11:00〜23:00",
+    "金・土 11:00〜24:00"
+   ],
+   "address": "愛知県刈谷市桜町1-38",
+   "verify": false,
+   "type": "ラーメン",
+   "area": "刈谷東",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "name": "一風堂 刈谷店",
+   "catchphrase": "",
+   "openingHours": [
+    "毎日 11:00〜22:00(ラストオーダーは閉店10分前)"
+   ],
+   "address": "愛知県刈谷市日高町4-508",
+   "verify": false,
+   "type": "ラーメン",
+   "area": "刈谷東",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "name": "ラーメン山岡家 愛知刈谷店",
+   "catchphrase": "",
+   "openingHours": [
+    "24時間営業"
+   ],
+   "address": "愛知県刈谷市新富町3丁目402・412",
+   "verify": false,
+   "type": "ラーメン",
+   "area": "刈谷東",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "name": "スガキヤ ZENT刈谷店",
+   "catchphrase": "",
+   "openingHours": [
+    "11:00〜21:30(ラストオーダー21:00)"
+   ],
+   "address": "愛知県刈谷市小垣江町稲新田3-1 ZENT刈谷1階",
+   "verify": false,
+   "type": "ラーメン",
+   "area": "依佐美",
+   "landmark": "ZENT刈谷1階",
+   "checkedAt": "2026-11-27"
+  }
+ ]
+}
