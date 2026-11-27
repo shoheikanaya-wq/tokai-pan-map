@@ -319,6 +319,26 @@
       ],
       "verify": true,
       "checkedAt": "2026-11-27"
+    },
+    {
+      "placeId": "michi-asagirikogen",
+      "name": "道の駅 朝霧高原",
+      "area": "富士宮市",
+      "type": "道の駅",
+      "address": "静岡県富士宮市根原492-14",
+      "openingHours": [
+        "8:00〜17:00(食堂のラストオーダーは16:00)",
+        "年中無休"
+      ],
+      "website": "https://www.city.fujinomiya.lg.jp/1025200000/p001818.html",
+      "catchphrase": "国道139号沿い、富士山を正面に望む朝霧高原の道の駅",
+      "highlights": [
+        "朝霧高原の牛乳を使ったソフトクリームが名物",
+        "建物の裏手に富士山がよく見える展望スペース",
+        "地元の特産品と朝採り野菜の売り場、食堂、観光案内コーナーあり"
+      ],
+      "verify": true,
+      "checkedAt": "2026-11-27"
     }
   ]
 }
