@@ -123,7 +123,6 @@
    "verify": false,
    "type": "ラーメン",
    "area": "朝日丘",
-   "landmark": "洞泉寺前バス停から歩いて1分",
    "pick": true
   },
   {
@@ -177,7 +176,6 @@
    "verify": true,
    "type": "ラーメン",
    "area": "保見",
-   "landmark": "四郷駅から歩いて10分",
    "pick": true
   },
   {
