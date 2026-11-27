@@ -1,6 +1,6 @@
 {
   "source": "static",
-  "updatedAt": "2026-11-27",
+  "updatedAt": "2026-11-28",
   "attribution": "公開情報(NEXCO中日本・ドラぷら・るるぶKids)を基に作成。営業時間やお店は変わるため、お出かけ前に公式サイトでご確認ください。",
   "shops": [
     {"placeId":"sapa-ashigara-up","name":"足柄SA(上り)","kind":"SA","pref":"静岡県","road":"東名高速道路","direction":"上り","area":"御殿場市","address":"静岡県御殿場市","website":"https://kids.rurubu.jp/article/sapa/80022587/","catchphrase":"富士山を望める、設備が充実した大きなSA","highlights":["24時間営業のガソリンスタンド","24時間営業のコンビニ(ローソン)","富士山が見える","ドッグラン","スマートIC","宿泊・入浴できる休憩施設"],"verify":true},
@@ -77,6 +77,8 @@
     {"placeId":"sapa-gifuyamato-up","name":"ぎふ大和PA(上り)","kind":"PA","pref":"岐阜県","road":"東海北陸自動車道","direction":"上り","area":"郡上市","address":"岐阜県郡上市大和町島","website":"https://sapa.c-nexco.co.jp/sapa?sapainfoid=149","catchphrase":"道の駅とやまと温泉がとなりにある、郡上大和のパーキング","highlights":["売店は平日8時から19時、土日祝は8時から20時","お食事処は平日10時から17時30分、土日祝は10時から19時","EV急速充電1口と無料Wi-Fiあり","道の駅「古今伝授の里やまと」がとなり"],"verify":true,"checkedAt":"2026-11-27"},
     {"placeId":"sapa-gifuyamato-down","name":"ぎふ大和PA(下り)","kind":"PA","pref":"岐阜県","road":"東海北陸自動車道","direction":"下り","area":"郡上市","address":"岐阜県郡上市大和町島","website":"https://sapa.c-nexco.co.jp/sapa?sapainfoid=150","catchphrase":"郡上八幡ICと白鳥ICのあいだ、高山・金沢方面へ向かう前のひと休みに","highlights":["駐車場は大型17台・小型67台","次のひるがの高原SAまで約25km","お店の名前や営業時間は、公式の施設ページに出ていなかったため要確認"],"verify":true,"checkedAt":"2026-11-27"},
     {"placeId":"sapa-hidakawai-up","name":"飛騨河合PA(上り)","kind":"PA","pref":"岐阜県","road":"東海北陸自動車道","direction":"上り","area":"飛騨市","address":"岐阜県飛騨市河合町保","website":"https://sapa.c-nexco.co.jp/sapa?sapainfoid=156","catchphrase":"白川郷から名古屋方面へ戻る途中、飛騨の山あいで短いひと休み","highlights":["駐車場は大型5台・小型10台、身障者用の小型1台","ひとつ前の飛騨白川PAから約13.4km、次の松ノ木峠PAまで約21km","公式ページに店舗の登録がなく、売店や自販機があるかわからないため要確認"],"verify":true,"checkedAt":"2026-11-27"},
-    {"placeId":"sapa-hidakawai-down","name":"飛騨河合PA(下り)","kind":"PA","pref":"岐阜県","road":"東海北陸自動車道","direction":"下り","area":"飛騨市","address":"岐阜県飛騨市河合町保","website":"https://sapa.c-nexco.co.jp/sapa?sapainfoid=157","catchphrase":"松ノ木峠を越えて白川郷・金沢方面へ向かう途中の小さなPA","highlights":["駐車場は大型5台・小型12台、身障者用の小型1台","次の飛騨白川PAまで約13.3km","公式ページに店舗の登録がなく、売店や自販機があるかわからないため要確認"],"verify":true,"checkedAt":"2026-11-27"}
+    {"placeId":"sapa-hidakawai-down","name":"飛騨河合PA(下り)","kind":"PA","pref":"岐阜県","road":"東海北陸自動車道","direction":"下り","area":"飛騨市","address":"岐阜県飛騨市河合町保","website":"https://sapa.c-nexco.co.jp/sapa?sapainfoid=157","catchphrase":"松ノ木峠を越えて白川郷・金沢方面へ向かう途中の小さなPA","highlights":["駐車場は大型5台・小型12台、身障者用の小型1台","次の飛騨白川PAまで約13.3km","公式ページに店舗の登録がなく、売店や自販機があるかわからないため要確認"],"verify":true,"checkedAt":"2026-11-27"},
+    {"placeId":"sapa-moriyama-up","name":"守山PA(上り)","kind":"PA","pref":"愛知県","road":"東名高速道路","direction":"上り","area":"名古屋市守山区","address":"愛知県名古屋市守山区","website":"https://sapa.c-nexco.co.jp/sapa?sapainfoid=41","catchphrase":"守山スマートICとぷらっとパークがそろう、名古屋市内のパーキング","highlights":["フードコートと売店はどちらも7時から21時","ETC専用の守山スマートICを併設(24時間)","一般道から入れるぷらっとパークは7時から21時、小型車5台","無料Wi-Fiあり。駐車は大型39台・小型81台"],"verify":true,"checkedAt":"2026-11-28"},
+    {"placeId":"sapa-moriyama-down","name":"守山PA(下り)","kind":"PA","pref":"愛知県","road":"東名高速道路","direction":"下り","area":"名古屋市守山区","address":"愛知県名古屋市守山区","website":"https://sapa.c-nexco.co.jp/sapa?sapainfoid=42","catchphrase":"守山スマートICとぷらっとパークがそろう、下り線のパーキング","highlights":["フードコートと売店はどちらも7時から21時","守山スマートICを併設","一般道から入れるぷらっとパークは7時から21時、小型車4台","無料Wi-Fiあり。駐車は大型34台・小型73台"],"verify":true,"checkedAt":"2026-11-28"}
   ]
 }
