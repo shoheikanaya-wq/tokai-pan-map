@@ -13,7 +13,10 @@
    ],
    "address": "愛知県一宮市本町3丁目5-2",
    "verify": false,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "本庁",
+   "landmark": "尾張一宮駅の近く",
+   "pick": true
   },
   {
    "name": "中華そば華丸",
@@ -23,7 +26,10 @@
    ],
    "address": "愛知県一宮市萩原町串作1407-2",
    "verify": true,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "大和・萩原",
+   "landmark": "名鉄萩原駅の近く",
+   "pick": true
   },
   {
    "name": "博多ラーメン ばりばり軒 一宮本店",
@@ -34,7 +40,10 @@
    ],
    "address": "愛知県一宮市大和町宮地花池高見10",
    "verify": false,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "大和・萩原",
+   "checkedAt": "2026-11-27",
+   "pick": true
   },
   {
    "name": "尾張ラーメン 本店 第一旭",
@@ -44,7 +53,10 @@
    ],
    "address": "愛知県一宮市栄1丁目2-20",
    "verify": true,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "本庁",
+   "landmark": "尾張一宮駅の近く",
+   "pick": true
   },
   {
    "name": "西村麺業",
@@ -54,7 +66,9 @@
    ],
    "address": "愛知県一宮市多加木1丁目28-8",
    "verify": true,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "丹陽",
+   "pick": true
   },
   {
    "name": "こしがや 一宮店",
@@ -64,7 +78,9 @@
    ],
    "address": "愛知県一宮市大和町苅安賀字伝治越24-2",
    "verify": true,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "大和・萩原",
+   "pick": true
   },
   {
    "name": "はらや TORI PAITAN RAMEN",
@@ -75,7 +91,10 @@
    ],
    "address": "愛知県一宮市花池4丁目24-12",
    "verify": true,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "大和・萩原",
+   "landmark": "名鉄妙興寺駅の近く",
+   "pick": true
   },
   {
    "name": "岐阜タンメン 一宮インター店",
@@ -86,7 +105,11 @@
    ],
    "address": "愛知県一宮市伝法寺7丁目1-2",
    "verify": false,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "丹陽",
+   "landmark": "一宮ICの近く",
+   "checkedAt": "2026-11-27",
+   "pick": true
   },
   {
    "name": "カプサイメン 一宮本店",
@@ -97,7 +120,11 @@
    ],
    "address": "愛知県一宮市伝法寺7丁目1-7",
    "verify": false,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "丹陽",
+   "landmark": "一宮ICの近く",
+   "checkedAt": "2026-11-27",
+   "pick": true
   }
  ]
 }
