@@ -9,7 +9,10 @@
    "openingHours": [],
    "address": "愛知県岡崎市牧御堂町油田32",
    "verify": false,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "六ツ美",
+   "checkedAt": "2026-11-27",
+   "pick": true
   },
   {
    "name": "キブサチ",
@@ -20,7 +23,11 @@
    ],
    "address": "愛知県岡崎市井田西町7-19(肉のジャンボ市の店内)",
    "verify": true,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "中央",
+   "landmark": "肉のジャンボ市の店内",
+   "checkedAt": "2026-11-27",
+   "pick": true
   },
   {
    "name": "麺屋 あきのそら",
@@ -28,7 +35,10 @@
    "openingHours": [],
    "address": "愛知県岡崎市大門3丁目20-15",
    "verify": false,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "岩津",
+   "checkedAt": "2026-11-27",
+   "pick": true
   },
   {
    "name": "中華そば おにぎり 番い-tsugai",
@@ -36,7 +46,11 @@
    "openingHours": [],
    "address": "愛知県岡崎市明大寺町川端6",
    "verify": false,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "中央",
+   "landmark": "東岡崎駅北口から歩いて1分",
+   "checkedAt": "2026-11-27",
+   "pick": true
   },
   {
    "name": "やま辰",
@@ -46,7 +60,9 @@
    ],
    "address": "愛知県岡崎市大和町字西六反58-1",
    "verify": true,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "矢作",
+   "pick": true
   },
   {
    "name": "日本晴れ",
@@ -57,7 +73,11 @@
    ],
    "address": "愛知県岡崎市上和田町南屋敷2-1",
    "verify": false,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "六ツ美",
+   "landmark": "JR岡崎駅から歩いて10分",
+   "checkedAt": "2026-11-27",
+   "pick": true
   },
   {
    "name": "自家製麺 公園前",
@@ -65,7 +85,9 @@
    "openingHours": [],
    "address": "愛知県岡崎市柱4丁目8-16",
    "verify": false,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "岡崎",
+   "pick": true
   },
   {
    "name": "まるぎん商店",
@@ -73,7 +95,10 @@
    "openingHours": [],
    "address": "愛知県岡崎市鴨田町田起49-13",
    "verify": false,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "岩津",
+   "checkedAt": "2026-11-27",
+   "pick": true
   },
   {
    "name": "くっちゃん",
@@ -81,7 +106,9 @@
    "openingHours": [],
    "address": "愛知県岡崎市六名本町1-8",
    "verify": false,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "中央",
+   "pick": true
   },
   {
    "name": "つけめん舎一輝",
@@ -89,7 +116,9 @@
    "openingHours": [],
    "address": "愛知県岡崎市法性寺町荒子54-2",
    "verify": false,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "六ツ美",
+   "pick": true
   },
   {
    "name": "有頂天 岡崎店",
@@ -100,7 +129,9 @@
    ],
    "address": "愛知県岡崎市稲熊町1丁目27",
    "verify": true,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "中央",
+   "pick": true
   },
   {
    "name": "麺屋 こはる",
@@ -108,7 +139,10 @@
    "openingHours": [],
    "address": "愛知県岡崎市美合町五反田8-1",
    "verify": false,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "大平",
+   "checkedAt": "2026-11-27",
+   "pick": true
   },
   {
    "name": "暖だん",
@@ -116,7 +150,10 @@
    "openingHours": [],
    "address": "愛知県岡崎市若松東1丁目8-26",
    "verify": false,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "岡崎",
+   "checkedAt": "2026-11-27",
+   "pick": true
   },
   {
    "name": "一蘭 岡崎店",
@@ -127,7 +164,11 @@
    ],
    "address": "愛知県岡崎市岩津町川畔18-6",
    "verify": false,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "岩津",
+   "landmark": "国道248号沿い・岩津天満宮の入口",
+   "checkedAt": "2026-11-27",
+   "pick": true
   },
   {
    "name": "おかざき商店 総本店",
@@ -135,7 +176,10 @@
    "openingHours": [],
    "address": "愛知県岡崎市小呂町4丁目50 ファイネスビルA棟1階",
    "verify": false,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "中央",
+   "checkedAt": "2026-11-27",
+   "pick": true
   },
   {
    "name": "丸源ラーメン 岡崎羽根店",
@@ -145,7 +189,10 @@
    ],
    "address": "愛知県岡崎市羽根東町2丁目7-5",
    "verify": false,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "岡崎",
+   "checkedAt": "2026-11-27",
+   "pick": true
   },
   {
    "name": "バイシャンタン 藤川本店",
@@ -155,7 +202,9 @@
    ],
    "address": "愛知県岡崎市藤川町西川向34-2",
    "verify": true,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "東部",
+   "pick": true
   }
  ]
 }
