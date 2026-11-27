@@ -298,6 +298,27 @@
       ],
       "verify": true,
       "checkedAt": "2026-11-27"
+    },
+    {
+      "placeId": "michi-sekijuku",
+      "name": "道の駅 関宿",
+      "area": "亀山市",
+      "type": "道の駅",
+      "address": "三重県亀山市関町新所674-8",
+      "openingHours": [
+        "9:00〜18:00(レストランのラストオーダーは17:30)",
+        "年中無休",
+        "駐車場とトイレは24時間使える"
+      ],
+      "website": "https://www.city.kameyama.mie.jp/docs/2014112312287/",
+      "catchphrase": "東海道の宿場町・関宿の入口にある、まちなみになじむ道の駅",
+      "highlights": [
+        "食堂で亀山名物のみそ焼きうどんと亀山ラーメン",
+        "毎週日曜は地元野菜の朝市「まめぞろい」",
+        "観光案内所と特産品の売り場あり"
+      ],
+      "verify": true,
+      "checkedAt": "2026-11-27"
     }
   ]
 }
