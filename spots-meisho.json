@@ -299,6 +299,27 @@
       ],
       "verify": true,
       "checkedAt": "2026-11-27"
+    },
+    {
+      "placeId": "meisho-gujohachiman-jo",
+      "name": "郡上八幡城",
+      "area": "郡上市",
+      "type": "絶景・名所",
+      "address": "岐阜県郡上市八幡町柳町一の平659",
+      "openingHours": [
+        "3〜5月・9〜10月 9:00〜17:00、6〜8月 8:00〜18:00、11〜2月 9:00〜16:30",
+        "12月20日〜1月10日は休み",
+        "大人400円、子供200円(20名以上は団体割引)"
+      ],
+      "website": "https://www.gujohachiman.com/kanko/castle.html",
+      "catchphrase": "城下町を見下ろす山の上に立つ、白い木造天守",
+      "highlights": [
+        "昭和8年に建て直された木造の天守",
+        "天守から郡上八幡のまちなみと奥美濃の山々が見える",
+        "山頂への道はせまく、大型車や6人乗り以上の車は通れない"
+      ],
+      "verify": true,
+      "checkedAt": "2026-11-27"
     }
   ]
 }
