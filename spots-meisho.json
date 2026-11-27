@@ -1,6 +1,6 @@
 {
   "source": "static",
-  "updatedAt": "2026-11-27",
+  "updatedAt": "2026-11-28",
   "attribution": "公開情報を基に作成。お出かけ前に最新情報をご確認ください。",
   "shops": [
     {
@@ -341,6 +341,25 @@
       ],
       "verify": true,
       "checkedAt": "2026-11-27"
+    },
+    {
+      "placeId": "meisho-shichirimihama",
+      "name": "七里御浜",
+      "area": "熊野市",
+      "type": "絶景・名所",
+      "address": "三重県熊野市から南牟婁郡紀宝町にかけての海岸",
+      "openingHours": [
+        "海岸のため営業時間の案内はなし(熊野市・観光協会のページに記載なし)"
+      ],
+      "website": "https://www.kumano-kankou.info/tourism/interest/",
+      "catchphrase": "熊野灘に沿って約22km続く、日本一長いといわれる砂礫の海岸",
+      "highlights": [
+        "熊野川から運ばれた色とりどりの小石「みはま小石」が浜を埋めつくす",
+        "熊野詣の浜街道として歩かれた歴史があり、世界遺産の構成資産に含まれる",
+        "春から夏はアカウミガメが上陸する浜。道の駅 熊野・花の窟から歩いてすぐ"
+      ],
+      "verify": true,
+      "checkedAt": "2026-11-28"
     }
   ]
 }
