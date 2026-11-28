@@ -1,6 +1,6 @@
 {
  "source": "static-public-info",
- "updatedAt": "2026-11-21",
+ "updatedAt": "2026-11-28",
  "attribution": "順位はGoogleマップのクチコミ評価をもとにした公開ランキング(ねとらぼ、2025年2月版)の順番です。2026年11月に、閉店・休業がわかったお店を外しました。営業時間は、公式の案内で確かめられたお店だけのせています。「要確認」のお店は、確かめられなかった理由をそえています。閉店や移転がありえるので、お出かけ前に「地図」ボタンや各店の公式情報で確かめてください。",
  "shops": [
   {
@@ -9,7 +9,9 @@
    "openingHours": [],
    "address": "愛知県名古屋市中村区則武2丁目14-10",
    "verify": false,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "中村区",
+   "pick": true
   },
   {
    "name": "名古屋辛麺 鯱輪 熱田店",
@@ -20,7 +22,9 @@
    ],
    "address": "愛知県名古屋市熱田区伝馬2丁目28-1",
    "verify": false,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "熱田区",
+   "pick": true
   },
   {
    "name": "麺屋聖 名古屋栄店",
@@ -28,7 +32,10 @@
    "openingHours": [],
    "address": "愛知県名古屋市中区栄3丁目25-3 1F",
    "verify": false,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "中区",
+   "checkedAt": "2026-11-28",
+   "pick": true
   },
   {
    "name": "らーめん天葵",
@@ -36,7 +43,10 @@
    "openingHours": [],
    "address": "愛知県名古屋市南区元鳴尾町76",
    "verify": false,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "南区",
+   "checkedAt": "2026-11-28",
+   "pick": true
   },
   {
    "name": "麺家 獅子丸",
@@ -46,7 +56,11 @@
    ],
    "address": "愛知県名古屋市中村区亀島2丁目1-1",
    "verify": true,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "中村区",
+   "landmark": "名古屋駅太閤通口から歩いて4分",
+   "checkedAt": "2026-11-28",
+   "pick": true
   },
   {
    "name": "雷杏 名駅店",
@@ -54,7 +68,9 @@
    "openingHours": [],
    "address": "愛知県名古屋市中村区椿町4-12",
    "verify": false,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "中村区",
+   "pick": true
   },
   {
    "name": "濃厚中華そば 佐とう",
@@ -62,7 +78,9 @@
    "openingHours": [],
    "address": "愛知県名古屋市中区丸の内2丁目8-25 丸の内中野ビル1F",
    "verify": false,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "中区",
+   "pick": true
   },
   {
    "name": "朧月",
@@ -70,7 +88,10 @@
    "openingHours": [],
    "address": "愛知県名古屋市中区平和1丁目15-25 今井ダイアパレス1F",
    "verify": false,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "中区",
+   "landmark": "東別院駅が最寄り",
+   "pick": true
   },
   {
    "name": "名古屋辛麺 鯱輪",
@@ -81,7 +102,9 @@
    ],
    "address": "愛知県名古屋市中区栄3丁目11-15 LRDビル1F",
    "verify": false,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "中区",
+   "pick": true
   },
   {
    "name": "からみそラーメンふくろう 本店",
@@ -92,7 +115,9 @@
    ],
    "address": "愛知県名古屋市北区辻町2丁目32",
    "verify": false,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "北区",
+   "pick": true
   },
   {
    "name": "酒楽亭 空庵",
@@ -100,7 +125,9 @@
    "openingHours": [],
    "address": "愛知県名古屋市緑区武路町122",
    "verify": false,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "緑区",
+   "pick": true
   },
   {
    "name": "らあめん工房 雪濃湯",
@@ -108,7 +135,9 @@
    "openingHours": [],
    "address": "愛知県名古屋市東区芳野3丁目9-22",
    "verify": false,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "東区",
+   "pick": true
   },
   {
    "name": "ラーメン福 黄金店",
@@ -116,7 +145,10 @@
    "openingHours": [],
    "address": "愛知県名古屋市中村区畑江通4丁目8",
    "verify": false,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "中村区",
+   "checkedAt": "2026-11-28",
+   "pick": true
   },
   {
    "name": "ラーメン大 名古屋店",
@@ -124,7 +156,9 @@
    "openingHours": [],
    "address": "愛知県名古屋市中区錦2丁目9-6 名和丸の内ビル1階",
    "verify": false,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "中区",
+   "pick": true
   },
   {
    "name": "萬来亭",
@@ -132,7 +166,10 @@
    "openingHours": [],
    "address": "愛知県名古屋市緑区作の山町230 メゾン作の山1階",
    "verify": false,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "緑区",
+   "checkedAt": "2026-11-28",
+   "pick": true
   },
   {
    "name": "好陽軒",
@@ -140,7 +177,9 @@
    "openingHours": [],
    "address": "愛知県名古屋市昭和区広見町2丁目21-3",
    "verify": false,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "昭和区",
+   "pick": true
   },
   {
    "name": "ラーメン福 島田橋店",
@@ -150,7 +189,10 @@
    ],
    "address": "愛知県名古屋市天白区元八事2丁目104",
    "verify": true,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "天白区",
+   "checkedAt": "2026-11-28",
+   "pick": true
   },
   {
    "name": "麺屋はなび 高畑本店",
@@ -158,7 +200,10 @@
    "openingHours": [],
    "address": "愛知県名古屋市中川区高畑1丁目170",
    "verify": false,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "中川区",
+   "checkedAt": "2026-11-28",
+   "pick": true
   },
   {
    "name": "麺家 半蔵",
@@ -166,7 +211,11 @@
    "openingHours": [],
    "address": "愛知県名古屋市名東区藤が丘148",
    "verify": false,
-   "type": "ラーメン"
+   "type": "ラーメン",
+   "area": "名東区",
+   "landmark": "藤が丘駅2番出口から歩いて1分",
+   "checkedAt": "2026-11-28",
+   "pick": true
   }
  ]
 }
