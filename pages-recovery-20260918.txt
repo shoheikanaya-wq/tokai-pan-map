@@ -1,3 +1,0 @@
-GitHub Pages recovery redeploy trigger
-2026-09-18 JST
-No application logic changed.
