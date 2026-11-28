@@ -1,6 +1,6 @@
 {
   "source": "static-free-verified",
-  "updatedAt": "2026-09-21",
+  "updatedAt": "2026-11-28",
   "attribution": "店舗公式サイトの公開情報を基に確認。来店前に最新情報をご確認ください。",
   "shops": [
     {
@@ -29,6 +29,63 @@
         "米糀食パン"
       ],
       "representativeProduct": "米糀食パン"
+    },
+    {
+      "placeId": "static-toyoyama-baqet-airportwalk",
+      "name": "バケット エアポートウォーク名古屋店",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県西春日井郡豊山町豊場林先1-8 エアポートウォーク名古屋",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "11:00–21:30(ラストオーダー20:00)",
+        "休みは施設に準じる"
+      ],
+      "phone": "0568-39-2309",
+      "website": "https://www.saint-marc-hd.com/baqet/shop/229/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "焼きたてパンを食べ放題で味わえる、エアポートウォークの中のベーカリーレストラン",
+      "highlights": [
+        "焼きたてパンの食べ放題",
+        "毎月替わる限定パン",
+        "ランチ・ディナーの料理と一緒に",
+        "キッズメニューあり"
+      ],
+      "area": "豊場",
+      "landmark": "エアポートウォーク名古屋の中",
+      "checkedAt": "2026-11-28"
+    },
+    {
+      "placeId": "static-toyoyama-saintmarc-airportwalk",
+      "name": "サンマルクカフェ エアポートウォーク名古屋店",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県西春日井郡豊山町豊場林先1-8 エアポートウォーク名古屋1F",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "10:00–21:30"
+      ],
+      "phone": "0568-39-3095",
+      "website": "https://www.saint-marc-hd.com/saintmarccafe/shop/597/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "店で焼くパンといれたてのコーヒーでひと休みできる、ベーカリーカフェ",
+      "highlights": [
+        "店内で焼くパン",
+        "76席・Wi-Fiあり",
+        "全席禁煙"
+      ],
+      "representativeProduct": "チョコクロ",
+      "area": "豊場",
+      "landmark": "エアポートウォーク名古屋1階",
+      "checkedAt": "2026-11-28"
     }
   ]
 }
