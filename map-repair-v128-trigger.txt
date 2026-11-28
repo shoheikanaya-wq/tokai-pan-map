@@ -1,1 +1,0 @@
-repair normal map municipality results and photo fallback
