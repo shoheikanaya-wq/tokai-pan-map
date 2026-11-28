@@ -1,6 +1,6 @@
 {
   "source": "static-public-info",
-  "updatedAt": "2026-11-21",
+  "updatedAt": "2026-11-28",
   "attribution": "出典: 財務省貿易統計・税関・国土交通省・気象庁など国のウェブサイト(公共データ利用規約 第1.0版)と、港の管理者(名古屋港管理組合・四日市港管理組合など)の公表資料。これらをもとに、ぷらっと東海が要約・加工して作成しました(国や港の管理者が作ったものではありません)。くわしい数字は、各件の「出どころ」のページで確かめてください。",
   "fieldsGuide": {
     "placeId": "minato-<しくみ/港のローマ字>",
@@ -282,6 +282,38 @@
         "https://www.pref.aichi.jp/soshiki/kinuura-komu/kinuura-gaiyo.html"
       ],
       "checkedAt": "2026-11-21",
+      "verify": true
+    },
+    {
+      "placeId": "minato-shimizu",
+      "name": "清水港",
+      "pref": "東海",
+      "area": "静岡県静岡市",
+      "address": "静岡県静岡市清水区",
+      "kind": "国際拠点港湾",
+      "catchphrase": "富士山が見える、ものづくりを世界へつなぐ港",
+      "highlights": [
+        "三保半島が自然の防波堤になる港",
+        "エンジン・オートバイ・自動車部品を輸出",
+        "LNGや魚などを輸入"
+      ],
+      "exports": "2025年の輸出は約2兆1,656億円(前の年より0.4%増・速報)。金額で多いのは、エンジンなどの原動機・オートバイなどの二輪自動車類(約2,181億円、10.1%)・自動車の部品など(2025年)。原動機と部品の割合は、税関の表の読み取りがくずれたため要確認。荷物の重さで見ると、2024年の輸出の相手は韓国(約16%)・台湾(約15%)・中国(約14%)の順に多い",
+      "imports": "2025年の輸入は約1兆3,726億円(前の年より1.1%増・速報)。魚介類が多く、ほかに液化天然ガス(LNG・約1,069億円、7.8%)・電線やケーブルなど(2025年)。魚介類の割合は、税関の表の読み取りがくずれて数字が決められなかったため要確認。荷物の重さで見ると、2024年の輸入の相手はマレーシア(約29%)・オーストラリア(約12%)・韓国(約9%)が多い。金額での相手の国の順位は、統計表を読めなかったため要確認",
+      "routes": "2025年5月1日の時点で、外国と結ぶ定期コンテナ航路は5つの方面(北米西岸・ヨーロッパ・東南アジア・中国・韓国)。1週間の便の数は東南アジア10便、韓国7便、中国6便、北米西岸2便、ヨーロッパ1便。国内では、トラックごと運べるRORO船が大分(週3便)と北海道(週2便)に通っている(2026年2月末時点)",
+      "how": "コンテナ船は新興津と袖師のコンテナターミナルを使う。新興津には水深15mの深い岸壁があり、大きなコンテナ船が着ける。袖師にはLNGの基地もある。興津ふ頭は魚・鋼材・紙パルプ、富士見ふ頭は木材チップや穀物などのばら積みの荷物、日の出ふ頭は紙パルプと大きなクルーズ船の受け入れに使われている",
+      "when": "2025年の貿易額は、輸出と輸入を合わせて約3兆5,382億円(速報)。2025年に港で積んだりおろしたりした荷物は約1,601万トン、コンテナは518,417個(20フィートの箱に直した数・TEU)。2024年は約1,535万トン・514,305TEU",
+      "website": "https://www.pref.shizuoka.jp/machizukuri/kowan/1003578/1029633.html",
+      "sources": [
+        "https://www.customs.go.jp/nagoya/boueki/sisho_shimizu.htm",
+        "https://www.customs.go.jp/nagoya/boueki/shimizu-sokur-g07.pdf",
+        "https://www.customs.go.jp/nagoya/poster/graphR07.pdf",
+        "https://www.pa.cbr.mlit.go.jp/storage/001/202602/content_file_2026_1_r7d-shimizu-port-gaiyou.pdf",
+        "https://www.shimizu.pa.cbr.mlit.go.jp/file/content/pamphlet/R5donnatoko.pdf",
+        "https://www.pref.shizuoka.jp/machizukuri/kowan/1003578/1029633.html",
+        "https://www.pref.shizuoka.jp/_res/projects/default_project/_page_/001/084/824/2026shimizu01honsatsu_v2.pdf",
+        "https://toukei.pref.shizuoka.jp/toukeikikakuhan/documents/tokushu202510.pdf"
+      ],
+      "checkedAt": "2026-11-28",
       "verify": true
     }
   ]
