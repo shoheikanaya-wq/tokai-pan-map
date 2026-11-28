@@ -28,7 +28,9 @@
         "糀",
         "米糀食パン"
       ],
-      "representativeProduct": "米糀食パン"
+      "representativeProduct": "米糀食パン",
+      "area": "豊場",
+      "pick": true
     },
     {
       "placeId": "static-toyoyama-baqet-airportwalk",
@@ -57,7 +59,8 @@
       ],
       "area": "豊場",
       "landmark": "エアポートウォーク名古屋の中",
-      "checkedAt": "2026-11-28"
+      "checkedAt": "2026-11-28",
+      "pick": true
     },
     {
       "placeId": "static-toyoyama-saintmarc-airportwalk",
@@ -85,7 +88,8 @@
       "representativeProduct": "チョコクロ",
       "area": "豊場",
       "landmark": "エアポートウォーク名古屋1階",
-      "checkedAt": "2026-11-28"
+      "checkedAt": "2026-11-28",
+      "pick": true
     }
   ]
 }
