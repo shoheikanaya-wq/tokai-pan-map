@@ -383,6 +383,27 @@
       ],
       "verify": true,
       "checkedAt": "2026-11-28"
+    },
+    {
+      "placeId": "meisho-tokoname-yakimono-sanpomichi",
+      "name": "常滑 やきもの散歩道",
+      "area": "常滑市",
+      "type": "絶景・名所",
+      "address": "愛知県常滑市栄町3-8(とこなめ観光案内所)",
+      "openingHours": [
+        "散策自由・無料",
+        "沿道のお店や施設は休みがそれぞれちがうため要確認",
+        "廻船問屋瀧田家 入場200円(中学生以下無料)"
+      ],
+      "website": "https://www.tokoname-kankou.net/spot/detail/1/",
+      "catchphrase": "レンガの煙突と窯が残る路地を歩く、やきものの町の散策コース",
+      "highlights": [
+        "レンガ造りの煙突や窯、黒い板塀の工場が残る",
+        "Aコース約1.6km(約1時間)、Bコース約4km(約2時間30分)の2コース",
+        "今も作家や職人が工房をかまえ、ギャラリーやカフェがある"
+      ],
+      "verify": true,
+      "checkedAt": "2026-11-28"
     }
   ]
 }
