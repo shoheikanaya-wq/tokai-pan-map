@@ -1,6 +1,6 @@
 {
   "source": "static-free-verified",
-  "updatedAt": "2026-09-19",
+  "updatedAt": "2026-11-28",
   "attribution": "あま市観光協会の公開情報を基に確認。来店前に最新情報をご確認ください。",
   "shops": [
     {
@@ -25,7 +25,41 @@
       "highlights": [
         "自家製酵母",
         "米粉菓子"
-      ]
+      ],
+      "area": "甚目寺",
+      "checkedAt": "2026-11-28",
+      "pick": true
+    },
+    {
+      "placeId": "static-ama-amanokuchidoke",
+      "name": "高級パン専門店 海部のくちどけ",
+      "rating": 0,
+      "reviews": 0,
+      "address": "愛知県あま市七宝町安松縣2742",
+      "type": "パン屋",
+      "types": [
+        "bakery"
+      ],
+      "openingHours": [
+        "10:00–18:00(売り切れ次第終了)",
+        "定休日 月曜"
+      ],
+      "phone": "052-433-3128",
+      "website": "https://ama-no-kuchidoke.com/",
+      "googleMaps": "",
+      "photo": "",
+      "catchphrase": "みそ蔵のとなりにある、口どけのよい高級食パンの店",
+      "highlights": [
+        "高級食パン",
+        "電話で予約できる",
+        "サンドイッチもある",
+        "となりのあまの蔵とポイントカード共通"
+      ],
+      "representativeProduct": "はじまりの風",
+      "area": "七宝",
+      "landmark": "あまの蔵(佐藤醸造)の隣",
+      "checkedAt": "2026-11-28",
+      "pick": true
     }
   ]
 }
