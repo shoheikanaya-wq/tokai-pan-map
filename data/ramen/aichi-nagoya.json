@@ -1,7 +1,7 @@
 {
  "source": "static-public-info",
  "updatedAt": "2026-11-28",
- "attribution": "順位はGoogleマップのクチコミ評価をもとにした公開ランキング(ねとらぼ、2025年2月版)の順番です。2026年11月に、閉店・休業がわかったお店を外しました。営業時間は、公式の案内で確かめられたお店だけのせています。「要確認」のお店は、確かめられなかった理由をそえています。閉店や移転がありえるので、お出かけ前に「地図」ボタンや各店の公式情報で確かめてください。",
+ "attribution": "名古屋市は50店をのせています(順位なし)。ぷらっと東海が、公式の案内や地元の公開情報で選んだお店です。営業を確かめたお店には確かめた日をつけています。営業時間は、公式の案内で確かめられたお店だけのせています。「要確認」のお店は、確かめられなかった理由をそえています。閉店や移転がありえるので、お出かけ前に「地図」ボタンや各店の公式情報で確かめてください。",
  "shops": [
   {
    "name": "麺屋 牛次郎 名古屋駅店",
@@ -214,6 +214,400 @@
    "type": "ラーメン",
    "area": "名東区",
    "landmark": "藤が丘駅2番出口から歩いて1分",
+   "checkedAt": "2026-11-28",
+   "pick": true
+  },
+  {
+   "name": "らぁ麺や 汐そば雫",
+   "catchphrase": "あっさりした塩ラーメンの店",
+   "openingHours": [
+    "公式の案内を確かめられなかったため要確認"
+   ],
+   "address": "愛知県名古屋市瑞穂区下坂町4-15 スターリア1F",
+   "verify": true,
+   "type": "ラーメン",
+   "area": "瑞穂区",
+   "landmark": "堀田駅から歩いて10分ほど",
+   "pick": true
+  },
+  {
+   "name": "えびそば 緋彩",
+   "catchphrase": "えびの旨みを生かしたラーメンの店",
+   "openingHours": [
+    "公式の案内を確かめられなかったため要確認"
+   ],
+   "address": "愛知県名古屋市瑞穂区明前町13-19 堀田グリーンハイツ1F",
+   "verify": true,
+   "type": "ラーメン",
+   "area": "瑞穂区",
+   "landmark": "地下鉄堀田駅から歩いて8分",
+   "pick": true
+  },
+  {
+   "name": "鶏そば 啜る 丸の内本店",
+   "catchphrase": "鶏のスープのラーメンの店",
+   "openingHours": [
+    "公式の案内を確かめられなかったため要確認"
+   ],
+   "address": "愛知県名古屋市中区丸の内2-15-28 ビックバン丸の内1F",
+   "verify": true,
+   "type": "ラーメン",
+   "area": "中区",
+   "pick": true
+  },
+  {
+   "name": "つけ麺 丸和 春田本店",
+   "catchphrase": "魚介の濃いスープのつけ麺の店",
+   "openingHours": [
+    "公式の案内を確かめられなかったため要確認"
+   ],
+   "address": "愛知県名古屋市中川区春田1-150-1",
+   "verify": true,
+   "type": "ラーメン",
+   "area": "中川区",
+   "landmark": "JR春田駅北口から歩いて5分",
+   "pick": true
+  },
+  {
+   "name": "太陽食堂",
+   "catchphrase": "昔ながらのラーメンの食堂",
+   "openingHours": [
+    "公式の案内を確かめられなかったため要確認"
+   ],
+   "address": "愛知県名古屋市中村区中村町7-40-5",
+   "verify": true,
+   "type": "ラーメン",
+   "area": "中村区",
+   "landmark": "豊国神社への参道ぞい",
+   "pick": true
+  },
+  {
+   "name": "横浜家系らーめん 志",
+   "catchphrase": "横浜家系ラーメンの店",
+   "openingHours": [
+    "公式の案内を確かめられなかったため要確認"
+   ],
+   "address": "愛知県名古屋市守山区小幡1-2-4 サンシャイン小幡1F A号室",
+   "verify": true,
+   "type": "ラーメン",
+   "area": "守山区",
+   "landmark": "名鉄瀬戸線 小幡駅から歩いて4分",
+   "pick": true
+  },
+  {
+   "name": "金山家 本店",
+   "catchphrase": "横浜家系ラーメンの店",
+   "openingHours": [
+    "公式の案内を確かめられなかったため要確認"
+   ],
+   "address": "愛知県名古屋市熱田区金山町1-2-16 1stヒカリビル1F",
+   "verify": true,
+   "type": "ラーメン",
+   "area": "熱田区",
+   "landmark": "金山総合駅すぐ",
+   "pick": true
+  },
+  {
+   "name": "英吉家",
+   "catchphrase": "横浜家系ラーメンの店",
+   "openingHours": [
+    "公式の案内を確かめられなかったため要確認"
+   ],
+   "address": "愛知県名古屋市天白区塩釜口2-801",
+   "verify": true,
+   "type": "ラーメン",
+   "area": "天白区",
+   "landmark": "地下鉄塩釜口駅から歩いて5分ほど",
+   "pick": true
+  },
+  {
+   "name": "らーめん 爛々亭 大曽根店",
+   "catchphrase": "地元で親しまれるラーメン店",
+   "openingHours": [
+    "公式の案内を確かめられなかったため要確認"
+   ],
+   "address": "愛知県名古屋市東区矢田1-7-33 ライオン堂ビル1F",
+   "verify": true,
+   "type": "ラーメン",
+   "area": "東区",
+   "landmark": "大曽根駅から歩いて5分",
+   "pick": true
+  },
+  {
+   "name": "町田商店 栄店",
+   "catchphrase": "横浜家系ラーメンのチェーン店",
+   "openingHours": [
+    "公式の案内を確かめられなかったため要確認"
+   ],
+   "address": "愛知県名古屋市中区栄3-3-30",
+   "verify": true,
+   "type": "ラーメン",
+   "area": "中区",
+   "landmark": "栄駅から歩いて6分",
+   "pick": true
+  },
+  {
+   "name": "ラーメン 八龍 千代田店",
+   "catchphrase": "地元で長く続くラーメンの店",
+   "openingHours": [
+    "公式の案内を確かめられなかったため要確認"
+   ],
+   "address": "愛知県名古屋市中区千代田2-2-21 ベルメゾン太田1F",
+   "verify": true,
+   "type": "ラーメン",
+   "area": "中区",
+   "landmark": "上前津駅が最寄り",
+   "pick": true
+  },
+  {
+   "name": "銀のくら 本店",
+   "catchphrase": "地元で続くラーメン店の本店",
+   "openingHours": [
+    "公式の案内を確かめられなかったため要確認"
+   ],
+   "address": "愛知県名古屋市東区泉1-6-20 ライフビル1F",
+   "verify": true,
+   "type": "ラーメン",
+   "area": "東区",
+   "landmark": "高岳駅が最寄り",
+   "pick": true
+  },
+  {
+   "name": "らぁ麺 紫陽花",
+   "catchphrase": "あっさりした淡麗系ラーメンの店",
+   "openingHours": [
+    "公式の案内を確かめられなかったため要確認"
+   ],
+   "address": "愛知県名古屋市中川区八剱町4-20-1 コーポ源1F",
+   "verify": true,
+   "type": "ラーメン",
+   "area": "中川区",
+   "landmark": "六番町駅が最寄り",
+   "pick": true
+  },
+  {
+   "name": "麺家 喜多楽",
+   "catchphrase": "街なかのラーメンの店",
+   "openingHours": [
+    "公式の案内を確かめられなかったため要確認"
+   ],
+   "address": "愛知県名古屋市中区橘1-28-6 近藤ビル1F",
+   "verify": true,
+   "type": "ラーメン",
+   "area": "中区",
+   "landmark": "東別院駅が最寄り",
+   "pick": true
+  },
+  {
+   "name": "らーめん 奏",
+   "catchphrase": "こだわりの一杯を出すラーメンの店",
+   "openingHours": [
+    "公式の案内を確かめられなかったため要確認"
+   ],
+   "address": "愛知県名古屋市昭和区阿由知通1-9",
+   "verify": true,
+   "type": "ラーメン",
+   "area": "昭和区",
+   "landmark": "吹上駅が最寄り",
+   "pick": true
+  },
+  {
+   "name": "萬珍軒",
+   "catchphrase": "昔ながらの中華そばの店",
+   "openingHours": [
+    "公式の案内を確かめられなかったため要確認"
+   ],
+   "address": "愛知県名古屋市中村区太閤通4-38",
+   "verify": true,
+   "type": "ラーメン",
+   "area": "中村区",
+   "landmark": "太閤通駅が最寄り",
+   "pick": true
+  },
+  {
+   "name": "徳川町 如水 本店",
+   "catchphrase": "徳川町の老舗ラーメン店",
+   "openingHours": [
+    "公式の案内を確かめられなかったため要確認"
+   ],
+   "address": "愛知県名古屋市東区徳川町201",
+   "verify": true,
+   "type": "ラーメン",
+   "area": "東区",
+   "pick": true
+  },
+  {
+   "name": "ラーメン二郎 名古屋大曽根店",
+   "catchphrase": "東海で初めてのラーメン二郎の店",
+   "openingHours": [],
+   "address": "愛知県名古屋市東区矢田4-3-7",
+   "verify": false,
+   "type": "ラーメン",
+   "area": "東区",
+   "checkedAt": "2026-11-28",
+   "pick": true
+  },
+  {
+   "name": "麺屋 優光 名古屋店",
+   "catchphrase": "京都発のラーメン店の名古屋店",
+   "openingHours": [
+    "住所は地元の記事などで確かめたもので、公式の案内を確かめられなかったため要確認"
+   ],
+   "address": "愛知県名古屋市中村区名駅4-4-14 大都会パーキングビル2F",
+   "verify": true,
+   "type": "ラーメン",
+   "area": "中村区",
+   "pick": true
+  },
+  {
+   "name": "味仙 今池本店",
+   "catchphrase": "台湾ラーメンで知られる老舗",
+   "openingHours": [],
+   "address": "愛知県名古屋市千種区今池1-12-10",
+   "verify": false,
+   "type": "ラーメン",
+   "area": "千種区",
+   "landmark": "地下鉄今池駅から歩いて1分",
+   "checkedAt": "2026-11-28",
+   "pick": true
+  },
+  {
+   "name": "中華そば 白壁 あおい",
+   "catchphrase": "白壁の住宅街にある中華そばの店",
+   "openingHours": [
+    "公式の案内を確かめられなかったため要確認"
+   ],
+   "address": "愛知県名古屋市東区白壁1-36",
+   "verify": true,
+   "type": "ラーメン",
+   "area": "東区",
+   "landmark": "名鉄瀬戸線 東大手駅から歩いて10分",
+   "pick": true
+  },
+  {
+   "name": "中華そば 大河",
+   "catchphrase": "市場の食品センターの中の中華そば店",
+   "openingHours": [
+    "公式の案内を確かめられなかったため要確認"
+   ],
+   "address": "愛知県名古屋市中村区名駅4-15-2 マルナカ食品センター",
+   "verify": true,
+   "type": "ラーメン",
+   "area": "中村区",
+   "landmark": "国際センター駅が最寄り",
+   "pick": true
+  },
+  {
+   "name": "麺家 幸先坂",
+   "catchphrase": "鶴舞公園の近くのラーメン店",
+   "openingHours": [
+    "公式の案内を確かめられなかったため要確認"
+   ],
+   "address": "愛知県名古屋市中区千代田5-22-18 グランドメゾン鶴舞公園1F",
+   "verify": true,
+   "type": "ラーメン",
+   "area": "中区",
+   "landmark": "鶴舞駅前",
+   "pick": true
+  },
+  {
+   "name": "中華そば 白華楼",
+   "catchphrase": "千種駅の近くの中華そばの店",
+   "openingHours": [
+    "公式の案内を確かめられなかったため要確認"
+   ],
+   "address": "愛知県名古屋市千種区今池1-1-4",
+   "verify": true,
+   "type": "ラーメン",
+   "area": "千種区",
+   "landmark": "千種駅が最寄り",
+   "pick": true
+  },
+  {
+   "name": "麺屋玉ぐすく",
+   "catchphrase": "今池のラーメン店",
+   "openingHours": [
+    "公式の案内を確かめられなかったため要確認"
+   ],
+   "address": "愛知県名古屋市千種区今池1-6-8 ブルースタービル1F",
+   "verify": true,
+   "type": "ラーメン",
+   "area": "千種区",
+   "landmark": "今池駅が最寄り",
+   "pick": true
+  },
+  {
+   "name": "好来道場",
+   "catchphrase": "好来系の元祖として知られる店",
+   "openingHours": [
+    "公式の案内を確かめられなかったため要確認"
+   ],
+   "address": "愛知県名古屋市千種区春岡通6-1-16",
+   "verify": true,
+   "type": "ラーメン",
+   "area": "千種区",
+   "pick": true
+  },
+  {
+   "name": "鶏そば 那ご乃樹",
+   "catchphrase": "那古野の鶏そばの専門店",
+   "openingHours": [
+    "公式の案内を確かめられなかったため要確認"
+   ],
+   "address": "愛知県名古屋市西区那古野1-17-16",
+   "verify": true,
+   "type": "ラーメン",
+   "area": "西区",
+   "landmark": "国際センター駅が最寄り",
+   "pick": true
+  },
+  {
+   "name": "つけそば 神宮寺",
+   "catchphrase": "若葉通のつけそばの専門店",
+   "openingHours": [
+    "公式の案内を確かめられなかったため要確認"
+   ],
+   "address": "愛知県名古屋市北区若葉通1-25 若葉ビル1F",
+   "verify": true,
+   "type": "ラーメン",
+   "area": "北区",
+   "landmark": "志賀本通駅が最寄り",
+   "pick": true
+  },
+  {
+   "name": "支那ソバ きたがわ",
+   "catchphrase": "内田橋の支那ソバの店",
+   "openingHours": [
+    "公式の案内を確かめられなかったため要確認"
+   ],
+   "address": "愛知県名古屋市南区内田橋1-14-2 コーポ竹味1F",
+   "verify": true,
+   "type": "ラーメン",
+   "area": "南区",
+   "pick": true
+  },
+  {
+   "name": "一陽軒",
+   "catchphrase": "植田西の昔ながらのラーメン店",
+   "openingHours": [
+    "公式の案内を確かめられなかったため要確認"
+   ],
+   "address": "愛知県名古屋市天白区植田西2-1601",
+   "verify": true,
+   "type": "ラーメン",
+   "area": "天白区",
+   "landmark": "塩釜口駅が最寄り",
+   "pick": true
+  },
+  {
+   "name": "麺処 素和",
+   "catchphrase": "煮干しが香る金山のラーメン店",
+   "openingHours": [],
+   "address": "愛知県名古屋市熱田区金山町1-10-4",
+   "verify": false,
+   "type": "ラーメン",
+   "area": "熱田区",
+   "landmark": "金山駅が最寄り",
    "checkedAt": "2026-11-28",
    "pick": true
   }
